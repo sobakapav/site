@@ -1,0 +1,20 @@
+---
+  import './Budget.less';
+  import TextBlock from '../textblock/TextBlock.astro';
+
+  const { budget } = Astro.props;
+---
+
+<div class="budget">
+  <div class="budget-title">
+    <h2>Планирование бюджета</h2>
+  </div>
+  <div class="budget-price">
+    <h3>Стоимость</h3>
+    <TextBlock block={budget.price || []} />
+  </div>
+  <div class="budget-time">
+    <h3>Сроки</h3>
+    <TextBlock block={budget.time || []} />
+  </div>
+</div>

@@ -1,0 +1,12 @@
+---
+  import './Prices.less';
+  import TextBlock from '../textblock/TextBlock.astro';
+
+  const { imageMap, comments } = Astro.props;
+---
+<div class="prices">
+  <img src={imageMap.url} alt={imageMap.alt}>
+  {
+    <TextBlock block={comments} className="comments" />
+  }
+</div>

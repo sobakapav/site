@@ -1,0 +1,37 @@
+html {
+  background-color: #ffffff;
+  font-family: Inter;
+  color: #000;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 68px;
+  line-height: 84px;
+  font-weight: 600;
+  color: #181614;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+ul {
+  list-style: unset;
+}
+
+.mainframe {
+  margin: 0 auto;
+  width: 1200px;
+}

@@ -1,0 +1,17 @@
+---
+  import PBlock from './PBlock.astro';
+  import H2Block from './H2Block.astro';
+  import H3Block from './H3Block.astro';
+  import ULBlock from './ULBlock.astro';
+
+  const { block, className } = Astro.props;
+---
+<div class={className || "textblock"}>
+{block.map((item) =>
+  item.type == 'p' && <PBlock text={item.text} />
+  || item.type == 'h2' && <H2Block text={item.text} />
+  || item.type == 'h3' && <H3Block text={item.text} />
+  || item.type == 'ul' && <ULBlock list={item.list} />
+
+)}
+</div>

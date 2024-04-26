@@ -1,0 +1,56 @@
+---
+import '~/assets/styles/style.css';
+import './ServicePage.less';
+
+import TitleBlockServices from '../services/TitleBlockServices.astro';
+import BlueBlock from '../services/BlueBlock.astro';
+import Works from '../services/Works.astro';
+import Prices from '../services/Prices.astro';
+import Budget from '../services/Budget.astro';
+import TextBlock from '../textblock/TextBlock.astro';
+import ResultsBlock from '../services/ResultsBlock.astro';
+
+const { content } = Astro.props;
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'>
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{content.pageTitle}</title>
+	</head>
+	<body>
+    <div class="mainframe">
+		  <TitleBlockServices data={content} />
+
+		  <BlueBlock>
+        <img src={content.images.imageMain.urlLarge} alt={content.images.imageMain.alt}>
+        <div class="blueblockContent">
+          <TextBlock block={content.blueBlockText} />
+          <ResultsBlock results={content.results} />
+        </div>
+		  </BlueBlock>
+
+		  <div class="flex wrap gap-32">
+        <div class="contentBlock">
+          <slot />
+        </div>
+        <Works works={content.works}/>
+		  </div>
+		  <div class="flex wrap gap-32">
+        <Prices comments={content.comments} imageMap={content.images.imageMap}/>
+      </div>
+
+      <BlueBlock>
+        <Budget budget={content.budget} />
+      </BlueBlock>
+
+    </div>
+
+	</body>
+</html>

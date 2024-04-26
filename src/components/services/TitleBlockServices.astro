@@ -1,0 +1,15 @@
+---
+import './TitleBlockServices.less';
+
+  const { data } = Astro.props;
+  
+---
+
+<div class="title-block">
+  <div class="flex flex-wrap gap-6">
+    <h1 class="grow shrink basis-0 mb-6">{data.pageTitle}</h1>
+    <p class="grow shrink basis-0 mt-4 subtitle">{data.subtitle}</p>
+  </div>
+  <a class="" href="/services">← Все услуги</a>
+  <img src="/src/assets/images/clients.png">
+</div>
