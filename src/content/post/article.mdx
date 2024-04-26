@@ -22,189 +22,128 @@ import ToggleTheme from '~/components/common/ToggleTheme.astro';
 
 О чем будем говорить:
 
-This page outlines and clarifies some of the techniques found in _AstroWind_. Use it as a guide for further modification, or an instructional for techniques to use in your own endeavors.
+[Почему мы работаем именно в Figma](#anchor1)
+[Как создать аккаунт в Figma](#anchor2)
+[Терминология Figma](#anchor3)
+[Рабочие области Figma](#anchor4)
+[Комментирование макетов](#anchor5)
+[6](#anchor6)
 
-## Styling
+<a name="anchor1">## Почему мы работаем именно в Figma</a>
 
-As the name suggests, _AstroWind_ relies on _TailWind_ for styling. Furthermore, _AstroWind_ defines custom low level style settings which are incorporated into _TailWind_ seamlessly, and which provides consistency for higher level styling constructs, as well as enabling dark mode.
+Времена, когда дизайны интерфейсов создавались в Photoshop, канули в лету (помянем). На смену ему пришли другие приложения, например Sketch, Adobe XD и, собственно, Figma. Кому-то роднее Adobe, принципиальные маководы предпочитают Sketch, но Figma сегодня — отраслевой стандарт, и это свершившийся факт. Заказчику зачастую проще освоить минимальный функционал Figma, чем изучать макеты в PDF.
 
-The styling mechanism consists of the following files (all paths are prefixed with `/src/` ):
+<a name="anchor2">## Как создать аккаунт в Figma</a>
 
-<DListItem dt="assets/styles/tailwind.css">
-  This file is essentially an extension of _TailWind's_ base.css. High-level component styles are defined here. Note
-  also styling on elements selected by 'attribute' selectors at the bottom of the files, particularly those selected by
-  'data' attributes.
-</DListItem>
-<DListItem dt="components/CustomStyles.astro">
-  Defines custom colors and fonts. For these to take effect in the 'base.css' file, they need to be loaded in the html
-  header section. See next.
-</DListItem>
-<DListItem dt="layouts/Layout.astro">
-  This layout is used for all of the pages rendered by _AstroWind_. The contents of _tailwind.css_ and
-  _CustomStyles.astro_ component, described above, is injected into the html header.
-</DListItem>
+Максимум, что сможет незарегистрированный пользователь — просматривать макеты, на которые он перешел по ссылке. Для полноценной работы с использованием всех плюшек Figma (комментирование, выгрузка макетов и прочее) нужно зарегистрироваться. Благо Figma не ввела блокировок на работу из России и на бесплатные аккаунты в домене .ru.
 
-### Dark Mode
+Последовательность действий при регистрации тут достаточно стандартная:
 
-_Dark Mode_ is triggered by the little 'sunlight' icon:<ToggleTheme/>in the page header. It is defined in the _components/common/ToggleTheme.astro_, but the event is attached and the action defined in _components/common/BasicScripts.astro_ in the following snippet:
+1. Перейти по адресу figma.com и нажать любую из кнопок «Get started».
 
-```javascript
-attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
-  if (defaultTheme.endsWith(':only')) {
-    return;
-  }
-  document.documentElement.classList.toggle('dark');
-  localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-});
-```
+![Как создать аккаунт в Figma | SobakaPav.ru](~/assets/images/articles/figma/1.png)
 
-Note that this is a client event. _BasicScripts.astro_ defines several other client-side functionality as well as this one.
+2. Ввести Email и пароль и нажать кнопку «Create account», либо воспользоваться для авторизации существующим аккаунтом Google.
 
-## Advanced Slot Usage
+![Как создать аккаунт в Figma | SobakaPav.ru](~/assets/images/articles/figma/2.png)
 
-_slots_ are part of the component implementation, which is a common concept among many frameworks, including _Astrojs_. The typical slot definition in a component looks like this:
+Напомним, что существуют две версии Figma:
 
-```astro
----
-// (file: MyComponent.astro)
-const { title } = Astro.props;
-export interface Props {
-  title: string;
-}
----
+1. Приложение для десктопа, которое можно скачать по этой ссылке на официальном сайте.
+2. Браузерная версия. Работает в любом современном браузере и не требует установки дополнительного программного обеспечения.
 
-<div>
-  <h2>{title}</h2>
-  <slot />
-  <!-- slot contents injected here -->
-  <div></div>
-</div>
-```
+Авторизация в сервисе и в том и в другом случае происходит в окне браузера. Функциональных различий нет, кроме некоторых горячих клавиш, доступных только в десктопной версии. Но заказчику, как правило, вполне хватает возможностей браузерной версии.
 
-And in usage elsewhere:
+<a name="anchor3">## Терминология Figma</a>
 
-```astro
-import MyComponent from "~/components/MyComponent"; ...
-<MyComponent someArg="A Slot example">
-  <p>This content will be displayed in the slot</p>
-</MyComponent>
-```
+На самом деле терминов, которые заказчику необходимо знать для общения с командой дизайнеров, не так уж много, так что пугаться не стоит.
 
-### Alternate usage
+**Фрейм** — основной элемент дизайна в Figma.
 
-There's another way we can use slots, useful particularly when a component can have markdown content is as follows (study carefully...):
+**Экран** — множество фреймов, объединенных в один, могут составлять экран. Как правило, дизайнеры при разговоре с заказчиком оперируют именно экранами: «Экран успеха», «Экран входа в систему» и т.д.
 
-```astro
----
-// (file: MyComponent.astro)
+![Терминология Figma | SobakaPav.ru](~/assets/images/articles/figma/3.png)
+_Слева — фрейм. Справа — экран iPhone 14, состоящий из трех фреймов_
 
-const { title } = Astro.props;
-export interface Props {
-  title: string;
-}
-const content: string = await Astro.props.render('default');
----
+**Страница** — раздел проекта, группирующий макеты экранов по определенному признаку или процессу: «Регистрация», «Личный кабинет», «Документы» и т.д.
 
-// renders the html to the 'content' variable
-<div>
-  <h2>{title}</h2>
-  <div set:html={content} />
-  <!-- slot contents injected here -->
-  <div></div>
-</div>
-```
+**Проект** — набор макетов, как правило, разбитых на страницы, посвященных определенному процессу или тематике. Например: «Система дистанционного мониторинга артериального давления», «Платформа кибербезопасности Pangeo radar», «Маркетплейс строительных материалов» и т.д.
 
-Whoa!! What's going on here?
+**Рабочее пространство** — объединяет все проекты, которые пользователь может редактировать. Просматривать макеты в чужих рабочих пространствах по ссылке-приглашению может каждый, но если пользователь скопирует проект в свое рабочее пространство пользователя, то сможет его редактировать.
 
-Notice there is no slot definition in the html portion of the component. Instead, what we do is have _Astro_ render the slot content (here, the 'default' content, but you can also render named slots) into a variable, and then use that content in a _div_ (for instance).
+<a name="anchor4">## Рабочие области Figma</a>
 
-So, if the usage is in a markdown file, like so:
+Обычно тут пускаются в пространные объяснения, для чего в интерфейсе Figma предусмотрен тот или иной раздел и где на панели инструментов кнопка, рисующая квадратик. Но заказчик чаще всего попадает в Figma по ссылке на проект, выданной кем-то из участников команды, и не для того, чтобы рисовать там квадратик (он за это специально обученным людям деньги платит).
 
-```mdx
-import MyComponent from '../../components/MyComponent';
+Все, что нужно знать заказчику в этот момент про интерфейс фигма, — что она состоит из двух рабочих областей:
 
-# Using the above component in a .mdx file (that can take components)
+1. Графический редактор
+2. Менеджер проектов
 
-{' '}
+Функционал каждого из них разберем подробнее, но только в рамках потребностей заказчика.
 
-<MyComponent title="This is a slot implementor">### Here is some markdown content - With a bullet item.</MyComponent>
-```
+### Графический редактор
 
-_MyComponent_ renders the markdown to html and then injects it into the div.
+Именно сюда попадает заказчик по ссылке-приглашению. Именно здесь идет работа и стоит дым коромыслом. Рабочая область графического редактора поделена на несколько разделов, но не все из них нужны заказчику.
 
-This actually has a big advantage -- consider that with the normal usage you don't have access to the slot contents: _Astro_ just plops the content into the _&lt;slot/&gt;_ tag. Using this method, however, allows you to access the content and further manipulate it before it gets inserted into the html.
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/4.png)
 
-This allows a great deal of flexibility in component design.
+1. Та самая панель инструментов, основное предназначение которой, — дать дизайнеру возможность нарисовать квадратик, кружочек и прочее. Заказчик же с ее помощью может сохранять файл, перемещаться по рабочей области, экспортировать в PDF и комментировать (эти функции мы рассмотрим позже).
+2. Расположение файла и имя позволяют среди прочего переименовывать файл и делать копию. В нашем примере файл относится к проекту Neurobureau, и называется Нейробюро. Внешний файл.
+3. Рабочая область проекта. Здесь происходит основная часть работы: создаются холсты, на которые размещают изображения, экраны, рисуются таблицы и схемы и т. д. Перемещаться по ней можно несколькими способами:
 
-### Yet Another Step
+- Пользуясь тачпадом ноутбука
+- С помощью инструмента "Hand tool", таская рабочую область зажатой левой клавишей мыши
 
-Now, we get to the techniques used in _AstroWind_, we'll use the _pages/index.astro_ file to illustrate.
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/5.png)
 
-You'll note that the index file imports a lot of components, each one roughly analagous to a panel in the index page. Each of these components, in turn, is instantiated sequentially throughout the page. But, you'll notice that some of them use this kind of construct (we'll use the last section, _CallToAction_, as it is most illustrative of the technique):
+Зум в этой области работает при помощи стандартных горячих клавиш браузера: Ctrl+ (Win), ⌘+ (Mac) для приближения и Ctrl- (Win), ⌘- (Mac) для отдаления.
+4. Страницы и слои. В этой области перечислены все единицы макетов, с которыми работает дизайнер и по которым может понадобиться навигировать заказчику. На страницах, как правило, группируются макеты, относящиеся к тому или иному смысловому блоку проекта (в нашем примере это 01-Главная, 02-Создание исследования и т.д.).. Галочкой отмечена страница, на которой в данный момент находится пользователь.
 
-```astro
-<CallToAction
-  callToAction={{
-    text: 'Get template',
-    href: 'https://github.com/onwidget/astrowind',
-    icon: 'tabler:download',
-  }}
->
-  <Fragment slot="title">
-    Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-  </Fragment>
+Ниже, под разделительной линией, расположен список экранов и слоев — вотчина исключительно дизайнера.
+5. Правая панель позволяет настраивать активный элемент. Это также зона ответственности дизайнера, останавливаться подробно не будем.
 
-  <Fragment slot="subtitle">
-    Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't waste
-    more time! :P
-  </Fragment>
-</CallToAction>
-```
+6. Правая часть верхней панели, несомненно, представляет интерес для заказчика.
 
-Some things to note, here:
+- Кнопка наушников позволяет присоединиться к внутреннему созвону (да-да, можно созваниваться с коллегами непосредственно здесь, без плясок с бубнами со сторонними сервисами). В этом случае появляется панель управления звонком, где можно увидеть собеседников, выключить микрофон и, собственно, покинуть встречу.
 
-<DListItem dt="The <em>callToAction</em> argument">
-  This argument is actually being passed a javascript object -- not a string. (However, in the TS definition, it could
-  be a string...)
-</DListItem>
-<DListItem dt="There are several <em>Fragment</em> children">
-  Furthermore, these &lt;Fragment/&gt; elements each have a _slot="(value)"_ specifier.
-</DListItem>
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/6.jpg)
 
-The latter seems odd, because &lt;Fragment/&gt; is a built-in component over which you have no control, and doesn't have a provision for rendering slots, <em>per se</em>.
+Если нижнюю плашку не видно, нужно нажать на наушники еще раз — фигма любит ее скрывать. От багов никто не застрахован, в конце концов.
 
-The answer lies in a paragraph in the _Astro_ docs, slots section, which states:
+- Круглая аватарка отображает, кто присутствует в файле в данный момент, и позволяет установить режим слежения за пользователем. Чтобы максимально насладиться возможностями этой функции нужно один раз кликнуть на аватарку пользователя, которому собираетесь «сесть на хвост», налить себе чашечку кофе расслабиться и наблюдать за перемещениями дизайнера на экране, внимая его объяснениям. Аватарка человека, за которым следят, будет обведена.
+- Кнопка "Share" позволяет скопировать ссылку на проект (функция "Copy link") или прислать кому-либо приглашение по Email.
 
-> Use a `slot="my-slot"` attribute on the child element that you want to pass through to a matching slot `name="my-slot" />` placeholder in your component.
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/7.jpg)
 
-That's pretty concise and a bit of a head-scratcher to read, but basically what it says is that:
+Как правило, при ознакомлении с макетами, особенно при слежке за перемещениями дизайнера, все эти панели управления только мешают, поэтому горячие клавиши Ctrl\ (Win) и ⌘\ (Mac) дают возможность скрывать и показывать их.
 
-1. Given a component that defines a slot:
-1. you can reference a slot from a child element of that component and,
-1. provide content to the parent component's slot from the child by naming the slot in the child with a `slot="<slot-name>"` property assignment, where the _slot-name_ is the parent's slot.
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/8.jpg)
+_Окно Figma с включенными панелями управления и без них_
 
-So, in the example above, the _CallToAction_ component defines the _subtitle_ slot, and the following _&lt;Fragment slot="subtitle"&gt;_ populates the slot with the following content:
+### Менеджер проектов
 
-```astro
-<Fragment slot="subtitle">
-  Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't waste
-  more time! :P
-</Fragment>
-```
+Позволяет навигировать по доступным проектам, удалять их, перемещать и переименовывать. Сюда пользователь попадает после авторизации на сайте figma.com. По умолчанию отображаются последние просмотренные проекты, в которые можно перейти по клику.
 
-And, the _CallToAction_ component defines and renders it thusly:
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/9.jpg)
 
-```astro
----
-//...
-const { subtitle = await Astro.slots.render('subtitle') } = Astro.props;
----
+Из рабочего пространства в менеджер файлов можно попасть с помощью кнопки "Back to files" контекстного меню Figma, расположенной на панели инструментов.
 
-//...
-{subtitle && <p class="text-xl text-muted dark:text-slate-400" set:html={subtitle} />}
- //...
-```
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/10.jpg)
 
-There's a lot to wrap your head around, here.
+Чтобы получить ссылку, удалить, переименовать или переместить проект можно воспользоваться контекстным меню по клику правой кнопкой мыши.
 
-Notice first that _subtitle_ is defined as a prop/argument, but it's being processed as a slot. Interestingly, prop args and slots seem to be somewhat interchangeable: if the subtitle was just a string, it would simply take that assignment. The main difference is that if you render them independently, you have to call the render with an _await_ modifier.
+![Рабочие области Figma | SobakaPav.ru](~/assets/images/articles/figma/11.jpg)
+
+<a name="anchor5">## Комментирование макетов</a>
+
+На панели инструментов рабочей области есть кнопка "Add comment", которая значительно упрощает коммуникацию между участниками проекта. Если появилось неукротимое желание прокомментировать происходящее на экране, можно воспользоваться этой кнопкой или нажать на клавиатуре "С". Курсор мыши превратится в иконку комментария, который можно поставить в любом месте макета или рабочей области.
+
+![Комментирование макетов | SobakaPav.ru](~/assets/images/articles/figma/12.jpg)
+
+При этом на месте правой панели открывается цепочка комментариев, по которым можно навигировать и отвечать. Так же комментарий можно скрыть в случае решения, нажав кнопку "Resolve". Кнопка "Sort / Filter" панели комментариев дает возможность упорядочить их по дате, показать непрочитанные и ранее решенные (на случай, если дизайнер вдруг проигнорировал замечание заказчика и просто «убил» комментарий, ай-яй-яй).
+
+![Комментирование макетов | SobakaPav.ru](~/assets/images/articles/figma/13.jpg)
+
+<a name="anchor6">## Действия с файлом</a>
+
