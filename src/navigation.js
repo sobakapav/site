@@ -7,11 +7,11 @@ export const headerData = {
       links: [
         {
           text: 'Обычные кейсы',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('/#cases'),
         },
         {
           text: 'Микрокейсы',
-          href: getPermalink('/homes/startup'),
+          href: getPermalink('/#microcases'),
         },       
       ],
     },
