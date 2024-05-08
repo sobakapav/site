@@ -67,7 +67,10 @@ export const headerData = {
           text: 'Выпускники',
           href: getPermalink('/pricing'),
         },
-        
+        {
+          text: 'Соцсети',
+          href: getPermalink('/#society'),
+        },
        ],
     },
     
@@ -75,40 +78,8 @@ export const headerData = {
       text: 'Контакты',
       href: '#',
     },
-    {
-      text: 'Работа у нас',
-      links: [
-        {
-          text: 'Вакансии',
-          href: getPermalink('#vacancy'),
-        },
-        {
-          text: 'Выпускники',
-          href: getPermalink('#graduates'),
-        },       
-      ],
-    },
-    {
-      text: 'Соцсети',
-      links: [
-        {
-          text: 'Все соцсети',
-          href: getPermalink('/#society'),
-        },
-        {
-          text: 'Telegram',
-          href: 'https://t.me/sobakawow',
-        }, 
-        {
-          text: 'ВКонтакте',
-          href: 'https://vk.com/sobakapavlovaltd',
-        }, 
-        {
-          text: 'VC',
-          href: 'https://vc.ru/u/230065-sobaka-pavlova',
-        },     
-      ],
-    },
+    
+    
     {
       text: 'Дизайн-задачник',
       href: '#',
