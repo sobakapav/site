@@ -51,10 +51,26 @@ export const headerData = {
         },
        ],
     },
+
     {
       text: 'О компании',
-      href: '#',
+      links: [
+        {
+          text: 'О нас',
+          href: getPermalink('/#features'),
+        },
+        {
+          text: 'Вакансии',
+          href: getPermalink('/services'),
+        },
+        {
+          text: 'Выпускники',
+          href: getPermalink('/pricing'),
+        },
+        
+       ],
     },
+    
     {
       text: 'Контакты',
       href: '#',
