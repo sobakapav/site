@@ -77,19 +77,19 @@ export const headerData = {
       links: [
         {
           text: 'Все соцсети',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('/#society'),
         },
         {
           text: 'Telegram',
-          href: getPermalink('/homes/startup'),
+          href: 'https://t.me/sobakawow',
         }, 
         {
           text: 'ВКонтакте',
-          href: getPermalink('/homes/startup'),
+          href: 'https://vk.com/sobakapavlovaltd',
         }, 
         {
           text: 'VC',
-          href: getPermalink('/homes/startup'),
+          href: 'https://vc.ru/u/230065-sobaka-pavlova',
         },     
       ],
     },
