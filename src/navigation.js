@@ -64,11 +64,11 @@ export const headerData = {
       links: [
         {
           text: 'Вакансии',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('#vacancy'),
         },
         {
           text: 'Выпускники',
-          href: getPermalink('/homes/startup'),
+          href: getPermalink('#graduates'),
         },       
       ],
     },
