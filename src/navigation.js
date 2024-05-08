@@ -97,10 +97,9 @@ export const headerData = {
       text: 'Дизайн-задачник',
       href: '#',
     },
-   
-   
+      
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+
 };
 
 export const footerData = {
