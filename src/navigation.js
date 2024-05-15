@@ -4,16 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Портфолио',
-      links: [
-        {
-          text: 'Обычные кейсы',
-          href: getPermalink('/#cases'),
-        },
-        {
-          text: 'Микрокейсы',
-          href: getPermalink('/#microcases'),
-        },       
-      ],
+      href: '#',
     },
 
     {
@@ -53,7 +44,7 @@ export const headerData = {
     },
 
     {
-      text: 'О компании',
+      text: 'О нас',
       links: [
         {
           text: 'О нас',
