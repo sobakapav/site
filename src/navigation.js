@@ -62,13 +62,13 @@ export const headerData = {
           text: 'Соцсети',
           href: getPermalink('/#society'),
         },
+        {
+          text: 'Контакты',
+          href: '#',
+        },
        ],
     },
     
-    {
-      text: 'Контакты',
-      href: '#',
-    },
     
     
     {
