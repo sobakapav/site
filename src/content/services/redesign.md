@@ -4,11 +4,11 @@ pageTitle: Точечный редизайн интерфейса
 subtitle: Ваш продукт и его метрики существенного улучшатся. Вы добьетесь этого, продвигаясь к цели короткими итерациями и не ломая то, что уже работает. Мы подготовим план и дизайн-макеты.
 images:
     imageMain:
-        urlLarge: /img/services/service-redesign-l.png 
-        urlSmall: /img/services/service-redesign-s.png
+        urlLarge: /images/services/service-redesign-l.png 
+        urlSmall: /images/services/service-redesign-s.png
         alt: Собака Павлова || Точечный редизайн интерфейса
     imageMap:
-        url: /img/services/service-redesign-map.png
+        url: /images/services/service-redesign-map.png
         alt: Точечный редизайн интерфейса || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -22,41 +22,41 @@ blueBlockText:
         text: У владельца продукта сформируется понимание, нужен ли глобальный редизайн, или достаточно такого точечного рефакторинга. 
 results:
     -
-        image: /img/interface.svg
+        image: /images/interface.svg
         alt: interface icon
         title: План изменений
         text: На основе аудита и обсуждений
     -
-        image: /img/figma.svg
+        image: /images/figma.svg
         alt: Figma logo
         title: Макеты и аналог ТЗ
         text: Конкретная постановка для разработчиков
     -
-        image: /img/interface.svg
+        image: /images/interface.svg
         alt: interface icon
         title: UI-библиотека
         text: Для дальнейшего развития дизайна своими силами
 works:
     -
         link: https://sobakapav.ru/portfolio/petrovich
-        image: /img/logo-petrovich.png
+        image: /images/logo-petrovich.png
         alt: Petrovich logo
         text: Провели точечный редизайн ключевых страниц. Работали на грани внедрения в команду.
     -
         link: https://sobakapav.ru/microcases/onkor
-        image: /img/logo-onkor.png
+        image: /images/logo-onkor.png
         alt: Onkor logo
         text: Перенесли несколько разделов десктоп-системы в веб, улучшив ключевые страницы.
     -
         link: https://sobakapav.ru/portfolio/geonaft
-        image: /img/logo-geonaft.png
+        image: /images/logo-geonaft.png
         alt: Geonaft logo
         text: В проекте было много аналитической работы по поиску точек сервисного роста для декстоп-приложения.
     -
         link: https://sobakapav.ru/portfolio/electronika
-        image: /img/logo-electronica.png
+        image: /images/logo-electronica.png
         alt: Electronica logo
-        text: Перепроектировали UX ключевых страниц к отраслевой выставке. 
+        text: Перепроектировали UX ключевых страниц к отраслевой выставке.
 mapBlock:
     -
         type: h2
