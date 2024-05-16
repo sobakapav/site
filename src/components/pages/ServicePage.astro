@@ -1,6 +1,6 @@
 ---
-import '~/assets/styles/style.css';
 import '~/assets/styles/tailwind.css';
+import '~/assets/styles/style.css';
 import './ServicePage.less';
 
 import TitleBlockServices from '../services/TitleBlockServices.astro';
@@ -26,6 +26,7 @@ const { content } = Astro.props;
 		<title>{content.pageTitle}</title>
 	</head>
 	<body>
+	
     <div class="mainframe">
 		  <TitleBlockServices data={content} />
 
