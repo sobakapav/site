@@ -4,11 +4,11 @@ pageTitle: Прототип под инвестиции
 subtitle: Вы проведете эффектную презентацию своего продукта. Слайды покажут его преимущества, а прототип интерфейса продемонстрирует конкретную реализацию.
 images:
     imageMain:
-        urlLarge: /img/services/service-prototype-l.png 
-        urlSmall: /img/services/service-prototype-s.png
+        urlLarge: /src/assets/images/services/service-prototype-l.png 
+        urlSmall: /src/assets/images/services/service-prototype-s.png
         alt: Собака Павлова || Прототип под инвестиции
     imageMap:
-        url: /img/services/service-prototype-map.png
+        url: /src/assets/images/services/service-prototype-map.png
         alt: Прототип под инвестиции || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -22,34 +22,34 @@ blueBlockText:
         text: Команда получит второе мнение о своем продукте, просто потому, что в процессе работы мы не имеем привычки его скрывать..
 results:
     -
-        image: /img/figma.svg
+        image: /src/assets/images/figma.svg
         alt: Figma logo
         title: Макеты в Figma
         text: Визуально привлекательный прототип или макеты отдельных страниц
     -
-        image: /img/interface.svg
+        image: /src/assets/images/interface.svg
         alt: interface icon
         title: Презентация
         text: Подготовленная с вашим участием                                                       
 works:
     -
         link: https://sobakapav.ru/portfolio/alfastrah-design
-        image: /img/logo-alfastrah.png
+        image: /src/assets/images/logo-alfastrah.png
         alt: AlfaStrah logo
         text: Помогли команде стартовать внутренний проект с презентации будущего интерфейса.
     -
         link: https://sobakapav.ru/portfolio/anggell
-        image: /img/logo-anggell.png
+        image: /src/assets/images/logo-anggell.png
         alt: Anggell logo
         text: На примере двух экранов отразили основную идею продукта.
     -
         link: https://sobakapav.ru/portfolio/algohelp
-        image: /img/logo-algohelp.png
+        image: /src/assets/images/logo-algohelp.png
         alt: Algohelp logo
         text: Помогли команде проекта понять, что для цифровой версии нужно изменение методологии.
     -
         link: https://sobakapav.ru/portfolio/data-solution
-        image: /img/logo-ds.png
+        image: /src/assets/images/logo-ds.png
         alt: Ati logo
         text: Собрали презентацию, которая помогла команде продвинуть проект внутри корпорации.
 mapBlock:

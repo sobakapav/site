@@ -89,7 +89,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       >
         {
           links.map(({ text, href, links }) => (
-            <li class={links?.length ? 'dropdown' : ''}>
+            <li class={links?.length ? 'dropdown whitespace-nowrap' : 'whitespace-nowrap'}>
               {links?.length ? (
                 <>
                   <button class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center">
