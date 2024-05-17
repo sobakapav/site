@@ -1,0 +1,142 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
+
+const metadata = {
+  title: 'Передача макетов в разработку',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Startup Web Demo"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get templates',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+  >
+    <Fragment slot="title">
+      Передача макетов <span class="text-accent dark:text-white highlight">в разработку</span> 
+    </Fragment>
+
+    <Fragment slot="subtitle">
+        Разработка — следующий после дизайна этап реализации проекта. И чем качественнее была выполнена работа на этапе дизайна, тем быстрее и дешевле разработка. Если придерживаться определенных принципов работы на этапе проектирования, то вопрос качества решается сам собой в процессе.
+
+        Мы придерживаемся девяти ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.
+    </Fragment>
+
+    <!--<Fragment slot="image">
+      <YoutubeVideo videoId="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
+    </Fragment>-->
+  </Hero>
+   
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Кому полезно?"
+    
+    items={[
+      {
+        title: 'Менеджерам',
+        description:
+          'Четкие объяснения с иллюстрациями «что такое хорошо, и что такое плохо» помогают контролировать дизайнеров и не позволяют всплывать лишним часам на проекте',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'Дизайнерам',
+        description:
+          'Лежащий в основе этих практик наш собственный опыт хождения по граблям позволяет дизайнерам учиться на чужих ошибках',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Разработчикам',
+        description:
+          'Соблюдение этих принципов ведет к сокращению времени разработки и, как следствие, финансовых затрат',
+        icon: 'tabler:number-3',
+      },
+    ]}
+  >
+    
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="9 практик по передаче макетов"
+    
+    columns={3}
+    items={[
+      {
+        title: 'Обсуждение с заказчиком требований к макету',
+        description:
+          'Лучше выяснить все заранее, чем потом экстренно все исправлять',
+        icon: 'tabler:artboard',
+      },
+      {
+        title: 'Визуализация пользовательского пути',
+        description: 'Чтобы ничего не упустить в процессе дизайна и разработки',
+        icon: 'tabler:picture-in-picture',
+      },
+      {
+        title: 'Cоблюдение последовательности в макетах',
+        description:
+          'Проще работать, когда все разложено по порядку',
+        icon: 'tabler:adjustments-horizontal',
+      },
+      {
+        title: 'Именование всех элементов интерфейса',
+        description: 'Success screen, а не Frame100500',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Понимание базовых принципов верстки',
+        description:
+          'Думай как верстальщик, действуй как верстальщик, стань верстальщиком',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Соблюдение гигиенты рабочего пространства',
+        description: 'Чистота в макетах - залог душевного здоровья дизайнера и разработчика',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Прототипирование',
+        description: 'Самый надежный спосо избежать ошибок и недопонимания процесов при разработке',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Организация библиотеки компонентов',
+        description: 'Тишина и порядок должен быть в библиотеке',
+        icon: 'tabler:plug-connected',
+      },
+      {
+        title: 'Соблюдение консистентности',
+        description: 'Не дизайн-системой единой',
+        icon: 'tabler:plug-connected',
+      },
+    ]}
+  />
+
+  
+
+  

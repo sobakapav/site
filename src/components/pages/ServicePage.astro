@@ -1,4 +1,5 @@
 ---
+import '~/assets/styles/tailwind.css';
 import '~/assets/styles/style.css';
 import './ServicePage.less';
 
@@ -9,8 +10,13 @@ import Prices from '../services/Prices.astro';
 import Budget from '../services/Budget.astro';
 import TextBlock from '../textblock/TextBlock.astro';
 import ResultsBlock from '../services/ResultsBlock.astro';
+import Image from '~/components/common/Image.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
 
 const { content } = Astro.props;
+import { headerData, footerData } from '~/navigation';
 
 ---
 
@@ -24,7 +30,9 @@ const { content } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{content.pageTitle}</title>
 	</head>
-	<body>
+	<body class="antialiased text-default bg-page tracking-tight">
+    <Header {...headerData} isSticky showToggleTheme />
+	
     <div class="mainframe">
 		  <TitleBlockServices data={content} />
 
@@ -51,6 +59,8 @@ const { content } = Astro.props;
       </BlueBlock>
 
     </div>
+
+    <BasicScripts />
 
 	</body>
 </html>
