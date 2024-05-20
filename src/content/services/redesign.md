@@ -22,39 +22,39 @@ blueBlockText:
         text: У владельца продукта сформируется понимание, нужен ли глобальный редизайн, или достаточно такого точечного рефакторинга. 
 results:
     -
-        image: /images/interface.svg
+        image: /images/services/interface.svg
         alt: interface icon
         title: План изменений
         text: На основе аудита и обсуждений
     -
-        image: /images/figma.svg
+        image: /images/services/figma.svg
         alt: Figma logo
         title: Макеты и аналог ТЗ
         text: Конкретная постановка для разработчиков
     -
-        image: /images/interface.svg
+        image: /images/services/interface.svg
         alt: interface icon
         title: UI-библиотека
         text: Для дальнейшего развития дизайна своими силами
 works:
     -
         link: https://sobakapav.ru/portfolio/petrovich
-        image: /images/logo-petrovich.png
+        image: /images/services/logo-petrovich.png
         alt: Petrovich logo
         text: Провели точечный редизайн ключевых страниц. Работали на грани внедрения в команду.
     -
         link: https://sobakapav.ru/microcases/onkor
-        image: /images/logo-onkor.png
+        image: /images/services/logo-onkor.png
         alt: Onkor logo
         text: Перенесли несколько разделов десктоп-системы в веб, улучшив ключевые страницы.
     -
         link: https://sobakapav.ru/portfolio/geonaft
-        image: /images/logo-geonaft.png
+        image: /images/services/logo-geonaft.png
         alt: Geonaft logo
         text: В проекте было много аналитической работы по поиску точек сервисного роста для декстоп-приложения.
     -
         link: https://sobakapav.ru/portfolio/electronika
-        image: /images/logo-electronica.png
+        image: /images/services/logo-electronica.png
         alt: Electronica logo
         text: Перепроектировали UX ключевых страниц к отраслевой выставке.
 mapBlock:

@@ -4,11 +4,11 @@ pageTitle: Добавление новых возможностей
 subtitle: Вы сможете изменять и развивать ваш продукт, не ломая то, что уже работает.
 images:
     imageMain:
-        urlLarge: /src/assets/images/services/service-new-l.png 
-        urlSmall: /src/assets/images/services/service-new-s.png
+        urlLarge: /images/services/service-new-l.png 
+        urlSmall: /images/services/service-new-s.png
         alt: Собака Павлова || Добавление новых возможностей в существующий продукт
     imageMap:
-        url: /src/assets/images/services/service-new-map.png
+        url: //images/services/service-new-map.png
         alt: Добавление новых возможностей || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -22,39 +22,39 @@ blueBlockText:
         text: Вовлеченный в проект представитель заказчика получит опыт работы с дизайн-командой, если раньше его не имел.
 results:
     -
-        image: /src/assets/images/figma.svg
+        image: /images/services/figma.svg
         alt: Figma logo
         title: Дизайн в Figma
         text: Новой или измененной системы
     -
-        image: /src/assets/images/interface.svg
+        image: /images/services/interface.svg
         alt: interface icon
         title: Аналог ТЗ
         text: По интеграции новой функциональности
     -
-        image: /src/assets/images/interface.svg
+        image: /images/services/interface.svg
         alt: interface icon
         title: Интерактивный прототип
         text: При необходимости
 works:
     -
         link: https://sobakapav.ru/microcases/BiBi
-        image: /src/assets/images/logo-bibi.png
+        image: /images/services/logo-bibi.png
         alt: BiBi logo
         text: Добавили новый способ доставки и изменили процесс чек-аута интернет-магазина.
     -
         link: https://sobakapav.ru/microcases/AzbukaVkusa
-        image: /src/assets/images/logo-azbuka.png
+        image: /images/services/logo-azbuka.png
         alt: Azbuka Vkusa logo
         text: Внедрили в существующий интернет-магазин доставку алкоголя.
     -
         link: https://sobakapav.ru/portfolio/dau
-        image: /src/assets/images/logo-dau.png
+        image: /images/services/logo-dau.png
         alt: Dau logo
         text: Изменили сложный бизнес-процесс, заметно упростив покупку билетов.
     -
         link: https://sobakapav.ru/portfolio/autotransinfo
-        image: /src/assets/images/logo-ati.png
+        image: /images/services/logo-ati.png
         alt: Ati logo
         text: Перепроектировали форму поиска грузоперевозчиков под изменившиеся вводные.
 mapBlock:
