@@ -8,7 +8,7 @@ images:
         urlSmall: /services/audit-s.png
         alt: Собака Павлова || UX-аудит
     imageMap:
-        url: /images/services/service-audit-map.png
+        url: /images/services/audit/service-audit-map.png
         alt: UX-аудит || Ключевые этапы работы над проектом
 blueBlockText:
     -
