@@ -37,14 +37,14 @@ results:
         title: Список инсайтов
         text: По результатам пользовательских интервью  
     -   
-        image: /images/services/brainstorm.svg
+        image: /images/services/dialog.svg
         alt: brainstorm
         title: Коллективное обсуждение
         text: Результатов с ответами на вопросы                                                    
 works:
     -
         link: https://sobakapav.ru/portfolio/
-        image: /images/services/logo-aquafor.png
+        image: /images/services/audit/logo-aquafor.png
         alt: Aquafor logo
         text: Оптимизировали процесс повторных продаж картриджей к фильтрам для воды.
     -
@@ -54,12 +54,12 @@ works:
         text: Провели полный аудит портала по продаже запчастей.
     -
         link: https://sobakapav.ru/portfolio/GoodWood
-        image: /images/services/logo-GoodWood.png
+        image: /images/services/audit/logo-GoodWood.png
         alt: GoodWood logo
         text: Классический аудит сайта компании, которая занимается строительством частных домов под ключ.
     -
         link: https://sobakapav.ru/portfolio/mirbir
-        image: /images/services/logo-mirbir.png
+        image: /images/services/audit/logo-mirbir.png
         alt: Mirbir logo
         text: Выявили у пользователей сложности с определением специализации магазина.
 mapBlock:
