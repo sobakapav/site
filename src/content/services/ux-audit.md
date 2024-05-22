@@ -22,7 +22,7 @@ blueBlockText:
         text: Вовлеченный в проект представитель заказчика получит опыт работы с дизайн-командой, если раньше его не имел.
 results:
     -
-        image: /images/services/list.svg
+        image: /images/services/guide.svg
         alt: list of tasks
         title: Список задач
         text: С приоритетами
@@ -32,7 +32,7 @@ results:
         title: Отчет с рекомендациями
         text: В согласованном с вами формате
     -
-        image: /images/services/list.svg
+        image: /images/services/guide.svg
         alt: list of insight
         title: Список инсайтов
         text: По результатам пользовательских интервью  
