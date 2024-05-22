@@ -32,7 +32,7 @@ results:
         title: Отчет с рекомендациями
         text: В согласованном с вами формате
     -
-        image: /images/services/guide.svg
+        image: /images/services/insight.svg
         alt: list of insight
         title: Список инсайтов
         text: По результатам пользовательских интервью  
