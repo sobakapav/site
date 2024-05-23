@@ -4,11 +4,11 @@ pageTitle: Продуктовое исследование
 subtitle: Вы найдете ответы на интересующие вас вопросы о пользователях и их поведении и получите наглядную CJM. 
 images:
     imageMain:
-        urlLarge: /images/services/audit/CJM-l.png 
-        urlSmall: /services/CJM-s.png
+        urlLarge: /images/services/product-research/CJM-l.png 
+        urlSmall: /images/services/product-research/CJM-s.png 
         alt: Собака Павлова || Продуктовое исследование
     imageMap:
-        url: /images/services/audit/product_research_map.png
+        url: /images/services/product-research/product_research_map.png
         alt: Продуктовое исследование || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -52,22 +52,22 @@ results:
 works:
     -
         link: https://sobakapav.ru/portfolio/gazprom-neft
-        image: /images/services/audit/logo-gpn.png
+        image: /images/services/product-research/logo-gpn.png
         alt: GazPromNeft logo
         text: Построили CJM процесса закупок, чтобы снизить затраты на их проведение.
     -
         link: https://sobakapav.ru/portfolio/arriva
-        image: /images/services/logo-arriva.png
+        image: /images/services/product-research/logo-arriva.png
         alt: Arriva logo
         text: Досконально изучили работу sales-менеджера и сразу предложили конкретные улучшения в CRM.
     -
         link: https://sobakapav.ru/portfolio/
-        image: /images/services/audit/logo-simetra.png
+        image: /images/services/product-research/logo-simetra.png
         alt: Simetra logo
         text: Исследовали рабочее место оператора ГИС-системы организации дорожного движения. 
     -
         link: https://sobakapav.ru/portfolio/qiwi
-        image: /images/services/audit/logo-qiwi.png
+        image: /images/services/product-research/logo-qiwi.png
         alt: qiwi logo
         text: Провели конкурентное сравнение, построили CJM и план поэтапного изменения интерфейса.
 
