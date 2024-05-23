@@ -1,15 +1,15 @@
 ---
 
-pageTitle: UX-аудит
-subtitle: У вас будут конкретные обоснованные рекомендации и приоритизированный список задач по исправлению критичных для бизнеса проблем в интерфейсе продукта.
+pageTitle: Продуктовое исследование
+subtitle: Вы найдете ответы на интересующие вас вопросы о пользователях и их поведении и получите наглядную CJM. 
 images:
     imageMain:
         urlLarge: /images/services/audit/audit-l.png 
         urlSmall: /services/audit-s.png
-        alt: Собака Павлова || UX-аудит
+        alt: Собака Павлова || Продуктовое исследование
     imageMap:
         url: /images/services/audit/service-audit-map.png
-        alt: UX-аудит || Ключевые этапы работы над проектом
+        alt: Продуктовое исследование || Ключевые этапы работы над проектом
 blueBlockText:
     -
         type: h2
