@@ -22,8 +22,8 @@ blueBlockText:
         text: У владельца продукта сформируется понимание, нужен ли глобальный редизайн, или достаточно такого точечного рефакторинга. 
 results:
     -
-        image: /images/services/interface.svg
-        alt: interface icon
+        image: /images/services/guide.svg
+        alt: guide icon
         title: План изменений
         text: На основе аудита и обсуждений
     -
@@ -32,8 +32,8 @@ results:
         title: Макеты и аналог ТЗ
         text: Конкретная постановка для разработчиков
     -
-        image: /images/services/interface.svg
-        alt: interface icon
+        image: /images/services/biblio.svg
+        alt: biblio icon
         title: UI-библиотека
         text: Для дальнейшего развития дизайна своими силами
 works:

@@ -4,11 +4,11 @@ pageTitle: Прототип под инвестиции
 subtitle: Вы проведете эффектную презентацию своего продукта. Слайды покажут его преимущества, а прототип интерфейса продемонстрирует конкретную реализацию.
 images:
     imageMain:
-        urlLarge: /images/services/service-prototype-l.png 
-        urlSmall: /images/services/service-prototype-s.png
+        urlLarge: /images/services/prototype/service-prototype-l.png 
+        urlSmall: /images/services/prototype/service-prototype-s.png
         alt: Собака Павлова || Прототип под инвестиции
     imageMap:
-        url: /images/services/service-prototype-map.png
+        url: /images/services/prototype/service-prototype-map.png
         alt: Прототип под инвестиции || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -27,29 +27,29 @@ results:
         title: Макеты в Figma
         text: Визуально привлекательный прототип или макеты отдельных страниц
     -
-        image: /images/services/interface.svg
-        alt: interface icon
+        image: /images/services/pp.svg
+        alt: presentation icon
         title: Презентация
         text: Подготовленная с вашим участием                                                       
 works:
     -
         link: https://sobakapav.ru/portfolio/alfastrah-design
-        image: /images/services/logo-alfastrah.png
+        image: /images/services/prototype/logo-alfastrah.png
         alt: AlfaStrah logo
         text: Помогли команде стартовать внутренний проект с презентации будущего интерфейса.
     -
         link: https://sobakapav.ru/portfolio/anggell
-        image: /images/services/logo-anggell.png
+        image: /images/services/prototype/logo-anggell.png
         alt: Anggell logo
         text: На примере двух экранов отразили основную идею продукта.
     -
         link: https://sobakapav.ru/portfolio/algohelp
-        image: /images/services/logo-algohelp.png
+        image: /images/services/prototype/logo-algohelp.png
         alt: Algohelp logo
         text: Помогли команде проекта понять, что для цифровой версии нужно изменение методологии.
     -
         link: https://sobakapav.ru/portfolio/data-solution
-        image: /images/services/logo-ds.png
+        image: /images/services/prototype/logo-ds.png
         alt: Ati logo
         text: Собрали презентацию, которая помогла команде продвинуть проект внутри корпорации.
 mapBlock:
