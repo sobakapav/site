@@ -6,6 +6,7 @@ import './ServicePage.less';
 import TitleBlockServices from '../services/TitleBlockServices.astro';
 import BlueBlock from '../services/BlueBlock.astro';
 import Works from '../services/Works.astro';
+import Info from '../services/Info.astro';
 import Prices from '../services/Prices.astro';
 import Budget from '../services/Budget.astro';
 import TextBlock from '../textblock/TextBlock.astro';
@@ -49,7 +50,8 @@ import { headerData, footerData } from '~/navigation';
         <div class="contentBlock">
           <slot />
         </div>
-        <Works works={content.works}/>
+        { content.works && (<Works works={content.works}/>) }
+        { content.info && (<Info info={content.info}/>) }
 		  </div>
 		  <div class="flex wrap gap-32">
         <Prices comments={content.comments} imageMap={content.images.imageMap}/>
