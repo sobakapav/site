@@ -4,11 +4,11 @@ pageTitle: UX-аудит
 subtitle: У вас будут конкретные обоснованные рекомендации и приоритизированный список задач по исправлению критичных для бизнеса проблем в интерфейсе продукта.
 images:
     imageMain:
-        urlLarge: /src/assets/images/services/audit/audit-l.png 
-        urlSmall: /src/assets/services/audit-s.png
+        urlLarge: /images/services/audit/audit-l.png 
+        urlSmall: /services/audit-s.png
         alt: Собака Павлова || UX-аудит
     imageMap:
-        url: /src/assets/images/services/service-audit-map.png
+        url: /images/services/service-audit-map.png
         alt: UX-аудит || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -22,44 +22,44 @@ blueBlockText:
         text: Вовлеченный в проект представитель заказчика получит опыт работы с дизайн-командой, если раньше его не имел.
 results:
     -
-        image: /src/assets/images/list.svg
+        image: /images/services/list.svg
         alt: list of tasks
         title: Список задач
         text: С приоритетами
     -
-        image: /src/assets/images/doc.svg
+        image: /images/services/doc.svg
         alt: document
         title: Отчет с рекомендациями
         text: В согласованном с вами формате
     -
-        image: /src/assets/images/list.svg
+        image: /images/services/list.svg
         alt: list of insight
         title: Список инсайтов
         text: По результатам пользовательских интервью  
     -   
-        image: /src/assets/images/brainstorm.svg
+        image: /images/services/brainstorm.svg
         alt: brainstorm
         title: Коллективное обсуждение
         text: Результатов с ответами на вопросы                                                    
 works:
     -
         link: https://sobakapav.ru/portfolio/
-        image: /src/assets/images/logo-aquafor.png
+        image: /images/services/logo-aquafor.png
         alt: Aquafor logo
         text: Оптимизировали процесс повторных продаж картриджей к фильтрам для воды.
     -
         link: https://sobakapav.ru/microcases/BiBi
-        image: /src/assets/images/logo-bibi.png
+        image: /images/services/logo-bibi.png
         alt: BiBi logo
         text: Провели полный аудит портала по продаже запчастей.
     -
         link: https://sobakapav.ru/portfolio/GoodWood
-        image: /src/assets/images/logo-GoodWood.png
+        image: /images/services/logo-GoodWood.png
         alt: GoodWood logo
         text: Классический аудит сайта компании, которая занимается строительством частных домов под ключ.
     -
         link: https://sobakapav.ru/portfolio/mirbir
-        image: /src/assets/images/logo-mirbir.png
+        image: /images/services/logo-mirbir.png
         alt: Mirbir logo
         text: Выявили у пользователей сложности с определением специализации магазина.
 mapBlock:
