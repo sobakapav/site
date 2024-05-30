@@ -4,11 +4,11 @@ pageTitle: Добавление новых возможностей
 subtitle: Вы сможете изменять и развивать ваш продукт, не ломая то, что уже работает.
 images:
     imageMain:
-        urlLarge: /images/services/service-new-l.png 
-        urlSmall: /images/services/service-new-s.png
+        urlLarge: /images/services/new-features/service-new-l.png 
+        urlSmall: /images/services/new-features/service-new-s.png
         alt: Собака Павлова || Добавление новых возможностей в существующий продукт
     imageMap:
-        url: //images/services/service-new-map.png
+        url: /images/services/new-features/new-features-map.png
         alt: Добавление новых возможностей || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -38,23 +38,23 @@ results:
         text: При необходимости
 works:
     -
-        link: https://sobakapav.ru/microcases/BiBi
-        image: /images/services/logo-bibi.png
+        link: microcases/BiBi
+        image: /images/services/new-features/logo-bibi.png
         alt: BiBi logo
         text: Добавили новый способ доставки и изменили процесс чек-аута интернет-магазина.
     -
-        link: https://sobakapav.ru/microcases/AzbukaVkusa
-        image: /images/services/logo-azbuka.png
+        link: /microcases/AzbukaVkusa
+        image: /images/services/new-features/logo-azbuka.png
         alt: Azbuka Vkusa logo
         text: Внедрили в существующий интернет-магазин доставку алкоголя.
     -
         link: https://sobakapav.ru/portfolio/dau
-        image: /images/services/logo-dau.png
+        image: /images/services/new-features/logo-dau.png
         alt: Dau logo
         text: Изменили сложный бизнес-процесс, заметно упростив покупку билетов.
     -
         link: https://sobakapav.ru/portfolio/autotransinfo
-        image: /images/services/logo-ati.png
+        image: /images/services/new-features/logo-ati.png
         alt: Ati logo
         text: Перепроектировали форму поиска грузоперевозчиков под изменившиеся вводные.
 mapBlock:
