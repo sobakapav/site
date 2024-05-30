@@ -4,11 +4,11 @@ pageTitle: Контент-дизайн
 subtitle: Ваша экспертиза принесет существенную выгоду, если правильно ею распорядиться. Мы найдем способ использовать контент для решения конкретных бизнес-задач.
 images:
     imageMain:
-        urlLarge: /images/services/content/content-l.png 
-        urlSmall: /services/content/content-s.png
+        urlLarge: /images/services/content-design/content-design-l.png 
+        urlSmall: /services/content-design/content-design-s.png
         alt: Собака Павлова || Контент-дизайн
     imageMap:
-        url: /images/services/content/content-map.png
+        url: /images/services/content-design/content-map.png
         alt: Контент-дизайн || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -40,22 +40,22 @@ results:
 works:
     -
         link: https://sobakapav.ru/portfolio/sberbank
-        image: /images/services/content/logo-sberbank.png
+        image: /images/services/content-design/logo-sberbank.png
         alt: Sberbank logo
         text: Создали гайд по интерфейсным текстам для всех внутренних интерфейсов банка.
     -
         link: https://sobakapav.ru/portfolio/sindbad
-        image: /images/services/content/logo-sindbad.png
+        image: /images/services/content-design/logo-sindbad.png
         alt: Sindbad logo
         text: Спроектировали дизайн авиабилета, основанный на информационных запросах пассажиров.
     -
         link: https://www.eduhund.ru/
-        image: /images/services/content/logo-eduhund.png
+        image: /images/services/content-design/logo-eduhund.png
         alt: eduHund logo
         text: В краткие сроки запустили сайт собственного проекта, насыщенный информацией для различных групп пользователей.
     -
         link: https://sobakapav.ru/portfolio/
-        image: /images/services/content/logo-sp.png
+        image: /images/services/content-design/logo-sp.png
         alt: SP logo
         text: На протяжении долгих лет публикуем подробные кейсы по собственным проектам, что уникально для компании наших масштабов. 
 mapBlock:

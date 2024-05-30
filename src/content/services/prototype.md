@@ -27,7 +27,7 @@ results:
         title: Макеты в Figma
         text: Визуально привлекательный прототип или макеты отдельных страниц
     -
-        image: /images/services/pp.svg
+        image: /images/services/presentation.svg
         alt: presentation icon
         title: Презентация
         text: Подготовленная с вашим участием                                                       

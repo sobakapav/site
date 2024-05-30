@@ -4,11 +4,11 @@ pageTitle: Точечный редизайн интерфейса
 subtitle: Ваш продукт и его метрики существенного улучшатся. Вы добьетесь этого, продвигаясь к цели короткими итерациями и не ломая то, что уже работает. Мы подготовим план и дизайн-макеты.
 images:
     imageMain:
-        urlLarge: /images/services/service-redesign-l.png 
-        urlSmall: /images/services/service-redesign-s.png
+        urlLarge: /images/services/spot-redesign/service-redesign-l.png 
+        urlSmall: /images/services/spot-redesign/service-redesign-s.png
         alt: Собака Павлова || Точечный редизайн интерфейса
     imageMap:
-        url: /images/services/service-redesign-map.png
+        url: /images/services/spot-redesign/service-redesign-map.png
         alt: Точечный редизайн интерфейса || Ключевые этапы работы над проектом
 blueBlockText:
     -
@@ -39,22 +39,22 @@ results:
 works:
     -
         link: https://sobakapav.ru/portfolio/petrovich
-        image: /images/services/logo-petrovich.png
+        image: /images/services/spot-redesign/logo-petrovich.png
         alt: Petrovich logo
         text: Провели точечный редизайн ключевых страниц. Работали на грани внедрения в команду.
     -
         link: https://sobakapav.ru/microcases/onkor
-        image: /images/services/logo-onkor.png
+        image: /images/services/spot-redesign/logo-onkor.png
         alt: Onkor logo
         text: Перенесли несколько разделов десктоп-системы в веб, улучшив ключевые страницы.
     -
         link: https://sobakapav.ru/portfolio/geonaft
-        image: /images/services/logo-geonaft.png
+        image: /images/services/spot-redesign/logo-geonaft.png
         alt: Geonaft logo
         text: В проекте было много аналитической работы по поиску точек сервисного роста для декстоп-приложения.
     -
         link: https://sobakapav.ru/portfolio/electronika
-        image: /images/services/logo-electronica.png
+        image: /images/services/spot-redesign/logo-electronica.png
         alt: Electronica logo
         text: Перепроектировали UX ключевых страниц к отраслевой выставке.
 mapBlock:

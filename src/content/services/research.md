@@ -56,7 +56,7 @@ works:
         alt: Arriva logo
         text: Досконально изучили работу sales-менеджера и сразу предложили конкретные улучшения в CRM.
     -
-        link: https://sobakapav.ru/portfolio/
+        link: https://sobakapav.ru/microcases/Simetra
         image: /images/services/product-research/logo-simetra.png
         alt: Simetra logo
         text: Исследовали рабочее место оператора ГИС-системы организации дорожного движения. 
