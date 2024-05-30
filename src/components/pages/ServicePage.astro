@@ -41,14 +41,15 @@ import { headerData, footerData } from '~/navigation';
 		  <TitleBlockServices data={content} />
 
 		  <BlueBlock>
-        <img src={content.images.imageMain.urlLarge} alt={content.images.imageMain.alt}>
-        <div class="blueblockContent">
+        <img class="hidden md:block" src={content.images.imageMain.urlLarge} alt={content.images.imageMain.alt}>
+        <img class="md:hidden" src={content.images.imageMain.urlSmall} alt={content.images.imageMain.alt}>
+        <div class="blueblockContent flex flex-col md:flex-row flex-wrap">
           <TextBlock block={content.blueBlockText} />
           <ResultsBlock results={content.results} />
         </div>
 		  </BlueBlock>
 
-		  <div class="flex wrap gap-32">
+		  <div class="flex flex-col md:flex-row flex-wrap gap-32">
         <div class="contentBlock">
           <slot />
         </div>
