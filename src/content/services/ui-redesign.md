@@ -5,7 +5,7 @@ subtitle: Вы поднимете привлекательность вашег�
 images:
     imageMain:
         urlLarge: /images/services/ui-redesign/ui-redesign-l.png 
-        urlSmall: /services/ui-redesign/ui-redesign-s.png
+        urlSmall: /images/services/ui-redesign/ui-redesign-s.png
         alt: Собака Павлова || UI-редизайн
     imageMap:
         url: /images/services/audit/service-audit-map.png
