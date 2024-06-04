@@ -63,7 +63,7 @@ works:
         link: https://sobakapav.ru/portfolio/pangeo
         image: /images/services/turnkey/logo-pangeo.png
         alt: Pangeo logo
-        text: Исследовали пользователей и сценариеи использования системы, перепроектировали в новой визуальной стилистике.
+        text: Исследовали пользователей и сценариии использования системы, перепроектировали в новой визуальной стилистике.
     -
         link: https://sobakapav.ru/portfolio/okey
         image: /images/services/turnkey/logo-okey.png

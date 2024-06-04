@@ -27,13 +27,13 @@ results:
         title: Дизайн в Figma
         text: Новой или измененной системы
     -
-        image: /images/services/interface.svg
-        alt: interface icon
+        image: /images/services/doc.svg
+        alt: TZ icon
         title: Аналог ТЗ
         text: По интеграции новой функциональности
     -
-        image: /images/services/interface.svg
-        alt: interface icon
+        image: /images/services/click-prototype.svg
+        alt: click-prototype icon
         title: Интерактивный прототип
         text: При необходимости
 works:

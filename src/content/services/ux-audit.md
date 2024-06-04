@@ -49,7 +49,7 @@ works:
         text: Оптимизировали процесс повторных продаж картриджей к фильтрам для воды.
     -
         link: https://sobakapav.ru/microcases/BiBi
-        image: /images/services/logo-bibi.png
+        image: /images/services/audit/logo-bibi.png
         alt: BiBi logo
         text: Провели полный аудит портала по продаже запчастей.
     -
