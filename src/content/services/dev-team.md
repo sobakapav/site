@@ -5,7 +5,7 @@ subtitle: Вы передадите узким специалистам отве
 images:
     imageMain:
         urlLarge: /images/services/dev-team/dev-team-l.png 
-        urlSmall: /services/dev-team/dev-team-s.png
+        urlSmall: /images/services/dev-team/dev-team-s.png
         alt: Собака Павлова || Продуктовое исследование
     imageMap:
         url: /images/services/dev-team/dev-team-map.png

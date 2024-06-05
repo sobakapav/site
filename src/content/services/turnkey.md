@@ -5,7 +5,7 @@ subtitle: Вы получите дизайн, нужный и удобный д�
 images:
     imageMain:
         urlLarge: /images/services/turnkey/turnkey-l.png 
-        urlSmall: /services/turnkey/turnkey-s.png
+        urlSmall: /images/services/turnkey/turnkey-s.png
         alt: Собака Павлова || UX/UI-дизайн под ключ
     imageMap:
         url: /images/services/turnkey/turnkey-map.png

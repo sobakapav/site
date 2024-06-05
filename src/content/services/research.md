@@ -5,7 +5,7 @@ subtitle: Вы найдете ответы на интересующие вас 
 images:
     imageMain:
         urlLarge: /images/services/product-research/CJM-l.png 
-        urlSmall: /services/product-research/CJM-s.png
+        urlSmall: /images/services/product-research/CJM-s.png
         alt: Собака Павлова || Продуктовое исследование
     imageMap:
         url: /images/services/product-research/product_research_map.png

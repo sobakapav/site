@@ -5,7 +5,7 @@ subtitle: Ваши идеи и наработки в превратятся в 
 images:
     imageMain:
         urlLarge: /images/services/product-team/product-team-l.png 
-        urlSmall: /services/product-team/product-team-s.png
+        urlSmall: /images/services/product-team/product-team-s.png
         alt: Собака Павлова || Работа в продуктовой команде
     imageMap:
         url: /images/services/product-team/product-team-map.png

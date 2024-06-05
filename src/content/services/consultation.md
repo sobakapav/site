@@ -5,7 +5,7 @@ subtitle: Вы получите решение конкретной UX-зада�
 images:
     imageMain:
         urlLarge: /images/services/consultation/consultation-l.png 
-        urlSmall: /services/consultation/consultation-s.png
+        urlSmall: /images/services/consultation/consultation-s.png
         alt: Собака Павлова || Продуктовое исследование
     imageMap:
         url: /images/services/consultation/consultation_map.png

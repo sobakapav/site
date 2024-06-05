@@ -5,7 +5,7 @@ subtitle: У вас будут конкретные обоснованные р�
 images:
     imageMain:
         urlLarge: /images/services/audit/audit-l.png 
-        urlSmall: /services/audit-s.png
+        urlSmall: /images/services/audit/audit-s.png
         alt: Собака Павлова || UX-аудит
     imageMap:
         url: /images/services/audit/service-audit-map.png

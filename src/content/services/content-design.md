@@ -5,7 +5,7 @@ subtitle: Ваша экспертиза принесет существенну�
 images:
     imageMain:
         urlLarge: /images/services/content-design/content-design-l.png 
-        urlSmall: /services/content-design/content-design-s.png
+        urlSmall: /images/services/content-design/content-design-s.png
         alt: Собака Павлова || Контент-дизайн
     imageMap:
         url: /images/services/content-design/content-map.png
