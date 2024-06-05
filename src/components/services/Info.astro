@@ -4,8 +4,8 @@
 
   const { info } = Astro.props;
 ---
-<div class="info">
-{info.map((info) => <div class="info">
+<div class="info flex flex-col gap-8">
+{info.map((info) => <div class="infoItem">
   <a href="{info.link}">
   <img src={info.image} alt={info.alt} />
   <div class="infoText">

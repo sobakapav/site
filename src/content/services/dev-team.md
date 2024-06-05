@@ -44,7 +44,6 @@ works:
         image: /images/services/dev-team/logo-kompel.png
         alt: Kompel logo
         text: Начали с конкретного проекта, а потом перешли на режим постоянного присутствия в команде.
-
     -
         link: /microcases/Humans
         image: /images/services/dev-team/logo-humans.png
@@ -60,7 +59,7 @@ works:
         image: /images/services/dev-team/logo-control.png
         alt: Control logo
         text: Работаем в таком формате уже несколько лет    
-        
+team: 1        
 mapBlock:
     -
         type: h2
