@@ -8,7 +8,7 @@ images:
         urlSmall: /images/services/ui-redesign/ui-redesign-s.png
         alt: Собака Павлова || UI-редизайн
     imageMap:
-        url: /images/services/audit/service-audit-map.png
+        url: /images/services/ui-redesign/ui-redesign-map.png
         alt: UI-редизайн || Ключевые этапы работы над проектом
 blueBlockText:
     -
