@@ -11,47 +11,47 @@ export const headerData = {
       links: [
         {
           text: 'UX/UI-дизайн под ключ',
-          href: getPermalink('/turnkey'),
+          href: getPermalink('/services/turnkey'),
         },
         {
           text: 'Прототип под инвестицию',
-          href: getPermalink('/prototype'),
+          href: getPermalink('/services/prototype'),
         },
         {
           text: 'UI-редизайн',
-          href: getPermalink('/iu-redesign'),
+          href: getPermalink('/services/iu-redesign'),
         },
         {
           text: 'Точечный редизайн интерфейса',
-          href: getPermalink('/spot-redesign'),
+          href: getPermalink('/services/spot-redesign'),
         },
         {
           text: 'Добавление новых возможностей',
-          href: getPermalink('/new-features'),
+          href: getPermalink('/services/new-features'),
         },
         {
           text: 'UX-аудит',
-          href: getPermalink('/ux-audit'),
+          href: getPermalink('/services/ux-audit'),
         },
         {
           text: 'Продуктовое исследование',
-          href: getPermalink('/research'),
+          href: getPermalink('/services/research'),
         },  
         {
           text: 'Усиление команды разработки',
-          href: getPermalink('/dev-team'),
+          href: getPermalink('/services/dev-team'),
         },
         {
-          text: 'Работа в продуктовой команде',
-          href: getPermalink('/product-team'),
+          text: 'Работа в продуктовой команде',
+          href: getPermalink('/services/product-team'),
         },
         {
           text: 'Консультации',
-          href: getPermalink('/consultation'),
+          href: getPermalink('/services/consultation'),
         },
         {
           text: 'Контент-дизайн',
-          href: getPermalink('/content-design'),
+          href: getPermalink('/services/content-design'),
         },
       ],
     },
