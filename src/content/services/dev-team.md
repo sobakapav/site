@@ -92,6 +92,7 @@ comments:
         type: p
         text: Финансовое планирование абсолютно прозрачно.
 
+
 budget:
     price:
         -
