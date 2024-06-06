@@ -1,10 +1,9 @@
 .budget {
-  display: flex;
-  gap: 24px;
 
   h2 {
     font-size: 28px;
     line-height: 40px;
+    margin-bottom: 0px;
   }
 
   h3 {
@@ -24,12 +23,13 @@
   list-style-position: inside;
   margin-bottom: 8px;
   }
-
-  .budget-title {
-    flex: 0 0 240px;
-    width: 240px;
+  
+  @media (min-width: 768px) {
+    .budget-title {
+      flex: 0 0 240px;
+      width: 240px;
+    }
   }
-
   .budget-price {
     flex: 1 1 0px;
   }
