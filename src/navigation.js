@@ -6,10 +6,54 @@ export const headerData = {
       text: 'Портфолио',
       href: '#',
     },
-
     {
       text: 'Услуги',
-      href: '#',
+      links: [
+        {
+          text: 'UX/UI-дизайн под ключ',
+          href: getPermalink('/turnkey'),
+        },
+        {
+          text: 'Прототип под инвестицию',
+          href: getPermalink('/prototype'),
+        },
+        {
+          text: 'UI-редизайн',
+          href: getPermalink('/iu-redesign'),
+        },
+        {
+          text: 'Точечный редизайн интерфейса',
+          href: getPermalink('/spot-redesign'),
+        },
+        {
+          text: 'Добавление новых возможностей',
+          href: getPermalink('/new-features'),
+        },
+        {
+          text: 'UX-аудит',
+          href: getPermalink('/ux-audit'),
+        },
+        {
+          text: 'Продуктовое исследование',
+          href: getPermalink('/research'),
+        },  
+        {
+          text: 'Усиление команды разработки',
+          href: getPermalink('/dev-team'),
+        },
+        {
+          text: 'Работа в продуктовой команде',
+          href: getPermalink('/product-team'),
+        },
+        {
+          text: 'Консультации',
+          href: getPermalink('/consultation'),
+        },
+        {
+          text: 'Контент-дизайн',
+          href: getPermalink('/content-design'),
+        },
+      ],
     },
 
     {
