@@ -40,22 +40,22 @@ results:
 
 works:
     -
-        link: /portfolio/compel
+        link: https://sobakapav.ru/portfolio/compel
         image: /images/services/dev-team/logo-kompel.png
         alt: Kompel logo
         text: Начали с конкретного проекта, а потом перешли на режим постоянного присутствия в команде.
     -
-        link: /microcases/Humans
+        link: https://sobakapav.ru/portfolio/microcases/Humans
         image: /images/services/dev-team/logo-humans.png
         alt: Humans logo
         text: Усилили команду штатных дизайнеров, чтобы ускорить производство дизайна.   
     -
-        link: /portfolio/alfastrah-design
+        link: https://sobakapav.ru/portfolio/alfastrah-design
         image: /images/services/dev-team/logo-alpha.png
         alt: Alpha logo
         text: Чтобы сделать дизайн-систему, интегрировались в команду заказчика.
     -
-        link: /portfolio/
+        link: https://sobakapav.ru/portfolio/
         image: /images/services/dev-team/logo-control.png
         alt: Control logo
         text: Работаем в таком формате уже несколько лет    
