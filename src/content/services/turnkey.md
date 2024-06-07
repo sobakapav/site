@@ -75,6 +75,21 @@ works:
         alt: Mline logo
         text: Разработали дизайн интерфейса многокомпонентной платформы для дистанционного наблюдения пациентов с гипертонией.
     -
+        link: https://sobakapav.ru/portfolio/neurobureau
+        image: /images/services/turnkey/logo-neuro.png
+        alt: Neurobureau logo
+        text: Выполнили редизайн интерфейса платформы с целью расширения бизнеса.
+    -
+        link: https://sobakapav.ru/portfolio/raisa
+        image: /images/services/turnkey/logo-raisa.png
+        alt: Raisa logo
+        text: Заказчик пришел к нам за редизайном UI, а ушел еще и с улучшенным пользовательским опытом.
+    -
+        link: https://sobakapav.ru/portfolio/tis
+        image: /images/services/turnkey/logo-tis.png
+        alt: TIS logo
+        text: заказчик получил сверстанный интерактивный прототип системы, протестированный врачами и позволяющий презентовать продукт еще на стадии разработки.
+    -
         link: https://sobakapav.ru/portfolio/veza
         image: /images/services/turnkey/logo-veza.png
         alt: Veza logo

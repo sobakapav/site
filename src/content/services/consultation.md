@@ -33,9 +33,17 @@ results:
         title: Видеозапись
         text: Сможете пересмотреть
                                              
-info: 
+works:
     -
-        text: Мы консультируем всех наших клиентов в рамках каждого проекта и по множеству вопросов, связанных или не связанных с текущей задачей.
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/consultation/logo-alpha.png
+        alt: Alphastrah logo
+        text: Регулярно проводим консультации по разработанной нами дизайн-системе
+    -
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/consultation/logo-erna.png
+        alt: Erna logo
+        text: Оказываем точечные консультации дизайнеров в процессе разработки сайта.
         
 mapBlock:
     -

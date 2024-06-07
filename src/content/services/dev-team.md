@@ -55,10 +55,20 @@ works:
         alt: Alpha logo
         text: Чтобы сделать дизайн-систему, интегрировались в команду заказчика.
     -
-        link: /portfolio/control-mobile
+        link: /portfolio/
         image: /images/services/dev-team/logo-control.png
         alt: Control logo
         text: Работаем в таком формате уже несколько лет    
+    -
+        link: https://sobakapav.ru/portfolio/miaz
+        image: /images/services/dev-team/logo-miac.png
+        alt: miac logo
+        text: Нужно описание  
+    -
+        link: https://sobakapav.ru/microcases/Otkritie
+        image: /images/services/dev-team/ogo-otkrytie.png
+        alt: Otkrytie logo
+        text: Усилив экспертизу штатной команды UX-специалистов привели банк-клиент в соответствие отраслевым стандартом.
 team: 1        
 mapBlock:
     -

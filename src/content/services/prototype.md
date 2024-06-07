@@ -33,9 +33,9 @@ results:
         text: Подготовленная с вашим участием                                                       
 works:
     -
-        link: https://sobakapav.ru/portfolio/alfastrah-design
-        image: /images/services/prototype/logo-alfastrah.png
-        alt: AlfaStrah logo
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/prototype/logo-alphabank.png
+        alt: Alphabank logo
         text: Помогли команде стартовать внутренний проект с презентации будущего интерфейса.
     -
         link: https://sobakapav.ru/portfolio/anggell
@@ -52,6 +52,12 @@ works:
         image: /images/services/prototype/logo-ds.png
         alt: Ati logo
         text: Собрали презентацию, которая помогла команде продвинуть проект внутри корпорации.
+    -
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/prototype/logo-rad.png
+        alt: RAD logo
+        text: Собрали презентацию, которая помогла команде получить инвестиции.
+
 mapBlock:
     -
         type: h2

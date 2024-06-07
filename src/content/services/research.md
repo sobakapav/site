@@ -65,6 +65,21 @@ works:
         image: /images/services/product-research/logo-qiwi.png
         alt: Qiwi logo
         text: Провели конкурентное сравнение, построили CJM и план поэтапного изменения интерфейса.
+    -
+        link: https://sobakapav.ru/portfolio/medmarket
+        image: /images/services/product-research/logo-medmarket.png
+        alt: medmarket logo
+        text: Нашли вовлекающие и поддерживающие механики для дизайна медицинского приложения.
+    -
+        link: https://sobakapav.ru/microcases/RussPass
+        image: /images/services/product-research/logo-russpass.png
+        alt: russpass logo
+        text: Провели продуктовое исследование и усилили штатнуюкоманду дизайнеров.
+    -
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/product-research/logo-space307.png
+        alt: space307 logo
+        text: Нужно описание.
         
 mapBlock:
     -

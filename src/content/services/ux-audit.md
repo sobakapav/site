@@ -44,9 +44,9 @@ results:
 works:
     -
         link: https://sobakapav.ru/portfolio/
-        image: /images/services/audit/logo-aquafor.png
-        alt: Aquafor logo
-        text: Оптимизировали процесс повторных продаж картриджей к фильтрам для воды.
+        image: /images/services/audit/logo-onesoil.png
+        alt: Onesoil logo
+        text: Нужно описание
     -
         link: https://sobakapav.ru/microcases/BiBi
         image: /images/services/audit/logo-bibi.png
@@ -62,6 +62,16 @@ works:
         image: /images/services/audit/logo-mirbir.png
         alt: Mirbir logo
         text: Выявили у пользователей сложности с определением специализации магазина.
+    -
+        link: https://sobakapav.ru/portfolio/domotechniqa
+        image: /images/services/audit/logo-domotehnika.png
+        alt: Domotehnika logo
+        text: Провели профессиональную оценку удобства покупок на сайте
+    -
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/audit/logo-windows.png
+        alt: Windows
+        text: Нужно описание
 mapBlock:
     -
         type: h2
