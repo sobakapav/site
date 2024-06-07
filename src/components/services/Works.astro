@@ -6,11 +6,11 @@
 ---
 <div class="works">
 {works.map((work) => <div class="work">
-  <a href="{work.link}">
-  <img src={work.image} alt={work.alt} />
-  <div class="workText">
-    <p>{work.text}</p>
-  </div>
+  <a href={work.link}>
+    <img src={work.image} alt={work.alt} />
+    <div class="workText">
+      <p>{work.text}</p>
+    </div>
   </a>
 </div>)}
 </div>
