@@ -19,7 +19,7 @@ export const headerData = {
         },
         {
           text: 'UI-редизайн',
-          href: getPermalink('/services/iu-redesign'),
+          href: getPermalink('/services/ui-redesign'),
         },
         {
           text: 'Точечный редизайн интерфейса',
