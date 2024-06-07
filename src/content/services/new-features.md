@@ -38,12 +38,12 @@ results:
         text: При необходимости
 works:
     -
-        link: microcases/BiBi
+        link: https://sobakapav.ru/microcases/BiBi
         image: /images/services/new-features/logo-bibi.png
         alt: BiBi logo
         text: Добавили новый способ доставки и изменили процесс чек-аута интернет-магазина.
     -
-        link: /microcases/AzbukaVkusa
+        link: https://sobakapav.ru/microcases/AzbukaVkusa
         image: /images/services/new-features/logo-azbuka.png
         alt: Azbuka Vkusa logo
         text: Внедрили в существующий интернет-магазин доставку алкоголя.

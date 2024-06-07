@@ -40,25 +40,35 @@ results:
 
 works:
     -
-        link: /portfolio/compel
+        link: https://sobakapav.ru/portfolio/compel
         image: /images/services/dev-team/logo-kompel.png
         alt: Kompel logo
         text: Начали с конкретного проекта, а потом перешли на режим постоянного присутствия в команде.
     -
-        link: /microcases/Humans
+        link: https://sobakapav.ru/portfolio/microcases/Humans
         image: /images/services/dev-team/logo-humans.png
         alt: Humans logo
         text: Усилили команду штатных дизайнеров, чтобы ускорить производство дизайна.   
     -
-        link: /portfolio/alfastrah-design
+        link: https://sobakapav.ru/portfolio/alfastrah-design
         image: /images/services/dev-team/logo-alpha.png
         alt: Alpha logo
         text: Чтобы сделать дизайн-систему, интегрировались в команду заказчика.
     -
-        link: /portfolio/control-mobile
+        link: https://sobakapav.ru/portfolio/
         image: /images/services/dev-team/logo-control.png
         alt: Control logo
         text: Работаем в таком формате уже несколько лет    
+    -
+        link: https://sobakapav.ru/portfolio/miaz
+        image: /images/services/dev-team/logo-miac.png
+        alt: miac logo
+        text: Нужно описание  
+    -
+        link: https://sobakapav.ru/microcases/Otkritie
+        image: /images/services/dev-team/ogo-otkrytie.png
+        alt: Otkrytie logo
+        text: Усилив экспертизу штатной команды UX-специалистов привели банк-клиент в соответствие отраслевым стандартом.
 team: 1        
 mapBlock:
     -
@@ -90,6 +100,7 @@ comments:
     -
         type: p
         text: Финансовое планирование абсолютно прозрачно.
+
 
 budget:
     price:

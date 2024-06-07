@@ -33,9 +33,17 @@ results:
         title: Видеозапись
         text: Сможете пересмотреть
                                              
-info: 
+works:
     -
-        text: Построили CJM процесса закупок, чтобы снизить затраты на их проведение.
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/consultation/logo-alpha.png
+        alt: Alphastrah logo
+        text: Регулярно проводим консультации по разработанной нами дизайн-системе
+    -
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/consultation/logo-erna.png
+        alt: Erna logo
+        text: Оказываем точечные консультации дизайнеров в процессе разработки сайта.
         
 mapBlock:
     -

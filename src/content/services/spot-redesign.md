@@ -57,6 +57,22 @@ works:
         image: /images/services/spot-redesign/logo-electronica.png
         alt: Electronica logo
         text: Перепроектировали UX ключевых страниц к отраслевой выставке.
+    -
+        link: https://sobakapav.ru/portfolio/
+        image: /images/services/spot-redesign/logo-t.png
+        alt: Tinkoff logo
+        text: Нужно описание
+    -
+        link: https://sobakapav.ru/portfolio/ot-vinta
+        image: /images/services/spot-redesign/logo-otvinta.png
+        alt: OtVinta logo
+        text: Провели точечный редизайн ключевых страниц сайта, непосредственно влияющих на конверсию.
+    -
+        link: https://sobakapav.ru/portfolio/nspk
+        image: /images/services/spot-redesign/logo-nspk.png
+        alt: NSPK logo
+        text: Провели аудит и редизайн критичных мест интерфейса.
+    
 mapBlock:
     -
         type: h2

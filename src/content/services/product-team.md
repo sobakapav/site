@@ -86,7 +86,12 @@ works:
         link: https://sobakapav.ru/portfolio/fasting
         image: /images/services/product-team/logo-hudeem.png
         alt: hudeem logo
-        text: Зарисовали более 100 идей по вводным заказчика и тем самым стартовали активную разработку продукта.    
+        text: Зарисовали более 100 идей по вводным заказчика и тем самым стартовали активную разработку продукта.  
+    -
+        link: https://sobakapav.ru/portfolio/stroynastroy
+        image: /images/services/product-team/logo-stroynastroy.png
+        alt: stroynastroy logo
+        text: Спроектировали интерфейсы MVP, разработали стилевые решения, протестировали интерфейсы на пользователях и передали в разработку.
         
 mapBlock:
     -
