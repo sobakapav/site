@@ -49,6 +49,7 @@ const textBlock = () => z.array(
   z.object({
     type: z.string().optional(),
     text: z.string().optional(),
+    list: z.array(z.string()).optional(),
   })
 ).optional();
 
