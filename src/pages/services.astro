@@ -4,6 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -11,18 +12,32 @@ import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+
 import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
 
 const metadata = {
-  title: 'Передача макетов в разработку',
+  title: 'Услуги',
 };
+
+const servicesList = ['turnkey', 'prototype','ui-redesign', 'spot-redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design'];
+
+const services = [];
+for (var idx in servicesList) {
+  var service = await getEntry('services', servicesList[idx]);
+  service.data.index = idx;
+  service.data.href = `/serivces/${servicesList[idx]}`;
+  services.push(service.data);
+}
+
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Startup Web Demo"
+    tagline=""
     actions={[
       {
         variant: 'primary',
@@ -48,61 +63,70 @@ const metadata = {
   </Hero>
    
 
-  <!-- Features Widget *************** -->
+  
+<!-- Content Widget **************** -->
 
-  <Features
-    id="features"
-    title="9 практик по передаче макетов"
-    
-    columns={3}
+  { services.map((service) => (
+    <a href={service.href}>
+    <Content
+      isReversed={(service.index % 2) == 0}
+      isAfterContent={service.index > 0}
+      items={service.results.map((result) => ({title: result.title, description: result.text}))}
+      image={`<img src="${service.images.imageMain.urlLarge}" alt="${service.images.imageMain.alt}" />`}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{service.pageTitle}</h3>
+        {service.subtitle}
+      </Fragment>
+ 
+     <Fragment slot="bg">
+       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+     </Fragment>
+   
+    </Content>
+    </a>
+  ))} 
+
+{/*
+  
+  
+<!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
     items={[
       {
-        title: 'Обсуждение с заказчиком требований к макету',
+        title: '',
+        description: ``,
+      },
+      {
+        title: '',
         description:
-          'Лучше выяснить все заранее, чем потом экстренно все исправлять',
-        icon: 'tabler:artboard',
+          '',
       },
       {
-        title: 'Визуализация пользовательского пути',
-        description: 'Чтобы ничего не упустить в процессе дизайна и разработки',
-        icon: 'tabler:picture-in-picture',
-      },
-      {
-        title: 'Cоблюдение последовательности в макетах',
+        title: '',
         description:
-          'Проще работать, когда все разложено по порядку',
-        icon: 'tabler:adjustments-horizontal',
+          "",
       },
       {
-        title: 'Именование всех элементов интерфейса',
-        description: 'Success screen, а не Frame100500',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Понимание базовых принципов верстки',
+        title: '',
         description:
-          'Думай как верстальщик, действуй как верстальщик, стань верстальщиком',
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Соблюдение гигиенты рабочего пространства',
-        description: 'Чистота в макетах - залог душевного здоровья дизайнера и разработчика',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Прототипирование',
-        description: 'Самый надежный спосо избежать ошибок и недопонимания процесов при разработке',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Организация библиотеки компонентов',
-        description: 'Тишина и порядок должен быть в библиотеке',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Соблюдение консистентности',
-        description: 'Не дизайн-системой единой',
-        icon: 'tabler:plug-connected',
+          '',
       },
     ]}
-  />
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+    
+    */}
+    
+    

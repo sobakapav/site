@@ -51,8 +51,7 @@ results:
         image: /images/services/gear.svg
         alt: design system
         title: Дизайн-система
-        text: Для самостоятельной поддержки и развития интерфейса.  
-    
+        text: Для самостоятельной поддержки и развития интерфейса.
     -   
         image: /images/services/doc.svg
         alt: documumentation
