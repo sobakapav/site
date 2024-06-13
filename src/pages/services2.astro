@@ -12,6 +12,8 @@ import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
 
+import BlogList from '~/components/services/List.astro';
+
 import { getPermalink } from '~/utils/permalinks';
 import { getEntry } from 'astro:content';
 
@@ -62,26 +64,8 @@ for (var idx in servicesList) {
   
 <!-- Content Widget **************** -->
 
-  { services.map((service) => (
-    <a href={service.href}>
-    <Content
-      isReversed={(service.index % 2) == 0}
-      isAfterContent={service.index > 0}
-      items={service.results.map((result) => ({title: result.title, description: result.text}))}
-      image={`<img src="${service.images.imageMain.urlLarge}" alt="${service.images.imageMain.alt}" />`}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{service.pageTitle}</h3>
-        {service.subtitle}
-      </Fragment>
- 
-     <Fragment slot="bg">
-       <div class="absolute inset-0"></div>
-     </Fragment>
-   
-    </Content>
-    </a>
-  ))} 
+    <BlogList posts={services} />
+  
 
     
     
