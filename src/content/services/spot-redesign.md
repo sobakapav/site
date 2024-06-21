@@ -67,11 +67,6 @@ works:
         image: /images/services/spot-redesign/logo-otvinta.png
         alt: OtVinta logo
         text: Провели точечный редизайн ключевых страниц сайта, непосредственно влияющих на конверсию.
-    -
-        link: https://sobakapav.ru/portfolio/nspk
-        image: /images/services/spot-redesign/logo-nspk.png
-        alt: NSPK logo
-        text: Провели аудит и редизайн критичных мест интерфейса.
     
 mapBlock:
     -
