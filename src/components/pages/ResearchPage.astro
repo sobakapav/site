@@ -1,0 +1,114 @@
+---
+import '~/assets/styles/tailwind.css';
+import '~/assets/styles/style.css';
+import '~/assets/styles/colors.css';
+import './ServicePage.less';
+
+import TitleBlockServices from '../services/TitleBlockServices.astro';
+import BlueBlock from '../services/BlueBlock.astro';
+import Works from '../services/Works.astro';
+import Info from '../services/Info.astro';
+import Prices from '../services/Prices.astro';
+import Budget from '../services/Budget.astro';
+import TextBlock from '../textblock/TextBlock.astro';
+import ResultsBlock from '../services/ResultsBlock.astro';
+import Image from '~/components/common/Image.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Info from '../services/Info.astro';
+
+const { content } = Astro.props;
+import { headerData, footerData } from '~/navigation';
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'>
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="generator" content={Astro.generator} />
+		<title>{content.pageTitle}</title>
+	</head>
+	<body class="antialiased text-default bg-page tracking-tight px-2.5">
+    <Header {...headerData} isSticky showToggleTheme />
+	
+    <div class="mainframe">
+		  <TitleBlockServices data={content} />
+
+		  <BlueBlock>
+        <img class="hidden md:block" src={content.images.imageMain.urlLarge} alt={content.images.imageMain.alt}>
+        <img class="md:hidden" src={content.images.imageMain.urlSmall} alt={content.images.imageMain.alt}>
+        <div class="blueblockContent flex flex-col md:flex-row wrap">
+          <TextBlock className="textblock grow shrink basis-0 mb-6" block={content.blueBlockText} />
+          <ResultsBlock className="results grow-0 shrink md:shrink-0 basis-0 md:basis-96 mt-4" results={content.results} />
+        </div>
+		  </BlueBlock>
+
+		  <div class="flex flex-col md:flex-row wrap gap-8 md:gap-32 pb-8">
+        <div class="contentBlock">
+          <slot />
+        </div>
+        { content.works && (<Works works={content.works}/>) }
+        { content.info && (<Info info={content.info}/>) }
+		  </div>
+		  
+		  { content.team && (
+        <div class="features">
+          <h2>За что мы можем отвечать в команде</h2>
+        
+          <Features3
+            columns={3}
+            items={[
+              {
+                description: `Сборка дизайн системы по наработкам или с нуля`,
+                icon: 'tabler:circle-number-1',
+              },
+              {
+                description: `Выделенный объем работы. Например, параллельное создание мобильной версии или миграция на другой фреймворк.`,
+                icon: 'tabler:circle-number-2',
+              },
+              {
+                description: `Повышение квалификации штатных дизайнеров в процессе совместной работы`,
+                icon: 'tabler:circle-number-3',
+              },
+              {
+                description: `Конкретный этап дизайн-процесса. Например, исследование.`,
+                icon: 'tabler:circle-number-4',
+              },
+              {
+                description: `Закрытие конкретных задач по таск-трекеру`,
+                icon: 'tabler:circle-number-5',
+              },
+              {
+                description: `Увеличение скорости поставки дизайна в разработку`,
+                icon: 'tabler:circle-number-6',
+              },
+              {
+                description: `Фасилитация обсуждений и совместное продумывание интерфейсных решений.`,
+                icon: 'tabler:circle-number-7',
+              },
+            ]}
+            
+          />
+        </div>
+      )}
+		  
+		  <div class="flex wrap gap-32">
+        <Prices comments={content.comments} imageMap={content.images.imageMap}/>
+      </div>
+
+      <BlueBlock>
+        <Budget budget={content.budget} />
+      </BlueBlock>
+
+    </div>
+
+    <BasicScripts />
+
+	</body>
+</html>
