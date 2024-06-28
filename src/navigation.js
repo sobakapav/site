@@ -65,24 +65,28 @@ export const headerData = {
       text: 'Экспертиза',
       links: [
         {
+          text: 'Статьи',
+          href: getPermalink('/blog'),
+        },
+        {
+          text: 'UX-исследования',
+          href: getPermalink('/ux-research'),
+        }, 
+        {
           text: 'Передача макетов в разработку',
-          href: getPermalink('/#features'),
+          href: getPermalink('/features'),
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Статьи',
-          href: getPermalink('/pricing'),
-        },
+          href: getPermalink('/'),
+        },    
         {
           text: 'Книги',
-          href: getPermalink('/about'),
+          href: getPermalink('/'),
         },
         {
           text: 'Email-рассылка',
-          href: getPermalink('/contact'),
+          href: getPermalink('/'),
         },
        ],
     },
