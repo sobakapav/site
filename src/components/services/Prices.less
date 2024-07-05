@@ -1,9 +1,21 @@
 .prices {
+
+  p {
+    margin-bottom: 16px;
+  }
+  
+  a {
+   color: var(--secondary);
+  }
+  
   .comments {
     columns: 2;
+    margin: 32px 0 32px 0;
+    column-gap: 32px;
 
     p {
       break-inside: avoid-column;
+      margin-bottom: 16px;
     }
 
     h2 {
@@ -14,7 +26,17 @@
     h3 {
       break-inside: avoid-column;
       break-after: avoid-column;
+      margin-bottom: 8px;
     }
+  }
+}
 
+@media (max-width: 768px) {
+  .prices {
+    .comments {
+        columns: 1;
+        margin: 32px 0 32px 0;
+        column-gap: 32px;
+    }
   }
 }

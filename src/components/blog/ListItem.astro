@@ -21,29 +21,28 @@ const image = (await findImage(post.image)) as ImageMetadata | undefined;
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class={`max-w-md mx-auto md:max-w-none grid gap-6 md:gap-8 ${image ? 'md:grid-cols-2' : ''}`}>
+<article class={`flex flex-wrap`}>
   {
     image && (
-      <a class="relative block group" href={link ?? 'javascript:void(0)'}>
-        <div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden bg-gray-400 dark:bg-slate-700 rounded shadow-lg">
-          {image && (
-            <Image
-              src={image}
-              class="absolute inset-0 object-cover w-full h-full mb-6 rounded shadow-lg bg-gray-400 dark:bg-slate-700"
-              widths={[400, 900]}
-              width={900}
-              sizes="(max-width: 900px) 400px, 900px"
-              alt={post.title}
-              aspectRatio="16:9"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
+      <a href={link ?? 'javascript:void(0)'}>
+        <div class="relative overflow-hidden rounded">
+          <div class="w-72 h-72">
+            {image && (
+              <Image
+                src={image}
+                class="rounded"
+                width={288}
+                alt={post.title}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
         </div>
       </a>
     )
   }
-  <div class="mt-2">
+  <div class="mt-2 w-72">
     <header>
       <div class="mb-1">
         <span class="text-sm">
@@ -87,14 +86,8 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     </header>
 
     {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
-    {
-      post.tags && Array.isArray(post.tags) ? (
-        <footer class="mt-5">
-          <PostTags tags={post.tags} />
-        </footer>
-      ) : (
-        <Fragment />
-      )
-    }
+    {post.tags && <footer class="mt-5">
+      <PostTags tags={post.tags} />
+    </footer> }
   </div>
 </article>

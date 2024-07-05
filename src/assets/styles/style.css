@@ -34,4 +34,5 @@ ul {
 .mainframe {
   margin: 0 auto;
   width: 1200px;
+  max-width: calc(100vw - 20px);
 }

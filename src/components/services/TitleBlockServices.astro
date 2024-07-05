@@ -5,11 +5,13 @@ import './TitleBlockServices.less';
   
 ---
 
-<div class="title-block">
-  <div class="flex flex-wrap gap-6">
-    <h1 class="grow shrink basis-0 mb-6">{data.pageTitle}</h1>
-    <p class="grow shrink basis-0 mt-4 subtitle">{data.subtitle}</p>
+<div class="title-block mt-12">
+  <div class="flex flex-col md:flex-row flex-wrap gap-6 mb-6">
+  <div class="flex flex-col justify-between grow shrink basis-0">
+    <h1 class="mb-4">{data.pageTitle}</h1>
+    <a class="" href="/services">← Все услуги</a>
   </div>
-  <a class="" href="/services">← Все услуги</a>
+    <p class="grow shrink basis-0 mt-4 subtitle">{data.subtitle}</p>
+  </div> 
   <img src="/images/services/clients.png">
 </div>
