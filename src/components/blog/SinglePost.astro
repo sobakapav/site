@@ -24,8 +24,14 @@ const { Content } = post;
     <header class={post.image ? '' : ''}>
       <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
         <p>
-          <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+          {
+            post.publishDate && (
+              <>
+                <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+              </>
+            )
+          }
           {
             post.author && (
               <>
@@ -61,11 +67,15 @@ const { Content } = post;
       >
         {post.title}
       </h1>
-      <p
-              class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
-            >
-              {post.author} || {post.topic}
-            </p>
+      {(post.author || post.topic) && (
+        <p
+          class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
+        >
+          {post.author} 
+          {post.author && post.topic && "||"} 
+          {post.topic}
+        </p>
+      )}
       <p
         class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
       >

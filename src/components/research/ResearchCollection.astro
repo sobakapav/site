@@ -1,0 +1,27 @@
+---
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+import Item from './ListItem.astro';
+
+const { list } = Astro.props;
+
+const researches = [];
+for (var idx in list) {
+  var research = await getEntry('research', list[idx]);
+  research.data.index = idx;
+  research.data.href = `/research/${list[idx]}`;
+  researches.push(research.data);
+}
+
+---
+<div class="text-left pb-4 md:pb-6 max-w-5xl mx-auto justify-center">
+<ul class="flex flex-wrap justify-start list-none">
+  {
+    researches.map((research) => (
+      <li class="mb-12 md:mb-20 w-40">
+        <Item research={research} />
+      </li>
+    ))
+  }
+</ul>
+</div>

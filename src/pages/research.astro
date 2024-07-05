@@ -1,0 +1,67 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+
+import ResearchCollection from '~/components/research/ResearchCollection.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+
+import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
+
+const metadata = {
+  title: 'Услуги',
+};
+
+// const research1List = ['healthfoodcase', 'disneycase','crimecase', 'fordcase', 'sergerycase'];
+// const research2List = ['buildingcase', 'univercase','educationcase', 'securitycase'];
+// const research3List = ['drivercase', 'wikicase'];
+// const research4List = ['staffcase', 'morriscase','medicinecase', 'doctorappcase', 'shootingcase', 'weathercase'];
+// const research5List = ['samsungcase', 'mobilecase','messengercase', 'brazilcase'];
+// const research6List = ['paypalcase', 'insurancecase','atmcase', 'bristolcase', 'donatecase'];
+
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline=""
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Get templates',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+  >
+    <Fragment slot="title">
+      Как проводят <span class="text-accent dark:text-white highlight">UX-исследования</span> для разработки IT-продуктов
+    </Fragment>
+
+    <Fragment slot="subtitle">
+       Разбираем на 26 кейсах, как можно улучшить интерфейсы сложных систем, наблюдая и общаясь с людьми
+    </Fragment>
+
+  </Hero>
+  
+   <p>мама мыла раму</p>
+   
+   
+   <ResearchCollection list={['healthfoodcase', 'disneycase','crimecase', 'fordcase', 'surgerycase']} />
+  
+</Layout>
+    

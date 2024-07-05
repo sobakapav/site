@@ -1,0 +1,16 @@
+---
+  import './Info.less';
+  import TextBlock from '../textblock/TextBlock.astro';
+
+  const { info } = Astro.props;
+---
+<div class="info flex flex-col gap-8">
+{info.map((info) => <div class="infoItem">
+  <a href="{info.link}">
+  <img src={info.image} alt={info.alt} />
+  <div class="infoText">
+    <p>{info.text}</p>
+  </div>
+  </a>
+</div>)}
+</div>

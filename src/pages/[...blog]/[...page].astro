@@ -2,6 +2,7 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
@@ -36,12 +37,31 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
-    >
-      The Blog
-    </Headline>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-6xl">
+    <!-- Hero Widget ******************* -->
+    
+      <Hero
+        tagline=""
+        actions={[
+          {
+            variant: 'primary',
+            target: '_blank',
+            text: 'Get templates',
+            href: 'https://github.com/onwidget/astrowind',
+            icon: 'tabler:download',
+          },
+          { text: 'Learn more', href: '#features' },
+        ]}
+      >
+        <Fragment slot="title">
+          Статьи <br/><span class="text-accent dark:text-white highlight">«Собаки Павловой»</span> 
+        </Fragment>
+    
+        <Fragment slot="subtitle">
+            Делимся знаниями и опытом с 2012 года.<br/>Написали более 100 статей и продолжаем писать.   
+        </Fragment>
+    
+      </Hero>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--
