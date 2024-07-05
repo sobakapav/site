@@ -2,9 +2,9 @@
   import './ResultsBlock.less';
   import TextBlock from '../textblock/TextBlock.astro';
 
-  const { results, className } = Astro.props;
+  const { results } = Astro.props;
 ---
-<div class={className || "results"}>
+<div class="results">
 {results.map((result) => <div class="result">
   <img src={result.image} alt={result.alt} />
   <div class="resultText">

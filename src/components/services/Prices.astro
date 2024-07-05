@@ -5,10 +5,7 @@
   const { imageMap, comments } = Astro.props;
 ---
 <div class="prices">
-  <h2>Ключевые этапы работы над проектом</h2>
-  <img src={imageMap.url} alt={imageMap.alt} class="hidden md:block" >
-  <p class="md:hidden">Такой сложный контент как схема производства представлен у нас изображением, которое мы рекомендуем просматривать с десктопа. Но если очень нужно прямо сейчас - скачайте и посмотрите на вашем мобильном устройстве.</p>
-  <p class="md:hidden"><a href={imageMap.url}>Скачать схему.png</a></p>
+  <img src={imageMap.url} alt={imageMap.alt}>
   {
     <TextBlock block={comments} className="comments" />
   }

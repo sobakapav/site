@@ -45,14 +45,6 @@ const metadataDefinition = () =>
     })
     .optional();
 
-const textBlock = () => z.array(
-  z.object({
-    type: z.string().optional(),
-    text: z.string().optional(),
-    list: z.array(z.string()).optional(),
-  })
-).optional();
-
 const postCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
@@ -72,51 +64,6 @@ const postCollection = defineCollection({
   }),
 });
 
-const serviceCollection = defineCollection({
-  schema: z.object({
-
-    pageTitle: z.string(),
-    subtitle: z.string().optional(),
-    images: z.object({
-      imageMain: z.object({
-        urlLarge: z.string(), 
-        urlSmall: z.string(), 
-        alt: z.string(), 
-      }),
-      imageMap: z.object({
-        url: z.string(),
-        alt: z.string(),
-      }),
-    }),
-    blueBlockText: textBlock(),
-    results: z.array(z.object({
-      title: z.string().optional(),
-      text: z.string().optional(),
-      image: z.string().optional(),
-      alt: z.string().optional(),
-    })),
-    works: z.array(z.object({
-      link: z.string().optional(),
-      text: z.string().optional(),
-      image: z.string().optional(),
-      alt: z.string().optional(),
-    })).optional(),
-    team: z.number().optional(),
-    mapBlock: z.array(z.object({
-       type: z.string().optional(),
-       text: z.string().optional(),
-    })),
-    comments: textBlock(),
-    budget: z.object({
-      price: textBlock(),
-      time: textBlock(),
-    }),
-//    metadata: metadataDefinition(),
-  }),
-});
-
 export const collections = {
   post: postCollection,
-  services: serviceCollection,
-  research: postCollection,
 };

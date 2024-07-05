@@ -12,7 +12,7 @@ export interface Post {
   permalink: string;
 
   /**  */
-  publishDate?: Date;
+  publishDate: Date;
   /**  */
   updateDate?: Date;
 

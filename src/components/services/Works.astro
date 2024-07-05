@@ -4,14 +4,13 @@
 
   const { works } = Astro.props;
 ---
-<div class="works flex flex-row md:flex-column flex-wrap w-full md:w-72">
-<h2 class="mb-4">Примеры</h2>
+<div class="works">
 {works.map((work) => <div class="work">
-  <a href={work.link}>
-    <img src={work.image} alt={work.alt} />
-    <div class="workText">
-      <p>{work.text}</p>
-    </div>
+  <a href="{work.link}">
+  <img src={work.image} alt={work.alt} />
+  <div class="workText">
+    <p>{work.text}</p>
+  </div>
   </a>
 </div>)}
 </div>
