@@ -35,10 +35,10 @@ results:
                                              
 works:
     -
-        link: https://sobakapav.ru/portfolio/
+        link: https://sobakapav.ru/portfolio/alfastrah-design
         image: /images/services/consultation/logo-alpha.png
         alt: Alphastrah logo
-        text: Регулярно проводим консультации по разработанной нами дизайн-системе
+        text: Регулярно проводим консультации по разработанной нами дизайн-системе.
     -
         link: https://sobakapav.ru/portfolio/
         image: /images/services/consultation/logo-erna.png

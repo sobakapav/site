@@ -33,7 +33,7 @@ results:
         text: Подготовленная с вашим участием                                                       
 works:
     -
-        link: https://sobakapav.ru/portfolio/
+        link: https://sobakapav.ru/portfolio/alfa-arm
         image: /images/services/prototype/logo-alphabank.png
         alt: Alphabank logo
         text: Помогли команде стартовать внутренний проект с презентации будущего интерфейса.

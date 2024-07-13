@@ -41,7 +41,7 @@ works:
         alt: dipol logo
         text: Перед выводом продукта на рынок, мы стандартизировали и унифицировали UI. 
     -
-        link: https://sobakapav.ru/
+        link: https://sobakapav.ru/portfolio/avicenna
         image: /images/services/ui-redesign/logo-avicenna.png
         alt: Avicenna logo
         text: Для миграции системы из десктоп-предложения в веб мы отрисовали интерфейс заново

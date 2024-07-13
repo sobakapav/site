@@ -74,7 +74,7 @@ works:
         link: https://sobakapav.ru/microcases/RussPass
         image: /images/services/product-research/logo-russpass.png
         alt: russpass logo
-        text: Провели продуктовое исследование и усилили штатнуюкоманду дизайнеров.
+        text: Провели продуктовое исследование и усилили штатную команду дизайнеров.
     -
         link: https://sobakapav.ru/portfolio/
         image: /images/services/product-research/logo-space307.png

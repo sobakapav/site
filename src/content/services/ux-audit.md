@@ -43,22 +43,22 @@ results:
         text: Результатов с ответами на вопросы                                                    
 works:
     -
-        link: https://sobakapav.ru/portfolio/
+        link: https://neverhund.com/work/onesoil
         image: /images/services/audit/logo-onesoil.png
         alt: Onesoil logo
-        text: Нужно описание
+        text: Провели экспертный UX-аудит мобильного приложения для фермеров и составили список проблем и рекомендаций.
     -
         link: https://sobakapav.ru/microcases/BiBi
         image: /images/services/audit/logo-bibi.png
         alt: BiBi logo
         text: Провели полный аудит портала по продаже запчастей.
     -
-        link: https://sobakapav.ru/portfolio/GoodWood
+        link: https://sobakapav.ru/microcases/GoodWood
         image: /images/services/audit/logo-GoodWood.png
         alt: GoodWood logo
         text: Классический аудит сайта компании, которая занимается строительством частных домов под ключ.
     -
-        link: https://sobakapav.ru/portfolio/mirbir
+        link: https://sobakapav.ru/microcases/MirBeer
         image: /images/services/audit/logo-mirbir.png
         alt: Mirbir logo
         text: Выявили у пользователей сложности с определением специализации магазина.
@@ -68,10 +68,10 @@ works:
         alt: Domotehnika logo
         text: Провели профессиональную оценку удобства покупок на сайте
     -
-        link: https://sobakapav.ru/portfolio/
+        link: https://sobakapav.ru/microcases/OknaPeterburga
         image: /images/services/audit/logo-windows.png
         alt: Windows
-        text: Нужно описание
+        text: Провели экспертный аудит и модерируемые тестирования сайта компании.
 mapBlock:
     -
         type: h2

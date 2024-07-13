@@ -53,7 +53,6 @@ results:
         alt: description
         title: Описание продукта
         text: В терминах пользовательского взаимодействия - портреты ЦА, ключевые сценарии
-
     -
         image: /images/services/presentation.svg
         alt: presentation
@@ -71,7 +70,6 @@ works:
         image: /images/services/product-team/logo-unidom.png
         alt: Unidom logo
         text: Собирали цельный продукт в области недвижимости из наработок мощной команды аналитиков. 
-
     -
         link: https://sobakapav.ru/portfolio/avicenna
         image: /images/services/product-team/logo-avicenna.png

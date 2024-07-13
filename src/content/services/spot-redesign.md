@@ -43,7 +43,7 @@ works:
         alt: Petrovich logo
         text: Провели точечный редизайн ключевых страниц. Работали на грани внедрения в команду.
     -
-        link: https://sobakapav.ru/microcases/onkor
+        link: https://sobakapav.ru/portfolio/onkor
         image: /images/services/spot-redesign/logo-onkor.png
         alt: Onkor logo
         text: Перенесли несколько разделов десктоп-системы в веб, улучшив ключевые страницы.
@@ -58,10 +58,10 @@ works:
         alt: Electronica logo
         text: Перепроектировали UX ключевых страниц к отраслевой выставке.
     -
-        link: https://sobakapav.ru/portfolio/
+        link: https://sobakapav.ru/portfolio/tinkoff
         image: /images/services/spot-redesign/logo-t.png
         alt: Tinkoff logo
-        text: Нужно описание
+        text: Разработали логику вывода подсказок в новом банк-клиенте.
     -
         link: https://sobakapav.ru/portfolio/ot-vinta
         image: /images/services/spot-redesign/logo-otvinta.png
