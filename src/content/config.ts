@@ -87,6 +87,12 @@ const portfolioCollection = defineCollection({
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
     author: z.string().optional(),
+    
+    result: z.array(z.object({
+      src: z.string().optional(),
+      text: z.string(),
+      link: z.string().optional(),
+    })).optional(),
 
     metadata: metadataDefinition(),
   }),
