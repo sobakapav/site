@@ -1,0 +1,46 @@
+---
+import merge from 'lodash.merge';
+
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+
+import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
+
+export async function getStaticPaths() {
+  const portfolio = await getCollection('portfolio');
+  return portfolio.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const url = getCanonical(getPermalink(entry.permalink, 'portfolio'));
+const image = (await findImage(entry.data.image)) as ImageMetadata | string | undefined;
+
+const metadata = merge(
+  {
+    title: entry.data.title,
+    description: entry.data.excerpt,
+    robots: {
+      index: blogPostRobots?.index,
+      follow: blogPostRobots?.follow,
+    },
+    openGraph: {
+      type: 'article',
+      ...(image ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] } : {}),
+    },
+  },
+  { ...(entry?.metadata ? { ...entry.metadata, canonical: entry.metadata?.canonical || url } : {}) }
+) as MetaData;
+---
+
+<Layout metadata={metadata}>
+  <SinglePost post={{ ...entry.data, image: image }} url={url}>
+    <Content />
+  </SinglePost>
+</Layout>
