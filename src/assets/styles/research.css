@@ -69,3 +69,7 @@ ul {
 .prose blockquote li {
     font-style: normal;
 }
+
+.prose h2 {
+  margin-top: 24px;
+}

@@ -1,0 +1,46 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import PortfolioCollection from '~/components/portfolio/PortfolioCollection.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { getEntry } from 'astro:content';
+
+const { page } = Astro.props as Props;
+
+const metadata = {
+  title: 'Портфолио',
+};
+
+---
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-6xl">
+    <!-- Hero Widget ******************* -->
+    
+      <Hero
+        tagline=""
+        actions={[
+          {
+            variant: 'primary',
+            target: '_blank',
+            text: 'Get templates',
+            href: 'https://github.com/onwidget/astrowind',
+            icon: 'tabler:download',
+          },
+          { text: 'Learn more', href: '#features' },
+        ]}
+      >
+        <Fragment slot="title">
+          Статьи <br/><span class="text-accent dark:text-white highlight">«Собаки Павловой»</span> 
+        </Fragment>
+    
+        <Fragment slot="subtitle">
+            Делимся знаниями и опытом с 2012 года.<br/>Написали более 100 статей и продолжаем писать.   
+        </Fragment>
+    
+      </Hero>
+    <PortfolioCollection list={['yit', 'dipol','elma', 'avicenna', 'm-line', 'onkor']} />
+  </section>
+</Layout>

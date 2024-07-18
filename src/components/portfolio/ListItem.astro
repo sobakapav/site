@@ -1,0 +1,86 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+import PostTags from '~/components/blog/Tags.astro';
+
+import { APP_BLOG } from 'astrowind:config';
+import type { Post } from '~/types';
+
+import { findImage } from '~/utils/images';
+import { getFormattedDate } from '~/utils/utils';
+
+const { post } = Astro.props;
+const image = (await findImage(post.thumbnail?.src)) as ImageMetadata | undefined;
+
+const link = post.external ? post.externalLink : post.href;
+---
+
+<article class={`flex flex-wrap`}>
+  {
+    image && (
+      <a href={link ?? 'javascript:void(0)'}>
+        <div class="relative overflow-hidden rounded">
+          <div class="w-72 h-72">
+            {image && (
+              <Image
+                src={image}
+                class="rounded"
+                width={288}
+                alt={post.title}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
+        </div>
+      </a>
+    )
+  }
+  <div class="mt-2 w-72">
+    <header>
+      <div class="mb-1">
+        <span class="text-sm">
+          {
+            post.author && (
+              <>
+                {' '}
+                ·{' '}
+                <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
+                <span>{post.author.replaceAll('-', ' ')}</span>
+              </>
+            )
+          }
+          {
+            post.category && (
+              <>
+                {' '}
+                ·{' '}
+                <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
+                  {post.category.title}
+                </a>
+              </>
+            )
+          }
+          
+        </span>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+        {
+          link ? (
+            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
+              {post.title}
+            </a>
+          ) : (
+            post.title
+          )
+        }
+      </h2>
+    </header>
+
+    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
+    {post.tags && <footer class="mt-5">
+      <PostTags tags={post.tags} />
+    </footer> }
+  </div>
+</article>
