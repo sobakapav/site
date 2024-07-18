@@ -78,15 +78,15 @@ export const headerData = {
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
-          href: getPermalink('/'),
+          href: '#',
         },    
         {
           text: 'Книги',
-          href: getPermalink('/'),
+         href: '#',
         },
         {
           text: 'Email-рассылка',
-          href: getPermalink('/'),
+          href: '#',
         },
        ],
     },
@@ -96,29 +96,26 @@ export const headerData = {
       links: [
         {
           text: 'О нас',
-          href: getPermalink('/#features'),
+          href: '#',
         },
         {
           text: 'Вакансии',
-          href: getPermalink('/services'),
+          href: '#',
         },
         {
           text: 'Выпускники',
-          href: getPermalink('/pricing'),
+          href: '#',
         },
         {
           text: 'Соцсети',
-          href: getPermalink('/#society'),
+          href: '#',
         },
         {
           text: 'Контакты',
           href: '#',
         },
        ],
-    },
-    
-    
-    
+    },  
     {
       text: 'Дизайн-задачник',
       href: '#',
@@ -135,16 +132,91 @@ export const footerData = {
     },
     {
       title: 'Услуги',
+      links: [
+        {
+          text: 'UX/UI-дизайн под ключ',
+          href: getPermalink('/services/turnkey'),
+        },
+        {
+          text: 'Прототип под инвестицию',
+          href: getPermalink('/services/prototype'),
+        },
+        {
+          text: 'UI-редизайн',
+          href: getPermalink('/services/ui-redesign'),
+        },
+        {
+          text: 'Точечный редизайн интерфейса',
+          href: getPermalink('/services/spot-redesign'),
+        },
+        {
+          text: 'Добавление новых возможностей',
+          href: getPermalink('/services/new-features'),
+        },
+        {
+          text: 'UX-аудит',
+          href: getPermalink('/services/ux-audit'),
+        },
+        {
+          text: 'Продуктовое исследование',
+          href: getPermalink('/services/research'),
+        },  
+        {
+          text: 'Усиление команды разработки',
+          href: getPermalink('/services/dev-team'),
+        },
+        {
+          text: 'Работа в продуктовой команде',
+          href: getPermalink('/services/product-team'),
+        },
+        {
+          text: 'Консультации',
+          href: getPermalink('/services/consultation'),
+        },
+        {
+          text: 'Контент-дизайн',
+          href: getPermalink('/services/content-design'),
+        },
+      ],
     },
     {
-      title: 'Отрасли',      
+      title: 'Экспертиза',
+      links: [
+        {
+          text: 'Статьи',
+          href: getPermalink('/blog'),
+        },
+        {
+          text: 'UX-исследования',
+          href: getPermalink('/ux-research'),
+        }, 
+        {
+          text: 'Передача макетов в разработку',
+          href: getPermalink('/features'),
+        },
+        {
+          text: '100 шпаргалок по дизайну интерфейсов',
+          href: '#',
+        },    
+        {
+          text: 'Книги',
+          href: '#',
+        },
+        {
+          text: 'Email-рассылка',
+          href: '#',
+        },
+     ],     
     },
     {
       title: 'О нас',
       links: [
         { text: 'О нас', href: '#' },
         { text: 'Вакансии', href: '#' },
-        { text: 'Выпускники', href: '#' },       
+        { text: 'Выпускники', href: '#' },
+        { text: 'Соцсети', href: '#' },
+        { text: 'Контакты', href: '#' },
+        { text: 'Дизайн-задачник', href: '#' },         
       ],
     },
   ],
