@@ -3,6 +3,8 @@ import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
 
+import EmailFooterInput from "~/components/ui/EmailFooterInput.astro";
+
 interface Link {
   text?: string;
   href?: string;
@@ -24,6 +26,10 @@ export interface Props {
 }
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+
+const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : "Нужен";
+const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez informé des derniers outils et des offres exclusives." :
+  "Без спама и не больше двух раз в месяц.";
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
@@ -48,7 +54,29 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
             ))
           }
         </div>
+      
+        <div class="tn-atom" style="line-height: 34px;">
+          Подписаться <a href="https://www.sobakapav.ru/newsletter" style="text-decoration: none;border-bottom: 1px solid;box-shadow: inset 0px -0px 0px 0px;-webkit-box-shadow: inset 0px -0px 0px 0px;-moz-box-shadow: inset 0px -0px 0px 0px;">
+            на&nbsp;рассылку</a>
+        </div>
+
+        <div class="col-span-2 flex items-center space-x-4">
+          <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+            {sectionThreeTitle}
+          </h3>
+  
+          <form>
+            <EmailFooterInput />
+            
+          </form>
+        </div>
+
+        <p class="mt-3 text-sm text-neutral-600 dark:text-gray-400">
+          {sectionThreeContent}
+        </p>
+        
       </div>
+
       {
         links.map(({ title, links }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
