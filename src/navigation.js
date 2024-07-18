@@ -221,7 +221,7 @@ export const footerData = {
   socialLinks: [
     { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/sobakawow' },
     { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/playlist?list=PLimfCvKK4fIqcTuyyCsFMwQxOFXxAah1H&disable_polymer=true' },
-    { ariaLabel: 'Behance', icon: 'tabler:brand-behunce', href: 'https://www.behance.net/sobakapavlova' },
+    { ariaLabel: 'Behance', icon: 'tabler:brand-behance', href: 'https://www.behance.net/sobakapavlova' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/sobakapav' },
   ],
