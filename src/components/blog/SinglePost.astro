@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import SocialShare from '~/components/common/SocialShare.astro';
+import { Markdown } from '@astropub/md';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
@@ -19,7 +20,7 @@ const { post, url } = Astro.props;
 const { Content } = post;
 ---
 
-<section class="py-8 sm:py-16 lg:py-20 mx-auto">
+<section class="py-8 sm:py-16 lg:py-20 mx-auto format-markdown">
   <article>
     <header class={post.image ? '' : ''}>
       <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
@@ -79,7 +80,7 @@ const { Content } = post;
       <p
         class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
       >
-        {post.excerpt}
+        <Markdown.Inline of={post.excerpt} />
       </p>
 
       {
