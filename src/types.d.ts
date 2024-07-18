@@ -22,6 +22,8 @@ export interface Post {
   excerpt?: string;
   /**  */
   image?: ImageMetadata | string;
+  imageAlt?: string;
+  imageName?: string;
 
   /**  */
   category?: Taxonomy

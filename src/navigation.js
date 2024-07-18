@@ -153,29 +153,34 @@ export const footerData = {
         {
           text: 'UX-аудит',
           href: getPermalink('/services/ux-audit'),
-        },
-        {
-          text: 'Продуктовое исследование',
-          href: getPermalink('/services/research'),
-        },  
-        {
-          text: 'Усиление команды разработки',
-          href: getPermalink('/services/dev-team'),
-        },
-        {
-          text: 'Работа в продуктовой команде',
-          href: getPermalink('/services/product-team'),
-        },
-        {
-          text: 'Консультации',
-          href: getPermalink('/services/consultation'),
-        },
-        {
-          text: 'Контент-дизайн',
-          href: getPermalink('/services/content-design'),
-        },
+        }
       ],
     },
+    {
+          title: ' ',
+          links: [
+            {
+              text: 'Продуктовое исследование',
+              href: getPermalink('/services/research'),
+            },  
+            {
+              text: 'Усиление команды разработки',
+              href: getPermalink('/services/dev-team'),
+            },
+            {
+              text: 'Работа в продуктовой команде',
+              href: getPermalink('/services/product-team'),
+            },
+            {
+              text: 'Консультации',
+              href: getPermalink('/services/consultation'),
+            },
+            {
+              text: 'Контент-дизайн',
+              href: getPermalink('/services/content-design'),
+            },
+          ],
+        },
     {
       title: 'Экспертиза',
       links: [

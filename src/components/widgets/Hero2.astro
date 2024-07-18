@@ -4,21 +4,25 @@ import type { CallToAction } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
 export interface Props {
+  supertitle?: string;
   title?: string;
   subtitle?: string;
   tagline?: string;
   content?: string;
   actions?: string | CallToAction[];
   image?: string | any; // TODO: find HTMLElementProps
+  imageName?: string;
 }
 
 const {
+  supertitle = await Astro.slots.render('supertitle'),
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
   image = await Astro.slots.render('image'),
+  imageName,
 } = Astro.props;
 ---
 
@@ -26,26 +30,25 @@ const {
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8">
-      <div class="basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto">
+    <div class="py-12 md:py-20 lg:py-0 lg:flex overflow-y-hidden lg:gap-8">
+      <div class="basis-1/2 text-left mx-auto">
         {
-          tagline && (
-            <p
-              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
-              set:html={tagline}
+          supertitle && (
+            <div
+              set:html={supertitle}
             />
           )
         }
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto lg:max-w-none">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <div class="text-xl text-muted mb-6 dark:text-slate-300 format-markdown" set:html={subtitle} />}
 
           {
             actions && (
@@ -78,13 +81,17 @@ const {
                   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
                   loading="eager"
                   width={600}
-                  height={600}
                   {...image}
                 />
               )}
             </div>
           )
         }
+        <p
+          class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-sm md:text-sm text-muted dark:text-slate-400 text-justify"
+        >
+          {imageName || ''}
+        </p>
       </div>
     </div>
   </div>
