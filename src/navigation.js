@@ -78,15 +78,15 @@ export const headerData = {
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
-          href: '#',
+          href: "https://sobakapav.ru/cheatsheets",
         },    
         {
           text: 'Книги',
-         href: '#',
+          href: "https://sobakapav.ru/publications/books",
         },
         {
           text: 'Email-рассылка',
-          href: '#',
+          href: "https://sobakapav.ru/newsletter",
         },
        ],
     },
@@ -96,29 +96,29 @@ export const headerData = {
       links: [
         {
           text: 'О нас',
-          href: '#',
+          href: "https://sobakapav.ru/about",
         },
         {
           text: 'Вакансии',
-          href: '#',
+          href: "https://sobakapav.ru/vacancy",
         },
         {
           text: 'Выпускники',
-          href: '#',
+          href: "https://sobakapav.ru/graduates",
         },
         {
           text: 'Соцсети',
-          href: '#',
+          href: "https://sobakapav.ru/social-network",
         },
         {
           text: 'Контакты',
-          href: '#',
+          href: "https://sobakapav.ru/contacts",
         },
        ],
     },  
     {
       text: 'Дизайн-задачник',
-      href: '#',
+      href: "https://www.eduhund.ru",
     },
       
   ],
@@ -127,9 +127,6 @@ export const headerData = {
 
 export const footerData = {
   links: [
-    {
-      title: 'Портфолио',
-    },
     {
       title: 'Услуги',
       links: [
@@ -196,36 +193,37 @@ export const footerData = {
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
-          href: '#',
+          href: 'https://sobakapav.ru/cheatsheets',
         },    
         {
           text: 'Книги',
-          href: '#',
+          href: 'https://sobakapav.ru/publications/books',
         },
         {
           text: 'Email-рассылка',
-          href: '#',
+          href: 'https://sobakapav.ru/newsletter',
         },
      ],     
     },
     {
       title: 'О нас',
       links: [
-        { text: 'О нас', href: '#' },
-        { text: 'Вакансии', href: '#' },
-        { text: 'Выпускники', href: '#' },
-        { text: 'Соцсети', href: '#' },
-        { text: 'Контакты', href: '#' },
-        { text: 'Дизайн-задачник', href: '#' },         
+        { text: 'О нас', href: 'https://sobakapav.ru/about' },
+        { text: 'Вакансии', href: 'https://sobakapav.ru/vacancy' },
+        { text: 'Выпускники', href: 'https://sobakapav.ru/graduates' },
+        { text: 'Соцсети', href: 'https://sobakapav.ru/social-network' },
+        { text: 'Контакты', href: 'https://sobakapav.ru/contacts' },
+        { text: 'Дизайн-задачник', href: 'https://www.eduhund.ru' },         
       ],
     },
   ],
   
   socialLinks: [
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Telegram', icon: 'tabler:brand-telegram', href: 'https://t.me/sobakawow' },
+    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/playlist?list=PLimfCvKK4fIqcTuyyCsFMwQxOFXxAah1H&disable_polymer=true' },
+    { ariaLabel: 'Behance', icon: 'tabler:brand-behunce', href: 'https://www.behance.net/sobakapavlova' },
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/sobakapav' },
   ],
   
 };
