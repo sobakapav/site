@@ -4,7 +4,7 @@ import { transformUrl, parseUrl } from 'unpic';
 import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 
-type Layout = 'fixed' | 'constrained' | 'fullWidth' | 'cover' | 'responsive' | 'contained';
+type Layout = 'fixed' | 'constrained' | 'constrained-height' | 'constrained-both' | 'fullWidth' | 'cover' | 'responsive' | 'contained';
 
 export interface AttributesProps extends HTMLAttributes<'img'> {}
 
@@ -62,6 +62,10 @@ const computeHeight = (width: number, aspectRatio: number) => {
   return Math.floor(width / aspectRatio);
 };
 
+const computeWidth = (height: number, aspectRatio: number) => {
+  return Math.floor(height * aspectRatio);
+};
+
 const parseAspectRatio = (aspectRatio: number | string | null | undefined): number | undefined => {
   if (typeof aspectRatio === 'number') return aspectRatio;
 
@@ -91,6 +95,12 @@ export const getSizes = (width?: number, layout?: Layout): string | undefined =>
     // If screen is wider than the max size, image width is the max size,
     // otherwise it's the width of the screen
     case `constrained`:
+      return `(min-width: ${width}px) ${width}px, 100vw`;
+
+    case `constrained-height`:
+      return `(min-width: ${width}px) ${width}px, 100vw`;
+
+    case `constrained-both`:
       return `(min-width: ${width}px) ${width}px, 100vw`;
 
     // Image is always the same width, whatever the size of the screen
@@ -149,6 +159,18 @@ const getStyle = ({
     styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
     styleEntries.push(['width', '100%']);
   }
+  if (layout === 'constrained-height') {
+    styleEntries.push(['max-width', pixelate(width)]);
+    styleEntries.push(['max-height', pixelate(height)]);
+    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    styleEntries.push(['height', '100%']);
+  }
+  if (layout === 'constrained-both') {
+    styleEntries.push(['max-width', pixelate(width)]);
+    styleEntries.push(['max-height', pixelate(height)]);
+    styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
+    styleEntries.push(['height', '100%']);
+  }
   if (layout === 'fullWidth') {
     styleEntries.push(['width', '100%']);
     styleEntries.push(['aspect-ratio', aspectRatio ? `${aspectRatio}` : undefined]);
@@ -196,7 +218,7 @@ const getBreakpoints = ({
   if (layout === 'fixed') {
     return [width, doubleWidth];
   }
-  if (layout === 'constrained') {
+  if (layout === 'constrained' || layout === 'constrained-height' || layout === 'constrained-both') {
     return [
       // Always include the image at 1x and 2x the specified width
       width,
@@ -265,9 +287,21 @@ export async function getImagesOptimized(
   transform: ImagesOptimizer = () => Promise.resolve([])
 ): Promise<{ src: string; attributes: AttributesProps }> {
   if (typeof image !== 'string') {
-    width ||= Number(image.width) || undefined;
-    height ||= typeof width === 'number' ? computeHeight(width, image.width / image.height) : undefined;
-  }
+    if (layout='constrained-both') {
+      if (image.width > image.height) {
+        height = width;
+        width = typeof width === 'number' ? computeWidth(width, image.width / image.height) : undefined;
+      } else {
+        height = typeof width === 'number' ? computeHeight(width, image.width / image.height) : undefined;
+      }
+    } else if (layout='constrained-height') {
+      height ||= Number(image.height) || undefined;
+      width ||= typeof width === 'number' ? computeWidth(height, image.width / image.height) : undefined;
+    } else {
+      width ||= Number(image.width) || undefined;
+      height ||= typeof width === 'number' ? computeHeight(width, image.width / image.height) : undefined;
+    }
+  } 
 
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;

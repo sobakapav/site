@@ -16,7 +16,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const image = (await findImage(post.image)) as ImageMetadata | undefined;
+const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata | undefined;
 
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
@@ -25,14 +25,14 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
-        <div class="relative overflow-hidden rounded">
-          <div class="w-72 h-72">
+        <div class="w-72 h-60">
+          <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
             {image && (
               <Image
                 src={image}
-                class="rounded"
-                width={288}
                 alt={post.title}
+                layout="constrained-both"
+                width={288}
                 loading="lazy"
                 decoding="async"
               />
@@ -46,18 +46,23 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     <header>
       <div class="mb-1">
         <span class="text-sm">
-          <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
             post.author && (
               <>
                 {' '}
                 ·{' '}
-                <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
                 <span>{post.author.replaceAll('-', ' ')}</span>
               </>
             )
           }
+          {
+                        post.readingTime && (
+                          <>
+                            &nbsp;· <span>{post.readingTime}</span> мин.
+                          </>
+                        )
+                      }
           {
             post.category && (
               <>
@@ -85,6 +90,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       </h2>
     </header>
 
+    {(post.description || post.excerpt) && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.description || post.excerpt}</p>}
     {post.tags && <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer> }

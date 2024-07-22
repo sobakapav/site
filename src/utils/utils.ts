@@ -1,8 +1,8 @@
 import { I18N } from 'astrowind:config';
 
-export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
+export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat("ru", {
   year: 'numeric',
-  month: 'short',
+  month: 'numeric',
   day: 'numeric',
   timeZone: 'UTC',
 });
@@ -50,3 +50,13 @@ export const toUiAmount = (amount: number) => {
 
   return value;
 };
+
+export const minuteCase = (minutes) => {
+  if (minutes % 10 == 1 && minutes % 100 != 11) {
+    return 'минута';
+  }
+  if (minutes % 10 >= 2 && minutes % 10 <= 4 && !(minutes % 100 >= 12 && minutes % 100 <= 14) ) {
+    return 'минуты';
+  }
+  return 'минут';
+}
