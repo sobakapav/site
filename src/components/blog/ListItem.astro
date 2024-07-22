@@ -25,7 +25,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
-        <div class="w-72 h-60">
+        <div class="w-72 h-72 md:h-60">
           <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
             {image && (
               <Image
