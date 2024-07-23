@@ -42,17 +42,13 @@ const { Content } = post;
           <p>
             {
               post.publishDate && (
-                <>
-                  <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                  <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-                </>
+                <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
               )
             }
             {
               post.author && (
                 <>
                   {' '}
-                  · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                   <span class="inline-block">{post.author}</span>
                 </>
               )
