@@ -284,3 +284,20 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
 
   return selectedPosts;
 }
+
+export async function getTags() {
+  const posts = await fetchPosts();
+  const tags = {};
+  posts.map((post) => {
+    Array.isArray(post.tags) &&
+      post.tags.map((tag) => {
+        tags[tag.slug] = tags[tag.slug] || {
+          tag,
+          count: 0
+        } 
+        tags[tag.slug].count++;
+      });
+  });
+  
+  return tags;
+}

@@ -6,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import TagCloud from '~/components/tags/TagCloud.astro';
 // import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
@@ -54,14 +55,18 @@ const metadata = {
         ]}
       >
         <Fragment slot="title">
-          Статьи <br/><span class="text-accent dark:text-white highlight">«Собаки Павловой»</span> 
+          Статьи про UX-дизайн </br>и не только
         </Fragment>
     
         <Fragment slot="subtitle">
-            Делимся знаниями и опытом с 2012 года.<br/>Написали более 100 статей и продолжаем писать.   
+            Рассказываем о&nbsp;дизайне интерфейсов, исследовании пользователей, бизнесе и&nbsp;управлении проектами. Делимся знаниями и&nbsp;опытом, предлагаем лайфхаки и&nbsp;решения. 
         </Fragment>
     
+        <Fragment slot="content">
+             <TagCloud />  
+        </Fragment>
       </Hero>
+      
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     <!--
