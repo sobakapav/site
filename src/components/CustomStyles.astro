@@ -66,13 +66,52 @@ import '~/assets/styles/colors.css';
     background-color: var(--aw-color-accent);
   }
   
+  .format-subtitle-markdown a {
+    text-decoration: underline;
+    color: var(--dark-4);
+  }
+
+  .format-subtitle-markdown p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
   .format-markdown a {
     text-decoration: underline;
     color: var(--dark-4);
   }
 
   .format-markdown p {
-    margin-top: 12px;
-    margin-bottom: 12px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+    
+  @media (min-width: 768px) {
+    .format-markdown p,
+    .format-markdown ul,
+    .format-markdown ol {
+      font-size: 20px;
+    }
   }
+  
+  .format-markdown img + em {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--grey-3);
+    font-style: normal;
+    margin-bottom: 1.5em;
+  }
+  
+  @media (min-width: 1024px) {
+      .format-markdown img {
+          margin-top: 1.5em;
+          margin-bottom: 1em;
+      }
+  }
+  
+  .related-posts li {
+    list-style: none;
+  }
+  
 </style>

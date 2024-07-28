@@ -1,5 +1,5 @@
 ---
-import Item from '~/components/blog/GridItem.astro';
+import Item from '~/components/blog/ListItem.astro';
 import type { Post } from '~/types';
 
 export interface Props {
@@ -9,6 +9,10 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6">
-  {posts.map((post) => <Item post={post} />)}
+<div class="flex flex-wrap justify-center md:justify-normal lg:justify-between gap-4">
+  {posts.map((post) => (
+    <li class="mb-12 md:mb-20 w-[288px]">
+      <Item post={post} />
+    </li>
+  ))}
 </div>
