@@ -30,7 +30,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
           <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
             {image && (
               <Image
-                src={image}
+                src={post.thumbnail || post.image}
                 alt={post.title}
                 layout="constrained-both"
                 width={288}

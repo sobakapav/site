@@ -1,0 +1,18 @@
+---
+import Item from '~/components/portfolio/ListItem.astro';
+import type { Post } from '~/types';
+
+export interface Props {
+  posts: Array<Post>;
+}
+
+const { posts } = Astro.props;
+---
+
+<div class="flex flex-wrap justify-center md:justify-normal lg:justify-between gap-4">
+  {posts.map((post) => (
+    <li class="mb-12 md:mb-20 w-[288px]">
+      <Item post={post} />
+    </li>
+  ))}
+</div>
