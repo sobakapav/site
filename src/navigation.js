@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Портфолио',
-      href: '#',
+      href: 'https://sobakapav.ru/portfolio',
     },
     {
       text: 'Услуги',
@@ -66,7 +66,7 @@ export const headerData = {
       links: [
         {
           text: 'Статьи',
-          href: getPermalink('/blog'),
+          href: getPermalink('/publications'),
         },
         {
           text: 'UX-исследования',
@@ -74,7 +74,7 @@ export const headerData = {
         }, 
         {
           text: 'Передача макетов в разработку',
-          href: getPermalink('/features'),
+          href: getPermalink('/design2dev'),
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
@@ -186,7 +186,7 @@ export const footerData = {
       links: [
         {
           text: 'Статьи',
-          href: getPermalink('/blog'),
+          href: getPermalink('/publications'),
         },
         {
           text: 'UX-исследования',
@@ -194,7 +194,7 @@ export const footerData = {
         }, 
         {
           text: 'Передача макетов в разработку',
-          href: getPermalink('/features'),
+          href: getPermalink('/design2dev'),
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
