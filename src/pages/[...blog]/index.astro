@@ -8,7 +8,6 @@ import { Markdown } from '@astropub/md';
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import ToBlogLink from '~/components/blog/ToBlogLink.astro';
-import RelatedLinks from '~/components/blog/RelatedLinks.astro';
 
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
@@ -47,12 +46,8 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
-  <SinglePost post={{ ...post, image: image }} url={url}>
-    {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
-  </SinglePost>
-  <div class="prose text-xl text-muted mb-12 dark:text-slate-300 format-subtitle-markdown pt-0 lg:pt-0 md:pt-0  max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16" >
-      <Markdown.Inline of={post.seeMore} />
-  </div>
+    <SinglePost post={{ ...post, image: image }} url={url}>
+      {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
+    </SinglePost>
   <RelatedPosts post={post} />
-  <RelatedLinks post={post} />
 </Layout>

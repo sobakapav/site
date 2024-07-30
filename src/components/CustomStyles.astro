@@ -80,21 +80,42 @@ import '~/assets/styles/colors.css';
     margin-bottom: 24px;
   }
   
+   .format-subtitle-markdown h4
+   {
+     margin-bottom: 0px;
+   } 
+
   .format-markdown a {
     text-decoration: underline;
     color: var(--dark-4);
   }
 
   .format-markdown p,
-  .format-markdown h4
+  .format-markdown h4,
+  .format-subtitle-markdown p,
+  .format-subtitle-markdown h4
   {
     font-size: 18px;
-    line-height: 26px;
+    line-height: 28px;
   }
 
-  .format-markdown p {
-    margin-top: 12px;
-    margin-bottom: 12px;
+  .format-markdown p,
+  .format-subtitle-markdown p
+  {
+    margin-top: 0px;
+    margin-bottom: 24px;
+  }
+  
+  .format-markdown h4,
+  .format-subtitle-markdown h4
+  {
+    margin-bottom: 8px;
+  }
+  
+  .format-subtitle-markdown h3
+  {
+    font-size: 30px;
+    line-height: 40px;
   }
     
   @media (min-width: 768px) {
