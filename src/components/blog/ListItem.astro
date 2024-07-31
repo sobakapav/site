@@ -22,7 +22,7 @@ const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata |
 const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class="flex flex-wrap justify-normal">
+<article class="flex flex-wrap justify-normal blog-list-item">
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
