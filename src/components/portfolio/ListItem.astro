@@ -16,7 +16,7 @@ const image = (await findImage(post.thumbnail?.src)) as ImageMetadata | undefine
 const link = post.external ? post.externalLink : post.href;
 ---
 
-<article class={`flex flex-wrap`}>
+<article class={`flex flex-wrap blog-list-item`}>
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
