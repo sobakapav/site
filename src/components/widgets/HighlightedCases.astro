@@ -41,7 +41,7 @@ for (var item of links) {
 {
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
-      <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+      <div class="flex flex-col lg:justify-between lg:flex-row mb-6">
         {title && (
           <div>
             <h3
@@ -50,7 +50,7 @@ for (var item of links) {
             />
             {APP_BLOG.list.isEnabled && linkText && linkUrl && (
               <a
-                class="flex gap-2 items-end text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-6 lg:mb-0"
+                class="flex gap-2 items-end text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-0"
                 href={linkUrl}
               >
                 {linkText}
