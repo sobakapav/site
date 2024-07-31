@@ -28,8 +28,10 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 const sectionThreeTitle = "Контакты";
 const email = "we@sobakapav.ru";
 const phone = "+7 (921) 654-26-80";
+const whatsup = "+792112345670";
 const telegramLink = "https://t.me/procosha";
 ---
+
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
@@ -37,80 +39,70 @@ const telegramLink = "https://t.me/procosha";
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 
       <!-- О нас -->
-      <div class="col-span-12 lg:col-span-4">
+      <div class="col-span-12 lg:col-span-4 flex flex-col space-y-4">
         <a class="inline-block font-bold text-xl" href={getHomePermalink()}>
           {SITE?.name}
         </a>
-        <p class="text-sm text-muted mt-2">
-          2012-2024. Дизайн сложных интерфейсов.
-        </p>
-        <p class="text-sm text-muted mt-2">
-          <a href="https://sobakapav.ru/portfolio" class="hover:underline text-blue-600 dark:text-blue-400">
-            Портфолио
-          </a>
-        </p>
-      </div>
-
-      <!-- Адреса -->
-      <div class="col-span-12 lg:col-span-4">
-        <div class="dark:text-gray-200 font-medium text-lg mb-4">Где мы?</div>
-        <div class="grid grid-cols-6 gap-4">
-          <div class="col-span-6 md:col-span-4 lg:col-span-3">
-            <div class="dark:text-gray-300 font-medium mb-2">Россия</div>
-            <p class="text-sm">
-              Санкт-Петербург, ул. Руднева, д. 9<br />
-              <a href="tel:+79216542680" class="hover:underline">+7 (921) 654-26-80</a><br />
-              <a href="https://t.me/procosha" class="hover:underline" target="_blank">telegram директора</a><br />
-              <a href="mailto:we@sobakapav.ru" class="hover:underline">we@sobakapav.ru</a>
-            </p>
-          </div>
-
-          <div class="col-span-6 md:col-span-4 lg:col-span-3">
-            <div class="dark:text-gray-300 font-medium mb-2">Черногория</div>
-            <p class="text-sm">
-              Branka Deletićа BB, Podgorica, 81100<br />
-              <a href="tel:+38267877073" class="hover:underline">+382 (67) 877-073</a><br />
-              <a href="https://t.me/roman_nebel" class="hover:underline" target="_blank">telegram представителя</a><br />
-              <a href="mailto:we@neverhund.com" class="hover:underline">we@neverhund.com</a>
-            </p>
-          </div>
+        <div class="flex-grow flex flex-col justify-between h-full">
+          <ul class="text-sm space-y-4 mb-4">
+            <li>
+              <a href={`tel:${phone}`} class="hover:underline text-lg">{phone}</a>
+            </li>
+            <li>
+              <a href={`mailto:${email}`} class="hover:underline">{email}</a>
+            </li>
+            <li>
+              <a href={telegramLink} class="hover:underline" target="_blank">@sobakapro</a>
+            </li>
+            <li>
+              <a href={`https://wa.me/${whatsup}`} class="hover:underline" target="_blank">WhatsApp</a>
+            </li>
+          </ul>
+          <p class="text-sm text-muted mt-2">
+            2012-2024. Санкт-Петербург | Подгорица.
+          </p>
         </div>
       </div>
 
-      <!-- Контакты -->
-      <div class="col-span-12 lg:col-span-4">
-        <div class="dark:text-gray-200 font-medium mb-2">{sectionThreeTitle}</div>
-        <ul class="text-sm space-y-4">
-          <li>
-            <a href={`tel:${phone}`} class="hover:underline text-lg">{phone}</a>
-          </li>
-          <li>
-            <a href={`mailto:${email}`} class="hover:underline">{email}</a>
-          </li>
-          <li>
-            <a href={telegramLink} class="hover:underline" target="_blank">{telegramLink}</a>
-          </li>
-        </ul>
-      </div>
+      <!-- Блок с кейсами -->
+      <div class="col-span-12 lg:col-span-8 flex flex-col space-y-4">
+        <div class="grid grid-cols-6 gap-4">
+          <div class="col-span-6 md:col-span-4 lg:col-span-3">
+            <div class="inline-block font-bold text-xl">Дизайн сложных интерфейсов</div>
+            <p class="text-sm space-y-4">
+              <a href="https://new.sobakapav.ru/services/turnkey" class="hover:underline" target="_blank">UX/UI дизайн под ключ</a><br />
+              <a href="https://new.sobakapav.ru/services/prototype" class="hover:underline" target="_blank">Прототип под инвестицию</a><br />
+              <a href="https://new.sobakapav.ru/services/ui-redesign" class="hover:underline" target="_blank">UI-редизайн</a><br />
+              <a href="https://new.sobakapav.ru/services/spot-redesign" class="hover:underline font-bold" target="_blank">Точечный редизайн интерфейса</a><br />
+              <a href="https://new.sobakapav.ru/services/new-features" class="hover:underline" target="_blank">Добавление новой функциональности</a><br />
+              <a href="https://new.sobakapav.ru/services/ux-audit" class="hover:underline" target="_blank">UX-аудит</a><br />
+              <a href="https://new.sobakapav.ru/services/research" class="hover:underline" target="_blank">Продуктовое исследование</a><br />
+              <a href="https://new.sobakapav.ru/services/dev-team" class="hover:underline font-bold" target="_blank">Усиление команды разработки</a><br />
+              <a href="https://new.sobakapav.ru/services/product-team" class="hover:underline" target="_blank">Работа в продуктовой команде</a><br />
+              <a href="https://new.sobakapav.ru/services/consultation" class="hover:underline" target="_blank">Консультации</a><br />
+              <a href="https://new.sobakapav.ru/services/content-design" class="hover:underline" target="_blank">Контент-дизайн</a><br />
+            </p>
+          </div>
 
-      <!-- Социальные сети -->
-      <div class="col-span-12 lg:col-span-4">
-        <div class="flex space-x-4 mt-4">
-          {
-            socialLinks.map(({ ariaLabel, href, icon }) => (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label={ariaLabel}
-                href={href}
-              >
-                {icon && <Icon name={icon} class="w-5 h-5" />}
-              </a>
-            ))
-          }
+          <div class="col-span-6 md:col-span-4 lg:col-span-3">
+            <div class="inline-block font-bold text-xl">
+              <a href="https://sobakapav.ru/portfolio" class="hover:underline text-blue-600" target="_blank">368 проектов</a>
+              <span> за 12 лет работы</span>
+            </div>
+            <p class="text-sm space-y-4">
+              <a href="https://sobakapav.ru/portfolio#prom" class="hover:underline" target="_blank">Промышленность</a><br />
+              <a href="https://sobakapav.ru/portfolio#fin" class="hover:underline" target="_blank">Финансовый сектор</a><br />
+              <a href="https://sobakapav.ru/portfolio" class="hover:underline" target="_blank">Образование</a><br />
+              <a href="https://sobakapav.ru/portfolio#it" class="hover:underline" target="_blank">IT-продукты для бизнеса</a><br />
+              <a href="https://sobakapav.ru/portfolio#med" class="hover:underline" target="_blank">Медицина</a><br />
+              <a href="https://sobakapav.ru/portfolio#ec" class="hover:underline" target="_blank">E-commerce</a><br />
+              <a href="https://sobakapav.ru/portfolio#gos" class="hover:underline" target="_blank">Госсектор и безопасность</a><br />
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    
+
     <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
       <div class="text-sm mr-4 dark:text-muted">
         <Fragment set:html={footNote} />
