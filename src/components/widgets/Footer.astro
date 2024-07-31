@@ -39,37 +39,40 @@ const telegramLink = "https://t.me/sobakawow";
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 
       <!-- О нас -->
-      <div class="col-span-12 lg:col-span-4 flex flex-col space-y-4 justify-between">
-        <div class="flex gap-x-12">
-          <div class="shrink-0">
+      <div class="col-span-12 lg:col-span-5  gap-x-12 flex">
+          <div class="shrink-0 flex flex-col justify-between">
            <img src="/public/images/logos/logo-square.svg" class="w-14 h-14 rounded-lg">
+           <p class="text-sm text-muted mt-2">
+              2012–2024
+           </p>
           </div>
-          <dix class="flex flex-col">
-          <a class="inline-block font-bold text-xl font-heading no-underline" href={getHomePermalink()}>
-            {SITE?.name}
-          </a>
-          <div class="flex flex-col justify-between h-full">
-            <p class="mt-4">
-                <a class="no-underline hover:underline text-lg" href={`tel:${phone}`}>{phone}</a>
-            </p>
-            <p class="mt-2">
-                <a href={`mailto:${email}`} class="hover:underline">{email}</a>
-            </p>
-            <p class="mt-2">
-                <a href={telegramLink} class="hover:underline" target="_blank">@sobakapro</a>
-            </p>
-            <p class="mt-2">
-                <a href={`https://wa.me/${whatsup}`} class="hover:underline" target="_blank">WhatsApp</a>
-            </p>
+          <dix class="flex flex-col justify-between">
+          <div class="flex flex-col">          
+            <a class="inline-block font-bold text-xl font-heading no-underline" href={getHomePermalink()}>
+              {SITE?.name}
+            </a>
+            <div class="flex flex-col justify-between h-full mb-2">
+              <p class="mt-4">
+                  <a class="no-underline hover:underline text-[18px]" href={`tel:${phone}`}>{phone}</a>
+              </p>
+              <p class="mt-2">
+                  <a href={`mailto:${email}`} class="hover:underline">{email}</a>
+              </p>
+              <p class="mt-2">
+                  <a href={telegramLink} class="hover:underline flex items-center" target="_blank">@sobakapro <Icon name="tabler:brand-telegram" class="w-4 h-4 ml-2" /></a>
+              </p>
+              <p class="mt-2">
+                  <a href={`https://wa.me/${whatsup}`} class="hover:underline flex items-center" target="_blank">WhatsApp <Icon name="tabler:brand-whatsapp" class="w-4 h-4 ml-2" /></a> 
+              </p>
+            </div>
           </div>
-        </div>
-        <p class="text-sm text-muted mt-2">
-          2012–2024 Москва | Санкт-Петербург | Подгорица | Хайфа
-        </p>
+           <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">
+              Москва | Санкт-Петербург | Подгорица | Хайфа
+           </p>
       </div>
 
       <!-- Блок с кейсами -->
-      <div class="col-span-12 lg:col-span-8 flex flex-col space-y-4">
+      <div class="col-span-12 lg:col-span-7 flex flex-col space-y-4">
         <div class="grid grid-cols-6 gap-4">
           <div class="col-span-6 md:col-span-4 lg:col-span-3">
             <div class="inline-block font-bold text-xl font-heading">Дизайн сложных интерфейсов</div>
@@ -110,7 +113,7 @@ const telegramLink = "https://t.me/sobakawow";
 
           <div class="col-span-6 md:col-span-4 lg:col-span-3">
             <div class="inline-block font-bold text-xl font-heading">
-              <a href="https://sobakapav.ru/portfolio" class="hover:underline text-blue-600 font-heading" target="_blank">368 проектов</a>
+              <a href="https://sobakapav.ru/portfolio" class="hover:underline font-heading" style="color: var(--dark-4)" target="_blank">368 проектов</a>
               <span class="font-heading"> за 12 лет работы</span>
             </div>
              <p class="text-sm mt-4">

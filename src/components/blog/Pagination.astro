@@ -15,7 +15,7 @@ const { prevUrl, nextUrl, prevText = 'Назад', nextText = 'Еще' } = Astro
 
 {
   (prevUrl || nextUrl) && (
-    <div class="container flex">
+    <div class="container flex max-w-5xl mx-auto">
       <div class="flex flex-row mx-auto container justify-between">
         <Button
           variant="tertiary"
