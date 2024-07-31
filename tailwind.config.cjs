@@ -21,15 +21,12 @@ module.exports = {
         xl: ['25px', '35px'],
         '2xl': ['30px', {
           lineHeight: '40px',
-          letterSpacing: '-1.5px',
         }],
         '3xl': ['37.5px', {
           lineHeight: '50px',
-          letterSpacing: '-0.4px',
         }],
         '4xl': ['37.5px', {
           lineHeight: '50px',
-          letterSpacing: '-0.4px',
         }],
       }
     },
