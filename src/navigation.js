@@ -55,12 +55,6 @@ export const headerData = {
         },
       ],
     },
-
-    {
-      text: 'Отрасли',
-      href: '#',
-    },
-
     {
       text: 'Экспертиза',
       links: [

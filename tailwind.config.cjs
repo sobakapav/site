@@ -28,7 +28,10 @@ module.exports = {
         '4xl': ['37.5px', {
           lineHeight: '50px',
         }],
-      }
+      },
+      gridTemplateColumns: {
+        'header': '250px 1fr 40px',
+      },
     },
   },
   plugins: [typographyPlugin],
