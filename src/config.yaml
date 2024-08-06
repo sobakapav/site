@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: Собака Павлова
-    template: '%s — AstroWind'
+    template: '%s'
   description: ""
   robots:
     index: false
