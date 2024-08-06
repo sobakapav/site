@@ -1,6 +1,6 @@
 site:
   name: Собака Павлова
-  site: 'https://new.sobakapav.ru'
+  site: 'https://sobakapav.ru'
   base: '/'
   trailingSlash: false
 
