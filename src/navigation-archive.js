@@ -7,6 +7,55 @@ export const headerData = {
       href: 'https://sobakapav.ru/portfolio',
     },
     {
+      text: 'Услуги',
+      links: [
+        {
+          text: 'UX/UI-дизайн под ключ',
+          href: getPermalink('/services/turnkey'),
+        },
+        {
+          text: 'Прототип под инвестицию',
+          href: getPermalink('/services/prototype'),
+        },
+        {
+          text: 'UI-редизайн',
+          href: getPermalink('/services/ui-redesign'),
+        },
+        {
+          text: 'Точечный редизайн интерфейса',
+          href: getPermalink('/services/spot-redesign'),
+        },
+        {
+          text: 'Добавление новых возможностей',
+          href: getPermalink('/services/new-features'),
+        },
+        {
+          text: 'UX-аудит',
+          href: getPermalink('/services/ux-audit'),
+        },
+        {
+          text: 'Продуктовое исследование',
+          href: getPermalink('/services/research'),
+        },  
+        {
+          text: 'Усиление команды разработки',
+          href: getPermalink('/services/dev-team'),
+        },
+        {
+          text: 'Работа в продуктовой команде',
+          href: getPermalink('/services/product-team'),
+        },
+        {
+          text: 'Консультации',
+          href: getPermalink('/services/consultation'),
+        },
+        {
+          text: 'Контент-дизайн',
+          href: getPermalink('/services/content-design'),
+        },
+      ],
+    },
+    {
       text: 'Экспертиза',
       links: [
         {
