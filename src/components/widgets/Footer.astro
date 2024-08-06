@@ -36,110 +36,123 @@ const telegramLink = "https://t.me/sobakapavpro";
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
   <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
-    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+    <div class="grid grid-cols-footer grid-rows-footer-sm lg:grid-rows-footer gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 
       <!-- О нас -->
-      <div class="col-span-12 lg:col-span-5  gap-x-12 flex">
+      <!-- Logo -->
+      <div class="col-span-1 gap-x-12 flex">
           <div class="shrink-0 flex flex-col justify-between">
-           <img src="/images/logos/logo-square.svg" class="w-14 h-14 rounded-lg mt-4">
-           <p class="text-sm text-muted mt-2">
-              2012–2024
-           </p>
+           <img src="/images/logos/logo-square.svg" class="w-14 h-14 rounded-lg lg:mt-4">
           </div>
-          <dix class="flex flex-col justify-between">
-          <div class="flex flex-col">          
-            <a class="inline-block font-bold text-5xl sm:text-[80px] font-heading no-underline" href={getHomePermalink()}>
-              {SITE?.name}
-            </a>
-            <div class="flex flex-col justify-between h-full mb-2">
-              <p class="mt-4  mb-6">
-                  <a class="no-underline hover:underline text-[40px] font-heading leading-[42px]" style="color: var(--dark-4)" href={`tel:${phone}`}>{phone}</a>
-              </p>
-              <p class="mt-2">
-                  <a href={`mailto:${email}`} class="hover:underline">{email}</a>
-              </p>
-              <p class="mt-2">
-                  <a href={telegramLink} class="hover:underline flex items-center" target="_blank">@sobakapavpro <Icon name="tabler:brand-telegram" class="w-4 h-4 ml-2" /></a>
-              </p>
-              <p class="mt-2">
-                  <a href={`https://wa.me/message/${whatsup}`} class="hover:underline flex items-center" target="_blank">WhatsApp <Icon name="tabler:brand-whatsapp" class="w-4 h-4 ml-2" /></a> 
-              </p>
-            </div>
-          </div>
-           <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">
-              Москва | Санкт-Петербург | Подгорица | Хайфа
-           </p>
       </div>
+      
+      <!-- Собака Павлова -->
+            <div class="col-span-3 lg:col-span-1 gap-x-12 flex">
+                <dix class="flex flex-col justify-between">
+                <div class="flex flex-col">          
+                  <a class="inline-block font-bold text-5xl sm:text-[80px] font-heading no-underline" href={getHomePermalink()}>
+                    {SITE?.name}
+                  </a>
+                  <div class="flex flex-col justify-between h-full mb-2">
+                    <p class="mt-4  mb-6">
+                        <a class="no-underline hover:underline text-[40px] font-heading leading-[42px]" style="color: var(--dark-4)" href={`mailto:${email}`} class="hover:underline">{email}</a>
+                    </p>
+                    <p class="mt-2">
+                        <a class="no-underline hover:underline text-lg font-semibold" href={`tel:${phone}`}>{phone}</a>
+                    </p>
+                    <p class="mt-2">
+                        <a href={telegramLink} class="flex items-center text-lg font-semibold" target="_blank">@sobakapavpro <Icon name="tabler:brand-telegram" class="w-4 h-4 ml-2" /></a>
+                    </p>
+                    <p class="mt-2">
+                        <a href={`https://wa.me/message/${whatsup}`} class="flex items-center text-lg font-semibold" target="_blank">WhatsApp <Icon name="tabler:brand-whatsapp" class="w-4 h-4 ml-2" /></a> 
+                    </p>
+                  </div>
+                </div>
+            </div>
 
-      <!-- Блок с кейсами -->
-      <div class="col-span-12 lg:col-span-7 flex flex-col space-y-4">
-        <div class="grid grid-cols-6 gap-4">
-          <div class="col-span-6 md:col-span-4 lg:col-span-3">
+      <!-- Блок с услугами -->
+      <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col space-y-4">
             <h3 class="inline-block font-bold text-[40px] font-heading leading-[42px]">Дизайн сложных интерфейсов</h3>
-            <p class="text-sm mt-4">
+            <p class="text-lg mt-4">
               UX/UI дизайн под ключ
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Прототип под инвестицию
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               UI-редизайн
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Точечный редизайн интерфейса
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Добавление новой функциональности
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               UX-аудит
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Продуктовое исследование
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Усиление команды разработки
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Работа в продуктовой команде
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Консультации
             </p>
-            <p class="text-sm mt-2">
+            <p class="text-lg mt-2">
               Контент-дизайн
             </p>
-          </div>
-
-          <div class="col-span-6 md:col-span-4 lg:col-span-3">
-            <h3 class="inline-block font-bold text-[40px] font-heading leading-[42px]">
-              <a href="https://sobakapav.ru/portfolio" class="hover:underline" style="color: var(--dark-4)">368 проектов</a>
-               </br>за 12 лет работы
-            </h3>
-             <p class="text-sm mt-4">
-              <a href="https://sobakapav.ru/portfolio#med" class="hover:underline">Медицина</a>
-            </p>
-            <p class="text-sm mt-2">
-              <a href="https://sobakapav.ru/portfolio#prom" class="hover:underline">Промышленность</a>
-            </p>
-             <p class="text-sm mt-2">
-              <a href="https://sobakapav.ru/portfolio#fin" class="hover:underline">Финансовый сектор</a>
-            </p>
-             <p class="text-sm mt-2">
-              <a href="https://sobakapav.ru/portfolio" class="hover:underline">Образование</a>
-            </p>
-             <p class="text-sm mt-2">
-              <a href="https://sobakapav.ru/portfolio#it" class="hover:underline">IT-продукты для бизнеса</a>
-            </p>
-             <p class="text-sm mt-2">
-              <a href="https://sobakapav.ru/portfolio#ec" class="hover:underline">E-commerce</a>
-            </p>
-             <p class="text-sm mt-2">
-              <a href="https://sobakapav.ru/portfolio#gos" class="hover:underline">Госсектор и безопасность</a><br />
-            </p>
-          </div>
-        </div>
       </div>
+      
+      <!-- Блок с кейсами -->
+            <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col space-y-4">
+                  <h3 class="inline-block font-bold text-[40px] font-heading leading-[42px]">
+                    <a href="https://sobakapav.ru/portfolio" class="hover:underline" style="color: var(--dark-4)">368 проектов</a>
+                     </br>за 12 лет работы
+                  </h3>
+                   <p class="text-lg mt-4">
+                    <a href="https://sobakapav.ru/portfolio#med" class="hover:underline">Медицина</a>
+                  </p>
+                  <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio#prom" class="hover:underline">Промышленность</a>
+                  </p>
+                   <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio#fin" class="hover:underline">Финансовый сектор</a>
+                  </p>
+                  <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio#it" class="hover:underline">IT-продукты для бизнеса</a>
+                  </p>
+                   <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio#ec" class="hover:underline">E-commerce</a>
+                  </p>
+                   <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio" class="hover:underline">Образование</a>
+                  </p>                 
+                   <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio#gos" class="hover:underline">Госсектор и безопасность</a>
+                  </p>
+                   <p class="text-lg mt-2">
+                    <a href="https://sobakapav.ru/portfolio#complex" class="hover:underline">GUI устройств и приборов</a>
+                  </p>
+            </div>
+      
+       <!-- Years -->
+            <div class="col-span-1 gap-x-12 flex items-end">
+                 <p class="text-sm text-muted mt-2">
+                    2012–2024
+                 </p>
+            </div>
+            
+       <!-- Cities-->
+           <div class="col-span-3 lg:col-span-1 gap-x-12 flex items-end">
+                <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">
+                   Москва / Санкт-Петербург / Подгорица / Хайфа
+                </p>
+           </div>
     </div>
 
     <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
