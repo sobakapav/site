@@ -25,8 +25,8 @@ module.exports = {
         '3xl': ['37.5px', {
           lineHeight: '50px',
         }],
-        '4xl': ['37.5px', {
-          lineHeight: '50px',
+        '4xl': ['36px', {
+          lineHeight: '40px',
         }],
       },
       gridTemplateColumns: {
