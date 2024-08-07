@@ -52,7 +52,6 @@ export const adaptOpenGraphImages = async (
   openGraph: OpenGraph = {},
   astroSite: URL | undefined = new URL('')
 ): Promise<OpenGraph> => {
-  console.log('Adapting images: ' + openGraph?.images?.length);
   if (!openGraph?.images?.length) {
     return openGraph;
   }
@@ -63,10 +62,8 @@ export const adaptOpenGraphImages = async (
 
   const adaptedImages = await Promise.all(
     images.map(async (image) => {
-      console.log('Adapting image: ' + image?.url);
       if (image?.url) {
         const resolvedImage = (await findImage(image.url)) as ImageMetadata | undefined;
-        console.log('Resolved: ' + JSON.stringify(resolvedImage));
         if (!resolvedImage) {
           return {
             url: '',
@@ -79,7 +76,6 @@ export const adaptOpenGraphImages = async (
           width: image?.width || defaultWidth,
           height: image?.height || defaultHeight,
         });
-        console.log('Processed: ' + JSON.stringify(_image));
 
         if (typeof _image === 'object') {
           return {
