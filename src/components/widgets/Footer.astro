@@ -42,28 +42,28 @@ const telegramLink = "https://t.me/sobakapavpro";
       <!-- Logo -->
       <div class="col-span-1 gap-x-12 flex">
           <div class="shrink-0 flex flex-col justify-between">
-           <img src="/images/logos/logo-square.svg" class="w-14 h-14 rounded-lg mt-2 md:mt-4 lg:mt-2.5">
+           <img src="/images/logos/logo-square.svg" class="w-[67px] h-[67px] rounded-lg mt-2 md:mt-4 lg:mt-2.5">
           </div>
       </div>
       
       <!-- Собака Павлова -->
             <div class="col-span-3 lg:col-span-1 gap-x-12 flex">
                 <div class="flex flex-col">          
-                  <a class="inline-block font-bold text-5xl sm:text-6xl font-heading no-underline" href={getHomePermalink()}>
+                  <a class="inline-block font-bold text-[52px] leading-[50px] font-heading no-underline mb-5 max-w-64" href={getHomePermalink()}>
                     {SITE?.name}
                   </a>
                   <div class="flex flex-col h-full mb-2">
-                    <p class="mt-4  mb-6">
-                        <a class="text-4xl font-heading underline-offset-4" style="color: var(--dark-4)" href={`mailto:${email}`} class="hover:underline">{email}</a>
+                    <p class="mb-2">
+                        <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${email}`}>{email}</a>
                     </p>
-                    <p class="mt-2">
+                    <p class="mb-2">
                         <a class="no-underline hover:underline underline-offset-2 text-base" href={`tel:${phone}`}>{phone}</a>
                     </p>
-                    <p class="mt-2">
-                        <a href={telegramLink} class="flex items-center text-base underline-offset-2" target="_blank">@sobakapavpro <Icon name="tabler:brand-telegram" class="w-5 h-5 ml-2" /></a>
+                    <p class="mb-2">
+                        <a href={telegramLink} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro <Icon name="tabler:brand-telegram" class="w-5 h-5 ml-2" /></a>
                     </p>
-                    <p class="mt-2">
-                        <a href={`https://wa.me/message/${whatsup}`} class="flex items-center text-base underline-offset-2" target="_blank">WhatsApp <Icon name="tabler:brand-whatsapp" class="w-5 h-5 ml-2" /></a> 
+                    <p class="mb-2">
+                        <a href={`https://wa.me/message/${whatsup}`} class="flex items-center no-underline hover:underline underline-offset-2 text-base">WhatsApp <Icon name="tabler:brand-whatsapp" class="w-5 h-5 ml-2" /></a> 
                     </p>
                   </div>
                 </div>
@@ -71,70 +71,70 @@ const telegramLink = "https://t.me/sobakapavpro";
 
       <!-- Блок с услугами -->
       <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col space-y-4 mt-0.5">
-            <h3 class="inline-block font-bold text-4xl font-heading">Дизайн сложных интерфейсов</h3>
-            <p class="text-base mt-4">
+            <h3 class="inline-block text-4xl font-heading mb-2">Дизайн сложных интерфейсов</h3>
+            <p class="text-base mb-2">
               UX/UI дизайн под ключ
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Прототип под инвестицию
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               UI-редизайн
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Точечный редизайн интерфейса
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Добавление новой функциональности
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               UX-аудит
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Продуктовое исследование
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Усиление команды разработки
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Работа в продуктовой команде
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Консультации
             </p>
-            <p class="text-base mt-2">
+            <p class="text-base mb-2">
               Контент-дизайн
             </p>
       </div>
       
       <!-- Блок с кейсами -->
             <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col space-y-4 mt-0.5">
-                  <h3 class="inline-block font-bold text-4xl font-heading">
+                  <h3 class="inline-block text-4xl font-heading mb-2">
                     <a href="https://sobakapav.ru/portfolio" class="hover:underline underline-offset-4" style="color: var(--dark-4)">368 проектов</a>
                      </br>за 12 лет работы
                   </h3>
-                   <p class="text-base mt-4 underline-offset-2">
+                   <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#med" class="hover:underline">Медицина</a>
                   </p>
-                  <p class="text-base mt-2 underline-offset-2">
+                  <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#prom" class="hover:underline">Промышленность</a>
                   </p>
-                   <p class="text-base mt-2 underline-offset-2">
+                   <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#fin" class="hover:underline">Финансовый сектор</a>
                   </p>
-                  <p class="text-base mt-2 underline-offset-2">
+                  <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#it" class="hover:underline">IT-продукты для бизнеса</a>
                   </p>
-                   <p class="text-base mt-2 underline-offset-2">
+                   <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#ec" class="hover:underline">E-commerce</a>
                   </p>
-                   <p class="text-base mt-2 underline-offset-2">
+                   <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio" class="hover:underline">Образование</a>
                   </p>                 
-                   <p class="text-base mt-2 underline-offset-2">
+                   <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#gos" class="hover:underline">Госсектор и безопасность</a>
                   </p>
-                   <p class="text-base mt-2 underline-offset-2">
+                   <p class="text-base mb-2 underline-offset-2">
                     <a href="https://sobakapav.ru/portfolio#complex" class="hover:underline">GUI устройств и приборов</a>
                   </p>
             </div>

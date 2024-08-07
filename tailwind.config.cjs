@@ -31,7 +31,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         'header': '250px 1fr 40px',
-        'footer': '80px 1fr 1fr 1fr',
+        'footer': '70px 1fr 1fr 1fr',
       },
       gridTemplateRows: {
         'footer': 'auto auto',
