@@ -27,7 +27,7 @@ export const headerData = {
         },    
         {
           text: 'Книги',
-          href: "https://sobakapav.ru/publications/books",
+          href: "https://sobakapav.ru/books",
         },
         {
           text: 'Email-рассылка',
@@ -147,7 +147,7 @@ export const footerData = {
         },    
         {
           text: 'Книги',
-          href: 'https://sobakapav.ru/publications/books',
+          href: 'https://sobakapav.ru/books',
         },
         {
           text: 'Email-рассылка',
