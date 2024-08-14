@@ -155,6 +155,13 @@ const serviceCollection = defineCollection({
       price: textBlock(),
       time: textBlock(),
     }),
+    roi: textBlock().optional(),
+    otherServices: z.array(z.object({
+      title: z.string().optional(),
+      link: z.string().optional(),
+      text: z.string().optional(),
+    })).optional(),
+    story: textBlock().optional(),
 //    metadata: metadataDefinition(),
   }),
 });
