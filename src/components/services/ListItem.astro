@@ -18,7 +18,7 @@ export interface Props {
 const { post } = Astro.props;
 const image = (await findImage(post.image)) as ImageMetadata | undefined;
 
-console.log('ListITem: ' + post.pageTitle);
+console.log('ListITem: ' + post.title);
 
 ---
 
@@ -29,8 +29,15 @@ console.log('ListITem: ' + post.pageTitle);
         <div class="w-72 h-auto">
           <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
             {image && (
-              <img src={post.image} alt={post.images?.imageMain?.alt} style="width: 288px; height: 288px;" />
-            )}
+                          <Image
+                            src={post.image}
+                            alt={post.imageAlt}
+                            layout="constrained-both"
+                            width={288}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )}
           </div>
         </div>
       </a>
@@ -42,10 +49,10 @@ console.log('ListITem: ' + post.pageTitle);
         {
           post.href ? (
             <a class="hover:underline dark:hover:underline" href={post.href}>
-              {post.pageTitle}
+              {post.title}
             </a>
           ) : (
-            post.pageTitle
+            post.title
           )
         }
       </h2>
@@ -66,7 +73,7 @@ console.log('ListITem: ' + post.pageTitle);
             <span class="text-lg font-heading">Вы получите: </span>{(post.subtitle)}
           </a>
         ) : (
-          (post.subtitle)
+          (post.excerpt)
         )
       }
    

@@ -119,9 +119,10 @@ const portfolioCollection = defineCollection({
 const serviceCollection = defineCollection({
   schema: z.object({
 
-    pageTitle: z.string(),
-    subtitle: z.string().optional(),
+    title: z.string(),
+    excerpt: z.string().optional(),
     image: z.string(),
+    imageAlt: z.string().optional(),
     images: z.object({
       imageMain: z.object({
         urlLarge: z.string(), 

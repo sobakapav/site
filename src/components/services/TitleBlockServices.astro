@@ -1,17 +1,21 @@
 ---
 import './TitleBlockServices.less';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import { Markdown } from '@astropub/md';
 
   const { data } = Astro.props;
   
 ---
 
+
+
 <div class="title-block mt-12">
   <div class="flex flex-col md:flex-row flex-wrap gap-6 mb-6">
   <div class="flex flex-col justify-between grow shrink basis-0">
-    <h1 class="mb-4">{data.pageTitle}</h1>
+    <h1 class="mb-4">{data.title}</h1>
     <a class="" href="/services">← Все услуги</a>
   </div>
-    <p class="grow shrink basis-0 mt-4 subtitle">{data.subtitle}</p>
+    <p class="grow shrink basis-0 mt-4 subtitle">{data.excerpt}</p>
   </div> 
   <img src="/images/services/clients.png">
 </div>

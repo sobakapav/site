@@ -29,7 +29,7 @@ const link = getPermalink(post.href);
             {post.images.imageMain && (
               <img src={post.images.imageMain.urlLarge} alt={post.images.imageMain.alt} 
                 class="rounded w-72"
-                alt={post.pageTitle}
+                alt={post.title}
               />
             )}
           </div>
@@ -43,10 +43,10 @@ const link = getPermalink(post.href);
         {
           link ? (
             <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
-              {post.pageTitle}
+              {post.title}
             </a>
           ) : (
-            post.pageTitle
+            post.title
           )
         }
       </h2>

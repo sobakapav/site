@@ -5,6 +5,8 @@ import '~/assets/styles/colors.css';
 import './ServicePage.less';
 
 import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import { Markdown } from '@astropub/md';
 
 import TitleBlockServices from '../services/TitleBlockServices.astro';
 import BlueBlock from '../services/BlueBlock.astro';
@@ -27,9 +29,21 @@ import { headerData, footerData } from '~/navigation';
 ---
 
 <Layout metadata={content.metadata}>
-
-    <div class="mainframe">
-		  <TitleBlockServices data={content} />
+    <div class="mt-24 mainframe">
+		  
+      <Hero2
+          title={content.title}
+          image={{
+            src: content.image,
+            alt: content.imageAlt || '',
+          }}
+          imageName={content.imageName}
+        >
+          
+          <Fragment slot="subtitle">
+            <Markdown.Inline of={content.excerpt} />
+          </Fragment>
+      </Hero2>
 
 		  <BlueBlock>
         <img class="hidden md:block" src={content.images.imageMain.urlLarge} alt={content.images.imageMain.alt}>
