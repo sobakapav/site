@@ -1,0 +1,99 @@
+---
+
+  import Checkbox from '~/components/common/Checkbox.astro';
+
+---
+
+<style>
+  user-story div#needToCreate, 
+  user-story div#needToRedesign,
+  user-story div#needFullRedesign,
+  user-story div#needSpotRedesign,
+  user-story div#needNewFeatures,
+  user-story div#needToResearch
+  {
+    display: none;
+  }
+  
+  user-story:has(input#haveProductNo:checked) div#needToCreate {
+    display: inline;
+  }
+  
+  user-story:has(input#haveProductYes:checked) div#needToRedesign {
+      display: inline;
+  }
+  
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignAbsolutely:checked) div#needFullRedesign {
+    display: inline;
+  }
+  
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignYes:checked) div#needSpotRedesign {
+    display: inline;
+  }
+  
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignNew:checked) div#needNewFeatures {
+    display: inline;
+  }
+  
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignDonno:checked) div#needToResearch {
+    display: inline;
+  }
+
+</style>
+
+<user-story>
+  <div id="haveProduct">
+    <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Есть ли у вас готовый продукт?</h3>
+    <Checkbox id="haveProductYes" label="Продукт уже существует" />
+    <Checkbox id="haveProductNo" label="Продукт еще только создается" />
+  </div>
+  
+  <div id="needToCreate">
+      <Checkbox id="needToCreateIdea" label="Вы на стадии идей и планов." className="final"/>
+      <Checkbox id="needToCreateInvestition" label="Вам нужно впечатлить инвесторов." className="final"/>
+      <Checkbox id="needToCreateDesign" label="Есть MVP, а нужен полноценный продукт." className="final"/>
+  </div>
+  
+  <div id="needToRedesign">
+      <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Нужно ли переделать интерфейс?</h3>
+      <Checkbox id="needToRedesignAbsolutely" label="Да, причем полностью. Например, пользователи жалуются на неудобный интерфейс." />
+      <Checkbox id="needToRedesignYes" label="Да, частично. Интерфейс морально устарел или есть небольше недостатки" />
+      <Checkbox id="needToRedesignUI" label="Нет, только обновить стиль, сделать привлекательнее" className="final"/>
+      <Checkbox id="needToRedesignNew" label="Нет, только добавить новую функциональность" />
+      <Checkbox id="needToRedesignDonno" label="Не знаю, помогите понять." />
+  </div>
+  
+  <div id="needFullRedesign">
+    <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Вы точно знаете, каким должен быть новый интерфейс</h3>
+    <Checkbox id="needFullRedesignYes" label="Да, есть четкое ТЗ на новый продукт" className="final"/>
+    <Checkbox id="needFullRedesignNo" label="Нет, помогите понять." className="final"/>
+  </div>
+
+  <div id="needSpotRedesign">
+    <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Вы точно знаете, что нужно поменять</h3>
+    <Checkbox id="needSpotRedesignYes" label="Да" className="final"/>
+    <Checkbox id="needSpotRedesignNo" label="Нет, это нужно выяснить." className="final"/>
+  </div>
+  
+  <div id="needNewFeatures">
+      <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Вы знаете, что именно нужно добавить</h3>
+      <Checkbox id="needNewFeaturesYes" label="Да" className="final"/>
+      <Checkbox id="needNewFeaturesNo" label="Нет, это нужно выяснить." className="final"/>
+  </div>
+  
+  <div id="needToResearch">
+        <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Что-то из этого верно?</h3>
+        <Checkbox id="needToResearch1" label="Ваш продукт сложный" className="final"/>
+        <Checkbox id="needToResearch2" label="Предстоят большие инвестиции" className="final"/>
+        <Checkbox id="needToResearch3" label="Есть конкретная исследовательская задача" className="final"/>
+        <Checkbox id="needToResearchNo" label="Нет ничего настолько глобального" className="final"/>
+  </div>
+  
+  <div>
+        <h3 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">Дополнительно</h3>
+        <Checkbox id="needContent" label="Нужно создать или пересобрать контент" className="final"/>
+        <Checkbox id="needDevTeam" label="Нужно работать в тесной интеграции с командой разработки" className="final"/>
+        <Checkbox id="needResearch" label="Нужно продуктовое исследование, связанное с поведением пользователя" className="final"/>
+  </div>
+
+</user-story> 

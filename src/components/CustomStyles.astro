@@ -165,4 +165,15 @@ import '~/assets/styles/colors.css';
      transition: 0.5s ease-in;
   }
   
+  astro-checkbox label {
+    border: 1px solid transparent;  
+  }
+  astro-checkbox input:checked + label {
+    border: 1px solid var(--aw-color-primary);
+  }
+  
+  astro-checkbox input:checked + label span {
+    color: var(--aw-color-primary);
+  }
+  
 </style>

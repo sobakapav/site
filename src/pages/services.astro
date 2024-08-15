@@ -11,6 +11,9 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import ServicesCollection from '~/components/services/ServicesCollection.astro';
+import Checkbox from '~/components/common/Checkbox.astro';
+import UserStory from '~/components/services/UserStory.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getEntry } from 'astro:content';
@@ -21,15 +24,6 @@ const metadata = {
   title: 'Услуги',
 };
 
-const servicesList = ['ux-design', 'prototype','ui-redesign', 'redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design'];
-
-const services = [];
-for (var idx in servicesList) {
-  var service = await getEntry('services', servicesList[idx]);
-  service.data.index = idx;
-  service.data.href = `/services/${servicesList[idx]}`;
-  services.push(service.data);
-}
 
 ---
 
@@ -50,38 +44,21 @@ for (var idx in servicesList) {
     ]}
   >
     <Fragment slot="title">
-      Наши <span class="text-accent dark:text-white highlight">услуги</span> 
+      Что мы можем  для вас сделать?
     </Fragment>
 
     <Fragment slot="subtitle">
-        Что мы можем для вас сделать? Все, что связано с интерфейсами и польовательским опытом: выполним <a href="/services/ux-design" class="underline text-accent">UX/UI-дизайн под ключ</a>, создадим <a href="/services/prototype" class="underline text-accent">прототип под инвестиции</a>, точечно <a href="/services/spot-redesign" class="underline text-accent">улучшим пользовательский опыт</a> или <a href="/services/ui-redesign" class="underline text-accent">сделаем интерфейс привлекательнее</a>, добавим в него <a href="/services/new-features"class="underline text-accent">новые возможности</a>, проведем <a href="/services/ux-audit" class="underline text-accent">UX-аудит</a> или <a href="/services/research" class="underline text-accent">продуктовое исследование</a>. Усилим вашу <a href="/services/dev-team" class="underline text-accent">команду разработки</a> или <a href="/services/product-team"class="underline text-accent">продуктовую команду</a>, проведем <a href="/services/consultation" class="underline text-accent">консультацию</a>, поможем создать <a href="/services/content-design" class="underline text-accent">ключевой контент</a>.  
+        Всё, что связано с интерфейсами и пользовательским опытом: вместе с вами создаём UI/UX-решения, которые выводят взаимодействие с вашими клиентами на новый уровень.</a>.  
+    </Fragment>
+    
+    <Fragment slot="content">
+          <UserStory />
     </Fragment>
 
   </Hero>
-   
-  
-<!-- Content Widget **************** -->
-
-  { services.map((service) => (
-    <a href={service.href}>
-    <Content
-      isReversed={(service.index % 2) == 0}
-      isAfterContent={service.index > 0}
-      items={service.results.map((result) => ({title: result.title, description: result.text}))}
-      image={`<img src="${service.images.imageMain.urlLarge}" alt="${service.images.imageMain.alt}" />`}
-    >
-      <Fragment slot="content">
-        <h3 class="text-2xl font-heading dark:text-white sm:text-3xl mb-2">{service.pageTitle}</h3>
-        {service.subtitle}
-      </Fragment>
+    
+ <ServicesCollection list={['ux-design', 'prototype','ui-redesign', 'redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design']} />
  
-     <Fragment slot="bg">
-       <div class="absolute inset-0"></div>
-     </Fragment>
-   
-    </Content>
-    </a>
-  ))} 
-
+ </Layout>
     
     

@@ -121,6 +121,7 @@ const serviceCollection = defineCollection({
 
     pageTitle: z.string(),
     subtitle: z.string().optional(),
+    image: z.string(),
     images: z.object({
       imageMain: z.object({
         urlLarge: z.string(), 

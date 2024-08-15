@@ -1,0 +1,60 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+import PostTags from '~/components/blog/Tags.astro';
+
+import { APP_BLOG } from 'astrowind:config';
+import type { Post } from '~/types';
+
+import { getPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
+import { getFormattedDate } from '~/utils/utils';
+
+export interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+
+const link = getPermalink(post.href);
+---
+
+<article class={`flex flex-wrap`}>
+  {
+    post.images.imageMain && (
+      <a href={link ?? 'javascript:void(0)'}>
+        <div class="relative overflow-hidden rounded">
+          <div class="w-72 h-48">
+            {post.images.imageMain && (
+              <img src={post.images.imageMain.urlLarge} alt={post.images.imageMain.alt} 
+                class="rounded w-72"
+                alt={post.pageTitle}
+              />
+            )}
+          </div>
+        </div>
+      </a>
+    )
+  }
+  <div class="mt-2 w-72">
+    <header>
+      <h2 class="text-xl sm:text-2xl leading-tight mb-2 font-heading dark:text-slate-300">
+        {
+          link ? (
+            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
+              {post.pageTitle}
+            </a>
+          ) : (
+            post.pageTitle
+          )
+        }
+      </h2>
+    </header>
+
+    {post.subtitle && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.subtitle}</p>}
+    {post.tags && <footer class="mt-5">
+      <PostTags tags={post.tags} />
+    </footer> }
+  </div>
+</article>
