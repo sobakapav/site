@@ -24,3 +24,6 @@ pnpm-lock.yaml
 .astro
 /src/pages/listCollections.astro
 /src/pages/listCollectionsDetails.astro
+/src/assets/favicons/favicomatic.zip
+/src/assets/favicons/sp_logo_horizontal.png
+/src/assets/favicons/favicomatic/
