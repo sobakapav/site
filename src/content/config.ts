@@ -163,6 +163,7 @@ const serviceCollection = defineCollection({
       text: z.string().optional(),
     })).optional(),
     story: textBlock().optional(),
+    pain: z.string().optional(),
 //    metadata: metadataDefinition(),
   }),
 });

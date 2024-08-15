@@ -50,11 +50,20 @@ console.log('ListITem: ' + post.pageTitle);
         }
       </h2>
     </header>
-
     {
         post.href ? (
           <a class="hover:underline dark:hover:underline flex-grow text-muted dark:text-slate-400 text-base" href={post.href}>
-            {(post.subtitle)}
+            <span class="text-lg font-heading">Когда: </span>{(post.pain)}
+          </a>
+        ) : (
+          (post.pain)
+        )
+    }
+    </br>
+    {
+        post.href ? (
+          </span><a class="hover:underline dark:hover:underline flex-grow text-muted dark:text-slate-400 text-base" href={post.href}>
+            <span class="text-lg font-heading">Вы получите: </span>{(post.subtitle)}
           </a>
         ) : (
           (post.subtitle)
