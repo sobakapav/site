@@ -1,0 +1,31 @@
+---
+import { getHomePermalink } from '~/utils/permalinks';
+
+const {
+  title,
+  parent,
+  parentTitle
+} = Astro.props;
+---
+
+<div class="flex flex-row text-base gap-2.5 py-5 px-4 mx-auto max-w-7xl" class="text-[#9F9F9F]">
+  <span>
+    <a href={getHomePermalink()}>Главная</a>
+  </span>
+  { parentTitle && (
+    <Fragment>
+      <span>/</span>
+      <span>
+        {parent ? (
+          <a href={parent}>{parentTitle}</a>
+        ) : parentTitle }
+      </span>
+    </Fragment>
+  )}
+  { title && (
+    <span>/</span>
+    <span>
+      { title }
+    </span>
+  )}
+<div>
