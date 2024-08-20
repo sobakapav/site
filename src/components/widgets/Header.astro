@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
 import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
@@ -75,7 +76,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-end lg:hidden">
+      <div class="flex lg:hidden">
         <ToggleMenu />
       </div>
     </div>
@@ -91,7 +92,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             <li class={links?.length ? 'dropdown whitespace-nowrap' : 'whitespace-nowrap'}>
               {links?.length ? (
                 <>
-                  <button class="hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 flex items-center text-lg lg:text-base">
+                  <button class="hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 flex items-center text-xl lg:text-base">
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                   </button>
@@ -114,7 +115,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 flex items-center text-lg lg:text-base',
+                    'hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 flex items-center text-xl lg:text-base',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
@@ -126,7 +127,17 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
           ))
         }
       </ul>
-      
+      <div class="flex lg:hidden flex-row gap-3 py-5 px-6 mx-auto border-x border-[#EAEAEA] justify-between">
+       <div class="flex flex-col text-base gap-3">
+          <p>{SITE.phone}</p>
+          <p><a class="underline-offset-2" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+          <div class="flex flex-row gap-2.5"><a href={SITE.telegramContact.link}><Icon height="20px" width="20px" name="tabler:brand-telegram" /></a>
+          <a href={`https://wa.me/message/${SITE.whatsup}`}><Icon height="20px" width="20px" name="tabler:brand-whatsapp" /></a></div>
+       </div>
+       <div>
+            <img src="/images/logos/qr-code.svg" class="w-[116px]">
+       </div>
+      </div>
     </nav>
     <div
       class:list={[
