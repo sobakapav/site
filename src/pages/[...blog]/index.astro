@@ -14,6 +14,7 @@ import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import Bread from '~/components/widgets/Bread.astro';
 
 export const prerender = true;
 
@@ -46,6 +47,12 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
+  <Bread
+    title={post.title}
+    parent="/publications"
+    parentTitle="Публикации"
+  />
+    
     <SinglePost post={{ ...post, image: image }} url={url}>
       {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
     </SinglePost>
