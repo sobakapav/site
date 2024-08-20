@@ -3,8 +3,9 @@ site:
   site: 'https://sobakapav.ru'
   base: '/'
   trailingSlash: false
+  
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: XyD5IQGv6NIVOLbs0oBXyhEFwYA-3DQZRe0ww_Unl3g
 
 # Default SEO metadata
 metadata:
@@ -28,7 +29,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: ru
   textDirection: ltr
 
 apps:
