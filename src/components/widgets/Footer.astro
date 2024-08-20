@@ -54,13 +54,13 @@ const telegramLink = "https://t.me/sobakapavpro";
                   </a>
                   <div class="flex flex-col h-full mb-2">
                     <p class="mb-2.5 text-base">
-                        {phone}
+                        {SITE.phone}
                     </p>
                     <p class="mb-2.5">
-                        <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${email}`}>{email}</a>
+                        <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
                     </p>
                     <p class="mb-2.5">
-                        <a href={telegramLink} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro <Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+                        <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
                     </p>
                     <p class="mb-2.5">
                         <a href={`https://wa.me/message/${whatsup}`} class="flex items-center no-underline hover:underline underline-offset-2 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 

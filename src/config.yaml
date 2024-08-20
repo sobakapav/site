@@ -3,7 +3,16 @@ site:
   site: 'https://sobakapav.ru'
   base: '/'
   trailingSlash: false
-  
+  phone: "7 (495) 191-92-81"
+  email: "we@sobakapav.ru"
+  whatsup: "NZGZSOAXXM2IN1"
+  telegram: 
+    link: "https://t.me/sobakawow"
+    text: "@sobakawow"
+  telegramContact: 
+    link: "https://t.me/sobakapavpro"
+    text: "@sobakapavpro"
+
 
   googleSiteVerificationId: XyD5IQGv6NIVOLbs0oBXyhEFwYA-3DQZRe0ww_Unl3g
 
