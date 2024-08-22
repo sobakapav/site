@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
+import ServicePage from '../../components/pages/ServicePage.astro';
+import merge from 'lodash.merge';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const metadata = merge(
+  {
+    title: entry.title,
+    description: entry.subtitle,
+    openGraph: {
+      type: 'article',
+    },
+  },
+  { ...(entry?.metadata ? { ...entry.metadata, canonical: entry.metadata?.canonical } : {}) }
+) as MetaData;
+---
+
+<ServicePage content={entry.data} metadata={metadata}>
+  <Content/>
+</ServicePage>

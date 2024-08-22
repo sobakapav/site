@@ -1,31 +1,135 @@
 ---
-import { getCollection } from 'astro:content';
-import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
-import ServicePage from '../../components/pages/ServicePage.astro';
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
 import merge from 'lodash.merge';
+import type { ImageMetadata } from 'astro';
+import { Markdown } from '@astropub/md';
 
-export async function getStaticPaths() {
-  const services = await getCollection('services');
-  return services.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
-}
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import ToBlogLink from '~/components/blog/ToBlogLink.astro';
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
+import { findImage } from '~/utils/images';
+import type { MetaData } from '~/types';
+import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import Bread from '~/components/widgets/Bread.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  return await getStaticPathsBlogPost();
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props as Props;
+
+const url = getCanonical(getPermalink(post.permalink, 'post'));
+const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
 
 const metadata = merge(
   {
-    title: entry.title,
-    description: entry.subtitle,
+    title: post.title,
+    description: post.description || post.excerpt,
+    robots: {
+      index: blogPostRobots?.index,
+      follow: blogPostRobots?.follow,
+    },
     openGraph: {
       type: 'article',
+      ...(image ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] } : {}),
     },
   },
-  { ...(entry?.metadata ? { ...entry.metadata, canonical: entry.metadata?.canonical } : {}) }
+  { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;
 ---
 
-<ServicePage content={entry.data} metadata={metadata}>
-  <Content/>
-</ServicePage>
+<Layout metadata={metadata}>
+  <Bread
+    title={post.title}
+    parent="/services"
+    parentTitle="Услуги"
+  />
+    
+    <section class="py-0 mx-auto grow-0 shrink-0">
+      <article>
+      
+        <Hero2
+          title={post.title}
+          image={{
+            src: post.image,
+            alt: post.imageAlt || '',
+          }}
+          imageName={post.imageName}
+        >
+          
+          <Fragment slot="subtitle">
+            <Markdown.Inline of={post.excerpt} />
+          </Fragment>
+        
+          <Fragment slot="supertitle">
+            <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-0 mb-2">
+              <p>
+                {
+                  post.publishDate && (
+                    <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+                  )
+                }
+                {
+                  post.author && (
+                    <>
+                      {' '}
+                      <span class="inline-block">{post.author}</span>
+                    </>
+                  )
+                }
+                {
+                  post.category && (
+                    <>
+                      {' '}
+                      ·{' '}
+                      <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                        {post.category.title}
+                      </a>
+                    </>
+                  )
+                }
+                {
+                  post.readingTime && (
+                    <>
+                      &nbsp;· <span>{post.readingTime}</span> {minuteCase(post.readingTime)} на чтение
+                    </>
+                  )
+                }
+              </p>
+            </div>
+          </Fragment>
+          
+        </Hero2>
+    
+        <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
+          <div class="grow-0 shrink-0 max-w-5xl">
+            <div
+              class="format-markdown mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
+            >
+              <slot />
+            </div>
+            <div class="mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+              <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
+            </div>
+          </div>
+          <div class="lg:max-w-[320px]">
+            <div class="format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16" >
+                <Markdown.Inline of={post.seeMore} />
+            </div>
+            <RelatedLinks post={post} />
+          </div>
+        </div>
+      </article>
+    </section>
+  
+  
+  <RelatedPosts post={post} />
+</Layout>
