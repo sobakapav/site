@@ -30,7 +30,7 @@ console.log('ListITem: ' + post.title);
           <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
             {image && (
                           <Image
-                            src={post.image}
+                            src={image}
                             alt={post.imageAlt}
                             layout="constrained-both"
                             width={288}
@@ -70,7 +70,7 @@ console.log('ListITem: ' + post.title);
     {
         post.href ? (
           </span><a class="hover:underline dark:hover:underline flex-grow text-muted dark:text-slate-400 text-base" href={post.href}>
-            <span class="text-lg font-heading">Вы получите: </span>{(post.subtitle)}
+            <span class="text-lg font-heading">Вы получите: </span>{(post.excerpt)}
           </a>
         ) : (
           (post.excerpt)

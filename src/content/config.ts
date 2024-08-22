@@ -123,7 +123,7 @@ const serviceCollection = defineCollection({
     excerpt: z.string().optional(),
     image: z.string(),
     imageAlt: z.string().optional(),
-    tumbnail: z.string().optional(),
+    thumbnail: z.string().optional(),
     images: z.object({
       imageMain: z.object({
         urlLarge: z.string(), 
