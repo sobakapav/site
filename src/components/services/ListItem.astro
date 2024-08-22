@@ -16,7 +16,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const image = (await findImage(post.image)) as ImageMetadata | undefined;
+const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata | undefined;
 
 console.log('ListITem: ' + post.title);
 
