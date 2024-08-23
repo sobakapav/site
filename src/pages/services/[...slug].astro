@@ -12,7 +12,8 @@ import ToBlogLink from '~/components/blog/ToBlogLink.astro';
 
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
-import RelatedLinks from '~/components/blog/RelatedLinks.astro';
+import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 
 import Hund from '~/components/widgets/Hund.astro';
 
@@ -40,6 +41,8 @@ const { Content } = await entry.render();
 
 const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
+
+const notThisService = post.notThisService?.items?.map((item) => ({title: item.title, description: item.text}));
 
 const metadata = merge(
   {
@@ -69,38 +72,52 @@ const metadata = merge(
       <article>
       
         <Hund
-          title={post.title}
           image={{
             src: post.image,
             alt: post.imageAlt || '',
           }}
           imageName={post.imageName}
+          hyphenateTitle={post.hyphenateTitle}
         >
+          <Fragment slot="title">
+            <Markdown.Inline of={post.title} />
+          </Fragment>
+        
+          <Fragment slot="supertitle">
+            <a href="/services" class="text-[#95001B] no-underline hover:underline underline-offset-2">← Все услуги</a>
+          </Fragment>
           
           <Fragment slot="subtitle">
             <Markdown.Inline of={post.excerpt} />
           </Fragment>
           
         </Hund>
-    
-        <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
-          <div class="grow-0 shrink-0 max-w-5xl">
-            <div
-              class="format-markdown mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
-            >
-                <Content/>
-            </div>
-          </div>
-          <div class="lg:max-w-[320px]">
-            <div class="format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16" >
-                <Markdown.Inline of={post.seeMore} />
-            </div>
-            <RelatedLinks post={post} />
+        
+        <RelatedLinks post={post} />
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-row gap-14">
+          <h2 class="text-5xl group font-heading mb-2 text-[#626262]">Наши инструменты</h2>
+          <div class="flex flex-row gap-14">
+            <Image src="~/assets/images/services/jira.svg" class="noir" height={60} alt="Jira" />
+            <Image src="~/assets/images/services/figma.svg" class="noir" height={60} alt="Figma" />
+            <Image src="~/assets/images/services/google-doc.svg" class="noir" height={60} alt="Google Docs" />
+            <Image src="~/assets/images/services/miro.svg" class="noir" height={60} alt="Miro" />
           </div>
         </div>
+        
+        {post.notThisService && (
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-14">
+            <h2 class="text-5xl group font-heading mb-2 text-[#626262]">{post.notThisService.title}</h2>
+            <Features3
+              columns={3}
+              items={ notThisService }
+              classes={}
+              defaultIcon="tabler:circle-check-filled"
+            />
+          </div>
+        )}
+        
       </article>
     </section>
   
-  
-  <RelatedPosts post={post} />
 </Layout>
