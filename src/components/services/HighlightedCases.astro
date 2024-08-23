@@ -34,9 +34,12 @@ const {
 
 const posts = [];
 for (var item of links) {
-  const data = (await getEntry(collection, item)).data;
-  data.href = `/${collection}/${item}`;
-  posts.push(data);
+  if (item.name) {
+    const data = (await getEntry(collection, item.name)).data;
+    data.excerpt = item.text;
+    data.href = `/${collection}/${item.name}`;
+    posts.push(data);
+  }
 }
 ---
 
@@ -46,26 +49,27 @@ for (var item of links) {
       <div class="flex flex-col lg:justify-between lg:flex-row mb-6">
         {title && (
           <div>
-            <h3
-              class="text-2xl group font-heading mb-2"
+            {APP_BLOG.list.isEnabled && linkText && linkUrl && (
+                <a
+                  class="flex gap-2 items-end text-[#95001B] no-underline hover:underline underline-offset-2 text-sm  mb-5"
+                  href={linkUrl}
+                >
+                  {linkText}
+                  {/*<Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />*/}
+                </a>
+              )}
+            <h2
+              class="text-5xl group font-heading mb-2 text-[#626262]"
               set:html={title}
             />
-            {APP_BLOG.list.isEnabled && linkText && linkUrl && (
-              <a
-                class="flex gap-2 items-end text-muted dark:text-slate-400 hover:text-primary transition ease-in duration-200 block mb-0"
-                href={linkUrl}
-              >
-                {linkText}
-                {/*<Icon name="tabler:chevron-right" class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />*/}
-              </a>
-            )}
+            
           </div>
         )}
 
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={posts} classes="flex-row lg:flex-col justify-normal lg:justify-between gap-4"/>
+      <Grid posts={posts} classes="flex-row justify-normal gap-4" />
     </WidgetWrapper>
   ) : (
     <Fragment />

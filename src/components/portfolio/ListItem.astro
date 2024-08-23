@@ -39,32 +39,7 @@ const link = post.external ? post.externalLink : post.href;
   }
   <div class="mt-2 w-72">
     <header>
-      <div class="mb-1">
-        <span class="text-sm">
-          {
-            post.author && (
-              <>
-                {' '}
-                ·{' '}
-                <Icon name="tabler:user" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-                <span>{post.author.replaceAll('-', ' ')}</span>
-              </>
-            )
-          }
-          {
-            post.category && (
-              <>
-                {' '}
-                ·{' '}
-                <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
-                  {post.category.title}
-                </a>
-              </>
-            )
-          }
-          
-        </span>
-      </div>
+     
       <h2 class="text-xl sm:text-2xl leading-tight mb-2 dark:text-slate-300 font-heading">
         {
           link ? (
@@ -82,5 +57,10 @@ const link = post.external ? post.externalLink : post.href;
     {/*post.tags && <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer> */}
+     <div class="mb-1">
+            <span class="text-sm">
+             {post.publishYear}
+            </span>
+     </div>
   </div>
 </article>

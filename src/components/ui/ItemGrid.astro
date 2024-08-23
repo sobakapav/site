@@ -3,6 +3,7 @@ import type { ItemGrid as Props } from '~/types';
 import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
+import { Markdown } from '@astropub/md';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
 
@@ -33,8 +34,7 @@ const {
       )}
     >
       {items.map(({ title, description, icon, link, callToAction, classes: itemClasses = {} }) => (
-        <div>
-          <a href={link} class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
+        <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
                 <Icon
@@ -44,12 +44,13 @@ const {
               )}
             </div>
             <div class="mt-0">
-              {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}>{title}</h3>}
+              {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}><Markdown.Inline of={title} /></h3>}
               {description && (
                 <p
                   class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
-                  set:html={description}
-                />
+                >
+                  <Markdown.Inline of={description} />
+                </p>
               )}
               {callToAction && (
                 <div
@@ -63,7 +64,6 @@ const {
                 </div>
               )}
             </div>
-          </div>
         </div>
       ))}
     </div>

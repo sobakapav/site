@@ -120,21 +120,11 @@ const serviceCollection = defineCollection({
   schema: z.object({
 
     title: z.string(),
+    hyphenateTitle: z.boolean().optional(),
     excerpt: z.string().optional(),
     image: z.string(),
     imageAlt: z.string().optional(),
     thumbnail: z.string().optional(),
-    images: z.object({
-      imageMain: z.object({
-        urlLarge: z.string(), 
-        urlSmall: z.string(), 
-        alt: z.string(), 
-      }),
-      imageMap: z.object({
-        url: z.string(),
-        alt: z.string(),
-      }),
-    }),
     blueBlockText: textBlock(),
     results: z.array(z.object({
       title: z.string().optional(),
@@ -143,10 +133,8 @@ const serviceCollection = defineCollection({
       alt: z.string().optional(),
     })),
     works: z.array(z.object({
-      link: z.string().optional(),
+      name: z.string().optional(),
       text: z.string().optional(),
-      image: z.string().optional(),
-      alt: z.string().optional(),
     })).optional(),
     team: z.number().optional(),
     mapBlock: z.array(z.object({
@@ -155,8 +143,17 @@ const serviceCollection = defineCollection({
     })),
     comments: textBlock(),
     budget: z.object({
-      price: textBlock(),
-      time: textBlock(),
+      price: z.object({
+        title: z.string(),
+        text: z.string(),
+        title2: z.string().optional(),
+        text2: z.string().optional(),
+        comment: z.string().optional(),
+      }),
+      time: z.object({
+        title: z.string(),
+        text: z.string(),
+      })
     }),
     roi: textBlock().optional(),
     otherServices: z.array(z.object({
@@ -167,6 +164,13 @@ const serviceCollection = defineCollection({
     story: textBlock().optional(),
     pain: z.string().optional(),
 //    metadata: metadataDefinition(),
+    notThisService: z.object({
+      title: z.string(),
+      items: z.array(z.object({
+        title: z.string(),
+        text: z.string().optional(),
+      }))
+    }).optional(),
   }),
 });
 

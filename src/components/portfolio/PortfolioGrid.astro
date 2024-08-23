@@ -1,17 +1,20 @@
 ---
 import Item from '~/components/portfolio/ListItem.astro';
 import type { Post } from '~/types';
+import { twMerge } from "tailwind-merge";
 
 export interface Props {
   posts: Array<Post>;
 }
 
-const { posts } = Astro.props;
+const { posts, classes } = Astro.props;
 ---
 
-<div class="flex flex-wrap flex-row lg:flex-col justify-normal lg:justify-between gap-4">
+<div class:list={[
+  twMerge("flex flex-wrap", classes),
+]}>
   {posts.map((post) => (
-    <li class="mb-12 md:mb-20 w-[288px]">
+    <li class="mb-6 w-[288px]">
       <Item post={post} />
     </li>
   ))}

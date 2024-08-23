@@ -17,6 +17,7 @@ export interface Props {
 const {
   supertitle = await Astro.slots.render('supertitle'),
   title = await Astro.slots.render('title'),
+  hyphenateTitle,
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   content = await Astro.slots.render('content'),
@@ -28,12 +29,12 @@ const {
 
 <section class="relative not-prose">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="py-0 lg:flex overflow-y-hidden lg:gap-8">
-      <div class="basis-1/2 text-left mx-auto md:mx-0 lg:mx-auto">
+  <div class="relative w-full flex flex-col lg:flex-row lg:gap-2">
+    <div class="lg:basis-1/2 bg-[#F0F0F0]  py-0 lg:flex justify-end overflow-y-hidden lg:gap-8">
+      <div class="max-w-[636px] text-left mx-auto md:mx-0 pl-4 sm:pl-6 pr-4 md:pr-12 pt-6 md:pt-14 text-sm mb-4">
         {
           supertitle && (
-            <div
+            <div class="text-sm mb-4"
               set:html={supertitle}
             />
           )
@@ -41,13 +42,16 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-7xl leading-tighter mb-6 font-heading dark:text-gray-200"
+              class:list={[
+                'text-5xl md:text-[108px] leading-tighter md:leading-[94px] mb-6 lg:mb-12 font-heading dark:text-gray-200',
+                hyphenateTitle && 'hyphens-auto'
+              ]}
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto md:mx-0 lg:mx-auto lg:max-w-none">
-          {subtitle && <div class="text-xl text-muted mb-6 dark:text-slate-300 format-subtitle-markdown" set:html={subtitle} />}
+          {subtitle && <div class="text-lg leading-[26px] mb-6 dark:text-slate-300 format-subtitle-markdown" set:html={subtitle} />}
 
           {
             actions && (
@@ -67,7 +71,9 @@ const {
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div class="basis-1/2">
+    </div>
+    <div class="basis-1/2 bg-[#323232]">
+      <div class="max-w-[636px]">
         {
           image && (
             <div class="relative m-auto max-w-5xl">
