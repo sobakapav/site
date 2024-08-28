@@ -7,10 +7,10 @@ import { SITE } from 'astrowind:config';
 <div class="hidden lg:flex flex-row justify-end text-base gap-2.5 py-5 px-6 mx-auto max-w-7xl">
       <span>
           {SITE.phone}
-      </span><span class="text-[#9F9F9F]">•</span>
+      </span>
       <span>
-          <a class="underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-      </span><span class="text-[#9F9F9F]">•</span>
+          <a class="underline-offset-2 text-base ml-2" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </span>
       <span>
           <a href={SITE.telegramContact.link}><Icon height="20px" width="20px" name="tabler:brand-telegram" class="ml-2" /></a>
       </span>

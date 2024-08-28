@@ -89,7 +89,7 @@ export const headerData = {
       text: 'О нас',
       links: [
         {
-          text: 'О нас',
+          text: 'О компании',
           href: "https://sobakapav.ru/about",
         },
         {
