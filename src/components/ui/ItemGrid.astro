@@ -47,7 +47,7 @@ const {
               {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}><Markdown.Inline of={title} /></h3>}
               {description && (
                 <p
-                  class={twMerge(`${title ? 'mt-3' : ''} text-muted`, descriptionClass, itemClasses?.description)}
+                  class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description)}
                 >
                   <Markdown.Inline of={description} />
                 </p>
