@@ -125,7 +125,7 @@ const serviceCollection = defineCollection({
     image: z.string(),
     imageAlt: z.string().optional(),
     thumbnail: z.string().optional(),
-    blueBlockText: textBlock(),
+    extra: z.string().optional(),
     results: z.array(z.object({
       title: z.string().optional(),
       text: z.string().optional(),
@@ -158,7 +158,7 @@ const serviceCollection = defineCollection({
         text: z.string(),
       })
     }),
-    roi: textBlock().optional(),
+    roi: z.string().optional(),
     otherServices: z.array(z.object({
       title: z.string().optional(),
       link: z.string().optional(),

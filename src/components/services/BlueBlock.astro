@@ -7,20 +7,20 @@
 <div class="bg-[#323232] text-[#ffffff] flex flex-col md:flex-row flex-wrap max-w-7xl mx-auto px-5 sm:px-20 pt-10 pb-12 gap-6 text-base">
   <div class="grow-[2] basis-0 flex flex-row flex-wrap gap-y-4 content-start">
       <h3 class="w-full text-lg">Стоимость</h3>
-      <div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4">
+      <div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4 blueblock-list">
           <h4 class="text-5xl font-heading">{budget.price.title}</h4>
-          <p><Markdown.Inline of={budget.price.text}/></p>
+          <Markdown.Inline of={budget.price.text}/>
       </div>
-      {budget.price.title2 && (<div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4">
+      {budget.price.title2 && (<div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4 blueblock-list">
           <h4 class="text-5xl font-heading">{budget.price.title2}</h4>
-          <p><Markdown.Inline of={budget.price.text2}/></p>
+          <Markdown.Inline of={budget.price.text2}/>
       </div>)}
       {budget.price.comment && (<div class="w-full"><Markdown.Inline of={budget.price.comment}/></div>)}
   </div>
-  <div class="grow basis-0 flex flex-col gap-y-4">
+  <div class="grow basis-0 flex flex-col gap-y-4 blueblock-list">
       <h3 class="text-lg">Сроки</h3>
       <h4 class="text-5xl font-heading">{budget.time.title}</h4>
-      <p><Markdown.Inline of={budget.time.text}/></p>
+      <Markdown.Inline of={budget.time.text}/>
   </div>
   
 </div>
