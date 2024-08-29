@@ -5,13 +5,13 @@
 ---
 
 <div class="bg-[#323232] text-[#ffffff] flex flex-col md:flex-row flex-wrap max-w-7xl mx-auto px-5 sm:px-20 pt-10 pb-12 gap-6 text-base">
-  <div class="grow-[2] basis-0 flex flex-row flex-wrap gap-y-4">
+  <div class="grow-[2] basis-0 flex flex-row flex-wrap gap-y-4 content-start">
       <h3 class="w-full text-lg">Стоимость</h3>
-      <div class="flex flex-col max-w-full md:max-w-[50%]">
+      <div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4">
           <h4 class="text-5xl font-heading">{budget.price.title}</h4>
           <p><Markdown.Inline of={budget.price.text}/></p>
       </div>
-      {budget.price.title2 && (<div class="flex flex-col max-w-full md:max-w-[50%]">
+      {budget.price.title2 && (<div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4">
           <h4 class="text-5xl font-heading">{budget.price.title2}</h4>
           <p><Markdown.Inline of={budget.price.text2}/></p>
       </div>)}

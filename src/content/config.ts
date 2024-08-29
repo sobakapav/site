@@ -132,6 +132,9 @@ const serviceCollection = defineCollection({
       image: z.string().optional(),
       alt: z.string().optional(),
     })),
+    relatedLinks: z.object({
+            title: z.string(),
+          }),
     works: z.array(z.object({
       name: z.string().optional(),
       text: z.string().optional(),
