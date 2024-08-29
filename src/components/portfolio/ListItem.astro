@@ -53,7 +53,17 @@ const link = post.external ? post.externalLink : post.href;
       </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow dark:text-slate-400 text-lg">{post.excerpt}</p>}
+    {
+      link ? (
+        <a class="hover:underline dark:hover:underline" href={link}>
+          {post.excerpt && <p class="flex-grow dark:text-slate-400 text-lg">{post.excerpt}</p>}
+        </a>
+      ) : (
+        post.excerpt
+      )
+    }
+
+    
     {/*post.tags && <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer> */}
