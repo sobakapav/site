@@ -13,10 +13,10 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const { metadata } = Astro.props;
+const { metadata, hasSlider } = Astro.props;
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} hasSlider={hasSlider}>
   <slot name="announcement">
       <Announcement />
   </slot>
