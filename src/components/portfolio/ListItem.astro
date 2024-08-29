@@ -53,12 +53,12 @@ const link = post.external ? post.externalLink : post.href;
       </h2>
     </header>
 
-    {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
+    {post.excerpt && <p class="flex-grow dark:text-slate-400 text-lg">{post.excerpt}</p>}
     {/*post.tags && <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer> */}
-     <div class="mb-1">
-            <span class="text-sm">
+     <div class="mt-2">
+            <span class="text-muted">
              {post.publishYear}
             </span>
      </div>
