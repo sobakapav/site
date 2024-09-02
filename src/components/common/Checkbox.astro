@@ -3,6 +3,8 @@
 const {
   id,
   label,
+  type = 'checkbox',
+  group,
   className = []
 } = Astro.props;
 
@@ -10,18 +12,15 @@ const aClassName = className + ' hidden';
 
 ---
 
-<astro-checkbox>
+<astro-checkbox class="inline-block">
   <input
     id={id}
-    name={id}
-    type="checkbox"
+    name={type == 'radio' ? (group || id) : id}
+    type={type}
     class={aClassName}
     />
-  <label
-    for={id}
-    class="bg-[--aw-color-bg-page] dark:bg-slate-700 inline-block h-9 px-4 py-[9px]"
-  >
-    <span class="text-muted dark:text-slate-300 hover:text-primary dark:hover:text-gray-200">
+  <label for={id} class="bg-[--aw-color-bg-page] inline-flex items-center h-9 px-4 py-[9px]">
+    <span class="color-[#C4C4C4] hover:text-[--aw-color-hund]">
       {label}
     </span>
   </label>

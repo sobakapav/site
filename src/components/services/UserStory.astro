@@ -1,6 +1,8 @@
 ---
 
-  import Checkbox from '~/components/common/Checkbox.astro';
+import Checkbox from '~/components/common/Checkbox.astro';
+import RedCheckbox from '~/components/common/RedCheckbox.astro';
+import { Icon } from 'astro-icon/components';
 
 ---
 
@@ -11,102 +13,113 @@
   user-story div#needFullRedesign,
   user-story div#needSpotRedesign,
   user-story div#needNewFeatures,
-  user-story div#needToResearch
+  user-story div#needToResearch,
+  user-story div#needExtra
   {
     display: none;
   }
   
   user-story:has(input#startYes:checked) div#haveProduct {
-      display: inline;
+      display: flex;
     }
   
-  user-story:has(input#haveProductNo:checked) div#needToCreate {
-    display: inline;
+  user-story:has(input#startYes:checked):has(input#haveProductNo:checked) div#needToCreate {
+    display: flex;
   }
   
-  user-story:has(input#haveProductYes:checked) div#needToRedesign {
-      display: inline;
+  user-story:has(input#startYes:checked):has(input#haveProductYes:checked) div#needToRedesign {
+      display: flex;
   }
   
-  user-story:has(input#haveProductYes:checked):has(input#needToRedesignAbsolutely:checked) div#needFullRedesign {
-    display: inline;
+  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignAbsolutely:checked) div#needFullRedesign {
+    display: flex;
   }
   
-  user-story:has(input#haveProductYes:checked):has(input#needToRedesignYes:checked) div#needSpotRedesign {
-    display: inline;
+  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignYes:checked) div#needSpotRedesign {
+    display: flex;
   }
   
-  user-story:has(input#haveProductYes:checked):has(input#needToRedesignNew:checked) div#needNewFeatures {
-    display: inline;
+  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignNew:checked) div#needNewFeatures {
+    display: flex;
   }
   
-  user-story:has(input#haveProductYes:checked):has(input#needToRedesignDonno:checked) div#needToResearch {
-    display: inline;
+  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignDonno:checked) div#needToResearch {
+    display: flex;
+  }
+  
+   user-story:has(input#startYes:checked) div#needExtra {
+    display: flex;
   }
 
 </style>
 
 <user-story>
-  <div id="start" class="bg-[--aw-color-hund] leading-none mb-2 h-14 px-6 py-4 md:max-w-sm">
-    <span><Checkbox id="startYes" label="Помогите мне определиться" />
-    <Checkbox id="startNo" label="Х" />
+  <div class="md:max-w-sm bg-white flex flex-col gap-6">
+  <div id="start">
+    <span>
+      <RedCheckbox id="startYes">
+        <Icon name="tabler:lifebuoy" height="24px" width="24px" class="mr-2" />
+        <span class="grow">Помогите мне определиться!</span>
+        <Icon name="tabler:x" class="w-6 h-6 ml-2" />
+      </RedCheckbox>
     </span>
   </div>
   
-  <div id="haveProduct">
-    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Есть ли у вас готовый продукт?</h3>
-    <Checkbox id="haveProductYes" label="Да" />
-    <Checkbox id="haveProductNo" label="Нет" />
+  <div id="haveProduct" class="flex flex-wrap gap-2">
+    <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Есть ли у вас готовый продукт?</h3>
+    <Checkbox type="radio" group="level1" id="haveProductYes" label="Да" />
+    <Checkbox type="radio" group="level1" id="haveProductNo" label="Нет" />
   </div>
   
-  <div id="needToCreate">
-      <Checkbox id="needToCreateIdea" label="Вы на стадии идей и планов" className="final"/>
-      <Checkbox id="needToCreateInvestition" label="Нужно впечатлить инвесторов" className="final"/>
-      <Checkbox id="needToCreateDesign" label="Есть MVP, нужен продукт" className="final"/>
+  <div id="needToCreate" class="flex flex-wrap gap-2">
+      <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">На какой вы стадии?</h3>
+      <Checkbox type="radio" group="level2" id="needToCreateIdea" label="Вы на стадии идей и планов" className="final"/>
+      <Checkbox type="radio" group="level2" id="needToCreateInvestition" label="Нужно впечатлить инвесторов" className="final"/>
+      <Checkbox type="radio" group="level2" id="needToCreateDesign" label="Есть MVP, нужен продукт" className="final"/>
   </div>
   
-  <div id="needToRedesign">
-      <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Нужно ли переделать интерфейс?</h3>
-      <Checkbox id="needToRedesignAbsolutely" label="Да, полностью" />
-      <Checkbox id="needToRedesignYes" label="Да, частично" />
-      <Checkbox id="needToRedesignUI" label="Нет, только обновить стиль" className="final"/>
-      <Checkbox id="needToRedesignNew" label="Нет, только добавить кое-что" />
-      <Checkbox id="needToRedesignDonno" label="Не знаю, помогите понять" />
+  <div id="needToRedesign" class="flex flex-wrap gap-2">
+      <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Нужно ли переделать интерфейс?</h3>
+      <Checkbox type="radio" group="level2" id="needToRedesignAbsolutely" label="Да, полностью" />
+      <Checkbox type="radio" group="level2" id="needToRedesignYes" label="Да, частично" />
+      <Checkbox type="radio" group="level2" id="needToRedesignUI" label="Нет, только обновить стиль" className="final"/>
+      <Checkbox type="radio" group="level2" id="needToRedesignNew" label="Нет, только добавить кое-что" />
+      <Checkbox type="radio" group="level2" id="needToRedesignDonno" label="Не знаю, помогите понять" />
   </div>
   
-  <div id="needFullRedesign">
-    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы знаете, каким должен быть новый интерфейс</h3>
-    <Checkbox id="needFullRedesignYes" label="Да, есть ТЗ" className="final"/>
-    <Checkbox id="needFullRedesignNo" label="Нет, помогите понять" className="final"/>
+  <div id="needFullRedesign" class="flex flex-wrap gap-2">
+    <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Вы знаете, каким должен быть новый интерфейс</h3>
+    <Checkbox type="radio" group="level3" id="needFullRedesignYes" label="Да, есть ТЗ" className="final"/>
+    <Checkbox type="radio" group="level3" id="needFullRedesignNo" label="Нет, помогите понять" className="final"/>
   </div>
 
-  <div id="needSpotRedesign">
-    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы точно знаете, что нужно поменять</h3>
-    <Checkbox id="needSpotRedesignYes" label="Да" className="final"/>
-    <Checkbox id="needSpotRedesignNo" label="Нет, это нужно выяснить" className="final"/>
+  <div id="needSpotRedesign" class="flex flex-wrap gap-2">
+    <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Вы точно знаете, что нужно поменять</h3>
+    <Checkbox type="radio" group="level3" id="needSpotRedesignYes" label="Да" className="final"/>
+    <Checkbox type="radio" group="level3" id="needSpotRedesignNo" label="Нет, это нужно выяснить" className="final"/>
   </div>
   
-  <div id="needNewFeatures">
-      <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы знаете, что нужно добавить</h3>
-      <Checkbox id="needNewFeaturesYes" label="Да" className="final"/>
-      <Checkbox id="needNewFeaturesNo" label="Нет, это нужно выяснить" className="final"/>
+  <div id="needNewFeatures" class="flex flex-wrap gap-2">
+      <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Вы знаете, что нужно добавить</h3>
+      <Checkbox type="radio" group="level3" id="needNewFeaturesYes" label="Да" className="final"/>
+      <Checkbox type="radio" group="level3" id="needNewFeaturesNo" label="Нет, это нужно выяснить" className="final"/>
   </div>
   
-  <div id="needToResearch">
-        <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Что-то из этого верно?</h3>
-        <Checkbox id="needToResearch1" label="Ваш продукт сложный" className="final"/>
-        <Checkbox id="needToResearch2" label="Предстоят большие инвестиции" className="final"/>
-        <Checkbox id="needToResearch3" label="Есть конкретная исследовательская задача" className="final"/>
-        <Checkbox id="needToResearchNo" label="Ничего настолько глобального" className="final"/>
+  <div id="needToResearch" class="flex flex-wrap gap-2">
+        <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Что-то из этого верно?</h3>
+        <Checkbox type="radio" group="level3" id="needToResearch1" label="Ваш продукт сложный" className="final"/>
+        <Checkbox type="radio" group="level3" id="needToResearch2" label="Предстоят большие инвестиции" className="final"/>
+        <Checkbox type="radio" group="level3" id="needToResearch3" label="Есть конкретная исследовательская задача" className="final"/>
+        <Checkbox type="radio" group="level3" id="needToResearchNo" label="Ничего настолько глобального" className="final"/>
   </div>
   
-  <div>
-        <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Дополнительно</h3>
+  <div id="needExtra" class="flex flex-wrap gap-2">
+        <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Дополнительно</h3>
         <Checkbox id="needContent" label="Нужен контент" className="final"/>
         <Checkbox id="needDevTeam" label="Нужна работа в команде" className="final"/>
         <Checkbox id="needResearch" label="Нужно исследовать пользователей" className="final"/>
   </div>
-
+  </div>
 </user-story> 
 
 {/*

@@ -1,0 +1,25 @@
+---
+
+const {
+  id,
+  className = ""
+} = Astro.props;
+
+const aClassName = className + ' hidden';
+
+---
+
+<astro-red-checkbox>
+  <input
+    id={id}
+    name={id}
+    type="checkbox"
+    class={aClassName}
+    />
+  <label
+    for={id}
+    class="flex flex-row items-center bg-[--aw-color-hund] leading-none h-14 px-6 py-4 text-white"
+  >
+    <slot />
+  </label>
+</astro-checkbox>
