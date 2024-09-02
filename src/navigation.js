@@ -11,47 +11,47 @@ export const headerData = {
       links: [
         {
           text: 'UX/UI-дизайн под ключ',
-          href: 'https://new.sobakapav.ru/services/ux-design',
+          href: getPermalink('/services/ux-design'),
         },
         {
           text: 'Прототип под инвестицию',
-          href: 'https://new.sobakapav.ru/services/prototype',
+          href: getPermalink('/services/prototype'),
         },
         {
           text: 'UI-редизайн',
-          href: 'https://new.sobakapav.ru/services/ui-redesign',
+          href: getPermalink('/services/ui-redesign'),
         },
         {
           text: 'Точечный редизайн интерфейса',
-          href: 'https://new.sobakapav.ru/services/redesign',
+          href: getPermalink('/services/redesign'),
         },
         {
           text: 'Добавление новых возможностей',
-          href: 'https://new.sobakapav.ru/services/new-features',
+          href: getPermalink('/services/new-features'),
         },
         {
           text: 'UX-аудит',
-          href: 'https://new.sobakapav.ru/services/ux-audit',
+          href: getPermalink('/services/ux-audit'),
         },
         {
           text: 'Продуктовое исследование',
-          href: 'https://new.sobakapav.ru/services/research',
+          href: getPermalink('/services/research'),
         },  
         {
           text: 'Усиление команды разработки',
-          href: 'https://new.sobakapav.ru/services/dev-team',
+          href: getPermalink('/services/dev-team'),
         },
         {
           text: 'Работа в продуктовой команде',
-          href: 'https://new.sobakapav.ru/services/product-team',
+          href: getPermalink('/services/product-team'),
         },
         {
           text: 'Консультации',
-          href: 'https://new.sobakapav.ru/services/consultation',
+          href: getPermalink('/services/consultation'),
         },
         {
           text: 'Контент-дизайн',
-          href: 'https://new.sobakapav.ru/services/content-design',
+          href: getPermalink('/services/content-design'),
         },
       ],
     },
