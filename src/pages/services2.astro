@@ -1,44 +1,45 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
 
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Features from '~/components/widgets/Features.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Brands from '~/components/widgets/Brands.astro';
-
-import BlogList from '~/components/services/List.astro';
+import ServicesCollection2 from '~/components/services/ServicesCollection2.astro';
+import Checkbox from '~/components/common/Checkbox.astro';
+import UserStory from '~/components/services/UserStory.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getEntry } from 'astro:content';
 
-import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
-
 const metadata = {
-  title: 'Услуги',
+  canonical: 'https://sobakapav.ru/services',
+  title: `Что мы можем для вас сделать • Услуги «Собаки Павловой»`,
+  description: "Всё, что связано с интерфейсами и пользовательским опытом: вместе с вами создаём UI/UX-решения, которые выводят взаимодействие с вашими клиентами на новый уровень.", 
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/services/turnkey/ux-design.png',
+      width: 716,
+      height: 600
+    }],
+    type: 'website',
+  },
 };
-
-const servicesList = ['ux-design', 'prototype','ui-redesign', 'redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design'];
-
-const services = [];
-for (var idx in servicesList) {
-  var service = await getEntry('services', servicesList[idx]);
-  service.data.index = idx;
-  service.data.href = `/services/${servicesList[idx]}`;
-  services.push(service.data);
-}
-
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
+   <Bread
+      title="Услуги"
+   />
+  
+  <!-- Hund3 Widget ******************* -->
+
+  <Hund3
     tagline=""
     actions={[
       {
@@ -52,20 +53,20 @@ for (var idx in servicesList) {
     ]}
   >
     <Fragment slot="title">
-      Наши <span class="text-accent dark:text-white highlight">услуги</span> 
+      Что мы можем для вас сделать?
     </Fragment>
 
     <Fragment slot="subtitle">
-        Что мы можем для вас сделать? Все, что связано с интерфейсами и польовательским опытом: выполним <a href="/services/ux-design" class="underline text-accent">UX/UI-дизайн под ключ</a>, создадим <a href="/services/prototype" class="underline text-accent">прототип под инвестиции</a>, точечно <a href="/services/spot-redesign" class="underline text-accent">улучшим пользовательский опыт</a> или <a href="/services/ui-redesign" class="underline text-accent">сделаем интерфейс привлекательнее</a>, добавим в него <a href="/services/new-features"class="underline text-accent">новые возможности</a>, проведем <a href="/services/ux-audit" class="underline text-accent">UX-аудит</a> или <a href="/services/research" class="underline text-accent">продуктовое исследование</a>. Усилим вашу <a href="/services/dev-team" class="underline text-accent">команду разработки</a> или <a href="/services/product-team"class="underline text-accent">продуктовую команду</a>, проведем <a href="/services/consultation" class="underline text-accent">консультацию</a>, поможем создать <a href="/services/content-design" class="underline text-accent">ключевой контент</a>.   
+        Всё, что связано с интерфейсами и пользовательским опытом: вместе с вами создаём UI/UX-решения, которые выводят взаимодействие с вашими клиентами на новый уровень.  
     </Fragment>
+    
+    
 
-  </Hero>
-   
-  
-<!-- Content Widget **************** -->
-
-    <BlogList posts={services} />
-  
+  </Hund3>
+    
+    <ServicesCollection2 list={['ux-design', 'prototype', 'redesign', 'ui-redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design']} />
+    
+</Layout>
 
     
     
