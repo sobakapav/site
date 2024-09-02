@@ -132,7 +132,7 @@ const metadata = merge(
         
         <RelatedLinks post={post} />
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-row flex-wrap gap-px gap-y-[0.5px]">
+        {/* <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-row flex-wrap gap-px gap-y-[0.5px]">
            <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa.svg" width="101" height="20"></div>
            <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yandex.svg" width="72" height="20"></div>
            <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/x5.svg" width="46" height="30"></div>
@@ -144,7 +144,7 @@ const metadata = merge(
            <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sportmaster.svg" width="96" height="16"></div>
            <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yota.svg" width="25" height="40"></div>
            <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sberbank.svg" width="99" height="16"></div>
-        </div>
+        </div> */}
         
         <a id="#3"></a>
         
@@ -154,14 +154,14 @@ const metadata = merge(
             <div class="flex flex-col gap-4">
               <h2 class="text-5xl group font-heading text-[#626262] whitespace-nowrap">Наши инструменты</h2>
               <div class="flex flex-row gap-12">
-                <Image src="~/assets/images/services/jira.svg" class="noir" height={48} alt="Jira" />
-                <Image src="~/assets/images/services/figma.svg" class="noir" height={48} alt="Figma" />
-                <Image src="~/assets/images/services/google-doc.svg" class="noir" height={48} alt="Google Docs" />
-                <Image src="~/assets/images/services/miro.svg" class="noir" height={48} alt="Miro" />
+                <Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" />
+                <Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" />
+                <Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" />
+                <Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" />
               </div>
             </div>
             <div class="flex flex-col gap-4">
-              <h2 class="text-5xl group font-heading text-[#626262]">Что вы получите:</h2>
+              <h2 class="text-5xl group font-heading text-[#626262]">Что вы получите</h2>
               {post.results && (
                 <div class="max-w-4xl mx-auto flex flex-col gap-6">
                   <Features3
@@ -179,13 +179,13 @@ const metadata = merge(
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
           <div class="flex flex-col md:flex-row gap-6">
             <div class="flex flex-col gap-4 bg-[#E7EAEA] p-8 sm:p-6 grow basis-0">
-              <h2 class="text-5xl group font-heading text-[#626262]">Экстра-польза:</h2>
+              <h2 class="text-5xl group font-heading text-[#626262]">Экстра-польза</h2>
               <div class="flex flex-col blue-check-list gap-4">
                 <Markdown.Inline of={post.extra} />                
               </div>
             </div>
             <div class="flex flex-col gap-4 bg-[#E7EAEA] p-8 sm:p-6 grow basis-0">
-              <h2 class="text-5xl group font-heading text-[#626262]">Эффект в деньгах:</h2>
+              <h2 class="text-5xl group font-heading text-[#626262]">Эффект в деньгах</h2>
               <div class="flex flex-col blue-check-list gap-4">
                 <Markdown.Inline of={post.roi} />                
               </div>
