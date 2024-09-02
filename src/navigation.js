@@ -11,47 +11,47 @@ export const headerData = {
       links: [
         {
           text: 'UX/UI-дизайн под ключ',
-          href: getPermalink('/services/ux-design'),
+          href: 'https://new.sobakapav.ru/services/ux-design',
         },
         {
           text: 'Прототип под инвестицию',
-          href: getPermalink('/services/prototype'),
+          href: 'https://new.sobakapav.ru/services/prototype',
         },
         {
           text: 'UI-редизайн',
-          href: getPermalink('/services/ui-redesign'),
+          href: 'https://new.sobakapav.ru/services/ui-redesign',
         },
         {
           text: 'Точечный редизайн интерфейса',
-          href: getPermalink('/services/redesign'),
+          href: 'https://new.sobakapav.ru/services/redesign',
         },
         {
           text: 'Добавление новых возможностей',
-          href: getPermalink('/services/new-features'),
+          href: 'https://new.sobakapav.ru/services/new-features',
         },
         {
           text: 'UX-аудит',
-          href: getPermalink('/services/ux-audit'),
+          href: 'https://new.sobakapav.ru/services/ux-audit',
         },
         {
           text: 'Продуктовое исследование',
-          href: getPermalink('/services/research'),
+          href: 'https://new.sobakapav.ru/services/research',
         },  
         {
           text: 'Усиление команды разработки',
-          href: getPermalink('/services/dev-team'),
+          href: 'https://new.sobakapav.ru/services/dev-team',
         },
         {
           text: 'Работа в продуктовой команде',
-          href: getPermalink('/services/product-team'),
+          href: 'https://new.sobakapav.ru/services/product-team',
         },
         {
           text: 'Консультации',
-          href: getPermalink('/services/consultation'),
+          href: 'https://new.sobakapav.ru/services/consultation',
         },
         {
           text: 'Контент-дизайн',
-          href: getPermalink('/services/content-design'),
+          href: 'https://new.sobakapav.ru/services/content-design',
         },
       ],
     },
