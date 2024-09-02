@@ -121,6 +121,7 @@ const serviceCollection = defineCollection({
 
     title: z.string(),
     hyphenateTitle: z.boolean().optional(),
+    doubleSize: z.boolean().optional(),
     excerpt: z.string().optional(),
     image: z.string(),
     imageAlt: z.string().optional(),

@@ -96,7 +96,7 @@ for (var idx in list) {
 <ul class="flex flex-wrap justify-start list-none">
   {
     items.map((item) => (
-      <li class="mb-12 md:mb-20 w-80" id={item.slugName}>
+      <li class:list={["mb-12 md:mb-20", item.doubleSize ? "w-[640px]" : "w-80"]} id={item.slugName}>
         <Item post={item} />
       </li>
     ))

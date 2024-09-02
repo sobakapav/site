@@ -17,7 +17,7 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata | undefined;
+const image = (await findImage(post.doubleSize ? post.image : post.thumbnail)) as ImageMetadata | undefined;
 
 ---
 
@@ -25,14 +25,14 @@ const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata |
   {
     image && (
       <a href={post.href ?? 'javascript:void(0)'}>
-        <div class="w-72 h-auto">
-          <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
+        <div class:list={["h-auto", post.doubleSize ? "w-[608px]" : "w-72"]}>
+          <div class:list={["overflow-hidden rounded h-72", post.doubleSize ? "w-[608px]" : "w-72"]}>
             {image && (
                           <Image
                             src={image}
                             alt={post.imageAlt}
                             layout="constrained-both"
-                            width={288}
+                            width={post.doubleSize ? 344 : 288}
                             loading="lazy"
                             decoding="async"
                           />
@@ -42,7 +42,7 @@ const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata |
       </a>
     )
   }
-  <div class="mt-2 w-72">
+  <div class:list={["mt-2", post.doubleSize ? "w-[608px]" : "w-72"]}>
     <header>
       <h2 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">
         {
