@@ -21,13 +21,33 @@ import { getEntry } from 'astro:content';
 import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
 
 const metadata = {
-  title: 'Услуги',
+  canonical: 'https://sobakapav.ru/services',
+  title: `Что мы можем для вас сделать • Услуги «Собаки Павловой»`,
+  description: "100+ статей о UX-дизайне, исследовании пользователей и управлении проектами. Делимся знаниями и опытом, предлагаем лайфхаки и решения.", 
+  robots: {
+    index: blogListRobots?.index && currentPage === 1,
+    follow: blogListRobots?.follow,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: ''~/assets/images/services/turnkey/ux-design.png'',
+      width: 716,
+      height: 600
+    }],
+    type: 'website',
+  },
 };
 
 
 ---
 
 <Layout metadata={metadata}>
+
+   <Bread
+      title={post.title}
+   />
+  
   <!-- Hero Widget ******************* -->
 
   <Hund3
