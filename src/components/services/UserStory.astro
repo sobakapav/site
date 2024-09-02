@@ -5,6 +5,7 @@
 ---
 
 <style>
+  user-story div#haveProduct, 
   user-story div#needToCreate, 
   user-story div#needToRedesign,
   user-story div#needFullRedesign,
@@ -14,6 +15,10 @@
   {
     display: none;
   }
+  
+  user-story:has(input#startYes:checked) div#haveProduct {
+      display: inline;
+    }
   
   user-story:has(input#haveProductNo:checked) div#needToCreate {
     display: inline;
@@ -42,8 +47,72 @@
 </style>
 
 <user-story>
+  <div id="start" class="bg-[--aw-color-hund] leading-none mb-2 h-14 px-6 py-4 md:max-w-sm">
+    <span><Checkbox id="startYes" label="Помогите мне определиться" />
+    <Checkbox id="startNo" label="Х" />
+    </span>
+  </div>
+  
   <div id="haveProduct">
-    <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Есть ли у вас готовый продукт?</h3>
+    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Есть ли у вас готовый продукт?</h3>
+    <Checkbox id="haveProductYes" label="Да" />
+    <Checkbox id="haveProductNo" label="Нет" />
+  </div>
+  
+  <div id="needToCreate">
+      <Checkbox id="needToCreateIdea" label="Вы на стадии идей и планов" className="final"/>
+      <Checkbox id="needToCreateInvestition" label="Нужно впечатлить инвесторов" className="final"/>
+      <Checkbox id="needToCreateDesign" label="Есть MVP, нужен продукт" className="final"/>
+  </div>
+  
+  <div id="needToRedesign">
+      <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Нужно ли переделать интерфейс?</h3>
+      <Checkbox id="needToRedesignAbsolutely" label="Да, полностью" />
+      <Checkbox id="needToRedesignYes" label="Да, частично" />
+      <Checkbox id="needToRedesignUI" label="Нет, только обновить стиль" className="final"/>
+      <Checkbox id="needToRedesignNew" label="Нет, только добавить кое-что" />
+      <Checkbox id="needToRedesignDonno" label="Не знаю, помогите понять" />
+  </div>
+  
+  <div id="needFullRedesign">
+    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы знаете, каким должен быть новый интерфейс</h3>
+    <Checkbox id="needFullRedesignYes" label="Да, есть ТЗ" className="final"/>
+    <Checkbox id="needFullRedesignNo" label="Нет, помогите понять" className="final"/>
+  </div>
+
+  <div id="needSpotRedesign">
+    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы точно знаете, что нужно поменять</h3>
+    <Checkbox id="needSpotRedesignYes" label="Да" className="final"/>
+    <Checkbox id="needSpotRedesignNo" label="Нет, это нужно выяснить" className="final"/>
+  </div>
+  
+  <div id="needNewFeatures">
+      <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы знаете, что нужно добавить</h3>
+      <Checkbox id="needNewFeaturesYes" label="Да" className="final"/>
+      <Checkbox id="needNewFeaturesNo" label="Нет, это нужно выяснить" className="final"/>
+  </div>
+  
+  <div id="needToResearch">
+        <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Что-то из этого верно?</h3>
+        <Checkbox id="needToResearch1" label="Ваш продукт сложный" className="final"/>
+        <Checkbox id="needToResearch2" label="Предстоят большие инвестиции" className="final"/>
+        <Checkbox id="needToResearch3" label="Есть конкретная исследовательская задача" className="final"/>
+        <Checkbox id="needToResearchNo" label="Ничего настолько глобального" className="final"/>
+  </div>
+  
+  <div>
+        <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Дополнительно</h3>
+        <Checkbox id="needContent" label="Нужен контент" className="final"/>
+        <Checkbox id="needDevTeam" label="Нужна работа в команде" className="final"/>
+        <Checkbox id="needResearch" label="Нужно исследовать пользователей" className="final"/>
+  </div>
+
+</user-story> 
+
+{/*
+
+<div id="haveProduct">
+    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Есть ли у вас готовый продукт?</h3>
     <Checkbox id="haveProductYes" label="Продукт уже существует" />
     <Checkbox id="haveProductNo" label="Продукт еще только создается" />
   </div>
@@ -55,7 +124,7 @@
   </div>
   
   <div id="needToRedesign">
-      <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Нужно ли переделать интерфейс?</h3>
+      <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Нужно ли переделать интерфейс?</h3>
       <Checkbox id="needToRedesignAbsolutely" label="Да, причем полностью. Например, пользователи жалуются на неудобный интерфейс." />
       <Checkbox id="needToRedesignYes" label="Да, частично. Интерфейс морально устарел или есть небольше недостатки" />
       <Checkbox id="needToRedesignUI" label="Нет, только обновить стиль, сделать привлекательнее" className="final"/>
@@ -64,25 +133,25 @@
   </div>
   
   <div id="needFullRedesign">
-    <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Вы точно знаете, каким должен быть новый интерфейс</h3>
+    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы точно знаете, каким должен быть новый интерфейс</h3>
     <Checkbox id="needFullRedesignYes" label="Да, есть четкое ТЗ на новый продукт" className="final"/>
     <Checkbox id="needFullRedesignNo" label="Нет, помогите понять." className="final"/>
   </div>
 
   <div id="needSpotRedesign">
-    <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Вы точно знаете, что нужно поменять</h3>
+    <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы точно знаете, что нужно поменять</h3>
     <Checkbox id="needSpotRedesignYes" label="Да" className="final"/>
     <Checkbox id="needSpotRedesignNo" label="Нет, это нужно выяснить." className="final"/>
   </div>
   
   <div id="needNewFeatures">
-      <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Вы знаете, что именно нужно добавить</h3>
+      <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Вы знаете, что именно нужно добавить</h3>
       <Checkbox id="needNewFeaturesYes" label="Да" className="final"/>
       <Checkbox id="needNewFeaturesNo" label="Нет, это нужно выяснить." className="final"/>
   </div>
   
   <div id="needToResearch">
-        <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Что-то из этого верно?</h3>
+        <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Что-то из этого верно?</h3>
         <Checkbox id="needToResearch1" label="Ваш продукт сложный" className="final"/>
         <Checkbox id="needToResearch2" label="Предстоят большие инвестиции" className="final"/>
         <Checkbox id="needToResearch3" label="Есть конкретная исследовательская задача" className="final"/>
@@ -90,10 +159,10 @@
   </div>
   
   <div>
-        <h3 class="text-xl sm:text-xl leading-none mb-2 dark:text-slate-300 font-heading">Дополнительно</h3>
+        <h3 class="leading-none mb-2 dark:text-slate-300 text-semibold">Дополнительно</h3>
         <Checkbox id="needContent" label="Нужно создать или пересобрать контент" className="final"/>
         <Checkbox id="needDevTeam" label="Нужно работать в тесной интеграции с командой разработки" className="final"/>
         <Checkbox id="needResearch" label="Нужно продуктовое исследование, связанное с поведением пользователя" className="final"/>
   </div>
 
-</user-story> 
+*/}

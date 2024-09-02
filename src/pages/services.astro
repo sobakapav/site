@@ -23,10 +23,10 @@ import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
 const metadata = {
   canonical: 'https://sobakapav.ru/services',
   title: `Что мы можем для вас сделать • Услуги «Собаки Павловой»`,
-  description: " Всё, что связано с интерфейсами и пользовательским опытом: вместе с вами создаём UI/UX-решения, которые выводят взаимодействие с вашими клиентами на новый уровень.", 
+  description: "Всё, что связано с интерфейсами и пользовательским опытом: вместе с вами создаём UI/UX-решения, которые выводят взаимодействие с вашими клиентами на новый уровень.", 
   robots: {
-    index: blogListRobots?.index && currentPage === 1,
-    follow: blogListRobots?.follow,
+    index: false,
+    follow: false,
   },
   openGraph: {
     site_name: 'Собака Павлова',
