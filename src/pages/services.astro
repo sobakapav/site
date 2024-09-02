@@ -2,23 +2,14 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hund3 from '~/components/widgets/Hund3.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Bread from '~/components/widgets/Bread.astro';
 
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Features from '~/components/widgets/Features.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Brands from '~/components/widgets/Brands.astro';
 import ServicesCollection from '~/components/services/ServicesCollection.astro';
 import Checkbox from '~/components/common/Checkbox.astro';
 import UserStory from '~/components/services/UserStory.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getEntry } from 'astro:content';
-
-import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
 
 const metadata = {
   canonical: 'https://sobakapav.ru/services',
@@ -43,10 +34,10 @@ const metadata = {
 <Layout metadata={metadata}>
 
    <Bread
-      title={post.title}
+      title="Услуги"
    />
   
-  <!-- Hero Widget ******************* -->
+  <!-- Hund3 Widget ******************* -->
 
   <Hund3
     tagline=""
