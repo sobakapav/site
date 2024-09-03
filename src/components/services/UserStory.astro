@@ -47,9 +47,13 @@ import { Icon } from 'astro-icon/components';
     display: flex;
   }
   
-   user-story:has(input#startYes:checked) div#needExtra {
+   user-story:has(input#haveProductYes:checked) div#needExtra {
     display: flex;
   }
+  
+   user-story:has(input#haveProductNo:checked) div#needExtra {
+      display: flex;
+    }
 
 </style>
 
@@ -59,7 +63,7 @@ import { Icon } from 'astro-icon/components';
     <span>
       <RedCheckbox id="startYes">
         <Icon name="tabler:lifebuoy" height="24px" width="24px" class="mr-2" />
-        <span class="grow">Помогите мне определиться!</span>
+        <span class="grow">Фильтр услуг</span>
         <Icon name="tabler:x" class="w-6 h-6 ml-2" />
       </RedCheckbox>
     </span>
@@ -117,7 +121,7 @@ import { Icon } from 'astro-icon/components';
         <h3 class="leading-none mb-2 dark:text-slate-300 font-semibold basis-full shrink-0">Дополнительно</h3>
         <Checkbox id="needContent" label="Нужен контент" className="final"/>
         <Checkbox id="needDevTeam" label="Нужна работа в команде" className="final"/>
-        <Checkbox id="needResearch" label="Нужно исследовать пользователей" className="final"/>
+        <Checkbox id="needResearch" label="Надо исследовать пользователей" className="final"/>
   </div>
   </div>
 </user-story> 
