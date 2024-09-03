@@ -7,47 +7,47 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <style>
-  user-story div#haveProduct, 
   user-story div#needToCreate, 
   user-story div#needToRedesign,
   user-story div#needFullRedesign,
   user-story div#needSpotRedesign,
   user-story div#needNewFeatures,
   user-story div#needToResearch
-  
   {
     display: none;
   }
   
-  user-story:has(input#startYes:checked) div#haveProduct {
-      display: flex;
-    }
-  
-  user-story:has(input#startYes:checked):has(input#haveProductNo:checked) div#needToCreate {
+  user-story:has(input#haveProductNo:checked) div#needToCreate {
     display: flex;
   }
   
-  user-story:has(input#startYes:checked):has(input#haveProductYes:checked) div#needToRedesign {
+  user-story:has(input#haveProductYes:checked) div#needToRedesign {
       display: flex;
   }
   
-  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignAbsolutely:checked) div#needFullRedesign {
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignAbsolutely:checked) div#needFullRedesign {
     display: flex;
   }
   
-  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignYes:checked) div#needSpotRedesign {
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignYes:checked) div#needSpotRedesign {
     display: flex;
   }
   
-  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignNew:checked) div#needNewFeatures {
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignNew:checked) div#needNewFeatures {
     display: flex;
   }
   
-  user-story:has(input#startYes:checked):has(input#haveProductYes:checked):has(input#needToRedesignDonno:checked) div#needToResearch {
+  user-story:has(input#haveProductYes:checked):has(input#needToRedesignDonno:checked) div#needToResearch {
     display: flex;
   }
   
-   
+  user-story #clearFilters {
+    display:none;
+  }
+  
+  user-story:has(input:checked) #clearFilters {
+    display:block;
+  }
 
 </style>
 
@@ -55,10 +55,12 @@ import { Icon } from 'astro-icon/components';
   <div class="bg-white flex flex-col gap-6">
   <div id="start">
     <span>
-      <RedCheckbox id="startYes">
+      <RedCheckbox>
         <Icon name="tabler:lifebuoy" height="24px" width="24px" class="mr-2" />
         <span class="grow">Фильтр услуг</span>
-        <Icon name="tabler:x" class="w-6 h-6 ml-2" />
+        <span class="w-6 h-6 ml-2" id="clearFilters">
+          <Icon name="tabler:x" class="w-6 h-6" />
+        </span>
       </RedCheckbox>
     </span>
   </div>
@@ -177,3 +179,44 @@ import { Icon } from 'astro-icon/components';
   </div>
 
 */}
+
+<script>
+  window.addEventListener("load", (event) => {
+    const checkboxes = document.querySelectorAll('astro-checkbox input');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("click", (event) => {
+        if (event.target.classList.contains('wasChecked')) {
+          event.target.checked = false;
+          event.target.classList.remove('wasChecked');
+        } else {
+          document.querySelectorAll('input[name="' + event.target.name + '"].wasChecked').forEach(el => el.classList.remove('wasChecked'));
+          event.target.classList.add('wasChecked');
+        }
+        
+        if (event.target.name == 'level1') {
+          document.querySelectorAll('input[name="level2"]').forEach(el => {
+            el.classList.remove('wasChecked');
+            el.checked = false;
+          });
+        }
+        
+        if (event.target.name == 'level1' || event.target.name == 'level2') {
+          document.querySelectorAll('input[name="level3"]').forEach(el => {
+            el.classList.remove('wasChecked');
+            el.checked = false;
+          });
+        }
+        
+        console.log(event);
+      });
+    });
+    
+    document.getElementById('clearFilters').addEventListener("click", (event) => {
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = false;
+        checkbox.classList.remove('wasChecked');
+      });
+    });
+  });
+
+</script>
