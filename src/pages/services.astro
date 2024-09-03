@@ -4,7 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Bread from '~/components/widgets/Bread.astro';
 
-import ServicesCollection from '~/components/services/ServicesCollection.astro';
+import ServicesCollection2 from '~/components/services/ServicesCollection2.astro';
 import Checkbox from '~/components/common/Checkbox.astro';
 import UserStory from '~/components/services/UserStory.astro';
 
@@ -63,16 +63,9 @@ const metadata = {
     
 
   </Hund3>
-  
-  <div class="relative mx-auto max-w-[1680px]">
-    <div class="absolute z-10 md:max-w-sm">
-      <UserStory />
-    </div>
     
-    <ServicesCollection list={['ux-design', 'prototype', 'redesign', 'ui-redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design']} />
+    <ServicesCollection2 list={['ux-design', 'prototype', 'new-features', 'redesign', 'ui-redesign', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design']} />
     
-  </div>  
-
 </Layout>
   
     

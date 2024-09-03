@@ -58,8 +58,9 @@ const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
     </header>
     {
         post.href ? (
+          <h4 class="text-lg font-semibold">Когда</h4>
           <a class="hover:underline dark:hover:underline flex-grow dark:text-slate-400 text-base" href={post.href}>
-            <h4 class="text-lg font-semibold">Когда</h4><p class="text-muted">{(post.pain)}</p>
+            <p class="text-muted">{(post.pain)}</p>
           </a>
         ) : (
           (post.pain)
@@ -68,8 +69,9 @@ const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
     
     {
         post.href ? (
+          <h4 class="text-lg font-semibold">Вы получите</h4>
           <a class="hover:underline dark:hover:underline flex-grow dark:text-slate-400 text-base" href={post.href}>
-            <h4 class="text-lg font-semibold">Вы получите</h4><p class="text-muted">{(post.excerpt)}</p>
+            <p class="text-muted">{(post.excerpt)}</p>
           </a>
         ) : (
           (post.excerpt)
