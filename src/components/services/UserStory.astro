@@ -13,8 +13,8 @@ import { Icon } from 'astro-icon/components';
   user-story div#needFullRedesign,
   user-story div#needSpotRedesign,
   user-story div#needNewFeatures,
-  user-story div#needToResearch,
-  user-story div#needExtra
+  user-story div#needToResearch
+  
   {
     display: none;
   }
@@ -47,13 +47,7 @@ import { Icon } from 'astro-icon/components';
     display: flex;
   }
   
-   user-story:has(input#haveProductYes:checked) div#needExtra {
-    display: flex;
-  }
-  
-   user-story:has(input#haveProductNo:checked) div#needExtra {
-      display: flex;
-    }
+   
 
 </style>
 
