@@ -49,11 +49,11 @@ const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
               <Markdown.Inline of={post.title} />
       </h2>
     </header>
-          <h4 class="text-lg font-semibold">Когда</h4>
+          <h4 class="text-lg font-semibold">Когда нужна эта услуга</h4>
           
-          <p class="text-muted">{(post.pain)}</p>
+          <p class="text-muted mb-2">{(post.pain)}</p>
     
-          <h4 class="text-lg font-semibold">Вы получите</h4>
+          <h4 class="text-lg font-semibold">Что вы получите</h4>
           
           <p class="text-muted">{(post.excerpt)}</p>
 
