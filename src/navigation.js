@@ -14,7 +14,7 @@ export const headerData = {
           href: getPermalink('/services/ux-design'),
         },
         {
-          text: 'Прототип под инвестицию',
+          text: 'Прототип под инвестиции',
           href: getPermalink('/services/prototype'),
         },
         {
