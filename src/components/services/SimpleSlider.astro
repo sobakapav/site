@@ -1,0 +1,45 @@
+---
+
+import './SimpleSlider.less';
+
+---
+
+<div class="slider middle slider-ux slider-desktop">
+      <div class="slides">
+          <input type="radio" name="desktop" id="ux1" checked>
+          <input type="radio" name="desktop" id="ux2">
+          <input type="radio" name="desktop" id="ux3">
+          <input type="radio" name="desktop" id="ux4">
+
+          <div class="slide s1">
+              <h4></h4>
+              <a href="/work/neurobureau"><img src="/src/img/01-UX-Desktop.png" alt="Slide 1" class="img"></a>
+          </div>
+          <div class="slide">
+              <h4></h4>
+              <a href="/work/justfa"><img src="/src/img/02-UX-Desktop.png" alt="Slide 2" class="img"></a>
+          </div>
+          <div class="slide">
+              <h4></h4>
+              <a href="/work"><img src="/src/img/03-UX-Desktop.png" alt="Slide 3" class="img"></a>
+          </div>
+          <div class="slide">
+              <h4></h4>
+              <a href="/work/anggel"><img src="/src/img/04-UX-Desktop.png" alt="Slide 4" class="img"></a>
+          </div>
+
+      </div>
+      <div class="navigation">
+          <label for="ux1" class="bar"></label>
+          <label for="ux2" class="bar"></label>
+          <label for="ux3" class="bar"></label>
+          <label for="ux4" class="bar"></label>
+      
+      </div>
+      <div class="slider-buttons">
+          <button class="slider-button" onclick="scrollScroller(this, -1)"><img src="/src/img/slider-button-l.svg" alt="Back"></button>
+          <button class="slider-button" onclick="scrollScroller(this, 1)"><img src="/src/img/slider-button-r.svg" alt="Forvard"></button>
+      </div>
+  </div>
+
+</div>

@@ -26,6 +26,7 @@ import Bread from '~/components/widgets/Bread.astro';
 
 import BlueBlock from '~/components/services/BlueBlock.astro';
 import Budget from '~/components/services/Budget.astro';
+import SimpleSlider from '~/components/services/SimpleSlider.astro';
 
 export const prerender = true;
 
@@ -128,6 +129,9 @@ const metadata = merge(
         </div>
         
         <a id="#1"></a>
+        
+        <SimpleSlider />
+          
         <a id="#2"></a>
         
         <RelatedLinks post={post} />
