@@ -1,0 +1,139 @@
+body {
+  // По умолчанию: если выбран финальный инпут - всех скрыть, кроме фильтра
+  &:has(input:checked) {
+    services-collection {
+      li {
+        display:none;
+      }
+      
+      li#services-filter {
+        display: block;
+      }
+    }
+  }
+  
+  // Если выбран фильтр из группы "продукта нет"
+  &:has(astro-checkbox > input#haveProductNo:checked) {
+    // На стадии идей и планов
+    &:has(astro-checkbox > input#needToCreateIdea:checked) {
+      services-collection li#product-team {
+        display:block;
+      }
+    }
+    
+    // Нужно впечатлить инвесторов
+    &:has(astro-checkbox > input#needToCreateInvestition:checked) {
+      services-collection li#prototype {
+        display:block;
+      }
+    }
+    
+    // Нужно сделать MVP
+    &:has(astro-checkbox > input#needToCreateMVP:checked) {
+      services-collection li#prototype {
+        display:block;
+      }
+    }
+    
+    // Есть MVP, нужен продукт
+    &:has(astro-checkbox > input#needToCreateDesign:checked) {
+      services-collection li#ux-design {
+        display:block;
+      }
+    }
+    
+    &:not(:has(astro-checkbox > input.final:checked)) {
+      services-collection {
+        li#product-team,
+        li#prototype,
+        li#ux-design {
+          display:block;
+        }
+      }
+    }
+  }
+  
+  // Нужно ли переделать интерфейс
+  &:has(astro-checkbox > input#haveProductYes:checked) {
+    // Да, полностью
+    &:has(astro-checkbox > input#needToRedesignAbsolutely:checked) {
+      services-collection {
+        li#ux-design,
+        li#research {
+          display:block;
+        }
+      }
+    }
+    
+    // Да, частично
+    &:has(astro-checkbox > input#needToRedesignYes:checked) {
+      services-collection {
+        li#redesign,
+        li#research {
+          display:block;
+        }
+      }
+    }
+     
+    // Нет, только обновить стиль
+    &:has(astro-checkbox > input#needToRedesignUI:checked) {
+      services-collection {
+        li#ui-redesign,
+        li#ux-audit {
+          display:block;
+        }
+      }
+    }
+    
+    // Нет, только добавить кое-что
+    &:has(astro-checkbox > input#needToRedesignNew:checked) {
+      services-collection {
+        li#new-features,
+        li#research {
+          display:block;
+        }
+      }
+    }
+    
+    // Не знаю, помогите понять
+    &:has(astro-checkbox > input#needToRedesignDonno:checked) {
+      services-collection {
+        li#ux-audit,
+        li#research {
+          display:block;
+        }
+      }
+    }
+
+    &:not(:has(astro-checkbox > input.final:checked)) {
+      services-collection {
+        li#ui-redesign,
+        li#new-features,
+        li#redesign,
+        li#research,
+        li#ux-audit,
+        li#ux-design {
+          display:block;
+        }
+      }
+    }
+  }
+  
+  &:has(astro-checkbox > input#needContent:checked) {
+    services-collection li#content-design {
+      display:block;
+    }
+  }
+  
+  &:has(astro-checkbox > input#needDevTeam:checked) {
+    services-collection li#dev-team {
+      display:block;
+    }
+  }
+  
+  &:has(astro-checkbox > input#needResearch:checked) {
+    services-collection li#research {
+      display:block;
+    }
+  }
+}

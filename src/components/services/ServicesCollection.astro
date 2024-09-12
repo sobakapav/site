@@ -21,6 +21,10 @@ for (var idx in list) {
   body:has(input.final:checked) services-collection li {
     display:none;
   }
+  
+  body:has(input.final:checked) services-collection li#services-filter {
+    display:block;
+  }
 
   body:has(astro-checkbox > input#haveProductNo:checked):has(astro-checkbox > input#needToCreateIdea:checked) services-collection li#product-team {
     display:block;
@@ -42,6 +46,7 @@ for (var idx in list) {
     display:block;
   }
   
+  body:has(astro-checkbox > input#haveProductYes:checked):has(astro-checkbox > input#needToRedesignAbsolutely:checked):has(astro-checkbox > input#needFullRedesignNo:checked) services-collection li#ux-design,
   body:has(astro-checkbox > input#haveProductYes:checked):has(astro-checkbox > input#needToRedesignAbsolutely:checked):has(astro-checkbox > input#needFullRedesignNo:checked) services-collection li#research {
     display:block;
   }
@@ -50,6 +55,7 @@ for (var idx in list) {
     display:block;
   }
   
+  body:has(astro-checkbox > input#haveProductYes:checked):has(astro-checkbox > input#needToRedesignYes:checked):has(astro-checkbox > input#needSpotRedesignNo:checked) services-collection li#redesign,
   body:has(astro-checkbox > input#haveProductYes:checked):has(astro-checkbox > input#needToRedesignYes:checked):has(astro-checkbox > input#needSpotRedesignNo:checked) services-collection li#ux-audit {
     display:block;
   }
@@ -58,6 +64,7 @@ for (var idx in list) {
     display:block;
   }
   
+  body:has(astro-checkbox > input#haveProductYes:checked):has(astro-checkbox > input#needToRedesignNew:checked):has(astro-checkbox > input#needNewFeaturesNo:checked) services-collection li#new-features,
   body:has(astro-checkbox > input#haveProductYes:checked):has(astro-checkbox > input#needToRedesignNew:checked):has(astro-checkbox > input#needNewFeaturesNo:checked) services-collection li#research {
     display:block;
   }
