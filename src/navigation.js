@@ -26,7 +26,7 @@ export const headerData = {
           href: getPermalink('/services/redesign'),
         },
         {
-          text: 'Добавление новых возможностей',
+          text: 'Добавление новой функциональности',
           href: getPermalink('/services/new-features'),
         },
         {
