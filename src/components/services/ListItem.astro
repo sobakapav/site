@@ -17,69 +17,49 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-const image = (await findImage(post.doubleSize ? post.image : post.thumbnail)) as ImageMetadata | undefined;
 
 ---
 
 <article class="flex flex-wrap justify-normal blog-list-item">
+<a href={post.href ?? 'javascript:void(0)'}>
   {
-    image && (
-      <a href={post.href ?? 'javascript:void(0)'}>
-        <div class:list={["h-auto", post.doubleSize ? "w-[608px]" : "w-72"]}>
-          <div class:list={["overflow-hidden rounded h-72", post.doubleSize ? "w-[608px]" : "w-72"]}>
-            {image && (
-                          <Image
-                            src={image}
+    post.thumbnail && (
+      
+        <div class="h-auto w-72">
+          <div class="overflow-hidden rounded h-72 w-72">
+            {post.thumbnail && (     
+                          <img
+                            src={post.thumbnail}
                             alt={post.imageAlt}
                             layout="constrained-both"
-                            width={post.doubleSize ? 344 : 288}
+                            width=288
                             loading="lazy"
                             decoding="async"
                           />
                         )}
           </div>
         </div>
-      </a>
+      
     )
   }
-  <div class:list={["mt-2", post.doubleSize ? "w-[500px]" : "w-72"]}>
+  <div class="mt-2 w-72"]}>
     <header>
       <h2 class="text-xl sm:text-4xl leading-none mb-2 dark:text-slate-300 font-heading">
-        {
-          post.href ? (
-            <a class="hover:underline dark:hover:underline" href={post.href}>
               <Markdown.Inline of={post.title} />
-            </a>
-          ) : (
-            post.title
-          )
-        }
       </h2>
     </header>
-    {
-        post.href ? (
-          <h4 class="text-lg font-semibold">Когда</h4>
-          <a class="hover:underline dark:hover:underline flex-grow dark:text-slate-400 text-base" href={post.href}>
-            <p class="text-muted">{(post.pain)}</p>
-          </a>
-        ) : (
-          (post.pain)
-        )
-    }
+          <h4 class="text-lg font-semibold">Когда нужна эта услуга</h4>
+          
+          <p class="text-muted mb-2">{(post.pain)}</p>
     
-    {
-        post.href ? (
-          <h4 class="text-lg font-semibold">Вы получите</h4>
-          <a class="hover:underline dark:hover:underline flex-grow dark:text-slate-400 text-base" href={post.href}>
-            <p class="text-muted">{(post.excerpt)}</p>
-          </a>
-        ) : (
-          (post.excerpt)
-        )
-      }
+          <h4 class="text-lg font-semibold">Что вы получите</h4>
+          
+          <p class="text-muted">{(post.excerpt)}</p>
+
    
     {post.tags && <footer class="mt-5">
       <PostTags tags={post.tags} />
     </footer> }
   </div>
+  </a>
 </article>
