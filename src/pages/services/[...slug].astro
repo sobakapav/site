@@ -95,38 +95,41 @@ const metadata = merge(
             <Markdown.Inline of={post.excerpt} />
           </Fragment>
           
+          <Fragment>
+          <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 px-4 md:px-6 mx-auto text-[#9F9F9F]">
+              <span>
+                <a href="#1" class="no-underline hover:underline underline-offset-2">Потребности</a>
+              </span><span> • </span>
+              
+              <span>
+                <a href="#2" class="no-underline hover:underline underline-offset-2">Примеры</a>
+              </span><span> • </span>
+              
+              <span>
+                <a href="#3" class="no-underline hover:underline underline-offset-2">Результат</a>
+              </span><span> • </span>
+              
+              <span>
+                <a href="#4" class="no-underline hover:underline underline-offset-2">Оценка</a>
+              </span><span> • </span>
+              
+              <span>
+                <a href="#5" class="no-underline hover:underline underline-offset-2">Процесс</a>
+              </span><span> • </span>
+                        
+              <span>
+                <a href="#6" class="no-underline hover:underline underline-offset-2">Особенности</a>
+              </span><span> • </span>
+              
+              <span>
+                <a href="#7" class="no-underline hover:underline underline-offset-2">Сроки и стоимость</a>
+              </span>
+                
+            </div>
+          </Fragment>
         </Hund>
         
-        <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
-          <span>
-            <a href="#1" class="no-underline hover:underline underline-offset-2">Потребности</a>
-          </span><span> • </span>
-          
-          <span>
-            <a href="#2" class="no-underline hover:underline underline-offset-2">Примеры</a>
-          </span><span> • </span>
-          
-          <span>
-            <a href="#3" class="no-underline hover:underline underline-offset-2">Результат</a>
-          </span><span> • </span>
-          
-          <span>
-            <a href="#4" class="no-underline hover:underline underline-offset-2">Оценка</a>
-          </span><span> • </span>
-          
-          <span>
-            <a href="#5" class="no-underline hover:underline underline-offset-2">Процесс</a>
-          </span><span> • </span>
-                    
-          <span>
-            <a href="#6" class="no-underline hover:underline underline-offset-2">Особенности</a>
-          </span><span> • </span>
-          
-          <span>
-            <a href="#7" class="no-underline hover:underline underline-offset-2">Сроки и стоимость</a>
-          </span>
-            
-        </div>
+        
         
         <a id="#1"></a>
         
@@ -154,16 +157,9 @@ const metadata = merge(
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12 flex flex-col gap-6">
           <div class="text-sm text-[#95001B] tracking-wide font-semibold">РЕЗУЛЬТАТ</div>
+          <h2 class="text-5xl group font-heading text-[#626262]">Что вы получите</h2>
           <div class="flex flex-col md:flex-row gap-14">
-            <div class="flex flex-col gap-4">
-              <h2 class="text-5xl group font-heading text-[#626262] whitespace-nowrap">Наши инструменты</h2>
-              <div class="flex flex-row gap-12">
-                <Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" />
-                <Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" />
-                <Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" />
-                <Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" />
-              </div>
-            </div>
+           
             <div class="flex flex-col gap-4">
               <h2 class="text-5xl group font-heading text-[#626262]">Что вы получите</h2>
               {post.results && (
@@ -174,6 +170,12 @@ const metadata = merge(
                     classes={}
                     defaultIcon="tabler:circle-check-filled"
                   />
+                  <div class="flex flex-row gap-12">
+                    <Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" />
+                    <Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" />
+                    <Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" />
+                    <Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" />
+                  </div>
                 </div>
               )}
             </div>
