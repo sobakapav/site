@@ -24,22 +24,20 @@ const { post } = Astro.props;
 <a href={post.href ?? 'javascript:void(0)'}>
   {
     post.thumbnail && (
-      
-        <div class="h-auto w-72">
-          <div class="overflow-hidden rounded h-72 w-72">
-            {post.thumbnail && (     
-                          <img
-                            src={post.thumbnail}
-                            alt={post.imageAlt}
-                            layout="constrained-both"
-                            width=288
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        )}
-          </div>
+      <div class="h-auto w-72">
+        <div class="overflow-hidden rounded h-72 w-72">
+          {post.thumbnail && (     
+                        <img
+                          src={post.thumbnail}
+                          alt={post.imageAlt}
+                          layout="constrained-both"
+                          width=288
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )}
         </div>
-      
+      </div>
     )
   }
   <div class="mt-2 w-72"]}>
