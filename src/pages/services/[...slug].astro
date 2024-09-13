@@ -95,41 +95,38 @@ const metadata = merge(
             <Markdown.Inline of={post.excerpt} />
           </Fragment>
           
-          <Fragment>
-          <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 px-4 md:px-6 mx-auto text-[#9F9F9F]">
-              <span>
-                <a href="#1" class="no-underline hover:underline underline-offset-2">Потребности</a>
-              </span><span> • </span>
-              
-              <span>
-                <a href="#2" class="no-underline hover:underline underline-offset-2">Примеры</a>
-              </span><span> • </span>
-              
-              <span>
-                <a href="#3" class="no-underline hover:underline underline-offset-2">Результат</a>
-              </span><span> • </span>
-              
-              <span>
-                <a href="#4" class="no-underline hover:underline underline-offset-2">Оценка</a>
-              </span><span> • </span>
-              
-              <span>
-                <a href="#5" class="no-underline hover:underline underline-offset-2">Процесс</a>
-              </span><span> • </span>
-                        
-              <span>
-                <a href="#6" class="no-underline hover:underline underline-offset-2">Особенности</a>
-              </span><span> • </span>
-              
-              <span>
-                <a href="#7" class="no-underline hover:underline underline-offset-2">Сроки и стоимость</a>
-              </span>
-                
-            </div>
-          </Fragment>
         </Hund>
         
-        
+        <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
+          <span>
+            <a href="#1" class="no-underline hover:underline underline-offset-2">Потребности</a>
+          </span><span> • </span>
+          
+          <span>
+            <a href="#2" class="no-underline hover:underline underline-offset-2">Примеры</a>
+          </span><span> • </span>
+          
+          <span>
+            <a href="#3" class="no-underline hover:underline underline-offset-2">Результат</a>
+          </span><span> • </span>
+          
+          <span>
+            <a href="#4" class="no-underline hover:underline underline-offset-2">Оценка</a>
+          </span><span> • </span>
+          
+          <span>
+            <a href="#5" class="no-underline hover:underline underline-offset-2">Процесс</a>
+          </span><span> • </span>
+                    
+          <span>
+            <a href="#6" class="no-underline hover:underline underline-offset-2">Особенности</a>
+          </span><span> • </span>
+          
+          <span>
+            <a href="#7" class="no-underline hover:underline underline-offset-2">Сроки и стоимость</a>
+          </span>
+            
+        </div>
         
         <a id="#1"></a>
         
@@ -157,11 +154,11 @@ const metadata = merge(
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12 flex flex-col gap-6">
           <div class="text-sm text-[#95001B] tracking-wide font-semibold">РЕЗУЛЬТАТ</div>
-          <h2 class="text-5xl group font-heading text-[#626262]">Что вы получите</h2>
+          <h2 class="text-7xl group font-heading">Что вы получите</h2>
           <div class="flex flex-col md:flex-row gap-14">
            
-            <div class="flex flex-col gap-4">
-              <h2 class="text-5xl group font-heading text-[#626262]">Что вы получите</h2>
+            <div class="flex flex-row gap-12">
+              
               {post.results && (
                 <div class="max-w-4xl mx-auto flex flex-col gap-6">
                   <Features3
@@ -170,14 +167,18 @@ const metadata = merge(
                     classes={}
                     defaultIcon="tabler:circle-check-filled"
                   />
-                  <div class="flex flex-row gap-12">
-                    <Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" />
-                    <Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" />
-                    <Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" />
-                    <Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" />
-                  </div>
+                  
                 </div>
               )}
+              <div>
+                <span class=" text-[#626262]">Инструменты, с помощью которых мы добиваемся результата</span>
+                <div class="flex flex-row gap-12 mt-6">
+                      <Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" />
+                      <Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" />
+                      <Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" />
+                      <Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" />
+                    </div>
+              </div>
             </div>
           </div>
         </div>
@@ -185,13 +186,13 @@ const metadata = merge(
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
           <div class="flex flex-col md:flex-row gap-6">
             <div class="flex flex-col gap-4 bg-[#E7EAEA] p-8 sm:p-6 grow basis-0">
-              <h2 class="text-5xl group font-heading text-[#626262]">Экстра-польза</h2>
+              <h2 class="text-5xl group font-heading">Экстра-польза</h2>
               <div class="flex flex-col blue-check-list gap-4">
                 <Markdown.Inline of={post.extra} />                
               </div>
             </div>
             <div class="flex flex-col gap-4 bg-[#E7EAEA] p-8 sm:p-6 grow basis-0">
-              <h2 class="text-5xl group font-heading text-[#626262]">Эффект в деньгах</h2>
+              <h2 class="text-5xl group font-heading">Эффект в деньгах</h2>
               <div class="flex flex-col blue-check-list gap-4">
                 <Markdown.Inline of={post.roi} />                
               </div>
@@ -204,7 +205,7 @@ const metadata = merge(
         {post.notThisService && (
           <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12 flex flex-col gap-6">
             <div class="text-sm text-[#95001B] tracking-wide font-semibold">ОЦЕНКА</div>
-            <h2 class="text-5xl group font-heading text-[#626262]">{post.notThisService.title}</h2>
+            <h2 class="text-5xl group font-heading">{post.notThisService.title}</h2>
             <Features3
               columns={3}
               items={ notThisService }
