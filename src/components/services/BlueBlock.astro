@@ -5,23 +5,43 @@
 ---
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
-  <div class="bg-[#323232] text-[#ffffff] flex flex-col md:flex-row flex-wrap mx-auto px-8 sm:px-20 pt-10 pb-12 mb-10 md:mb-8 gap-6 text-base">
-  <div class="grow-[2] basis-0 flex flex-row flex-wrap gap-y-4 content-start">
-      <h3 class="w-full text-lg">Стоимость</h3>
-      <div class:list={["flex flex-col max-w-full gap-y-4 blueblock-list", budget.price.title2 ? "md:max-w-[50%] md:pr-4" : "md:max-w-full"]}>
-          <h4 class="text-5xl font-heading">{budget.price.title}</h4>
-          <Markdown.Inline of={budget.price.text}/>
-      </div>
-      {budget.price.title2 && (<div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4 blueblock-list md:pl-4">
-          <h4 class="text-5xl font-heading">{budget.price.title2}</h4>
-          <Markdown.Inline of={budget.price.text2}/>
-      </div>)}
-      {budget.price.comment && (<div class="w-full"><Markdown.Inline of={budget.price.comment}/></div>)}
+  <div class="bg-[#323232] text-[#ffffff] mx-auto px-8 sm:px-20 pt-10 pb-12 mb-10 md:mb-8 text-base">
+    <div class="flex flex-col md:flex-row flex-wrap gap-6">
+        <div class="grow-[2] basis-0 flex flex-row flex-wrap gap-y-4 content-start">
+            <h3 class="w-full text-lg">Стоимость</h3>
+            <div class:list={["flex flex-col max-w-full gap-y-4 blueblock-list", budget.price.title2 ? "md:max-w-[50%] md:pr-4" : "md:max-w-full"]}>
+                <h4 class="text-5xl font-heading">{budget.price.title}</h4>
+                <Markdown.Inline of={budget.price.text}/>
+            </div>
+            
+            {budget.price.title2 && (<div class="flex flex-col max-w-full md:max-w-[50%] gap-y-4 blueblock-list md:pl-4">
+                <h4 class="text-5xl font-heading">{budget.price.title2}</h4>
+                <Markdown.Inline of={budget.price.text2}/>
+            </div>)}
+            
+            {budget.price.comment && (<div class="w-full"><Markdown.Inline of={budget.price.comment}/></div>)}   
+            
+        </div>
+        
+        <div class="grow basis-0 flex flex-col gap-y-4 blueblock-list">
+            <h3 class="text-lg">Сроки</h3>
+            <h4 class="text-5xl font-heading">{budget.time.title}</h4>
+            <Markdown.Inline of={budget.time.text}/>
+        </div>
+    </div>
+    
+    <div class="flex gap-4 flex-wrap">
+                         <img src="/images/services/sberbank.svg" width="99" height="15">
+                         <img src="/images/services/alfa.svg" width="74" height="15">    
+                         <img src="/images/services/yota.svg" width="12" height="20">
+                         <img src="/images/services/yandex.svg" width="52" height="15">
+                         <img src="/images/services/gazprom.svg" width="12" height="20">
+                         <img src="/images/services/alfa-strah.svg" width="73" height="15">
+                         <img src="/images/services/x5.svg" width="23" height="15">
+                         <img src="/images/services/sportmaster.svg" width="90" height="15">       
+                         <img src="/images/services/baltika.svg" width="90" height="10">
+                         
+    </div>
   </div>
-  <div class="grow basis-0 flex flex-col gap-y-4 blueblock-list">
-      <h3 class="text-lg">Сроки</h3>
-      <h4 class="text-5xl font-heading">{budget.time.title}</h4>
-      <Markdown.Inline of={budget.time.text}/>
-  </div>
-  </div>
+  
 </div>
