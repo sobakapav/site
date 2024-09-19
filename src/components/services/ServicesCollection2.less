@@ -16,29 +16,42 @@ body {
   &:has(astro-checkbox > input#haveProductNo:checked) {
     // На стадии идей и планов
     &:has(astro-checkbox > input#needToCreateIdea:checked) {
-      services-collection li#product-team {
-        display:block;
+      services-collection {
+        li#product-team,
+        li#research {
+          display:block;
+        }
       }
     }
     
     // Нужно впечатлить инвесторов
     &:has(astro-checkbox > input#needToCreateInvestition:checked) {
-      services-collection li#prototype {
-        display:block;
+      services-collection {
+        li#prototype,
+        li#ux-design {
+          display:block;
+        }
       }
     }
     
     // Нужно сделать MVP
     &:has(astro-checkbox > input#needToCreateMVP:checked) {
-      services-collection li#prototype {
-        display:block;
+      services-collection 
+        li#prototype,
+        li#product-team,
+        li#ux-design {
+          display:block;
+        }
       }
     }
     
     // Есть MVP, нужен продукт
     &:has(astro-checkbox > input#needToCreateDesign:checked) {
-      services-collection li#ux-design {
-        display:block;
+      services-collection 
+        li#ux-design,
+        li#content {
+          display:block;
+        }
       }
     }
     
@@ -46,7 +59,9 @@ body {
       services-collection {
         li#product-team,
         li#prototype,
-        li#ux-design {
+        li#ux-design,
+        li#research,
+        li#content {
           display:block;
         }
       }
@@ -59,7 +74,8 @@ body {
     &:has(astro-checkbox > input#needToRedesignAbsolutely:checked) {
       services-collection {
         li#ux-design,
-        li#research {
+        li#research,
+        li#dev-team {
           display:block;
         }
       }
@@ -69,7 +85,8 @@ body {
     &:has(astro-checkbox > input#needToRedesignYes:checked) {
       services-collection {
         li#redesign,
-        li#research {
+        li#research
+        li#ux-audit {
           display:block;
         }
       }
@@ -79,7 +96,7 @@ body {
     &:has(astro-checkbox > input#needToRedesignUI:checked) {
       services-collection {
         li#ui-redesign,
-        li#ux-audit {
+        li#dev-team {
           display:block;
         }
       }
@@ -89,6 +106,7 @@ body {
     &:has(astro-checkbox > input#needToRedesignNew:checked) {
       services-collection {
         li#new-features,
+        li#redesign,
         li#research {
           display:block;
         }
@@ -114,28 +132,11 @@ body {
         li#research,
         li#ux-audit,
         li#ux-design,
-        li#consultation {
+        li#consultation,
+        li#product-team{
           display:block;
         }
       }
-    }
-  }
-  
-  &:has(astro-checkbox > input#needContent:checked) {
-    services-collection li#content-design {
-      display:block;
-    }
-  }
-  
-  &:has(astro-checkbox > input#needDevTeam:checked) {
-    services-collection li#dev-team {
-      display:block;
-    }
-  }
-  
-  &:has(astro-checkbox > input#needResearch:checked) {
-    services-collection li#research {
-      display:block;
     }
   }
 }
