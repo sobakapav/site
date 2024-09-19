@@ -37,6 +37,11 @@ module.exports = {
         'footer': 'auto auto',
         'footer-sm': 'auto auto auto auto',
       },
+      screens: {
+        'safari' : {
+          'raw' : '(min-resolution:.001dpcm)'
+        }
+      }
     },
   },
   plugins: [typographyPlugin],

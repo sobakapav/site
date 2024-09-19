@@ -6,7 +6,7 @@
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
   <div class="bg-[#323232] text-[#ffffff] mx-auto px-8 sm:px-20 pt-10 pb-12 mb-10 md:mb-8 text-base">
-    <div class="flex flex-col md:flex-row flex-wrap gap-6">
+    <div class="flex flex-col md:flex-row flex-wrap gap-12">
         <div class="grow-[2] basis-0 flex flex-row flex-wrap gap-y-4 content-start">
             <h3 class="w-full text-lg">Стоимость</h3>
             <div class:list={["flex flex-col max-w-full gap-y-4 blueblock-list", budget.price.title2 ? "md:max-w-[50%] md:pr-4" : "md:max-w-full"]}>
@@ -19,7 +19,50 @@
                 <Markdown.Inline of={budget.price.text2}/>
             </div>)}
             
-            {budget.price.comment && (<div class="w-full"><Markdown.Inline of={budget.price.comment}/></div>)}   
+            {budget.price.comment && (<div class="w-full"><Markdown.Inline of={budget.price.comment}/></div>)}  
+            
+            <div class="w-full flex flex-wrap items-center justify-between pt-4">
+                     <div class="relative h-[34px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfa-arm">
+                        <img src="/images/services/alfa.svg" class="h-[34px]">
+                        <img src="/images/services/alfa2.svg" class="noir2 h-[34px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/sberbank">
+                        <img src="/images/services/sberbank.svg" class="h-[26px]">
+                        <img src="/images/services/sberbank2.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+                     </a></div> 
+                     <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio">
+                        <img src="/images/services/yandex.svg" class="h-[26px]">
+                        <img src="/images/services/yandex2.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/tinkoff">
+                        <img src="/images/services/tinkoff.svg" class="h-[26px]">
+                        <img src="/images/services/tinkoff2.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[35px] noir2-div"><a href="https://sobakapav.ru/portfolio/gazprom-neft">
+                       <img src="/images/services/gazprom.svg" class="h-[35px]">
+                       <img src="/images/services/gazprom2.svg" class="noir2 h-[35px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[24px] noir2-div"><a href="https://sobakapav.ru/portfolio/sportmaster">
+                       <img src="/images/services/sportmaster.svg" class="h-[24px]">
+                       <img src="/images/services/sportmaster2.svg" class="noir2 h-[24px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/avito">
+                       <img src="/images/services/avito.svg" class="h-[26px]">
+                       <img src="/images/services/avito2.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfastrah-design">
+                       <img src="/images/services/alfa-strah.svg" class="h-[26px]">
+                       <img src="/images/services/alfa-strah2.svg" class="noir2 h-[26px] absolute top-0 left-0">
+                     </a></div>
+                     <div class="relative h-[26px]"><a href="https://sobakapav.ru/portfolio/edms">
+                       <img src="/images/services/baltika.svg" class="h-[26px]">
+                       <img src="/images/services/baltika2.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+                     </a></div>
+                     <div class="relative h-[30px] noir2-div"><a href="https://sobakapav.ru/microcases/Yota">
+                       <img src="/images/services/yota.svg" class="h-[30px]">
+                       <img src="/images/services/yota2.svg" class="noir2 h-[30px] absolute top-0 left-0 z-100">
+                     </a></div>       
+                </div> 
             
         </div>
         
@@ -30,18 +73,7 @@
         </div>
     </div>
     
-    <div class="flex gap-8 flex-wrap items-center">
-         <a href="https://sobakapav.ru/portfolio/alfa-arm"><img src="/images/services/alfa.svg"  class="noir h-[34px]"></a>
-         <a href="https://sobakapav.ru/portfolio/sberbank"><img src="/images/services/sberbank.svg" class="noir h-[26px]"></a>  
-         <a href="https://sobakapav.ru/portfolio"><img src="/images/services/yandex.svg" class="noir h-[26px]"></a>
-         <a href="https://sobakapav.ru/portfolio/tinkoff"><img src="/images/services/tinkoff.svg" class="noir h-[26px]"></a>
-         <a href="https://sobakapav.ru/portfolio/gazprom-neft"><img src="/images/services/gazprom.svg" class="noir h-[35px]"></a>
-         <a href="https://sobakapav.ru/portfolio/sportmaster"><img src="/images/services/sportmaster.svg" class="noir h-[24px]"></a>
-         <a href="https://sobakapav.ru/portfolio/avito"><img src="/images/services/avito.svg"  class="noir h-[26px]"></a>
-         <a href="https://sobakapav.ru/portfolio/alfastrah-design"><img src="/images/services/alfa-strah.svg" class="noir h-[26px]"></a>
-         <a href="https://sobakapav.ru/portfolio/edms"><img src="/images/services/baltika.svg" class="noir h-[26px]"></a>   
-         <a href="https://sobakapav.ru/microcases/Yota"><img src="/images/services/yota.svg" class="noir h-[30px]"></a>        
-    </div>
+    
   </div>
   
 </div>
