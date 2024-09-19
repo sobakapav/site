@@ -36,7 +36,7 @@ body {
     
     // Нужно сделать MVP
     &:has(astro-checkbox > input#needToCreateMVP:checked) {
-      services-collection 
+      services-collection {
         li#prototype,
         li#product-team,
         li#ux-design {
@@ -47,7 +47,7 @@ body {
     
     // Есть MVP, нужен продукт
     &:has(astro-checkbox > input#needToCreateDesign:checked) {
-      services-collection 
+      services-collection {
         li#ux-design,
         li#content {
           display:block;
