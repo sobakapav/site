@@ -10,9 +10,9 @@ const { post } = Astro.props;
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6">
   <div class="bg-[#323232] text-[#ffffff] mx-auto px-8 sm:px-20 pt-10 pb-12 mb-10 md:mb-8 text-base">
-    <div class="flex flex-col md:flex-row flex-wrap gap-12">
+    <div class="flex flex-col md:flex-row flex-wrap gap-16">
       { post.review && (
-        <div class="grow basis-0 flex flex-col gap-y-4 content-start">
+        <div class="grow basis-0 flex flex-col gap-y-2 content-start">
           <ReviewItem
             title="Отзыв заказчика"
             text={post.review.text}
@@ -23,7 +23,7 @@ const { post } = Astro.props;
         </div>
       )}
       
-      <div class="grow basis-0 flex flex-col gap-y-4 content-start">
+      <div class="grow basis-0 flex flex-col gap-y-2 content-start">
         { post.director && (
           <ReviewItem
             title="Слово директора"
@@ -33,7 +33,7 @@ const { post } = Astro.props;
             position="директор «Собаки Павловой»"
           />
         )}
-        <div class="flex flex-row justify-between mt-4">
+        <div class="flex flex-row justify-between">
           <div>
             <h3 class="mb-1 text-xl sm:text-2xl font-heading">Результат</h3>
             {post.result?.map((res) => (
