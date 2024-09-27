@@ -81,6 +81,7 @@ import '~/assets/styles/colors.css';
   .format-subtitle-markdown p {
     margin-top: 12px;
     margin-bottom: 12px;
+    color: var(--aw-color-text-default);
   }
 
   .format-subtitle-markdown h2 {
@@ -106,6 +107,19 @@ import '~/assets/styles/colors.css';
     line-height: 28px;
   }
 
+  .format-markdown p,
+  .format-markdown li,
+  .format-markdown h2,
+  .format-markdown h3,
+  .format-markdown h4
+  .format-subtitle-markdown p,
+  .format-subtitle-markdown li,
+  .format-subtitle-markdown h2,
+  .format-subtitle-markdown h3,
+  .format-subtitle-markdown h4
+  {
+    color: var(--aw-color-text-default);
+  }
   .format-markdown p,
   .format-subtitle-markdown p
   {
@@ -152,7 +166,6 @@ import '~/assets/styles/colors.css';
     color: var(--grey-3);
     font-style: normal;
     margin-bottom: 1.5em;
-    font-weight: 600;
   }
   
   .format-markdown .inlist-collapse {
