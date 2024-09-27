@@ -155,6 +155,34 @@ import '~/assets/styles/colors.css';
     font-weight: 600;
   }
   
+  .format-markdown .inlist-collapse {
+    margin: -1.2em 0 -1.2em 0; 
+  }
+  
+  .format-markdown .collapse ul,
+  .format-markdown .collapse ol
+  {
+    margin: 0px;
+  }
+  
+  .format-markdown .collapse .collapse-title {
+    padding: 0px 32px 0px 0px;
+  }
+  
+  .format-markdown .collapse-arrow > .collapse-title:after {
+    top: 20px;
+  }
+  
+  .format-markdown .collapse-title, :where(.collapse > input[type="checkbox"]), :where(.collapse > input[type="radio"])
+  {
+    min-height: 0px !important;
+  }
+  
+  .format-markdown .collapse .collapse-title a {
+    position: relative;
+    z-index: 2; 
+  }
+  
   @media (min-width: 1024px) {
       .format-markdown img {
           margin-top: 1.5em;
