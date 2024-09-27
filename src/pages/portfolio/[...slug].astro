@@ -3,7 +3,8 @@ import merge from 'lodash.merge';
 
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
-import SinglePost from '~/components/blog/SinglePost.astro';
+import SinglePost from '~/components/portfolio/SinglePost.astro';
+import Bread from '~/components/widgets/Bread.astro';
 
 import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { getCanonical, getPermalink } from '~/utils/permalinks';
@@ -47,7 +48,15 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
+  <Bread
+    title={entry.data.title}
+    parent="/portfolio"
+    parentTitle="Портфолио"
+  />
+    
   <SinglePost post={{ ...entry.data, image: image }} url={url}>
     <Content />
   </SinglePost>
+  
+  
 </Layout>

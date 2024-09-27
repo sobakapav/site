@@ -1,0 +1,33 @@
+---
+
+import PortfolioListItem from '~/components/portfolio/ListItem.astro';
+import ResearchListItem from '~/components/portfolio/ListItem.astro';
+import ServicesListItem from '~/components/services/ListItem2.astro';
+import BlogListItem from '~/components/blog/ListItem.astro';
+import { getEntry } from 'astro:content';
+
+const { collection, page } = Astro.props;
+
+const data = (await getEntry(collection, page)).data;
+
+---
+
+<Fragment>
+
+  {collection == 'portfolio' && (
+    <PortfolioListItem post={data} />
+  )}
+
+  {collection == 'post' && (
+    <BlogListItem post={data} />
+  )}
+
+  {collection == 'research' && (
+    <ResearchListItem post={data} />
+  )}
+
+  {collection == 'services' && (
+    <ServicesListItem post={data} />
+  )}
+
+</Fragment>

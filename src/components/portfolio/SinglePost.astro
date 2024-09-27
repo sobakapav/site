@@ -1,0 +1,105 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Image from '~/components/common/Image.astro';
+import PostTags from '~/components/blog/Tags.astro';
+import SocialShare from '~/components/common/SocialShare.astro';
+import { Markdown } from '@astropub/md';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import RelatedLinks from '~/components/portfolio/RelatedLinks.astro';
+import Review from '~/components/portfolio/Review.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getFormattedDate, minuteCase } from '~/utils/utils';
+
+import type { Post } from '~/types';
+
+export interface Props {
+  post: Post;
+  url: string | URL;
+}
+
+const { post, url } = Astro.props;
+const { Content } = post;
+---
+
+<section class="py-0 mx-auto grow-0 shrink-0">
+  <article>
+  
+    <Hero2
+      title={post.title}
+      image={{
+        src: post.image,
+        alt: post.imageAlt || '',
+      }}
+      imageName={post.imageName}
+    >
+      
+      <Fragment slot="subtitle">
+        <Markdown.Inline of={post.excerpt} />
+        
+        <div class="flex flex-row justify-between mt-4 mx-auto md:mx-0 lg:mx-auto">
+          <div>
+            <h3 class="mb-1 text-xl sm:text-2xl font-heading">Результат</h3>
+            {post.result?.map((res) => (
+              <a class="flex flex-row items-center text-lg gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={20} width={15}/>{res.text}</a>
+            ))}
+          </div>
+          <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Цена</h3>{post.budget}</div>
+          <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Сроки</h3>{post.time}</div>
+        </div>
+      </Fragment>
+    
+      <Fragment slot="supertitle">
+        <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-0 mb-2">
+          <p>
+            {
+              post.publishYear && (
+                <time datetime={String(post.publishYear)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+              )
+            }
+            {
+              post.category && (
+                <>
+                  {' '}
+                  ·{' '}
+                  <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                    {post.category.title}
+                  </a>
+                </>
+              )
+            }
+            
+          </p>
+        </div>
+      </Fragment>
+      
+    </Hero2>
+
+  
+
+    <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
+      <div class="grow-0 shrink-0 max-w-5xl">
+        <div
+          class="format-markdown mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
+        >
+          <Markdown.Inline of={post.context} />
+          <slot />
+        </div>
+        <div class="mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
+          <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
+        </div>
+      </div>
+      <div class="lg:max-w-[320px]">
+        <RelatedPages post={post} />
+      </div>
+    </div>
+    
+    <Review post={post} />
+    
+    <RelatedLinks post={post} />
+    
+  </article>
+  
+</section>

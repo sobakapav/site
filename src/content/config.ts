@@ -92,7 +92,6 @@ const portfolioCollection = defineCollection({
     title: z.string(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
-    topic: z.string().optional(),
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
@@ -111,6 +110,30 @@ const portfolioCollection = defineCollection({
       text: z.string(),
       link: z.string().optional(),
     })).optional(),
+    
+    relatedLinks: z.object({
+          title: z.string().optional(),
+          links: z.array(z.string()).optional(),
+    }).optional(),
+
+    
+    relatedPages: z.array(z.object({
+      text: z.string().optional(),
+      collection: z.string().optional(),
+      page: z.string().optional(),
+    })).optional(),
+    
+    context: z.string().optional(),
+    budget: z.string().optional(),
+    time: z.string().optional(),
+    director: z.string().optional(),
+    
+    review: z.object({
+      text: z.string().optional(),
+      photo: z.string().optional(),
+      person: z.string().optional(),
+      position: z.string().optional(),
+    }).optional(),
 
     metadata: metadataDefinition(),
   }),
