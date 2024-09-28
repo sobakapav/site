@@ -37,7 +37,7 @@ const { post } = Astro.props;
           <div>
             <h3 class="mb-1 text-xl sm:text-2xl font-heading">Результат</h3>
             {post.result?.map((res) => (
-              <a class="flex flex-row items-center text-lg gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={20} width={15}/>{res.text}</a>
+              <a class="flex flex-row items-center text-lg gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
             ))}
           </div>
           <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Цена</h3>{post.budget}</div>
