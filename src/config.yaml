@@ -21,16 +21,16 @@ metadata:
   title:
     default: Собака Павлова
     template: '%s'
-  description: ""
+  description: "Дизайн сложных интерфейсов"
   robots:
     index: false
     follow: false
   openGraph:
     site_name: Собака Павлова
     images:
-      - url: ''
+      - url: '~/assets/images/main'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
     handle: '@onwidget'
