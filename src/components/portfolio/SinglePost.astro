@@ -38,17 +38,22 @@ const { Content } = post;
       
       <Fragment slot="subtitle">
         <Markdown.Inline of={post.excerpt} />
-        
+      </Fragment>
+      
+      <Fragment slot="result">           
         <div class="flex flex-row justify-between mt-8 mx-auto md:mx-0 lg:mx-auto">
           
           <div><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
           <div><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
-        </div>
-        <div>
-          <h3 class="mb-1 text-base">Результат</h3>
-          {post.result?.map((res) => (
-            <a class="flex flex-row items-center gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
-          ))}
+        
+          <div>
+            <h3 class="mb-1 text-base">Результат</h3>
+            {post.result?.map((res) => (
+            <div class="format-subtitle-markdown">
+              <a class="flex flex-row items-center gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
+            </div>
+            ))}
+          </div>
         </div>
       </Fragment>
     

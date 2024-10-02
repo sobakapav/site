@@ -18,6 +18,7 @@ const {
   supertitle = await Astro.slots.render('supertitle'),
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
+  result = await Astro.slots.render('result'),
   tagline,
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
@@ -47,8 +48,8 @@ const {
           )
         }
         <div class="max-w-3xl mx-auto md:mx-0 lg:mx-auto lg:max-w-none">
-          {subtitle && <div class="text-xl text-muted mb-6 dark:text-slate-300 format-subtitle-markdown" set:html={subtitle} />}
-
+          {subtitle && <div class="text-[20px] mb-6 dark:text-slate-300 format-subtitle-markdown" set:html={subtitle} />}
+          {result && <div set:html={result} />}
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
