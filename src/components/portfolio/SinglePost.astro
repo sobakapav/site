@@ -40,14 +40,15 @@ const { Content } = post;
         <Markdown.Inline of={post.excerpt} />
         
         <div class="flex flex-row justify-between mt-8 mx-auto md:mx-0 lg:mx-auto">
-          <div>
-            <h3 class="mb-1 text-xl sm:text-2xl font-heading">Результат</h3>
-            {post.result?.map((res) => (
-              <a class="flex flex-row items-center text-lg gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
-            ))}
-          </div>
-          <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Цена</h3>{post.budget}</div>
-          <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Сроки</h3>{post.time}</div>
+          
+          <div><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
+          <div><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
+        </div>
+        <div>
+          <h3 class="mb-1 text-base">Результат</h3>
+          {post.result?.map((res) => (
+            <a class="flex flex-row items-center gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
+          ))}
         </div>
       </Fragment>
     
@@ -55,20 +56,7 @@ const { Content } = post;
         <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-0 mb-2">
           <p>
             {
-              post.publishYear && (
-                <time datetime={String(post.publishYear)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-              )
-            }
-            {
-              post.category && (
-                <>
-                  {' '}
-                  ·{' '}
-                  <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
-                    {post.category.title}
-                  </a>
-                </>
-              )
+              post.publishYear
             }
             
           </p>
@@ -76,8 +64,6 @@ const { Content } = post;
       </Fragment>
       
     </Hero2>
-
-  
 
     <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
       <div class="grow-0 shrink-0 max-w-5xl">
