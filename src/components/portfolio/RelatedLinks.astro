@@ -19,8 +19,6 @@ const { post } = Astro.props;
     <HighlightedCases
       classes={{ container: "pt-0 lg:pt-0 md:pt-0  max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-6 my-5 sm:mt-16 related-posts" }}
       title={post.relatedLinks?.title || "Примеры проектов"}
-      linkText="ВСЕ КЕЙСЫ"
-      linkUrl="https://sobakapav.ru/portfolio"
       links={post.relatedLinks?.links || []}
       collection="portfolio"
     />
