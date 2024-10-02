@@ -198,6 +198,13 @@ const serviceCollection = defineCollection({
         text: z.string().optional(),
       }))
     }).optional(),
+    when: z.object({
+      title: z.string(),
+      items: z.array(z.object({
+        title: z.string(),
+        text: z.string().optional(),
+      }))
+    }).optional(),
   }),
 });
 

@@ -34,7 +34,11 @@ const {
 
 const posts = [];
 for (var item of links) {
-  const data = JSON.parse(JSON.stringify((await getEntry(collection, item)).data));
+  var collectionItem = (await getEntry(collection, item)); 
+  if (!collectionItem) {
+    console.log('Not found item: \"' + item + '\" for collection: \"' + collection + '\"')
+  }
+  const data = JSON.parse(JSON.stringify(collectionItem.data));
   data.href = `/${collection}/${item.name}`;
   posts.push(data);
 }
