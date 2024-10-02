@@ -10,11 +10,12 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
 const { post } = Astro.props;
+
 ---
 
 <CommonCard 
   image={post.thumbnail || post.image} 
-  link={APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : ''} 
+  link={getPermalink(post.permalink)} 
   title={post.title}
   text={post.description || post.excerpt}
 >
@@ -42,12 +43,12 @@ const { post } = Astro.props;
     }
   </Fragment>  
   
-  <Fragment slot="footer">
-    {post.tags && (
+  {post.tags && (
+    <Fragment slot="footer">
       <footer class="mt-5">
         <PostTags tags={post.tags} />
       </footer> 
-    )}
-  </Fragment>
+    </Fragment>
+  )}
   
 </CommonCard>

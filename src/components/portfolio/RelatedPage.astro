@@ -5,10 +5,16 @@ import ResearchListItem from '~/components/portfolio/ListItem.astro';
 import ServicesListItem from '~/components/services/ListItem2.astro';
 import BlogListItem from '~/components/blog/ListItem.astro';
 import { getEntry } from 'astro:content';
+import { getPermalink } from '~/utils/permalinks';
+import { findPostsBySlugs } from '~/utils/blog';
 
 const { collection, page } = Astro.props;
 
-const data = (await getEntry(collection, page)).data;
+const data = (collection == 'post') 
+  ? (await findPostsBySlugs([page]))[0]
+  : (await getEntry(collection, page)).data;
+
+data.href = `/${collection}/${page}`;
 
 ---
 

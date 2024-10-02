@@ -8,7 +8,8 @@ const {
   link, 
   supertitle = await Astro.slots.render('supertitle'),
   title, 
-  text, 
+  text,
+  textblock = await Astro.slots.render('textblock'),  
   footer = await Astro.slots.render('footer'),
   classes = {
     main: 'blog-list-item',
@@ -19,7 +20,7 @@ const {
 
 ---
 
-<article class:list={['flex flex-wrap', classes.main]}>
+<article class:list={['flex flex-wrap mb-6', classes.main]}>
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
@@ -40,7 +41,7 @@ const {
       </a>
     )
   }
-  <div class="mt-2 w-72">
+  <div class="mt-4 w-72">
     <header>
       {supertitle && (
         <div class="mb-1">
@@ -67,12 +68,18 @@ const {
               <Markdown.Inline of={text} />
             </p>
           )}
+          
+          {textblock && (
+            <div set:html={textblock} />
+          )}
         </a>
       ) : text
     }
 
-    <div class="mt-2">
-      <span class="text-muted" set:html={footer} />
-    </div> 
+    {footer && (
+      <div class="mt-2 text-[14px]">
+        <span class="text-muted" set:html={footer} />
+      </div> 
+    )}
   </div>
 </article>

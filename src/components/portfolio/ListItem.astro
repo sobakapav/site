@@ -15,7 +15,7 @@ const image = (await findImage(post.thumbnail?.src)) as ImageMetadata | undefine
   title={post.title}
   text={post.excerpt}
 >
-  <Fragment slot="supertitle">
+  <Fragment slot="footer">
     {post.publishYear}
   </Fragment>
   

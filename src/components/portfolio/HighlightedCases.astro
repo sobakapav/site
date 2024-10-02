@@ -39,7 +39,7 @@ for (var item of links) {
     console.log('Not found item: \"' + item + '\" for collection: \"' + collection + '\"')
   }
   const data = JSON.parse(JSON.stringify(collectionItem.data));
-  data.href = `/${collection}/${item.name}`;
+  data.href = `/${collection}/${item}`;
   posts.push(data);
 }
 ---
