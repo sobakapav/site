@@ -1,99 +1,53 @@
 ---
-import type { ImageMetadata } from 'astro';
 import { Icon } from 'astro-icon/components';
-import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 
+import CommonCard from '~/components/common/CommonCard.astro';
+
 import { APP_BLOG } from 'astrowind:config';
-import type { Post } from '~/types';
 
 import { getPermalink } from '~/utils/permalinks';
-import { findImage } from '~/utils/images';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
-
-export interface Props {
-  post: Post;
-}
-
 const { post } = Astro.props;
-const image = (await findImage(post.thumbnail || post.image)) as ImageMetadata | undefined;
-
-const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<article class="flex flex-wrap justify-normal blog-list-item">
-  {
-    image && (
-      <a href={link ?? 'javascript:void(0)'}>
-        <div class="w-72 h-auto">
-          <div style="width: 288px; height: 288px;" class="overflow-hidden rounded">
-            {image && (
-              <Image
-                src={post.thumbnail || post.image}
-                alt={post.title}
-                layout="constrained-both"
-                width={288}
-                loading="lazy"
-                decoding="async"
-              />
-            )}
-          </div>
-        </div>
-      </a>
-    )
-  }
-  <div class="mt-2 w-72">
-    <header>
-      <div class="mb-1">
-        <span class="text-sm">
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
-          {
-                        post.readingTime && (
-                          <>
-                            &nbsp;· <span>{post.readingTime}</span> {minuteCase(post.readingTime)} на чтение
-                          </>
-                        )
-                      }
-          {
-            post.category && (
-              <>
-                {' '}
-                ·{' '}
-                <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
-                  {post.category.title}
-                </a>
-              </>
-            )
-          }
-          
-        </span>
-      </div>
-      <h2 class="text-xl sm:text-2xl leading-none mb-2 dark:text-slate-300 font-heading">
-        {
-          link ? (
-            <a class="hover:underline dark:hover:underline" href={link}>
-              {post.title}
-            </a>
-          ) : (
-            post.title
-          )
-        }
-      </h2>
-    </header>
-
+<CommonCard 
+  image={post.thumbnail || post.image} 
+  link={APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : ''} 
+  title={post.title}
+  text={post.description || post.excerpt}
+>
+  <Fragment slot="supertitle">
+    <time datetime={String(post.publishDate)} class="inline-block">
+      {getFormattedDate(post.publishDate)}
+    </time>
     {
-        link ? (
-          <a class="hover:underline dark:hover:underline flex-grow text-muted dark:text-slate-400 text-base" href={link}>
-            {(post.description || post.excerpt)}
+      post.readingTime && (
+        <>
+          &nbsp;· <span>{post.readingTime}</span> {minuteCase(post.readingTime)} на чтение
+        </>
+      )
+    }
+    {
+      post.category && (
+        <>
+          {' '}
+          ·{' '}
+          <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
+            {post.category.title}
           </a>
-        ) : (
-          (post.description || post.excerpt)
-        )
-      }
-   
-    {post.tags && <footer class="mt-5">
-      <PostTags tags={post.tags} />
-    </footer> }
-  </div>
-</article>
+        </>
+      )
+    }
+  </Fragment>  
+  
+  <Fragment slot="footer">
+    {post.tags && (
+      <footer class="mt-5">
+        <PostTags tags={post.tags} />
+      </footer> 
+    )}
+  </Fragment>
+  
+</CommonCard>

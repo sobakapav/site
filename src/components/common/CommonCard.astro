@@ -1,0 +1,78 @@
+---
+import Image from '~/components/common/Image.astro';
+import { Markdown } from '@astropub/md';
+
+const {
+  image, 
+  alt, 
+  link, 
+  supertitle = await Astro.slots.render('supertitle'),
+  title, 
+  text, 
+  footer = await Astro.slots.render('footer'),
+  classes = {
+    main: 'blog-list-item',
+    title: '',
+    text: ''
+  }
+} = Astro.props;
+
+---
+
+<article class:list={['flex flex-wrap', classes.main]}>
+  {
+    image && (
+      <a href={link ?? 'javascript:void(0)'}>
+        <div class="relative overflow-hidden rounded">
+          <div class="w-72 h-72">
+            {image && (
+              <Image
+                src={image}
+                class="rounded"
+                width={288}
+                alt={alt ?? title}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
+        </div>
+      </a>
+    )
+  }
+  <div class="mt-2 w-72">
+    <header>
+      {supertitle && (
+        <div class="mb-1">
+          <span class="text-sm" set:html={supertitle} />
+        </div>
+      )}
+           
+      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-2 dark:text-slate-300 font-heading", classes.title]}>
+        {link ? (
+          <a class="hover:underline dark:hover:underline" href={link}>
+            <Markdown.Inline of={title} />
+          </a>
+        ) : (
+          <Markdown.Inline of={title} />
+        )}
+      </h2>
+    </header>
+
+    {
+      link ? (
+        <a class="hover:underline dark:hover:underline" href={link}>
+          {text && (
+            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
+              <Markdown.Inline of={text} />
+            </p>
+          )}
+        </a>
+      ) : text
+    }
+
+    <div class="mt-2">
+      <span class="text-muted" set:html={footer} />
+    </div> 
+  </div>
+</article>

@@ -18,12 +18,12 @@ module.exports = {
         heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        xl: ['25px', '35px'],
-        '2xl': ['30px', {
-          lineHeight: '40px',
+        xl: ['20px', '28px'],
+        '2xl': ['24px', {
+          lineHeight: '32px',
         }],
-        '3xl': ['37.5px', {
-          lineHeight: '50px',
+        '3xl': ['30px', {
+          lineHeight: '36px',
         }],
         '4xl': ['36px', {
           lineHeight: '40px',
