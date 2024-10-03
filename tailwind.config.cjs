@@ -32,10 +32,12 @@ module.exports = {
       gridTemplateColumns: {
         'header': '420px 1fr 40px',
         'footer': '70px 1fr 1fr 1fr',
+        'features': '1fr 1fr 1fr',
       },
       gridTemplateRows: {
         'footer': 'auto auto',
         'footer-sm': 'auto auto auto auto',
+        'features': '1fr 1fr 1fr 1fr',
       },
       screens: {
         'safari' : {
