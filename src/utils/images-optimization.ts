@@ -287,14 +287,14 @@ export async function getImagesOptimized(
   transform: ImagesOptimizer = () => Promise.resolve([])
 ): Promise<{ src: string; attributes: AttributesProps }> {
   if (typeof image !== 'string') {
-    if (layout == 'constrained-both') {
+    if (layout='constrained-both') {
       if (image.width > image.height) {
         height = width;
         width = typeof width === 'number' ? computeWidth(width, image.width / image.height) : undefined;
       } else {
         height = typeof width === 'number' ? computeHeight(width, image.width / image.height) : undefined;
       }
-    } else if (layout == 'constrained-height') {
+    } else if (layout='constrained-height') {
       height ||= Number(image.height) || undefined;
       width ||= typeof width === 'number' ? computeWidth(height, image.width / image.height) : undefined;
     } else {
