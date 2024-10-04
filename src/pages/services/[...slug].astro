@@ -13,7 +13,10 @@ import ToBlogLink from '~/components/blog/ToBlogLink.astro';
 import Image from '~/components/common/Image.astro';
 import PostTags from '~/components/blog/Tags.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import ContentAndImage from '~/components/services/ContentAndImage.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
 
 import Hund from '~/components/widgets/Hund.astro';
 
@@ -129,28 +132,24 @@ const metadata = merge(
         </div>
         
         <a id="#1"></a>
+        
+        {post.when && (
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 flex flex-col gap-6">
+              <div class="text-sm text-[#95001B] tracking-wide font-semibold">ПОТРЕБНОСТИ</div>
+              <FeaturesHex
+                title={post.when.title}
+                items={ post.when?.items?.map((item) => ({title: item.title, description: item.text})) }
+              />
+            </div>
+        )}
           
         <a id="#2"></a>
         
         <RelatedLinks post={post} />
         
-        {/* <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-row flex-wrap gap-px gap-y-[0.5px]">
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa.svg" width="101" height="20"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yandex.svg" width="72" height="20"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/x5.svg" width="46" height="30"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa-strah.svg" width="97" height="20"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/baltika.svg" width="100" height="16"></div>
-           <div class="h-[0px] basis-full shrink-0"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/tinkoff.svg" width="115" height="32"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/gazprom.svg" width="25" height="40"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sportmaster.svg" width="96" height="16"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yota.svg" width="25" height="40"></div>
-           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sberbank.svg" width="99" height="16"></div>
-        </div> */}
-        
         <a id="#3"></a>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12 flex flex-col gap-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 flex flex-col gap-6">
           <div class="text-sm text-[#95001B] tracking-wide font-semibold">РЕЗУЛЬТАТ</div>
           <h2 class="text-7xl group font-heading">Что вы получите</h2>
           <div class="flex flex-col md:flex-row gap-14">
@@ -201,7 +200,7 @@ const metadata = merge(
         <a id="#4"></a>
         
         {post.notThisService && (
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12 flex flex-col gap-6">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 flex flex-col gap-6">
             <div class="text-sm text-[#95001B] tracking-wide font-semibold">ОЦЕНКА</div>
             <h2 class="text-5xl group font-heading">{post.notThisService.title}</h2>
             <Features3
@@ -214,7 +213,26 @@ const metadata = merge(
         )}
         
         <a id="#5"></a>
+        
+        {post.mapBlock && (
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 flex flex-col gap-6">
+            <div class="text-sm text-[#048E86] tracking-wide font-semibold">ПРОЦЕСС</div>
+            <h2 class="text-5xl group font-heading">{post.mapBlock.title}</h2>
+            <Features4
+              columns={post.mapBlock.columns}
+              items={ post.mapBlock?.items?.map((item) => ({title: item.title, subtitle: item.time, description: item.text})) }
+              classes={}
+              defaultIcon="tabler:circle-check-filled"
+            />
+          </div>
+        )}
+        
         <a id="#6"></a>
+        
+        {post.comments && (
+          <ContentAndImage content={post.comments} image={post.image} imageAlt={post.imageAlt}/>
+        )} 
+        
         <a id="#7"></a>
         
         <BlueBlock budget={post.budget} />
@@ -223,3 +241,17 @@ const metadata = merge(
     </section>
   
 </Layout>
+
+{/* <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-row flex-wrap gap-px gap-y-[0.5px]">
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa.svg" width="101" height="20"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yandex.svg" width="72" height="20"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/x5.svg" width="46" height="30"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa-strah.svg" width="97" height="20"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/baltika.svg" width="100" height="16"></div>
+           <div class="h-[0px] basis-full shrink-0"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/tinkoff.svg" width="115" height="32"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/gazprom.svg" width="25" height="40"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sportmaster.svg" width="96" height="16"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yota.svg" width="25" height="40"></div>
+           <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sberbank.svg" width="99" height="16"></div>
+        </div> */}

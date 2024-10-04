@@ -157,18 +157,23 @@ const serviceCollection = defineCollection({
       alt: z.string().optional(),
     })),
     relatedLinks: z.object({
-            title: z.string(),
-          }),
+      title: z.string(),
+    }),
     works: z.array(z.object({
       name: z.string().optional(),
       text: z.string().optional(),
     })).optional(),
     team: z.number().optional(),
-    mapBlock: z.array(z.object({
-       type: z.string().optional(),
-       text: z.string().optional(),
-    })),
-    comments: textBlock(),
+    mapBlock: z.object({
+      title: z.string(),
+      columns: z.number().optional(),
+      items: z.array(z.object({
+        title: z.string(),
+        time: z.string().optional(),
+        text: z.string().optional(),
+      }))
+    }).optional(),
+    comments: z.string().optional(),
     budget: z.object({
       price: z.object({
         title: z.string(),
