@@ -40,9 +40,7 @@ const { post } = Astro.props;
           <div>
             <h3 class="mb-1 text-base">Результат</h3>
             {post.result?.map((res) => (
-            <div class="format-subtitle-markdown">
-              <a class="flex flex-row items-center gap-1 mb-2" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
-            </div>
+              <a class="flex flex-row items-center gap-1 mb-2 text-[#ffffff]" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
             ))}
           </div>
         </div>
