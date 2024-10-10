@@ -34,14 +34,17 @@ const { post } = Astro.props;
           />
         )}
         <div class="flex flex-row justify-between">
+          <div><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
+          <div><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
+        
           <div>
-            <h3 class="mb-1 text-xl sm:text-2xl font-heading">Результат</h3>
+            <h3 class="mb-1 text-base">Результат</h3>
             {post.result?.map((res) => (
-              <a class="flex flex-row items-center text-lg gap-1" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
+            <div class="format-subtitle-markdown">
+              <a class="flex flex-row items-center gap-1 mb-2" href={res.link}><Image src={res.src} alt="Figma logo" height={40} width={30}/>{res.text}</a>
+            </div>
             ))}
           </div>
-          <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Цена</h3>{post.budget}</div>
-          <div class="text-lg"><h3 class="mb-1 text-xl sm:text-2xl font-heading">Сроки</h3>{post.time}</div>
         </div>
       </div>
     </div>
