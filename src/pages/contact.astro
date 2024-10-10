@@ -4,15 +4,97 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+import { getPermalink, getHomePermalink, getBlogPermalink, getAsset } from '~/utils/permalinks';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+export interface Props {
+  links: Array<Links>;
+  secondaryLinks: Array<Link>;
+  socialLinks: Array<Link>;
+  footNote?: string;
+  theme?: string;
+}
+
+const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+
+const sectionThreeTitle = "Контакты";
+const email = "we@sobakapav.ru";
+const phone = "7 (495) 191-92-81";
+const whatsup = "NZGZSOAXXM2IN1";
+const telegramLink = "https://t.me/sobakapavpro";
+
 const metadata = {
   title: 'Contact',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <Bread
+        title="Услуги"
+     />
+    
+    <!-- Hund3 Widget ******************* -->
+  
+    <Hund3
+      tagline=""
+      actions={[
+        {
+          variant: 'primary',
+          target: '_blank',
+          text: 'Get templates',
+          href: 'https://github.com/onwidget/astrowind',
+          icon: 'tabler:download',
+        },
+        { text: 'Learn more', href: '#features' },
+      ]}
+    >
+      <Fragment slot="title">
+        Контакты «Собаки Павловой»
+      </Fragment>
+  
+      <Fragment slot="subtitle">
+           
+      </Fragment>  
+  
+    </Hund3>
+    
+     <div class="col-span-3 lg:col-span-1 gap-x-12 flex lg:mt-[0px]">
+                    <div class="flex flex-col">          
+                      <a class="inline-block text-[52px] leading-[50px] font-heading no-underline mb-5 max-w-64" href={getHomePermalink()}>
+                        {SITE?.name}
+                      </a>
+                      <div class="flex flex-col h-full mb-2">
+                        <p class="mb-2.5 text-base">
+                            {SITE.phone}
+                        </p>
+                        <p class="mb-2.5">
+                            <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+                        </p>
+                        <p class="mb-2.5">
+                            <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+                        </p>
+                        <p class="mb-2.5">
+                            <a href={`https://wa.me/message/${whatsup}`} class="flex items-center no-underline hover:underline underline-offset-2 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+                        </p>
+                      </div>
+                    </div>
+                </div>
 
   <ContactUs
     id="form"
