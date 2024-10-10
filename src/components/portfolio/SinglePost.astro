@@ -62,8 +62,7 @@ const { Content } = post;
           <p>
             {
               post.publishYear
-            }
-            
+            }       
           </p>
         </div>
       </Fragment>
@@ -73,20 +72,36 @@ const { Content } = post;
     <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
       <div class="grow-0 shrink-0 max-w-5xl">
         <div
-          class="format-markdown mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
+          class="format-markdown mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 border-b-[#DBDBDB]"
         >
           <Markdown.Inline of={post.context} />
           <slot />
         </div>
+        {post.outcome && (
+            <div class="mb-8 md:mb-8 flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl">
+              <h2 class="text-5xl font-heading mb-2">{post.outcome.title}</h2>
+              {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
+              <div class="flex flex-row justify-between gap-6">
+                
+                {post.outcome.numbers?.map((out) => (     
+                <div class="basis-0 grow"><h3 class="mb-1 text-base">{out.title}</h3><p class="mb-1 text-xl sm:text-4xl font-heading">{out.number}</p><p class="mb-1 text-base">{out.text}</p></div>
+                ))}
+               
+              </div>
+              <p class="mb-1 text-base">{post.outcome.text2}</p>
+            </div>
+            )}
       </div>
       <div class="lg:max-w-[320px]">
         <RelatedPages post={post} />
       </div>
     </div>
     
+    
+    
     <Review post={post} />
     
-    <RelatedLinks post={post} />
+    {/* <RelatedLinks post={post} /> */}
     
   </article>
   

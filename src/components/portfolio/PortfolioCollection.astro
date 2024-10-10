@@ -8,6 +8,7 @@ const { list } = Astro.props;
 const items = [];
 for (var idx in list) {
   var item = await getEntry('portfolio', list[idx]);
+  if (!item) console.error(`Cannot find item with name ${list[idx]}`);
   item.data.index = idx;
   item.data.href = `/portfolio/${list[idx]}`;
   items.push(item.data);

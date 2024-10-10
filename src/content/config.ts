@@ -134,6 +134,17 @@ const portfolioCollection = defineCollection({
       person: z.string().optional(),
       position: z.string().optional(),
     }).optional(),
+    
+    outcome: z.object({
+      title: z.string(),
+      text1: z.string().optional(),
+      text2: z.string().optional(),
+      numbers: z.array(z.object({
+        title: z.string().optional(),
+        number: z.string().optional(),
+        text: z.string().optional(),
+      })).optional()
+    }).optional(),
 
     metadata: metadataDefinition(),
   }),
