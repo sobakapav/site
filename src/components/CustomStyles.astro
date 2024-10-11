@@ -159,7 +159,8 @@ import '~/assets/styles/colors.css';
     }
   }
   
-  .format-markdown img + em {
+  .format-markdown img + em,
+  .format-markdown a + em {
     display: inline-block;
     font-size: 16px;
     line-height: 20px;
@@ -167,6 +168,10 @@ import '~/assets/styles/colors.css';
     font-style: normal;
     margin-bottom: 1.5em;
     font-weight: 500;
+  }
+  
+  .format-markdown a img {
+   box-shadow: none;
   }
   
   .format-markdown .inlist-collapse {
