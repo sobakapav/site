@@ -74,53 +74,70 @@ const metadata = {
   
     </Hund3>
     
+  <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 gap-6">
      <div class="col-span-3 lg:col-span-1 gap-x-12 flex lg:mt-[0px]">
-                    <div class="flex flex-col">          
-                      <a class="inline-block text-[52px] leading-[50px] font-heading no-underline mb-5 max-w-64" href={getHomePermalink()}>
-                        {SITE?.name}
-                      </a>
-                      <div class="flex flex-col h-full mb-2">
-                        <p class="mb-2.5 text-base">
-                            {SITE.phone}
-                        </p>
-                        <p class="mb-2.5">
-                            <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-                        </p>
-                        <p class="mb-2.5">
-                            <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
-                        </p>
-                        <p class="mb-2.5">
-                            <a href={`https://wa.me/message/${whatsup}`} class="flex items-center no-underline hover:underline underline-offset-2 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
-                        </p>
-                      </div>
-                    </div>
-                </div>
+          <div class="flex flex-col">          
+           
+            <div class="flex flex-col h-full mb-2">
+              <p class="mb-2.5 text-5xl">
+                  {SITE.phone}
+              </p>
+              <p class="mb-2.5">
+                  <a class="underline-offset-2 text-5xl" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </p>
+              <p class="mb-2.5">
+                  <a href={SITE.telegramContact.link} class="flex items-center underline-offset-2 text-5xl">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+              </p>
+              <p class="mb-2.5 ">
+                  <a href={`https://wa.me/message/${whatsup}`} class="flex items-center underline-offset-2 text-5xl">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+              </p>
+            </div>
+          </div>
+      </div>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+      <ContactUs
+        id="form"
+        title="Поговорим?"
+        subtitle="Напишите, и мы ответим"
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            label: 'Как к вам обратиться?',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            label: 'Как с вами связаться?',
+          },
+        ]}
+        textarea={{
+          label: 'О чем вы хотите поговорить?',
+        }}
+        disclaimer={{
+          label:
+            'Мы обязаны спросить ваше согласие на обработаку персональных данных',
+        }}
+        description="Свяжитесь со мной"
+      />
+      
+  </div>
+  
+  <Features2
+      title="We are here to help!"
+      items={[
+        {
+          title: 'Location',
+          description: 'Санкт-Петербург, ул Руднева, д. 9',
+          icon: 'tabler:map-pin',
+        },
+        {
+          title: 'Location',
+          description: 'Branka Deletićа BB, Podgorica, Montenegro, 81100',
+          icon: 'tabler:map-pin',
+        },
+      ]}
+    />
 
   <!-- Features2 Widget ************** -->
 
