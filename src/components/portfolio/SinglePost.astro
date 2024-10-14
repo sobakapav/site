@@ -92,8 +92,13 @@ const { Content } = post;
             </div>
             )}
       </div>
-      <div class="lg:max-w-[320px]">
-        <RelatedPages post={post} />
+      <div class="flex flex-column justify-between">
+        <div class="lg:max-w-[320px]">
+          <RelatedPages pages={post.relatedPages} />
+        </div>
+        <div class="lg:max-w-[320px]">
+          <RelatedPages pages={post.relatedPages2} />
+        </div>
       </div>
     </div>
     
