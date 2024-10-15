@@ -78,7 +78,7 @@ const { Content } = post;
           <slot />
         </div>
         {post.outcome && (
-            <div class="mb-8 md:mb-20 flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl border-t-[#DBDBDB]">
+            <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB]">
               <h2 class="text-5xl font-heading">{post.outcome.title}</h2>
               {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
               <div class="flex flex-row justify-between gap-6">
@@ -92,7 +92,7 @@ const { Content } = post;
             </div>
             )}
       </div>
-      <div class="flex flex-column justify-between">
+      <div class="flex flex-col justify-between">
         <div class="lg:max-w-[320px]">
           <RelatedPages pages={post.relatedPages} />
         </div>
@@ -100,9 +100,7 @@ const { Content } = post;
           <RelatedPages pages={post.relatedPages2} />
         </div>
       </div>
-    </div>
-    
-    
+    </div> 
     
     <Review post={post} />
     

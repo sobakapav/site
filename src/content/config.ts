@@ -53,6 +53,12 @@ const textBlock = () => z.array(
   })
 ).optional();
 
+const relatedLinks = () => z.array(z.object({
+  text: z.string().optional(),
+  collection: z.string().optional(),
+  page: z.string().optional(),
+})).optional();
+
 const postCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
@@ -115,13 +121,9 @@ const portfolioCollection = defineCollection({
           title: z.string().optional(),
           links: z.array(z.string()).optional(),
     }).optional(),
-
-    
-    relatedPages: z.array(z.object({
-      text: z.string().optional(),
-      collection: z.string().optional(),
-      page: z.string().optional(),
-    })).optional(),
+   
+    relatedPages: relatedLinks(),
+    relatedPages2: relatedLinks(),
     
     context: z.string().optional(),
     budget: z.string().optional(),
