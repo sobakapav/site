@@ -1,0 +1,41 @@
+---
+
+const {
+  number,
+  classes,
+  textClasses,
+  numberClasses
+} = Astro.props;
+
+const parts = [];
+var last;
+
+for (var s of number.split(' ')) {
+  if (Number.isNaN(Number.parseFloat(s))) {
+    // Is a string
+    if (last && 'string' === last.type) {
+      last.text += ' ' + s
+    } else {
+      last = { type: 'string', text: s };
+      parts.push(last);
+    }
+  } else {
+    // Is a number
+    if (last && 'number' === last.type) {
+      last.text += ' ' + s; 
+    } else {
+      last = { type: 'number', text: s };
+      parts.push(last);
+    }
+  }
+}
+
+---
+
+<p class={classes}>
+  {parts && parts.map(part => (part.type === 'number' ? (
+    <span class={numberClasses}>{part.text}&nbsp;</span>
+  ) : (
+    <span class={textClasses}>{part.text}&nbsp;</span>
+  )))}
+</p>
