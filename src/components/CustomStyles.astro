@@ -146,6 +146,23 @@ import '~/assets/styles/colors.css';
     font-weight: 400;
   }
   
+  @media (min-width: 1280px) {
+    .format-portfolio h2
+      {
+        font-size: 52px;
+        line-height: 52px;
+        margin-top: 72px;
+        margin-bottom: 24px;
+      }
+    .format-portfolio h3
+      {
+        font-size: 36px;
+        line-height: 40px;
+        margin-top: 40px;
+        margin-bottom: 24px;
+      }
+  }
+  
   .format-subtitle-markdown h3
   {
     font-size: 36px;
@@ -169,8 +186,11 @@ import '~/assets/styles/colors.css';
     line-height: 20px;
     color: var(--grey-3);
     font-style: normal;
-    margin-bottom: 1.5em;
     font-weight: 500;
+  }
+  
+  .format-markdown p:has(em) {
+    margin-bottom: 48px;
   }
   
   .format-markdown a img {

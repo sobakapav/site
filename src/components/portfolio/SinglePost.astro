@@ -76,14 +76,14 @@ const { Content } = post;
     <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
       <div class="grow-0 shrink-0 max-w-5xl">
         <div
-          class="format-markdown mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
+          class="format-markdown format-portfolio mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
         >
           <Markdown.Inline of={post.context} />
           <slot />
         </div>
         {post.outcome && (
-            <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB]">
-              <h2 class="text-5xl font-heading">{post.outcome.title}</h2>
+            <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB] border-t">
+              <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
               {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
               <div class="flex flex-row justify-between gap-6">
                 
@@ -93,8 +93,8 @@ const { Content } = post;
                   <Number 
                     number={out.number} 
                     classes="mb-1 font-heading" 
-                    textClasses="text-xl sm:text-4xl" 
-                    numberClasses="text-2xl sm:text-5xl" 
+                    textClasses="text-xl sm:text-xl xl:text-4xl" 
+                    numberClasses="text-2xl sm:text-4xl xl:text-[52px]" 
                   />
                   <p class="mb-1 text-base">{out.text}</p>
                 </div>
@@ -105,7 +105,7 @@ const { Content } = post;
             </div>
             )}
       </div>
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-between pr-6">
         <div class="lg:max-w-[320px]">
           <RelatedPages pages={post.relatedPages} />
         </div>

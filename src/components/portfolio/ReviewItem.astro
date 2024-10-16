@@ -7,9 +7,9 @@ const { title, text, photo, person, position } = Astro.props;
 
 ---
 <Fragment>
-  <h3 class="w-full text-xl sm:text-2xl font-heading">{title}</h3>
+  <h3 class="w-full text-xl sm:text-4xl xl:text-[52px] xl:leading-[52px] xl:pb-5 font-heading">{title}</h3>
   <div class="flex flex-row max-w-full gap-4">
-    <Image src={photo} alt={person} width={110} height={110} class="rounded-lg mt-1"/>
+    <Image src={photo} alt={person} width={100} height={100} class="rounded-lg mt-1"/>
     <div class="flex flex-col gap-0 format-review-markdown">
       <Markdown.Inline of={text}/>
       <div class="text-sm mt-2">{person}</div>  
