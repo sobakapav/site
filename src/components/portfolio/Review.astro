@@ -23,7 +23,7 @@ const { post } = Astro.props;
         </div>
       )}
       
-      <div class="grow basis-0 flex flex-col gap-y-2 content-start justify-center">
+      <div class="grow basis-0 flex flex-col gap-y-2 content-start mb-4">
         { post.director && (
           <ReviewItem
             title="Слово директора"
@@ -33,7 +33,7 @@ const { post } = Astro.props;
             position="директор «Собаки Павловой»"
           />
         )}
-        <div class="flex flex-row justify-between max-w-3xl">
+        <div class="flex flex-row justify-between max-w-2xl">
           <div><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
           <div><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
         
