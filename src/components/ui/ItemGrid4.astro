@@ -26,7 +26,7 @@ const {
   items && (
     <div
       class={twMerge(
-        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+        `grid gap-8 gap-x-8 sm:gap-y-8 ${
           columns === 5
             ? "lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2"
             : columns === 4
@@ -50,7 +50,7 @@ const {
           classes: itemClasses = {},
         }, idx) => (
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-            <div class="flex justify-center text-[#9F9F9F] text-[84px] leading-none mt-[-10px] mr-6">
+            <div class="flex justify-center text-[#9F9F9F] text-5xl leading-none mr-3 font-heading">
               {(idx + 1)}
             </div>
             <div class="mt-0">

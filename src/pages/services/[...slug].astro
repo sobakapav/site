@@ -118,11 +118,11 @@ const metadata = merge(
           </span><span> • </span>
           
           <span>
-            <a href="#5" class="no-underline hover:underline underline-offset-2">Процесс</a>
+            <a href="#5" class="no-underline hover:underline underline-offset-2">Особенности</a>
           </span><span> • </span>
                     
           <span>
-            <a href="#6" class="no-underline hover:underline underline-offset-2">Особенности</a>
+            <a href="#6" class="no-underline hover:underline underline-offset-2">Процесс</a>
           </span><span> • </span>
           
           <span>
@@ -214,6 +214,12 @@ const metadata = merge(
         
         <a id="#5"></a>
         
+         {post.comments && (
+            <ContentAndImage content={post.comments} image={post.image} imageAlt={post.imageAlt}/>
+          )} 
+        
+        <a id="#6"></a>
+        
         {post.mapBlock && (
           <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 flex flex-col gap-6">
             <div class="text-sm text-[#048E86] tracking-wide font-semibold">ПРОЦЕСС</div>
@@ -227,11 +233,6 @@ const metadata = merge(
           </div>
         )}
         
-        <a id="#6"></a>
-        
-        {post.comments && (
-          <ContentAndImage content={post.comments} image={post.image} imageAlt={post.imageAlt}/>
-        )} 
         
         <a id="#7"></a>
         

@@ -19,7 +19,7 @@ const {
 } = Astro.props;
 
 ---
-
+<a class="hover:underline dark:hover:underline" href={link}>
 <article class:list={['flex flex-wrap mb-6', classes.main]}>
   {
     image && (
@@ -84,3 +84,4 @@ const {
     )}
   </div>
 </article>
+</a>
