@@ -17,7 +17,7 @@ const img = (await findImage(image));
         <Image src={img} width={730} layout="constrained" alt={imageAlt} />
       </div>
       
-      <div class="w-[440px] ml-6 format-subtitle-markdown marked-list comment-and-image-body">
+      <div class="w-[440px] ml-6 format-subtitle-markdown marked-list comment-and-image-body flex flex-col justify-center">
         <Markdown.Inline of={content} />
       </div>
   </div>
