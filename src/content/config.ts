@@ -186,7 +186,12 @@ const serviceCollection = defineCollection({
         text: z.string().optional(),
       }))
     }).optional(),
-    comments: z.string().optional(),
+    comments: z.array(z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
+      img: z.string().optional(),
+      alt: z.string().optional(),
+    })),
     budget: z.object({
       price: z.object({
         title: z.string(),

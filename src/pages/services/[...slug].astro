@@ -17,6 +17,7 @@ import ContentAndImage from '~/components/services/ContentAndImage.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
+import SimpleSlider from '~/components/services/SimpleSlider.astro';
 
 import Hund from '~/components/widgets/Hund.astro';
 
@@ -214,9 +215,13 @@ const metadata = merge(
         
         <a id="#5"></a>
         
-         {post.comments && (
+        {/* {post.comments && (
             <ContentAndImage content={post.comments} image={post.image} imageAlt={post.imageAlt}/>
-          )} 
+          )} */}
+        
+        {post.comments && (
+            <SimpleSlider slides={post.comments}/>
+         )}
         
         <a id="#6"></a>
         

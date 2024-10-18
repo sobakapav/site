@@ -65,13 +65,13 @@ simple-slider {
   }
   
   .slides {
-     width: 500%;
+     width: 400%;
      height: 100%;
      display: flex;
   }
   
   .slide {
-     width: 20%;
+     width: 25%;
      transition: all 0.6s ease;
   }
   
@@ -85,20 +85,17 @@ simple-slider {
   }
   
   #ux2:checked ~ .s1 {
-     margin-left: -20%;
+     margin-left: -25%;
   }
   
   #ux3:checked ~ .s1 {
-     margin-left: -40%;
+     margin-left: -50%;
   }
   
   #ux4:checked ~ .s1 {
-     margin-left: -60%;
+     margin-left: -75%;
   }
   
-  #ux5:checked ~ .s1 {
-     margin-left: -80%;
-  }
   
   .slider-buttons {
      position: absolute;
@@ -224,16 +221,6 @@ simple-slider {
   
   &:has(#ux4:checked) {
     .details-slide-4 {
-      background-color: var(--grey-17);
-      
-      .details-slide-details {
-        display: block;
-      }
-    }
-  }
-  
-  &:has(#ux5:checked) {
-    .details-slide-5 {
       background-color: var(--grey-17);
       
       .details-slide-details {
