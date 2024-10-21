@@ -42,7 +42,7 @@ const { Content } = post;
       </Fragment>
       
       <Fragment slot="result">           
-        <div class="flex flex-row justify-between mt-8 mb-8 mx-auto md:mx-0 lg:mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between mt-8 mb-8 mx-auto md:mx-0 lg:mx-auto">
           
           <div><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
           <div><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
@@ -86,7 +86,7 @@ const { Content } = post;
           <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB] border-t">
             <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
             {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
-            <div class="flex flex-row justify-between gap-6">
+            <div class="flex flex-col sm:flex-row justify-between gap-6">
               
               {post.outcome.numbers?.map((out) => (     
               <div class="basis-0 grow">
@@ -110,7 +110,7 @@ const { Content } = post;
             <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB] border-t">
               <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
               {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
-              <div class="flex flex-row justify-between gap-6">
+              <div class="flex flex-col sm:flex-row justify-between gap-6">
                 
                 {post.outcome.numbers?.map((out) => (     
                 <div class="basis-0 grow">
@@ -134,7 +134,7 @@ const { Content } = post;
             <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB] border-t">
               <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
               {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
-              <div class="flex flex-row justify-between gap-6">
+              <div class="flex flex-col sm:flex-row justify-between gap-6">
                 
                 {post.outcome.numbers?.map((out) => (     
                 <div class="basis-0 grow">
@@ -158,7 +158,7 @@ const { Content } = post;
               <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6 max-w-3xl border-t-[#DBDBDB] border-t">
                 <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
                 {post.outcome.text1 && (<p class="text-base">{post.outcome.text1}</p>)}
-                <div class="flex flex-row justify-between gap-6">
+                <div class="flex flex-col sm:flex-row justify-between gap-6">
                   
                   {post.outcome.numbers?.map((out) => (     
                   <div class="basis-0 grow">
@@ -179,7 +179,7 @@ const { Content } = post;
               )}
             
       </div>
-      <div class="flex flex-col justify-between pr-6">
+      <div class="flex flex-col justify-between px-6">
         <div class="lg:max-w-[320px]">
           <RelatedPages pages={post.relatedPages} />
         </div>
