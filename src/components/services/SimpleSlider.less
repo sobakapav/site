@@ -8,7 +8,7 @@ simple-slider {
   .switch {
     width: 80px;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 8px;
     background-color: var(--switch);
     display: flex;
     margin: 64px auto 0;
@@ -26,8 +26,12 @@ simple-slider {
      width: 730px;
      height: 500px;
      overflow: hidden;
-     border-radius: 24px;
+     border-radius: 8px;
   }
+  
+  img {
+       border-radius: 8px;
+    }
   
   .navigation {
      position: absolute;
@@ -112,9 +116,17 @@ simple-slider {
     border: none;
     opacity: 80%;
     width: 48px;
-     height: 48px;
-     background: unset;
-     color: #fff;
+    height: 48px;
+    background: unset;
+    color: #fff;
+    cursor: pointer;
+    opacity: .8;
+    transition: all 0.4s ease;
+  }
+    
+  .slider-button:hover {
+     opacity: 1;
+     transform:scale(1.1);
   }
   
   .slider-button-right {
@@ -157,7 +169,7 @@ simple-slider {
       width: 360px;
       display: block;
       overflow: hidden;
-      border-radius: 24px;
+      border-radius: 8px;
       height: 460px;
     }
     .slider-container {
@@ -173,7 +185,7 @@ simple-slider {
       width: 100%;
       display: block;
       overflow: hidden;
-      border-radius: 24px;
+      border-radius: 8px;
       height: auto;
     }
     .slider-container {
