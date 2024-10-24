@@ -1,0 +1,44 @@
+---
+
+import './Bentoid.less';
+
+const {
+  title,
+  parts
+} = Astro.props;
+
+const fragments = [];
+var i = 1;
+
+for (var part of parts) {
+  if ('string' === typeof part) {
+    fragments.push({type: 'string', text: part});
+  } else if (part.description) {
+    fragments.push({type: 'bento', idx: i, ...part});
+    i++;
+  } else {
+    fragments.push({type: 'string', text: part.text});
+  }
+}
+
+---
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6 bentoid">
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col gap-4 p-8 sm:p-6 grow basis-0">
+      <h2 class="text-2xl sm:text-5xl group font-heading">{title}</h2>
+      <h3 class="text-xl sm:text-3xl group font-heading">
+        {fragments.map(fragment => ('string' === fragment.type ? fragment.text : (
+          <a class:list={["bento-key", "bento-key-" + fragment.idx]} href={fragment.link}>{fragment.text}</a>
+        )))}
+      </h2>
+    </div>
+    <div class="grow basis-0 flex">
+      <div class="grow flex flex-col gap-4 bg-[#323232] text-white p-8 sm:p-6 bento-cards text-2xl sm:text-5xl group font-heading justify-center content-center">
+        {fragments.map((fragment) => 'bento' === fragment.type && (
+          <div class:list={["bento-card text-center", "bento-card-" + fragment.idx]}>{fragment.description}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
