@@ -73,13 +73,13 @@ const {
         {content && <Fragment set:html={content} />}
       </div>
     </div>
-    <div class="basis-1/2 bg-[#323232]">
-      <div class="flex justify-center max-w-[636px]">
+    <div class="basis-1/2 bg-[#323232] overflow-hidden">
+      <div class="flex">
         {
           image && (
-            <div class="relative flex items-center m-auto max-w-5xl overflow-y-hidden">
+            <div class="relative flex items-center m-auto">
               <Image
-                class="mx-auto md:mx-0 lg:mx-auto rounded-md no-safari"        
+                class="mx-auto md:mx-0 lg:mx-auto rounded-md no-safari max-w-fit"        
                 loading="eager"
                 layout="fixed"
                 width={716}
@@ -87,7 +87,7 @@ const {
                 {...image}
               />                  
               <Image
-                class="mx-auto md:mx-0 lg:mx-auto rounded-md safari-only"
+                class="mx-auto md:mx-0 lg:mx-auto rounded-md safari-only max-w-fit"
                 loading="eager"
                 layout="fixed"
                 width={716}
