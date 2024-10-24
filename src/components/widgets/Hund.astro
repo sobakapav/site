@@ -77,17 +77,19 @@ const {
       <div class="flex justify-center max-w-[636px]">
         {
           image && (
-            <div class="relative m-auto max-w-5xl">
+            <div class="relative flex items-center m-auto max-w-5xl overflow-y-hidden">
               <Image
-                class="mx-auto md:mx-0 lg:mx-auto rounded-md w-full no-safari"        
+                class="mx-auto md:mx-0 lg:mx-auto rounded-md no-safari"        
                 loading="eager"
+                layout="fixed"
                 width={716}
                 height={600}
                 {...image}
               />                  
               <Image
-                class="mx-auto md:mx-0 lg:mx-auto rounded-md w-full safari-only"
+                class="mx-auto md:mx-0 lg:mx-auto rounded-md safari-only"
                 loading="eager"
+                layout="fixed"
                 width={716}
                 height={600}
                 {...imageSafari}

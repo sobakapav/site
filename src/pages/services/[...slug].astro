@@ -18,6 +18,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
 import SimpleSlider from '~/components/services/SimpleSlider.astro';
+import Bentoid from '~/components/services/Bentoid.astro';
 
 import Hund from '~/components/widgets/Hund.astro';
 
@@ -246,6 +247,33 @@ const metadata = merge(
         <a id="#7"></a>
         
         <BlueBlock budget={post.budget} />
+        
+        <Bentoid 
+          title="Посчитаем сроки и стоимость вашего проекта индивидуально"
+          parts={[
+            {
+              text: "Позвоните нам",
+              description: "+7 (495) 191-92-81"
+            },
+             ", напишите на ",
+            {
+              text: "e-mail",
+              description: "we@sobakapav.ru",
+              link: "mailto:we@sobakapav.ru"
+            },
+            ", в ",
+            {
+              text: "телеграм",
+              description: "t.me/sobakapavpro",
+              link: "https://t.me/sobakapavpro"
+            },
+            " или ",
+            {
+              text: "WatsApp",
+              description: "wa.me/message/$NZGZSOAXXM2IN1",
+              link: "https://wa.me/message/$NZGZSOAXXM2IN1"
+            }
+          ]}
         
       </article>
     </section>
