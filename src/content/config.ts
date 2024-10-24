@@ -160,8 +160,10 @@ const serviceCollection = defineCollection({
     doubleSize: z.boolean().optional(),
     excerpt: z.string().optional(),
     image: z.string(),
+    image2: z.string().optional(),
     imageAlt: z.string().optional(),
     thumbnail: z.string().optional(),
+    thumbnail2: z.string().optional(),
     extra: z.string().optional(),
     results: z.array(z.object({
       title: z.string().optional(),
@@ -228,6 +230,8 @@ const serviceCollection = defineCollection({
         text: z.string().optional(),
       }))
     }).optional(),
+
+    metadata: metadataDefinition(),
   }),
 });
 

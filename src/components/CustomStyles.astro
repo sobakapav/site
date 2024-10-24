@@ -287,15 +287,13 @@ import '~/assets/styles/colors.css';
     color: #FFFFFF;
   }
   
-  .features-block a {
+  .features-block a,
+  .blue-check-list a {
     text-decoration: underline;
     text-underline-offset: 2px;
+    color: var(--aw-color-accent);
   }
-  
-  .blue-check-list a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
+
   
   .blue-check-list li {
     display: flex;
@@ -324,4 +322,18 @@ import '~/assets/styles/colors.css';
     margin-left: 20px;
   }
   
+  .safari-only {
+    display: none;
+  }
+  
+  @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+    .safari-only {
+      display: revert;
+    }
+    
+    .no-safari {
+      display: none;
+    }
+    
+  }
 </style>

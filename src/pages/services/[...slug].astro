@@ -57,12 +57,12 @@ const metadata = merge(
     title: post.title,
     description: post.description || post.excerpt,
     robots: {
-          index: true,
-          follow: true,
+      index: true,
+      follow: true,
     },
     openGraph: {
       type: 'article',
-      ...(image ? { images: [{ url: image, width: (image as ImageMetadata)?.width, height: (image as ImageMetadata)?.height }] } : {}),
+      ...post.metadata.openGraph,
     },
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
@@ -82,6 +82,10 @@ const metadata = merge(
         <Hund
           image={{
             src: post.image,
+            alt: post.imageAlt || '',
+          }}
+          imageSafari={post.image2 && {
+            src: post.image2,
             alt: post.imageAlt || '',
           }}
           imageName={post.imageName}
