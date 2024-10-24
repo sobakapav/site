@@ -10,14 +10,14 @@ const {
 
 <div class="flex flex-row text-base gap-2.5 pt-6 py-8 px-4 md:px-6 mx-auto max-w-7xl text-sm text-[#9F9F9F]">
   <span>
-    <a href={getHomePermalink()} class="no-underline hover:underline underline-offset-2">Главная</a>
+    <a href={getHomePermalink()} class="underline underline-offset-2">Главная</a>
   </span>
   { parentTitle && (
     <Fragment>
       <span>/</span>
       <span>
         {parent ? (
-          <a href={parent} class="no-underline hover:underline underline-offset-2">{parentTitle}</a>
+          <a href={parent} class="underline underline-offset-2">{parentTitle}</a>
         ) : parentTitle }
       </span>
     </Fragment>
