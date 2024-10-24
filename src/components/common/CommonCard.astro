@@ -45,14 +45,14 @@ const {
   <div class="mt-4 w-72">
     <header>
       {supertitle && (
-        <div class="mb-1">
+        <div class="mb-1 hover:text-[--aw-color-accent]">
           <span class="text-sm" set:html={supertitle} />
         </div>
       )}
            
-      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-2 dark:text-slate-300 font-heading", classes.title]}>
+      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
         {link ? (
-          <a class="hover:underline dark:hover:underline" href={link}>
+          <a href={link}>
             <Markdown.Inline of={title} />
           </a>
         ) : (
@@ -63,7 +63,7 @@ const {
 
     {
       link ? (
-        <a class="hover:underline dark:hover:underline" href={link}>
+        <a href={link}>
           {text && (
             <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
               <Markdown.Inline of={text} />
