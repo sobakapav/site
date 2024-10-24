@@ -55,7 +55,7 @@ const {
             </div>
             <div class="mt-0">
               {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}><Markdown.Inline of={title} /></h3>}
-              {subtitle && <h4 class={twMerge('text-base text-[#048E86]', titleClass, itemClasses?.subtitle)}><Markdown.Inline of={subtitle} /></h4>}
+              {subtitle && <h4 class={twMerge('text-base text-[--aw-color-hund]', titleClass, itemClasses?.subtitle)}><Markdown.Inline of={subtitle} /></h4>}
               {description && (
                 <div
                   class={twMerge(`${title ? 'mt-3' : ''} format-subtitle-markdown marked-list`, descriptionClass, itemClasses?.description)}
