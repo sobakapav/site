@@ -25,7 +25,7 @@ for (var part of parts) {
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6 bentoid">
   <div class="flex flex-col md:flex-row gap-6">
-    <div class="flex flex-col gap-4 p-8 sm:p-6 grow basis-0">
+    <div class="flex flex-col gap-4 py-8 sm:py-6 grow basis-0">
       <h2 class="text-2xl sm:text-5xl group font-heading">{title}</h2>
       <h3 class="text-xl sm:text-3xl group font-heading">
         {fragments.map(fragment => ('string' === fragment.type ? fragment.text : (
@@ -34,7 +34,7 @@ for (var part of parts) {
       </h2>
     </div>
     <div class="grow basis-0 flex">
-      <div class="grow flex flex-col gap-4 bg-[#323232] text-white p-8 sm:p-6 bento-cards text-2xl sm:text-5xl group font-heading justify-center content-center">
+      <div class="grow flex flex-col gap-4 bg-[#323232] dark:bg-[--aw-color-accent] text-white p-8 sm:p-6 bento-cards text-2xl sm:text-5xl group font-heading justify-center content-center">
         {fragments.map((fragment) => 'bento' === fragment.type && (
           <div class:list={["bento-card text-center", "bento-card-" + fragment.idx]}>{fragment.description}</div>
         ))}
