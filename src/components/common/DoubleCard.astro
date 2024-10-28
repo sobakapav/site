@@ -1,0 +1,88 @@
+---
+import Image from '~/components/common/Image.astro';
+import { Markdown } from '@astropub/md';
+
+const {
+  image, 
+  imageLarge,
+  alt, 
+  link, 
+  supertitle = await Astro.slots.render('supertitle'),
+  title, 
+  text,
+  textblock = await Astro.slots.render('textblock'),  
+  footer = await Astro.slots.render('footer'),
+  classes = {
+    main: 'blog-list-item',
+    title: '',
+    text: ''
+  }
+} = Astro.props;
+
+---
+<a href={link}>
+<article class:list={['flex flex-wrap mb-6', classes.main]}>
+  {
+    image && (
+      <a href={link ?? 'javascript:void(0)'}>
+        <div class="relative overflow-hidden rounded">
+          <div class="w-72 h-72">
+            {image && (
+              <Image
+                src={image}
+                class="rounded"
+                layout="constrained-both"
+                width={288}
+                alt={alt ?? title}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
+        </div>
+      </a>
+    )
+  }
+  <div class="mt-4 w-72">
+    <header>
+      {supertitle && (
+        <div class="mb-1 hover:text-[--aw-color-accent]">
+          <span class="text-sm" set:html={supertitle} />
+        </div>
+      )}
+           
+      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
+        {link ? (
+          <a href={link}>
+            <Markdown.Inline of={title} />
+          </a>
+        ) : (
+          <Markdown.Inline of={title} />
+        )}
+      </h2>
+    </header>
+
+    {
+      link ? (
+        <a href={link}>
+          {text && (
+            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
+              <Markdown.Inline of={text} />
+            </p>
+          )}
+          
+          {textblock && (
+            <div set:html={textblock} />
+          )}
+        </a>
+      ) : text
+    }
+
+    {footer && (
+      <div class="mt-2">
+        <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]" set:html={footer} />
+      </div> 
+    )}
+  </div>
+</article>
+</a>
