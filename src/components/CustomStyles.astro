@@ -183,12 +183,12 @@ import '~/assets/styles/colors.css';
   .format-markdown div + em,
   .format-markdown div + p em,
   .format-markdown a + em {
-    display: inline-block;
+    display: block;
     font-size: 16px;
     line-height: 20px;
     color: var(--grey-3);
-    font-style: italic;
     font-weight: 500;
+    text-align: right;
   }
   
   .format-markdown p:has(em) {
@@ -228,7 +228,8 @@ import '~/assets/styles/colors.css';
   }
   
   @media (min-width: 1024px) {
-      .format-markdown img {
+      .format-markdown img,
+      .diff {
           margin-top: 1.5em;
           margin-bottom: 1em;
       }
