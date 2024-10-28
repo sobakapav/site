@@ -80,8 +80,10 @@ import '~/assets/styles/colors.css';
     color: var(--dark-4);
   }
 
-  .format-subtitle-markdown .white-links a {
+  .format-subtitle-markdown .white-links a,
+  .white-links a {
     color: #ffffff;
+    text-underline-offset: 2px;
   }
 
   .format-subtitle-markdown p {
@@ -197,6 +199,7 @@ import '~/assets/styles/colors.css';
     color: var(--grey-3);
     font-weight: 500;
     text-align: right;
+    font-style: normal;
   }
   
   .format-markdown p:has(em),

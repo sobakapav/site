@@ -9,7 +9,7 @@ const { post } = Astro.props;
 ---
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 md:mt-14">
-  <div class="bg-[#323232] text-[#ffffff] dark:bg-[--aw-color-accent] mx-auto px-8 sm:px-12 pt-10 pb-12 mb-10 md:mb-8 text-base">
+  <div class="bg-[#323232] text-[#ffffff] dark:bg-[--aw-color-accent] mx-auto px-8 sm:px-12 py-8 sm:py-12 mb-10 md:mb-8 text-base">
     <div class="flex flex-col md:flex-row flex-wrap gap-10">
       { post.review && (
         <div class="grow basis-0 flex flex-col gap-y-2 content-start">
@@ -23,7 +23,7 @@ const { post } = Astro.props;
         </div>
       )}
       
-      <div class="grow basis-0 flex flex-col gap-y-2 content-start mb-4">
+      <div class="grow basis-0 flex flex-col gap-y-2 content-start">
         { post.director && (
           <ReviewItem
             title="Слово директора"
@@ -40,16 +40,16 @@ const { post } = Astro.props;
           <div class="basis-0 grow">
             <h3 class="mb-1 text-base">Результат</h3>
             {post.result?.map((res) => (
-            <div class="format-subtitle-markdown">
+            <div class="format-subtitle-markdown white-links">
               {res.link ? (
-                <a class="flex flex-row items-center gap-1 mb-2 text-[#ffffff]" href={res.link}>
+                <a class="flex flex-row items-center gap-1 mb-2" href={res.link}>
                   <div class="grow-0 shrink-0 basis-[30px]"><Image src={res.src} alt="Figma logo" height={40} width={30}/></div>
-                  <div class="grow shrink basis-0 text-[#ffffff]"> <Markdown.Inline of={res.text}/></div>
+                  <div class="grow shrink basis-0"> <Markdown.Inline of={res.text}/></div>
                 </a>
               ) : (
                 <div class="flex flex-row items-center gap-1 mb-2 text-[#ffffff]">
                   <div class="grow-0 shrink-0 basis-[30px]"><Image src={res.src} alt="Figma logo" height={40} width={30}/></div>
-                  <div class="grow shrink basis-0 white-links"> <Markdown.Inline of={res.text}/></div>
+                  <div class="grow shrink basis-0"> <Markdown.Inline of={res.text}/></div>
                 </div>
               )}
             </div>

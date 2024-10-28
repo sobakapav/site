@@ -1,22 +1,39 @@
 ---
 
 import CommonCard from '~/components/common/CommonCard.astro';
+import DoubleCard from '~/components/common/DoubleCard.astro';
 
 import { findImage } from '~/utils/images';
 
-const { post } = Astro.props;
+const { post, mode="single" } = Astro.props; 
 const image = (await findImage(post.thumbnail?.src)) as ImageMetadata | undefined;
+const imageLarge = (await findImage(post.thumbnailLarge?.src)) as ImageMetadata | undefined;
 
 ---
+{mode == "single" ? (
 
-<CommonCard 
-  image={image} 
-  link={post.external ? post.externalLink : post.href} 
-  title={post.title}
-  text={post.excerpt}
->
-  <Fragment slot="footer">
-    {post.publishYear}
-  </Fragment>
-  
-</CommonCard>
+  <CommonCard 
+    image={image} 
+    link={post.external ? post.externalLink : post.href} 
+    title={post.title}
+    text={post.excerpt}
+  >
+    <Fragment slot="footer">
+      {post.publishYear}
+    </Fragment>
+    
+  </CommonCard>
+) : (
+   <DoubleCard 
+     image={image} 
+     imageLarge={imageLarge}
+     link={post.external ? post.externalLink : post.href} 
+     title={post.title}
+     text={post.excerpt}
+   >
+     <Fragment slot="footer">
+       {post.publishYear}
+     </Fragment>
+     
+   </DoubleCard>
+)}

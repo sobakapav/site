@@ -19,8 +19,8 @@ for (var idx in list) {
 <ul class="flex flex-wrap justify-start list-none">
   {
     items.map((item) => (
-      <li class="mb-12 md:mb-20 w-80">
-        <Item post={item} />
+      <li class:list={["mb-12 md:mb-20", item.doubleSize ? "w-[608px]" : "w-80"]}>
+        <Item post={item} mode={item.doubleSize ? 'double' : 'single'}/>
       </li>
     ))
   }
