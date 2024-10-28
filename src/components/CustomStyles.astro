@@ -94,6 +94,10 @@ import '~/assets/styles/colors.css';
     margin-bottom: 24px;
   }
   
+  .format-subtitle-markdown :last-child:is(h3) {
+    margin-bottom: 24px;
+  }
+  
    .format-subtitle-markdown h4
    {
      margin-bottom: 0px;
@@ -195,7 +199,8 @@ import '~/assets/styles/colors.css';
     text-align: right;
   }
   
-  .format-markdown p:has(em) {
+  .format-markdown p:has(em),
+  .format-markdown > em {
     margin-bottom: 48px;
   }
   
@@ -236,6 +241,10 @@ import '~/assets/styles/colors.css';
       .diff {
           margin-top: 1.5em;
           margin-bottom: 1em;
+      }
+      
+      .format-markdown > div.flex > img {
+        margin-top: 0;
       }
   }
   
