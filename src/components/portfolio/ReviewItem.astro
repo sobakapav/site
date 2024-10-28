@@ -7,7 +7,7 @@ const { title, text, photo, person, position } = Astro.props;
 
 ---
 <Fragment>
-  <h3 class="w-full text-xl sm:text-4xl xl:text-[52px] xl:leading-[52px] xl:pb-5 font-heading">{title}</h3>
+  <h3 class="w-full text-xl sm:text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{title}</h3>
   <div class="flex flex-row max-w-full gap-4">
     <Image src={photo} alt={person} width={90} height={90} class="rounded-lg mt-1"/>
     <div class="flex flex-col gap-0 format-review-markdown">

@@ -12,7 +12,7 @@ const { post } = Astro.props;
   <div class="bg-[#323232] text-[#ffffff] dark:bg-[--aw-color-accent] mx-auto px-8 sm:px-12 py-8 sm:py-12 mb-10 md:mb-8 text-base">
     <div class="flex flex-col md:flex-row flex-wrap gap-10">
       { post.review && (
-        <div class="grow basis-0 flex flex-col gap-y-2 content-start">
+        <div class="grow basis-0 flex flex-col gap-y-6 content-start">
           <ReviewItem
             title="Отзыв заказчика"
             text={post.review.text}
@@ -23,7 +23,7 @@ const { post } = Astro.props;
         </div>
       )}
       
-      <div class="grow basis-0 flex flex-col gap-y-2 content-start">
+      <div class="grow basis-0 flex flex-col gap-y-6 content-start">
         { post.director && (
           <ReviewItem
             title="Слово директора"
