@@ -94,6 +94,7 @@ const portfolioCollection = defineCollection({
     publishYear: z.number().optional(), 
     updateDate: z.date().optional(),
     draft: z.boolean().optional(),
+    doubleSize: z.boolean().optional(),
 
     title: z.string(),
     excerpt: z.string().optional(),
@@ -109,6 +110,7 @@ const portfolioCollection = defineCollection({
     
     thumbnail: z.object({
       src: z.string(),
+      src2: z.string().optional(),
       alt: z.string().optional(),
     }).optional(),
     
