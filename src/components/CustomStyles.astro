@@ -241,7 +241,7 @@ import '~/assets/styles/colors.css';
   
   @media (min-width: 1024px) {
       .format-markdown img,
-      .diff {
+      .daisy-diff {
           margin-top: 1.5em;
           margin-bottom: 1em;
       }
@@ -356,12 +356,9 @@ import '~/assets/styles/colors.css';
     
   }
   
-  .diff.diff-black .diff-item-1:after {
+  .daisy-diff.diff-black .daisy-diff-item-1:after,
+  .daisy-diff.diff-black .daisy-diff-item-2 {
     border-color: var(--aw-color-text-default);
   }
   
-  .diff.diff-black .diff-item-2 {
-    border-color: var(--aw-color-text-default);
-  }
-
 </style>
