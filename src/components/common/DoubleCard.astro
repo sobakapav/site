@@ -12,6 +12,7 @@ const {
   text,
   textblock = await Astro.slots.render('textblock'),  
   footer = await Astro.slots.render('footer'),
+  isDark, 
   classes = {
     main: 'blog-list-item',
     title: '',
@@ -52,18 +53,32 @@ const {
       )}
            
       <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
-        {link ? (
-          <a href={link}>
+        {isDark ? (
+          <a href={link} class="text-white hover:text-[--aw-color-accent]">
             <Markdown.Inline of={title} />
           </a>
         ) : (
-          <Markdown.Inline of={title} />
+          <a href={link}>
+            <Markdown.Inline of={title} />
+          </a>
         )}
       </h2>
     </header>
 
     {
-      link ? (
+      isDark ? (
+        <a href={link}>
+          {text && (
+            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown text-white", classes.text]}>
+              <Markdown.Inline of={text} />
+            </p>
+          )}
+          
+          {textblock && (
+            <div set:html={textblock} class="text-white" />
+          )}
+        </a>
+      ) : (
         <a href={link}>
           {text && (
             <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
@@ -75,7 +90,7 @@ const {
             <div set:html={textblock} />
           )}
         </a>
-      ) : text
+      )
     }
 
     {footer && (

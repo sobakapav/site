@@ -112,6 +112,7 @@ const portfolioCollection = defineCollection({
       src: z.string(),
       src2: z.string().optional(),
       alt: z.string().optional(),
+      isDark: z.boolean().optional(),
     }).optional(),
     
     result: z.array(z.object({

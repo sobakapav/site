@@ -30,6 +30,7 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
      link={post.external ? post.externalLink : post.href} 
      title={post.title}
      text={post.excerpt}
+     isDark={post.thumbnail.isDark}
    >
      <Fragment slot="footer">
        {post.publishYear}
