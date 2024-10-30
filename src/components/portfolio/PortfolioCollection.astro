@@ -1,6 +1,8 @@
 ---
 import { getPermalink } from '~/utils/permalinks';
 import { getEntry } from 'astro:content';
+
+import PortfolioFilter from '~/components/portfolio/filter/PortfolioFilter.astro';
 import Item from './ListItem.astro';
 
 const { list } = Astro.props;
@@ -16,10 +18,11 @@ for (var idx in list) {
 
 ---
 <div class="text-left pb-4 md:pb-6 max-w-5xl mx-auto justify-center">
+<PortfolioFilter />
 <ul class="flex flex-wrap justify-start list-none">
   {
     items.map((item) => (
-      <li class:list={["mb-12 md:mb-20", item.doubleSize ? "w-[608px]" : "w-80"]}>
+      <li class:list={["mb-12 md:mb-20", item.doubleSize ? "w-[640px]" : "w-80"]}>
         <Item post={item} mode={item.doubleSize ? 'double' : 'single'}/>
       </li>
     ))

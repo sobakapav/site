@@ -1,0 +1,38 @@
+---
+
+import './PortfolioFilter.less';
+
+import Checkbox from '~/components/common/Checkbox.astro';
+
+import { portfolioFilters } from '~/navigation';
+
+const filters = [];
+var i = 1;
+
+for (var group in portfolioFilters) {
+  const filterGroup = {
+    index: i,
+    group,
+    items: [],
+  };
+  for (var key in portfolioFilters[group]) {
+    filterGroup.items.push({key, text: portfolioFilters[group][key]});
+  }
+  filters.push(filterGroup);
+  i++;
+}
+
+---
+
+<portfolio-filter class="all-filters flex gap-4 mb-20">
+  {filters.map(filter => (
+    <div class="filter-group basis-0 grow">
+      <h3 class="text-xl sm:text-3xl leading-tight mb-2 dark:text-slate-300 font-heading">{filter.group}</h3>
+      <div class="flex flex-wrap gap-1">
+        {filter.items.map(item => (
+          <Checkbox id={'fltr-' + filter.index + '-' + item.key} label={item.text} classLabel="px-1 py-1" />
+        ))}
+      </div>
+    </div>
+  ))}
+</portfolio-filter>

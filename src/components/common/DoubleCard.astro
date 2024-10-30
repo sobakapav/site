@@ -21,18 +21,18 @@ const {
 
 ---
 <a href={link}>
-<article class:list={['flex flex-wrap mb-6', classes.main]}>
+<article class:list={['flex flex-wrap mb-6 relative', classes.main]}>
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
         <div class="relative overflow-hidden rounded">
-          <div class="w-72 h-72">
+          <div class="w-[608px]">
             {image && (
               <Image
-                src={image}
+                src={imageLarge}
                 class="rounded"
-                layout="constrained-both"
-                width={288}
+                layout="constrained"
+                width={608}
                 alt={alt ?? title}
                 loading="lazy"
                 decoding="async"
@@ -43,7 +43,7 @@ const {
       </a>
     )
   }
-  <div class="mt-4 w-72">
+  <div class="mt-4 w-[288px] absolute left-8 bottom-5">
     <header>
       {supertitle && (
         <div class="mb-1 hover:text-[--aw-color-accent]">
