@@ -24,11 +24,11 @@ const {
 <a href={link}>
 <article class:list={['flex flex-wrap mb-6 relative', classes.main]}>
   {
-    image && (
+    imageLarge && (
       <a href={link ?? 'javascript:void(0)'}>
         <div class="relative overflow-hidden rounded">
           <div class="w-[608px]">
-            {image && (
+            {imageLarge && (
               <Image
                 src={imageLarge}
                 class="rounded"
