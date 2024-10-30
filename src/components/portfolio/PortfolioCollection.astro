@@ -19,10 +19,10 @@ for (var idx in list) {
 ---
 <div class="text-left pb-4 md:pb-6 max-w-5xl mx-auto justify-center">
 <PortfolioFilter />
-<ul class="flex flex-wrap justify-start list-none">
+<ul class="portfolio-collection flex flex-wrap justify-start list-none">
   {
-    items.map((item) => (
-      <li class:list={["mb-12 md:mb-20", item.doubleSize ? "w-[640px]" : "w-80"]}>
+    items.map((item, idx) => (
+      <li class:list={["mb-12 md:mb-20", (item.doubleSize ? "w-[640px]" : "w-80"), item.tags?.map((tag) => ('fltr-'+tag)).join(' ')]} id={'portfolio-card-'+idx}>
         <Item post={item} mode={item.doubleSize ? 'double' : 'single'}/>
       </li>
     ))

@@ -25,14 +25,74 @@ for (var group in portfolioFilters) {
 ---
 
 <portfolio-filter class="all-filters flex gap-4 mb-20">
-  {filters.map(filter => (
+  {filters.map((filter, idx) => (
     <div class="filter-group basis-0 grow">
       <h3 class="text-xl sm:text-3xl leading-tight mb-2 dark:text-slate-300 font-heading">{filter.group}</h3>
-      <div class="flex flex-wrap gap-1">
+      <div class="filter-list flex flex-wrap gap-1">
         {filter.items.map(item => (
-          <Checkbox id={'fltr-' + filter.index + '-' + item.key} label={item.text} classLabel="px-1 py-1" />
+          <Checkbox id={'fltr-' + item.key} label={item.text} classLabel="px-1 py-1" className={'group-' + idx} />
         ))}
       </div>
     </div>
   ))}
+  
+  <script>
+    function showAll() {
+      for (const card of document.querySelectorAll('.portfolio-collection li')) {
+        card.classList.remove('hidden');
+      }
+    }
+    
+    function filter(filters) {
+      var cards = document.querySelectorAll('.portfolio-collection li');
+      const allCards = cards;
+      for (const card of cards) {
+        var accepted = true;
+        for (var filter of filters) {
+          var thisAccepted = false;
+          for (var oneClass of filter) {
+            if (card.classList.contains(oneClass)) {
+              thisAccepted = true;
+            }
+          }
+          accepted &= thisAccepted;
+        }
+        if (accepted) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }        
+      }
+    }
+    
+    function applyFilter() {
+      var checkedBoxes = document.querySelectorAll('portfolio-filter input:checked');
+      if (checkedBoxes.length == 0) {
+        showAll();
+      }
+      const filterGroups = document.querySelectorAll('portfolio-filter .filter-group .filter-list');
+      const applyFilters = [];
+      for (const group of filterGroups) {
+        const filterNames = [];
+        for (const astroCheckbox of group.children) {
+          const checkbox = astroCheckbox.children[0];
+          if (checkbox.checked) {
+            filterNames.push(checkbox.id);
+          }
+        }
+        if (filterNames.length > 0) {
+          applyFilters.push(filterNames);
+        }
+      }
+      
+      console.log(applyFilters);
+      filter(applyFilters);
+    }
+
+    window.addEventListener('load', (event) => {      
+      for (const filter of document.querySelectorAll('portfolio-filter input')) {
+        filter.addEventListener('change', applyFilter);
+      }
+    });  
+  </script>
 </portfolio-filter>
