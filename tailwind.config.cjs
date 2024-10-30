@@ -49,4 +49,7 @@ module.exports = {
   },
   plugins: [typographyPlugin, daisyui],
   darkMode: 'class',
+  daisyui: {
+    prefix: 'daisy-',
+  },
 };
