@@ -26,7 +26,7 @@ for (var idx in list) {
 <ul class="portfolio-collection flex flex-wrap justify-start list-none">
   {
     items.map((item, idx) => (
-      <li class:list={["mb-12 md:mb-20", (item.doubleSize ? "w-[640px]" : "w-80"), item.tags?.map((tag) => ('fltr-'+tag)).join(' ')]} id={'portfolio-card-'+idx}>
+      <li class:list={["mb-6", (item.doubleSize ? "w-[640px]" : "w-80"), item.tags?.map((tag) => ('fltr-'+tag)).join(' ')]} id={'portfolio-card-'+idx}>
         <Item post={item} mode={item.doubleSize ? 'double' : 'single'}/>
       </li>
     ))
