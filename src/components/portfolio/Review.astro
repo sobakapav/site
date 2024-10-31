@@ -11,16 +11,18 @@ const { post } = Astro.props;
 <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 md:mt-14">
   <div class="bg-[#323232] text-[#ffffff] dark:bg-[--aw-color-accent] mx-auto px-8 sm:px-12 py-8 sm:py-12 mb-10 md:mb-8 text-base">
     <div class="flex flex-col md:flex-row flex-wrap gap-10">
-      { post.review ? (
-        <div class="grow basis-0 flex flex-col gap-y-6 content-start">
-          <ReviewItem
-            title="Отзыв заказчика"
-            text={post.review.text}
-            photo={post.review.photo}
-            person={post.review.person}
-            position={post.review.position}
-          />
-        </div>
+      { (post.review || post.director) ? (
+        post.review && (
+          <div class="grow basis-0 flex flex-col gap-y-6 content-start">
+            <ReviewItem
+              title="Отзыв заказчика"
+              text={post.review.text}
+              photo={post.review.photo}
+              person={post.review.person}
+              position={post.review.position}
+            />
+          </div>
+        )
       ) : (
         <div class="grow basis-0 flex flex-wrap items-center justify-between pt-4 gap-4">
            <div class="relative h-[34px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfa-arm">
@@ -66,17 +68,19 @@ const { post } = Astro.props;
       </div> 
       )}
       
-      <div class="grow basis-0 flex flex-col gap-y-6 content-start">
+      <div class:list={["grow basis-0 flex gap-y-6 content-start", post.review ? "flex-col" : "flex-col md:flex-row gap-6"]}>
         { post.director && (
-          <ReviewItem
-            title="Слово директора"
-            text={post.director}
-            photo="~/assets/images/portfolio/np.png"
-            person="Наталья Прокофьева"
-            position="директор «Собаки Павловой»"
-          />
+          <div class:list={["flex flex-col gap-y-6", post.review ? "" : "md:basis-0 md:grow"]}>
+            <ReviewItem
+              title="Слово директора"
+              text={post.director}
+              photo="~/assets/images/portfolio/np.png"
+              person="Наталья Прокофьева"
+              position="директор «Собаки Павловой»"
+            />
+          </div>
         )}
-        <div class="flex flex-row justify-between max-w-2xl">
+        <div class:list={["flex flex-row justify-between max-w-2xl", post.review ? "" : "md:basis-0 md:grow"]}>
           <div class="basis-0 grow"><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
           <div class="basis-0 grow"><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
           
