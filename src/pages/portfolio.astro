@@ -12,7 +12,22 @@ import Bread from '~/components/widgets/Bread.astro';
 const { page } = Astro.props as Props;
 
 const metadata = {
-  title: 'Портфолио',
+  title: 'Кейсы по дизайну интерфейсов • Портфолио «Собаки Павловой»',
+  canonical: 'https://sobakapav.ru/portfolio',
+  description: "Дизайн сложных интерфейсов: UX, UI, редизайн, аудиты, исследования, профессиональные и массовые интерфейсы от «Собаки Павловой»", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/services.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
 };
 
 ---
