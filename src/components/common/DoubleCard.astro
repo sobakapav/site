@@ -21,7 +21,7 @@ const {
 } = Astro.props;
 
 ---
-<a href={link}>
+<a href={link} class="col-span-2">
 <article class:list={['flex flex-wrap mb-6 relative', classes.main]}>
   {
     imageLarge && (
@@ -54,7 +54,7 @@ const {
            
       <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
         {isDark ? (
-          <a href={link} class="text-white hover:text-[--aw-color-accent]">
+          <a href={link} class="text-white hover:text-white">
             <Markdown.Inline of={title} />
           </a>
         ) : (
@@ -93,10 +93,18 @@ const {
       )
     }
 
-    {footer && (
-      <div class="mt-2">
-        <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]" set:html={footer} />
-      </div> 
+    {
+    isDark ? 
+      (footer && (
+        <div class="mt-2">
+          <span class="text-xl sm:text-3xl leading-tight font-heading text-[#FEE0BC]" set:html={footer} />
+        </div> 
+      )) : (
+      footer && (
+        <div class="mt-2">
+          <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]" set:html={footer} />
+        </div> 
+      )
     )}
   </div>
 </article>

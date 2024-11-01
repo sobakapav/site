@@ -34,6 +34,7 @@ module.exports = {
         'header': '420px 1fr 40px',
         'footer': '70px 1fr 1fr 1fr',
         'features': '1fr 1fr 1fr',
+        'portfolio': '1fr 1fr 1fr',
       },
       gridTemplateRows: {
         'footer': 'auto auto',

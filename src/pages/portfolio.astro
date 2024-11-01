@@ -2,10 +2,12 @@
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import PortfolioCollection from '~/components/portfolio/PortfolioCollection.astro';
 import Headline from '~/components/blog/Headline.astro';
 import { getEntry } from 'astro:content';
+import Bread from '~/components/widgets/Bread.astro';
 
 const { page } = Astro.props as Props;
 
@@ -16,8 +18,10 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <Bread
+      title="Портфолио"
+  />
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-6xl">
-    <!-- Hero Widget ******************* -->
     
       <Hero
         tagline=""
@@ -37,7 +41,7 @@ const metadata = {
         </Fragment>
     
         <Fragment slot="subtitle">
-            Подробные описания проектов, демонстрация итогов и промежуточных результатов, цены и отзывы клиентов. Читайте, пожалуйста ↓↓↓   
+          Подробные описания проектов, демонстрация итогов и промежуточных результатов, цены и отзывы клиентов. Читайте, пожалуйста ↓↓↓   
         </Fragment>
     
       </Hero>
