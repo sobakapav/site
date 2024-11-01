@@ -1,0 +1,32 @@
+---
+
+import { Markdown } from '@astropub/md';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
+
+const { post } = Astro.props;
+
+const email = "we@sobakapav.ru";
+const phone = "7 (495) 191-92-81";
+const whatsup = "NZGZSOAXXM2IN1";
+const telegramLink = "https://t.me/sobakapavpro";
+
+---
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 md:mt-20">
+  <div class="bg-[#6E6E6E] text-[#ffffff] mx-auto px-8 sm:px-20 py-8 sm:py-12 mb-10 md:mb-8">
+    <h3 class="w-full text-xl sm:text-4xl xl:text-[52px] xl:leading-[52px] font-heading mb-4">А сколько стоит? И какие сроки?</h3>
+    <div class="flex flex-col md:flex-row flex-wrap gap-10">
+      <div class="basis-0 grow-[2]"> 
+        <p class="text-base">Бюджетировать сложно. Поговорим? Зададим вопросы, поймём ответы и сразу прикинем цены и сроки.</p>
+      </div> 
+      
+      <div class="grow basis-0 gap-6">
+        <p class="flex items-center text-3xl font-heading mb-4 gap-4"><Icon height="24px" width="24px" name="tabler:phone" />+7 (495) 191-92-81</p>
+        <a href="mailto:we@sobakapav.ru" class="flex items-center no-underline hover:underline underline-offset-2 text-3xl font-heading mb-4 gap-4"><Icon height="24px" width="24px" name="tabler:mail" />we@sobakapav.ru</a>
+        <a href="https://t.me/sobakapavpro" class="flex items-center no-underline hover:underline underline-offset-2 text-3xl font-heading gap-4"><Icon height="24px" width="24px" name="tabler:brand-telegram" />@sobakapavpro</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
