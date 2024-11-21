@@ -153,30 +153,30 @@ export const footerData = {
       ],
     },
     {
-          title: ' ',
-          links: [
-            {
-              text: 'Продуктовое исследование',
-              href: getPermalink('/services/research'),
-            },  
-            {
-              text: 'Усиление команды разработки',
-              href: getPermalink('/services/dev-team'),
-            },
-            {
-              text: 'Работа в продуктовой команде',
-              href: getPermalink('/services/product-team'),
-            },
-            {
-              text: 'Консультации',
-              href: getPermalink('/services/consultation'),
-            },
-            {
-              text: 'Контент-дизайн',
-              href: getPermalink('/services/content-design'),
-            },
-          ],
-        },
+        title: ' ',
+        links: [
+          {
+            text: 'Продуктовое исследование',
+            href: getPermalink('/services/research'),
+          },  
+          {
+            text: 'Усиление команды разработки',
+            href: getPermalink('/services/dev-team'),
+          },
+          {
+            text: 'Работа в продуктовой команде',
+            href: getPermalink('/services/product-team'),
+          },
+          {
+            text: 'Консультации',
+            href: getPermalink('/services/consultation'),
+          },
+          {
+            text: 'Контент-дизайн',
+            href: getPermalink('/services/content-design'),
+          },
+        ],
+      },
     {
       title: 'Экспертиза',
       links: [
@@ -230,6 +230,17 @@ export const footerData = {
 };
 
 export const portfolioFilters = {
+  'Отрасли': {
+    'med': 'Медицина',
+    'prom': 'Промышленность',
+    'fin': 'Финансы',
+    'it': 'IT для бизнеса',
+    'ec': 'E-commerce',
+    'ed': 'Образование',
+    'gos': 'Госсектор и безопасность',
+    'log': 'Логистика и транспорт',
+    
+  },
   'Услуги': {
     'ux-design': 'UX-дизайн под ключ',
     'prototype': 'Прототип под инвестиции',
@@ -243,17 +254,7 @@ export const portfolioFilters = {
     'consultation': 'Консультация',
     'content-design': 'Контент-дизайн',
   },
-  'Отрасли': {
-    'med': 'Медицина',
-    'prom': 'Промышленность',
-    'fin': 'Финансы',
-    'it': 'IT для бизнеса',
-    'ec': 'E-commerce',
-    'ed': 'Образование',
-    'gos': 'Госсектор и безопасность',
-    'log': 'Логистика и транспорт',
-    
-  },
+  
   'Другое': {
     'mob': 'Мобильные интерфейсы',
     'gui': 'GUI устройств и приборов',
