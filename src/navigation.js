@@ -63,6 +63,10 @@ export const headerData = {
           href: getPermalink('/publications'),
         },
         {
+          text: 'Книги',
+          href: "https://sobakapav.ru/books",
+        },
+        {
           text: 'UX-исследования',
           href: getPermalink('/ux-research'),
         }, 
@@ -74,10 +78,6 @@ export const headerData = {
           text: '100 шпаргалок по дизайну интерфейсов',
           href: "https://sobakapav.ru/cheatsheets",
         },    
-        {
-          text: 'Книги',
-          href: "https://sobakapav.ru/books",
-        },
         {
           text: 'Email-рассылка',
           href: "https://sobakapav.ru/newsletter",

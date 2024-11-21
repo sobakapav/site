@@ -1,0 +1,63 @@
+---
+import type { getPermalink, InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import ExpertiseCollection from '~/components/expertise/ExpertiseCollection.astro';
+import Bread from '~/components/widgets/Bread.astro';
+
+const { page } = Astro.props as Props;
+
+const metadata = {
+  title: 'Опыт профессионалов на практике • Экспертиза «Собаки Павловой»',
+  canonical: 'https://sobakapav.ru/expertise',
+  description: "Cобранный за годы работы багаж знаний в области дизайна интерфейсов и UX-исследований, шпаргалки для дизайнеров, практики передачи макетов в разработку и еще кое-что интересное.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/portfolio.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+---
+
+<Layout metadata={metadata}>
+  <Bread
+      title="Экспертиза"
+  />  
+      <Hund3
+        tagline=""
+        actions={[
+          {
+            variant: 'primary',
+            target: '_blank',
+            text: 'Get templates',
+            href: 'https://github.com/onwidget/astrowind',
+            icon: 'tabler:download',
+          },
+          { text: 'Learn more', href: '#features' },
+        ]}
+      >
+        <Fragment slot="title">
+          Опыт профессионалов <br/>на практике
+        </Fragment>
+    
+        <Fragment slot="subtitle">
+          Мы не только создаем дизайн интерфейсов для сложных IT-систем, но и пишем помогающий контент, унифицируем работу с интерфейсами и текстами.
+          За годы работы мы собрали багаж знаний в области UX-исследований и интерфейсов, зафиксировали практики передачи макетов в разработку, и еще кое-что интересное.  
+          Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса. Часто об этом рассказываем и очень часто отвечаем на вопросы.
+        </Fragment>
+    
+      </Hund3>
+  <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+    <ExpertiseCollection />
+  </section>
+</Layout>

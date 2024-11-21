@@ -1,0 +1,80 @@
+---
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+import Item from './ListItem2.astro';
+
+import CommonCard from '~/components/common/CommonCard.astro';
+
+import { findImage } from '~/utils/images';
+
+---
+<simple-collection>
+
+<div class="flex flex-col sm:flex-row text-left pb-4 md:pb-6 max-w-7xl mx-auto justify-center">
+
+<ul class="basis-0 grow flex flex-wrap justify-start list-none gap-1 2xl:gap-3">
+ 
+      <li class="mb-12 w-[358px]" >
+        <CommonCard 
+          image="~/assets/images/expertise/articles.svg" 
+          link={getPermalink('/publications')}
+          title="Статьи"
+          text="Рассказываем о дизайне интерфейсов, исследовании пользователей, бизнесе и управлении проектами. Делимся знаниями и опытом, предлагаем лайфхаки и решения."
+          classes={{main: 'justify-normal blog-list-item'}}
+        >
+        </CommonCard>
+      </li>
+      
+      <li class="mb-12 w-[358px]" >
+        <CommonCard 
+          image="~/assets/images/expertise/books.svg" 
+          link={getPermalink('/books')}
+          title="Книги"
+          text="Раздаем три бесплатных книги «Собаки Павловой»: как решать сложные UX-задачи, как писать digital-тексты и как работать над IT-проектами с подрядчиками."
+          classes={{main: 'justify-normal blog-list-item'}}
+        />
+      </li>
+      
+      <li class="mb-12 w-[358px]" >
+        <CommonCard 
+          image="~/assets/images/expertise/ux-research.svg" 
+          link={getPermalink('/ux-research')}
+          title="UX-исследования"
+          text="Разбираем на 26 кейсах, как можно улучшить интерфейсы сложных систем, наблюдая и общаясь с людьми."
+          classes={{main: 'justify-normal blog-list-item'}}
+        />
+      </li>
+      
+      <li class="w-[358px]" >
+        <CommonCard 
+          image="~/assets/images/expertise/design2dev.svg" 
+          link={getPermalink('/design2dev')}
+          title="Передача макетов в разработку"
+          text="Девять ключевых практик передачи в разработку, которые упрощают разработчикам жизнь и экономят заказчикам деньги."
+          classes={{main: 'justify-normal blog-list-item'}}
+        />
+      </li>
+      
+      <li class="w-[358px]" >
+        <CommonCard 
+          image="~/assets/images/expertise/cheatsheets.svg" 
+          link={getPermalink('/cheatsheets')}
+          title="Шпаргалки по дизайну интерфейсов"
+          text="100 инструкций для дизайнеров, менеджеров и заказчиков, занятых проектом по дизайну интерфейсов."
+          classes={{main: 'justify-normal blog-list-item'}}
+        />
+      </li>
+      
+      <li class="w-[358px]" >
+        <CommonCard 
+          image="~/assets/images/expertise/newsletter.svg" 
+          link={getPermalink('/newsletter')}
+          title="Рассылка"
+          text="Рассказываем о логике принятия интерфейсных решений и практиках обсуждения интерфейсов с маркетингом и разработкой."
+          classes={{main: 'justify-normal blog-list-item'}}
+        />
+      </li>
+
+</ul>
+</div>
+</simple-collection>
