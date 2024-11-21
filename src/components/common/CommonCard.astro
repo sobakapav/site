@@ -4,6 +4,7 @@ import { Markdown } from '@astropub/md';
 
 const {
   image, 
+  imageSafari,
   alt, 
   link, 
   supertitle = await Astro.slots.render('supertitle'),
@@ -26,7 +27,28 @@ const {
       <a href={link ?? 'javascript:void(0)'}>
         <div class="relative overflow-hidden rounded">
           <div class="w-72 h-72">
-            {image && (
+            {image && (imageSafari ? (
+              <Fragment>
+                <Image
+                  src={image}
+                  class="rounded no-safari"
+                  layout="constrained-both"
+                  width={288}
+                  alt={alt ?? title}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <Image
+                  src={imageSafari}
+                  class="rounded safari-only"
+                  layout="constrained-both"
+                  width={288}
+                  alt={alt ?? title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </Fragment>
+            ) : (
               <Image
                 src={image}
                 class="rounded"
@@ -36,7 +58,7 @@ const {
                 loading="lazy"
                 decoding="async"
               />
-            )}
+            ))}
           </div>
         </div>
       </a>

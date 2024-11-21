@@ -8,6 +8,7 @@ export const headerData = {
     },
     {
       text: 'Услуги',
+      href: '/services',
       links: [
         {
           text: 'UX/UI-дизайн под ключ',
@@ -57,6 +58,7 @@ export const headerData = {
     },
     {
       text: 'Экспертиза',
+      href: '/expertise',
       links: [
         {
           text: 'Статьи',
