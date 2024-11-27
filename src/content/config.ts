@@ -95,6 +95,7 @@ const portfolioCollection = defineCollection({
     updateDate: z.date().optional(),
     draft: z.boolean().optional(),
     doubleSize: z.boolean().optional(),
+    noCard: z.boolean().optional(),
 
     title: z.string(),
     excerpt: z.string().optional(),

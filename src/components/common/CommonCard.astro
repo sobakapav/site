@@ -12,6 +12,7 @@ const {
   text,
   textblock = await Astro.slots.render('textblock'),  
   footer = await Astro.slots.render('footer'),
+  noCard = false,
   classes = {
     main: 'blog-list-item',
     title: '',
@@ -32,7 +33,7 @@ const {
                 <Image
                   src={image}
                   class="rounded no-safari"
-                  layout="constrained-both"
+                  layout={noCard ? "constrained-width" : "constrained-both"}
                   width={288}
                   alt={alt ?? title}
                   loading="lazy"
@@ -41,7 +42,7 @@ const {
                 <Image
                   src={imageSafari}
                   class="rounded safari-only"
-                  layout="constrained-both"
+                  layout={noCard ? "constrained-width" : "constrained-both"}
                   width={288}
                   alt={alt ?? title}
                   loading="lazy"
@@ -52,7 +53,7 @@ const {
               <Image
                 src={image}
                 class="rounded"
-                layout="constrained-both"
+                layout={noCard ? "constrained-width" : "constrained-both"}
                 width={288}
                 alt={alt ?? title}
                 loading="lazy"
