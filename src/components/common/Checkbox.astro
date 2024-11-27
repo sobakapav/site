@@ -7,9 +7,11 @@ const {
   group,
   className = '',
   classLabel = 'px-4 py-[9px]',
+  checked = false
 } = Astro.props;
 
 const aClassName = className + ' hidden';
+const checkmark = checked ? {checked: "true"} : {}
 
 ---
 
@@ -19,10 +21,12 @@ const aClassName = className + ' hidden';
     name={type == 'radio' ? (group || id) : id}
     type={type}
     class={aClassName}
+    {...checkmark}
     />
   <label for={id} class:list={["bg-[#E6E6E6] inline-flex items-center hover:cursor-pointer", classLabel]}>
     <span class="color-[#C4C4C4] hover:text-[--aw-color-hund]">
       {label}
     </span>
+    <slot />
   </label>
 </astro-checkbox>

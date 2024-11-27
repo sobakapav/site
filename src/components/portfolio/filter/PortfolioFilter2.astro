@@ -1,0 +1,184 @@
+---
+
+import './PortfolioFilter.less';
+
+import Checkbox from '~/components/common/Checkbox.astro';
+import RedCheckbox from '~/components/common/RedCheckbox.astro';
+import { Icon } from 'astro-icon/components';
+
+import { portfolioFilters } from '~/navigation';
+
+const filters = [];
+var i = 1;
+
+for (var group in portfolioFilters) {
+  const filterGroup = {
+    index: i,
+    group,
+    items: [],
+  };
+  for (var key in portfolioFilters[group]) {
+    filterGroup.items.push({key, text: portfolioFilters[group][key]});
+  }
+  filters.push(filterGroup);
+  i++;
+}
+
+---
+<portfolio-filter-block class="filter-hides block mb-10">
+  <div class="flex gap-3">
+    <Checkbox id="show-filters" label="Фильтр" classLabel="text-[--aw-color-hund] leading-none text-xl sm:text-3xl font-heading px-2 py-1">
+      <Icon name="tabler:chevron-down" class="pl-4 w-12 h-8 filter-chevron" />
+    </Checkbox>
+    <span class="reset-filters cursor-pointer mb-6 text-[--aw-color-hund]"><Icon name="tabler:x" class="w-6 h-6" /></span>
+  </div>
+  <portfolio-filter class="all-filters relative grid grid-cols-portfoliofilter gap-4 mt-4">
+    {filters.map((filter, idx) => (
+      <div class:list={["filter-group basis-0 grow", 'filter-group-' + idx]}>
+        <h3 class="text-xl sm:text-3xl leading-tight mb-2 dark:text-slate-300 font-heading">{filter.group}</h3>
+        <div class="filter-list flex flex-wrap gap-1">
+          {filter.items.map(item => (
+            <Checkbox id={'fltr-' + item.key} label={item.text} classLabel="px-1 py-1" className={'group-' + idx}>
+              <subfilter-count class="subfilter-count text-default hover:text-default inline-block w-6 p-1 ml-2 bg-white rounded text-sm text-right" id={'fltr-' + item.key + '-count'} number-target="0">0</subfilter-count>
+            </Checkbox>
+          ))}
+        </div>
+      </div>
+    ))}
+    
+    <script>
+      var spinningNumbersInterval;
+      var spinningElements = {};
+    
+      function showAll() {
+        for (const card of document.querySelectorAll('.portfolio-collection li')) {
+          card.classList.remove('hidden');
+        }
+      }
+      
+      function resetFilters() {
+        const checkedBoxes = document.querySelectorAll('portfolio-filter input:checked');
+        for (const checkbox of checkedBoxes) {
+          checkbox.checked = false;
+        }
+        
+        showAll();
+      }
+      
+      function filter(filters, allFilters) {
+        var cards = document.querySelectorAll('.portfolio-collection li');
+        const allCards = cards;
+        const allFilterCounts = {};
+        for (const card of cards) {
+          var accepted = true;
+          for (var filter of filters) {
+            var thisAccepted = !filter.length;
+            for (var oneClass of filter) {
+              if (card.classList.contains(oneClass)) {
+                thisAccepted = true;
+              }
+            }
+            accepted &= thisAccepted;
+          }
+          if (accepted) {
+            card.classList.remove('hidden');
+            
+            for (var i = 0; i < filters.length; i++) {
+              if (!filters[i].length) {
+                for (var filter of allFilters[i]) {
+                  allFilterCounts[filter] = (allFilterCounts[filter] || 0);
+                  if (card.classList.contains(filter)) {
+                    allFilterCounts[filter] ++; 
+                  }
+                }
+              }
+            }
+          } else {
+            card.classList.add('hidden');
+          }        
+        }
+        
+        var counting = false;
+        
+        for (var filter in allFilterCounts) {
+          var counter = document.getElementById(filter + '-count');
+          var realCounter = parseInt(counter.innerHTML);
+          if (realCounter !== allFilterCounts[filter]) {
+            counting = true;
+            counter.classList.add('number-rolling');
+            var numberTarget = counter.attributes.getNamedItem('number-target');
+            numberTarget.value = '' + allFilterCounts[filter];
+            counter.attributes.setNamedItem(numberTarget);
+            spinningElements[filter] = counter;
+          }
+        }
+        
+        if (counting) {
+          spinningNumbersInterval = window.setInterval(spin, 50);
+        }
+      }
+      
+      function spin() {
+        var overZero = 0;
+        for (const spinnerName in spinningElements) {
+          var spinner = spinningElements[spinnerName];
+          var realNumber = parseInt(spinner.innerHTML);
+          var targetNumber = parseInt(spinner.attributes.getNamedItem('number-target').value);
+          var step = Math.abs(targetNumber - realNumber);
+          step = (step > 10) ? 2 : 1;
+          var delta = Math.sign(targetNumber - realNumber) * step;
+          realNumber += delta;
+          spinner.innerHTML = realNumber;
+          if (delta == 0) {
+            spinner.classList.remove('number-rolling');
+            delete spinningElements[spinnerName]; 
+          } else {
+            overZero++;
+          }
+        }
+        
+        if (overZero == 0) {
+          window.clearInterval(spinningNumbersInterval);
+        }
+      }
+      
+      function applyFilter() {
+        var checkedBoxes = document.querySelectorAll('portfolio-filter input:checked');
+        if (checkedBoxes.length == 0) {
+          showAll();
+        }
+        const filterGroups = document.querySelectorAll('portfolio-filter .filter-group .filter-list');
+        const applyFilters = [];
+        const allFilters = [];
+        for (const group of filterGroups) {
+          const filterNames = [];
+          const allFilterNames = [];
+          for (const astroCheckbox of group.children) {
+            const checkbox = astroCheckbox.children[0];
+            allFilterNames.push(checkbox.id);
+            if (checkbox.checked) {
+              filterNames.push(checkbox.id);
+            }
+          }
+          applyFilters.push(filterNames);
+          allFilters.push(allFilterNames);
+        }
+        
+        filter(applyFilters, allFilters);
+      }
+  
+      window.addEventListener('load', (event) => {      
+        for (const filter of document.querySelectorAll('portfolio-filter input')) {
+          filter.addEventListener('change', applyFilter);
+        }
+        
+        for (const reset of document.querySelectorAll('.reset-filters')) {
+          reset.addEventListener('click', resetFilters);
+        }
+        
+        applyFilter();
+        
+      });  
+    </script>
+  </portfolio-filter>
+</portfolio-filter-block>

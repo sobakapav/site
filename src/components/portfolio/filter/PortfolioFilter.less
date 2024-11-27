@@ -1,13 +1,112 @@
-.all-filters {
+portfolio-filter-block {
+  .all-filters {
+    
+    .filter-group:nth-child(1) {
+      grid-row: span 2;
+    }
+    .filter-group:nth-child(3) {
+      grid-row: 2;
+      grid-column: 2
+    }
+    .filter-group:nth-child(4) {
+      grid-row: span 2;
+    }
+  }
   
-  .filter-group:nth-child(1) {
-    grid-row: span 2;
+  &.filter-tabs {
+    .filter-group-0 {
+      display: none;
+    }
+    
+    &:has(#show-group-0:checked) .filter-group-0 {
+      display: flex;
+    }
+    
+    .filter-group-1 {
+      display: none;
+    }
+    
+    &:has(#show-group-1:checked) .filter-group-1 {
+      display: flex;
+    }
+    
+    .filter-group-2 {
+      display: none;
+    }
+    
+    &:has(#show-group-2:checked) .filter-group-2 {
+      display: flex;
+    }
+    
+    .filter-group-3 {
+      display: none;
+    }
+    
+    &:has(#show-group-3:checked) .filter-group-3 {
+      display: flex;
+    }
+    
+    #show-group-0 + label active-filter-mark {
+      display: none;
+    }
+    
+    &:has(.filter-group-0 input:checked) #show-group-0 + label active-filter-mark {
+      display: inline-block;
+    }     
+    
+    #show-group-1 + label active-filter-mark {
+      display: none;
+    }
+    
+    &:has(.filter-group-1 input:checked) #show-group-1 + label active-filter-mark {
+      display: inline-block;
+    }
+         
+    #show-group-2 + label active-filter-mark {
+      display: none;
+    }
+    
+    &:has(.filter-group-2 input:checked) #show-group-2 + label active-filter-mark {
+      display: inline-block;
+    }   
+      
+    #show-group-3 + label active-filter-mark {
+      display: none;
+    }
+    
+    &:has(.filter-group-3 input:checked) #show-group-3 + label active-filter-mark {
+      display: inline-block;
+    } 
   }
-  .filter-group:nth-child(3) {
-    grid-row: 2;
-    grid-column: 2
+  
+  &.filter-hides {
+    portfolio-filter {
+      display: none;
+    }
+
+    .filter-chevron {
+      transition: 0.5s ease-in;
+    }
+    
+    &:has(#show-filters:checked) {
+      portfolio-filter {
+        display: grid
+      }
+      
+      .filter-chevron {
+        transition: 0.5s ease-in;
+        transform: scale(1, -1);
+      }
+    }
   }
-  .filter-group:nth-child(4) {
-    grid-row: span 2;
+
+  .reset-filters {
+    display: none;
+  }
+
+  &:has(.all-filters .filter-group input:checked) {
+    .reset-filters {
+      display: inline;
+    }
   }
 }

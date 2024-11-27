@@ -32,29 +32,18 @@ const metadata = {
 <Layout metadata={metadata}>
   <Bread
       title="Экспертиза"
-  />  
-      <Hund3
-        tagline=""
-        actions={[
-          {
-            variant: 'primary',
-            target: '_blank',
-            text: 'Get templates',
-            href: 'https://github.com/onwidget/astrowind',
-            icon: 'tabler:download',
-          },
-          { text: 'Learn more', href: '#features' },
-        ]}
-      >
-        <Fragment slot="title">
-          Опыт профессионалов <br/>на практике
-        </Fragment>
+  />
     
-        <Fragment slot="subtitle"> 
-          Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса. Часто об этом рассказываем и часто отвечаем на вопросы. За годы работы мы собрали немалый багаж знаний — и вот, делимся.
-        </Fragment>
-    
-      </Hund3>
+  <Hund3>
+    <Fragment slot="title">
+      Опыт профессионалов <br/>на практике
+    </Fragment>
+
+    <Fragment slot="subtitle"> 
+      Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса. Часто об этом рассказываем и часто отвечаем на вопросы. За годы работы мы собрали немалый багаж знаний — и вот, делимся.
+    </Fragment>
+  </Hund3>
+
   <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
     <ExpertiseCollection />
   </section>

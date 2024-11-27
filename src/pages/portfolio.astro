@@ -32,33 +32,28 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Bread
-      title="Портфолио"
-  />  
-      <Hund3
-        tagline=""
-        actions={[
-          {
-            variant: 'primary',
-            target: '_blank',
-            text: 'Get templates',
-            href: 'https://github.com/onwidget/astrowind',
-            icon: 'tabler:download',
-          },
-          { text: 'Learn more', href: '#features' },
-        ]}
-      >
-        <Fragment slot="title">
-          Кейсы по дизайну интерфейсов
-        </Fragment>
+  <Bread title="Портфолио" />
     
-        <Fragment slot="subtitle">
-          Дизайн сложных интерфейсов: UX, UI, редизайн, аудиты, исследования, профессиональные и массовые интерфейсы от «Собаки Павловой».</br>
-          Подробные описания проектов, демонстрация итогов и промежуточных результатов, цены и отзывы клиентов. Читайте, пожалуйста ↓↓↓   
-        </Fragment>
-    
-      </Hund3>
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Кейсы по дизайну интерфейсов
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Дизайн сложных интерфейсов: UX, UI, редизайн, аудиты, исследования, профессиональные и массовые интерфейсы от «Собаки Павловой».</br>
+      Подробные описания проектов, демонстрация итогов и промежуточных результатов, цены и отзывы клиентов. Читайте, пожалуйста ↓↓↓   
+    </Fragment>
+  </Hund3>
+      
   <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+
     <PortfolioCollection list={['prozhito', 'tmh', 'dipol', 'control-patent','e-gorod-mobile', 'alfastrah-design', 'itmo', 'onkor', 'avicenna',  'zapovednik', 'compel', 'qiwi', 'control-predpisanie', 'stroynastroy',  'domotech', 'e-gorod-mobile', 'pangeo', 'ot-vinta', 'alfastrah-design', 'anggell', 'medmarket',  'data-solution', 'res', 'tis', 'ohlebe', 'm-line', 'neurobureau', 'brighteye', 'monetory', 'elma', 'raisa', 'alfa-arm', 'math', 'easydocs', 'kapital', 'dau', 'algohelp', 'gazprom-neft', 'okey',  'boracase', 'e-gorod-guide', 'novotelekom', 'petrovich', 'video-santa', 'fasting', 'avito', 'control-mobile', 'control', 'gormost', 'trash', 'veza', 'fishlook', 'cindicator', 'documedd', 'miaz', 'alfastrahhr', 'edms', 'stream-telecom', 'sindbad', 'e-gorod', 'atol', 'smartdeal', 'geonaft', 'costa', 'nlmk', 'sberbank', 'electronika', 'crt-panel-administratora', 'center-rechevyh-technologiy', 'faberlic', 'amber', 'serverscom', 'vuborgskiy-zamok', 'tigitl','relief-center', 'alfa', 'tinkoff', 'sportmaster', 'relefopt', 'autotransinfo', 'tiomed', 'f-kabinki', 'yit', 'viking-line', 'alfabank']} />
+  
+{/*    <PortfolioCollection list={['prozhito', 'tmh', 'dipol', 'control-patent','e-gorod-mobile']} /> */}  
   </section>
 </Layout>
