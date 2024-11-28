@@ -1,4 +1,5 @@
 ---
+import { twMerge } from "tailwind-merge";
 
 const {
   id,
@@ -10,7 +11,7 @@ const {
   checked = false
 } = Astro.props;
 
-const aClassName = className + ' hidden';
+const aClassName = twMerge(className, 'hidden');
 const checkmark = checked ? {checked: "true"} : {}
 
 ---
@@ -23,7 +24,7 @@ const checkmark = checked ? {checked: "true"} : {}
     class={aClassName}
     {...checkmark}
     />
-  <label for={id} class:list={["bg-[#E6E6E6] inline-flex items-center hover:cursor-pointer", classLabel]}>
+  <label for={id} class:list={[twMerge("bg-[#E6E6E6] inline-flex items-center hover:cursor-pointer pl-1 rounded-sm", classLabel)]}>
     <span class="color-[#C4C4C4] hover:text-[--aw-color-hund]">
       {label}
     </span>
