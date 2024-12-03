@@ -32,15 +32,15 @@ if (entry.data.external) {
 
 const metadata = merge(
   {
-    title: entry.data.metadata.title,
-    description: entry.data.metadata.description,
+    title: entry.data.metadata?.title,
+    description: entry.data.metadata?.description,
     robots: {
       index: blogPostRobots?.index,
       follow: blogPostRobots?.follow,
     },
     openGraph: {
       type: 'article',
-      ...entry.data.metadata.openGraph,
+      ...entry.data.metadata?.openGraph,
     },
   },
   { ...(entry?.metadata ? { ...entry.metadata, canonical: entry.metadata?.canonical || url } : {}) }
