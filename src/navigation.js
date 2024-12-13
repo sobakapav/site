@@ -200,10 +200,6 @@ export const footerData = {
           text: 'Книги',
           href: 'https://sobakapav.ru/books',
         },
-        {
-          text: 'Email-рассылка',
-          href: 'https://sobakapav.ru/newsletter',
-        },
      ],     
     },
     {
