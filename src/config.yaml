@@ -28,7 +28,7 @@ metadata:
   openGraph:
     site_name: Собака Павлова
     images:
-      - url: '~/assets/images/main'
+      - url: '~/assets/images/main.png'
         width: 1200
         height: 630
     type: website
