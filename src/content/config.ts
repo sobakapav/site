@@ -104,7 +104,7 @@ const portfolioCollection = defineCollection({
 
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    author: z.string().optional(),
+    awards: z.array(z.string()).optional(),
     
     external: z.boolean().optional(),
     externalLink: z.string().optional(),

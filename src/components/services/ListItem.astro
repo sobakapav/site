@@ -25,7 +25,7 @@ const { post } = Astro.props;
   {
     post.thumbnail && (
       <div class="h-auto w-72">
-        <div class="overflow-hidden rounded h-72 w-72">
+        <div class="overflow-hidden rounded h-72 w-72 image-animate">
           {post.thumbnail && (     
                         <img
                           src={post.thumbnail}

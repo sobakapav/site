@@ -26,7 +26,7 @@ const {
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
-        <div class="relative overflow-hidden rounded">
+        <div class="relative overflow-hidden rounded image-animate">
           <div class="w-72 h-72">
             {image && (imageSafari ? (
               <Fragment>
@@ -102,7 +102,7 @@ const {
 
     {footer && (
       <div class="mt-2">
-        <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]" set:html={footer} />
+        <span set:html={footer} />
       </div> 
     )}
   </div>

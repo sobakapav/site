@@ -21,7 +21,7 @@ const image = (await findImage(post.doubleSize ? post.image : post.thumbnail)) a
 
 ---
 
-<article class="flex flex-wrap justify-normal blog-list-item">
+<article class="flex flex-wrap justify-normal blog-list-item image-animate">
   {
     image && (
       <a href={post.href ?? 'javascript:void(0)'}>

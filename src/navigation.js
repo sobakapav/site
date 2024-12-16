@@ -1,4 +1,5 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import merge from 'lodash.merge';
 
 export const headerData = {
   links: [
@@ -262,3 +263,9 @@ export const portfolioFilters = {
   },
   
 };
+
+const overrides = {
+  'prototype': 'Прототип',
+};
+
+export const tagNames = merge(merge({}, ...Object.values(portfolioFilters)), overrides);

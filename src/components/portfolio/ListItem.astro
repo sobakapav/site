@@ -1,7 +1,9 @@
 ---
+import { Markdown } from '@astropub/md';
 
 import CommonCard from '~/components/common/CommonCard.astro';
 import DoubleCard from '~/components/common/DoubleCard.astro';
+import PortfolioTags from '~/components/portfolio/ProtfolioTags.astro';
 
 import { findImage } from '~/utils/images';
 
@@ -20,7 +22,13 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
     noCard={post.noCard}
   >
     <Fragment slot="footer">
-      {post.publishYear}
+    <PortfolioTags tags={post.tags} />
+      <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4">
+        {post.publishYear}
+        {post.awards && post.awards.map(award => (
+          <div class="w-20 h-20"><Markdown.Inline of={award} /></div>
+        ))}
+      </span>
     </Fragment>
     
   </CommonCard>
@@ -34,7 +42,11 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
      isDark={post.thumbnail.isDark}
    >
      <Fragment slot="footer">
-       {post.publishYear}
+     <PortfolioTags tags={post.tags} />
+      <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">
+        {post.publishYear}
+      </span>
+       
      </Fragment>
      
    </DoubleCard>

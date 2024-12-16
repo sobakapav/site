@@ -26,7 +26,7 @@ const {
   {
     imageLarge && (
       <a href={link ?? 'javascript:void(0)'}>
-        <div class="relative overflow-hidden rounded">
+        <div class="relative overflow-hidden rounded image-animate">
           <div class="w-[608px]">
             {imageLarge && (
               <Image
@@ -40,72 +40,64 @@ const {
               />
             )}
           </div>
+          <div class="mt-4 w-[288px] absolute left-8 bottom-5">
+            <header>
+              {supertitle && (
+                <div class="mb-1 hover:text-[--aw-color-accent]">
+                  <span class="text-sm" set:html={supertitle} />
+                </div>
+              )}
+                   
+              <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
+                {isDark ? (
+                  <a href={link} class="text-white hover:text-white">
+                    <Markdown.Inline of={title} />
+                  </a>
+                ) : (
+                  <a href={link}>
+                    <Markdown.Inline of={title} />
+                  </a>
+                )}
+              </h2>
+            </header>
+        
+            {
+              isDark ? (
+                <a href={link}>
+                  {text && (
+                    <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown text-white", classes.text]}>
+                      <Markdown.Inline of={text} />
+                    </p>
+                  )}
+                  
+                  {textblock && (
+                    <div set:html={textblock} class="text-white" />
+                  )}
+                </a>
+              ) : (
+                <a href={link}>
+                  {text && (
+                    <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
+                      <Markdown.Inline of={text} />
+                    </p>
+                  )}
+                  
+                  {textblock && (
+                    <div set:html={textblock} />
+                  )}
+                </a>
+              )
+            }
+          </div>          
         </div>
       </a>
     )
   }
-  <div class="mt-4 w-[288px] absolute left-8 bottom-5">
-    <header>
-      {supertitle && (
-        <div class="mb-1 hover:text-[--aw-color-accent]">
-          <span class="text-sm" set:html={supertitle} />
-        </div>
-      )}
-           
-      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
-        {isDark ? (
-          <a href={link} class="text-white hover:text-white">
-            <Markdown.Inline of={title} />
-          </a>
-        ) : (
-          <a href={link}>
-            <Markdown.Inline of={title} />
-          </a>
-        )}
-      </h2>
-    </header>
-
-    {
-      isDark ? (
-        <a href={link}>
-          {text && (
-            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown text-white", classes.text]}>
-              <Markdown.Inline of={text} />
-            </p>
-          )}
-          
-          {textblock && (
-            <div set:html={textblock} class="text-white" />
-          )}
-        </a>
-      ) : (
-        <a href={link}>
-          {text && (
-            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
-              <Markdown.Inline of={text} />
-            </p>
-          )}
-          
-          {textblock && (
-            <div set:html={textblock} />
-          )}
-        </a>
-      )
-    }
-
-    {
-    isDark ? 
-      (footer && (
-        <div class="mt-2">
-          <span class="text-xl sm:text-3xl leading-tight font-heading text-[#FEE0BC]" set:html={footer} />
-        </div> 
-      )) : (
-      footer && (
-        <div class="mt-2">
-          <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]" set:html={footer} />
-        </div> 
-      )
-    )}
-  </div>
+  
+  { footer && (
+    <div class="mt-2">
+      <span set:html={footer} />
+    </div> 
+  )}
 </article>
 </a>

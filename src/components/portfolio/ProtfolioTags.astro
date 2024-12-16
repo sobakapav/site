@@ -1,0 +1,13 @@
+---
+
+import { tagNames } from '~/navigation.js';
+
+const { tags } = Astro.props;
+
+---
+
+<portfolio-tags class="flex flex-row flex-wrap">
+  {tags && tags.map(tag => (
+    <a class:list={["switch-filter font-xl cursor-pointer", "switch-filter-"+tag]}>{tagNames[tag]}</a>
+  ))}
+</portfolio-tags>
