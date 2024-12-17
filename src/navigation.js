@@ -251,7 +251,7 @@ export const portfolioFilters = {
   'Услуги': {
     'ux-design': 'UX-дизайн под ключ',
     'prototype': 'Прототип под инвестиции',
-    'new-features': 'Новая функциональность',
+    'new-features': 'Добавление новой функциональности',
     'ui-redesign': 'UI-редизайн',
     'redesign': 'Точечный редизайн',
     'ux-audit': 'UX-аудит',
@@ -265,7 +265,23 @@ export const portfolioFilters = {
 };
 
 const overrides = {
-  'prototype': 'Прототип',
+  'ux-design': 'UX-дизайн',
+  'prototype': 'прототип',
+  'new-features': 'добавление нового',
+  'ui-redesign': 'UI',
+  'redesign': 'редизайн',
+  'ux-audit': 'аудит',
+  'research': 'исследование',
+  'dev-team': 'команда разработки',
+  'product-team': 'продуктовая команда',
+  'consultation': 'консультация',
+  'content-design': 'контент',
+  'gos': 'госсектор',
+  'log': 'транспорт',
+  'mob': 'мобильный',
+  'gui': 'GUI устройств',
+  'prof': 'Профессиональный',
+  'mass': 'Массовый',
 };
 
 export const tagNames = merge(merge({}, ...Object.values(portfolioFilters)), overrides);

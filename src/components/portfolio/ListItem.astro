@@ -42,7 +42,7 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
      isDark={post.thumbnail.isDark}
    >
      <Fragment slot="footer">
-     <PortfolioTags tags={post.tags} />
+      <PortfolioTags tags={post.tags} />
       <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">
         {post.publishYear}
       </span>
