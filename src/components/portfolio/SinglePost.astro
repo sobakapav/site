@@ -48,15 +48,15 @@ const { Content } = post;
           <div class="basis-0 grow"><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
         
           <div class="basis-0 grow">
-            {/*<h3 class="mb-1 text-base">Результат</h3>
+            <h3 class="mb-1 text-base">Результат</h3>
             {post.result?.map((res) => (
             <div class="format-subtitle-markdown">
-              <div class="flex flex-row items-center gap-1 mb-2">
+              <a href={res.link} class="flex flex-row items-center gap-1 mb-2">
                 <div class="grow-0 shrink-0 basis-[30px]"><Image src={res.src} alt="Figma logo" height={40} width={30}/></div>
                 <div class="grow shrink basis-0"> <Markdown.Inline of={res.text}/></div>
-              </div>
+              </a>
             </div>
-            ))}*/}
+            ))}
           </div> 
         </div> 
       </Fragment>
@@ -68,6 +68,11 @@ const { Content } = post;
               post.publishYear
             }       
           </p>
+          {post.logo?.src && (
+            <a href={post.logo.link}>
+              <Image height={30} layout="constrained-height" src={post.logo.src} alt={post.logo.alt}/>
+            </a>
+          )}
         </div>
       </Fragment>
       
@@ -75,6 +80,13 @@ const { Content } = post;
 
     <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
       <div class="grow-0 shrink-0 max-w-5xl">
+        { post.awards && (
+          <div class="flex flex-row gap-4 pl-6">
+            {post.awards.map(award => (
+              <div class="w-40 h-40"><Markdown.Inline of={award} /></div>
+            ))}  
+          </div>
+        )}
         <div
           class="format-markdown format-portfolio mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
         >

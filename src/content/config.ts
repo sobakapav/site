@@ -109,6 +109,12 @@ const portfolioCollection = defineCollection({
     external: z.boolean().optional(),
     externalLink: z.string().optional(),
     
+    logo: z.object({
+      src: z.string(),
+      link: z.string().optional(),
+      alt: z.string().optional(),
+    }).optional(),
+        
     thumbnail: z.object({
       src: z.string(),
       src2: z.string().optional(),
