@@ -23,7 +23,7 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
   >
     <Fragment slot="footer">
     <PortfolioTags tags={post.tags} />
-      <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4">
+      <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4 items-center mt-2">
         {post.publishYear}
         {post.awards && post.awards.map(award => (
           <div class="w-20 h-20"><Markdown.Inline of={award} /></div>
