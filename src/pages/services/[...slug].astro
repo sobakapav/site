@@ -21,7 +21,7 @@ import SimpleSlider from '~/components/services/SimpleSlider.astro';
 import Bentoid from '~/components/services/Bentoid.astro';
 import FinalBlock from '~/components/services/FinalBlock.astro';
 
-import Hund from '~/components/widgets/Hund.astro';
+import Hund2 from '~/components/widgets/Hund2.astro';
 
 import { getCanonical, getPermalink } from '~/utils/permalinks';
 import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
@@ -81,7 +81,7 @@ const metadata = merge(
     <section class="py-0 mx-auto grow-0 shrink-0">
       <article>
       
-        <Hund
+        <Hund2
           image={{
             src: post.image,
             alt: post.imageAlt || '',
@@ -105,7 +105,7 @@ const metadata = merge(
             <Markdown.Inline of={post.excerpt} />
           </Fragment>
           
-        </Hund>
+        </Hund2>
         
         <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
           <span>

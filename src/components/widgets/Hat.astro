@@ -2,9 +2,16 @@
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 
+const { darkTheme = false} = Astro.props;
+
+const colors = darkTheme 
+  ? 'bg-[--aw-color-bg-page-dark] text-[--aw-color-text-dark]'
+  : '';
+
 ---
 
-<div class="hidden lg:flex flex-row justify-end text-base gap-2.5 py-5 px-6 mx-auto max-w-7xl">
+<section class:list={['hidden lg:flex flex-row w-full justify-center', colors]}>
+<div class="grow flex flex-row justify-end text-base gap-2.5 py-5 px-6 mx-auto max-w-7xl">
       <span>
           {SITE.phone}
       </span>
@@ -18,3 +25,4 @@ import { SITE } from 'astrowind:config';
           <a href={`https://wa.me/message/${SITE.whatsup}`}><Icon height="20px" width="20px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
       </span>
 <div>
+</section>

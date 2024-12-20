@@ -1,107 +1,93 @@
 ---
+
+import { twMerge } from "tailwind-merge";
+
 import Image from '~/components/common/Image.astro';
+//import Button from '~/components/ui/Button.astro'; 
 import type { CallToAction } from '~/types';
-import Button from '~/components/ui/Button.astro';
+
+import './Hund.less';
 
 export interface Props {
-  supertitle?: string;
+  id?: string;
+  awards?: string;
   title?: string;
   subtitle?: string;
   tagline?: string;
   content?: string;
   actions?: string | CallToAction[];
-  image?: string | any; // TODO: find HTMLElementProps
-  imageName?: string;
 }
 
 const {
-  supertitle = await Astro.slots.render('supertitle'),
+  id,
+  awards = await Astro.slots.render('awards'),
   title = await Astro.slots.render('title'),
-  hyphenateTitle,
+  title2 = await Astro.slots.render('title2'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline,
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
-  image = await Astro.slots.render('image'),
-  imageSafari = await Astro.slots.render('imageSafari'),
-  imageName,
+  classes = {},
+  darkTheme = false,
+  bgImage,
 } = Astro.props;
+
+const mainColors = darkTheme 
+  ? 'bg-[--aw-color-bg-page-dark] text-[--aw-color-text-dark]'
+  : '';
+  
+const textColors = darkTheme 
+  ? 'text-[--aw-color-text-muted-dark]'
+  : ''; 
+  
+const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
 ---
 
-<section class="relative not-prose">
+<section class:list={['hero-block relative hund-background', mainColors]} {...id ? { id } : {}} style={bgImageStyle}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative w-full flex flex-col lg:flex-row lg:gap-2">
-    <div class="lg:basis-1/2 bg-[#F0F0F0] dark:bg-[var(--aw-color-bg-page)] py-0 lg:flex justify-end overflow-y-hidden lg:gap-8">
-      <div class="max-w-[636px] text-left mx-auto md:mx-0 px-4 sm:px-6 pr-4 md:pt-14 text-sm mb-4">
+  <div class="relative max-w-7xl mx-auto">
+    <div class="pt-0 pointer-events-none"></div>
+    <div class:list={[twMerge('pt-6 md:pt-8 pb-10 md:pb-12 px-4 sm:px-6', classes.main || '')]}>
+      {
+        awards && (
+          <div
+            class="pt-10 pb-6"
+            set:html={awards}
+          />
+        )
+      }
+
+      <div class="text-left max-w-xl">
         {
-          supertitle && (
-            <div class="text-sm mb-4"
-              set:html={supertitle}
+          tagline && (
+            <p
+              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              set:html={tagline}
             />
           )
         }
         {
           title && (
             <h1
-              class:list={[
-                'text-5xl md:text-[108px] leading-tighter md:leading-[94px] mb-6 lg:mb-12 font-heading dark:text-gray-200',
-                hyphenateTitle && 'hyphens-auto'
-              ]}
+              class:list={[twMerge('max-w-3xl text-5xl md:text-8xl leading-tight mb-4 font-heading dark:text-gray-200', classes.title || '')]}
               set:html={title}
             />
           )
         }
-        <div class="max-w-3xl mx-auto md:mx-0 lg:mx-auto lg:max-w-none">
-          {subtitle && <div class="text-lg leading-[26px] mb-6 dark:text-slate-300 format-subtitle-markdown" set:html={subtitle} />}
-
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
-            )
-          }
-        </div>
-        {content && <Fragment set:html={content} />}
-      </div>
-    </div>
-    <div class="basis-1/2 bg-[#323232] overflow-hidden">
-      <div class="flex">
         {
-          image && (
-            <div class="relative flex items-center m-auto">
-              <Image
-                class="mx-auto md:mx-0 lg:mx-auto rounded-md no-safari max-w-fit"        
-                loading="eager"
-                layout="fixed"
-                width={716}
-                height={600}
-                {...image}
-              />                  
-              <Image
-                class="mx-auto md:mx-0 lg:mx-auto rounded-md safari-only max-w-fit"
-                loading="eager"
-                layout="fixed"
-                width={716}
-                height={600}
-                {...imageSafari}
-              />
-            </div>
+          title2 && (
+            <h2
+              class="max-w-3xl text-xs tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4"
+              set:html={title2}
+            />
           )
         }
-        <p
-          class="max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-4 mb-8 text-sm md:text-sm text-muted dark:text-slate-400 text-justify"
-        >
-          {imageName || ''}
-        </p>
+        <div class="max-w-3xl">
+          {subtitle && (
+            <p class:list={[twMerge('text-xl text-muted mb-6 dark:text-slate-300', classes.subtitle || '', textColors)]} set:html={subtitle} />
+          )}         
+        </div>
+        {content && <Fragment set:html={content} />}
       </div>
     </div>
   </div>

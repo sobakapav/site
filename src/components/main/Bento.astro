@@ -1,0 +1,137 @@
+---
+import Image from '~/components/common/Image.astro';
+
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+
+import '~/components/main/Bento.less';
+
+---
+<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
+  <div class="gap-4">
+    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-2">Делаем сейчас</h2>
+    <h3 class="text-[52px] font-heading">Управление виртуальным дата-центром</h3>
+    <span class="text-[#929292]">IT-услуги, сервис • Добавление новых возможностей • UI-редизайн</span>
+    <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.png" alt="Делаем сейчас" /></div>
+  </div>
+  
+  <div class="border border-[#BEBEBE]">
+    <div class="flex justify-between mb-4">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Наши услуги</h2>
+      <div class="bg-[#E6E6E6] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
+        <a href="/services">Все услуги →</a>
+      </div>
+    </div>
+      
+    <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+      <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
+      <li><a href="/services/prototype">Прототип под инвестиции</a></li>
+      <li><a href="/services/ui-redesign">UI-редизайн</a></li>
+      <li><a href="/services/redesign">Точечный редизайн</a></li>
+      <li><a href="/services/new-features">Добавление новой функциональности</a></li>
+      <li><a href="/services/ux-audit">UX-аудит</a></li>
+      <li><a href="/services/research">Продуктовое исследование</a></li>
+      <li><a href="/services/dev-team">Усиление команды разработки</a></li>
+      <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
+      <li><a href="/services/consultation">Консультации</a></li>
+      <li><a href="/services/content-design">Контент-дизайн</a></li>
+    </ul>  
+      
+    <div class="flex flex-row gap-6 mt-12">
+      <a class="noir" href="https://www.figma.com"><div class="h-14"><Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" /></div></a>
+      <a class="noir" href="https://www.atlassian.com/software/jira"><div class="h-14"><Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" /></div></a> 
+      <a class="noir" href="https://miro.com"><div class="h-14"><Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" /></div></a>
+      <a class="noir" href="https://workspace.google.com/products/docs"><div class="h-14"><Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" /></div></a>
+    </div>
+  </div>
+  
+  <div>
+    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">собака Павлова</h2>
+    <div class="flex flex-row gap-6">
+      <h3 class="font-heading text-[97px] leading-none no-underline">{SITE.phone}</h3>
+      <div class="flex flex-col gap-1 justify-center">
+        <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+        <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-2 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
+   <div class="gap-4">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Отрасли</h2>
+      <div class="flex justify-between mb-4">
+          <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+            <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
+            <li><a href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
+            <li><a href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
+            <li><a href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
+            <li><a href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+          </ul> 
+          <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+            <li><a href="https://sobakapav.ru/portfolio">Образование</a></li>
+            <li><a href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
+            <li><a href="https://sobakapav.ru/portfolio">Транспорт и туризм</a></li>
+            <li><a href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+          </ul> 
+      </div>
+      <div class="grid grid-3x3">
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/alfa-arm"><img src="/images/services/alfa2.svg" width="36" height="56"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="https://www.eduhund.ru/clients"><img src="/images/services/yandex2.svg" width="38" height="56"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/avito"><img src="/images/services/avito2.svg" width="56" height="56"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/alfastrah-design"><img src="/images/services/alfa-strah2.svg" width="56" height="56"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/tinkoff"><img src="/images/services/tinkoff2.svg" width="56" height="56"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/gazprom-neft"><img src="/images/services/gazprom2.svg" width="36" height="60"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/sportmaster"><img src="/images/services/sportmaster2.svg" width="76" height="46"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/Yota"><img src="/images/services/yota2.svg" width="42" height="68"></a>
+         <a class="w-[169px] h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/sberbank"><img src="/images/services/sberbank2.svg" width="56" height="56"></a>
+      </div>
+   </div>
+   
+   <div class="gap-4">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4">Портолио</h2>
+      <img src="/images/main/contact-logo.svg">
+      <h3 class="text-[52px] font-heading text-white">UX-аудит платежных систем</h3>
+      <span class="text-[#929292]">E-commerce • UX-аудит • Продуктовое исследование</span>
+      <div><a class="text-white">Подробнее →</a></div>
+      <div class="mr-[-40px] flex justify-end"><img src="/images/main/contact.svg" alt="Собака Павлова • Qiwi • Сравнительный UX-аудит трёх систем денежных переводов" /></div>
+   </div>
+   
+   <div class="gap-4">
+      <div class="flex justify-between mb-4">
+        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Research & Development</h2>
+        <div class="bg-[#E6E6E6] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
+          <a href="/services">"Экспертиза" →</a>
+        </div>
+      </div>
+      
+      <div class="flex flex-row gap-6 mt-6 border border-[#BEBEBE]">
+        <a class="flex flex-col underline underline-offset-2" href="/publications"><div class="text-[52px] no-underline">100+</div>статей об интерфейсах</a>
+        <a class="flex flex-col underline underline-offset-2" href="/cheatsheets"><div class="text-[52px] no-underline">100+</div>шпрагалок по дизайну</a> 
+        <a class="flex flex-col underline underline-offset-2" href="https://eduhund.com/"><div class="text-[52px] no-underline">20+</div>плагинов для Figma</a>
+        <a class="flex flex-col underline underline-offset-2" href="books"><div class="text-[52px] no-underline">3</div>книги</a>
+      </div>
+      
+      <div class="flex flex-row mt-12">
+        <img src="/images/main/blob.svg" />
+        <a href="https://www.eduhund.ru/" class="uppercase text-[52px] font-heading ml-[-30px] z-[1]">Дизайн-задачник →</div>
+      </div>
+   </div>
+</div>
+
+<div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
+   <div class="gap-4">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Наши услуги</h2>
+   </div>
+   
+   <div class="gap-4">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4">Наши услуги</h2>
+   </div>
+      
+   <div class="gap-4">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Наши услуги</h2>
+   </div>
+   
+</div>
+

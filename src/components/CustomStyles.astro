@@ -35,6 +35,7 @@ import '~/assets/styles/colors.css';
     --aw-color-secondary: rgb(1 84 207);
     --aw-color-accent: #19676C; 
     --aw-color-hund: #95001B;
+    --aw-color-pink: #FEC7BC;
 
     --aw-color-text-heading: 'BebasNeueBold';
     --aw-color-text-default: rgb(16 16 16);
@@ -42,7 +43,9 @@ import '~/assets/styles/colors.css';
     --aw-color-bg-page: rgb(255 255 255);
     --aw-color-bg-accent: #EFF0F0;
 
-    --aw-color-bg-page-dark: #292929;
+    --aw-color-bg-page-dark: #212121;
+    --aw-color-text-dark: #F6F6F6;
+    --aw-color-text-muted-dark: #BEBEBE;
 
     ::selection {
       background-color: lavender;
@@ -58,11 +61,12 @@ import '~/assets/styles/colors.css';
     --aw-color-secondary: rgb(1 84 207);
     --aw-color-accent: #19676C; 
     --aw-color-hund: #95001B;
+    --aw-color-pink: #FEC7BC
 
-    --aw-color-text-heading: rgb(247, 248, 248);
-    --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: #292929;
+    --aw-color-text-heading: #F6F6F6;
+    --aw-color-text-default: #F6F6F6;
+    --aw-color-text-muted: rgb(246 246 246 / 66%);
+    --aw-color-bg-page: #212121;
     --aw-color-bg-accent: #323232;
 
     ::selection {
@@ -292,6 +296,16 @@ import '~/assets/styles/colors.css';
     opacity: 0;
     transition: 0.5s ease-in;
   }
+  
+  .noir3 {
+        filter: grayscale(100%);
+        transition: 0.5s ease-out;
+    }
+    
+    .noir3:hover {
+       filter: grayscale(0%);
+       transition: 0.5s ease-in;
+    }
   
   astro-checkbox input:checked + label {
     border: 1px solid #3E3E3E;

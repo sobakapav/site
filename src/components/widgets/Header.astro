@@ -45,9 +45,11 @@ const {
   showToggleTheme = false,
   showRssFeed = false,
   position = 'center',
+  darkTheme = false
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+
 ---
 
 <header 
