@@ -48,14 +48,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
   <div class="relative max-w-7xl mx-auto">
     <div class="pt-0 pointer-events-none"></div>
     <div class:list={[twMerge('pt-6 md:pt-8 pb-10 md:pb-12 px-4 sm:px-6', classes.main || '')]}>
-      {
-        awards && (
-          <div
-            class="pt-10 pb-6"
-            set:html={awards}
-          />
-        )
-      }
+      
 
       <div class="text-left max-w-xl">
         {
@@ -88,6 +81,16 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
           )}         
         </div>
         {content && <Fragment set:html={content} />}
+        
+        {
+          awards && (
+            <div
+              class="absolute mb-[-64px] right-0"
+              set:html={awards}
+            />
+          )
+        }
+        
       </div>
     </div>
   </div>

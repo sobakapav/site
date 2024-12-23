@@ -7,7 +7,7 @@ import { SITE } from 'astrowind:config';
 import '~/components/main/Bento.less';
 
 ---
-<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-0 gap-6">
+<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-0 gap-6">
   <div class="gap-4">
     <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-2">Делаем сейчас</h2>
     <h3 class="text-[52px] font-heading dark:text-[--aw-color-text-light-default]">Управление виртуальным дата-центром</h3>
@@ -15,7 +15,8 @@ import '~/components/main/Bento.less';
     <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.png" alt="Делаем сейчас" /></div>
   </div>
   
-  <div class="border border-[#BEBEBE]">
+  <div class="border border-[#BEBEBE] flex flex-col justify-between">
+    <div>
     <div class="flex justify-between mb-4">
       <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Наши услуги</h2>
       <div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
@@ -32,20 +33,21 @@ import '~/components/main/Bento.less';
       <li><a href="/services/ux-audit">UX-аудит</a></li>
       <li><a href="/services/research">Продуктовое исследование</a></li>
       <li><a href="/services/dev-team">Усиление команды разработки</a></li>
-      <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
+      {/* <li><a href="/services/product-team">Работа в продуктовой команде</a></li>*/}
 
     </ul>  
+    </div>
       
-    <div class="flex flex-row gap-6 mt-12">
-      <a class="noir" href="https://www.figma.com"><div class="h-14"><Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" /></div></a>
-      <a class="noir" href="https://www.atlassian.com/software/jira"><div class="h-14"><Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" /></div></a> 
-      <a class="noir" href="https://miro.com"><div class="h-14"><Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" /></div></a>
-      <a class="noir" href="https://workspace.google.com/products/docs"><div class="h-14"><Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" /></div></a>
+    <div class="flex flex-row justify-between mt-6 md:mt-12">
+      <a class="noir" href="https://www.figma.com"><div class="h-16"><Image src="~/assets/images/services/figma.svg" height={64} layout="constrained-height" alt="Figma" /></div></a>
+      <a class="noir" href="https://www.atlassian.com/software/jira"><div class="h-16"><Image src="~/assets/images/services/jira.svg" height={64} layout="constrained-height" alt="Jira" /></div></a> 
+      <a class="noir" href="https://miro.com"><div class="h-16"><Image src="~/assets/images/services/miro.svg" height={64} layout="constrained-height" alt="Miro" /></div></a>
+      <a class="noir" href="https://workspace.google.com/products/docs"><div class="h-16"><Image src="~/assets/images/services/google-doc.svg" height={64} layout="constrained-height" alt="Google Docs" /></div></a>
     </div>
   </div>
   
   <div>
-    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">собака Павлова</h2>
+    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-2">собака Павлова</h2>
     <div class="flex flex-col md:flex-row gap-6">
       <h3 class="font-heading text-3xl md:text-[97px] leading-none no-underline">{SITE.phone}</h3>
       <div class="flex flex-col gap-1 justify-center">
@@ -57,7 +59,7 @@ import '~/components/main/Bento.less';
   </div>
 </div>
 
-<div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
+<div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-6 gap-6">
    <div class="flex flex-col justify-between">
    <div class="flex flex-col gap-4">
         <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Отрасли</h2>
@@ -123,12 +125,11 @@ import '~/components/main/Bento.less';
    </div>
 </div>
 
-<div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
+<div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-6 gap-6">
    <div class="gap-4 text-white flex flex-col">
-      <h3 class="text-xl font-semibold">Искусственный интеллект в работе дизайнеров</h3>
-      <span class="text-base">02.01.2025, 17:00</span>
-      <span class="text-base">Обсуждаем в прямом эфире. <a href="" class="underline underline-offset-2">Присоединяйтесь!</a></span>
-      
+      <h3 class="text-[52px] font-heading text-white leading-none">Наши вакансии</h3>
+      <a class="text-white mt-3 flex flex-row justify-between" href="https://sobakapav.ru/vacancy"><span>Менеджер UX-проектов</span><span>→</span></a>
+      <a class="text-white mt-3 flex flex-row justify-between" href="https://sobakapav.ru/vacancy"><span>UX/UI дизайнер</span><span>→</span></a>
    </div>
    
    <div class="gap-4">
