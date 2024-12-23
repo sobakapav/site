@@ -34,16 +34,27 @@ const telegramLink = "https://t.me/sobakapavpro";
 
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="dark:bg-dark absolute inset-0 pointer-events-none relative" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
     <div class="grid grid-cols-footer grid-rows-footer-sm lg:grid-rows-footer gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 
       <!-- О нас -->
       <!-- Logo -->
-      <div class="col-span-1 gap-x-12 flex">
+      <div class="col-span-1 gap-x-12 flex relative">
           <div class="shrink-0 flex flex-col justify-between">
            <img src="/images/logos/logo-darkred.svg" class="w-[67px] h-[67px] rounded-lg mt-2 md:mt-[7px]">
           </div>
+          
+          <div class="absolute mb-[-44px] bottom-0 left-0">
+             <div class="flex flex-row justify-end">
+               <a class="w-20 h-20 z-[4] mr-[-20px]" href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/" title="Компания — призер Tagline Awards 2024"><img src="https://tagline.ru/medal-tagline-awards-2024-winner.svg" alt="Компания — призер Tagline Awards 2024"></a>
+               <a class="w-20 h-20 z-[3] mr-[-20px]" href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/" target="_blank" title="Компания — призер Tagline Awards 2024"><img src="https://tagline.ru/medal-tagline-awards-2024-shortlist.svg" alt="Компания — призер Tagline Awards 2024"></a>
+               <a class="w-20 h-20 z-[2] mr-[-20px]" href="https://tagline.ru/cases/interfeys-prilozheniya-vizualjnoy-lowcode-sredy-razrabotki/" title="Компания — призер Tagline Awards 2024"><img src="https://tagline.ru/medal-tagline-awards-2024-winner.svg" alt="Компания — призер Tagline Awards 2024"></a>
+               <a class="w-20 h-20 z-[1] mr-[-20px]" href="https://tagline.ru/sobaka-pavlova/cases/redizayn-i-obnovlenie-sayta--sobaki--umeem--nravitsya--prodolzhaem/" title="Компания — призер Tagline Awards 2022"><img src="https://tagline.ru/medal-tagline-awards-2022-bronze.svg" alt="Компания — призер Tagline Awards 2022"></a>
+               <a class="w-20 h-20 z-[0]" href="https://www.eduhund.ru/" title="Компания — призер Tagline Awards 2020-2021"><img src="https://tagline.ru/medal-tagline-awards-2020-2021-silver.svg" alt="Компания — призер Tagline Awards 2020-2021"></a>
+             </div>        
+          </div>
+          
       </div>
       
       <!-- Собака Павлова -->
@@ -162,5 +173,9 @@ const telegramLink = "https://t.me/sobakapavpro";
         <Fragment set:html={footNote} />
       </div>
     </div>
+    
   </div>
+  
+  
+  
 </footer>
