@@ -10,15 +10,15 @@ import '~/components/main/Bento.less';
 <div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-0 gap-6">
   <div class="gap-4">
     <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-2">Делаем сейчас</h2>
-    <h3 class="text-[52px] font-heading">Управление виртуальным дата-центром</h3>
+    <h3 class="text-[52px] font-heading dark:text-[--aw-color-text-light-default]">Управление виртуальным дата-центром</h3>
     <span class="text-[#929292]">IT-услуги, сервис • Добавление новых возможностей • UI-редизайн</span>
     <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.png" alt="Делаем сейчас" /></div>
   </div>
   
   <div class="border border-[#BEBEBE]">
     <div class="flex justify-between mb-4">
-      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Наши услуги</h2>
-      <div class="bg-[#E6E6E6] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Наши услуги</h2>
+      <div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
         <a href="/services">Все услуги →</a>
       </div>
     </div>
@@ -45,7 +45,7 @@ import '~/components/main/Bento.less';
   </div>
   
   <div>
-    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">собака Павлова</h2>
+    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">собака Павлова</h2>
     <div class="flex flex-col md:flex-row gap-6">
       <h3 class="font-heading text-3xl md:text-[97px] leading-none no-underline">{SITE.phone}</h3>
       <div class="flex flex-col gap-1 justify-center">
@@ -60,7 +60,7 @@ import '~/components/main/Bento.less';
 <div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
    <div class="gap-4">
       <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Отрасли</h2>
-      <div class="flex flex-col md:flex-row justify-between mb-4 gap-6">
+      <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
           <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
             <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
             <li><a href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
@@ -88,19 +88,21 @@ import '~/components/main/Bento.less';
       </div>
    </div>
    
-   <div class="gap-4">
-      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4">Портолио</h2>
-      <img src="/images/main/contact-logo.svg">
+   <div>
+   <a class="flex flex-col gap-4" href="/portfolio/qiwi">
+      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4">Портфолио</h2>
+      <div><img src="/images/main/contact-logo.svg" /></div>
       <h3 class="text-[52px] font-heading text-white">UX-аудит платежных систем</h3>
       <div class="text-[#929292]">E-commerce • UX-аудит • Продуктовое исследование</div>
-      <div><a class="text-white">Подробнее →</a></div>
+      <div class="text-white">Подробнее →</div>
       <div class="mr-[-40px] flex justify-end"><img src="/images/main/contact.svg" alt="Собака Павлова • Qiwi • Сравнительный UX-аудит трёх систем денежных переводов" /></div>
+   </a>
    </div>
    
    <div class="gap-4  border border-[#BEBEBE]">
       <div class="flex justify-between mb-4">
-        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Research & Development</h2>
-        <div class="bg-[#E6E6E6] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
+        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
+        <div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
           <a href="/services">Экспертиза →</a>
         </div>
       </div>
@@ -141,11 +143,11 @@ import '~/components/main/Bento.less';
       
       <div class="flex justify-between mb-4 flex-col md:flex-row">
           <a href="/publications/figma" class="basis-0 grow">
-            <h3 class="text-xl">Figmа для заказчика</h3>
+            <h3 class="text-xl dark:text-[--aw-color-text-light-default]">Figmа для заказчика</h3>
             <div class="text-[#929292] text-base">13 июля 2023 • Написали инструкцию-ликбез для участников проектов</div>
           </a>
           <a href="https://sobakapav.ru/publications/medical-interfaces" class="basis-0 grow">
-            <h3 class="text-xl">Специфика проектирования медицинских интерфейсов</h3>
+            <h3 class="text-xl dark:text-[--aw-color-text-light-default]">Специфика проектирования медицинских интерфейсов</h3>
             <div class="text-[#929292] text-base">6 мая 2022 • Как снизить риски и на что обратить внимание</div>
           </a> 
       </div>
