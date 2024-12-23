@@ -58,22 +58,24 @@ import '~/components/main/Bento.less';
 </div>
 
 <div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
-   <div class="gap-4">
-      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Отрасли</h2>
-      <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
-          <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
-            <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
-            <li><a href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
-            <li><a href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
-            <li><a href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
-            <li><a href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
-          </ul> 
-          <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
-            <li><a href="https://sobakapav.ru/portfolio">Образование</a></li>
-            <li><a href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
-            <li><a href="https://sobakapav.ru/portfolio">Транспорт и туризм</a></li>
-            <li><a href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
-          </ul> 
+   <div class="flex flex-col justify-between">
+   <div class="flex flex-col gap-4">
+        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Отрасли</h2>
+        <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
+            <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+              <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
+              <li><a href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
+              <li><a href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
+              <li><a href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
+              <li><a href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+            </ul> 
+            <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+              <li><a href="https://sobakapav.ru/portfolio">Образование</a></li>
+              <li><a href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
+              <li><a href="https://sobakapav.ru/portfolio">Транспорт и туризм</a></li>
+              <li><a href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+            </ul> 
+        </div>
       </div>
       <div class="grid grid-3x3 ml-[-40px] md:ml-0">
          <a class="w-20 h-20 md:w-[169px] md:h-[149px] shrink-0 grow basis-0 flex items-center justify-center" href="/portfolio/alfa-arm"><img src="/images/services/alfa2.svg" width="36" height="56"></a>
@@ -89,12 +91,12 @@ import '~/components/main/Bento.less';
    </div>
    
    <div>
-   <a class="flex flex-col gap-4" href="/portfolio/qiwi">
+   <a class="flex flex-col" href="/portfolio/qiwi">
       <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4">Портфолио</h2>
       <div><img src="/images/main/contact-logo.svg" /></div>
       <h3 class="text-[52px] font-heading text-white">UX-аудит платежных систем</h3>
       <div class="text-[#929292]">E-commerce • UX-аудит • Продуктовое исследование</div>
-      <div class="text-white">Подробнее →</div>
+      <div class="text-white mt-3">Подробнее →</div>
       <div class="mr-[-40px] flex justify-end"><img src="/images/main/contact.svg" alt="Собака Павлова • Qiwi • Сравнительный UX-аудит трёх систем денежных переводов" /></div>
    </a>
    </div>
@@ -108,22 +110,22 @@ import '~/components/main/Bento.less';
       </div>
       
       <div class="flex flex-row gap-6 mt-6">
-        <a class="flex flex-col no-underline" href="/publications"><div class="text-[52px] font-heading">100+</div><span class="underline underline-offset-2">статей об интерфейсах</span></a>
-        <a class="flex flex-col no-underline" href="/cheatsheets"><div class="text-[52px] font-heading">100+</div><span class="underline underline-offset-2">шпрагалок по дизайну</span></a> 
-        <a class="flex flex-col no-underline" href="https://eduhund.com/"><div class="text-[52px] font-heading">20+</div><span class="underline underline-offset-2">плагинов для Figma</span></a>
-        <a class="flex flex-col no-underline" href="/books"><div class="text-[52px] font-heading">3</div><span class="underline underline-offset-2">книги</span></a>
+        <a class="flex flex-col no-underline" href="/publications"><div class="text-[52px] font-heading leading-none">100+</div><span class="underline underline-offset-2">статей об интерфейсах</span></a>
+        <a class="flex flex-col no-underline" href="/cheatsheets"><div class="text-[52px] font-heading leading-none">100+</div><span class="underline underline-offset-2">шпрагалок по дизайну</span></a> 
+        <a class="flex flex-col no-underline" href="https://eduhund.com/"><div class="text-[52px] font-heading leading-none">20+</div><span class="underline underline-offset-2">плагинов для Figma</span></a>
+        <a class="flex flex-col no-underline" href="/books"><div class="text-[52px] font-heading leading-none">3</div><span class="underline underline-offset-2">книги</span></a>
       </div>
       
-      <div class="flex flex-row mt-12">
+      <div class="flex flex-row mt-12 items-center">
         <img src="/images/main/blob.svg" />
-        <a href="https://www.eduhund.ru/" class="uppercase text-3xl md:text-[52px] font-heading ml-[-30px] z-[1]">Дизайн-задачник →</a>
+        <a href="https://www.eduhund.ru/" class="uppercase text-3xl md:text-[52px] font-heading ml-[-30px] z-[0]">Дизайн-задачник →</a>
       </div>
    </div>
 </div>
 
 <div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-5 sm:mt-20 gap-6">
    <div class="gap-4 text-white flex flex-col">
-      <h3 class="text-xl">Искусственный интеллект в работе дизайнеров</h3>
+      <h3 class="text-xl semibold">Искусственный интеллект в работе дизайнеров</h3>
       <span class="text-base">02.01.2025, 17:00</span>
       <span class="text-base">Обсуждаем в прямом эфире. <a href="" class="underline underline-offset-2">Присоединяйтесь!</a></span>
       
@@ -143,11 +145,11 @@ import '~/components/main/Bento.less';
       
       <div class="flex justify-between mb-4 flex-col md:flex-row">
           <a href="/publications/figma" class="basis-0 grow">
-            <h3 class="text-xl dark:text-[--aw-color-text-light-default]">Figmа для заказчика</h3>
+            <h3 class="text-xl semibold dark:text-[--aw-color-text-light-default] mb-4">Figmа для заказчика</h3>
             <div class="text-[#929292] text-base">13 июля 2023 • Написали инструкцию-ликбез для участников проектов</div>
           </a>
           <a href="https://sobakapav.ru/publications/medical-interfaces" class="basis-0 grow">
-            <h3 class="text-xl dark:text-[--aw-color-text-light-default]">Специфика проектирования медицинских интерфейсов</h3>
+            <h3 class="text-xl semibold dark:text-[--aw-color-text-light-default] mb-4">Специфика проектирования медицинских интерфейсов</h3>
             <div class="text-[#929292] text-base">6 мая 2022 • Как снизить риски и на что обратить внимание</div>
           </a> 
       </div>
