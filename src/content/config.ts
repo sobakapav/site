@@ -203,6 +203,7 @@ const serviceCollection = defineCollection({
       title: z.string().optional(),
       text: z.string().optional(),
       img: z.string().optional(),
+      imgPosition: z.string().optional(),
       alt: z.string().optional(),
     })),
     budget: z.object({

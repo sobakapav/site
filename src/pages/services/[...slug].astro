@@ -80,7 +80,7 @@ const metadata = merge(
     
     <section class="py-0 mx-auto grow-0 shrink-0">
       <article>
-      
+       
         <Hund2
           image={{
             src: post.image,
@@ -152,7 +152,7 @@ const metadata = merge(
           
         <a id="#2"></a>
         
-        <RelatedLinks post={post} />
+       <RelatedLinks post={post} />
         
         <a id="#3"></a>
         
@@ -205,7 +205,7 @@ const metadata = merge(
         </div>
         
         <a id="#4"></a>
-        
+
         {post.notThisService && (
           <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 flex flex-col gap-6">
             <div class="text-sm text-[#95001B] tracking-wide font-semibold">ОЦЕНКА</div>
@@ -219,16 +219,12 @@ const metadata = merge(
           </div>
         )}
         
-        <a id="#5"></a>
-        
-        {/* {post.comments && (
-            <ContentAndImage content={post.comments} image={post.image} imageAlt={post.imageAlt}/>
-          )} */}
+        <a id="#5"></a>       
         
         {post.comments && (
             <SimpleSlider slides={post.comments}/>
          )}
-        
+       
         <a id="#6"></a>
         
         {post.mapBlock && (
@@ -253,45 +249,3 @@ const metadata = merge(
     </section>
   
 </Layout>
-
- {/* <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-row flex-wrap gap-px gap-y-[0.5px]">
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa.svg" width="101" height="20"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yandex.svg" width="72" height="20"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/x5.svg" width="46" height="30"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/alfa-strah.svg" width="97" height="20"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/baltika.svg" width="100" height="16"></div>
-     <div class="h-[0px] basis-full shrink-0"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/tinkoff.svg" width="115" height="32"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/gazprom.svg" width="25" height="40"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sportmaster.svg" width="96" height="16"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/yota.svg" width="25" height="40"></div>
-     <div class="bg-[#5F677A] rounded h-[120px] shrink-0 grow basis-0 flex items-center justify-center"><img src="/images/services/sberbank.svg" width="99" height="16"></div>
-  </div> */}
-        
-        
- {/*  <Bentoid 
-    title="Посчитаем сроки и стоимость вашего проекта индивидуально"
-    parts={[
-      {
-        text: "Позвоните нам",
-        description: "+7 (495) 191-92-81"
-      },
-       ", напишите на ",
-      {
-        text: "e-mail",
-        description: "we@sobakapav.ru",
-        link: "mailto:we@sobakapav.ru"
-      },
-      ", в ",
-      {
-        text: "телеграм",
-        description: "t.me/sobakapavpro",
-        link: "https://t.me/sobakapavpro"
-      },
-      " или ",
-      {
-        text: "WatsApp",
-        description: "wa.me/message/$NZGZSOAXXM2IN1",
-        link: "https://wa.me/message/$NZGZSOAXXM2IN1"
-      }
-    ]} */}

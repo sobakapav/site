@@ -33,9 +33,9 @@ window.addEventListener("load", (event) => {
 </script>
 
 <simple-slider class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 my-10 md:my-12 gap-6">
-  <h2 class="text-5xl group font-heading whitespace-nowrap">Особенности</h2>
-  <div class="flex flex-row">
-      <div class="slider slider-ux slider-desktop relative">
+  <h2 class="text-5xl group font-heading whitespace-nowrap mb-[-48]">Особенности</h2>
+  <div class="flex flex-row slider-container">
+      <div class="slider slider-ux slider-desktop relative pt-12">
         <div class="slides">
           <input type="radio" name="desktop" id="ux1" checked>
           <input type="radio" name="desktop" id="ux2">
@@ -44,16 +44,16 @@ window.addEventListener("load", (event) => {
           
       
           <div class="slide s1">
-            <img src={slides[0].img} alt={slides[0].alt} class="img">
+            <img src={slides[0].img} alt={slides[0].alt} class:list={["img", "img-position-" + (slides[0].imgPosition || 'middle')]}>
           </div>
           <div class="slide">
-            <img src={slides[1].img} alt={slides[1].alt} class="img">
+            <img src={slides[1].img} alt={slides[1].alt} class:list={["img", "img-position-" + (slides[1].imgPosition || 'middle')]}>
           </div>
           <div class="slide">
-            <img src={slides[2].img} alt={slides[2].alt} class="img">
+            <img src={slides[2].img} alt={slides[2].alt} class:list={["img", "img-position-" + (slides[2].imgPosition || 'middle')]}>
           </div>
           <div class="slide">
-            <img src={slides[3].img} alt={slides[3].alt} class="img">
+            <img src={slides[3].img} alt={slides[3].alt} class:list={["img", "img-position-" + (slides[3].imgPosition || 'middle')]}>
           </div>
         </div>
         
@@ -79,7 +79,7 @@ window.addEventListener("load", (event) => {
         </div>
       </div>
       
-      <div class="w-[440px] ml-6">
+      <div class="w-[440px] ml-6 pt-12">
         
         <label for="ux1" class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer">
           <h3 class="text-lg sm:text-3xl font-heading">{slides[0].title}</h3>
