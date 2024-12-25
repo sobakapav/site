@@ -1,0 +1,63 @@
+---
+
+import { twMerge } from "tailwind-merge";
+import { $id } from '~/utils/utils.ts';
+
+import './Slider.less';
+
+const { 
+  styles = {
+    main: '',
+    container: '',
+    slide: '',
+  },
+  delay = 0, // Zero for no auto scroll; non-zero timeout in seconds for auto scroll 
+  title = await Astro.slots.render('title'),
+} = Astro.props;
+
+const id = $id('slider');
+
+const slideSlots = [];
+Object.keys(Astro.slots).forEach((element) => {if (element.startsWith('slide-')) slideSlots.push(Astro.slots.render(element))});
+const slides = await Promise.all(slideSlots);
+
+---
+
+<astro-slider class:list={[twMerge('flex flex-col max-w-3xl gap-6', styles.main ?? '')]} id={id} data-delay={delay}>
+  {/*<h2 class:list={[twMerge('text-5xl font-heading whitespace-nowrap mb-[-48]', styles.title ?? '')]} set:html={title} />*/}
+  <div class="flex flex-row slider-container">
+    <div class:list={['slider slider-ux slider-desktop relative', 'slides-'+slides.length]}>
+      <div class="slides">
+        {slides.map((slide, index) => (
+          <input type="radio" class:list={['desktop', 'radio-' + (index+1)]} name={'desktop-'+id} checked={index == 0}/>
+        ))}
+        {slides.map((slide, index) => (
+          <div class:list={['slide', index == 0 ? 's1' : '']} set:html={slide} />
+        ))}
+      </div>
+    </div>
+  </div>
+</astro-slider>
+
+<script>
+function scrollScroller(id) {
+
+  var radios = document.getElementById(id).querySelectorAll(".slides > input[type='radio']");
+  var selected = 0;
+  for (var i = 0; i < radios.length; i++) {
+    var radio = radios[i];
+    if (radio.checked) {
+      selected = i;
+    }
+  }
+  radios[(selected + radios.length + 1) % radios.length].checked = true;
+}
+
+window.addEventListener("load", (event) => {
+  for (const slider of document.querySelectorAll('astro-slider')) {
+    if (slider.dataset.delay && slider.dataset.delay > 0) {
+      window.setInterval(() => {scrollScroller(slider.id)}, slider.dataset.delay * 1000);
+    } 
+  };
+});
+</script>

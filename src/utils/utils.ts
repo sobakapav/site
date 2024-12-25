@@ -60,3 +60,11 @@ export const minuteCase = (minutes) => {
   }
   return 'минут';
 }
+
+const map = new Map<string, number>();
+
+export const $id = (prefix) => {
+  const count = (map.get(prefix) ?? 0) + 1;
+  map.set(prefix, count);
+  return `${prefix}-${count}`;
+} 

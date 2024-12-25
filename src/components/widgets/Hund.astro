@@ -62,7 +62,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           title && (
             <h1
-              class:list={[twMerge('max-w-3xl text-5xl md:text-8xl leading-tight mb-4 font-heading dark:text-gray-200', classes.title || '')]}
+              class:list={[twMerge('max-w-3xl text-5xl md:text-8xl leading-none mb-4 font-heading dark:text-gray-200', classes.title || '')]}
               set:html={title}
             />
           )

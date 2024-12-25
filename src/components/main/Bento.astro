@@ -7,35 +7,38 @@ import { SITE } from 'astrowind:config';
 import '~/components/main/Bento.less';
 
 ---
-<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-0 gap-6">
+<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-10 gap-6">
   <div class="gap-4">
-    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-2">Делаем сейчас</h2>
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Делаем в декабре 2024 года</h2>
     <h3 class="text-[52px] font-heading dark:text-[--aw-color-text-light-default]">Управление виртуальным дата-центром</h3>
-    <span class="text-[#929292]">IT-услуги, сервис • Добавление новых возможностей • UI-редизайн</span>
+    <span class="text-xl text-[#929292]">IT-услуги, сервис • Добавление новых возможностей • UI-редизайн</span>
     <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.png" alt="Делаем сейчас" /></div>
   </div>
   
   <div class="border border-[#BEBEBE] flex flex-col justify-between">
-    <div>
-    <div class="flex justify-between mb-4">
-      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Наши услуги</h2>
-      <div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
-        <a href="/services">Все услуги →</a>
-      </div>
-    </div>
+    
+    <div class="flex flex-col mb-4">
+      <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund]">Наши услуги</h2>
+      <h3 class="text-[52px] font-heading dark:text-[--aw-color-text-light-default]">Сделаем для вас</h3>
       
-    <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
-      <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
-      <li><a href="/services/prototype">Прототип под инвестиции</a></li>
-      <li><a href="/services/ui-redesign">UI-редизайн</a></li>
-      <li><a href="/services/redesign">Точечный редизайн</a></li>
-      <li><a href="/services/new-features">Добавление новой функциональности</a></li>
-      <li><a href="/services/ux-audit">UX-аудит</a></li>
-      <li><a href="/services/research">Продуктовое исследование</a></li>
-      <li><a href="/services/dev-team">Усиление команды разработки</a></li>
-      {/* <li><a href="/services/product-team">Работа в продуктовой команде</a></li>*/}
-
-    </ul>  
+      <ul class="flex flex-col text-xl underline underline-offset-2 gap-6">
+        <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
+        <li><a href="/services/redesign">Точечный редизайн</a></li>
+        <li><a href="/services/new-features">Добавление новой функциональности</a></li>
+        <li><a href="/services/prototype">Прототип под инвестиции</a></li>
+        <li><a href="/services/ui-redesign">UI-редизайн</a></li>
+        <li><a href="/services/research">Продуктовое исследование</a></li>
+        <li><a href="/services/ux-audit">UX-аудит</a></li>
+        <li><a href="/services/dev-team">Усиление команды разработки</a></li>
+        {/* <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
+        <li><a href="/services/consultation">Консультации</a></li>
+        <li><a href="/services/content-design">Контент-дизайн</a></li>*/}
+      </ul>
+      
+      <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mx-8">
+         <a href="/services">Все услуги →</a>
+      </div>
+      
     </div>
       
     <div class="flex flex-row justify-between mt-6 md:mt-12">
@@ -47,7 +50,7 @@ import '~/components/main/Bento.less';
   </div>
   
   <div>
-    <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-2">собака Павлова</h2>
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-2">собака Павлова</h2>
     <div class="flex flex-col md:flex-row gap-6">
       <h3 class="font-heading text-3xl md:text-[97px] leading-none no-underline">{SITE.phone}</h3>
       <div class="flex flex-col gap-1 justify-center">
@@ -62,7 +65,7 @@ import '~/components/main/Bento.less';
 <div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-6 gap-6">
    <div class="flex flex-col justify-between">
    <div class="flex flex-col gap-4">
-        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Отрасли</h2>
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Отрасли</h2>
         <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
             <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
               <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
@@ -130,7 +133,7 @@ import '~/components/main/Bento.less';
    
    <div>
    <a class="flex flex-col" href="/portfolio/qiwi">
-      <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4">Портфолио</h2>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Портфолио</h2>
       <div><img src="/images/main/contact-logo.svg" /></div>
       <h3 class="text-[52px] font-heading text-white">UX-аудит платежных систем</h3>
       <div class="text-[#929292]">E-commerce • UX-аудит • Продуктовое исследование</div>
@@ -141,7 +144,7 @@ import '~/components/main/Bento.less';
    
    <div class="gap-4  border border-[#BEBEBE]">
       <div class="flex justify-between mb-4">
-        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
         <div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
           <a href="/services">Экспертиза →</a>
         </div>
@@ -151,7 +154,7 @@ import '~/components/main/Bento.less';
         <a class="flex flex-col no-underline" href="/publications"><div class="text-[52px] font-heading leading-none">100+</div><span class="underline underline-offset-2">статей об интерфейсах</span></a>
         <a class="flex flex-col no-underline" href="/cheatsheets"><div class="text-[52px] font-heading leading-none">100+</div><span class="underline underline-offset-2">шпрагалок по дизайну</span></a> 
         <a class="flex flex-col no-underline" href="https://eduhund.com/"><div class="text-[52px] font-heading leading-none">20+</div><span class="underline underline-offset-2">плагинов для Figma</span></a>
-        <a class="flex flex-col no-underline" href="/books"><div class="text-[52px] font-heading leading-none">3</div><span class="underline underline-offset-2">книги</span></a>
+        <a class="flex flex-col no-underline" href="/books"><div class="text-[52px] font-heading leading-none">3</div><span class="underline underline-offset-2">книги про UX</span></a>
       </div>
       
       <div class="flex flex-row mt-12 items-center">
@@ -171,7 +174,7 @@ import '~/components/main/Bento.less';
    <div class="gap-4">
       
       <div class="flex justify-between mb-4">
-        <h2 class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-hund] mb-4">Публикации</h2>
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Публикации</h2>
         <div class="flex flex-row gap-6 mt-[-24px]">
           <a class="" href=""><div class=""><Image src="~/assets/images/services/vc.svg" height={64} alt="VC" /></div></a>
           <a class="" href=""><div class=""><Image src="~/assets/images/services/tg.svg" height={64} alt="Telegram" /></div></a> 

@@ -16,14 +16,6 @@ export const headerData = {
           href: getPermalink('/services/ux-design'),
         },
         {
-          text: 'Прототип под инвестиции',
-          href: getPermalink('/services/prototype'),
-        },
-        {
-          text: 'UI-редизайн',
-          href: getPermalink('/services/ui-redesign'),
-        },
-        {
           text: 'Точечный редизайн интерфейса',
           href: getPermalink('/services/redesign'),
         },
@@ -32,13 +24,21 @@ export const headerData = {
           href: getPermalink('/services/new-features'),
         },
         {
-          text: 'UX-аудит',
-          href: getPermalink('/services/ux-audit'),
+          text: 'Прототип под инвестиции',
+          href: getPermalink('/services/prototype'),
+        },
+        {
+          text: 'UI-редизайн',
+          href: getPermalink('/services/ui-redesign'),
         },
         {
           text: 'Продуктовое исследование',
           href: getPermalink('/services/research'),
-        },  
+        }, 
+        {
+          text: 'UX-аудит',
+          href: getPermalink('/services/ux-audit'),
+        }, 
         {
           text: 'Усиление команды разработки',
           href: getPermalink('/services/dev-team'),
