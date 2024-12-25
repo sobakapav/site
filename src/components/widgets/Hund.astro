@@ -70,7 +70,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           title2 && (
             <h2
-              class="max-w-3xl text-sm tracking-[3px] leading-5 font-semibold uppercase text-[--aw-color-pink] mb-4"
+              class="max-w-3xl text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4"
               set:html={title2}
             />
           )
@@ -85,7 +85,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           awards && (
             <div
-              class="absolute bottom-[-64px] right-0"
+              {/*class="absolute bottom-[-64px] right-0"*/}
               set:html={awards}
             />
           )
