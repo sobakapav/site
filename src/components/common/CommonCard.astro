@@ -13,6 +13,7 @@ const {
   textblock = await Astro.slots.render('textblock'),  
   footer = await Astro.slots.render('footer'),
   noCard = false,
+  awards,
   classes = {
     main: 'blog-list-item',
     title: '',
@@ -22,7 +23,7 @@ const {
 
 ---
 <a href={link}>
-<article class:list={['flex flex-wrap mb-6', classes.main]}>
+<article class:list={['flex flex-wrap mb-6 relative', classes.main]}>
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
@@ -65,6 +66,15 @@ const {
       </a>
     )
   }
+  {awards && awards.length && (
+    <div class="absolute mb-[-44px] top-[240px] right-[40px] z-[1]">
+       <div class="flex flex-row justify-end">
+        {awards.map((award) => (
+           <div class="w-20 h-20 z-[4] mr-[-40px]"><Markdown.Inline of={award} /></div>
+        ))}
+       </div>        
+    </div>
+  )}
   <div class="mt-4 w-72">
     <header>
       {supertitle && (
@@ -73,7 +83,7 @@ const {
         </div>
       )}
            
-      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
+      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading z-[2]", classes.title]}>
         {link ? (
           <a href={link}>
             <Markdown.Inline of={title} />

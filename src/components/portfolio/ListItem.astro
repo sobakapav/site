@@ -20,14 +20,12 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
     title={post.title}
     text={post.excerpt}
     noCard={post.noCard}
+    awards={post.awards}
   >
     <Fragment slot="footer">
     <PortfolioTags tags={post.tags} />
       <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4 items-center mt-2">
         {post.publishYear}
-        {post.awards && post.awards.map(award => (
-          <div class="w-20 h-20"><Markdown.Inline of={award} /></div>
-        ))}
       </span>
     </Fragment>
     
@@ -42,10 +40,10 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
      isDark={post.thumbnail.isDark}
    >
      <Fragment slot="footer">
-      <PortfolioTags tags={post.tags} />
-      <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">
+      <span class:list={["text-xl sm:text-3xl leading-tight font-heading", post.thumbnail.isDark ? "text-[--aw-color-pink]" : "text-[--aw-color-hund]"]}>
         {post.publishYear}
       </span>
+      <PortfolioTags tags={post.tags} />
        
      </Fragment>
      

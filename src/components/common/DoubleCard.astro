@@ -40,8 +40,8 @@ const {
               />
             )}
           </div>
-          <div class="mt-4 w-[288px] absolute left-8 bottom-5">
-            <header>
+          <div class="mt-4 absolute left-8 bottom-5">
+            <header class="w-[288px]">
               {supertitle && (
                 <div class="mb-1 hover:text-[--aw-color-accent]">
                   <span class="text-sm" set:html={supertitle} />
@@ -63,7 +63,7 @@ const {
         
             {
               isDark ? (
-                <a href={link}>
+                <a href={link} class="w-[288px]">
                   {text && (
                     <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown text-white", classes.text]}>
                       <Markdown.Inline of={text} />
@@ -71,11 +71,11 @@ const {
                   )}
                   
                   {textblock && (
-                    <div set:html={textblock} class="text-white" />
+                    <div set:html={textblock} class="text-white w-[288px]" />
                   )}
                 </a>
               ) : (
-                <a href={link}>
+                <a href={link} class="w-[288px]">
                   {text && (
                     <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
                       <Markdown.Inline of={text} />
@@ -83,21 +83,19 @@ const {
                   )}
                   
                   {textblock && (
-                    <div set:html={textblock} />
+                    <div set:html={textblock} class="w-[288px]"/>
                   )}
                 </a>
               )
             }
+            { footer && (
+              <div class="flex flex-row mt-4 gap-4" set:html={footer} />
+            )}
           </div>          
         </div>
       </a>
     )
   }
   
-  { footer && (
-    <div class="mt-4">
-      <span set:html={footer} />
-    </div> 
-  )}
 </article>
 </a>
