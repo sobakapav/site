@@ -13,7 +13,7 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const { metadata, hasSlider, darkTheme = false } = Astro.props;
+const { metadata, hasSlider, darkTheme = false, collapseSlogan = false} = Astro.props;
 ---
 
 <Layout metadata={metadata} hasSlider={hasSlider}>
@@ -24,7 +24,7 @@ const { metadata, hasSlider, darkTheme = false } = Astro.props;
         <Hat darkTheme={darkTheme} />
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showToggleTheme isDark={darkTheme} />
+    <Header {...headerData} isSticky showToggleTheme isDark={darkTheme} collapseSlogan={collapseSlogan} />
   </slot>
   <main>
     <slot />

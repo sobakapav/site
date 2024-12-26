@@ -1,5 +1,9 @@
 ---
 
+const {
+  collapseSlogan = false,
+} = Astro.props;
+
 ---
 <div class="flex flex-col items-center lg:flex-row lg:gap-4">
   <span class="flex items-center gap-2 logo self-center rtl:ml-0 rtl:mr-2 text-gray-900 whitespace-nowrap dark:text-white">
@@ -35,5 +39,7 @@
       </svg>
     </div>
   </span>
-  <span class="text-[13px] lg:text-[13px] lg:leading-4 lg:mt-[-3px] ml-[48px] max-w-[224px] lg:ml-0 lg:max-w-[124px]">Дизайн сложных интерфейсов</span>
+  { !collapseSlogan && (
+    <span class="text-[13px] lg:text-[13px] lg:leading-4 lg:mt-[-3px] ml-[48px] max-w-[224px] lg:ml-0 lg:max-w-[124px]">Дизайн сложных интерфейсов</span>
+  )}
 </div>
