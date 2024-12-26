@@ -18,8 +18,13 @@ import '~/components/main/Bento.less';
   <div class="border border-[#BEBEBE] flex flex-col justify-between">
     
     <div class="flex flex-col">
-      <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Наши услуги</h2>
-      <h3 class="text-[52px] leading-none font-heading mb-6">Сделаем для вас</h3>
+      <div class="flex flex-row justify-between">
+          <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Наши услуги</h2>
+          <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 my-8">
+               <a href="/services">Все услуги →</a>
+            </div>
+      </div>
+      {/*<h3 class="text-[52px] leading-none font-heading mb-6">Сделаем для вас</h3> */}
       
       <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
         <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
@@ -33,15 +38,11 @@ import '~/components/main/Bento.less';
         {/* <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
         <li><a href="/services/consultation">Консультации</a></li>
         <li><a href="/services/content-design">Контент-дизайн</a></li>*/}
-      </ul>
-      
-      <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 my-8">
-         <a href="/services">Все услуги →</a>
-      </div>
+      </ul>  
       
     </div>
     
-    <div class="h-[1px] border border-[#E8E8E8]"></div>
+    {/*<div class="h-[1px] border border-[#E8E8E8]"></div>*/}
       
     <div class="flex flex-row justify-between mt-6 md:mt-8">
       <a href="https://www.figma.com"><div class="h-16"><Image src="~/assets/images/services/figma.svg" height={64} layout="constrained-height" alt="Figma" /></div></a>
@@ -68,7 +69,8 @@ import '~/components/main/Bento.less';
    <div class="flex flex-col justify-between">
    <div class="flex flex-col">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Отрасли</h2>
-        <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отраслевой опыт</h3>
+        
+       {/* <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отраслевой опыт</h3>*/}
         <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
             <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
               <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
