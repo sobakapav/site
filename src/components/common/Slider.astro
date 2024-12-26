@@ -23,9 +23,9 @@ const slides = await Promise.all(slideSlots);
 
 ---
 
-<astro-slider class:list={[twMerge('flex flex-col max-w-3xl gap-6', styles.main ?? '')]} id={id} data-delay={delay}>
+<astro-slider class:list={[twMerge('flex flex-col max-w-2xl gap-6', styles.main ?? '')]} id={id} data-delay={delay}>
   {/*<h2 class:list={[twMerge('text-5xl font-heading whitespace-nowrap mb-[-48]', styles.title ?? '')]} set:html={title} />*/}
-  <div class="flex flex-row slider-container">
+  <div class="flex flex-row slider-container ml-[-2px]">
     <div class:list={['slider slider-ux slider-desktop relative', 'slides-'+slides.length]}>
       <div class="slides">
         {slides.map((slide, index) => (

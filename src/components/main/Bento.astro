@@ -9,19 +9,19 @@ import '~/components/main/Bento.less';
 ---
 <div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-10 gap-6">
   <div class="gap-4">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Делаем в декабре 2024 года</h2>
-    <h3 class="text-[52px] font-heading dark:text-[--aw-color-text-light-default]">Управление виртуальным дата-центром</h3>
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Делаем в декабре 2024 года</h2>
+    <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Управление виртуальным дата-центром</h3>
     <span class="text-xl text-[#929292]">IT-услуги, сервис • Добавление новых возможностей • UI-редизайн</span>
     <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.png" alt="Делаем сейчас" /></div>
   </div>
   
   <div class="border border-[#BEBEBE] flex flex-col justify-between">
     
-    <div class="flex flex-col mb-4">
-      <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund]">Наши услуги</h2>
-      <h3 class="text-[52px] font-heading dark:text-[--aw-color-text-light-default]">Сделаем для вас</h3>
+    <div class="flex flex-col">
+      <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Наши услуги</h2>
+      <h3 class="text-[52px] leading-none font-heading mb-6">Сделаем для вас</h3>
       
-      <ul class="flex flex-col text-xl underline underline-offset-2 gap-6">
+      <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
         <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
         <li><a href="/services/redesign">Точечный редизайн</a></li>
         <li><a href="/services/new-features">Добавление новой функциональности</a></li>
@@ -35,17 +35,19 @@ import '~/components/main/Bento.less';
         <li><a href="/services/content-design">Контент-дизайн</a></li>*/}
       </ul>
       
-      <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mx-8">
+      <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 my-8">
          <a href="/services">Все услуги →</a>
       </div>
       
     </div>
+    
+    <div class="h-[1px] border border-[#E8E8E8]"></div>
       
-    <div class="flex flex-row justify-between mt-6 md:mt-12">
-      <a class="noir" href="https://www.figma.com"><div class="h-16"><Image src="~/assets/images/services/figma.svg" height={64} layout="constrained-height" alt="Figma" /></div></a>
-      <a class="noir" href="https://www.atlassian.com/software/jira"><div class="h-16"><Image src="~/assets/images/services/jira.svg" height={64} layout="constrained-height" alt="Jira" /></div></a> 
-      <a class="noir" href="https://miro.com"><div class="h-16"><Image src="~/assets/images/services/miro.svg" height={64} layout="constrained-height" alt="Miro" /></div></a>
-      <a class="noir" href="https://workspace.google.com/products/docs"><div class="h-16"><Image src="~/assets/images/services/google-doc.svg" height={64} layout="constrained-height" alt="Google Docs" /></div></a>
+    <div class="flex flex-row justify-between mt-6 md:mt-8">
+      <a href="https://www.figma.com"><div class="h-16"><Image src="~/assets/images/services/figma.svg" height={64} layout="constrained-height" alt="Figma" /></div></a>
+      <a href="https://react.dev/"><div class="h-16"><Image src="~/assets/images/services/react.svg" height={64} layout="constrained-height" alt="React" /></div></a> 
+      <a href="https://ant.design/"><div class="h-16"><Image src="~/assets/images/services/ant.svg" height={64} layout="constrained-height" alt="Ant" /></div></a>
+      <a href="https://www.typescriptlang.org/"><div class="h-16"><Image src="~/assets/images/services/typescript.svg" height={64} layout="constrained-height" alt="TypeScript" /></div></a>
     </div>
   </div>
   
@@ -64,17 +66,18 @@ import '~/components/main/Bento.less';
 
 <div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-6 gap-6">
    <div class="flex flex-col justify-between">
-   <div class="flex flex-col gap-4">
+   <div class="flex flex-col">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Отрасли</h2>
+        <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отраслевой опыт</h3>
         <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
-            <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+            <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
               <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
               <li><a href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
               <li><a href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
               <li><a href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
               <li><a href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
             </ul> 
-            <ul class="flex flex-col text-2xl underline underline-offset-2 gap-6">
+            <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
               <li><a href="https://sobakapav.ru/portfolio">Образование</a></li>
               <li><a href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
               <li><a href="https://sobakapav.ru/portfolio">Транспорт и туризм</a></li>
@@ -135,7 +138,7 @@ import '~/components/main/Bento.less';
    <a class="flex flex-col" href="/portfolio/qiwi">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Портфолио</h2>
       <div><img src="/images/main/contact-logo.svg" /></div>
-      <h3 class="text-[52px] font-heading text-white">UX-аудит платежных систем</h3>
+      <h3 class="text-[52px] leading-none font-heading text-white">UX-аудит платежных систем</h3>
       <div class="text-[#929292]">E-commerce • UX-аудит • Продуктовое исследование</div>
       <div class="text-white mt-3">Подробнее →</div>
       <div class="mr-[-40px] flex justify-end"><img src="/images/main/contact.svg" alt="Собака Павлова • Qiwi • Сравнительный UX-аудит трёх систем денежных переводов" /></div>
