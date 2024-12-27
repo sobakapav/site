@@ -45,7 +45,7 @@
 
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply bg-page md:bg-[--aw-color-bg-page-dark] border-b border-gray-500/20;
+  @apply bg-page md:bg-[--aw-color-bg-page-dark] bottom-[-2px];
   box-shadow: 0 0 6rem 0 rgb(0 0 0 / 32%);
 }
   
