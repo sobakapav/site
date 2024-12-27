@@ -37,7 +37,7 @@ for (var idx in cases) {
         {caseItems.map((item, index) => (
           <div class:list={['slide bg-no-repeat bg-right-bottom h-[604px] p-10', index == 0 ? 'current' : '']} style={"background-image: url(\'" + item.thumbnail.src3 + "\');background-size: 100%;"}>
             <a class="flex flex-col gap-4 h-full" href={item.href}>
-              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]">Лучшие кейсы</h2>
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]">Популярные кейсы</h2>
               <div>
                 <Image src={item.logo.src} alt={item.logo.alt} height={61} layout="constrained-height" />
               </div>
