@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Slider from '~/components/common/Slider.astro'
+import CardSlider from '~/components/main/CardSlider.astro';
 
 const metadata = {
   title: 'Дизайн сложных интерфейсов •  Собака Павлова',
@@ -24,85 +25,8 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Slider delay={1} title="Фигня какая-то">
-    <Fragment slot="slide-1">
-      <div>
-        ПАО «Сбербанк» • Гайд по созданию интерфейсных тестов
-      </div>
-    </Fragment>
-    <Fragment slot="slide-2">
-      <div>
-        Газпром-Нефть •  Карта пользователя для внутреннего портала
-      </div>
-    </Fragment>
-    <Fragment slot="slide-3">
-      <div>
-        Альфа-банк • Интерфейс рабочего места оператора поддержки банка
-      </div>
-    </Fragment>
-  </Slider>
-
-  <Slider delay={6} title="">
-    <Fragment slot="slide-1">
-      <div>
-        <a href="/portfolio/sberbank" class="no-underline">ПАО «Сбербанк» • Гайд по созданию интерфейсных тестов</a>
-      </div>
-    </Fragment>
-    <Fragment slot="slide-2">
-      <div>
-        <a href="/portfolio/gazprom-neft" class="no-underline">Газпром-Нефть •  Карта пользователя для внутреннего портала</a>
-      </div>
-    </Fragment>
-    <Fragment slot="slide-3">
-      <div>
-        <a href="/portfolio/alfabank" class="no-underline">Альфа-банк • Интерфейс мобильного приложения</a>
-      </div>
-    </Fragment>
-    <Fragment slot="slide-4">
-      <div>
-        <a href="/portfolio/alfa-arm" class="no-underline">Альфа-банк • Интерфейс рабочего места оператора поддержки</a>
-      </div>
-    </Fragment>
-    <Fragment slot="slide-5">
-      <div>
-        <a href="/portfolio/alfa" class="no-underline">АльфаСтрахование • Интерфейс рабочего места страхового агента</a>
-      </div>
-    </Fragment>
-    <Fragment slot="slide-6">
-      <div>
-        <a href="/portfolio/alfastrahhr" class="no-underline">АльфаСтрахование • UI-редизайн корпоративного портала</a>
-      </div>
-    </Fragment><Fragment slot="slide-7">
-       <div>
-         <a href="/portfolio/alfastrah-design" class="no-underline">АльфаСтрахование • Дизайн-система</a>
-       </div>
-     </Fragment>
-     <Fragment slot="slide-8">
-       <div>
-         <a href="/portfolio/sportmaster" class="no-underline">Спортмастер • UX-тестирование терминалов самообслуживания</a>
-       </div>
-     </Fragment>
-     <Fragment slot="slide-9">
-       <div>
-         <a href="/portfolio/avito" class="no-underline">Авито • UX-исследование рабочего места менеджера по продажам</a>
-       </div>
-     </Fragment>
-     </Fragment><Fragment slot="slide-10">
-        <div>
-          <a href="/portfolio/tinkoff" class="no-underline">Тинькофф-банк • Онбординг для банка</a>
-        </div>
-      </Fragment>
-      <Fragment slot="slide-11">
-        <div>
-          <a href="/portfolio/edms" class="no-underline">Балтика • Система электронного документооборота</a>
-        </div>
-      </Fragment>
-      <Fragment slot="slide-12">
-        <div>
-          <a href="/portfolio/okey" class="no-underline">О'КЕЙ • Приложение для федеральной розничной сети</a>
-        </div>
-      </Fragment>
-    
+  <div class="mx-20">
+    <CardSlider cases={['qiwi', 'gazprom-neft', 'okey', 'pangeo', 'raisa', 'res', 'tis', 'tmh']} delay={3}/>
+  </div>
         
-  </Slider>
 </Layout>

@@ -1,0 +1,76 @@
+---
+import { getEntry } from 'astro:content';
+import { getPermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
+
+import { $id } from '~/utils/utils.ts';
+import { tagNames } from '~/navigation.js';
+
+import Slider from '~/components/common/Slider.astro';
+
+import './CardSlider.less';
+
+const {
+  cases = [],
+  delay = 0,
+} = Astro.props;
+
+const id = $id('card-slider');
+
+const caseItems = [];
+for (var idx in cases) {
+  var item = await getEntry('portfolio', cases[idx]);
+  if (!item) console.error(`Cannot find case with name ${cases[idx]}`);
+  item = JSON.parse(JSON.stringify(item.data));
+  item.idx = idx + 1;
+  item.href = `/portfolio/${cases[idx]}`;
+  item.tagNames = item.tags?.map((tag) => tagNames[tag]).join(' • ');
+  caseItems.push(item);
+}
+
+---
+
+<card-slider class="flex flex-col h-[604px] bg-[#212121]" id={id} data-delay={delay}>
+  <div class="flex flex-row slider-container">
+    <div class="slider slider-ux slider-desktop relative">
+      <div class="slides">
+        {caseItems.map((item, index) => (
+          <div class:list={['slide bg-no-repeat bg-right-bottom h-[604px] p-10', index == 0 ? 'current' : '']} style={"background-image: url(\'" + item.thumbnail.src3 + "\');background-size: 100%;"}>
+            <a class="flex flex-col gap-4" href={item.href}>
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]">Лучшие кейсы</h2>
+              <div>
+                <Image src={item.logo.src} alt={item.logo.alt} height={61} layout="constrained-height" />
+              </div>
+              <h3 class="text-[52px] leading-none font-heading text-white">{item.titleBrief || item.title}</h3>
+              <div class="text-[#929292]">{item.tagNames}</div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</card-slider>
+
+<script>
+function scrollCardScroller(id) {
+
+  var slides = document.getElementById(id).querySelectorAll(".slides > .slide");
+  var selected = 0;
+  for (var i = 0; i < slides.length; i++) {
+    var slide = slides[i];
+    if (slide.classList.contains('current')) {
+      selected = i;
+    }
+  }
+  slides[selected].classList.remove('current');
+  slides[(selected + slides.length + 1) % slides.length].classList.add('current');
+}
+
+window.addEventListener("load", (event) => {
+  for (const slider of document.querySelectorAll('card-slider')) {
+    if (slider.dataset.delay && slider.dataset.delay > 0) {
+      window.setInterval(() => {scrollCardScroller(slider.id)}, slider.dataset.delay * 1000);
+    } 
+  };
+});
+</script>

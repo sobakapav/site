@@ -3,6 +3,7 @@ import Image from '~/components/common/Image.astro';
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
+import CardSlider from '~/components/main/CardSlider.astro';
 
 import '~/components/main/Bento.less';
 
@@ -136,23 +137,14 @@ import '~/components/main/Bento.less';
       </div>
    </div>
    
-   <div>
-   <a class="flex flex-col" href="/portfolio/qiwi">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Лучшие кейсы</h2>
-      <div><img src="/images/main/contact-logo.svg" /></div>
-      <h3 class="text-[52px] leading-none font-heading text-white">UX-аудит платежных систем</h3>
-      <div class="text-[#929292]">E-commerce • UX-аудит • Продуктовое исследование</div>
-      
-      <div class="mr-[-40px] flex justify-end"><img src="/images/main/contact.svg" alt="Собака Павлова • Qiwi • Сравнительный UX-аудит трёх систем денежных переводов" /></div>
-   </a>
-   </div>
+   <CardSlider cases={['qiwi', 'gazprom-neft', 'pangeo', 'raisa', 'res', 'tis', 'tmh']} delay={6}/>
    
    <div class="gap-4  border border-[#BEBEBE]">
       <div class="flex justify-between mb-4">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
         {/*<div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
-          <a href="/services">Экспертиза →</a>*/}
-        </div>
+          <a href="/services">Экспертиза →</a>
+        </div>*/}
       </div>
       
       <div class="flex flex-row gap-6 mt-6">

@@ -1,0 +1,30 @@
+card-slider {
+  input.radio-1:checked ~ .s1 {
+    margin-left: 0;
+  }
+  
+  .slides {
+    display: flex;
+    position: relative;
+  }
+  
+  .slide {
+    transition: all 1s ease-out;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    width: 604px;
+    height: 604px;
+     
+    &.current {
+      transition: all 1s ease-in;
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+  
+  input.desktop {
+    position: absolute;
+    visibility: hidden;
+  }  
+}

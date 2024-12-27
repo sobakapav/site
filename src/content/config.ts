@@ -98,6 +98,7 @@ const portfolioCollection = defineCollection({
     noCard: z.boolean().optional(),
 
     title: z.string(),
+    titleBrief: z.string().optional(),
     excerpt: z.string().optional(),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
@@ -118,6 +119,7 @@ const portfolioCollection = defineCollection({
     thumbnail: z.object({
       src: z.string(),
       src2: z.string().optional(),
+      src3: z.string().optional(),
       alt: z.string().optional(),
       isDark: z.boolean().optional(),
     }).optional(),
