@@ -34,7 +34,8 @@
     }
     
     > div:nth-child(3) {
-      border-color: #BEBEBE;
+      border-top: unset;
+      border-right: unset;
     }
 }
 
@@ -61,6 +62,24 @@
 .divider {
  border-color: #E8E8E8;
 } 
+
+.figma {
+  display: inline-flex;
+  align-items: flex-end;
+  text-decoration: underline;
+}
+
+.figma::before {
+  content: ' ';
+  display: block;
+  height: 18px;
+  width: 18px;
+  margin-bottom: 2px;
+  background-image: url('/images/services/figma.svg');
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat; 
+}
 
 @media (min-width: 1024px) {
     .bento-grid {
