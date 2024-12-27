@@ -47,7 +47,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto">
     <div class="pt-0 pointer-events-none"></div>
-    <div class:list={[twMerge('pt-6 md:pt-16 px-4 sm:px-6', classes.main || '')]}>
+    <div class:list={[twMerge('pt-6 md:pt-32 px-4 sm:px-6', classes.main || '')]}>
       
 
       <div class="text-left max-w-xl">
@@ -70,7 +70,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           title2 && (
             <h2
-              class="max-w-3xl text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-6"
+              class="max-w-3xl text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]"
               set:html={title2}
             />
           )
@@ -85,7 +85,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           awards && (
             <div
-              class="absolute right-0 bottom-0"
+              class="absolute right-0 bottom-16"
               set:html={awards}
             />
           )

@@ -8,7 +8,7 @@ import CardSlider from '~/components/main/CardSlider.astro';
 import '~/components/main/Bento.less';
 
 ---
-<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-10 gap-6">
+<div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-11 mt-[-4px] gap-6">
   <div class="gap-4">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Над чем мы работаем в декабре 2024 года</h2>
     <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Управление виртуальным дата-центром</h3>
@@ -16,7 +16,7 @@ import '~/components/main/Bento.less';
     <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.svg" alt="Делаем сейчас" /></div>
   </div>
   
-  <div class="border border-[#BEBEBE] flex flex-col justify-between">
+  <div class="flex flex-col justify-between border border-[#E8E8E8]">
     
     <div class="flex flex-col">
       <div class="flex flex-row justify-between">
@@ -36,8 +36,8 @@ import '~/components/main/Bento.less';
         <li><a href="/services/research">Продуктовое исследование</a></li>
         <li><a href="/services/ux-audit">UX-аудит</a></li>
         <li><a href="/services/dev-team">Усиление команды разработки</a></li>
-        {/* <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
-        <li><a href="/services/consultation">Консультации</a></li>
+        <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
+        {/*<li><a href="/services/consultation">Консультации</a></li>
         <li><a href="/services/content-design">Контент-дизайн</a></li>*/}
       </ul>  
       
@@ -46,10 +46,10 @@ import '~/components/main/Bento.less';
     {/*<div class="h-[1px] border border-[#E8E8E8]"></div>*/}
       
     <div class="flex flex-row justify-between mt-6 md:mt-8">
-      <a href="https://www.figma.com"><div class="h-16"><Image src="~/assets/images/services/figma.svg" height={64} layout="constrained-height" alt="Figma" /></div></a>
-      <a href="https://react.dev/"><div class="h-16"><Image src="~/assets/images/services/react.svg" height={64} layout="constrained-height" alt="React" /></div></a> 
-      <a href="https://ant.design/"><div class="h-16"><Image src="~/assets/images/services/ant.svg" height={64} layout="constrained-height" alt="Ant" /></div></a>
-      <a href="https://www.typescriptlang.org/"><div class="h-16"><Image src="~/assets/images/services/typescript.svg" height={64} layout="constrained-height" alt="TypeScript" /></div></a>
+      <a href="https://www.figma.com"><div class="h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
+      <a href="https://react.dev/"><div class="h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
+      <a href="https://ant.design/"><div class="h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
+      <a href="https://www.typescriptlang.org/"><div class="h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
     </div>
   </div>
   
@@ -89,7 +89,7 @@ import '~/components/main/Bento.less';
       </div>
       
       <div>
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-8"><a href="/portfolio">+200 компаний за 13 лет работы</a></h2>
+      
       <div class="grid grid-3x3 ml-[-40px] md:ml-0">
          <div class="w-20 h-20 md:w-40 md:h-32 flex items-start justify-start">
            <a class="noir2-div relative" href="/portfolio/alfa-arm">
@@ -97,10 +97,10 @@ import '~/components/main/Bento.less';
              <img src="/images/services/alfa2.svg" class="noir2 absolute top-0 left-0 z-100" width="36" height="56">
            </a></div>
           <div class="w-20 md:w-40 md:h-32 flex items-start justify-start">
-                     <a class="noir2-div relative" href="/portfolio/gazprom-neft">
-                       <img src="/images/services/gazprom.svg" width="36" height="60">
-                       <img src="/images/services/gazprom2.svg" class="noir2 absolute top-0 left-0 z-100" width="36" height="60">
-                  </a></div>
+           <a class="noir2-div relative" href="/portfolio/gazprom-neft">
+             <img src="/images/services/gazprom.svg" width="36" height="60">
+             <img src="/images/services/gazprom2.svg" class="noir2 absolute top-0 left-0 z-100" width="36" height="60">
+         </a></div>
          <div class="w-20 h-20 md:w-40 md:h-32 flex items-start justify-start">
             <a class="noir2-div relative" href="/portfolio/avito">
               <img src="/images/services/avito.svg" width="56" height="56">
@@ -148,6 +148,8 @@ import '~/components/main/Bento.less';
                  <img src="/images/services/okey2.svg" class="noir2 absolute top-0 left-0 z-100" width="42" height="68">
          </a></div>
          
+         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-8"><a href="/portfolio">+200 компаний<br/>за 13 лет работы</a></h2>
+         
       </div>
       
       </div>
@@ -155,7 +157,7 @@ import '~/components/main/Bento.less';
    
    <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
    
-   <div class="gap-4  border border-[#BEBEBE]">
+   <div class="gap-4 border border-[#E8E8E8]">
       <div class="flex justify-between mb-4">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
         {/*<div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
@@ -178,7 +180,7 @@ import '~/components/main/Bento.less';
 </div>
 
 <div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-6 gap-6">
-   <div class="gap-4 text-white flex flex-col">
+   <div class="gap-4 text-white flex flex-col justify-center">
       <h3 class="text-[52px] font-heading text-white leading-none"><a href="/vacansy">Вакансии →</a></h3>
   
    </div>
