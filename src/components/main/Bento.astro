@@ -27,36 +27,40 @@ import '~/components/main/Bento.less';
       </div>
       {/*<h3 class="text-[52px] leading-none font-heading mb-6">Сделаем для вас</h3> */}
       
-      <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
-        <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
-        <li><a href="/services/redesign">Точечный редизайн</a></li>
-        <li><a href="/services/new-features">Добавление новой функциональности</a></li>
-        <li><a href="/services/prototype">Прототип под инвестиции</a></li>
-        <li><a href="/services/ui-redesign">UI-редизайн</a></li>
-        <li><a href="/services/research">Продуктовое исследование</a></li>
-        <li><a href="/services/ux-audit">UX-аудит</a></li>
-        <li><a href="/services/dev-team">Усиление команды разработки</a></li>
-        <li><a href="/services/product-team">Работа в продуктовой команде</a></li>
-        {/*<li><a href="/services/consultation">Консультации</a></li>
-        <li><a href="/services/content-design">Контент-дизайн</a></li>*/}
-      </ul>  
+      <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">
+        <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
+          <li><a href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
+          <li><a href="/services/redesign">Точечный редизайн</a></li>
+          <li><a href="/services/new-features">Добавление новой функциональности</a></li>
+          <li><a href="/services/prototype">Прототип под инвестиции</a></li>
+        </ul>
+        <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
+          <li><a href="/services/ui-redesign">UI-редизайн</a></li>
+          <li><a href="/services/research">Продуктовое исследование</a></li>
+          <li><a href="/services/ux-audit">UX-аудит</a></li>
+          <li><a href="/services/dev-team">Усиление команды разработки</a></li>
+          {/*<li><a href="/services/product-team">Работа в продуктовой команде</a></li>
+          <li><a href="/services/consultation">Консультации</a></li>
+          <li><a href="/services/content-design">Контент-дизайн</a></li>*/}
+        </ul>
+      </div>  
       
     </div>
     
     {/*<div class="h-[1px] border border-[#E8E8E8]"></div>*/}
       
-    <div class="flex flex-row justify-between mt-6 md:mt-8">
-      <a href="https://www.figma.com"><div class="h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
-      <a href="https://react.dev/"><div class="h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
-      <a href="https://ant.design/"><div class="h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
-      <a href="https://www.typescriptlang.org/"><div class="h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
+    <div class="flex flex-row justify-between md:justify-end lg:justify-between mt-6 md:mt-8 md:gap-8 lg:gap-0">
+      <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
+      <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
+      <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
+      <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
     </div>
   </div>
   
   <div>
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
     <div class="flex flex-col md:flex-row gap-6">
-      <h3 class="font-heading text-3xl md:text-[97px] leading-none no-underline">{SITE.phone}</h3>
+      <h3 class="font-heading text-3xl md:text-[97px] lg:text-[52px] xl:text-[97px] leading-none no-underline">{SITE.phone}</h3>
       <div class="flex flex-col gap-1 justify-center">
         <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
         <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
@@ -71,7 +75,7 @@ import '~/components/main/Bento.less';
    <div class="flex flex-col">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отрасли</h2>
         
-        <div class="flex flex-col md:flex-row justify-between mb-4 gap-6 dark:text-[--aw-color-text-light-default]">
+        <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
             <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-2 gap-4">
               <li><a href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
               <li><a href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
@@ -88,9 +92,7 @@ import '~/components/main/Bento.less';
         </div>
       </div>
       
-      <div>
-      
-      <div class="grid grid-3x3 ml-[-40px] md:ml-0 gap-y-14">
+      <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 ml-0 gap-y-14 mt-8 lg:mt-0">
          <div class="flex items-start justify-start">
            <a class="noir2-div relative" href="/portfolio/alfa-arm">
              <img src="/images/services/alfa.svg" width="36" height="56">
@@ -170,8 +172,6 @@ import '~/components/main/Bento.less';
          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]"><a href="/portfolio">+200 компаний<br/>за 13 лет работы</a></h2>
          
       </div>
-      
-      </div>
    </div>
    
    <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
@@ -184,7 +184,7 @@ import '~/components/main/Bento.less';
         </div>*/}
       </div>
       
-      <div class="flex flex-row gap-6 mt-6">
+      <div class="flex flex-row flex-wrap md:flex-nowrap gap-6 mt-6">
         <a class="flex flex-col no-underline" href="/publications"><div class="text-[52px] font-heading leading-none ml-[-8px]">100+</div><span class="underline underline-offset-2">статей об интерфейсах</span></a>
         <a class="flex flex-col no-underline" href="/cheatsheets"><div class="text-[52px] font-heading leading-none ml-[-8px]">100+</div><span class="underline underline-offset-2">шпрагалок по дизайну</span></a> 
         <a class="flex flex-col no-underline" href="https://eduhund.com/"><div class="text-[52px] font-heading leading-none">20+</div><span class="underline underline-offset-2">плагинов для <span class="figma">Figma</span></span></a>

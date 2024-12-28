@@ -72,7 +72,7 @@
   display: block;
   height: 18px;
   width: 18px;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   background-image: url('/images/services/figma.svg');
   background-size: auto 100%;
   background-position: center;
@@ -80,19 +80,21 @@
 }
 
 @media (min-width: 1024px) {
-    .bento-grid {
-      grid-template-columns: 2fr 1fr;
-    
-      > div:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-      }
-      
-      > div:nth-child(3) {
-        padding: 0px 0px 28px 0px;
-      }
+  .bento-grid {
+    grid-template-columns: 2fr 1fr;
+  
+    > div:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
     }
     
+    > div:nth-child(3) {
+      padding: 0px 0px 28px 0px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {    
     .bento-grid2 {
       grid-template-columns: 1fr 1fr;
     
