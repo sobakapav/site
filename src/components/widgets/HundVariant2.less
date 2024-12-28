@@ -1,0 +1,23 @@
+.hero-block.hund-background {
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+  background-image: url('/images/main/main2.png');
+}
+
+.dark .hero-block.hund-background {
+  background-image: url('/images/main/main-dark.png');
+}
+
+@media (max-width: 1024px) {
+  .hero-block.hund-background {
+    background-position: bottom left;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-block.hund-background {
+    background-image: none !important;
+  }
+}

@@ -6,7 +6,7 @@ import Image from '~/components/common/Image.astro';
 //import Button from '~/components/ui/Button.astro'; 
 import type { CallToAction } from '~/types';
 
-import './Hund.less';
+import './HundVariant2.less';
 
 export interface Props {
   id?: string;
@@ -33,7 +33,7 @@ const {
 } = Astro.props;
 
 const mainColors = darkTheme 
-  ? 'bg-[--aw-color-bg-page-dark] text-[--aw-color-text-dark]'
+  ? 'text-[--aw-color-text-dark]'
   : '';
   
 const textColors = darkTheme 
@@ -85,7 +85,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           awards && (
             <div
-              class:list={[twMerge('absolute left sm:right-0 bottom-[-64px] sm:bottom-[-16px] lg:bottom-16', classes.awards || '')]}
+              class="absolute left sm:right-0 bottom-[-64px] sm:bottom-[-16px] lg:bottom-16"
               set:html={awards}
             />
           )
