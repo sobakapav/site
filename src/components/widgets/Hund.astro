@@ -70,12 +70,12 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           title2 && (
             <h2
-              class="max-w-3xl text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]"
+              class="max-w-xs md:max-w-3xl text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]"
               set:html={title2}
             />
           )
         }
-        <div class="max-w-3xl">
+        <div class="max-w-xs md:max-w-3xl">
           {subtitle && (
             <p class:list={[twMerge('text-xl text-muted mb-6 dark:text-slate-300', classes.subtitle || '', textColors)]} set:html={subtitle} />
           )}         
@@ -85,7 +85,7 @@ const bgImageStyle = bgImage && ('background-image: url(\''+ bgImage + '\')');
         {
           awards && (
             <div
-              class:list={[twMerge('absolute left sm:right-0 bottom-[-64px] sm:bottom-[-16px] lg:bottom-16', classes.awards || '')]}
+              class:list={[twMerge('absolute right-0 bottom-[-16px] sm:bottom-[-24px] md:bottom-[0px] lg:bottom-[32px]', classes.awards || '')]}
               set:html={awards}
             />
           )
