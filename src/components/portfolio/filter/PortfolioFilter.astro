@@ -70,6 +70,11 @@ for (var group in portfolioFilters) {
           checkbox.checked = false;
         }
         
+        if (window.location.hash) {
+          var hashless = window.location.href.substring(0, window.location.href.indexOf('#'));
+          window.history.pushState(null, null, hashless);
+        }
+        
         showAll();
       }
       
@@ -123,6 +128,13 @@ for (var group in portfolioFilters) {
         
         if (counting) {
           spinningNumbersInterval = window.setInterval(spin, 50);
+        }
+        
+        if (filters && filters.length) {
+          location.href = "#" + filters.join(':');
+        } else if (window.location.hash) {
+          var hashless = window.location.href.substring(0, window.location.href.indexOf('#'));
+          window.history.pushState(null, null, hashless);
         }
       }
       
@@ -184,6 +196,14 @@ for (var group in portfolioFilters) {
         
         for (const reset of document.querySelectorAll('.reset-filters')) {
           reset.addEventListener('click', resetFilters);
+        }
+
+        const hash = window.location.hash;
+        if (hash) {
+          const hashElements = hash.split(':');
+          for (var tag of hashElements) {
+            document.getElementById('fltr-'+tag)?.checked = true;
+          } 
         }
         
         applyFilter();
