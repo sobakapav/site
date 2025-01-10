@@ -8,9 +8,16 @@ import RedCheckbox from '~/components/common/RedCheckbox.astro';
 
 const { list } = Astro.props;
 
+const preload = [];
+for (var idx of list) {
+  preload.push(getEntry('portfolio', list[idx]));
+}
+
+preload = await Promist.all(preload);
+
 const items = [];
-for (var idx in list) {
-  var item = await getEntry('portfolio', list[idx]);
+for (var idx in preload) {
+  var item = preload[idx];
   if (!item) console.error(`Cannot find item with name ${list[idx]}`);
   item.data.index = idx;
   item.data.href = `/portfolio/${list[idx]}`;
