@@ -194,7 +194,9 @@ for (var group in portfolioFilters) {
         if (hash) {
           const hashElements = hash.split(':');
           for (var tag of hashElements) {
-            document.getElementById('fltr-'+tag)?.checked = true;
+            const tel = document.getElementById('fltr-'+tag);
+            tel && tel.checked = true;
+            
           } 
         }
         
