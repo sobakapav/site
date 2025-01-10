@@ -46,7 +46,7 @@ for (var group in portfolioFilters) {
       </div>
     ))}
     
-    <script>
+    <script is:inline>
       var spinningNumbersInterval;
       var spinningElements = {};
     
@@ -60,6 +60,11 @@ for (var group in portfolioFilters) {
         const checkedBoxes = document.querySelectorAll('portfolio-filter input:checked');
         for (const checkbox of checkedBoxes) {
           checkbox.checked = false;
+        }
+        
+        if (window.location.hash) {
+          var hashless = window.location.href.substring(0, window.location.href.indexOf('#'));
+          window.history.pushState(null, null, hashless);
         }
         
         showAll();
@@ -116,6 +121,13 @@ for (var group in portfolioFilters) {
         if (counting) {
           spinningNumbersInterval = window.setInterval(spin, 50);
         }
+        
+        if (filters && filters.length) {
+          location.href = "#" + filters.join(':');
+        } else if (window.location.hash) {
+          var hashless = window.location.href.substring(0, window.location.href.indexOf('#'));
+          window.history.pushState(null, null, hashless);
+        }
       }
       
       function spin() {
@@ -147,13 +159,15 @@ for (var group in portfolioFilters) {
         if (checkedBoxes.length == 0) {
           showAll();
         }
-        const filterGroups = document.querySelectorAll('portfolio-filter .filter-group .filter-list');
+        const filterGroups = document.querySelectorAll('portfolio-filter .filter-group');
         const applyFilters = [];
         const allFilters = [];
         for (const group of filterGroups) {
           const filterNames = [];
           const allFilterNames = [];
           for (const astroCheckbox of group.children) {
+            if (astroCheckbox.tagName !== 'ASTRO-CHECKBOX')
+              continue;
             const checkbox = astroCheckbox.children[0];
             allFilterNames.push(checkbox.id);
             if (checkbox.checked) {
@@ -166,19 +180,6 @@ for (var group in portfolioFilters) {
         
         filter(applyFilters, allFilters);
       }
-      
-      function switchFilter(event) {
-        var filterName;
-        for (const cls of event.target.classList) {
-          if (cls.startsWith('switch-filter-')) {
-            filterName = cls.substring('switch-filter-'.length);
-          }
-        }
-        
-        const filter = document.getElementById('fltr-' + filterName);
-        filter.checked = !filter.checked;
-        applyFilter();
-      }
   
       window.addEventListener('load', (event) => {      
         for (const filter of document.querySelectorAll('portfolio-filter input')) {
@@ -188,9 +189,13 @@ for (var group in portfolioFilters) {
         for (const reset of document.querySelectorAll('.reset-filters')) {
           reset.addEventListener('click', resetFilters);
         }
-        
-        for (const tag of document.querySelectorAll('.switch-filter')) {
-          tag.addEventListener('click', switchFilter);
+
+        const hash = window.location.hash;
+        if (hash) {
+          const hashElements = hash.split(':');
+          for (var tag of hashElements) {
+            document.getElementById('fltr-'+tag)?.checked = true;
+          } 
         }
         
         applyFilter();

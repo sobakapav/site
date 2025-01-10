@@ -20,6 +20,7 @@ const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | un
     title={post.title}
     text={post.excerpt}
     noCard={post.noCard}
+    isNew={post.isNew}
     awards={post.awards}
   >
     <Fragment slot="footer">
