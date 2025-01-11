@@ -194,12 +194,18 @@ for (var group in portfolioFilters) {
 
         const hash = window.location.hash;
         if (hash) {
+          var filtersUsed = false;
           const hashElements = hash.substring(1).split(':');
           for (var tag of hashElements) {
             const tel = document.getElementById('fltr-'+tag);
             if (tel && typeof tel.checked === 'boolean') {
               tel.checked = true;
+              filtersUsed = true;
             }
+          }
+          
+          if (filtersUsed) {
+            document.getElementById('show-filters').checked = true;
           } 
         }
         
