@@ -182,6 +182,20 @@ for (var group in portfolioFilters) {
         
         filter(applyFilters, allFilters);
       }
+
+      
+      function switchFilter(event) {
+        var filterName;
+        for (const cls of event.target.classList) {
+          if (cls.startsWith('switch-filter-')) {
+            filterName = cls.substring('switch-filter-'.length);
+          }
+        }
+        
+        const filter = document.getElementById('fltr-' + filterName);
+        filter.checked = !filter.checked;
+        applyFilter();
+      }
   
       window.addEventListener('load', (event) => {      
         for (const filter of document.querySelectorAll('portfolio-filter input')) {
@@ -190,6 +204,10 @@ for (var group in portfolioFilters) {
         
         for (const reset of document.querySelectorAll('.reset-filters')) {
           reset.addEventListener('click', resetFilters);
+        }
+
+        for (const tag of document.querySelectorAll('.switch-filter')) {
+          tag.addEventListener('click', switchFilter);
         }
 
         const hash = window.location.hash;
