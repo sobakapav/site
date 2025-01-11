@@ -122,8 +122,10 @@ for (var group in portfolioFilters) {
           spinningNumbersInterval = window.setInterval(spin, 50);
         }
         
-        if (filters && filters.length) {
-          location.href = "#" + filters.join(':');
+        const flatFilters = filters?.reduce((st , nx) => [...st, ...nx], []).map((nm) => nm.startsWith('fltr-') ? nm.substring(5) : nm);
+        
+        if (flatFilters && flatFilters.length) {
+          location.href = "#" + flatFilters.join(':');
         } else if (window.location.hash) {
           var hashless = window.location.href.substring(0, window.location.href.indexOf('#'));
           window.history.pushState(null, null, hashless);
@@ -159,7 +161,7 @@ for (var group in portfolioFilters) {
         if (checkedBoxes.length == 0) {
           showAll();
         }
-        const filterGroups = document.querySelectorAll('portfolio-filter .filter-group');
+        const filterGroups = document.querySelectorAll('portfolio-filter .filter-group .filter-list');
         const applyFilters = [];
         const allFilters = [];
         for (const group of filterGroups) {
@@ -192,11 +194,12 @@ for (var group in portfolioFilters) {
 
         const hash = window.location.hash;
         if (hash) {
-          const hashElements = hash.split(':');
+          const hashElements = hash.substring(1).split(':');
           for (var tag of hashElements) {
             const tel = document.getElementById('fltr-'+tag);
-            tel && tel.checked = true;
-            
+            if (tel && typeof tel.checked === 'boolean') {
+              tel.checked = true;
+            }
           } 
         }
         
