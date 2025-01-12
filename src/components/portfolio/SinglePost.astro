@@ -78,7 +78,7 @@ const { Content } = post;
       
     </Hero2>
 
-    <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
+    <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto">
       <div class="grow-0 shrink-0 max-w-5xl">
         { post.awards && (
           <div class="flex flex-row gap-4 pl-6">
@@ -119,7 +119,7 @@ const { Content } = post;
             )}
             
       </div>
-      <div class="flex flex-col justify-between px-6">
+      <div class="flex flex-col justify-between px-6 order-last md:order-none">
         <div class="lg:max-w-[320px]">
           <RelatedPages pages={post.relatedPages} />
         </div>
@@ -132,9 +132,11 @@ const { Content } = post;
           </div>
         </div>
       </div>
+      <div class="grow w-full">
+        <Review post={post} />
+      </div>
     </div> 
     
-    <Review post={post} />
     
     {/* <RelatedLinks post={post} /> */}
     
