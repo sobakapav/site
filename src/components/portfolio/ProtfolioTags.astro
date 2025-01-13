@@ -8,6 +8,6 @@ const { tags } = Astro.props;
 
 <portfolio-tags class="flex flex-row flex-wrap">
   {tags && tags.map(tag => (
-    <a class:list={["switch-filter hover:cursor-pointer bg-[#E6E6E6] px-2 py-1 mr-1 mb-1 rounded-sm text-sm color-[#C4C4C4] hover:text-[--aw-color-hund]", "switch-filter-"+tag]}>{tagNames[tag]}</a>
+    <a class:list={["switch-filter hover:cursor-pointer bg-[#E6E6E6] px-2 py-1 mr-1 mb-1 rounded-sm text-sm color-[#C4C4C4] dark:text-[--aw-color-text-light-default] hover:text-[--aw-color-hund]", "switch-filter-"+tag]}>{tagNames[tag]}</a>
   ))}
 </portfolio-tags>
