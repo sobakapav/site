@@ -127,7 +127,7 @@ const portfolioCollection = defineCollection({
     
     result: z.array(z.object({
       src: z.string().optional(),
-      text: z.string(),
+      text: z.string().optional(),
       link: z.string().optional(),
     })).optional(),
     
