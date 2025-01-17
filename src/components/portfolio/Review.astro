@@ -80,14 +80,14 @@ const { post } = Astro.props;
             />
           </div>
         )}
-        <div class:list={["flex flex-row justify-between max-w-2xl", post.review ? "" : "md:basis-0 md:grow"]}>
+        <div class:list={["flex flex-row justify-between max-w-2xl", post.review ? "" : "md:basis-0 md:grow", (post.reivew || post.director) ? "" : "flex-wrap content-end"]}>
           <div class="basis-0 grow"><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
           <div class="basis-0 grow"><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
           
           <div class="basis-0 grow">
             <h3 class="mb-1 text-base">Результат</h3>
             {post.result?.map((res) => (
-            <div class="format-subtitle-markdown white-links">
+            <div class="format-subtitle-markdown white-links flex flex-row flex-nowrap">
               <a href={res.link} class="flex flex-row items-center gap-1 mb-2 text-[#ffffff]">
                 <div class="grow-0 shrink-0 basis-[30px]"><Image src={res.src} alt="Figma logo" height={40} width={30}/></div>
                 <div class="grow shrink basis-0"> <Markdown.Inline of={res.text}/></div>
