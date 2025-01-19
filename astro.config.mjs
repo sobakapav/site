@@ -26,6 +26,9 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
+  build: {
+    assetsPrefix: 'https://sobakapav.ru'
+  },
 
   integrations: [
     tailwind({
