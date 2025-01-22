@@ -1,0 +1,122 @@
+---
+
+import { getEntry } from 'astro:content';
+import { tagNames } from '~/navigation.js';
+import './CurrentProjects.less';
+
+const { projects } = Astro.props;
+
+const projectData = [];
+
+for (const project of projects) {
+  const entry = (await getEntry('currentProjects', project));
+  if (!entry) {
+    console.error('No entry exists for currentProject \"' + project + '\"');
+  }
+  projectData.push(entry.data);
+}
+
+---
+
+<current-projects>
+  <carousel-content style="left: 0%">
+    { projectData.map((project, index) => (
+      <div class:list={["project-slide", index == 0 ? 'first' : '']}>
+        <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">
+          {project.title}
+        </h3>
+        <div class="text-xl text-[#929292]">
+          {project.tags && project.tags.map((tag, index) => (
+            <Fragment>
+              {index > 0 ? " • " : ""}
+              {tagNames[tag]}
+            </Fragment>
+          ))}
+        </div>
+        <div class="project-image-cards relative h-[253px] w-[712px] mt-6">
+          {project.images && project.images.map((image, index) => (
+            <div class:list={["project-image-card", index == 0 ? "current" : ""]}>
+              <img src={image} height="253" width="712"/>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </carousel-content>
+  
+</current-projects>
+
+<script>
+  function initCarousel(carousel) {
+    const slides = carousel.querySelectorAll(".project-slide");
+    var firstSlide;
+    for (var slide of slides) {
+      firstSlide = firstSlide || slide;
+      slide.style.width = "" + (100.0/(slides.length + 1)) + "%";
+      slide.style.visibility = "visible";
+    }
+    firstSlide.parentNode.appendChild(firstSlide.cloneNode(true)); 
+    firstSlide.parentNode.style.width = "" + (100*(slides.length + 1)) + "%";
+  }
+  
+  function tickCarouselSlide(carousel) {
+    const content = carousel.querySelector("carousel-content");
+    const sildesCount = content.querySelectorAll('.project-slide').length;
+    
+    const percent = parseInt(content.style.left || "0") - 100;
+    
+    if (percent == -sildesCount * 100) {
+      content.style.transitionDuration = "0s";
+      content.style.left = "0%";
+      setTimeout(() => {
+        content.style.transitionDuration = "";
+        content.style.left = "-100%";
+      }, 0);
+    } else {
+      const left = "" + percent + "%";
+      content.style.left = left;
+    }
+  }
+  
+  function tickCarousel(carousel) {
+    const content = carousel.querySelector("carousel-content");
+    const slides = content.querySelectorAll('.project-slide');
+    const percent = parseInt(content.style.left || "0");
+    const slideIndex = (-percent / 100) % slides.length;
+    
+    const currentSlide = slides[slideIndex];
+    
+    const images = currentSlide.querySelectorAll('.project-image-card');
+
+    var selected = 0;
+    for (var i = 0; i < images.length; i++) {
+      var slide = images[i];
+      if (slide.classList.contains('current')) {
+        selected = i;
+      }
+    }
+    images[selected].classList.remove('current');
+    if (selected + 1 >= images.length) {
+      images[0].classList.add('current');
+      tickCarouselSlide(carousel);
+    } else {
+      images[selected + 1].classList.add('current');
+    }
+  }
+  
+  function tick() {
+    const carousels = document.querySelectorAll("current-projects");
+    for (const carousel of carousels) {
+      tickCarousel(carousel);
+    }
+  }
+
+  window.addEventListener("load", (event) => {
+    const carousels = document.querySelectorAll("current-projects");
+    
+    for (const carousel of carousels) {
+      initCarousel(carousel);
+      setInterval(tick, 2000)
+    }
+  });
+</script>
