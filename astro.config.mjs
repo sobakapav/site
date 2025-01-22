@@ -74,11 +74,6 @@ export default defineConfig({
     }),
   ],
 
-  image: {
-    service: squooshImageService(),
-    domains: ["cdn.pixabay.com"],
-  },
-
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],

@@ -4,6 +4,7 @@ import Image from '~/components/common/Image.astro';
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import CardSlider from '~/components/main/CardSlider.astro';
+import CurrentProjects from '~/components/main/CurrentProjects.astro';
 
 import '~/components/main/Bento.less';
 
@@ -11,9 +12,7 @@ import '~/components/main/Bento.less';
 <div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-11 mt-[-4px] gap-6">
   <div class="gap-4">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Над чем мы работаем в декабре 2024 года</h2>
-    <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Управление виртуальным дата-центром</h3>
-    <span class="text-xl text-[#929292]"><a href="/portfolio#it">IT-продукты для бизнеса</a> • <a href="/services/new-features">Добавление новой функциональности</a> • <a href="/services/ui-redesign">UI-редизайн</a></span>
-    <div class="ml-[-40px] mr-10"><Image src="~/assets/images/main/now.svg" alt="Делаем сейчас" /></div>
+    <CurrentProjects projects={['project-1', 'project-2', 'project-3', 'project-4']} />
   </div>
   
   <div class="flex flex-col justify-between">
