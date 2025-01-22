@@ -250,10 +250,20 @@ const serviceCollection = defineCollection({
   }),
 });
 
+const currentProjectsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()).optional(),
+    images: z.array(z.string()).optional(),
+  }),
+});
+
 export const collections = {
   post: postCollection,
   services: serviceCollection,
   research: postCollection,
   design2dev: postCollection,
   portfolio: portfolioCollection,
+  currentProjects: currentProjectsCollection,
+  
 };
