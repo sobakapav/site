@@ -76,13 +76,7 @@ const {
        </div>        
     </div>
   )}
-  {isNew && (
-      <div class="absolute mb-[-44px] top-[250px] right-[40px] z-[1] flex flex-row justify-end">
-          
-         <div class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">New</div>
-              
-      </div>
-    )}
+  
   <div class="mt-4 w-72">
     <header>
       {supertitle && (
@@ -90,7 +84,8 @@ const {
           <span class="text-sm" set:html={supertitle} />
         </div>
       )}
-           
+       
+      <span>     
       <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading z-[2]", classes.title]}>
         {link ? (
           <a href={link}>
@@ -99,7 +94,12 @@ const {
         ) : (
           <Markdown.Inline of={title} />
         )}
+        {isNew && (
+             <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">New</span>
+        )}
       </h2>
+      
+      </span>
     </header>
 
     {
