@@ -22,18 +22,20 @@ for (const project of projects) {
   <carousel-content style="left: 0%">
     { projectData.map((project, index) => (
       <div class:list={["project-slide", index == 0 ? 'first' : '']}>
-        <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">
-          {project.title}
-        </h3>
-        <div class="text-xl text-[#929292]">
-          {project.tags && project.tags.map((tag, index) => (
-            <Fragment>
-              {index > 0 ? " • " : ""}
-              {tagNames[tag]}
-            </Fragment>
-          ))}
+        <div class="h-[236px] md:h-auto">
+          <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">
+            {project.title}
+          </h3>
+          <div class="text-xl h-[56px] md:h-auto text-[#929292]">
+            {project.tags && project.tags.map((tag, index) => (
+              <Fragment>
+                {index > 0 ? " • " : ""}
+                {tagNames[tag]}
+              </Fragment>
+            ))}
+          </div>
         </div>
-        <div class="project-image-cards relative h-[253px] w-[712px] mt-6">
+        <div class="project-image-cards relative h-[126px] w-[360px] sm:h-[253px] sm:w-[712px] mt-6">
           {project.images && project.images.map((image, index) => (
             <div class:list={["project-image-card", index == 0 ? "current" : ""]}>
               <img src={image} height="253" width="712"/>

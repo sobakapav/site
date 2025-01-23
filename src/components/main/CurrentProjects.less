@@ -1,5 +1,5 @@
 current-projects {
-  width: 712px;
+  width: calc(100vw - 88px);
   overflow: hidden;
   background-color: #F0F0F0;
   display: block;
@@ -19,7 +19,6 @@ current-projects {
     }
   }
   
-  
   .project-image-card {
     transition: all 1s ease-out;
     position: absolute;
@@ -36,3 +35,8 @@ current-projects {
   }
 }
 
+@media (min-width: 1024px) {  
+  current-projects {
+    width: 712px;
+  }
+}
