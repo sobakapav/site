@@ -15,6 +15,7 @@ imageAlt: Собака Павлова • Контроль • Дизайн ин
 
 tags:
   - gos
+  - prom
   - ux-design
   - prof
   - mob
@@ -44,13 +45,28 @@ relatedPages2:
     text: |
       ### Похожие проекты
     collection: portfolio
+    page: control-patent
+  - 
+    collection: portfolio
+    page: data-solution
+  - 
+    collection: portfolio
+    page: control-predpisanie
+  - 
+    collection: portfolio
+    page: control-mobile
+  - 
+    collection: portfolio
+    page: control
+  - 
+    collection: portfolio
     page: gormost
   - 
     collection: portfolio
     page: trash
   - 
     collection: portfolio
-    page: control-patent
+    page: smartdeal
 
 outcome:
   title: Некоторые цифры
@@ -96,7 +112,7 @@ import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 
 <TOC>
-[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
+[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Контекст](#anchor3) • [Результат](#anchor4) • [Отзыв, цены, сроки](#anchor5)
 </TOC>
 
 ## <a name="anchor1" />Бизнес-задача
@@ -105,16 +121,48 @@ import TOC from '~/components/widgets/TOC.astro';
 
 А точнее, выражаясь языком человеческим, разработать мобильное приложение для лесничеств.
 
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/5.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/6.png" /></div>
+      </div>
+  </div>
+</div>
+_Контроль.Лес.Авторизация и профиль пользователя_
+
 ## <a name="anchor2" />Дизайн-задача
 
 Разработать приложение, которое позволит всем, кто занимается лесозаготовками, — лесникам, владельцам лесопилок и складов леса — работать с документами в удобном формате.
 
-<a href="/images/portfolio/x5/1.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/1.png)</a>
-_Контроль.Лес_
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/7.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/8.png" /></div>
+      </div>
+  </div>
+</div>
+_Главная страница и действия с документом_
 
 ## <a name="anchor3" />Контекст
 
 С того момента, как дерево превращается в бревно, все, что с ним происходит, обязательно сопровождается документами.
+
+<a href="/images/portfolio/x5/4.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/4.png)</a>
+_Электронный сопроводительный документ на транспортировку древесины_
 
 Тем, кто связан с лесной промышленностью, регулярно нужно оформлять и отправлять вот такие бумаги на лес:
 
@@ -123,78 +171,212 @@ _Контроль.Лес_
 - Электронные сопроводительные документы (ЭСД) на транспортировку древесины.
 - Первичные учетные документы (ПУД) отражают покупку, продажу и т.п. на счетах бухгалтерского учета.
 
-<a href="/images/portfolio/x5/3.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/3.png)</a>
-_Любое действие на складе вызывает оформление ОБД. Любое действие на лесопилке вызывает оформление ОПП_
-
-При этом на лесосеках и лесных складах вполне может и не быть интернета. Скорее всего и нет.
-
-Приложение «Контроль.Лес» предназначено для того, чтобы быстро заполнять эти бумаги и отправлять их через Bluetooth.
-
-<a href="/images/portfolio/x5/4.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/4.png)</a>
-_Электронный сопроводительный документ на транспортировку древесины_
-
-## <a name="anchor3" />Концептуальное проектирование
-
-
-
-<a href="/images/portfolio/x5/2.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/2.png)</a>
-_Схема приложения_
-
-
-
-
-
-Группировка по папкам
-Быстрые фильтры по типам документов
-
-Вопросы?
-А я передавал этот док. или нет?
-
-Атрибуты, по которым можно фильтровать
-
-Статус готовности: 
-черновик
-подписанный
-Неопубликованный
-Опубликованный
-Дата:
-Создания
-Изменения
-Передачи
-Тип:
-ЭСД
-ОБД
-ОПП
-ПУД
-
-
-Реузультаты приняты заказчиком.
-
-Электронный сопроводительный документ (ЭСД) на транспортировку древесины официально пришел на смену бумажному предшественнику с 01.01.2022 года. Это означает, что с 01 января 2022 года практически любая перевозка древесины должна сопровождаться обязательным формированием ЭСД. 
-
-Отчет о балансе древесины в местах складирования древесины (ОБД).
-
-ОПП — отчет о переработанной продукции на объекте лесоперерабатывающей инфраструктуры (ОЛИ).
-
-ОБД — отчет о балансе древесины или сокращенно — отчет в ЕГАИС Лес о поступлении древесины на склад или вывозе со склада.
-
-Первичный учетный документ (ПУД) – документ, на основании которого хозяйственная операция отражается на счетах бухгалтерского учета
-
 <div class="flex gap-2 flex-wrap mb-2"> 
   <div class="daisy-mockup-phone">
     <div class="daisy-camera"></div>
     <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-predpisanie/1.png" /></div>
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/9.png" /></div>
     </div>
   </div>
   <div class="daisy-mockup-phone">
       <div class="daisy-camera"></div>
       <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-predpisanie/2.png" /></div>
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/10.png" /></div>
+      </div>
+  </div>
+</div>
+_Создание нового документа_
+
+При этом на лесосеках и лесных складах вполне может и не быть интернета. Скорее всего и нет.
+
+Приложение «Контроль.Лес» предназначено для того, чтобы быстро заполнять эти бумаги и отправлять их через Bluetooth.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/11.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/12.png" /></div>
+      </div>
+  </div>
+</div>
+_Отправка документа через Bluetooth_
+
+## <a name="anchor4" />Результат
+
+Изучили, как выглядит лесной документооборот, в какие моменты, в связи с чем и какие именно бумаги оформляются. Какие действия должен совершить пользователь и какие дополнительные возможности ему нужно предоставить. 
+
+<a href="/images/portfolio/x5/3.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/3.png)</a>
+_Любое действие на складе вызывает оформление ОБД. Любое действие на лесопилке вызывает оформление ОПП_
+
+Создали принципиальную схему работы приложения. 
+
+<a href="/images/portfolio/x5/2.png" target="_blank">![Дизайн интерфейса мобильного приложения для лесничеств | SobakaPav.ru](~/assets/images/portfolio/x5/2.png)</a>
+_Схема приложения_
+
+Спроектировали все необходимые экраны для основных сценариев работы с документами, затем отрисовали их для Android и iOS.
+
+Всего около восьмидесяти экранов для каждой из мобильных платформ, в том числе:
+
+13 экранов отправки и получения документов
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/13.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/14.png" /></div>
+      </div>
+  </div>
+</div>
+_Получение документа_
+
+6 экранов оформления электронного сопроводительного документа (ЭСД)
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/15.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/16.png" /></div>
       </div>
   </div>
 </div>
 
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/17.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/18.png" /></div>
+      </div>
+  </div>
+</div>
+_Действия с электронным сопроводительным документом (ЭСД)_
 
+23 экрана для различных вариантов и ситуаций оформления отчетов о переработанной продукции (ОПП)
 
-## <a name="anchor4" />
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/19.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/20.png" /></div>
+      </div>
+  </div>
+</div>
+_Действия с отчетом о переработанной продукции (ОПП)_
+
+28 экранов для всевозможных отчетов о балансе древесины (ОБД)
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/21.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/22.png" /></div>
+      </div>
+  </div>
+</div>
+_Действия отчетом о балансе древесины (ОБД)_
+
+Кроме соовершенно необходимых действий с документами (открыть, заполнить, подписать, отправить...), предусмотрели возможности, которые вроде как не обязательны, но существенно облегчают жизнь тому, кто работает с приложением. Группировка по папкам, быстрые фильтры, возможность проверить, отправлял ли пользователь уже документ.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/25.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/26.png" /></div>
+      </div>
+  </div>
+</div>
+_Карточка документа_
+
+У одного пользователя в приложении могут быть десятки, а то и сотни документов разных типов. Мы предусмотрели фильтрацию по следующим аттрибутам:
+
+1. Статус готовности: 
+- черновик
+- подписанный
+- неопубликованный
+- опубликованный
+2. Дата:
+- создания
+- изменения
+- передачи
+3. Тип:
+- отчеты о балансе древесины (ОБД)
+- отчеты о переработанной продукции (ОПП)
+- электронные сопроводительные документы (ЭСД)
+- первичные учетные документы (ПУД)
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/23.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/24.png" /></div>
+      </div>
+  </div>
+</div>
+_Фильтрация, черновики_
+
+Результаты приняты заказчиком и переданы в разработку.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/27.png" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/control-forest/28.png" /></div>
+      </div>
+  </div>
+</div>
+_Пользователь не найден, ошибка синхронизации_
+
+## <a name="anchor5" />
