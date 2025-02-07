@@ -1,27 +1,26 @@
 ---
-publishYear: 2018
-name: ПГК
-title: Корпоративный портал железнодорожной компании
-excerpt: Создали дизайн интерфейсов портала оператора железнодорожных грузоперевозок.
+publishYear: 2022
+name: SmartDeal ЭЦП
+title: Приложение для подписания документов при сделках с недвижимостью
+excerpt: Разработали интерфейс мобильного приложения, в котором можно подписать документы и отследить статус сделки.
 context: |
   **Подробный кейс пока в работе. Если хотите посмотреть на этот дизайн в деталях, пишите нам на [we@sobakapav.ru](mailto:we@sobakapav.ru)**
   
-  [Первая грузовая компания (ПГК)](https://pgk.ru/) — крупнейший оператор железнодорожных грузоперевозок России.
+  [SmartDeal ЭЦП](https://smartdeal.pro/) — приложение для подписания документов при сделках с недвижимостью.
 isNew: true
 
 logo:
-  src: ~/assets/images/portfolio/biletik/logo.svg
-  alt: ПГК • Логотип
-  link: https://pgk.ru/
-image: ~/assets/images/portfolio/pgk/main.png
-imageAlt: Собака Павлова • ПГК • Корпоративный портал железнодорожной компании
+  src: ~/assets/images/portfolio/smartdeal-ecp/logo.svg
+  alt: SmartDeal • Логотип
+  link: https://smartdeal.pro/
+image: ~/assets/images/portfolio/smartdeal-ecp/main.png
+imageAlt: Собака Павлова • SmartDeal • Приложение для подписания документов при сделках с недвижимостью
 thumbnail:
-  src: ~/assets/images/portfolio/cards/pgk.svg
-  alt: Собака Павлова • ПГК • Корпоративный портал железнодорожной компании
+  src: ~/assets/images/portfolio/cards/smartdeal2.svg
+  alt: Собака Павлова • SmartDeal • Приложение для подписания документов при сделках с недвижимостью
 
 tags:
-  - ec
-  - log
+  - it
   - redesign
   - new-features
   - mass
@@ -40,62 +39,52 @@ relatedPages:
   -
     collection: services
     page: research
-  -
-    text: |
-      ### Наша экспертиза
-      368 интерфейсных проектов и более [120 проектных кейсов](https://sobakapav.ru/portfolio).
-      ### Статьи об интерфейсах для транспорта 
-    collection: post
-    page: city-transport-design
-  -
-    collection: post
-    page: logistics-design
-  -
-    collection: post
-    page: osago
-  -
-    collection: post
-    page: rzd-consult
 
 relatedPages2:
   -
     text: |
       ### Похожие проекты
     collection: portfolio
-    page: nlmk
+    page: anggell
   - 
     collection: portfolio
-    page: boracase
+    page: easydocs
   - 
     collection: portfolio
-    page: autotransinfo
+    page: edms
   - 
     collection: portfolio
     page: gormost
   - 
     collection: portfolio
-    page: alfastrahhr
+    page: amber
 
 result:
   -
     text: Покажем из рук в руки и расскажем ещё больше
     link: "mailto:we@sobakapav.ru"
-budget: 1 800 000 ₽
-time: "5 месяцев"
+budget: 390 000 ₽
+time: "3 месяца"
 
-director: слово директора
+review: 
+  text: |
+    По самому мобильному приложению вопросов нет — большинство оценивает хорошо. В том числе вендоры SafeTech говорят, что мы изящно решили пару моментов с идентификацией, удобнее и проще (меньше шагов), чем в стандартном приложении.
+           
+    Если бы не привлекали вас, как профессионалов, результат был бы хуже. Сделали бы как обычно «инженеры для инженеров». В отсутствие штатного UX эксперта и дизайнера подобного рода сотрудничество я считаю крайне полезным.
+  person: Алексей Макаров
+  position: заместитель ген. директора
 
 metadata:
-  canonical: https://sobakapav.ru/portfolio/pgk
-  title: UX-дизайн • Корпоративный портал железнодорожной компании
-  description: "Создали дизайн интерфейсов портала оператора железнодорожных грузоперевозок."
+  canonical: https://sobakapav.ru/portfolio/smartdeal-ecp
+  title: UX-дизайн • Приложение для подписания документов при сделках с недвижимостью
+  description: "Разработали интерфейс мобильного приложения, в котором можно подписать документы и отследить статус сделки."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Собака Павлова
     images:
-      - url: '/images/portfolio/pgk/badge.png'
+      - url: '/images/portfolio/smartdeal-ecp/badge.png'
         width: 1200
         height: 630
     type: website
@@ -105,23 +94,27 @@ import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 
 <TOC>
-[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Аналитика](#anchor3) • [Дизайн](#anchor4) • [Презентация](#anchor5) • [Результат](#anchor6) • [Отзыв, цены, сроки](#anchor7)
+[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
 </TOC>
 
 ## <a name="anchor1" />Бизнес-задача
 
-Создать корпоративный портал, отвечающий задачам клиентов и требованиям большого количества стейкхолдеров.
+1. Дать возможность участникам сделки выпустить ЭЦП и подписать документ 
+2. Сделать удобное приложение, через которое можно будет в будущем предложить другие услуги SmartDeal
 
-<a href="/images/portfolio/pgk/1-1.png" target="_blank">![Корпоративный портал железнодорожной компании | SobakaPav.ru](~/assets/images/portfolio/pgk/1.png)</a>
+Дать возможность участникам сделки выпустить ЭЦП и подписать документ. Сделать удобное приложение, через которое можно будет в будущем предложить другие услуги SmartDeal.
+
+<a href="/images/portfolio/smartdeal-ecp/1-1.png" target="_blank">![ | SobakaPav.ru](~/assets/images/portfolio/smartdeal-ecp/1.png)</a>
 _Главная_
 
 ## <a name="anchor2" />Дизайн-задача
 
-Собрать требования и визуализировать их в виде прототипов для последующей передачи в дизайн.
+1. Разработать интерфейс мобильного приложения, в котором можно подписать документы и отследить статус сделки, а в дальнейшем воспользоваться другими услугами SmartDeal
+2. Разработать визуальный стиль, который бы сформировал у пользователей позитивный опыт  взаимодействия с SmartDeal и желание продолжать пользоваться услугами.
 
 ## <a name="anchor3" />Результат
 
-Макеты в Axure.
+Макеты MVP.
 
 ## <a name="anchor4" />
 
