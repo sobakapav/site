@@ -32,9 +32,8 @@ const whatsup = "NZGZSOAXXM2IN1";
 const telegramLink = "https://t.me/sobakapavpro";
 ---
 
-
-<footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none relative" aria-hidden="true"></div>
+<footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose hidden md:block']}>
+ <div class="dark:bg-dark absolute inset-0 pointer-events-none relative" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
     <div class="grid grid-cols-footer grid-rows-footer-sm lg:grid-rows-footer gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
 
@@ -43,9 +42,7 @@ const telegramLink = "https://t.me/sobakapavpro";
       <div class="col-span-1 gap-x-12 flex relative">
           <div class="shrink-0 flex flex-col justify-between">
            <img src="/images/logos/logo-darkred.svg" class="w-[67px] h-[67px] rounded-lg mt-2 md:mt-[7px]">
-          </div>
-          
-          
+          </div>       
           
       </div>
       
@@ -179,6 +176,10 @@ const telegramLink = "https://t.me/sobakapavpro";
     
   </div>
   
-  
-  
 </footer>
+
+<div class="block md:hidden bg-[#212121] text-white justify-center h-fit pt-10 pb-20">
+  <div class="justify-start max-w-7xl mx-auto px-4 sm:px-6">  
+    <h3 class="text-[52px] font-heading text-white leading-none flex flex-wrap flex-col sm:flex-row gap-4">Пишите нам: <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4">@sobakapavpro<Icon height="52px" width="52px" name="tabler:brand-telegram" class="ml-2" /></a></h3>
+  </div>
+</div>
