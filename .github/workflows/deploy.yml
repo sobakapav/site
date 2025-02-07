@@ -23,3 +23,12 @@ jobs:
           cd dist
           ls -a
           rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . ${{secrets.DEPLOY_USER}}@${{secrets.SERVER}}:${{secrets.PATH}}
+            
+      # Execute SSH commands on the server
+      - run: |
+          ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no ${{secrets.DEPLOY_USER}}@${{secrets.SERVER}} << 'EOF'
+            cd ${{secrets.MAIN_PATH}}
+            rm -rf _astro fonts images
+            cd ${{secrets.PATH}}
+            cp -r _astro fonts images ${{secrets.MAIN_PATH}}
+          EOF
