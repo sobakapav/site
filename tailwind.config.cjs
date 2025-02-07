@@ -36,7 +36,8 @@ module.exports = {
         'features': '1fr 1fr 1fr',
         'portfolio': '1fr 1fr 1fr',
         'portfolio2': '1fr 1fr 1fr 1fr',
-        'portfoliofilter': '1fr 1fr 1.5fr'
+        'portfoliofilter': '1fr 1fr 1.5fr',
+        'portfoliofiltersm': '1fr',
       },
       gridTemplateRows: {
         'footer': 'auto auto',

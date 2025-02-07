@@ -11,6 +11,23 @@ portfolio-filter-block {
     .filter-group:nth-child(4) {
       grid-row: span 2;
     }
+
+    @media (max-width: 1024px) {
+      .filter-group:nth-child(1) {
+        grid-row: 1;
+      }
+      .filter-group:nth-child(2) {
+        grid-row: 2;
+      }
+      .filter-group:nth-child(3) {
+        grid-row: 3;
+        grid-column: 1;        
+      }
+      .filter-group:nth-child(4) {
+        grid-row: 4;
+      }
+    }
+
   }
   
   &.filter-tabs {
