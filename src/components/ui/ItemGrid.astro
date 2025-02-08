@@ -25,45 +25,41 @@ const {
           columns === 4
             ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1'
             : columns === 3
-            ? 'lg:grid-cols-3 md:grid-cols-2 grid-cols-1'
-            : columns === 2
-            ? 'sm:grid-cols-2 grid-cols-1'
-            : ''
+              ? 'lg:grid-cols-3 md:grid-cols-2 grid-cols-1'
+              : columns === 2
+                ? 'sm:grid-cols-2 grid-cols-1'
+                : ''
         }`,
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, link, callToAction, classes: itemClasses = {} }) => (
+      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
         <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-            <div class="flex justify-center">
-              {(icon || defaultIcon) && (
-                <Icon
-                  name={icon || defaultIcon}
-                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
-                />
-              )}
-            </div>
-            <div class="mt-0">
-              {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}><Markdown.Inline of={title} /></h3>}
-              {description && (
-                <p
-                  class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description)}
-                >
-                  <Markdown.Inline of={description} />
-                </p>
-              )}
-              {callToAction && (
-                <div
-                  class={twMerge(
-                    `${title || description ? 'mt-3' : ''}`,
-                    actionClass,
-                    itemClasses?.actionClass
-                  )}
-                >
-                  <Button variant="link" {...callToAction} />
-                </div>
-              )}
-            </div>
+          <div class="flex justify-center">
+            {(icon || defaultIcon) && (
+              <Icon
+                name={icon || defaultIcon}
+                class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
+              />
+            )}
+          </div>
+          <div class="mt-0">
+            {title && (
+              <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}>
+                <Markdown.Inline of={title} />
+              </h3>
+            )}
+            {description && (
+              <p class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description)}>
+                <Markdown.Inline of={description} />
+              </p>
+            )}
+            {callToAction && (
+              <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
+                <Button variant="link" {...callToAction} />
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>

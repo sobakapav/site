@@ -1,13 +1,14 @@
 import fs from 'node:fs';
 import os from 'node:os';
+import type { AstroConfig, AstroIntegration } from 'astro';
 
-import configBuilder from "./utils/configBuilder"
+import configBuilder, { type Config } from './utils/configBuilder';
 import loadConfig from './utils/loadConfig';
 
-const tasksIntegration = ({ config: _themeConfig = 'src/config.yaml' } = {}) => {
-  let cfg;
+export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegration => {
+  let cfg: AstroConfig;
   return {
-    name: 'AstroWind:tasks',
+    name: 'astrowind-integration',
 
     hooks: {
       'astro:config:setup': async ({
@@ -17,15 +18,14 @@ const tasksIntegration = ({ config: _themeConfig = 'src/config.yaml' } = {}) => 
         // isRestart,
         logger,
         updateConfig,
-        addWatchFile
+        addWatchFile,
       }) => {
-
-        const buildLogger = logger.fork("astrowind");
+        const buildLogger = logger.fork('astrowind');
 
         const virtualModuleId = 'astrowind:config';
         const resolvedVirtualModuleId = '\0' + virtualModuleId;
 
-        const rawJsonConfig = await loadConfig(_themeConfig);
+        const rawJsonConfig = (await loadConfig(_themeConfig)) as Config;
         const { SITE, I18N, METADATA, APP_BLOG, UI, ANALYTICS } = configBuilder(rawJsonConfig);
 
         updateConfig({
@@ -60,12 +60,12 @@ const tasksIntegration = ({ config: _themeConfig = 'src/config.yaml' } = {}) => 
           },
         });
 
-        if (typeof _themeConfig === "string") {
+        if (typeof _themeConfig === 'string') {
           addWatchFile(new URL(_themeConfig, config.root));
 
-          buildLogger.info(`Astrowind \`${_themeConfig}\` has been loaded.`)
+          buildLogger.info(`Astrowind \`${_themeConfig}\` has been loaded.`);
         } else {
-          buildLogger.info(`Astrowind config has been loaded.`)
+          buildLogger.info(`Astrowind config has been loaded.`);
         }
       },
       'astro:config:done': async ({ config }) => {
@@ -73,9 +73,8 @@ const tasksIntegration = ({ config: _themeConfig = 'src/config.yaml' } = {}) => 
       },
 
       'astro:build:done': async ({ logger }) => {
-
-        const buildLogger = logger.fork("astrowind");
-        buildLogger.info("Updating `robots.txt` with `sitemap-index.xml` ...")
+        const buildLogger = logger.fork('astrowind');
+        buildLogger.info('Updating `robots.txt` with `sitemap-index.xml` ...');
 
         try {
           const outDir = cfg.outDir;
@@ -91,28 +90,27 @@ const tasksIntegration = ({ config: _themeConfig = 'src/config.yaml' } = {}) => 
           const sitemapExists = fs.existsSync(sitemapFile);
 
           if (hasIntegration && sitemapExists) {
-            const robotsTxt = fs.readFileSync(robotsTxtFile, { encoding: 'utf8', flags: 'a+' });
+            const robotsTxt = fs.readFileSync(robotsTxtFile, { encoding: 'utf8', flag: 'a+' });
             const sitemapUrl = new URL(sitemapName, String(new URL(cfg.base, cfg.site)));
             const pattern = /^Sitemap:(.*)$/m;
 
             if (!pattern.test(robotsTxt)) {
-              fs.appendFileSync(robotsTxtFileInOut, `${os.EOL}${os.EOL}Sitemap: ${sitemapUrl}`, {
+              fs.writeFileSync(robotsTxtFileInOut, `${robotsTxt}${os.EOL}${os.EOL}Sitemap: ${sitemapUrl}`, {
                 encoding: 'utf8',
-                flags: 'w',
+                flag: 'w',
               });
             } else {
               fs.writeFileSync(robotsTxtFileInOut, robotsTxt.replace(pattern, `Sitemap: ${sitemapUrl}`), {
                 encoding: 'utf8',
-                flags: 'w',
+                flag: 'w',
               });
             }
           }
-        } catch (err) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error) {
           /* empty */
         }
       },
     },
   };
 };
-
-export default tasksIntegration;

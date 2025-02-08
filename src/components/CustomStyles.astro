@@ -17,7 +17,6 @@ import '~/assets/styles/colors.css';
 // Oswald
 // 'Space Grotesk'
 // Urbanist
-
 ---
 
 <style is:inline>
@@ -33,21 +32,21 @@ import '~/assets/styles/colors.css';
 
     --aw-color-primary: rgb(1 97 239);
     --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: #19676C; 
-    --aw-color-hund: #95001B;
-    --aw-color-pink: #FEC7BC;
+    --aw-color-accent: #19676c;
+    --aw-color-hund: #95001b;
+    --aw-color-pink: #fec7bc;
 
     --aw-color-text-heading: 'BebasNeueBold';
     --aw-color-text-default: rgb(16 16 16);
     --aw-color-text-muted: rgb(16 16 16 / 66%);
     --aw-color-bg-page: rgb(255 255 255);
-    --aw-color-bg-accent: #EFF0F0;
-    --aw-color-bg-accent2: #F6F6F6;
+    --aw-color-bg-accent: #eff0f0;
+    --aw-color-bg-accent2: #f6f6f6;
 
     --aw-color-bg-page-dark: #212121;
-    --aw-color-text-dark: #F6F6F6;
-    --aw-color-text-muted-dark: #BEBEBE;
-    
+    --aw-color-text-dark: #f6f6f6;
+    --aw-color-text-muted-dark: #bebebe;
+
     --aw-color-text-light-default: rgb(16 16 16);
 
     ::selection {
@@ -62,12 +61,10 @@ import '~/assets/styles/colors.css';
 
     --aw-color-primary: rgb(1 97 239);
     --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: #19676C; 
-    --aw-color-hund: #95001B;
-    --aw-color-pink: #FEC7BC
-
-    --aw-color-text-heading: #F6F6F6;
-    --aw-color-text-default: #F6F6F6;
+    --aw-color-accent: #19676c;
+    --aw-color-hund: #95001b;
+    --aw-color-pink: #fec7bc --aw-color-text-heading: #f6f6f6;
+    --aw-color-text-default: #f6f6f6;
     --aw-color-text-muted: rgb(246 246 246 / 66%);
     --aw-color-bg-page: #212121;
     --aw-color-bg-accent: #323232;
@@ -78,11 +75,11 @@ import '~/assets/styles/colors.css';
       color: snow;
     }
   }
-  
+
   .bg-accent {
     background-color: var(--aw-color-accent);
   }
-  
+
   .format-subtitle-markdown a {
     text-decoration: underline;
     color: var(--dark-4);
@@ -103,15 +100,14 @@ import '~/assets/styles/colors.css';
   .format-subtitle-markdown h2 {
     margin-bottom: 24px;
   }
-  
+
   .format-subtitle-markdown :last-child:is(h3) {
     margin-bottom: 24px;
   }
-  
-   .format-subtitle-markdown h4
-   {
-     margin-bottom: 0px;
-   } 
+
+  .format-subtitle-markdown h4 {
+    margin-bottom: 0px;
+  }
 
   .format-markdown a {
     text-decoration: underline;
@@ -121,8 +117,7 @@ import '~/assets/styles/colors.css';
   .format-markdown p,
   .format-markdown h4,
   .format-subtitle-markdown p,
-  .format-subtitle-markdown h4
-  {
+  .format-subtitle-markdown h4 {
     font-size: 18px;
     line-height: 28px;
   }
@@ -131,64 +126,57 @@ import '~/assets/styles/colors.css';
   .format-markdown li,
   .format-markdown h2,
   .format-markdown h3,
-  .format-markdown h4
-  .format-subtitle-markdown p,
+  .format-markdown h4 .format-subtitle-markdown p,
   .format-subtitle-markdown li,
   .format-subtitle-markdown h2,
   .format-subtitle-markdown h3,
-  .format-subtitle-markdown h4
-  {
+  .format-subtitle-markdown h4 {
     color: var(--aw-color-text-default);
   }
   .format-markdown p,
   .format-subtitle-markdown p,
-  .format-review-markdown p
-  {
+  .format-review-markdown p {
     margin-top: 0px;
     margin-bottom: 24px;
   }
-  
+
   .format-markdown h4,
-  .format-subtitle-markdown h4
-  {
+  .format-subtitle-markdown h4 {
     margin-bottom: 8px;
-    font-family: var(--aw-font-serif, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--aw-font-serif, ui-sans-serif), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-weight: 600;
     font-size: 20px;
-    line-height: 30px
+    line-height: 30px;
   }
-  
+
   .format-markdown h2,
   .format-subtitle-markdown h2,
   .format-markdown h3,
-  .format-subtitle-markdown h3
-  {
+  .format-subtitle-markdown h3 {
     font-weight: 400;
   }
-  
+
   @media (min-width: 1280px) {
-    .format-portfolio h2
-      {
-        font-size: 52px;
-        line-height: 52px;
-        margin-top: 72px;
-        margin-bottom: 24px;
-      }
-    .format-portfolio h3
-      {
-        font-size: 36px;
-        line-height: 40px;
-        margin-top: 40px;
-        margin-bottom: 24px;
-      }
+    .format-portfolio h2 {
+      font-size: 52px;
+      line-height: 52px;
+      margin-top: 72px;
+      margin-bottom: 24px;
+    }
+    .format-portfolio h3 {
+      font-size: 36px;
+      line-height: 40px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
   }
-  
-  .format-subtitle-markdown h3
-  {
+
+  .format-subtitle-markdown h3 {
     font-size: 36px;
     line-height: 40px;
   }
-    
+
   @media (min-width: 768px) {
     .format-markdown p,
     .format-markdown ul,
@@ -196,7 +184,7 @@ import '~/assets/styles/colors.css';
       font-size: 20px;
     }
   }
-  
+
   .format-markdown img + em,
   .format-markdown div + em,
   .format-markdown div + p em,
@@ -209,118 +197,118 @@ import '~/assets/styles/colors.css';
     text-align: right;
     font-style: normal;
   }
-  
+
   .format-markdown p:has(em),
   .format-markdown > em {
     margin-bottom: 48px;
   }
-  
+
   .format-markdown .shadow-none img {
-   box-shadow: none;
+    box-shadow: none;
   }
-  
+
   .format-markdown .inlist-collapse {
-    margin: -1.2em 0 -1.2em 0; 
+    margin: -1.2em 0 -1.2em 0;
   }
-  
+
   .format-markdown .collapse ul,
-  .format-markdown .collapse ol
-  {
+  .format-markdown .collapse ol {
     margin: 0px;
   }
-  
+
   .format-markdown .collapse .collapse-title {
     padding: 0px 32px 0px 0px;
   }
-  
+
   .format-markdown .collapse-arrow > .collapse-title:after {
     top: 20px;
   }
-  
-  .format-markdown .collapse-title, :where(.collapse > input[type="checkbox"]), :where(.collapse > input[type="radio"])
-  {
+
+  .format-markdown .collapse-title,
+  :where(.collapse > input[type='checkbox']),
+  :where(.collapse > input[type='radio']) {
     min-height: 0px !important;
   }
-  
+
   .format-markdown .collapse .collapse-title a {
     position: relative;
-    z-index: 2; 
+    z-index: 2;
   }
-  
+
   @media (min-width: 1024px) {
-      .format-markdown img,
-      .daisy-diff {
-          margin-top: 1.5em;
-          margin-bottom: 1em;
-      }
-      
-      .format-markdown > div.flex > img {
-        margin-top: 0;
-      }
+    .format-markdown img,
+    .daisy-diff {
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    .format-markdown > div.flex > img {
+      margin-top: 0;
+    }
   }
-  
+
   .related-posts li {
     list-style: none;
   }
-  
+
   footer a {
-   text-decoration: underline;
+    text-decoration: underline;
   }
-  
+
   article.blog-list-item .image-animate img {
     filter: grayscale(90%);
     transition: 0.5s ease-out;
   }
-  
+
   article.blog-list-item:hover .image-animate img {
-     filter: grayscale(0%);
-     transition: 0.5s ease-in;
+    filter: grayscale(0%);
+    transition: 0.5s ease-in;
   }
-  
-    article.blog-list-item:hover h2 {
-       color: var(--aw-color-accent);
-    }
-  
+
+  article.blog-list-item:hover h2 {
+    color: var(--aw-color-accent);
+  }
+
   .noir {
-      filter: grayscale(90%);
-      transition: 0.5s ease-out;
+    filter: grayscale(90%);
+    transition: 0.5s ease-out;
   }
-  
+
   .noir:hover {
-     filter: grayscale(0%);
-     transition: 0.5s ease-in;
+    filter: grayscale(0%);
+    transition: 0.5s ease-in;
   }
-  
+
   .noir2-div .noir2 {
     opacity: 1;
     transition: 0.5s ease-out;
   }
-  
+
   .noir2-div:hover .noir2 {
     opacity: 0;
     transition: 0.5s ease-in;
   }
-  
+
   .noir3 {
-        filter: grayscale(100%);
-        transition: 0.5s ease-out;
-    }
-    
-    .noir3:hover {
-       filter: grayscale(0%);
-       transition: 0.5s ease-in;
-    }
-  
+    filter: grayscale(100%);
+    transition: 0.5s ease-out;
+  }
+
+  .noir3:hover {
+    filter: grayscale(0%);
+    transition: 0.5s ease-in;
+  }
+
   astro-checkbox input:checked + label {
-    border: 1px solid #3E3E3E;
-    background-color: #3E3E3E;
-    color: #FFFFFF;
+    border: 1px solid #3e3e3e;
+    background-color: #3e3e3e;
+    color: #ffffff;
   }
-  
+
   astro-checkbox input:checked + label:hover span {
-    color: #FFFFFF;
+    color: #ffffff;
   }
-  
+
   .features-block a,
   .blue-check-list a {
     text-decoration: underline;
@@ -328,7 +316,6 @@ import '~/assets/styles/colors.css';
     color: var(--aw-color-accent);
   }
 
-  
   .blue-check-list li {
     display: flex;
     gap: 6px;
@@ -340,40 +327,37 @@ import '~/assets/styles/colors.css';
     display: block;
     height: 20px;
     width: 20px;
-    content: " ";
-    background-image: url("/images/circle-check.svg");
+    content: ' ';
+    background-image: url('/images/circle-check.svg');
     margin-top: 4px;
   }
-  
+
   .blueblock-list li,
   .marked-list li {
     list-style-type: disc;
   }
-  
+
   .marked-list ul,
-  .marked-list ol
-  {
+  .marked-list ol {
     margin-left: 20px;
   }
-  
+
   .safari-only {
     display: none;
   }
-  
-  @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+
+  @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
     .safari-only {
       display: revert;
     }
-    
+
     .no-safari {
       display: none;
     }
-    
   }
-  
+
   .daisy-diff.diff-black .daisy-diff-item-1:after,
   .daisy-diff.diff-black .daisy-diff-item-2 {
     border-color: var(--aw-color-text-default);
   }
-  
 </style>
