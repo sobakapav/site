@@ -14,45 +14,54 @@ import { getEntry } from 'astro:content';
 const metadata = {
   canonical: 'https://sobakapav.ru/services',
   title: `Услуги UX-дизайна • Заказать дизайн интерфейса, UX-исследование`,
-  description: "Что мы можем для вас сделать. Интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.", 
+  description:
+    'Что мы можем для вас сделать. Интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     site_name: 'Собака Павлова',
-    images: [{
-      url: '~/assets/images/services.png',
-      width: 1200,
-      height: 630
-    }],
+    images: [
+      {
+        url: '~/assets/images/services.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
     type: 'website',
   },
 };
 ---
 
 <Layout metadata={metadata}>
+  <Bread title="Услуги" />
 
-   <Bread
-      title="Услуги"
-   />
-  
   <!-- Hund3 Widget ******************* -->
 
   <Hund3>
-    <Fragment slot="title">
-      Что мы можем для вас сделать?
-    </Fragment>
+    <Fragment slot="title"> Что мы можем для вас сделать? </Fragment>
 
     <Fragment slot="subtitle">
-        Интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды. 
-    </Fragment>  
-
+      Интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты,
+      интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей
+      команды.
+    </Fragment>
   </Hund3>
-    
-    <ServicesCollection2 list={['ux-design', 'redesign', 'new-features', 'prototype', 'ui-redesign', 'research', 'ux-audit', 'dev-team', 'product-team', 'consultation', 'content-design']} />
-    
+
+  <ServicesCollection2
+    list={[
+      'ux-design',
+      'redesign',
+      'new-features',
+      'prototype',
+      'ui-redesign',
+      'research',
+      'ux-audit',
+      'dev-team',
+      'product-team',
+      'consultation',
+      'content-design',
+    ]}
+  />
 </Layout>
-  
-    
-    

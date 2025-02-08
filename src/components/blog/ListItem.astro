@@ -10,12 +10,11 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
 const { post } = Astro.props;
-
 ---
 
-<CommonCard 
-  image={post.thumbnail || post.image} 
-  link={getPermalink(post.permalink)} 
+<CommonCard
+  image={post.thumbnail || post.image}
+  link={getPermalink(post.permalink)}
   title={post.title}
   text={post.description || post.excerpt}
 >
@@ -41,14 +40,15 @@ const { post } = Astro.props;
         </>
       )
     }
-  </Fragment>  
-  
-  {post.tags && (
-    <Fragment slot="footer">
-      <footer class="mt-5">
-        <PostTags tags={post.tags} />
-      </footer> 
-    </Fragment>
-  )}
-  
+  </Fragment>
+
+  {
+    post.tags && (
+      <Fragment slot="footer">
+        <footer class="mt-5">
+          <PostTags tags={post.tags} />
+        </footer>
+      </Fragment>
+    )
+  }
 </CommonCard>
