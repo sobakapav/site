@@ -9,71 +9,97 @@ import '~/components/main/Bento.less';
 const metadata = {
   title: 'Дизайн сложных интерфейсов • Собака Павлова',
   canonical: 'https://sobakapav.ru',
-    description: "Дизайн сложных интерфейсов: UX, UI, редизайн, аудиты, исследования, профессиональные и массовые интерфейсы от «Собаки Павловой»", 
-    robots: {
-      index: true,
-      follow: true,
-    },
-    openGraph: {
-      site_name: 'Собака Павлова',
-      images: [{
+  description:
+    'Дизайн сложных интерфейсов: UX, UI, редизайн, аудиты, исследования, профессиональные и массовые интерфейсы от «Собаки Павловой»',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [
+      {
         url: '~/assets/images/main.png',
         width: 1200,
-        height: 630
-      }],
-      type: 'website',
-    },
-    ignoreTitleTemplate: true,
-  };
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+  ignoreTitleTemplate: true,
+};
 ---
 
 <Layout metadata={metadata} darkTheme={true} collapseSlogan={true}>
   <!-- Hund Widget ******************* -->
 
   <Hund
-      classes={{
-        main: 'pb-10 md:pb-10',
-        subtitle: 'mb-20 sm:mb-40 lg:mb-20',
-        title: 'text-[52px] md:text-[108px] leading-none',
-        
-      }}
-      darkTheme={true}
-      bgImage="/images/main/main.svg"
-    >
-      <Fragment slot="awards">
-         <div class="flex flex-row">
-            <a class="w-32 h-32 z-[4] mr-[-64px]" href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/" title="Компания — призер Tagline Awards 2024"><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024"></a>            
-            <a class="w-32 h-32 z-[3] mr-[-64px]" href="https://tagline.ru/cases/interfeys-prilozheniya-vizualjnoy-lowcode-sredy-razrabotki/" title="Компания — призер Tagline Awards 2024"><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024"></a>
-            <a class="w-32 h-32 z-[2] mr-[24px]" href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/" target="_blank" title="Компания — призер Tagline Awards 2024"><img src="https://tagline.ru/medal-tagline-awards-2024-shortlist.svg" alt="Компания — призер Tagline Awards 2024"></a>
-            {/*<a class="w-32 h-32 z-[1] mr-[-60px]" href="https://tagline.ru/sobaka-pavlova/cases/redizayn-i-obnovlenie-sayta--sobaki--umeem--nravitsya--prodolzhaem/" title="Компания — призер Tagline Awards 2022"><img src="https://tagline.ru/medal-tagline-awards-2022-bronze.svg" alt="Компания — призер Tagline Awards 2022"></a>
-            <a class="w-32 h-32 z-[0] mr-[-24px]" href="https://www.eduhund.ru/" title="Компания — призер Tagline Awards 2020-2021"><img src="https://tagline.ru/medal-tagline-awards-2020-2021-silver.svg" alt="Компания — призер Tagline Awards 2020-2021"></a>*/}
-        </div>
-      </Fragment>
-            
-      <Fragment slot="title">
-        Дизайн<br/>сложных<br/>интерфейсов
-      </Fragment>
-      
-      <Fragment slot="title2">
-        С 2012 года мы делаем красивыми и удобными ↓
-      </Fragment>
-  
-      <Fragment slot="subtitle">
-        Интерфейсы рабочих мест • CRM • Системы документооборота • Интерфейсы оборудования • Специализированные мобильные приложения • МИС   
-      </Fragment>
-    </Hund>
-  
-  {/*<div class="max-w-7xl mx-auto px-4 sm:px-6"> 
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-20 sm:mb-40 lg:mb-20',
+      title: 'text-[52px] md:text-[108px] leading-none',
+    }}
+    darkTheme={true}
+    bgImage="/images/main/main.svg"
+  >
+    <Fragment slot="awards">
+      <div class="flex flex-row">
+        <a
+          class="w-32 h-32 z-[4] mr-[-64px]"
+          href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/"
+          title="Компания — призер Tagline Awards 2024"
+          ><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024" /></a
+        >
+        <a
+          class="w-32 h-32 z-[3] mr-[-64px]"
+          href="https://tagline.ru/cases/interfeys-prilozheniya-vizualjnoy-lowcode-sredy-razrabotki/"
+          title="Компания — призер Tagline Awards 2024"
+          ><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024" /></a
+        >
+        <a
+          class="w-32 h-32 z-[2] mr-[24px]"
+          href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/"
+          target="_blank"
+          title="Компания — призер Tagline Awards 2024"
+          ><img
+            src="https://tagline.ru/medal-tagline-awards-2024-shortlist.svg"
+            alt="Компания — призер Tagline Awards 2024"
+          /></a
+        >
+        {
+          /*<a class="w-32 h-32 z-[1] mr-[-60px]" href="https://tagline.ru/sobaka-pavlova/cases/redizayn-i-obnovlenie-sayta--sobaki--umeem--nravitsya--prodolzhaem/" title="Компания — призер Tagline Awards 2022"><img src="https://tagline.ru/medal-tagline-awards-2022-bronze.svg" alt="Компания — призер Tagline Awards 2022"></a>
+            <a class="w-32 h-32 z-[0] mr-[-24px]" href="https://www.eduhund.ru/" title="Компания — призер Tagline Awards 2020-2021"><img src="https://tagline.ru/medal-tagline-awards-2020-2021-silver.svg" alt="Компания — призер Tagline Awards 2020-2021"></a>*/
+        }
+      </div>
+    </Fragment>
+
+    <Fragment slot="title">
+      Дизайн<br />сложных<br />интерфейсов
+    </Fragment>
+
+    <Fragment slot="title2"> С 2012 года мы делаем красивыми и удобными ↓ </Fragment>
+
+    <Fragment slot="subtitle">
+      Интерфейсы рабочих мест • CRM • Системы документооборота • Интерфейсы оборудования • Специализированные мобильные
+      приложения • МИС
+    </Fragment>
+  </Hund>
+
+  {
+    /*<div class="max-w-7xl mx-auto px-4 sm:px-6"> 
    <img src="/images/main/triangle.svg">
-  </div> */}  
-      
-  <Bento />  
+  </div> */
+  }
+
+  <Bento />
 
   <div class="fixed bottom-0 w-full flex flex-row justify-center z-[5]">
-    <a href="/portfolio" class="mt-0 mb-[-4px] pl-12 pr-6 pt-6 pb-6 max-w-72 flex flex-row justify-center text-4xl font-heading text-white bg-no-repeat" style="background-image: url('/images/main/button.svg')">
-      <div class="">
-        Портфолио →
-      </div>
+    <a
+      href="/portfolio"
+      class="mt-0 mb-[-4px] pl-12 pr-6 pt-6 pb-6 max-w-72 flex flex-row justify-center text-4xl font-heading text-white bg-no-repeat"
+      style="background-image: url('/images/main/button.svg')"
+    >
+      <div class="">Портфолио →</div>
     </a>
   </div>
 </Layout>

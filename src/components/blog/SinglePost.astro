@@ -18,13 +18,11 @@ export interface Props {
   url: string | URL;
 }
 
-const { post, url } = Astro.props;
-const { Content } = post;
+const { post, url } = Astro.props as any;
 ---
 
 <section class="py-0 mx-auto grow-0 shrink-0">
   <article>
-  
     <Hero2
       title={post.title}
       image={{
@@ -33,17 +31,18 @@ const { Content } = post;
       }}
       imageName={post.imageName}
     >
-      
       <Fragment slot="subtitle">
-        <Markdown.Inline of={post.excerpt} />
+        <Markdown.Inline of={post.excerpt || ''} />
       </Fragment>
-    
+
       <Fragment slot="supertitle">
         <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-0 mb-2">
           <p>
             {
               post.publishDate && (
-                <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+                <time datetime={String(post.publishDate)} class="inline-block">
+                  {getFormattedDate(post.publishDate)}
+                </time>
               )
             }
             {
@@ -75,7 +74,6 @@ const { Content } = post;
           </p>
         </div>
       </Fragment>
-      
     </Hero2>
 
     <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto md:mx-0 lg:mx-auto">
@@ -90,8 +88,10 @@ const { Content } = post;
         </div>
       </div>
       <div class="lg:max-w-[320px]">
-        <div class="format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16" >
-            <Markdown.Inline of={post.seeMore} />
+        <div
+          class="format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16"
+        >
+          <Markdown.Inline of={post.seeMore || ''} />
         </div>
         <RelatedLinks post={post} />
       </div>

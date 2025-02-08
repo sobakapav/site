@@ -17,8 +17,6 @@ interface Link {
   icon?: string;
 }
 
-interface ActionLink extends CallToAction {}
-
 interface MenuLink extends Link {
   links?: Array<MenuLink>;
 }
@@ -26,7 +24,7 @@ interface MenuLink extends Link {
 export interface Props {
   id?: string;
   links?: Array<MenuLink>;
-  actions?: Array<ActionLink>;
+  actions?: Array<CallToAction>;
   isSticky?: boolean;
   isDark?: boolean;
   isFullWidth?: boolean;
@@ -45,15 +43,13 @@ const {
   showToggleTheme = false,
   showRssFeed = false,
   position = 'center',
-  darkTheme = false,
   collapseSlogan = false,
-} = Astro.props;
+} = Astro.props as any;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
-
 ---
 
-<header 
+<header
   class:list={[
     { sticky: isSticky, relative: !isSticky, dark: isDark },
     'top-0 z-40 flex-none mx-auto w-full transition-[opacity] ease-in-out scroll',
@@ -132,15 +128,19 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         }
       </ul>
       <div class="flex lg:hidden flex-row gap-3 py-5 px-6 mx-auto border-x border-[#EAEAEA] justify-between">
-       <div class="flex flex-col text-base gap-3">
+        <div class="flex flex-col text-base gap-3">
           <p>{SITE.phone}</p>
           <p><a class="underline-offset-2" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
-          <div class="flex flex-row gap-2.5"><a href={SITE.telegramContact.link}><Icon height="20px" width="20px" name="tabler:brand-telegram" /></a>
-          <a href={`https://wa.me/message/${SITE.whatsup}`}><Icon height="20px" width="20px" name="tabler:brand-whatsapp" /></a></div>
-       </div>
-       <div>
-            <img src="/images/logos/qr-code.svg" class="w-[116px]">
-       </div>
+          <div class="flex flex-row gap-2.5">
+            <a href={SITE.telegramContact.link}><Icon height={20} width={20} name="tabler:brand-telegram" /></a>
+            <a href={`https://wa.me/message/${SITE.whatsup}`}
+              ><Icon height={20} width={20} name="tabler:brand-whatsapp" /></a
+            >
+          </div>
+        </div>
+        <div>
+          <img src="/images/logos/qr-code.svg" class="w-[116px]" />
+        </div>
       </div>
     </nav>
     <div

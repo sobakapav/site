@@ -1,7 +1,7 @@
 import type { PaginateFunction } from 'astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import type { Post, Taxonomy } from '~/types';
+import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
@@ -41,8 +41,8 @@ const generatePermalink = async ({
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
-  const { id, slug: rawSlug = '', data } = post;
-  const { Content, remarkPluginFrontmatter } = await post.render();
+  const { id, data } = post;
+  const { Content, remarkPluginFrontmatter } = await render(post);
 
   const {
     publishDate: rawPublishDate = new Date(),
@@ -63,7 +63,7 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     metadata = {},
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
+  const slug = cleanSlug(id); // cleanSlug(rawSlug.split('/').pop());
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -213,7 +213,9 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   const posts = await fetchPosts();
   const categories = {};
   posts.map((post) => {
-    post.category?.slug && (categories[post.category?.slug] = post.category);
+    if (post.category?.slug) {
+      categories[post.category?.slug] = post.category;
+    }
   });
 
   return Array.from(Object.keys(categories)).flatMap((categorySlug) =>
@@ -235,10 +237,11 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
   const posts = await fetchPosts();
   const tags = {};
   posts.map((post) => {
-    Array.isArray(post.tags) &&
+    if (Array.isArray(post.tags)) {
       post.tags.map((tag) => {
         tags[tag?.slug] = tag;
       });
+    }
   });
 
   return Array.from(Object.keys(tags)).flatMap((tagSlug) =>
@@ -256,7 +259,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
 /** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
   const allPosts = await fetchPosts();
-  const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map(tag => tag.slug) : []);
+  const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
 
   const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
     if (iteratedPost.slug === originalPost.slug) return acc;
@@ -267,7 +270,7 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
     }
 
     if (iteratedPost.tags) {
-      iteratedPost.tags.forEach(tag => {
+      iteratedPost.tags.forEach((tag) => {
         if (originalTagsSet.has(tag.slug)) {
           score += 1;
         }
