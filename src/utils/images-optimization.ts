@@ -4,7 +4,15 @@ import { transformUrl, parseUrl } from 'unpic';
 import type { ImageMetadata } from 'astro';
 import type { HTMLAttributes } from 'astro/types';
 
-type Layout = 'fixed' | 'constrained' | 'constrained-height' | 'constrained-both' | 'fullWidth' | 'cover' | 'responsive' | 'contained';
+type Layout =
+  | 'fixed'
+  | 'constrained'
+  | 'constrained-height'
+  | 'constrained-both'
+  | 'fullWidth'
+  | 'cover'
+  | 'responsive'
+  | 'contained';
 
 export interface ImageProps extends Omit<HTMLAttributes<'img'>, 'src'> {
   src?: string | ImageMetadata | null;
@@ -321,12 +329,12 @@ export async function getImagesOptimized(
       }
     } else if (layout == 'constrained-height') {
       height ||= Number(image.height) || undefined;
-      width ||= typeof width === 'number' ? computeWidth(height, image.width / image.height) : undefined;
+      width ||= typeof height === 'number' ? computeWidth(height, image.width / image.height) : undefined;
     } else {
       width ||= Number(image.width) || undefined;
       height ||= typeof width === 'number' ? computeHeight(width, image.width / image.height) : undefined;
     }
-  } 
+  }
 
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;
