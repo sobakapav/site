@@ -60,34 +60,44 @@ const relatedLinks = () => z.array(z.object({
   page: z.string().optional(),
 })).optional();
 
+const postSchema = () => z.object({
+   publishDate: z.date().optional(),
+   updateDate: z.date().optional(),
+   draft: z.boolean().optional(),
+
+   title: z.string(),
+   excerpt: z.string().optional(),
+   description: z.string().optional(),
+   image: z.string().optional(),
+   imageAlt: z.string().optional(),
+   thumbnail: z.string().optional(),
+   imageName: z.string().optional(),
+   topic: z.string().optional(),
+
+   category: z.string().optional(),
+   tags: z.array(z.string()).optional(),
+   author: z.string().optional(),
+   seeMore: z.string().optional(),
+   
+   relatedLinks: z.object({
+     title: z.string().optional(),
+     links: z.array(z.string()).optional(),
+   }).optional(),
+
+   metadata: metadataDefinition(),
+ })
+
 const postCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/post' }),
-  schema: z.object({
-    publishDate: z.date().optional(),
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
+  schema: postSchema(),
+});
 
-    title: z.string(),
-    excerpt: z.string().optional(),
-    description: z.string().optional(),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
-    thumbnail: z.string().optional(),
-    imageName: z.string().optional(),
-    topic: z.string().optional(),
+const researchCollection = defineCollection({
+  schema: postSchema(),
+});
 
-    category: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    author: z.string().optional(),
-    seeMore: z.string().optional(),
-    
-    relatedLinks: z.object({
-      title: z.string().optional(),
-      links: z.array(z.string()).optional(),
-    }).optional(),
-
-    metadata: metadataDefinition(),
-  }),
+const design2devCollection = defineCollection({
+  schema: postSchema(),
 });
 
 const portfolioCollection = defineCollection({
@@ -263,8 +273,8 @@ const currentProjectsCollection = defineCollection({
 export const collections = {
   post: postCollection,
   services: serviceCollection,
-  research: postCollection,
-  design2dev: postCollection,
+  research: researchCollection,
+  design2dev: design2devCollection,
   portfolio: portfolioCollection,
   currentProjects: currentProjectsCollection,
   

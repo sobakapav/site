@@ -25,235 +25,161 @@ export interface Props {
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 
-const sectionThreeTitle = 'Контакты';
-const email = 'we@sobakapav.ru';
-const phone = '7 (495) 191-92-81';
-const whatsup = 'NZGZSOAXXM2IN1';
-const telegramLink = 'https://t.me/sobakapavpro';
+const sectionThreeTitle = "Контакты";
+const email = "we@sobakapav.ru";
+const phone = "7 (495) 191-92-81";
+const whatsup = "NZGZSOAXXM2IN1";
+const telegramLink = "https://t.me/sobakapavpro";
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative not-prose hidden md:block']}>
-  <div class="dark:bg-dark absolute inset-0 pointer-events-none relative" aria-hidden="true"></div>
+ <div class="dark:bg-dark absolute inset-0 pointer-events-none relative" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300">
     <div class="grid grid-cols-footer grid-rows-footer-sm lg:grid-rows-footer gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+
       <!-- О нас -->
       <!-- Logo -->
       <div class="col-span-1 gap-x-12 flex relative">
-        <div class="shrink-0 flex flex-col justify-between">
-          <img src="/images/logos/logo-darkred.svg" class="w-[67px] h-[67px] rounded-lg mt-2 md:mt-[7px]" />
-        </div>
+          <div class="shrink-0 flex flex-col justify-between">
+           <img src="/images/logos/logo-darkred.svg" class="w-[67px] h-[67px] rounded-lg mt-2 md:mt-[7px]">
+          </div>       
+          
       </div>
-
+      
       <!-- Собака Павлова -->
-      <div class="col-span-3 lg:col-span-1 gap-x-12 flex flex-col md:flex-row lg:mt-[0px] relative">
-        <div class="flex flex-col">
-          <a
-            class="inline-block text-[52px] leading-[50px] font-heading no-underline mb-5 max-w-64"
-            href={getHomePermalink()}
-          >
-            {SITE?.name}
-          </a>
-          <div class="flex flex-col h-full mb-2">
-            <p class="mb-2.5 text-base">
-              {SITE.phone}
-            </p>
-            <p class="mb-2.5">
-              <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}
-                >{SITE.email}</a
-              >
-            </p>
-            <p class="mb-2.5">
-              <a
-                href={SITE.telegramContact.link}
-                class="flex items-center no-underline hover:underline underline-offset-2 text-base"
-                >@sobakapavpro<Icon height={27} width={27} name="tabler:brand-telegram" class="ml-2" /></a
-              >
-            </p>
-            <p class="mb-2.5">
-              <a
-                href={`https://wa.me/message/${SITE.whatsup}`}
-                class="flex items-center no-underline hover:underline underline-offset-2 text-base"
-                >WhatsApp <Icon height={25} width={25} name="tabler:brand-whatsapp" class="ml-2" /></a
-              >
-            </p>
-          </div>
-        </div>
-
-        <div class="lg:absolute md:mb-[-44px] bottom-0 left-0 md:ml-[-20px] lg:ml-0">
-          <div class="flex flex-row md:justify-end">
-            <a
-              class="w-20 h-20 z-[4] mr-[-40px]"
-              href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/"
-              title="Компания — призер Tagline Awards 2024"
-              ><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024" /></a
-            >
-            <a
-              class="w-20 h-20 z-[3] mr-[-40px]"
-              href="https://tagline.ru/cases/interfeys-prilozheniya-vizualjnoy-lowcode-sredy-razrabotki/"
-              title="Компания — призер Tagline Awards 2024"
-              ><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024" /></a
-            >
-            <a
-              class="w-20 h-20 z-[2] mr-[-40px]"
-              href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/"
-              target="_blank"
-              title="Компания — призер Tagline Awards 2024"
-              ><img
-                src="https://tagline.ru/medal-tagline-awards-2024-shortlist.svg"
-                alt="Компания — призер Tagline Awards 2024"
-              /></a
-            >
-            <a
-              class="w-20 h-20 z-[1] mr-[-40px]"
-              href="https://tagline.ru/sobaka-pavlova/cases/redizayn-i-obnovlenie-sayta--sobaki--umeem--nravitsya--prodolzhaem/"
-              title="Компания — призер Tagline Awards 2022"
-              ><img src="/images/medals/tagline-bronze-contour.svg" alt="Компания — призер Tagline Awards 2022" /></a
-            >
-            <a class="w-20 h-20 z-[0]" href="https://www.eduhund.ru/" title="Компания — призер Tagline Awards 2020-2021"
-              ><img
-                src="/images/medals/tagline-silver-contour.svg"
-                alt="Компания — призер Tagline Awards 2020-2021"
-              /></a
-            >
-          </div>
-        </div>
-      </div>
+            <div class="col-span-3 lg:col-span-1 gap-x-12 flex flex-col md:flex-row lg:mt-[0px] relative">
+                <div class="flex flex-col">          
+                  <a class="inline-block text-[52px] leading-[50px] font-heading no-underline mb-5 max-w-64" href={getHomePermalink()}>
+                    {SITE?.name}
+                  </a>
+                  <div class="flex flex-col h-full mb-2">
+                    <p class="mb-2.5 text-base">
+                        {SITE.phone}
+                    </p>
+                    <p class="mb-2.5">
+                        <a class="no-underline hover:underline underline-offset-2 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+                    </p>
+                    <p class="mb-2.5">
+                        <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-2 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+                    </p>
+                    <p class="mb-2.5">
+                        <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-2 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="lg:absolute md:mb-[-44px] bottom-0 left-0 md:ml-[-20px] lg:ml-0">
+                   <div class="flex flex-row md:justify-end">
+                     <a class="w-20 h-20 z-[4] mr-[-40px]" href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/" title="Компания — призер Tagline Awards 2024"><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024"></a>
+                     <a class="w-20 h-20 z-[3] mr-[-40px]" href="https://tagline.ru/cases/interfeys-prilozheniya-vizualjnoy-lowcode-sredy-razrabotki/" title="Компания — призер Tagline Awards 2024"><img src="/images/medals/tagline-winner.svg" alt="Компания — призер Tagline Awards 2024"></a>
+                     <a class="w-20 h-20 z-[2] mr-[-40px]" href="https://tagline.ru/cases/interfeys-platformy-obschestvennoy-arhivistiki/" target="_blank" title="Компания — призер Tagline Awards 2024"><img src="https://tagline.ru/medal-tagline-awards-2024-shortlist.svg" alt="Компания — призер Tagline Awards 2024"></a>
+                     <a class="w-20 h-20 z-[1] mr-[-40px]" href="https://tagline.ru/sobaka-pavlova/cases/redizayn-i-obnovlenie-sayta--sobaki--umeem--nravitsya--prodolzhaem/" title="Компания — призер Tagline Awards 2022"><img src="/images/medals/tagline-bronze-contour.svg" alt="Компания — призер Tagline Awards 2022"></a>
+                     <a class="w-20 h-20 z-[0]" href="https://www.eduhund.ru/" title="Компания — призер Tagline Awards 2020-2021"><img src="/images/medals/tagline-silver-contour.svg" alt="Компания — призер Tagline Awards 2020-2021"></a>
+                   </div>        
+                </div>
+                
+            </div>
 
       <!-- Блок с услугами -->
       <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col lg:ml-5">
-        <h3 class="inline-block text-4xl font-heading mb-2">Дизайн сложных интерфейсов</h3>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/ux-design')} class="no-underline hover:underline underline-offset-2"
-            >UX/UI дизайн под ключ</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/redesign')} class="no-underline hover:underline underline-offset-2"
-            >Точечный редизайн интерфейса</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/new-features')} class="no-underline hover:underline underline-offset-2"
-            >Добавление новой функциональности</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/prototype')} class="no-underline hover:underline underline-offset-2"
-            >Прототип под инвестиции</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/ui-redesign')} class="no-underline hover:underline underline-offset-2"
-            >UI-редизайн</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/research')} class="no-underline hover:underline underline-offset-2"
-            >Продуктовое исследование</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/ux-audit')} class="no-underline hover:underline underline-offset-2"
-            >UX-аудит</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/product-team')} class="no-underline hover:underline underline-offset-2"
-            >Усиление команды разработки</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/dev-team')} class="no-underline hover:underline underline-offset-2"
-            >Работа в продуктовой команде</a
-          >
-        </p>
-        <p class="text-base mb-2.5">
-          <a href={getPermalink('/services/consultation')} class="no-underline hover:underline underline-offset-2"
-            >Консультации</a
-          >
-        </p>
-        <p class="text-base">
-          <a href={getPermalink('/services/content-design')} class="no-underline hover:underline underline-offset-2"
-            >Контент-дизайн</a
-          >
-        </p>
+            <h3 class="inline-block text-4xl font-heading mb-2">Дизайн сложных интерфейсов</h3>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/ux-design')} class="no-underline hover:underline underline-offset-2">UX/UI дизайн под ключ</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/redesign')} class="no-underline hover:underline underline-offset-2">Точечный редизайн интерфейса</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/new-features')} class="no-underline hover:underline underline-offset-2">Добавление новой функциональности</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/prototype')} class="no-underline hover:underline underline-offset-2">Прототип под инвестиции</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/ui-redesign')} class="no-underline hover:underline underline-offset-2">UI-редизайн</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/research')} class="no-underline hover:underline underline-offset-2">Продуктовое исследование</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/ux-audit')} class="no-underline hover:underline underline-offset-2">UX-аудит</a>
+            </p>      
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/product-team')} class="no-underline hover:underline underline-offset-2">Усиление команды разработки</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/dev-team')} class="no-underline hover:underline underline-offset-2">Работа в продуктовой команде</a>
+            </p>
+            <p class="text-base mb-2.5">
+              <a href={getPermalink('/services/consultation')} class="no-underline hover:underline underline-offset-2">Консультации</a>
+            </p>
+            <p class="text-base">
+              <a href={getPermalink('/services/content-design')} class="no-underline hover:underline underline-offset-2">Контент-дизайн</a>
+            </p>
       </div>
-
+      
       <!-- Блок с кейсами -->
-      <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col">
-        <h3 class="inline-block text-4xl font-heading mb-2">
-          <a href="https://sobakapav.ru/portfolio" class="underline-offset-4" style="color: var(--dark-4)"
-            >368 проектов</a
-          >
-        </h3>за 13 лет работы
+            <div class="col-span-4 lg:col-span-1 md:col-span-2 lg:row-span-2 flex flex-col">
+                  <h3 class="inline-block text-4xl font-heading mb-2">
+                    <a href="https://sobakapav.ru/portfolio" class="underline-offset-4" style="color: var(--dark-4)">368 проектов</a>
+                     </br>за 13 лет работы
+                  </h3>
+                   <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio#med" class="no-underline hover:underline underline-offset-2">Медицина</a>
+                  </p>
+                  <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio#prom" class="no-underline hover:underline underline-offset-2">Промышленность</a>
+                  </p>
+                   <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio#fin" class="no-underline hover:underline underline-offset-2">Финансы</a>
+                  </p>
+                  <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio#it" class="no-underline hover:underline underline-offset-2">IT-продукты для бизнеса</a>
+                  </p>
+                   <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio#ec" class="no-underline hover:underline underline-offset-2">E-commerce</a>
+                  </p>
+                   <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio" class="no-underline hover:underline underline-offset-2">Образование</a>
+                  </p>                 
+                   <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio#gos" class="no-underline hover:underline underline-offset-2">Госсектор и безопасность</a>
+                  </p>
+                  <p class="text-base mb-2.5">
+                    <a href="https://sobakapav.ru/portfolio" class="no-underline hover:underline underline-offset-2">Транспорт и туризм</a>
+                  </p>
+                   <p class="text-base">
+                    <a href="https://sobakapav.ru/portfolio#complex" class="no-underline hover:underline underline-offset-2">GUI устройств и приборов</a>
+                  </p>
+            </div>
+      
+       <!-- Years -->
+            <div class="col-span-1 gap-x-12 flex items-end">
+                 <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">
+                    2012–2025
+                 </p>
+            </div>
+            
+       <!-- Cities-->
+           <div class="col-span-3 lg:col-span-1 gap-x-12 flex items-end">
+                <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">
+                   Москва • Санкт-Петербург • Подгорица • Хайфа
+                </p>
+           </div>
+    </div>
+
+    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+      <div class="text-sm mr-4 dark:text-muted">
+        <Fragment set:html={footNote} />
       </div>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio#med" class="no-underline hover:underline underline-offset-2">Медицина</a
-        >
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio#prom" class="no-underline hover:underline underline-offset-2"
-          >Промышленность</a
-        >
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio#fin" class="no-underline hover:underline underline-offset-2">Финансы</a>
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio#it" class="no-underline hover:underline underline-offset-2"
-          >IT-продукты для бизнеса</a
-        >
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio#ec" class="no-underline hover:underline underline-offset-2"
-          >E-commerce</a
-        >
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio" class="no-underline hover:underline underline-offset-2">Образование</a>
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio#gos" class="no-underline hover:underline underline-offset-2"
-          >Госсектор и безопасность</a
-        >
-      </p>
-      <p class="text-base mb-2.5">
-        <a href="https://sobakapav.ru/portfolio" class="no-underline hover:underline underline-offset-2"
-          >Транспорт и туризм</a
-        >
-      </p>
-      <p class="text-base">
-        <a href="https://sobakapav.ru/portfolio#complex" class="no-underline hover:underline underline-offset-2"
-          >GUI устройств и приборов</a
-        >
-      </p>
     </div>
-
-    <!-- Years -->
-    <div class="col-span-1 gap-x-12 flex items-end">
-      <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">2012–2025</p>
-    </div>
-
-    <!-- Cities-->
-    <div class="col-span-3 lg:col-span-1 gap-x-12 flex items-end">
-      <p class="text-sm text-muted mt-2 lg:whitespace-nowrap">Москва • Санкт-Петербург • Подгорица • Хайфа</p>
-    </div>
+    
   </div>
-
-  <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-    <div class="text-sm mr-4 dark:text-muted">
-      <Fragment set:html={footNote} />
-    </div>
-  </div>
+  
 </footer>
 
 <div class="block md:hidden bg-[#212121] text-white justify-center h-fit pt-10 pb-24">
-  <div class="justify-start max-w-7xl mx-auto px-4 sm:px-6">
-    <h3 class="text-[52px] font-heading text-white leading-none flex flex-wrap flex-col sm:flex-row gap-4">
-      Пишите нам: <a
-        href={SITE.telegramContact.link}
-        class="no-underline hover:underline underline-offset-4 flex flex-row items-center">@sobakapavpro</a
-      >
-    </h3>
+  <div class="justify-start max-w-7xl mx-auto px-4 sm:px-6">  
+    <h3 class="text-[52px] font-heading text-white leading-none flex flex-wrap flex-col sm:flex-row gap-4">Пишите нам: <a href={SITE.telegramContact.link} class="no-underline hover:underline underline-offset-4 flex flex-row items-center">@sobakapavpro</a></h3>
   </div>
 </div>
