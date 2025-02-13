@@ -68,7 +68,7 @@ const { post } = Astro.props;
       </div> 
       )}
       
-      <div class:list={["grow basis-0 flex gap-y-6 content-start", post.review ? "flex-col" : "flex-col md:flex-row gap-6"]}>
+      <div class:list={["grow basis-0 flex gap-y-6 content-start justify-between", post.review ? "flex-col" : "flex-col md:flex-row gap-6"]}>
         { post.director && (
           <div class:list={["flex flex-col gap-y-6", post.review ? "" : "md:basis-0 md:grow"]}>
             <ReviewItem
