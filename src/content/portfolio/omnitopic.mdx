@@ -1,23 +1,23 @@
 ---
 publishYear: 2021
 name: Omnitopic
-title: Агрегатор IT-конференций
-excerpt: Проектирование интерфейса агрегатора IT-конференций
+title: Дизайн MVP агрегатора IT-конференций
+excerpt: Дизайн MVP для стартапа, который разрабатывает агрегатор IT-конференций
 
 context: |
   **Подробный кейс пока в работе. Если хотите посмотреть на этот дизайн в деталях, пишите нам на [we@sobakapav.ru](mailto:we@sobakapav.ru)**
   
-  [Omnitopic]() — агрегатор IT-конференций
+  Omnitopic — агрегатор IT-конференций. Совместно с командой клиента мы создали основу для MVP, учитывая технические ограничения и ограниченный бюджет на его создание.
 isNew: true
 logo:
   src: ~/assets/images/portfolio/omnitopic/logo.svg
   alt: Omnitopic • Логотип
 image: ~/assets/images/portfolio/omnitopic/main.png
-imageAlt: Собака Павлова • Omnitopic • Агрегатор IT-конференций
+imageAlt: Собака Павлова • Omnitopic • Дизайн MVP агрегатора IT-конференций
 
 thumbnail:
   src: ~/assets/images/portfolio/cards/omnitopic.svg
-  alt: Собака Павлова • Omnitopic • Агрегатор IT-конференций
+  alt: Собака Павлова • Omnitopic • Дизайн MVP агрегатора IT-конференций
 tags:
   - it
   - ed
@@ -40,10 +40,19 @@ relatedPages2:
     text: |
       ### Похожие проекты
     collection: portfolio
-    page: e-gorod-mobile
+    page: itmo
   - 
     collection: portfolio
-    page: alfa-arm
+    page: prozhito
+  - 
+    collection: portfolio
+    page: jetlearn
+  - 
+    collection: portfolio
+    page: tigitl
+  - 
+    collection: portfolio
+    page: korochka
 
 result:
   -
@@ -53,11 +62,27 @@ budget: "300 000 ₽"
 time: "3 месяца"
 
 director: "Слово директора"
-  
+
+outcome:
+  title: Некоторые цифры
+  numbers:
+    -
+     title: Исследовали 
+     number: 10 похожих продуктов
+     text: в поисках инсайтов
+    -
+     title: Предоставили
+     number: 5 визуальных концептов
+     text: на выбор
+    -
+     title: Спректировали
+     number: 6 разделов приложения
+     text: во всех состояниях
+
 metadata:
   canonical: https://sobakapav.ru/portfolio/omnitopic
-  title: Дизайн интерфейса • Агрегатор IT-конференций
-  description: "Проектирование интерфейса агрегатора IT-конференций"
+  title: Дизайн интерфейса • Дизайн MVP агрегатора IT-конференций
+  description: "Создали дизайн интерфейса для стартапа, который разрабатывает агрегатор IT-конференций"
   robots:
     index: true
     follow: true
@@ -70,7 +95,6 @@ metadata:
     type: website
 
 ---
-
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 
@@ -86,7 +110,212 @@ import TOC from '~/components/widgets/TOC.astro';
 
 Разработать интерфейс MVP агрегатора конференций
 
-## <a name="anchor3" />Результат
+<a href="/images/portfolio/omnitopic/1.png" target="_blank">![Дизайн MVP агрегатора IT-конференций | SobakaPav.ru](~/assets/images/portfolio/omnitopic/1.png)</a>
+_Десктопная версия_
 
+## <a name="anchor3" />Процесс
+
+Стартовая страница:
+Карточки в листинге: “календарные” или горизонтальные?
+Форма подписки: на весь проект Omnitopic или еженедельная подписка на отфильтрованные ивенты?
+Коллекции: делаем или на этапе MVP не делаем? Если делаем, то отображаем на стартовой странице или убираем в бургер-меню?
+Футер: легкий ( условно только  “© 2021-2022 Omnitopic” и все) или нужны доп.ссылки на Terms of Service, Cookies Policy, Privacy Policy?
+В целом направление концепта: “текстовый” или с выбором через кнопки?
+
+Фильтры
+Общая логика фильтров:
+1 вариант: есть страница со всеми фильтрами + возможны быстрые переходы на отдельные страницы фильтров для Location, Topics.
+2 вариант: фильтры для Location, Topics открываются отдельными страницами. + есть страница с дополнительными фильтрами.
+
+Фильтр Location внутри:
+Разделы: Near( определяем дистанцию в km) , Popular cities ( где чаще всего проходят мероприятия), Countries, Continents/World regions?
+Логика внутри фильтра:
+1 вариант: распределяем разделы ( Near , Popular cities, Countries ….) по табам
+2 вариант: все разделы вынесены на одну страницу  и предраскрыты по 3-5 вариантов + есть возможность нажать “view all” и провалиться внутрь определенного раздела?
+
+Фильтр Topics внутри:
+Сколько разделов с топиками закладываем: около 7-8 или много?
+Логика внутри фильтра:
+1 вариант:все разделы вынесены на одну страницу  и предраскрыты по 3-5 вариантов + есть возможность нажать “view all” и провалиться внутрь определенного раздела
+2 вариант: на первом уровне видим только названия разделов топиков, на втором уровне вложенности раскрываются варианты внутри топика?
+
+Дополнительные фильтры:
+Какие дополнительные фильтры закладываем: Dates, Price, Event language?
+
+Цвета:
+Какой вариант ближе: поярче, поспокойнее, средний по яркости, с контрасным по цвету фоном?
+Брендовым цветом оставляем красный? Или ищем еще цвета / оттенки?
+
+Категории — один уровень или вложенность? не жесткая иерархия (один уровень, с мета-категориями-группами (одна категория может входить в различные мета-категории))
+Закладываем кнопку “предложить мероприятие”? + url, mail
+В MVP не закладываем авторизацию / лк ? -
+Податься спикером? -, call to papers
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/2.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/7.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+1. В этом концепте под кнопкой фильтров предполагалось размещать все фильтры, а локацию и топики в оснофной форме дублируются, вынесены как самые важные
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/3.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/4.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/5.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/6.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+2. Фильтры локации и топиков самостоятельны, под кнопкой “фильтры” только прочие/дополнительные фильтры.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/8.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/9.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/10.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/11.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+Фильтры локации
+
+1 вариант
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/12.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/13.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+2 вариант
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/14.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/15.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+Фильтры топика
+
+1 вариант
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/16.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/17.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+2 вариант
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/18.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/19.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+общие
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/20.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/21.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+
+## <a name="anchor4" />Результат
+
+Передали заказчику:
+- Кликабельный прототип в Figma для интерактивного опыта
+- Полную библиотеку используемых компонентов дизайна
 
 ## <a name="anchor4" />
