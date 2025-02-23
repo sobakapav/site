@@ -1,0 +1,34 @@
+tab-component {
+  .tab-component-container {
+    display: grid;
+  }
+  
+  .tab-title-1,
+  .tab-title-2,
+  .tab-component-content-1,
+  .tab-component-content-2 {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  
+  .tab-title-2,
+  .tab-component-content-2 {
+    opacity: 0;
+  }
+  
+  .tab-component-content-1,
+  .tab-component-content-2 {
+    transition: opacity 0.75s ease-in-out;
+  }
+  
+  &:has(input.tab-radio-2:checked) {
+    .tab-title-1,
+    .tab-component-content-1 {
+      opacity: 0;
+    }
+    .tab-title-2,
+    .tab-component-content-2 {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+---
+import Checkbox from '~/components/common/Checkbox.astro';
+import { $id } from '~/utils/utils.ts';
+
+import '~/components/main/TabComponent.less';
+
+const {
+  title = await Astro.slots.render('title'),
+  title1 = '',
+  title2 = '',
+  button1 = '',
+  button2 = '',
+  tab1 = await Astro.slots.render('tab1'),
+  tab2 = await Astro.slots.render('tab2'),
+} = Astro.props;
+
+const id = $id('tab-component');
+---
+
+<tab-component>
+  <div class="flex justify-between">
+    <div class="tab-component-container">
+      <h3 class="tab-title-1 text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6" set:html={title1}></h3>
+      <h3 class="tab-title-2 text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6" set:html={title2}></h3>
+    </div>
+  
+    <div>
+      <Checkbox type="radio" id={id + '-1'} group={id} label={button1 || title1} className="tab-radio-1" checked={true} /> 
+      <Checkbox type="radio" id={id + '-2'} group={id} label={button2 || title2} className="tab-radio-2" /> 
+    </div>
+  </div>
+  <div class="tab-component-container">
+    <div class="tab-component-content-1" set:html={tab1}/>
+    <div class="tab-component-content-2" set:html={tab2}/>
+  </div>
+</tab-component>
