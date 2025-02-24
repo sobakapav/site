@@ -1,23 +1,23 @@
 ---
 publishYear: 2024
-name: SeatMap
-title: Визуальный язык для схем стадионов и концертных площадок
-excerpt: Проанализировали аналогичные решения, выявили лучшие практики и создали интерфейс для пользователя-непрофессионала.
+name: Seatmap
+title: Инструмент для создания схем стадионов и концертных площадок
+excerpt: Визуальный язык для создания схем рассадки и UI процесса выбора и покупки билетов.
 
 context: |
   **Подробный кейс пока в работе. Если хотите посмотреть на этот дизайн в деталях, пишите нам на [we@sobakapav.ru](mailto:we@sobakapav.ru)**
   
-  [Elma](https://service.elma365.com/elma-bot/) — конструктор чат-ботов.
+  [Seatmap](https://seatmap.pro/) — профессиональный инструмент для создания планов рассадки различной сложности на стадионах, концертных площадках и аренах. ЦА сервиса — платформы онлайн-бронирования, билетные агенты и площадки для проведения различных массовых мероприятий.
 isNew: true
 logo:
-  src: ~/assets/images/portfolio/elma-bot/logo.svg
-  alt: Elma • Логотип
-  link: https://service.elma365.com/elma-bot/
-image: ~/assets/images/portfolio/elma-bot/main.png
-imageAlt: Собака Павлова • Elma • Конструктор чат-ботов
+  src: ~/assets/images/portfolio/seatmap/logo.svg
+  alt: Seatmap • Логотип
+  link: https://seatmap.pro/
+image: ~/assets/images/portfolio/seatmap/main.png
+imageAlt: Собака Павлова • Seatmap • Визуальный язык для схем стадионов и концертных площадок
 thumbnail:
-  src: ~/assets/images/portfolio/cards/elma-bot.svg
-  alt: Собака Павлова • Elma • Конструктор чат-ботов
+  src: ~/assets/images/portfolio/cards/eseatmap.svg
+  alt: Собака Павлова • Seatmap • Визуальный язык для схем стадионов и концертных площадок
 tags:
   - it
   - research
@@ -52,16 +52,16 @@ time: "? месяца"
 director: "Слово директора"
 
 metadata:
-  canonical: https://sobakapav.ru/portfolio/elma-bot
-  title: Дизайн интерфейса • Конструктор чат-ботов
-  description: "Проанализировали аналогичные решения, выявили лучшие практики и создали интерфейс для пользователя-непрофессионала"
+  canonical: https://sobakapav.ru/portfolio/seatmap
+  title: Дизайн интерфейса • Инструмент для создания схем стадионов и концертных площадок
+  description: "Визуальный язык для создания схем рассадки и UI процесса выбора и покупки билетов."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Собака Павлова
     images:
-      - url: '~/assets/images/portfolio/elma-bot/badge.png'
+      - url: '~/assets/images/portfolio/seatmap/badge.png'
         width: 1200
         height: 630
     type: website
@@ -76,15 +76,119 @@ import TOC from '~/components/widgets/TOC.astro';
 
 ## <a name="anchor1" />Бизнес-задача
 
-Основная: создать упрощенную версию внутреннего продукта для другого сегмента рынка. Побочная: использовать упрощенную версию продукта для привлечения покупателей основного продукта.
+Создать сервис с хорошим пользовательским опытом, тем самым увеличивая продажи своего инструмента и продажи билетов компаний-клиентов. Сделать сервис более современным, удобным и конкурентоспособным.
+
+<a href="/images/portfolio/seatmap/1.png" target="_blank">![Инструмент для создания схем стадионов и концертных площадок | SobakaPav.ru](~/assets/images/portfolio/seatmap/1.png)</a>
+<em>Исходное состояние</em>
 
 ## <a name="anchor2" />Дизайн-задача
 
-Проанализировать аналогичные решения, выявить лучшие практики и на основе них создать интерфейс для пользователя-непрофессионала.
+1. Собрать с нуля UI процесса выбора и покупки билетов для двух версий: десктопной и мобильной.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/7.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/8.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+<em>Мобильная версия</em>
+
+2. Придумать визуальный язык для схем площадок. Выработать набор правил, эвристик, которые позволили бы создавать любые единообразные читаемые понятные схемы. Название рядов секций, номера мест, лестницы, проходы, аварийные выходы, справочная информация, цены, глубина площадки, расположение места относительно площадки и т.д. 
+
+<a href="/images/portfolio/seatmap/4.png" target="_blank">![Инструмент для создания схем стадионов и концертных площадок | SobakaPav.ru](~/assets/images/portfolio/seatmap/4.png)</a>
+<em>Конкретный сектор. Места</em>
+
+## <a name="anchor3" />Аналитика
+
+Изучили проблематику рынка, специфику отрасли и конкурентов. Собрали список плохих решений и интересных механик. На каждом этапе проекта применяли результаты исследования. 
+
+Совместно с заказчиком изучили опыт покупки билетов. Итогом стал список пользовательских сценариев.
+
+<a href="/images/portfolio/seatmap/5.png" target="_blank">![Инструмент для создания схем стадионов и концертных площадок | SobakaPav.ru](~/assets/images/portfolio/seatmap/5.png)</a>
+<em>Места выбраны</em>
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/11.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/12.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+<em>Выбор места в мобильной версии</em>
+
+## <a name="anchor3" />Визуальный язык
+
+Заказчик подобрал наиболее репрезентативные площадки, для которых мы рисовали схемы. Театр, Рига арена и Barclays Center в Бруклине.
+
+Те или иные данные отображаются или не отображаются на экране в зависимости от масштаба. Для каждого масштаба разрабатывали набор различных параметров. Например, на каком масштабе необходимо показывать подписи к секциям, номера рядов, нужно ли показывать номера мест или они нечитаемы и не несут никакой информации.
+
+Для каждого стадиона нарисовали больше десятка схем в разном масштабе. Подбирали закономерности, как и что работает.
+
+На примере площадок разных размеров и вместимости выделили подходы и правила создания типовых схем.
+
+<a href="/images/portfolio/seatmap/2.png" target="_blank">![Инструмент для создания схем стадионов и концертных площадок | SobakaPav.ru](~/assets/images/portfolio/seatmap/2.png)</a>
+<em>Сектор. Popover с информацией о цене, номере ряда и места</em>
+
+<a href="/images/portfolio/seatmap/3.png" target="_blank">![Инструмент для создания схем стадионов и концертных площадок | SobakaPav.ru](~/assets/images/portfolio/seatmap/3.png)</a>
+<em>Фильтр</em>
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/9.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/10.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+<em>План сектора, фильтры в мобильной версии</em> 
 
 ## <a name="anchor3" />Результат
 
-Сервис разработан по нашим макетам и развивается силами заказчика.
+Заказчик ушел реализовывать наши макеты и проверять гипотезы. 
+
+Итоги первой итерации: 
+- Схемы как визуализация наших экспериментов 
+- Гайдлайн по визуализации схемы площадки
+
+<a href="/images/portfolio/seatmap/6.png" target="_blank">![Инструмент для создания схем стадионов и концертных площадок | SobakaPav.ru](~/assets/images/portfolio/seatmap/6.png)</a>
+<em>Мои билеты</em>
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/13.png" class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+  <div class="daisy-mockup-phone">
+      <div class="daisy-camera"></div>
+      <div class="daisy-display">
+        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/14.png" class="mt-0 mb-0" /></div>
+      </div>
+  </div>
+</div>
+<em>Мои билеты и поиск в мобильной версии</em>
 
 ## <a name="anchor4" />
 
