@@ -3,6 +3,7 @@ import Image from '~/components/common/Image.astro';
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
+import LogoTabComponent from '~/components/main/LogoTabComponent.astro';
 import CardSlider from '~/components/main/CardSlider.astro';
 import CurrentProjects from '~/components/main/CurrentProjects.astro';
 
@@ -16,13 +17,12 @@ import '~/components/main/Bento.less';
   </div>
   
   <div class="flex flex-col justify-between">
-    
     <div class="flex flex-col">
       <div class="flex flex-row justify-between">
-          <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Что мы делаем</h2>
-          <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
-               <a href="/services">Все услуги →</a>
-            </div>
+        <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Что мы делаем</h2>
+        <div class="text-xl font-heading tracking-widest leading-none bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
+          <a href="/services">Все услуги →</a>
+        </div>
       </div>
       {/*<h3 class="text-[52px] leading-none font-heading mb-6">Сделаем для вас</h3> */}
       
@@ -70,172 +70,84 @@ import '~/components/main/Bento.less';
 </div>
 
 <div class="bento-grid2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-6 gap-6">
-   <div class="flex flex-col justify-between">
-   <div class="flex flex-col">
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отрасли</h2>
+  <div class="flex flex-col justify-between">
+    <div class="flex flex-col">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отрасли</h2>
+      
+      <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
+        <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+        </ul> 
+        <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio">Образование</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio">Транспорт и туризм</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+        </ul> 
+      </div>
+    </div>
         
-        <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
-            <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
-            </ul> 
-            <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio">Образование</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio">Транспорт и туризм</a></li>
-              <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
-            </ul> 
-        </div>
-      </div>
-      
-      <div>
-      <h3 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Клиенты</h3>
-      <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 ml-0 gap-y-14 mt-8 lg:mt-0">
-         <div class="flex items-start justify-start">
-           <a class="noir2-div relative" href="/portfolio/alfa-arm">
-             <img src="/images/services/alfa.svg" width="36" height="56">
-             <img src="/images/services/alfa4.svg" class="noir2 absolute top-0 left-0 z-100" width="36" height="56">
-           </a></div>
-          <div class="flex items-start justify-start">
-           <a class="noir2-div relative" href="/portfolio/gazprom-neft">
-             <img src="/images/services/gazprom.svg" width="36" height="60">
-             <img src="/images/services/gazprom4.svg" class="noir2 absolute top-0 left-0 z-100" width="36" height="60">
-         </a></div>
-         <div class="flex items-start justify-start">
-            <a class="noir2-div relative" href="/portfolio/avito">
-              <img src="/images/services/avito.svg" width="56" height="56">
-              <img src="/images/services/avito4.svg" class="noir2 absolute top-0 left-0 z-100" width="56" height="56">
-         </a></div>
-         <div class="flex items-start justify-start">
-            <a class="noir2-div relative" href="/portfolio/alfastrah-design">
-              <img src="/images/services/alfa-strah.svg" width="56" height="56">
-              <img src="/images/services/alfa-strah4.svg" class="noir2 absolute top-0 left-0 z-100" width="56" height="56">
-         </a></div>
-         <div class="flex items-start justify-start">
-            <a class="noir2-div relative" href="/portfolio/tinkoff">
-              <img src="/images/services/tinkoff.svg" width="56" height="56">
-              <img src="/images/services/tinkoff4.svg" class="noir2 absolute top-0 left-0 z-100" width="56" height="56">
-         </a></div>
-        
-         <div class="flex items-start justify-start">
-             <a class="noir2-div relative" href="https://www.eduhund.ru/clients">
-              <img src="/images/services/yandex.svg" width="38" height="56">
-              <img src="/images/services/yandex4.svg" class="noir2 absolute top-0 left-0 z-100" width="38" height="56">
-         </a></div>
-         <div class="flex items-start justify-start">
-            <a class="noir2-div relative" href="/portfolio/sportmaster">
-              <img src="/images/services/sportmaster.svg" width="76" height="46">
-              <img src="/images/services/sportmaster4.svg" class="noir2 absolute top-0 left-0 z-100" width="76" height="46">
-         </a></div>
-         <div class="flex items-start justify-start">
-            <a class="noir2-div relative" href="/portfolio/yota">
-              <img src="/images/services/yota.svg" width="42" height="68">
-              <img src="/images/services/yota4.svg" class="noir2 absolute top-0 left-0 z-100" width="42" height="68">
-         </a></div>
-         <div class="flex items-start justify-start">
-              <a class="noir2-div relative" href="/portfolio/sberbank">
-                <img src="/images/services/sberbank.svg" width="56" height="56">
-                <img src="/images/services/sberbank4.svg" class="noir2 absolute top-0 left-0 z-100" width="56" height="56">
-         </a></div>
-         
-         <div class="flex items-center justify-start">
-                <a class="noir2-div relative" href="/portfolio/qiwi">
-                   <img src="/images/services/qiwi.svg" width="56" height="56">
-                   <img src="/images/services/qiwi4.svg" class="noir2 absolute top-0 left-0 z-100" width="56" height="56">
-         </a></div>
-         <div class="flex items-center justify-start">
-                <a class="noir2-div relative" href="/portfolio/novotelekom">
-                  <img src="/images/services/ecity.svg" width="40" height="56">
-                  <img src="/images/services/ecity4.svg" class="noir2 absolute top-0 left-0 z-100" width="42" height="68">
-         </a></div>
-         
-         <div class="flex items-center justify-start">
-              <a class="noir2-div relative" href="/portfolio">
-                 <img src="/images/services/x5.svg" width="56" height="56">
-                 <img src="/images/services/x54.svg" class="noir2 absolute top-0 left-0 z-100" width="56" height="56">
-         </a></div>
-         
-         <div class="flex items-center justify-start">
-               <a class="noir2-div relative" href="/portfolio/yit">
-                 <img src="/images/services/yit.svg" width="100" height="56">
-                 <img src="/images/services/yit4.svg" class="noir2 absolute top-0 left-0 z-100" width="100" height="56">
-         </a></div>
-         
-         <div class="flex items-center justify-start">
-                <a class="noir2-div relative" href="/portfolio/okey">
-                  <img src="/images/services/okey.svg" width="50" height="48">
-                  <img src="/images/services/okey4.svg" class="noir2 absolute top-0 left-0 z-100" width="50" height="48">
-         </a></div>
-         
-         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]"><a href="/portfolio">+200 компаний<br/>за 13 лет работы</a></h2>
-         
-      </div>
-      </div>
-   </div>
+    <LogoTabComponent />
+  </div>
    
-   <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
+  <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
    
-   <div class="gap-4">
-      <div class="flex justify-between mb-4">
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
-        {/*<div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
-          <a href="/services">Экспертиза →</a>
-        </div>*/}
-      </div>
-      
-      <div class="flex flex-row flex-wrap md:flex-nowrap gap-6 mt-6">
-        <a class="flex flex-col no-underline" href="/publications"><div class="text-[52px] font-heading leading-none ml-[-8px]">100+</div><span class="underline underline-offset-4 decoration-1">статей об интерфейсах</span></a>
-        <a class="flex flex-col no-underline" href="/cheatsheets"><div class="text-[52px] font-heading leading-none ml-[-8px]">100+</div><span class="underline underline-offset-4 decoration-1">шпрагалок по дизайну</span></a> 
-        <a class="flex flex-col no-underline" href="https://eduhund.com/"><div class="text-[52px] font-heading leading-none">20+</div><span class="underline underline-offset-4 decoration-1">плагинов для <span class="figma">Figma</span></span></a>
-        <a class="flex flex-col no-underline" href="/books"><div class="text-[52px] font-heading leading-none">3</div><span class="underline underline-offset-4 decoration-1">книги про UX</span></a>
-      </div>
-      
-      <div class="flex flex-row mt-8 items-center">
-        <img src="/images/main/blob.svg" />
-        <a href="https://www.eduhund.ru/" class="uppercase text-3xl md:text-[52px] font-heading ml-[-30px] z-[0]">Дизайн-задачник →</a>
-      </div>
-   </div>
+  <div class="gap-4">
+    <div class="flex justify-between mb-4">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-4">Research & Development</h2>
+      {/*<div class="bg-[#E6E6E6] dark:bg-[--aw-color-hund] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] text-sm">
+        <a href="/services">Экспертиза →</a>
+      </div>*/}
+    </div>
+    
+    <div class="flex flex-row flex-wrap md:flex-nowrap gap-6 mt-6">
+      <a class="flex flex-col no-underline" href="/publications"><div class="text-[52px] font-heading leading-none ml-[-8px]">100+</div><span class="underline underline-offset-4 decoration-1">статей об интерфейсах</span></a>
+      <a class="flex flex-col no-underline" href="/cheatsheets"><div class="text-[52px] font-heading leading-none ml-[-8px]">100+</div><span class="underline underline-offset-4 decoration-1">шпрагалок по дизайну</span></a> 
+      <a class="flex flex-col no-underline" href="https://eduhund.com/"><div class="text-[52px] font-heading leading-none">20+</div><span class="underline underline-offset-4 decoration-1">плагинов для <span class="figma">Figma</span></span></a>
+      <a class="flex flex-col no-underline" href="/books"><div class="text-[52px] font-heading leading-none">3</div><span class="underline underline-offset-4 decoration-1">книги про UX</span></a>
+    </div>
+    
+    <div class="flex flex-row mt-8 items-center">
+      <img src="/images/main/blob.svg" />
+      <a href="https://www.eduhund.ru/" class="uppercase text-3xl md:text-[52px] font-heading ml-[-30px] z-[0]">Дизайн-задачник →</a>
+    </div>
+  </div>
 </div>
 
 <div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-6 gap-6">
-   <div class="gap-4 text-white flex flex-col justify-center">
-      <h3 class="text-[52px] font-heading text-white leading-none"><a href="/vacancy">Вакансии →</a></h3>
-  
-   </div>
+  <div class="gap-4 text-white flex flex-col justify-center">
+    <h3 class="text-[52px] font-heading text-white leading-none"><a href="/vacancy">Вакансии →</a></h3>
+  </div>
    
-   <div class="gap-4">
-      
-      <div class="flex justify-between mb-4">
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Публикации</h2>
-        <div class="flex flex-row gap-6 mt-[-24px]">
-          <a class="https://vc.ru/u/230065-sobaka-pavlova" href=""><div class=""><Image src="~/assets/images/services/vc.svg" height={64} alt="VC" /></div></a>
-          <a class="" href="https://t.me/sobakawow"><div class=""><Image src="~/assets/images/services/tg.svg" height={64} alt="Telegram" /></div></a> 
-          <a class="" href=""><div class=""><Image src="~/assets/images/services/youtube.svg" height={64} alt="Youtube" /></div></a>
-          
+  <div class="gap-4">
+    <div class="flex justify-between mb-4">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Публикации</h2>
+      <div class="flex flex-row gap-6 mt-[-24px]">
+        <a class="https://vc.ru/u/230065-sobaka-pavlova" href=""><div class=""><Image src="~/assets/images/services/vc.svg" height={64} alt="VC" /></div></a>
+        <a class="" href="https://t.me/sobakawow"><div class=""><Image src="~/assets/images/services/tg.svg" height={64} alt="Telegram" /></div></a> 
+        <a class="" href=""><div class=""><Image src="~/assets/images/services/youtube.svg" height={64} alt="Youtube" /></div></a>
+      </div>
+    </div>
+    
+    <div class="flex justify-between flex-col md:flex-row gap-4">
+      <a href="https://vc.ru/design/1636094-kak-uvelichit-vyruchku-internet-magazina-bez-razrabotki-novogo-saita" class="basis-0 grow-[8]">
+        <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Как увеличить выручку интернет-магазина без разработки нового сайта</h3>
+        <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Мы работаем с интернет-сайтами и используем эволюционный путь. Не разрушаем старое до основания, чтобы затем построить новое-красивое-дорогое, а улучшаем то, что есть.</div>
+        <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
+          05.11.2024
         </div>
-      </div>
-      
-      <div class="flex justify-between flex-col md:flex-row gap-4">
-          <a href="https://vc.ru/design/1636094-kak-uvelichit-vyruchku-internet-magazina-bez-razrabotki-novogo-saita" class="basis-0 grow-[8]">
-            <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Как увеличить выручку интернет-магазина без разработки нового сайта</h3>
-            <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Мы работаем с интернет-сайтами и используем эволюционный путь. Не разрушаем старое до основания, чтобы затем построить новое-красивое-дорогое, а улучшаем то, что есть.</div>
-            <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
-                          05.11.2024
-                        </div>
-          </a>
-          <a href="https://vc.ru/life/1187442-kak-ux-dizainer-remont-delal" class="basis-0 grow-[7]">
-            <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Как UX-дизайнер ремонт делал</h3>
-            <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">С возрастом людям свойственно ставить свой комфорт выше эстетических ожиданий, если на то и другое не хватает средств. Что касается работников UX-сферы, то это усугубляется профдеформацией.</div>
-            <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
-              13.06.2024
-            </div>
-          </a> 
-      </div>
-      
-   </div>
-   
+      </a>
+      <a href="https://vc.ru/life/1187442-kak-ux-dizainer-remont-delal" class="basis-0 grow-[7]">
+        <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Как UX-дизайнер ремонт делал</h3>
+        <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">С возрастом людям свойственно ставить свой комфорт выше эстетических ожиданий, если на то и другое не хватает средств. Что касается работников UX-сферы, то это усугубляется профдеформацией.</div>
+        <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
+          13.06.2024
+        </div>
+      </a> 
+    </div>
+  </div>
 </div>
-
