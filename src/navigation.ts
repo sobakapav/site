@@ -5,7 +5,7 @@ export const headerData = {
   links: [
     {
       text: 'Портфолио',
-      href: 'https://sobakapav.ru/portfolio',
+      href: '/portfolio',
     },
     {
       text: 'Услуги',
