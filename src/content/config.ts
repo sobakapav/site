@@ -255,6 +255,7 @@ const serviceCollection = defineCollection({
       items: z.array(z.object({
         title: z.string(),
         text: z.string().optional(),
+        details: z.string().optional(),
       }))
     }).optional(),
 
