@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
 import { Markdown } from '@astropub/md';
+import SideSlider from '~/components/common/SideSlider.astro';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
 
@@ -21,7 +22,7 @@ const {
   items && (
     <div
       class={twMerge(
-        `grid mx-auto gap-8 md:gap-y-12 ${
+        `grid mx-auto gap-8 md:gap-y-12 z-[3] ${
           columns === 4
             ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1'
             : columns === 3
@@ -33,34 +34,41 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-          <div class="flex justify-center">
-            {(icon || defaultIcon) && (
-              <Icon
-                name={icon || defaultIcon}
-                class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
-              />
-            )}
-          </div>
-          <div class="mt-0">
-            {title && (
-              <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}>
-                <Markdown.Inline of={title} />
-              </h3>
-            )}
-            {description && (
-              <p class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description)}>
-                <Markdown.Inline of={description} />
-              </p>
-            )}
-            {callToAction && (
-              <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
-                <Button variant="link" {...callToAction} />
-              </div>
-            )}
-          </div>
-        </div>
+      {items.map(({ title, description, details, icon, callToAction, classes: itemClasses = {} }) => (
+        <SideSlider buttonClasses={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
+          <Fragment slot="button">
+            <div class="flex justify-center">
+              {(icon || defaultIcon) && (
+                <Icon
+                  name={icon || defaultIcon}
+                  class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
+                />
+              )}
+            </div>
+            <div class="mt-0">
+              {title && (
+                <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}>
+                  <Markdown.Inline of={title} />
+                </h3>
+              )}
+              {description && (
+                <p class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description)}>
+                  <Markdown.Inline of={description} />
+                </p>
+              )}
+              {callToAction && (
+                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
+                  <Button variant="link" {...callToAction} />
+                </div>
+              )}
+            </div>
+          </Fragment>
+          {details && (
+            <Fragment slot="content">
+              <Markdown.Inline of={details} />
+            </Fragment>
+          )}
+        </SideSlider>
       ))}
     </div>
   )

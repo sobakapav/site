@@ -1,0 +1,72 @@
+---
+
+import { Icon } from 'astro-icon/components';
+import './SideSlider.less';
+
+const button = await Astro.slots.render('button');
+const content = await Astro.slots.render('content');
+const { buttonClasses } = Astro.props;
+
+---
+<Fragment>
+  { content ? (
+    <div class:list={['side-slider', buttonClasses]}>
+      <div class:list={['side-slider-button cursor-pointer', buttonClasses]} set:html={button} />
+      
+      <div class="side-slider-background side-slider-close fixed top-0 left-0 bottom-0 right-0 hidden z-[3]">
+        <div class="absolute top-0 left-0 bottom-0 right-0 bg-gray-500 opacity-80 cursor-pointer">&nbsp;</div>
+        <div class="side-slider-content side-slider-content-closed absolute top-0 bottom-0 bg-[--aw-color-bg-page] mt-20 mb-2 mr-2 overflow-y-auto">
+          <span class="side-slider-close-button side-slider-close absolute top-[10px] right-[10px] w-6 h-6 cursor-pointer">
+            <Icon name="tabler:x" class="w-6 h-6 text-[--aw-color-hund]" />
+          </span> 
+          <div class="p-6 format-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-full" set:html={content} />
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class={buttonClasses}>
+      <Fragment set:html={button} />
+    </div>
+  )}
+</Fragment>
+
+<script>
+  function showSlider(e) {
+    var tag = e.target;
+    while (!tag.classList || !tag.classList.contains('side-slider') || !tag.parentNode) {
+      tag = tag.parentNode;
+    }
+    if (tag.classList.contains('side-slider')) {
+      const sliderContainer = tag.querySelector('.side-slider-background');
+      sliderContainer.classList.remove('hidden');
+      const slider = sliderContainer.querySelector('.side-slider-content');
+      window.setTimeout(() => slider.classList.remove('side-slider-content-closed'), 50);
+    }
+  }
+  
+  function hideSlider(e) {
+    var tag = e.target;
+    while (!tag.tagName || !tag.classList.contains('side-slider') || !tag.parentNode) {
+      tag = tag.parentNode;
+    }
+    if (tag.classList.contains('side-slider')) {
+      const sliderContainer = tag.querySelector('.side-slider-background');
+      sliderContainer.classList.add('hidden');
+      const slider = sliderContainer.querySelector('.side-slider-content');
+      slider.classList.add('side-slider-content-closed');
+    }
+  }
+
+  window.addEventListener("load", (event) => {
+    for (const button of document.querySelectorAll('.side-slider-button')) {
+      button.addEventListener("click", showSlider);
+    };
+    for (const button of document.querySelectorAll('.side-slider-close')) {
+      button.addEventListener("click", hideSlider);
+    };    
+    for (const button of document.querySelectorAll('.side-slider-content')) {
+      button.addEventListener("click", (e) => e.stopPropagation());
+    };
+  });
+
+</script>

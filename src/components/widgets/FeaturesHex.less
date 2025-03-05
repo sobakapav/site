@@ -1,70 +1,68 @@
 .features-hex {
     
+  > div {
+    background-color: var(--aw-color-bg-accent);
+    padding: 24px; 
+  }
+  
+  // Заголовок
+  > div:nth-of-type(1) {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    background-color: #1D2121;
+    color: #F7F8FA;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-hex {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    
     > div {
-      background-color: var(--aw-color-bg-accent);
       padding: 24px; 
     }
-
     // Заголовок
-    > div:nth-child(1) {
-      grid-row: 1 / span 1;
-      grid-column: 1 / span 2;
+    > div:nth-of-type(1) {
+      grid-row: 2 / span 2;
+      grid-column: 2 / span 1;
       background-color: #1D2121;
       color: #F7F8FA;
     }
-}
-
-
-
-@media (min-width: 1024px) {
-    .features-hex {
-      grid-template-columns: 1fr 1.5fr 1fr;
-      
-      > div {
-        padding: 24px; 
-      }
-      // Заголовок
-      > div:nth-child(1) {
-        grid-row: 2 / span 2;
-        grid-column: 2 / span 1;
-        background-color: #1D2121;
-        color: #F7F8FA;
-      }
-    
-      // левый верхний
-      > div:nth-child(2) {
-        grid-row: 1 / span 2;
-      }
-    
-      // верхний
-      > div:nth-child(3) {
-      }
-      
-      // правый верхний
-      > div:nth-child(4) {
-        grid-row: 1 / span 2;
-      }
-      
-      // левый нижний
-      > div:nth-child(5) {
-        grid-row: 3 / span 2;
-      }
-    
-      // правый нижний
-      > div:nth-child(6) {
-        grid-row: 3 / span 2;
-      }
-      
-      // нижний
-      > div:nth-child(7) {
-      }
-      
-      // ниже нижнего
-      > div:nth-child(8) {
-        grid-column: 2 / span 2;
-      }
-      
+  
+    // левый верхний
+    > div:nth-of-type(2) {
+      grid-row: 1 / span 2;
     }
+  
+    // верхний
+    > div:nth-of-type(3) {
+    }
+    
+    // правый верхний
+    > div:nth-of-type(4) {
+      grid-row: 1 / span 2;
+    }
+    
+    // левый нижний
+    > div:nth-of-type(5) {
+      grid-row: 3 / span 2;
+    }
+  
+    // правый нижний
+    > div:nth-of-type(6) {
+      grid-row: 3 / span 2;
+    }
+    
+    // нижний
+    > div:nth-of-type(7) {
+    }
+    
+    // ниже нижнего
+    > div:nth-of-type(8) {
+      grid-column: 2 / span 2;
+    }
+    
+  }
 
 }
 

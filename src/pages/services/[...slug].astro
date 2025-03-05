@@ -145,7 +145,7 @@ const metadata = merge(
               <div class="text-sm text-[#95001B] tracking-wide font-semibold">ПОТРЕБНОСТИ</div>
               <FeaturesHex
                 title={post.when.title}
-                items={ post.when?.items?.map((item) => ({title: item.title, description: item.text})) }
+                items={ post.when?.items?.map((item) => ({title: item.title, description: item.text, details: item.details})) }
               />
             </div>
         )}

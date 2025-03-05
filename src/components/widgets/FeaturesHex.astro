@@ -30,15 +30,7 @@ var titledItems = [{title, description: subtitle, classes: {
 
 ---
 
-<WidgetWrapper
-  id={id}
-  isDark={isDark}
-  containerClass={`${isBeforeContent ? 'md:pb-8 lg:pb-12' : ''} ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${
-    classes?.container ?? ''
-  }`}
-  bg={bg}
->
-  <ItemGrid
+<ItemGrid
     items={ titledItems }
     columns={ 3 }
     defaultIcon={defaultIcon}
@@ -51,4 +43,3 @@ var titledItems = [{title, description: subtitle, classes: {
       ...((classes?.items as {}) ?? {}),
     }}
   />
-</WidgetWrapper>
