@@ -235,6 +235,32 @@ import '~/assets/styles/colors.css';
     position: relative;
     z-index: 2;
   }
+  
+    
+  .format-markdown blockquote {
+    font-size: unset;
+    font-weight: unset;
+    font-style: unset;
+    quotes: unset;
+    
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    background-color: var(--aw-color-bg-accent2);
+
+    a {
+      text-decoration: underline;
+    }
+    
+    p {
+      margin-bottom: 0px;
+      
+      &:before,
+      &:after {
+        content: '';
+      }
+    }
+  }
 
   @media (min-width: 1024px) {
     .format-markdown img,
