@@ -1,6 +1,8 @@
 ---
 import { twMerge } from "tailwind-merge";
 
+import "./Checkbox.less";
+
 const {
   id,
   label,
@@ -24,8 +26,8 @@ const checkmark = checked ? {checked: "true"} : {}
     class={aClassName}
     {...checkmark}
     />
-  <label for={id} class:list={[twMerge("bg-[#E6E6E6] inline-flex items-center hover:cursor-pointer pl-2 rounded-sm", classLabel)]}>
-    <span class="hover:text-[--aw-color-hund]">
+  <label for={id} class:list={[twMerge("inline-flex items-center hover:cursor-pointer pl-2 rounded-sm", classLabel)]}>
+    <span>
       {label}
     </span>
     <slot />
