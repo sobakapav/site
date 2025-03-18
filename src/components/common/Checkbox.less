@@ -1,0 +1,38 @@
+astro-checkbox {
+  input {
+    & + label {
+      border: 1px solid var(--aw-color-grey8);
+      background-color: var(--aw-color-grey8);
+      color: var(--aw-color-grey1);
+      &:hover span {
+        color: var(--aw-color-hund);
+      }
+    }
+    &:checked + label {
+      border: 1px solid var(--aw-color-grey3);
+      background-color: var(--aw-color-grey3);
+      color: var(--aw-color-grey9);
+      &:hover span {
+        color: var(--aw-color-pink);
+      }
+    }
+  }
+}
+
+.dark {
+  astro-checkbox {
+    input {
+      & + label {
+        &:hover span {
+          color: var(--aw-color-pink);
+        }
+      }
+      
+      &:checked + label {
+        &:hover span {
+          color: var(--aw-color-brand-hund);
+        }
+      }
+    }
+  }
+}

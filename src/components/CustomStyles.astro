@@ -34,20 +34,26 @@ import '~/assets/styles/colors.css';
     --aw-color-secondary: rgb(1 84 207);
     --aw-color-accent: #19676c;
     --aw-color-hund: #95001b;
-    --aw-color-pink: #fec7bc;
+    --aw-color-pink: #fec0bc;
 
     --aw-color-text-heading: rgb(16 16 16);
     --aw-color-text-default: rgb(16 16 16);
     --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-bg-page: #ffffff;
     --aw-color-bg-accent: #eff0f0;
     --aw-color-bg-accent2: #f6f6f6;
-
+    
     --aw-color-bg-page-dark: #212121;
     --aw-color-text-dark: #f6f6f6;
     --aw-color-text-muted-dark: #bebebe;
+    --aw-color-brand-hund: #95001b;
 
-    --aw-color-text-light-default: rgb(16 16 16);
+    
+    --aw-color-grey1: #101010;
+    --aw-color-grey3: #4c4c4c;
+    --aw-color-grey6: #929292;
+    --aw-color-grey8: #e8e8e8;
+    --aw-color-grey9: #f0f0f0;
 
     ::selection {
       background-color: lavender;
@@ -61,15 +67,21 @@ import '~/assets/styles/colors.css';
 
     --aw-color-primary: rgb(1 97 239);
     --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: #19676c;
-    --aw-color-hund: #95001b;
-    --aw-color-pink: #fec7bc;
+    --aw-color-accent: #048e86;
+    --aw-color-hund: #c66d65;
+    --aw-color-pink: #fec0bc;
     --aw-color-text-heading: #f6f6f6;
     --aw-color-text-default: #f6f6f6;
     --aw-color-text-muted: rgb(246 246 246 / 66%);
     --aw-color-bg-page: #212121;
     --aw-color-bg-accent: #323232;
     --aw-color-bg-accent2: #323232;
+    
+    --aw-color-grey1: #fff;
+    --aw-color-grey3: #e8e8e8;
+    --aw-color-grey6: #929292;
+    --aw-color-grey8: #4c4c4c;
+    --aw-color-grey9: #323232;
 
     ::selection {
       background-color: black;
@@ -83,7 +95,7 @@ import '~/assets/styles/colors.css';
 
   .format-subtitle-markdown a {
     text-decoration: underline;
-    color: var(--dark-4);
+    color: var(--aw-color-accent);
   }
 
   .format-subtitle-markdown .white-links a,
@@ -112,7 +124,7 @@ import '~/assets/styles/colors.css';
 
   .format-markdown a {
     text-decoration: underline;
-    color: var(--dark-4);
+    color: var(--aw-color-accent);
   }
 
   .format-markdown p,
@@ -324,16 +336,6 @@ import '~/assets/styles/colors.css';
   .noir3:hover {
     filter: grayscale(0%);
     transition: 0.5s ease-in;
-  }
-
-  astro-checkbox input:checked + label {
-    border: 1px solid #3e3e3e;
-    background-color: #3e3e3e;
-    color: #ffffff;
-  }
-
-  astro-checkbox input:checked + label:hover span {
-    color: #ffffff;
   }
 
   .features-block a,
