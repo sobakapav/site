@@ -20,10 +20,10 @@ for (var idx in list) {
 ---
 <div class="portfolio-collection text-left pb-4 md:pb-6 max-w-7xl mx-auto justify-center">
 <PortfolioFilter />
-<ul class="portfolio-collection flex lg:grid lg:grid-cols-portfolio2 lg:grid-flow-row-dense flex-wrap justify-start list-none">
+<ul class="portfolio-collection flex md:grid md:grid-flow-row-dense md:grid-cols-portfolio-md md:max-w-[640px] lg:grid-cols-portfolio-lg lg:max-w-[960px] xl:grid-cols-portfolio xl:max-w-full flex-wrap justify-start list-none">
   {
     items.map((item, idx) => (
-      <li class:list={["mb-6", (item.doubleSize ? "w-[640px] col-span-2" : "w-80"), item.tags?.map((tag) => ('fltr-'+tag)).join(' ')]} id={'portfolio-card-'+idx}>
+      <li class:list={["mb-6", (item.doubleSize ? "w-80 md:w-[640px] md:col-span-2" : "w-80"), item.tags?.map((tag) => ('fltr-'+tag)).join(' ')]} id={'portfolio-card-'+idx}>
         <Item post={item} mode={item.doubleSize ? 'double' : 'single'}/>
       </li>
     ))
