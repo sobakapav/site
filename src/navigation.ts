@@ -12,6 +12,10 @@ export const headerData = {
       href: '/services',
       links: [
         {
+          text: 'Все услуги',
+          href: getPermalink('/services'),
+        },
+        {
           text: 'UX/UI-дизайн под ключ',
           href: getPermalink('/services/ux-design'),
         },
