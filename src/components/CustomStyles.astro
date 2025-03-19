@@ -50,6 +50,7 @@ import '~/assets/styles/colors.css';
     --aw-color-always-dark: #101010;
     
     --aw-color-grey1: #101010;
+    --aw-color-grey2: #323232;
     --aw-color-grey3: #4c4c4c;
     --aw-color-grey6: #929292;
     --aw-color-grey8: #e8e8e8;
@@ -78,6 +79,7 @@ import '~/assets/styles/colors.css';
     --aw-color-bg-accent2: #323232;
     
     --aw-color-grey1: #fff;
+    --aw-color-grey2: #f0f0f0;
     --aw-color-grey3: #e8e8e8;
     --aw-color-grey6: #929292;
     --aw-color-grey8: #4c4c4c;
@@ -298,6 +300,11 @@ import '~/assets/styles/colors.css';
     filter: grayscale(90%);
     transition: 0.5s ease-out;
   }
+  
+  .dark article.blog-list-item .image-animate img {
+      filter: grayscale(60%);
+      transition: 0.5s ease-out;
+  }
 
   article.blog-list-item:hover .image-animate img {
     filter: grayscale(0%);
@@ -311,6 +318,11 @@ import '~/assets/styles/colors.css';
   .noir {
     filter: grayscale(90%);
     transition: 0.5s ease-out;
+  }
+  
+  .dark .noir {
+      filter: grayscale(60%);
+      transition: 0.5s ease-out;
   }
 
   .noir:hover {
