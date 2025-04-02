@@ -1,5 +1,5 @@
 ---
-publishDate: 2025-03-21T00:00:00Z
+publishDate: 2025-03-31T00:00:00Z
 title: Однострочники в консоли Figma
 excerpt: |
    [Figma](https://www.figma.com/) — уникальный дизайнерский инструмент, а как приложение — мало чем отличается от веб-браузера. В ней можно использовать стандартные инструменты разработки фрониэнда: [DevTools](https://developer.chrome.com/docs/devtools). Фактически это бэкдор к браузеру, позволяющий узнать про страницу что угодно и модифицировать все, что вы на ней видите.
@@ -71,56 +71,55 @@ Right-click → `Plugins → Development → console-coding`
 Просто нажмите в меню `Plugins → Development → Show/Hide console` и ваш экран Figma полностью изменится. Повторите, чтоб все это скрыть.
 
 ### Проверьте, готовы ли вы
+Вы готовы писать код в консоли Figma. Проверим. 
 
-Now you’re ready to write code in Figma console. Let’s check it.
-
-Type `figma.currentPage` in console. And press Enter. Don’t worry about all those jumping lines, just do these simple steps.
+Введите в консоли `figma.currentPage`. Нажмите Enter. Не обращайте внимание на то, что там прыгает на экране, просто сделайте.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/4.png)
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/5.png)
 
-Try to open the dropdown list.
+Откройте выпадайку.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/6.png)
 
-Congratulations! Now you can access your Figma project (and all its details) through console code. Time to do it right—and to do it often.
+Поздравляем! Теперь у вас есть доступ к в вашему Figma-проекту (и всему подкапотному) через консоль. Теперь научимся делать это регулярно и правильно.
 
-## Simple Exercises to Warm Up Your Fingers
+## Простые упражнения для разминки
 
-> From now on: press Enter after a `;` (or instead of it — that works too).
+> С этого момента нажимайте Enter после `;` (или вместо — так тоже работает).
 
-Here are a few quick practices to help you get used to coding in Figma console.
+Несколько простых упражнений, чтоб привыкнуть кодить в Figma-консоли.
 
-### Calculate Arithmetic Expressions
-Wrap any simple arithmetics in parenthesis:
+### Простейшая арифметика
+Оберните в скобки простую арифметику:
 
 ```
 console.log(3*2.5 + 19/4 - 32);        
 ```
 
-You’ll get the answer immediately.
+И сразу же получите ответ.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/7.png)
 
-### Simplify the Usage of figma.currentPage Object
-Instead of writing figma.currentPage every single time, just assign it to p :
+### Как упростить использование объекта figma.currentPage
+Вместо того, того, чтоб использовать каждый раз figma.currentPage, запишите его в переменную p:
 
 ```
 p = figma.currentPage;         
 ```
 
-You’ll see the contents of p immediately after running this command.
+Вы увидите содержимое p, как только выполнится команда.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/8.png)
 
-### Count the Document Pages or Top-Level Frames
-Get the number of pages in the document:
+### Как посчитать количество страниц в документе или фреймов верхнего уровня
+Посчитать количество страниц в документе:
 
 ```
 figma.root.children.length;        
 ```
 
-Get the number of top-level frames on the page:
+Посчитать количество фреймов верхнего уровня:
 
 ```
 figma.currentPage.children.length;
@@ -128,39 +127,40 @@ figma.currentPage.children.length;
 p.children.length;        
 ```
 
-You’ll see the result immediately.
+И сразу увидите результат сразу
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/9.png)
 
-### Learn a Bit About Yourself
-You are the current user—so, ask about the current user:
+### Узнайте немного о себе
+Вы — текущий пользователь, так что спросите о текущем пользователе:
 
 ```
 figma.currentUser;        
-Feel free to open the dropdown list:
 ```
+
+Не стесняйтесь раскрыть выпадающий список
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/10.png)
 
-### Who Else Is Here?
-Ask something almost identical:
+### Кто тут ещё?
+Задайте почти идентичный вопрос:
 
 ```
 figma.activeUsers;
 ```
 
-Usually, you’re alone—but who knows?
+Обычно вы одни, но мало ли что?
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/11.png)
 
-## Create a New Page or Clone an Existing One
-Each time you run this command, a new Page N appears:
+## Как создать новую страницу или клонировать существующую
+Каждый раз, когда вы выполняете эту команду, появляется новая страница.
 
 ```
 figma.createPage(); 
 ```
 
-If that doesn’t work, try cloning the current page—it works perfectly:
+Если так не работает, попробуйте клонировать существующую — это работает всегда: 
 
 ```
 tmpl = figma.currentPage;
@@ -172,49 +172,48 @@ tmpl.clone();
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/12.png)
 
-## Now for Some Actually Useful Code Snippets 😵💫
-It’s time to use the Figma console to get more interesting results.
+## А теперь к по-настоящему полезным фрагментам кода 😵💫
+Пора использовать консоль Figma, чтобы получить более интересные результаты.
 
-We believe in jumping right in—no hesitation—even if these particular tasks aren’t exactly what you are after.
+Чтобы научиться плавать — надо нырять без колебаний, даже если именно эти задачи — не совсем то, что вам требуется.
 
-Each one requires a bit of attention. Hope you are feeling focused today.
+Каждая из них потребует немного внимания. Надеемся, вы сегодня достаточно сосредоточены.
 
-### Quickly Change the Canvas Background Color
-To change the canvas background color just once, you have to run a fairly complex line:
+### Быстро меняем цвет фона канвы
+Чтобы один раз изменить цвет фона канвы, нужно использовать довольно сложную строку:
 
 ```
 figma.currentPage.backgrounds = [figma.util.solidPaint("#FF0000")];  
 ```
       
->Too many strange symbols? Just **ignore** them—it works, right?
+>Слишком много странных символов? Не обращайте внимания, главное, что это работает, правда же?
 
-Obviously, instead of #FF0000, you can use any RGB-color (do not forget the parenthesis!).
+Естественно, вместо #FF0000 можно использовать любой цвет в формате RGB (не забывайте скобки!).
 
-
-Not so obviously, you can simplify this line and reuse it with any color. Just run this line **once**:
+Не так очевидно, но можно упростить эту строку и переиспользовать её с любым цветом. Просто запустите эту строку **ровно один раз**
 
 ```
 function bg(value) {figma.currentPage.backgrounds = [figma.util.solidPaint(value)];}        
 ```
 
-…and from then on, use your new **function** as many times as you like:
+А дальше используйте эту новую **функцию** столько раз, сколько нужно:
 
 ```
 bg("#D79921");
 bg("#979736"); 
 ```
 
->Yes, you’ve just created a real programming **function** — congratulations!
+> Да, вы только что создали свою первую **функцию** — поздравляем!
 
-For each frequently used background color, you can create an even quicker command.
+Для часто используемых цветов фона можно создать ещё более короткую команду.
 
-Write once:
+Напишите один раз:
 
 ```
 function bgd() { bg("#000000"); }        
 ```
 
-…and use it as many times as you like:
+…и используйте столько раз, сколько нужно:
 
 ```
 bgd();        
@@ -222,13 +221,13 @@ bgd();
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/13.png)
 
-Write once:…
+Напишите один раз:…
 
 ```
 function bgl() {bg("#ffffff"); }        
 ```
 
-…and use it as many times as you like:
+…и используйте столько раз, сколько нужно:
 
 ```
 bgl();
@@ -236,47 +235,47 @@ bgl();
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/14.png)
 
-Instead of bgd or bgl, feel free to invent your own command name. And yes—parenthesis are required.
+Вместо bgd или bgl, можно придумать и свои названия команд. Напоминаем, скобки обязательны.
 
-### Switch Between a Couple of Background Colors
-If you’re only using two background colors, do it like this:
+### Переключаемся между несколькими цветами фона
+Если вы используете только два цвета фона, это можно сделать так:
 
 ```
 class b { static c = 0; static l = "#D79921"; static d = "#979736"; static g() { if (this.c == 0) { bg(this.l); } else { bg(this.d); }; this.c = !this.c; } };   
 ```
 
-The colors are up to you — change them freely.
+Выбрайте какие угодно цвета.
 
-Now you can switch the background color pretty easily:
+Теперь переключаться между цветами фона очень легко:
 
 ```
 b.g();        
 ```
 
-Run it as many times as you like.
+Проделайте это сколько угодно раз.
 
-> By the way, you’ve just encountered **object-oriented programming**. See that class keyword? New badge, new achievement, new level. That’s great — no kidding.
+> Между прочим, мы только что встретились с **объектно-ориентированным программированием**. Видите ключевое слово class? Новый значок, новая ачивка, новый уровень. Это без шуток круто.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/15.png)
 
-### Create 100+ Frames in a Line at Once
-First, create a function that you can reuse as many times as you like.
+### Создайте 100+ фреймов одной строчкой
+Сначала создайте функцию, которую вы сможете переиспользовать столько раз, сколько понадобится.
 
-> This is a typical reason to write functions: to make it easy to repeat the same action more than twice.
+> Это основная цель написания функций: сделать так, чтобы было проще повторять одно и то же действие больше, чем дважды.
 
 ```
 function fc(number, space_x, space_y) { const frame = figma.currentPage.selection.find(node => node.type === "FRAME"); f = new Array(); for (i = 0; i < number; i++) { f[i] = frame.clone(); f[i].x = frame.x + (i+1)  space_x; f[i].y = frame.y + (i+1)  space_y; figma.currentPage.appendChild(f[i]); } }        
 ```
 
-Then, create the frame you want to clone. It can be as complex as you need. If you’ve already created the frame—great! You do not need to do anything.
+Затем создайте фрейм, который хотите скопировать. Настолько сложный, насколько захотите. Если уже создали — отлично! Больше ничего не надо делать.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/16.png)
 
-Now select that frame.
+Выберите этот фрейм
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/17.png)
 
-And run:
+И запустите:
 
 ```
 fc(100, 7, 3);
@@ -284,18 +283,18 @@ fc(100, 7, 3);
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/18.png)
 
-> Play around with fc() parameters: number — how many new frames to create; space_x and space_y — distance between their top-left corners.
+> Поиграйте с параметрами функции fc() — сколько нужно создать фреймов; space_x и space_y — расстояние между их верхними левыми углами.
 
 ***
-Only **a few** Figma console coding practices are explained in this article — there are many more. If you show any interest, I’ll continue publishing more of these snippets.
+В этой статье показаны **лишь немногие** практики кодинга в консоли Figma — их куда больше. Если вам интересно, я продолжу публиковать фрагменты кода.
 
 ***
 
-Ready to start coding in Figma on your own?
+Ужде готовы сами кодить в Figma?
 
-Here are two key resources you’ll definitely need:
+Вот два ресурса, которые вам точно понадобятся:
 
 [Plugin Guide](https://www.figma.com/plugin-docs/) • [API Reference](https://www.figma.com/plugin-docs/api/api-reference/)
 
-Yes, these two links are different — really.
+Это расные ссылки, честное слово.
 
