@@ -37,41 +37,41 @@ import ToggleTheme from '~/components/common/ToggleTheme.astro';
 
 ---
 
-Раз Figma — как бы браузер, то любой Figma-файл — что-то вроде веб-страницы. 
-Since Figma is a kind of browser, any Figma file is a kind of web page. It means, you can use DevTools to manage your Figma project with code. Draw with code, type text with code, change colors with code, create components, align frames, set values, you name it.
+Раз Figma — как бы браузер, то любой Figma-файл — что-то вроде веб-страницы. А значит, с помощью DevTools можно кодить в Figma-проекте. Рисовать кодом, печатать текст, менять цвета, создавать компонетны, выравнивать фреймы, устанавливать значения, — да все, что угодно.
 
-Certainly, if you need any complicated design automation, DevTools is not enough. You should develop a plugin and even, perhaps, publish it in [Figma Community](https://www.figma.com/community). But is your automation really so complicated?
+Конечно, если нужна сложная автоматизация дизайна, DevTools'ом не обойтись — надо написать плагин и даже, возможно, опубликовать его [Figma Community](https://www.figma.com/community). Но действительно ли сложна необходимая автоматизация?
 
-Sometimes just a couple of lines of code is all you need to automate your design. Let’s practice writing these tiny lines.
+Иногда нужна буквально пара строчек кода. Давайте потренируемся писать такие строчки.
 
-## Preparation for Coding in Figma
-To begin coding in Figma application, two steps are necessary.
+## Готовимся кодить в Figma
+Чтобы кодить в приложении Figma, нужно:
 
 1. Run empty plugin.
-2. Open Dev Tools.
+2. Открыть Dev Tools.
 
-> Yes, sounds like geek mesh. Two minutes, I promise.
+> Ага, звучит как что-то на гиковском. Пару минут, и все прояснится, обещаю.
 
 ### Run an Empty Plugin
-It is like a magical step: nothing happens, yet you get a lot of fantastical skills and possibilities.
+Магия: хоп, у вас вдруг полно фантастических возможностей.
 
-First of all, create empty plugin — yes, right in your current project, not in a separate file.
+Для начала, создайте пустой плагин — прямо в текущем проекте, не в отдельном файле.
 
-Click `Plugins → Development → New plugin…`, and then accept the suggested options.
+Нажмите `Plugins → Development → New plugin…` и примите предложенные опции.
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/1.png)
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/2.png)
 
-Then, run it. Again, right in your current project.
+Теперь запустие его. Да-да, прямо в текущем проекте.
 
 Right-click → `Plugins → Development → console-coding`
 
 ![Однострочники в консоли Figma](~/assets/images/articles/a-lot-of-figma/3.png)
 
-### Open Dev Tools
-Just click `Plugins → Development → Show/Hide console` menu item, and your Figma screen will transform drastically. Do it twice to hide all this stuff.
+### Откройте Dev Tools
+Просто нажмите в меню `Plugins → Development → Show/Hide console` и ваш экран Figma полностью изменится. Повторите, чтоб все это скрыть.
 
-### Check If You Are Ready
+### Проверьте, готовы ли вы
+
 Now you’re ready to write code in Figma console. Let’s check it.
 
 Type `figma.currentPage` in console. And press Enter. Don’t worry about all those jumping lines, just do these simple steps.
