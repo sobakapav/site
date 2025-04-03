@@ -1,4 +1,22 @@
 portfolio-filter-block {
+  astro-checkbox {
+    input {
+      & + label.portfolio-filter-switch-label {
+        color: var(--aw-color-grey1);
+        border: none;
+        &:hover span {
+          color: var(--aw-color-hund);
+        }
+      }
+      &:checked + label.portfolio-filter-switch-label {
+        color: var(--aw-color-grey9);
+        &:hover span {
+          color: var(--aw-color-pink);
+        }
+      }
+    }
+  }
+  
   .all-filters {
     
     .filter-group:nth-child(1) {
@@ -124,6 +142,24 @@ portfolio-filter-block {
   &:has(.all-filters .filter-group input:checked) {
     .reset-filters {
       display: inline;
+    }
+  }
+}
+
+.dark {
+  portfolio-filter-block {
+    astro-checkbox {
+      input {
+        & + label.portfolio-filter-switch-label {
+          color: var(--aw-color-pink);
+          &:hover span {
+            color: var(--aw-color-hund);
+          }
+        }
+        &:checked + label.portfolio-filter-switch-label {
+          color: var(--aw-color-pink);
+        }
+      }
     }
   }
 }
