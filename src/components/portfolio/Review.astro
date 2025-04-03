@@ -10,7 +10,7 @@ const { post } = Astro.props;
 ---
 
 <div class="px-4 sm:px-6 mt-8 md:mt-14 review">
-  <div class="bg-[#323232] text-[#ffffff] dark:bg-[--aw-color-accent] mx-auto px-8 sm:px-12 py-8 sm:py-12 mb-10 md:mb-8 text-base">
+  <div class="bg-[--aw-color-grey2] text-[#ffffff] dark:bg-[--aw-color-grey9] mx-auto px-8 sm:px-12 py-8 sm:py-12 mb-10 md:mb-8 text-base">
     <div class:list={["flex flex-col lg:flex-row flex-wrap gap-10", (post.review && post.director) ? "" : "items-end"]}">
       { (post.review || post.director) ? (
         post.review && (
