@@ -140,11 +140,11 @@ simple-slider {
   @media (max-width: 1200px) {
     .slider {
       width: 900px;
-      height: 306px;
+      height: auto;
     }
   
     .slider-container {
-      height: 306px;
+      height: auto;
     }
   
     .div-blue {
@@ -155,44 +155,25 @@ simple-slider {
   
   @media (max-width: 900px) {
     .slider {
-      width: 600px;
-      height: 230px;
-    }
-  
-    .slider-container {
-      height: 230px;
+      width: calc(100% - 60px);
     }
   }
   
   @media (max-width: 600px) {
     .slider {
-      display: none;
-    }
-    .slider-mob {
-      width: 360px;
       display: block;
       overflow: hidden;
       border-radius: 8px;
-      height: 460px;
-    }
-    .slider-container {
-      height: 460px;
     }
   }
   
   @media (max-width: 360px) {
+    
     .slider {
-      display: none;
-    }
-    .slider-mob {
       width: 100%;
       display: block;
       overflow: hidden;
       border-radius: 8px;
-      height: auto;
-    }
-    .slider-container {
-      height: 460px;
     }
   }
   
