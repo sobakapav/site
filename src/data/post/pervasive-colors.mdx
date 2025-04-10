@@ -1,0 +1,71 @@
+---
+publishDate: 2025-04-09T00:00:00Z
+title: Единая палитра для разных приложений
+excerpt: |
+  Для тех, кто ценит цветовую консистентность.
+  
+  Рассказываем, что делать, если вам нужна одна и та же палитра в Google Docs, iTerm2, Figma, Mermaid, 2Do, VSCode, Pixelmator и т.д.? Доступная в любой — любой! — момент, когда понадобится любой цвет.
+  
+  Решение: набор названий для всех необходимых цветов. Да, просто названия. И способ заменять их на RGB-коды соответствующих цветов в любом тексте.
+description: Для тех, кто ценит цветовую консистентность.
+author: Ольга Павлова, совладелец
+image: ~/assets/images/articles/pervasive-colors/main.png
+imageAlt: Единая палитра для разных приложений
+imageName: Ян Стен. «Урок рисования»               
+topic: Практика
+tags:
+  - практика
+  - технологии
+
+relatedLinks:
+  title: Примеры работ
+  links:
+    - pushkin-digital
+    - tmh
+    - prozhito
+    - dipol
+metadata:
+  canonical: https://sobakapav.ru/publications/pervasive-colors
+  title: Единая палитра для разных приложений
+  description: "Для тех, кто ценит цветовую консистентность."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Собака Павлова
+    type: website
+---
+import DListItem from '~/components/ui/DListItem.astro';
+import ToggleTheme from '~/components/common/ToggleTheme.astro';
+
+Какую структуру названий использовать? Старый добрый [16-цветный набор ANSI](https://en.wikipedia.org/wiki/ANSI_escape_code)  подходит идеально. Почти все приложения для терминала бесшовно поддерживают эти имена (но не цветовые коды).
+
+![Pervasive Colors by Name](~/assets/images/articles/pervasive-colors/3.png)
+
+**Нет, нет, нет!** Эти цвета сами по себе ужасны и требуют изменения. Нам от них нужны только названия.
+
+![Pervasive Colors by Name](~/assets/images/articles/pervasive-colors/2.png)
+
+Восемь базовых названий + восемь дополнительных + четыре названия для чёрного и белого.
+
+Этого более чем достаточно, чтобы реализовать 16-цветную палитру где угодно.
+
+Как это работает? Вводите название цвета и сразу же получаете его RGB-код. Везде, всегда.
+
+Чтобы развернуть названия в цвета, можно использовать приложение [Alfred](https://www.alfredapp.com)
+
+![Pervasive Colors by Name](~/assets/images/articles/pervasive-colors/4.png)
+
+Насколько нам известно, [возможность замены текста](https://support.apple.com/guide/mac-help/replace-text-punctuation-documents-mac-mh35735/mac) доступна в macOS без какой-либо дополнительной установки.
+
+![Pervasive Colors by Name](~/assets/images/articles/pervasive-colors/1.png)
+
+Каждое имя цвета состоит из трёх частей: код палитры (одна буква) + пометка для светлого цвета (одна буква) + название собственно цвета (как минимум, одна буква)
+
+Например, gb_yell превращается в FABD2F, g_red превращается в D65D0E.
+
+Если нужно несколько палитр, просто используйте разные коды: s_yellow, rb_red, и т.п.
+
+Имеет ли это значение? Конечно, если одна из ваших целей — узнаваемость бренда.
+
+Есть ли лучшие способы? Да, если мы говорим об одном инструменте (или паре инструментов, которые используют специальные палитры в соответствии с особенностями вашей системы). И нет, если вы используете слишком много приложений или компьютеров, чтобы их все можно было нормально организовать.
