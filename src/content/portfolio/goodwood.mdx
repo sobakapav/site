@@ -31,7 +31,7 @@ relatedPages:
       #### Заказать дизайн
       Напишите нам на&nbsp;[we@sobakapav.ru](mailto:we@sobakapav.ru) 
       #### Что мы можем сделать?
-      [UX-аудит](/services/ux-audit) и [точечный редизайн интерфейса](/services/redesign), как в этом кейсе, и [многое другое](/services). 
+      [UX-аудит](/services/ux-audit), как в этом кейсе, и [многое другое](/services). 
     collection: services
     page: ux-audit
   - text: |
@@ -103,6 +103,7 @@ metadata:
 ---
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
+import PhoneMockup from '~/components/widgets/PhoneMockup.astro';
 
 <TOC>
 [Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
@@ -192,18 +193,8 @@ _Главная страница_
 - Паттерн сторис использовать для других блоков: для вовлечения (интерактив), для превью публикаций блога и т.д.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/goodwood/5.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/goodwood/6.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/goodwood/5.png" />
+	<PhoneMockup image="/images/portfolio/goodwood/6.png" />
 </div>
 _Мобильная версия_
 

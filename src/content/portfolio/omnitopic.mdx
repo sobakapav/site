@@ -21,41 +21,40 @@ thumbnail:
 tags:
   - it
   - ed
+  - product-team
   - prototype
   - mass
   
 relatedPages:
-  -
-    text: |
+  - text: |
       ### Вам нужен интерфейс?
       #### Заказать дизайн
       Напишите нам на&nbsp;[we@sobakapav.ru](mailto:we@sobakapav.ru) 
       #### Что мы можем сделать?
-      [Прототип под инвестиции](/services/prototype), как в этом кейсе, и [многое другое](/services). 
+      [Работа в продуктовой команде](/services/product-team) и [прототип под инвестиции](/services/prototype), как в этом кейсе, и [многое другое](/services). 
     collection: services
     page: prototype
+  - collection: services
+    page: product-team
 
 relatedPages2:
-  -
-    text: |
+  - text: |
       ### Похожие проекты
     collection: portfolio
     page: pushkin-digital
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: prozhito
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: jetlearn
-  - 
-    collection: portfolio
+  - collection: portfolio
+    page: math
+  - collection: portfolio
     page: tigitl
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: korochka
 
 result:
-  -
+  - src: ~/assets/images/portfolio/figma.svg
     text: Покажем из рук в руки и расскажем ещё больше
     link: "mailto:we@sobakapav.ru"
 budget: "260 000 ₽"
@@ -66,16 +65,13 @@ director: "Слово директора"
 outcome:
   title: Некоторые цифры
   numbers:
-    -
-     title: Исследовали 
+   - title: Исследовали 
      number: 10 похожих продуктов
      text: в поисках инсайтов
-    -
-     title: Предоставили
+   - title: Предоставили
      number: 5 визуальных концептов
      text: на выбор
-    -
-     title: Спректировали
+   - title: Спректировали
      number: 6 разделов приложения
      text: во всех состояниях
 
@@ -97,6 +93,7 @@ metadata:
 ---
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
+import PhoneMockup from '~/components/widgets/PhoneMockup.astro';
 
 <TOC>
 [Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
@@ -152,164 +149,64 @@ _Десктопная версия_
 Податься спикером? -, call to papers
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/2.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/7.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/2.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/7.png" />
 </div>
 
 1. В этом концепте под кнопкой фильтров предполагалось размещать все фильтры, а локацию и топики в оснофной форме дублируются, вынесены как самые важные
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/3.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/4.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/3.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/4.png" />
 </div>
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/5.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/6.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/5.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/6.png" />
 </div>
 
 2. Фильтры локации и топиков самостоятельны, под кнопкой “фильтры” только прочие/дополнительные фильтры.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/8.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/9.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/8.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/9.png" />
 </div>
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/10.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/11.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/10.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/11.png" />
 </div>
 
 Фильтры локации
 
 1 вариант
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/12.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/13.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/12.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/13.png" />
 </div>
 
 2 вариант
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/14.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/15.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/14.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/15.png" />
 </div>
 
 Фильтры топика
 
 1 вариант
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/16.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/17.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/16.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/17.png" />
 </div>
 
 2 вариант
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/18.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/19.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/18.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/19.png" />
 </div>
 
 общие
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/20.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/omnitopic/21.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/omnitopic/20.png" />
+	<PhoneMockup image="/images/portfolio/omnitopic/21.png" />
 </div>
 
 ## <a name="anchor4" />Результат
