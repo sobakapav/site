@@ -80,6 +80,7 @@ metadata:
 ---
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
+import PhoneMockup from '~/components/widgets/PhoneMockup.astro';
 import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 <TOC>
@@ -98,18 +99,8 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 1. Собрать с нуля UI процесса выбора и покупки билетов для двух версий: десктопной и мобильной.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/7.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/8.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/seatmap/7.png" />
+	<PhoneMockup image="/images/portfolio/seatmap/8.png" />
 </div>
 <em>Мобильная версия</em>
 
@@ -128,18 +119,8 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 <em>Места выбраны</em>
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/11.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/12.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/seatmap/11.png" />
+	<PhoneMockup image="/images/portfolio/seatmap/12.png" />
 </div>
 <em>Выбор места в мобильной версии</em>
 
@@ -160,18 +141,8 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 <em>Фильтр</em>
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/9.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/10.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/seatmap/9.png" />
+	<PhoneMockup image="/images/portfolio/seatmap/10.png" />
 </div>
 <em>План сектора, фильтры в мобильной версии</em> 
 
@@ -187,18 +158,8 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 <em>Мои билеты</em>
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-  <div class="daisy-mockup-phone">
-    <div class="daisy-camera"></div>
-    <div class="daisy-display">
-      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/13.png" class="mt-0 mb-0" /></div>
-    </div>
-  </div>
-  <div class="daisy-mockup-phone">
-      <div class="daisy-camera"></div>
-      <div class="daisy-display">
-        <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src="/images/portfolio/seatmap/14.png" class="mt-0 mb-0" /></div>
-      </div>
-  </div>
+	<PhoneMockup image="/images/portfolio/seatmap/13.png" />
+	<PhoneMockup image="/images/portfolio/seatmap/14.png" />
 </div>
 <em>Мои билеты и поиск в мобильной версии</em>
 
