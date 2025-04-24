@@ -23,6 +23,10 @@ data.href = `/${collection}/${page}`;
   {collection == 'portfolio' && (
     <PortfolioListItem post={data} />
   )}
+  
+  {collection == 'promo' && (
+    <PortfolioListItem post={data} />
+  )}
 
   {collection == 'post' && (
     <BlogListItem post={data} />
