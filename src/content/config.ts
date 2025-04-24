@@ -100,82 +100,88 @@ const design2devCollection = defineCollection({
   schema: postSchema(),
 });
 
-const portfolioCollection = defineCollection({
-  schema: z.object({
-    publishDate: z.date().optional(),
-    publishYear: z.number().optional(), 
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
-    doubleSize: z.boolean().optional(),
-    noCard: z.boolean().optional(),
+const portfolioSchema = () => z.object({
+  publishDate: z.date().optional(),
+  publishYear: z.number().optional(), 
+  updateDate: z.date().optional(),
+  draft: z.boolean().optional(),
+  doubleSize: z.boolean().optional(),
+  noCard: z.boolean().optional(),
 
-    title: z.string(),
-    titleBrief: z.string().optional(),
-    excerpt: z.string().optional(),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
+  title: z.string(),
+  titleBrief: z.string().optional(),
+  excerpt: z.string().optional(),
+  image: z.string().optional(),
+  imageAlt: z.string().optional(),
 
-    category: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    awards: z.array(z.string()).optional(),
-    isNew: z.boolean().optional(),
-    
-    external: z.boolean().optional(),
-    externalLink: z.string().optional(),
-    
-    logo: z.object({
-      src: z.string(),
-      link: z.string().optional(),
-      alt: z.string().optional(),
-    }).optional(),
-        
-    thumbnail: z.object({
-      src: z.string(),
-      src2: z.string().optional(),
-      src3: z.string().optional(),
-      alt: z.string().optional(),
-      isDark: z.boolean().optional(),
-    }).optional(),
-    
-    result: z.array(z.object({
-      src: z.string().optional(),
-      text: z.string().optional(),
-      link: z.string().optional(),
-    })).optional(),
-    
-    relatedLinks: z.object({
-          title: z.string().optional(),
-          links: z.array(z.string()).optional(),
-    }).optional(),
-   
-    relatedPages: relatedLinks(),
-    relatedPages2: relatedLinks(),
-    
-    context: z.string().optional(),
-    budget: z.string().optional(),
-    time: z.string().optional(),
-    director: z.string().optional(),
-    
-    review: z.object({
-      text: z.string().optional(),
-      photo: z.string().optional(),
-      person: z.string().optional(),
-      position: z.string().optional(),
-    }).optional(),
-    
-    outcome: z.object({
-      title: z.string(),
-      text1: z.string().optional(),
-      text2: z.string().optional(),
-      numbers: z.array(z.object({
+  category: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  awards: z.array(z.string()).optional(),
+  isNew: z.boolean().optional(),
+  
+  external: z.boolean().optional(),
+  externalLink: z.string().optional(),
+  
+  logo: z.object({
+    src: z.string(),
+    link: z.string().optional(),
+    alt: z.string().optional(),
+  }).optional(),
+      
+  thumbnail: z.object({
+    src: z.string(),
+    src2: z.string().optional(),
+    src3: z.string().optional(),
+    alt: z.string().optional(),
+    isDark: z.boolean().optional(),
+  }).optional(),
+  
+  result: z.array(z.object({
+    src: z.string().optional(),
+    text: z.string().optional(),
+    link: z.string().optional(),
+  })).optional(),
+  
+  relatedLinks: z.object({
         title: z.string().optional(),
-        number: z.string().optional(),
-        text: z.string().optional(),
-      })).optional()
-    }).optional(),
+        links: z.array(z.string()).optional(),
+  }).optional(),
+ 
+  relatedPages: relatedLinks(),
+  relatedPages2: relatedLinks(),
+  
+  context: z.string().optional(),
+  budget: z.string().optional(),
+  time: z.string().optional(),
+  director: z.string().optional(),
+  
+  review: z.object({
+    text: z.string().optional(),
+    photo: z.string().optional(),
+    person: z.string().optional(),
+    position: z.string().optional(),
+  }).optional(),
+  
+  outcome: z.object({
+    title: z.string(),
+    text1: z.string().optional(),
+    text2: z.string().optional(),
+    numbers: z.array(z.object({
+      title: z.string().optional(),
+      number: z.string().optional(),
+      text: z.string().optional(),
+    })).optional()
+  }).optional(),
 
-    metadata: metadataDefinition(),
-  }),
+  metadata: metadataDefinition(),
+});
+
+const portfolioCollection = defineCollection({
+  schema: portfolioSchema(),
+});
+
+const promoCollection = defineCollection({
+  schema: portfolioSchema(),
 });
 
 const serviceCollection = defineCollection({
@@ -278,5 +284,5 @@ export const collections = {
   design2dev: design2devCollection,
   portfolio: portfolioCollection,
   currentProjects: currentProjectsCollection,
-  
+  promo: promoCollection,
 };
