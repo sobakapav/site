@@ -1,0 +1,27 @@
+---
+import { getEntry } from 'astro:content';
+
+import { lessonByTag } from '~/navigation';
+import HighlightedCases from "~/components/widgets/HighlightedCases.astro";
+
+const { post } = Astro.props;
+
+const tag = post.tags?.find(key => lessonByTag.hasOwnProperty(key.title))?.title;
+
+const promos = [];
+
+if (tag) {
+  for (var promo of lessonByTag[tag]) {
+    const data = (await getEntry('promo', promo)).data;
+    promos.push(promo);
+  }
+}
+
+---
+{ tag && (
+  <HighlightedCases
+    classes={{ container: "pt-0 lg:pt-0 md:pt-0  max-w-2xl xl:max-w-7xl mx-auto px-6 related-posts" }}
+    links={promos}
+    collection="promo"
+  />
+)}
