@@ -20,8 +20,8 @@ export interface Props extends Widget {
 
 const {
   title = await Astro.slots.render("title"),
-  linkText = "View all posts",
-  linkUrl = getBlogPermalink(),
+  linkText,
+  linkUrl,
   information = await Astro.slots.render("information"),
   links = [],
 
@@ -46,11 +46,17 @@ for (var item of links) {
       <div class="flex flex-col lg:justify-between lg:flex-row mb-2">
         {title && (
           <div>
-            <a href="https://sobakapav.ru/portfolio" class="text-[--aw-color-accent] underline underline-offset-2"><h3
-              class="text-3xl sm:text-4xl group font-heading mb-2"
-              set:html={title}
-            /></a>
-            
+            { linkUrl ? (
+              <a href={linkUrl} class="text-[--aw-color-accent] underline underline-offset-2"><h3
+                class="text-3xl sm:text-4xl group font-heading mb-2"
+                set:html={title}
+              /></a>
+            ) : (
+              <h3
+                class="text-3xl sm:text-4xl group font-heading mb-2"
+                set:html={title}
+              />
+            )}
           </div>
         )}
 
