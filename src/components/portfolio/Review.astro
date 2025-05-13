@@ -84,7 +84,7 @@ const { post } = Astro.props;
         <div class:list={["flex flex-row justify-between max-w-2xl mb-6", post.review ? "" : "md:basis-0 md:grow", (post.review && post.director) ? "" : "flex-wrap items-end content-end"]}>
           <div class="flex grow flex-nowrap">
             <div class="basis-0 grow"><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
-            <div class="basis-0 grow"><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>
+            {post.time && (<div class="basis-0 grow"><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>)}
             
             <div class="basis-0 grow">
               <h3 class="mb-1 text-base">Результат</h3>

@@ -288,4 +288,15 @@ const overrides = {
   'mass': 'Массовый',
 };
 
+export const lessonByTag = {
+'менеджмент': ['boss'],
+'бизнес': ['boss'],
+'финансы': ['boss'],
+'тексты': ['txt'],
+'интерфейсы': ['mio', 'uc', 'focus'],
+'исследования': ['mio', 'uc'],
+'теория': ['mio', 'uc'],
+'практика': ['mio', 'uc'],
+};
+
 export const tagNames = merge(merge({}, ...Object.values(portfolioFilters)), overrides);
