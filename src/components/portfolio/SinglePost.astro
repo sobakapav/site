@@ -71,7 +71,7 @@ const { Content } = post;
             }       
           </p>
           {post.logo?.src && (
-            <a href={post.logo.link}>
+            <a href={post.logo.link} class="mb-3 mt-3">
               <Image height={30} layout="constrained-height" src={post.logo.src} alt={post.logo.alt}/>
             </a>
           )}
