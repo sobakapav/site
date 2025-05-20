@@ -277,6 +277,15 @@ const currentProjectsCollection = defineCollection({
   }),
 });
 
+const videoSchema = () => z.object({
+   publishDate: z.date().optional(),
+   title: z.string(),
+   description: z.string().optional(),
+   excerpt: z.string().optional(),
+   videoId: z.string().optional(),
+
+ })
+
 export const collections = {
   post: postCollection,
   services: serviceCollection,
@@ -286,3 +295,4 @@ export const collections = {
   currentProjects: currentProjectsCollection,
   promo: promoCollection,
 };
+
