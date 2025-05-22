@@ -74,6 +74,10 @@ export const headerData = {
           href: "https://sobakapav.ru/books",
         },
         {
+          text: 'Видео',
+          href: getPermalink('/video'),
+        },
+        {
           text: 'UX-исследования',
           href: getPermalink('/ux-research'),
         }, 
