@@ -5,9 +5,8 @@ title: Медицинский интерфейс для работы с ЭКГ
 excerpt: Создали интерфейс медицинской диагностической платформы для кардиологов.
 
 context: |
-  **Подробный кейс пока в работе. Если хотите посмотреть на этот дизайн в деталях, пишите нам на [we@sobakapav.ru](mailto:we@sobakapav.ru)**
-  
-  [Erna](https://erna.moscow/#rec806330140#!/tab/822667600-3) — российская компания, которая специализируется на разработке цифровых решений для медицины. Одна из разработок компании — клиническая информационная система «Кардиум» с применением искусственного интеллекта. Платформа сочетает разные аспекты работы кардиологов: ведение баз пациентов, документации и т.д., инструкции (организация и сопровождение работы медицинского персонала) с одной стороны и с другой инструменты кардиологов (снятие кардиограммы и процесс ее расшифровки и написания заключения).
+  [Erna](https://erna.moscow/#rec806330140#!/tab/822667600-3) — российская компания, которая специализируется на разработке цифровых решений для медицины. Одна из разработок компании — клиническая информационная система «Кардиум» с применением искусственного интеллекта. Платформа решает как задачи административного персонала (такие как ведение баз пациентов, документооборот, инструкциии), так и задачи кардиологов (снятие кардиограммы, ее расшифровку, заключение).
+
 isNew: true
 logo:
   src: ~/assets/images/portfolio/erna/logo.svg
@@ -27,8 +26,7 @@ tags:
   - prof
 
 relatedPages:
-  -
-    text: |
+  - text: |
       ### Вам нужен интерфейс?
       #### Заказать дизайн
       Напишите нам на&nbsp;[we@sobakapav.ru](mailto:we@sobakapav.ru) 
@@ -39,68 +37,70 @@ relatedPages:
   - text: |
       ### Наша экспертиза
       Более 30 проектов, связанных с медицинскими интерфейсам, и [15 проектных кейсов](https://sobakapav.ru/portfolio#med).
-      ### Наши статьи о медицинских интерфейсах 
+      ### Наши статьи о медицинских интерфейсах
     collection: post
+    page: electrocardiography
+  - collection: post
     page: medical-interfaces
   - collection: post
     page: professional-testing
   - collection: post
     page: before-interface-testing
+  - text: |
+      ### Хотите уметь так же?
+      Научим создавать хорошие интерфейсы.
+    collection: promo
+    page: mio
+  - collection: promo
+    page: uc
 
 relatedPages2:
-  -
-    text: |
+  - text: |
       ### Похожие проекты
     collection: portfolio
     page: tmh
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: avicenna
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: onkor
-  -
-    collection: portfolio
+  - collection: portfolio
     page: tis
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: raisa
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: m-line
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: medmarket
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: miaz
-  - 
-    collection: portfolio
+  - collection: portfolio
     page: costa
 
 outcome:
   title: Некоторые цифры
   numbers:
-    -
-     title: Провели
-     number: 3 интервью
-     text: с врачами и медсестрами
-    -
-     title: Создали
-     number: 400+ макетов
-     text:  интерфейса системы
-    -
-     title: Предусмотрели
+   - title: Провели
+     number: "30"
+     text:  сессий аналитики
+   - title: Проработали
+     number: "12"
+     text: разделов системы
+   - title: Создали
+     number: "400+"
+     text: макетов интерфейса
+   - title: Передали в разработку
+     number: "79"
+     text: задач
+   - title: Предусмотрели
      number: "> 150 вариантов"
      text: главного экрана врача
 
 result:
-  -
-    src: ~/assets/images/portfolio/figma.svg
+  - src: ~/assets/images/portfolio/figma.svg
     text: Покажем из рук в руки и расскажем ещё больше
     link: "mailto:we@sobakapav.ru"
 budget: "2 250 000 ₽"
-time: "от 6 месяцев"
+time: "> 6 месяцев"
 
 director: "Стандартизировали интерфейсы весьма нестандартной системы. Сделали простым и удобным взаимодействие пользователей с невероятно сложным инструментом. И, наконец, раскрасили ярким то, что обычно розовато-больничного цвета."
 
@@ -129,7 +129,7 @@ import TOC from '~/components/widgets/TOC.astro';
 
 ## <a name="anchor1" />Бизнес-задача
 
-Создать медицинскую диагностическую платформу «Кардиум», в которой врачи (медицинский и административный персонал) смогут решать весь комплекс вопросов, связанных с кардиологией.
+Создать медицинскую диагностическую платформу «Кардиум», в которой врачи и медицинский административный персонал смогут решать весь комплекс вопросов, связанных с кардиологией.
 
 <div class="daisy-diff aspect-[1440/996] diff-black">
   <div class="daisy-diff-item-1">
@@ -164,55 +164,43 @@ import TOC from '~/components/widgets/TOC.astro';
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/2-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/11-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/2.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/11.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Дневник исследования (врач). Календарь. <a href="/images/portfolio/erna/2.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/2-1.png" target="_blank">темная тема</a></em>
+<em>Выбор комплекса. <a href="/images/portfolio/erna/11.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/11-1.png" target="_blank">темная тема</a></em>
 
-## <a name="anchor3" />Аналитика
+## <a name="anchor3" />Результаты
+### <a name="anchor4" />Wow-эффект
 
-- Провели три пользовательских интервью
-- Провели анализ решений конкурентов
-- Написали сценарии анализа и снятия ЭКГ
-- Составили CJM врача.
+“Интерфейс” – первый пункт в списке преимуществ системы [на сайте заказчика](https://erna.moscow/). Макеты – важная часть коммерческих [презентаций](https://drive.google.com/file/d/1_mPfwexHCV4MbxWnSgnIUesnt_0e3gio/view). Пока сама система проходит испытания, интерфейс уже продаёт.
 
-<div class="daisy-diff aspect-[1280/720] diff-black">
-  <div class="daisy-diff-item-1">
-    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/3-1.png" style="margin-top: 0;" />
-  </div>
-  <div class="daisy-diff-item-2">
-    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/3.png" style="margin-top: 0;" />
-  </div>
-  <div class="daisy-diff-resizer"></div>
-</div>
-<em>Дневник врача. Расшифровка ЭКГ. Цвета. <a href="/images/portfolio/erna/3.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/3-1.png" target="_blank">темная тема</a></em>
+<a href="/images/portfolio/erna/34.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/34.png)</a>
+<em>Сайт заказчика</em>
 
-## <a name="anchor4" />Проектирование
+### <a name="anchor5" />Аналитика
+
+- Провели 4 интервью с внешними медицинскими экспертами и серию воркшопов с экспертами заказчика.
+- Провели анализ решений конкурентов.
+- Сделали полные сценарии процессов снятия и анализа электрокардиограмм, чтобы понять как сейчас устроена рутина пользователей.
+- Составили карты процессов снятия и анализа ЭКГ: пописали все шаги процесса, задачи выполняемые пользователями, и какие из них берёт на себя интерфейс.
+
+<a href="/images/portfolio/erna/35.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/35.png)</a>
+
+Сделали информационно-архитектурную карту системы, чтобы определить, где какие задачи выполняются в интерфейсе/
+
+<a href="/images/portfolio/erna/36.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/36.png)</a>
+
+## <a name="anchor6" />Дизайн
 
 «Кардиумом» пользуется три типа пользователей:
-1. Медсестры.
-2. Врачи-кардиологи.
-3. Административный персонал и врачи других специальностей.
-
-<div class="daisy-diff aspect-[1440/996] diff-black">
-  <div class="daisy-diff-item-1">
-    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/4-1.png" style="margin-top: 0;" />
-  </div>
-  <div class="daisy-diff-item-2">
-    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/4.png" style="margin-top: 0;" />
-  </div>
-  <div class="daisy-diff-resizer"></div>
-</div>
-<em>Дневник врача. Расшифровка ЭКГ. Представительный комплекс. <a href="/images/portfolio/erna/4.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/4-1.png" target="_blank">темная тема</a></em>
+1. Медсестры, чтобы вести приём и снимать кардиограммы.
+2. Врачи-кардиологи, чтобы расшифровывать ЭКГ, ставить диагнозы, писать заключения.
+3. Административный персонал и врачи других специальностей, чтобы обеспечивать управление и коммуникацию.
 
 <div class="daisy-diff aspect-[1440/996] diff-black">
   <div class="daisy-diff-item-1">
@@ -234,15 +222,15 @@ import TOC from '~/components/widgets/TOC.astro';
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/5-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/9-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/5.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/9.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Снятие ЭКГ. <a href="/images/portfolio/erna/5.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/5-1.png" target="_blank">темная тема</a></em>
+<em>Календарь медсестры. <a href="/images/portfolio/erna/9.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/9-1.png" target="_blank">темная тема</a></em>
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
@@ -255,9 +243,22 @@ import TOC from '~/components/widgets/TOC.astro';
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Дневник направления (медсестра). До начала приема. <a href="/images/portfolio/erna/6.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/6-1.png" target="_blank">темная тема</a></em>
+<em>Очередь на ЭКГ. <a href="/images/portfolio/erna/6.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/6-1.png" target="_blank">темная тема</a></em>
 
-Действия медсестры: 
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/5-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/5.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Снятие ЭКГ. <a href="/images/portfolio/erna/5.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/5-1.png" target="_blank">темная тема</a></em>
+
+Задачи медсестры: 
 - Вести приём по расписанию.
 - Создать, изучить, отредактировать направление на ЭКГ.
 - Снять ЭКГ по направлению.
@@ -267,41 +268,41 @@ import TOC from '~/components/widgets/TOC.astro';
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/7-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/39-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/7.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/39.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Дневник направления (медсестра). Начало приема. <a href="/images/portfolio/erna/7.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/7-1.png" target="_blank">темная тема</a></em>
+<em>Очередь приёма со всеми подсказками. <a href="/images/portfolio/erna/39.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/39-1.png" target="_blank">темная тема</a></em>
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/8-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/40-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/8.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/40.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Дневник направления (медсестра). Всплывающая подсказка ИИ. <a href="/images/portfolio/erna/8.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/8-1.png" target="_blank">темная тема</a></em>
+<em>Направление на ЭКГ. <a href="/images/portfolio/erna/40.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/40-1.png" target="_blank">темная тема</a></em>
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/9-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/41-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/9.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/41.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Дневник направления (медсестра). Календарь. <a href="/images/portfolio/erna/9.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/9-1.png" target="_blank">темная тема</a></em>
+<em>Проверка и отправка записи. <a href="/images/portfolio/erna/41.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/41-1.png" target="_blank">темная тема</a></em>
 
 ### Врач-кардиолог
    
@@ -318,42 +319,38 @@ import TOC from '~/components/widgets/TOC.astro';
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Плёнка врача. Панель ЭКС и панель комплексов. <a href="/images/portfolio/erna/10.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/10-1.png" target="_blank">темная тема</a></em>
+<em>Основной экран врача. <a href="/images/portfolio/erna/10.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/10-1.png" target="_blank">темная тема</a></em>
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/11-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/2-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/11.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/2.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Выбор комплекса. <a href="/images/portfolio/erna/11.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/11-1.png" target="_blank">темная тема</a></em>
-
-<a href="/images/portfolio/erna/12.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/12.png)</a>
-<em>Цвета комплексов</em>
+<em>Дневник исследования (врач). Календарь. <a href="/images/portfolio/erna/2.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/2-1.png" target="_blank">темная тема</a></em>
    
-Действия врача: 
-- Найти пациента или нужное исследование в базе.
-- Расшифровать ЭКГ: просмотреть плёнку, настроить отображение, воспользоваться инструментами анализа (сравнительными таблицами, анализом и сравнением комплексов, инструментами измерений).
-- Написать заключение самостоятельно или воспользовавшись мастером заключений.
-- Подписать заключение и отправить на сервер.
+Задачи врача: 
+1. Найти пациента или нужное исследование в базе.
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/13-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/42-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/13.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/42.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Информация об исследовании и пациенте. Первый экран. Электроды не прикреплены. <a href="/images/portfolio/erna/13.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/13-1.png" target="_blank">темная тема</a></em>
+<em>Дневник врача со всеми подсказками. <a href="/images/portfolio/erna/42.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/42-1.png" target="_blank">темная тема</a></em>
+
+2. Расшифровать ЭКГ: просмотреть плёнку, настроить отображение
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
@@ -366,33 +363,37 @@ import TOC from '~/components/widgets/TOC.astro';
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Отведения состояний. Выбор. <a href="/images/portfolio/erna/14.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/14-1.png" target="_blank">темная тема</a></em>
+<em>Состояния отведений. Выбор. <a href="/images/portfolio/erna/14.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/14-1.png" target="_blank">темная тема</a></em>
+
+3. Воспользоваться инструментами анализа (сравнительными таблицами, анализом и сравнением комплексов, инструментами измерений).
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/15-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/3-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/15.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/3.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Отведения состояний. Результат. <a href="/images/portfolio/erna/15.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/15-1.png" target="_blank">темная тема</a></em>
+<em>Дневник врача. Расшифровка ЭКГ. Цвета. <a href="/images/portfolio/erna/3.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/3-1.png" target="_blank">темная тема</a></em>
 
-<div class="daisy-diff aspect-[1280/720] diff-black">
+<div class="daisy-diff aspect-[1440/996] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/16-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/4-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/16.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/4.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Мастер заключений. <a href="/images/portfolio/erna/16.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/16-1.png" target="_blank">темная тема</a></em>
+<em>Дневник врача. Расшифровка ЭКГ. Представительный комплекс. <a href="/images/portfolio/erna/4.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/4-1.png" target="_blank">темная тема</a></em>
+
+4. Написать заключение самостоятельно или воспользовавшись мастером заключений.
 
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
@@ -405,43 +406,53 @@ import TOC from '~/components/widgets/TOC.astro';
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Заключение. Поле ЭКГ. <a href="/images/portfolio/erna/17.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/17-1.png" target="_blank">темная тема</a></em>
+<em>Заполнение вручную. <a href="/images/portfolio/erna/17.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/17-1.png" target="_blank">темная тема</a></em>
+
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/16-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/16.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Заполнение с помощью Мастера заключений. <a href="/images/portfolio/erna/16.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/16-1.png" target="_blank">темная тема</a></em>
+
+5. Подписать заключение и отправить на сервер.
+
+<a href="/images/portfolio/erna/18.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/18.png)</a>
+<em>Подписать ЭЦП</em>
 
 ### Администрирование и управление системой 
 
 Помимо непосредственно работы с кардиограммами врачам и медсёстрам, а также административному персоналу нужны такие сценарии, как:
-- Настроить вид плёнки (задать привычные цвета, шаблоны, линии)
-- Настроить дефолтные состояния системы
-- Подключить и настроить оборудование
-- Составить отчёт
-- Посмотреть данные аналитики
-- Распечатать документы
 
-<div class="daisy-diff aspect-[1280/720] diff-black">
+1. Настроить вид плёнки (задать привычные цвета, шаблоны, линии)
+
+<a href="/images/portfolio/erna/31.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/31.png)</a>
+<em>Настройки пленки</em>
+
+2. Настроить дефолтные состояния системы
+
+<div class="daisy-diff aspect-[1280/800] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/19-1.png" style="margin-top: 0;" />
+    src="/images/portfolio/erna/43-1.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-item-2">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/19.png" style="margin-top: 0;" />
+      src="/images/portfolio/erna/43.png" style="margin-top: 0;" />
   </div>
   <div class="daisy-diff-resizer"></div>
 </div>
-<em>Настройка печати ЭКГ. <a href="/images/portfolio/erna/19.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/19-1.png" target="_blank">темная тема</a></em>
+<em>Значения по умолчанию. <a href="/images/portfolio/erna/43.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/43-1.png" target="_blank">темная тема</a></em>
 
-<div class="daisy-diff aspect-[1280/720] diff-black">
-  <div class="daisy-diff-item-1">
-    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
-    src="/images/portfolio/erna/20-1.png" style="margin-top: 0;" />
-  </div>
-  <div class="daisy-diff-item-2">
-    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
-      src="/images/portfolio/erna/20.png" style="margin-top: 0;" />
-  </div>
-  <div class="daisy-diff-resizer"></div>
-</div>
-<em>Печать ЭКГ. Модальное окно детальной настройки. <a href="/images/portfolio/erna/20.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/20-1.png" target="_blank">темная тема</a></em>
+3. Подключить и настроить оборудование
+
+4. Составить отчёт
 
 <div class="daisy-diff aspect-[1280/800] diff-black">
   <div class="daisy-diff-item-1">
@@ -469,6 +480,8 @@ import TOC from '~/components/widgets/TOC.astro';
 </div>
 <em>Создание шаблона отчета. <a href="/images/portfolio/erna/22.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/22-1.png" target="_blank">темная тема</a></em>
 
+5. Посмотреть данные аналитики
+
 <div class="daisy-diff aspect-[1280/720] diff-black">
   <div class="daisy-diff-item-1">
     <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
@@ -482,14 +495,42 @@ import TOC from '~/components/widgets/TOC.astro';
 </div>
 <em>Расширенный отчет и скрытые фильтры. <a href="/images/portfolio/erna/23.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/23-1.png" target="_blank">темная тема</a></em>
 
-## <a name="anchor5" />Результат
+6. Распечатать документы
 
-В процессе работы над интерфейсом выявили множество мелких, но важных для удобства врачей задач, связанных  как с навигацией по плёнке и инструментами анализа, так и с общим взаимодействием с системой. Расширили проект, углубили сценарии, добавили инструментов и разделов системы.
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/19-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/19.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Настройка печати ЭКГ. <a href="/images/portfolio/erna/19.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/19-1.png" target="_blank">темная тема</a></em>
 
-<a href="/images/portfolio/erna/18.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/18.png)</a>
-<em>Подписать ЭЦП</em>
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/20-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/20.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Печать ЭКГ. Модальное окно детальной настройки. <a href="/images/portfolio/erna/20.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/20-1.png" target="_blank">темная тема</a></em>
 
-Составили библиотеку компонентов, чтобы в дальнейшем заказчик мог развивать систему самостоятельно.
+## <a name="anchor7" />Помимо макетов
+
+Провели огромную аналитическую работу с медицинскими экспертами и аналитиками заказчика. Потребовалось 23 файла со схемами, флоу, диаграммами и комментариями.
+
+<a href="/images/portfolio/erna/37.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/37.png)</a>
+<em>Пример работы с вводными</em>
+
+В процессе работы сменили дизайн-систему на Material 3. В силу сложности проекта, многие правки вносили на уровне дизайн-системы.
 
 <div class="daisy-diff aspect-[2800/1360] diff-black">
   <div class="daisy-diff-item-1">
@@ -504,10 +545,20 @@ import TOC from '~/components/widgets/TOC.astro';
 </div>
 <em>Палитра. <a href="/images/portfolio/erna/32.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/32-1.png" target="_blank">темная тема</a></em>
 
-<a href="/images/portfolio/erna/33.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/33.png)</a>
-<em>Time pickers</em>
+Наладили коммуникацию с разработкой через стикеры в файле библиотеки, чтобы держать в курсе всех кастомизаций. 
 
-Чтобы графики легко читались и глаза врачей не уставали, проработали тёмную тему и гибкие настройки вида плёнки: цвета, контрастность, тип разметки, тощина графиков и так далее. Более 150 состояний в продуманном пресете и бесконечные возможности для самых оригинальных вариаций.
+<a href="/images/portfolio/erna/38.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/38.png)</a>
+
+Чтобы спроектировать удобные инструменты для врачей, пришлось разобраться в кардиологии.
+
+<a href="/images/portfolio/erna/44.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/44.png)</a>
+
+Передали в разработку 79 задач.
+
+<a href="/images/portfolio/erna/45.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/45.png)</a>
+<em>Задачи</em>
+
+Пример задачи: сделать 60 вариантов миллиметровки для ЭКГ. Чтобы графики легко читались и глаза врачей не уставали, проработали тёмную тему и гибкие настройки вида плёнки: цвета, контрастность, тип разметки, тощину графиков и так далее. Рассказали и показали, как решали эту задачу, [в отдельном материале](/publications/electrocardiography).
 
 <div class="daisy-diff aspect-[2800/1360] diff-black">
   <div class="daisy-diff-item-1">
@@ -521,13 +572,6 @@ import TOC from '~/components/widgets/TOC.astro';
   <div class="daisy-diff-resizer"></div>
 </div>
 <em>Цвета миллиметровки. <a href="/images/portfolio/erna/30.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/30-1.png" target="_blank">темная тема</a></em>
-
-<a href="/images/portfolio/erna/31.png" target="_blank">![Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru](~/assets/images/portfolio/erna/31.png)</a>
-<em>Настройки пленки</em>
-
-Мы создали макеты для всех ключевых разделов системы и закончили этап детального проектирования. Все интерфейсы нарисованы, эксперты заказчика довольны. Теперь дело за пользователями и разработкой.
-
-Разработчики забрали макеты и делают полноценную бета-варсию системы. Мы консультируем, объясняем особенности сборки, если надо — расширяем техническую документацию.
 
 <div class="daisy-diff aspect-[1440/996] diff-black">
   <div class="daisy-diff-item-1">
@@ -578,10 +622,60 @@ import TOC from '~/components/widgets/TOC.astro';
 </div>
 <em>Экран «Расшифровка ЭКГ. Представительный комплекс» с четырьмя разными цветами пленки</em>
 
-Дальше будут клинические испытания. Настоящие медсестры и врачи будут снимать и анализировать ЭКГ, проверяя в бою, как оно работает. 
+## <a name="anchor8" />Итог
 
-Так будет собрана обратная связь и на техническую сторону, и на UX. Если заказчик посчитает нужным, проведём несколько модерируемых тестирований.
+Мы создали макеты для всех ключевых разделов системы и закончили этап детального проектирования. Все интерфейсы нарисованы, эксперты заказчика довольны. Теперь дело за пользователями.
 
-В следующую итерацию мы внесем правки по результатам клинических испытаний.
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/13-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/13.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Информация об исследовании и пациенте. Первый экран. Электроды не прикреплены. <a href="/images/portfolio/erna/13.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/13-1.png" target="_blank">темная тема</a></em>
 
-## <a name="anchor6" />
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/15-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/15.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Состояния отведений. Результат. <a href="/images/portfolio/erna/15.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/15-1.png" target="_blank">темная тема</a></em>
+
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/7-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/7.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Дневник направления (медсестра). Начало приема. <a href="/images/portfolio/erna/7.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/7-1.png" target="_blank">темная тема</a></em>
+
+<div class="daisy-diff aspect-[1280/720] diff-black">
+  <div class="daisy-diff-item-1">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru" 
+    src="/images/portfolio/erna/8-1.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-item-2">
+    <img alt="Медицинский интерфейс для работы с ЭКГ | SobakaPav.ru"
+      src="/images/portfolio/erna/8.png" style="margin-top: 0;" />
+  </div>
+  <div class="daisy-diff-resizer"></div>
+</div>
+<em>Дневник направления (медсестра). Всплывающая подсказка ИИ. <a href="/images/portfolio/erna/8.png" target="_blank">Светлая тема</a>, <a href="/images/portfolio/erna/8-1.png" target="_blank">темная тема</a></em>
+
+## <a name="anchor9" />
