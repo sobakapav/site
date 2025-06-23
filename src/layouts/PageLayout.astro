@@ -4,6 +4,7 @@ import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 import Hat from '~/components/widgets/Hat.astro';
+import CookieWarning from '~/components/common/CookieWarning.astro';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -30,6 +31,7 @@ const { metadata, hasSlider, darkTheme = false, collapseSlogan = false} = Astro.
     <slot />
   </main>
   <slot name="footer">
+    <CookieWarning />
     <Footer {...footerData} />
   </slot>
 </Layout>

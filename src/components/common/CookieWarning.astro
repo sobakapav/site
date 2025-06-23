@@ -1,0 +1,30 @@
+---
+
+---
+
+<Fragment>
+  <div id="cookiePopup" class="fixed bottom-0 left-0 right-0  p-8 bg-[--aw-color-grey9] hidden z-[100]">
+    <div>
+      Мы используем файлы cookies, чтобы повысить функциональность данного сайта. Оставаясь на сайте, вы соглашаетесь с 
+      <a class="text-[--aw-color-accent] underline underline-offset-2" href="https://drive.google.com/file/d/1guj6HM-FkQahSoMmNr8VYUNAcXxBY2dK/view?usp=sharing">Правилами использования cookies и обработки своих данных</a>. 
+      Изменить настройки вы можете в своем браузере. 
+    </div>
+    <div class="mt-4">
+      <button id="agreeToCookie" class="border-2 border-black p-1 cursor-pointer">Согласен</button>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("load", (event) => {
+      const hasCookie = !! document.cookie?.split('; ').find(x => x.startsWith('sobAgreeCookies'));
+      if (!hasCookie) {
+        document.getElementById('agreeToCookie').addEventListener('click', (event) => {
+          document.cookie = 'sobAgreeCookies=true';
+          document.getElementById('cookiePopup').style.display = 'none';
+        });
+        document.getElementById('cookiePopup').style.display = 'block';
+      }
+    });
+    
+  </script>
+</Fragment>
