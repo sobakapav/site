@@ -1,0 +1,62 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import { getCollection } from 'astro:content';
+import { Markdown } from '@astropub/md';
+import { getFormattedDate } from '~/utils/utils';
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+
+const { page } = Astro.props as Props;
+
+const metadata = {
+  title: 'Конфиденциальность и личные данные',
+  canonical: 'https://sobakapav.ru/personal-data',
+  description: "Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. № 152-ФЗ «О персональных данных» ", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/video.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+const videoEntries = await getCollection('video');
+
+const videos = videoEntries.map(entry => entry.data).sort((a, b) => b.publishDate - a.publishDate);
+
+---
+
+<Layout metadata={metadata}>
+  <Bread title="Персональные данные" />
+    
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Политика в отношении обработки персональных данных
+    </Fragment>
+
+    <Fragment slot="subtitle">
+     
+     
+    </Fragment>
+  </Hund3>
+      
+  <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+  <a href="https://drive.google.com/file/d/1guj6HM-FkQahSoMmNr8VYUNAcXxBY2dK/view?usp=sharing">Скачать документ</a>
+    
+  </section>
+</Layout>
