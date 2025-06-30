@@ -162,6 +162,13 @@ const portfolioSchema = () => z.object({
     position: z.string().optional(),
   }).optional(),
   
+  review2: z.object({
+    text: z.string().optional(),
+    photo: z.string().optional(),
+    person: z.string().optional(),
+    position: z.string().optional(),
+  }).optional(),
+  
   outcome: z.object({
     title: z.string(),
     text1: z.string().optional(),

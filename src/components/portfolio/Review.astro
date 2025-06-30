@@ -11,8 +11,8 @@ const { post } = Astro.props;
 
 <div class="px-4 sm:px-6 mt-8 md:mt-14 review">
   <div class="bg-[--aw-color-grey2] text-[#ffffff] dark:bg-[--aw-color-grey9] mx-auto px-8 sm:px-12 py-8 sm:py-12 mb-10 md:mb-8 text-base">
-    <div class:list={["flex flex-col lg:flex-row flex-wrap gap-10", (post.review && post.director) ? "" : "items-end"]}">
-      { (post.review || post.director) ? (
+    <div class:list={["flex flex-col lg:flex-row flex-wrap gap-10", (post.review && (post.director || post.review2)) ? "" : "items-end"]}">
+      { (post.review || post.director || post.review2) ? (
         post.review && (
           <div class="grow basis-0 flex flex-col gap-y-6 content-start">
             <ReviewItem
@@ -70,7 +70,17 @@ const { post } = Astro.props;
       )}
       
       <div class:list={["grow basis-0 flex gap-y-6 content-start justify-between", post.review ? "flex-col" : "flex-col md:flex-row gap-6"]}>
-        { post.director && (
+        { post.review2 && (
+          <div class:list={["white-links flex flex-col gap-y-6 mt-[52px]", post.review ? "" : "md:basis-0 md:grow"]}>
+            <ReviewItem
+              text={post.review2.text}
+              photo={post.review2.photo}
+              person={post.review2.person}
+              position={post.review2.position}
+            />
+          </div>
+        )}
+        { post.director && !post.review2 && (
           <div class:list={["white-links flex flex-col gap-y-6", post.review ? "" : "md:basis-0 md:grow"]}>
             <ReviewItem
               title="Слово директора"
