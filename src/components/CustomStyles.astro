@@ -402,4 +402,39 @@ import '~/assets/styles/colors.css';
   .daisy-diff.diff-black .daisy-diff-item-2 {
     border-color: var(--aw-color-text-default);
   }
+  
+  .daisy-diff .daisy-diff-resizer {
+    scale: 1;
+    transform: scaleY(3) translate(-1.2rem, -0.1rem);
+  }
+  
+  .daisy-diff .daisy-diff-item-1:after {
+    width: 1.2rem;
+  }
+
+  @media (max-width: 640px) {
+    .daisy-diff {
+      row-gap: 1rem; 
+    }
+    
+    .daisy-diff .daisy-diff-item-1:after {
+      display: none;
+    }
+    
+    .daisy-diff .daisy-diff-item-1 {
+      grid-row-start: 2;
+    }
+    
+    .daisy-diff.diff-black .daisy-diff-item-1:after,
+    .daisy-diff.diff-black .daisy-diff-item-2 {
+      border: none;
+    }    
+    
+    .daisy-diff .daisy-diff-resizer {
+      max-width: unset;
+      width: 100cqi;
+      resize: unset;
+    }
+  }
+
 </style>
