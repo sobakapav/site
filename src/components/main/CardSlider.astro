@@ -24,7 +24,7 @@ for (var idx in cases) {
   item = JSON.parse(JSON.stringify(item.data));
   item.idx = idx + 1;
   item.href = `/portfolio/${cases[idx]}`;
-  item.tagNames = item.tags?.map((tag) => tagNames[tag]).join(' • ');
+  item.tagNames = item.tags?.map((tag) => tagNames[tag]).filter(name => name).join(' • ');
   caseItems.push(item);
 }
 
