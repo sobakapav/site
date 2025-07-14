@@ -6,6 +6,8 @@ import merge from 'lodash.merge';
 import type { ImageMetadata } from 'astro';
 import { Markdown } from '@astropub/md';
 
+import { defaultTools } from '~/navigation';
+
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import ToBlogLink from '~/components/blog/ToBlogLink.astro';
@@ -53,6 +55,16 @@ const url = getCanonical(getPermalink(post.permalink, 'post'));
 const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
 
 const notThisService = post.notThisService?.items?.map((item) => ({title: item.title, description: item.text}));
+
+const myNavigation = [];
+defaultTools.forEach((item, index) => {
+  if (post?.tools[index] && !post.tools[index].isDefault) {
+    myNavigation.push(post.tools[index]);
+  } else {
+    myNavigation.push(item);
+  }
+}); 
+console.log(JSON.stringify(myNavigation));
 
 const metadata = merge(
   {
@@ -177,11 +189,10 @@ const metadata = merge(
               <div>
                 <span>Инструменты, с помощью которых мы добиваемся результата</span>
                 <div class="flex flex-row gap-6 mt-6">
-                      <a class="flex flex-col underline underline-offset-2 " href="https://www.figma.com"><div class="h-14"><Image src="~/assets/images/services/figma.svg" height={48} alt="Figma" /></div>Figma</a>
-                      <a class="flex flex-col underline underline-offset-2 " href="https://www.atlassian.com/software/jira"><div class="h-14"><Image src="~/assets/images/services/jira.svg" height={48} alt="Jira" /></div>Jira</a> 
-                      <a class="flex flex-col underline underline-offset-2 " href="https://miro.com"><div class="h-14"><Image src="~/assets/images/services/miro.svg" height={48} alt="Miro" /></div>Miro</a>
-                      <a class="flex flex-col underline underline-offset-2 " href="https://workspace.google.com/products/docs"><div class="h-14"><Image src="~/assets/images/services/google-doc.svg" height={48} alt="Google Docs" /></div>Google Docs</a>
-                    </div>
+                  { myNavigation.map(item => (
+                    <a class="basis-0 grow flex flex-col underline underline-offset-2 " href={item.link}><div class="h-14"><Image src={item.image} height={48} alt={item.title} /></div>{item.title}</a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

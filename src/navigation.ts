@@ -269,6 +269,16 @@ export const portfolioFilters = {
     'consultation': 'Консультация',
     'content-design': 'Контент-дизайн',
   },
+  'hidden': {
+    'alfa': '',
+    'alfastrah': '',
+    'anggell': '',
+    'compel': '',
+    'control': '',
+    'ecity': '',
+    'gazprom': '',
+    'jeffit': '',
+  },
   
 };
 
@@ -304,3 +314,26 @@ export const lessonByTag = {
 };
 
 export const tagNames = merge(merge({}, ...Object.values(portfolioFilters)), overrides);
+
+export const defaultTools = [
+  {
+    title: 'Figma',
+    link: 'https://www.figma.com',
+    image: '~/assets/images/services/figma.svg',
+  },
+  {
+    title: 'Jira',
+    link: 'https://www.atlassian.com/software/jira',
+    image: '~/assets/images/services/jira.svg',
+  },
+  {
+    title: 'Miro',
+    link: 'https://miro.com',
+    image: '~/assets/images/services/miro.svg',
+  },
+  {
+    title: 'Google Docs',
+    link: 'https://workspace.google.com/products/docs',
+    image: '~/assets/images/services/google-doc.svg',
+  },
+];

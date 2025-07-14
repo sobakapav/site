@@ -215,7 +215,11 @@ const serviceCollection = defineCollection({
     }),
     works: z.array(z.object({
       name: z.string().optional(),
+      isSpecial: z.boolean().optional(),
+      title: z.string().optional(),
       text: z.string().optional(),
+      img: z.string().optional(),
+      link: z.string().optional(),
     })).optional(),
     team: z.number().optional(),
     mapBlock: z.object({
@@ -271,6 +275,12 @@ const serviceCollection = defineCollection({
         details: z.string().optional(),
       }))
     }).optional(),
+    tools: z.array(z.object({
+      isDefault: z.boolean().optional(),
+      title: z.string().optional(),
+      link: z.string().optional(),
+      image: z.string().optional(),
+    })).optional(),
 
     metadata: metadataDefinition(),
   }),

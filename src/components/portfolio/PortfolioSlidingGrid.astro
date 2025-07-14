@@ -1,5 +1,6 @@
 ---
 import Item from '~/components/portfolio/ListItem.astro';
+import SpecialCard from '~/components/common/SpecialCard.astro';
 import type { Post } from '~/types';
 import { twMerge } from "tailwind-merge";
 import { getEntry } from 'astro:content';
@@ -14,7 +15,16 @@ const { posts } = Astro.props;
 <div class="flex flex-wrap flex-row justify-normal gap-4" id="portfolio-regular-view">
   {posts.map((post) => (
     <li class="mb-6 w-[288px]">
-      <Item post={post} />
+      {post.isSpecial ? (
+        <SpecialCard
+          image={post.img}
+          title={post.title}
+          text={post.text}
+          link={post.link}
+        />
+      ) : (
+        <Item post={post} />
+      )}
     </li>
   ))}
 </div>
@@ -26,7 +36,16 @@ const { posts } = Astro.props;
       <div class="swiper-wrapper">
         {posts.map((post) => (
           <div class="swiper-slide">
-            <Item post={post} />
+            {post.isSpecial ? (
+              <SpecialCard
+                image={post.img}
+                title={post.title}
+                text={post.text}
+                link={post.link}
+              />
+            ) : (
+              <Item post={post} />
+            )}
           </div>
         ))}
       </div>

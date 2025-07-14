@@ -27,7 +27,7 @@ for (const project of projects) {
             {project.title}
           </h3>
           <div class="text-xl h-[56px] md:h-auto w-[360px] sm:w-auto text-[--aw-color-grey6]">
-            {project.tags && project.tags.map((tag, index) => (
+            {project.tags && project.tags.filter(tag => !!tagNames[tag]).map((tag, index) => (
               <Fragment>
                 {index > 0 ? " • " : ""}
                 {tagNames[tag]}

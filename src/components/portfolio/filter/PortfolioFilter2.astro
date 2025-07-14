@@ -34,7 +34,7 @@ for (var group in portfolioFilters) {
   </div>
   <portfolio-filter class="all-filters relative grid grid-cols-portfoliofiltersm lg:grid-cols-portfoliofilter gap-4 mt-4">
     {filters.map((filter, idx) => (
-      <div class:list={["filter-group basis-0 grow", 'filter-group-' + idx]}>
+      <div class:list={["filter-group basis-0 grow", 'filter-group-' + idx, (filter.group == 'hidden' ? 'hidden' : '')]}>
         <h3 class="text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading">{filter.group}</h3>
         <div class="filter-list flex flex-wrap gap-1">
           {filter.items.map(item => (

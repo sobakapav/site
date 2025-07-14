@@ -34,7 +34,9 @@ const {
 
 const posts = [];
 for (var item of links) {
-  if (item.name) {
+  if (item.isSpecial) {
+    posts.push(item);
+  } else if (item.name) {
     const data = JSON.parse(JSON.stringify((await getEntry(collection, item.name)).data));
     data.excerpt = item.text;
     data.href = `/${collection}/${item.name}`;
