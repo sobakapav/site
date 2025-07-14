@@ -58,7 +58,7 @@ const notThisService = post.notThisService?.items?.map((item) => ({title: item.t
 
 const myNavigation = [];
 defaultTools.forEach((item, index) => {
-  if (post?.tools[index] && !post.tools[index].isDefault) {
+  if (post?.tools && post.tools[index] && !post.tools[index].isDefault) {
     myNavigation.push(post.tools[index]);
   } else {
     myNavigation.push(item);
