@@ -44,12 +44,8 @@ export const headerData = {
           href: getPermalink('/services/ux-audit'),
         }, 
         {
-          text: 'Усиление команды разработки',
-          href: getPermalink('/services/dev-team'),
-        },
-        {
-          text: 'Работа в продуктовой команде',
-          href: getPermalink('/services/product-team'),
+          text: 'UX-отдел на аутсорсе',
+          href: getPermalink('/services/ux-outsource'),
         },
         {
           text: 'Консультации',
