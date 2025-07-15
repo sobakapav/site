@@ -274,6 +274,7 @@ export const portfolioFilters = {
     'ecity': '',
     'gazprom': '',
     'jeffit': '',
+    'constructor': '',
     'kids': '',
     'telecom': '',
   },
