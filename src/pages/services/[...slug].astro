@@ -190,7 +190,7 @@ const metadata = merge(
                 <span>Инструменты, с помощью которых мы добиваемся результата</span>
                 <div class="flex flex-row gap-6 mt-6">
                   { myNavigation.map(item => (
-                    <a class="basis-0 grow flex flex-col underline underline-offset-2 " href={item.link}><div class="h-14"><Image src={item.image} height={48} alt={item.title} /></div>{item.title}</a>
+                    <a class="basis-0 grow flex flex-col items-center underline underline-offset-2 " href={item.link}><div class="h-14"><Image src={item.image} height={48} layout="constrained-height" alt={item.title} /></div>{item.title}</a>
                   ))}
                 </div>
               </div>
