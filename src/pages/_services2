@@ -49,7 +49,7 @@ const metadata = {
     </Fragment>
   </Hund3>
     
-    <ServicesCollection2 list={['ux-design', 'prototype', 'redesign', 'ui-redesign', 'new-features', 'ux-audit', 'research', 'dev-team', 'product-team', 'consultation', 'content-design']} />
+    <ServicesCollection2 list={['ux-design', 'prototype', 'redesign', 'ui-redesign', 'new-features', 'ux-audit', 'research', 'ux-outsource', 'consultation', 'content-design']} />
     
 </Layout>
 
