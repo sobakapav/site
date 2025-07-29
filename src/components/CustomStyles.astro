@@ -276,6 +276,16 @@ import '~/assets/styles/colors.css';
       }
     }
   }
+  
+  .format-markdown p:has(+ .daisy-carousel),
+  .format-markdown ul:has(+ .daisy-carousel),
+  .format-markdown ol:has(+ .daisy-carousel) {
+    margin-bottom: 0px;
+  }
+  
+  .format-markdown .daisy-carousel-item { 
+    padding-top: 48px;
+  }
 
   @media (min-width: 1024px) {
     .format-markdown img,
