@@ -116,6 +116,11 @@ metadata:
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 import { YouTube, Tweet, Vimeo } from 'astro-embed';
+import ImageSlider from '~/components/common/ImageSlider.astro'
+
+<TOC>
+[Вводные](#anchor1) • [Бизнес-задача](#anchor2) • [Дизайн-задача](#anchor3) • [Результат](#anchor4) • [Экстра-польза](#anchor5) • [Нюансы и особенности процесса](#anchor6) • [Отзыв, цены, сроки](#anchor7)
+</TOC>
 
 ## <a name="anchor1" />Вводные
 
@@ -172,47 +177,15 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 Показать, как он будет выглядеть — с разными данными, в разных ситуациях. Сделать это понятно и красиво.
 
-<div class="daisy-carousel w-full">
-  <div id="slide1" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/3.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide4" class="btn btn-circle">❮</a>
-      <a href="#slide2" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide2" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/3-1.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide1" class="btn btn-circle">❮</a>
-      <a href="#slide3" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide3" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/3-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide2" class="btn btn-circle">❮</a>
-      <a href="#slide4" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide4" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/3-3.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide3" class="btn btn-circle">❮</a>
-      <a href="#slide1" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/3.png',
+  '/images/portfolio/t1/3-1.png',
+  '/images/portfolio/t1/3-2.png',
+  '/images/portfolio/t1/3-3.png',
+]}/>
 <em>Страница результата в четытех цветах. <a href="/images/portfolio/t1/3.png" target="_blank">Синий</a>, <a href="/images/portfolio/t1/3-1.png" target="_blank">черный</a>, <a href="/images/portfolio/t1/3-2.png" target="_blank">зеленый</a>, <a href="/images/portfolio/t1/3-3.png" target="_blank">темно-синий</a></em>
 
-## <a name="anchor3" />Результат
+## <a name="anchor4" />Результат
 
 >Заказчик провел серию презентаций продукта и получил инвестиции на разработку. 
 
@@ -225,67 +198,19 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 3. Заполнили 18 макетов электронной медицинской карты реальными данными пациентов. Показали поведение полей при наполнении их различными данными. 
 
-<div class="daisy-carousel w-full">
-  <div id="slide11" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/8.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide16" class="btn btn-circle">❮</a>
-      <a href="#slide12" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide12" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/9.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide11" class="btn btn-circle">❮</a>
-      <a href="#slide13" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide13" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/10.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide12" class="btn btn-circle">❮</a>
-      <a href="#slide14" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide14" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/11.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide13" class="btn btn-circle">❮</a>
-      <a href="#slide15" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide15" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/12.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide14" class="btn btn-circle">❮</a>
-      <a href="#slide16" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide16" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/13.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide15" class="btn btn-circle">❮</a>
-      <a href="#slide11" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/8.png',
+  '/images/portfolio/t1/9.png',
+  '/images/portfolio/t1/10.png',
+  '/images/portfolio/t1/11.png',
+  '/images/portfolio/t1/12.png',
+  '/images/portfolio/t1/13.png',
+]}/>
 <em>Шесть вариантов медицинской карты пациента</em>
 
 4. Собрали [интерактивный прототип](https://www.figma.com/design/hLgxfELxo7DAEWnr4N8j89/T1-trial-balloon?node-id=98-34325&t=uHxdSQsFRVxLY8MZ-0) для презентации продукта
 
-## <a name="anchor4" />Экстра-польза
+## <a name="anchor5" />Экстра-польза
 
 Заказчик ожидал получить от нас красивые картинки в одном, максимум в двух вариантах, а получил 16 вариантов. 
 
@@ -293,62 +218,14 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 Мы показали заказчику, как можно переключать тему интерфейса — цвета, шрифты, размеры — буквально одной кнопкой. Без копирования экранов, без пересборки компонентов.
 
-<div class="daisy-carousel w-full">
-  <div id="slide5" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/4.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide10" class="btn btn-circle">❮</a>
-      <a href="#slide6" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide6" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/4-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide5" class="btn btn-circle">❮</a>
-      <a href="#slide7" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide7" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/5.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide6" class="btn btn-circle">❮</a>
-      <a href="#slide8" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide8" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/5-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide7" class="btn btn-circle">❮</a>
-      <a href="#slide9" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide9" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/6.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide8" class="btn btn-circle">❮</a>
-      <a href="#slide10" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide10" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/6-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide9" class="btn btn-circle">❮</a>
-      <a href="#slide5" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/4.png',
+  '/images/portfolio/t1/4-2.png',
+  '/images/portfolio/t1/5.png',
+  '/images/portfolio/t1/5-2.png',
+  '/images/portfolio/t1/6.png',
+  '/images/portfolio/t1/6-2.png',
+]}/>
 <em>Вот некоторые из этих вариантов. <a href="/images/portfolio/t1/4.png" target="_blank">Черный, плотный, шрифт Lato</a>, <a href="/images/portfolio/t1/4-2.png" target="_blank">темно-синий, плотный, шрифт Lato</a>, <a href="/images/portfolio/t1/5.png" target="_blank">зеленый, плотный, шрифт Roboto</a>, <a href="/images/portfolio/t1/5-2.png" target="_blank">синий, плотный, шрифт Roboto</a>, <a href="/images/portfolio/t1/6.png" target="_blank">черный, свободный, шрифт Roboto</a>, <a href="/images/portfolio/t1/6-2.png" target="_blank">темно-синий, плотный, шрифт Roboto</a></em>
 
 Для заказчика это было неожиданным и приятным. 
@@ -362,99 +239,27 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 
 Мы показали это на реальных данных. Не абстрактно — по-настоящему. Чтоб разработчики могли не гадать, а видеть на примерах из жизни.  
 
-<div class="daisy-carousel w-full">
-  <div id="slide16" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/14.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide21" class="btn btn-circle">❮</a>
-      <a href="#slide17" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide17" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/15.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide16" class="btn btn-circle">❮</a>
-      <a href="#slide18" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide18" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/16.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide17" class="btn btn-circle">❮</a>
-      <a href="#slide19" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide19" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/17.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide18" class="btn btn-circle">❮</a>
-      <a href="#slide20" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide20" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/18.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide19" class="btn btn-circle">❮</a>
-      <a href="#slide21" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide21" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/19.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide20" class="btn btn-circle">❮</a>
-      <a href="#slide17" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/14.png',
+  '/images/portfolio/t1/15.png',
+  '/images/portfolio/t1/16.png',
+  '/images/portfolio/t1/17.png',
+  '/images/portfolio/t1/18.png',
+  '/images/portfolio/t1/19.png',
+]}/>
 <em>Еще шесть вариантов медицинской карты пациента</em>
 
-## <a name="anchor5" />Нюансы и особенности процесса
+## <a name="anchor6" />Нюансы и особенности процесса
 
 1. Мы уложились в пять рабочих дней. 
 2. Не мучали заказчика длинными согласованиями, а собрали все вводные, взяли ответственность за процесс и результат на себя 
 3. Включили в процесс работы людей с опытом в медицинских проектах, проконсультировались с врачами — у нас есть некоторый пул врачей, с которыми работаем регулярно. С их помощью перетряхнули структуру документа, и как результат создали интерфейс, который полностью понятен медикам. 
 
-<div class="daisy-carousel w-full">
-  <div id="slide29" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/29.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide31" class="btn btn-circle">❮</a>
-      <a href="#slide30" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide30" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/30.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide29" class="btn btn-circle">❮</a>
-      <a href="#slide31" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide31" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/31.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide30" class="btn btn-circle">❮</a>
-      <a href="#slide29" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/29.png',
+  '/images/portfolio/t1/30.png',
+  '/images/portfolio/t1/31.png',
+]}/>
 <em>Флоу записи приема пациента в первой итерации</em>
 
 ### Кто работал над проектом
@@ -463,53 +268,13 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 - Технолог: обеспечивал масштабирование эскизов (наши внутренние технологии)
 - Продакт-менеджер: держал проектную канву и следил, чтобы всё двигалось вперёд.
 
-<div class="daisy-carousel w-full">
-  <div id="slide35" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/35.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide39" class="btn btn-circle">❮</a>
-      <a href="#slide36" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide36" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/36.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide35" class="btn btn-circle">❮</a>
-      <a href="#slide37" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide37" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/37.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide36" class="btn btn-circle">❮</a>
-      <a href="#slide38" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide38" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/38.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide37" class="btn btn-circle">❮</a>
-      <a href="#slide39" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide39" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/39.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide38" class="btn btn-circle">❮</a>
-      <a href="#slide35" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/35.png',
+  '/images/portfolio/t1/36.png',
+  '/images/portfolio/t1/37.png',
+  '/images/portfolio/t1/38.png',
+  '/images/portfolio/t1/39.png',
+]}/>
 <em>Флоу записи приема пациента во второй итерации</em>
 
 ### Как устроили процесс 
@@ -544,62 +309,14 @@ import { YouTube, Tweet, Vimeo } from 'astro-embed';
 <a href="/images/portfolio/t1/43.png" target="_blank">![Собака Павлова • T1 • Внутренний медицинский стартап](~/assets/images/portfolio/t1/43.png)</a>
 <em>А в пятой появляются дополнительные возможности</em>
 
-<div class="daisy-carousel w-full">
-  <div id="slide22" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/20.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide27" class="btn btn-circle">❮</a>
-      <a href="#slide23" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide23" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/21.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide22" class="btn btn-circle">❮</a>
-      <a href="#slide24" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide24" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/22.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide23" class="btn btn-circle">❮</a>
-      <a href="#slide25" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide25" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/23.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide24" class="btn btn-circle">❮</a>
-      <a href="#slide26" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide26" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/24.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide25" class="btn btn-circle">❮</a>
-      <a href="#slide27" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide27" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/t1/7.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide26" class="btn btn-circle">❮</a>
-      <a href="#slide22" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/t1/20.png',
+  '/images/portfolio/t1/21.png',
+  '/images/portfolio/t1/22.png',
+  '/images/portfolio/t1/23.png',
+  '/images/portfolio/t1/24.png',
+  '/images/portfolio/t1/7.png',
+]}/>
 <em>И еще шесть вариантов медицинской карты пациента</em>
 
-## <a name="anchor6" />
+## <a name="anchor7" />

@@ -103,6 +103,11 @@ metadata:
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 import { YouTube, Tweet, Vimeo } from 'astro-embed';
+import ImageSlider from '~/components/common/ImageSlider.astro'
+
+<TOC>
+[Вводные](#anchor1) • [Бизнес-задача](#anchor2) • [Дизайн-задача](#anchor3) • [Результат](#anchor4) • [Экстра-польза](#anchor5) • [Особенности](#anchor6) • [Нюансы процесса](#anchor7) • [Итог](#anchor8) • [Отзыв, цены, сроки](#anchor9)
+</TOC>
 
 ## <a name="anchor1" />Вводные
 
@@ -144,96 +149,37 @@ _Список врачей_
 <a href="/images/portfolio/simed/6.png" target="_blank">![Карточка врача. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/6.png)</a>
 _Карточка врача_
 
-<a href="/images/portfolio/simed/7.png" target="_blank">![Карточка врача. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/7.png)</a>
-_Скролл карточки врача_
-
 ## <a name="anchor4" />Результат
 
 Заказчик получил новый дизайн на свободно распространяемой дизайн-системе Ant Design от Alibaba Group.
 
-<a href="/images/portfolio/simed/8.png" target="_blank">![Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/8.png)</a>
-_Список пациентов_
+<a href="/images/portfolio/simed/7.png" target="_blank">![Карточка врача. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/7.png)</a>
+_Скролл карточки врача_
 
 Часть интерфейса он собрал еще до того, как мы завершили проект. Это было сравнительно просто: 
 1. Мы везде где можно использовали стандартные компоненты Ant.
 2. Заказчик забирал готовый код компонентов у разработчика Ant. 
 3. Сразу встраивал на сайт — и все работало, без проработки дополнительных состояний и анимаций.
 
-<a href="/images/portfolio/simed/13.png" target="_blank">![Выбор пациента. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/13.png)</a>
-_Выбор пациента в документе приема_
+<a href="/images/portfolio/simed/8.png" target="_blank">![Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/8.png)</a>
+_Список пациентов_
 
 Спустя малое время у заказчика уже был готовый продукт, который можно продавать. С готовой дизайн-системой путь от дизайна до первых клиентских заявок может занять недели вместо нескольких месяцев фронтенд-разработки. 
 
-<a href="/images/portfolio/simed/10.png" target="_blank">![Карточка пациента. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/10.png)</a>
-_Карточка пациента_
+<a href="/images/portfolio/simed/13.png" target="_blank">![Выбор пациента. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/13.png)</a>
+_Выбор пациента в документе приема_
 
 1. Собрали и описали ключевые [пользовательские сценарии](https://docs.google.com/document/d/1NCKGNn7UYOPGW7mERuuuBdfU1xOKSRTh3EdgtK_akUE/edit?tab=t.kbvbc3fn7vm4#heading=h.jvwzg8u45e8u). 
 
-<div class="daisy-carousel w-full">
-  <div id="slide11" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-1.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide17" class="btn btn-circle">❮</a>
-      <a href="#slide12" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide12" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide11" class="btn btn-circle">❮</a>
-      <a href="#slide13" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide13" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-3.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide12" class="btn btn-circle">❮</a>
-      <a href="#slide14" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide14" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-4.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide13" class="btn btn-circle">❮</a>
-      <a href="#slide15" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide15" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-5.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide14" class="btn btn-circle">❮</a>
-      <a href="#slide16" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide16" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-6.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide15" class="btn btn-circle">❮</a>
-      <a href="#slide17" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide17" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/4-7.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide16" class="btn btn-circle">❮</a>
-      <a href="#slide11" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/simed/4-1.png', 
+  '/images/portfolio/simed/4-2.png', 
+  '/images/portfolio/simed/4-3.png', 
+  '/images/portfolio/simed/4-4.png', 
+  '/images/portfolio/simed/4-5.png', 
+  '/images/portfolio/simed/4-6.png',
+  '/images/portfolio/simed/4-7.png',
+]}/>
 <em>User-flow «Создание пациента». <a href="/images/portfolio/simed//4-1.png" target="_blank">Создать нового пациента</a>, <a href="/images/portfolio/t1/4-2.png" target="_blank">выбрать пациента из базы ДМС</a>, <a href="/images/portfolio/t1/4-3.png" target="_blank">новый пациент</a>, <a href="/images/portfolio/t1/4-4.png" target="_blank">такой пациент уже существует</a>, <a href="/images/portfolio/t1/4-50.png" target="_blank">добавить информацию</a>, <a href="/images/portfolio/t1/4-60.png" target="_blank">добавить паспорт</a>, <a href="/images/portfolio/t1/4-70.png" target="_blank">карточка пациента</a></em>
 
 2. Передали заказчику макеты, которые реализуют сценарии: 
@@ -246,152 +192,32 @@ _Карточка пациента_
 - заполнить документы приема и оплаты,
 - подписать документы обеим сторонам: пациенту и представителю клиники.
 
-<div class="daisy-carousel w-full">
-  <div id="slide1" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-1.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide7" class="btn btn-circle">❮</a>
-      <a href="#slide2" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide2" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide1" class="btn btn-circle">❮</a>
-      <a href="#slide3" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide3" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-3.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide2" class="btn btn-circle">❮</a>
-      <a href="#slide4" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide4" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-4.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide3" class="btn btn-circle">❮</a>
-      <a href="#slide5" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide5" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-5.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide4" class="btn btn-circle">❮</a>
-      <a href="#slide6" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide6" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-6.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide5" class="btn btn-circle">❮</a>
-      <a href="#slide7" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide7" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/3-7.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide6" class="btn btn-circle">❮</a>
-      <a href="#slide1" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
+<ImageSlider slides={[
+  '/images/portfolio/simed/3-1.png', 
+  '/images/portfolio/simed/3-2.png', 
+  '/images/portfolio/simed/3-3.png', 
+  '/images/portfolio/simed/3-4.png', 
+  '/images/portfolio/simed/3-5.png', 
+  '/images/portfolio/simed/3-6.png',
+  '/images/portfolio/simed/3-7.png',
+]}/>
 <em>User-flow «Выбор врача и услуги». <a href="/images/portfolio/simed//3-1.png" target="_blank">Начало</a>, <a href="/images/portfolio/t1/3-2.png" target="_blank">выбор врача</a>, <a href="/images/portfolio/t1/3-3.png" target="_blank">выбор услуги</a>, <a href="/images/portfolio/t1/3-4.png" target="_blank">материалы</a>, <a href="/images/portfolio/t1/3-50.png" target="_blank">услуга добавлена</a>, <a href="/images/portfolio/t1/3-6.png" target="_blank">документ оплаты</a>, <a href="/images/portfolio/t1/3-7.png" target="_blank">услуга оплачена</a></em>
 
 Микросценариев было еще больше — все перечислены в документе выше. 
 
 3. Оформили и отдали библиотеку компонентов Ant Design в Figma. Объяснили, как развернуть её у себя и использовать в работе. 
 
-<div class="daisy-carousel w-full">
-  <div id="slide21" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-1.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide28" class="btn btn-circle">❮</a>
-      <a href="#slide22" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide22" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-2.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide21" class="btn btn-circle">❮</a>
-      <a href="#slide23" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide23" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-3.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide22" class="btn btn-circle">❮</a>
-      <a href="#slide24" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide24" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-4.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide23" class="btn btn-circle">❮</a>
-      <a href="#slide25" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide25" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-5.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide24" class="btn btn-circle">❮</a>
-      <a href="#slide26" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide26" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-6.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide25" class="btn btn-circle">❮</a>
-      <a href="#slide27" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide27" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-7.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide26" class="btn btn-circle">❮</a>
-      <a href="#slide28" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-  <div id="slide28" class="daisy-carousel-item relative w-full">
-    <img
-      src="/images/portfolio/simed/5-8.png"
-      class="w-full" />
-    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide27" class="btn btn-circle">❮</a>
-      <a href="#slide21" class="btn btn-circle">❯</a>
-    </div>
-  </div>
-</div>
-<em>User-flow «Пациент подписывает документ». <a href="/images/portfolio/simed//5-1.png" target="_blank">Создать документ</a>, <a href="/images/portfolio/t1/5-2.png" target="_blank">создать электронную версию</a>, <a href="/images/portfolio/t1/5-3.png" target="_blank">документ создан</a>, <a href="/images/portfolio/t1/5-4.png" target="_blank">подписание документа на планшете</a>, <a href="/images/portfolio/t1/5-5.png" target="_blank">подписание документа по СМС</a>, <a href="/images/portfolio/t1/5-6.png" target="_blank">сохранить подпись</a>, <a href="/images/portfolio/t1/5-7.png" target="_blank">документ подписан</a>, <a href="/images/portfolio/t1/5-7.png" target="_blank">список документов</a></em>
+<ImageSlider slides={[
+  '/images/portfolio/simed/5-1.png', 
+  '/images/portfolio/simed/5-2.png', 
+  '/images/portfolio/simed/5-3.png', 
+  '/images/portfolio/simed/5-4.png', 
+  '/images/portfolio/simed/5-5.png', 
+  '/images/portfolio/simed/5-6.png',
+  '/images/portfolio/simed/5-7.png',
+  '/images/portfolio/simed/5-8.png',
+]}/>
+<em>User-flow «Пациент подписывает документ». <a href="/images/portfolio/simed//5-1.png" target="_blank">Создать документ</a>, <a href="/images/portfolio/t1/5-2.png" target="_blank">создать электронную версию</a>, <a href="/images/portfolio/t1/5-3.png" target="_blank">документ создан</a>, <a href="/images/portfolio/t1/5-4.png" target="_blank">подписание документа на планшете</a>, <a href="/images/portfolio/t1/5-5.png" target="_blank">подписание документа по СМС</a>, <a href="/images/portfolio/t1/5-6.png" target="_blank">сохранить подпись</a>, <a href="/images/portfolio/t1/5-7.png" target="_blank">документ подписан</a>, <a href="/images/portfolio/t1/5-8.png" target="_blank">список документов</a></em>
 
 ## <a name="anchor5" />Экстра-польза
 
@@ -445,37 +271,28 @@ _Несколько врачей_
 
 Правда, к этому эксперименту мы готовились сильно заранее: собрали с десяток ЭМК, списков пациентов, разных вариантов поиска и фильтраций, карточек и форм — и все перенесли на компоненты Ant.
 
-<a href="/images/portfolio/simed/21.png" target="_blank">![Выбор времени приема. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/21.png)</a>
-_Выбор времени приема_
+<a href="/images/portfolio/simed/18.png" target="_blank">![Указание ДМС. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/9.png)</a>
+_Указание ДМС и гарантийного письма_
 
 Звезды сошлись, когда пришел СиМед и согласился использовать предложенную дизайн-систему. На созвонах мы обкатали весь процесс: 
 - показывали заказчику уже готовые компоненты, 
 - брали те, которые по общему мнению решали интерфейсные задачи,
 - вставляли их макеты и заполняли актуальным для СиМеда контентом.
 
-<a href="/images/portfolio/simed/23.png" target="_blank">![Выбор времени приема. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/23.png)</a>
-_Выбор врача из доступных_
+<a href="/images/portfolio/simed/19.png" target="_blank">![Документ оплаты. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/19.png)</a>
+_Документ оплаты. Часть услуг оплачена_
 
 Наш подход сработал — он здорово удешевил и ускорил разработку интерфейса. 
 
 Так что частично СиМед состоит из паттернов, которые мы уже изобрели и протестировали в других МИС.
 
-<a href="/images/portfolio/simed/21.png" target="_blank">![Выбор услуги. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/21.png)</a>
-_Выбор услуги_
+<a href="/images/portfolio/simed/20.png" target="_blank">![Документ оплаты. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/20.png)</a>
+_Документ оплаты. Часть услуг клиент получил в долг_
 
 ## <a name="anchor8" />Итог
 
 Приятный проект завершился на высокой ноте. Разработчики на наших глазах собирали рабочий интерфейс, и это отдельное дизайнерское удовольствие — шевелить руками ожившие макеты из Фигмы. 
 
 В свою очередь, заказчик получил все, чтобы развивать интерфейс сразу в коде. Кажется, ему даже больше не нужны дизайнеры — львиная доля компонентов из старой системы приобрела новый вид и готовый код. Осталось перенести на них другие модули продукта.
-
-<a href="/images/portfolio/simed/18.png" target="_blank">![Указание ДМС. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/9.png)</a>
-_Указание ДМС и гарантийного письма_
-
-<a href="/images/portfolio/simed/19.png" target="_blank">![Документ оплаты. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/19.png)</a>
-_Документ оплаты. Часть услуг оплачена_
-
-<a href="/images/portfolio/simed/20.png" target="_blank">![Документ оплаты. Редизайн модуля записи к врачу • Собака Павлова](~/assets/images/portfolio/simed/20.png)</a>
-_Документ оплаты. Часть услуг клиент получил в долг_
 
 ## <a name="anchor9" />

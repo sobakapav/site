@@ -1,0 +1,114 @@
+---
+
+import { twMerge } from "tailwind-merge";
+import { $id } from '~/utils/utils.ts';
+import './ImageSlider.less';
+
+const { 
+  styles = {
+    main: '',
+    container: '',
+    slide: '',
+  },
+  delay = 0, // Zero for no auto scroll; non-zero timeout in seconds for auto scroll 
+  showNav = true, // True to show navigation, False to hide
+  slides = [], // Images to be shown
+} = Astro.props;
+
+const id = $id('image-slider');
+
+---
+
+<image-slider class:list={[twMerge('image-slider flex flex-col', styles.main ?? '')]} id={id} data-delay={delay}>
+  <div class="flex flex-row image-slider-container relative w-[90vw] md:max-w-3xl">
+      <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-[5] ">
+        <a class="btn btn-circle image-slider-prev">❮</a>
+        <a class="btn btn-circle image-slider-next">❯</a>
+      </div>
+    <div class:list={['image-slider image-slider-ux image-slider-desktop relative w-[90vw] md:max-w-3xl', 'slides-'+slides.length]}>
+      <div class="image-slides w-max flex">
+        {slides.map((slide, index) => (
+          <div class:list={['image-slide w-[90vw] md:max-w-3xl', index == 0 ? 'selected' : '']}>
+            <img src={slide} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</image-slider>
+
+<script>
+
+function imageSliderNext(sliderId) {
+  const slider = document.querySelector('#'+sliderId + ' .image-slider');
+  var firstSlide;
+  var secondSlide;
+  var selectedSlide;
+  var nextSlide;
+
+  for (const slide of slider.querySelectorAll('.image-slide')) {
+    if (firstSlide && !secondSlide) secondSlide = slide;
+    if (!firstSlide) firstSlide = slide;
+    if (selectedSlide && !nextSlide) nextSlide = slide;
+    if (slide.classList.contains('selected')) selectedSlide = slide;
+  }
+  
+  selectedSlide.classList.remove('selected');
+  if (nextSlide) {
+    nextSlide.classList.add('selected');
+    slider.scrollTo(nextSlide.offsetLeft, 0);
+  } else {
+    slider.style['scrollBehavior'] = 'auto';
+    slider.scrollTo(0, 0);
+    slider.style['scrollBehavior'] = 'smooth';
+    secondSlide.classList.add('selected');
+    slider.scrollTo(secondSlide.offsetLeft, 0);
+  }
+}
+
+function imageSliderPrev(sliderId) {
+  const slider = document.querySelector('#'+sliderId + ' .image-slider');
+  var selectedSlide;
+  var lastSlide;
+  var secondLastSlide;
+  var previousSlide;
+
+  for (const slide of slider.querySelectorAll('.image-slide')) {
+    secondLastSlide = lastSlide;
+    lastSlide = slide;
+    if (slide.classList.contains('selected')) selectedSlide = slide;
+    if (!selectedSlide) previousSlide = slide;
+  }
+  
+  selectedSlide.classList.remove('selected');
+  if (previousSlide) {
+    previousSlide.classList.add('selected');
+    slider.scrollTo(previousSlide.offsetLeft, 0);
+  } else {
+    slider.style['scrollBehavior'] = 'auto';
+    slider.scrollTo(lastSlide.offsetLeft, 0);
+    slider.style['scrollBehavior'] = 'smooth';
+    secondLastSlide.classList.add('selected');
+    slider.scrollTo(secondLastSlide.offsetLeft, 0);
+  }
+}
+
+function imageSliderInit(slider) {
+  const slideContainer = slider.querySelector('.image-slides');
+  const firstSlide = slideContainer.querySelector('.image-slide');
+  const clone = firstSlide.cloneNode(true);
+  clone.classList.remove('selected');
+  slideContainer.appendChild(clone);
+  
+  slider.querySelector('.image-slider-next').addEventListener('click', imageSliderNext.bind(this, slider.id));
+  slider.querySelector('.image-slider-prev').addEventListener('click', imageSliderPrev.bind(this, slider.id));
+}
+
+window.addEventListener("load", (event) => {
+  for (const slider of document.querySelectorAll('image-slider')) {
+    imageSliderInit(slider);
+  };
+});
+
+
+</script>

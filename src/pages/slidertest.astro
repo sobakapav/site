@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Slider from '~/components/common/Slider.astro'
+import ImageSlider from '~/components/common/ImageSlider.astro'
 import CardSlider from '~/components/main/CardSlider.astro';
 
 const metadata = {
@@ -26,7 +26,14 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <div class="mx-20">
-    <CardSlider cases={['qiwi', 'gazprom-neft', 'okey', 'pangeo', 'raisa', 'res', 'tis', 'tmh']} delay={3}/>
+    <ImageSlider slides={[
+      '/images/portfolio/simed/4-1.png', 
+      '/images/portfolio/simed/4-2.png', 
+      '/images/portfolio/simed/4-3.png', 
+      '/images/portfolio/simed/4-4.png', 
+      '/images/portfolio/simed/4-5.png', 
+      '/images/portfolio/simed/4-6.png',
+    ]}/>
   </div>
         
 </Layout>
