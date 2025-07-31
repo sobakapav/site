@@ -1,19 +1,16 @@
 ---
-publishYear: 2021
+publishYear: 2022
 name: Simetra
 title: UX-аудит системы транспортного моделирования
-excerpt: Протестировали интерфейс универсальной платформы для решения задач по транспортному моделирования, предложили и обосновали улучшения.
+excerpt: Протестировали интерфейс универсальной платформы для транспортного моделирования, предложили и обосновали улучшения.
 
 context: |
-  **Подробный кейс пока в работе. Если хотите посмотреть на этот дизайн в деталях, пишите нам на [we@sobakapav.ru](mailto:we@sobakapav.ru)**
+  Компания [Simetra](https://simetragroup.ru/) занимается исследованием транспорта, моделированием транспортных систем и прогнозированием транспортных потоков.
   
-  [Simetra](https://simetragroup.ru/) — система транспортного моделирования.
+  Simetra с 2018 года разрабатывает и развивает цифровую платформу [RITM³](https://ritm3.ru/)(Realtime Integrated Traffic Modeling / Monitoring / Management) для моделирования, мониторинга и управления транспортными системами. У системы модульная архитектура: в зависимости от задач заказчика на платформу устанавливаются нужные модули. Они могут работать независимо и взаимодействуя друг с другом, конфигурацию в целом можно менять и дополнять.
   
-  Наша ключевая компетенция - моделирование транспортных систем и прогнозирование транспортных потоков для рационального транспортного планирования и поиска оптимальных решений, которые позволяют городским властям преодолевать вызовы, продиктованные динамичным развитием транспортных систем, а людям – быстро и комфортно перемещаться по городу.
-  
-  Наши ключевые компетенции — моделирование транспортных систем и прогнозирование транспортных потоков для рационального транспортного планирования.
-  
-  Цифровая платформа [RITM³](https://ritm3.ru/) для управления транспортными системами и мобильностью стала лучшим решением в номинации «Интеллектуальные транспортные системы» на Kazan Digital Week 2023
+  В конце 2021 году компания обратилась к нам за [UX-аудитом](/services/ux-audit) нескольких модулей системы.
+   
 isNew: true
 logo:
   src: ~/assets/images/portfolio/simetra/logo.svg
@@ -27,13 +24,11 @@ thumbnail:
 tags:
   - it
   - log
-  - research
   - ux-audit
   - prof
   
 relatedPages:
-  -
-    text: |
+  - text: |
       ### Вам нужен интерфейс?
       #### Заказать дизайн
       Напишите нам на&nbsp;[we@sobakapav.ru](mailto:we@sobakapav.ru) 
@@ -54,8 +49,21 @@ relatedPages2:
   - collection: portfolio
     page: gormost
 
+outcome:
+  title: Некоторые цифры
+  numbers:
+   - title: "Исследовали"
+     number: '> 150 экранов'
+     text: "системы RITM³"
+   - title: "Оставили в Miro"
+     number: '186 комментариев'
+     text: "с проблемами и решениями"
+   - title: "Составили"
+     number: '3 отчета'
+     text: "общим объемом в сотню страниц"
+
 result:
-  -
+  - src: ~/assets/images/portfolio/figma.svg
     text: Покажем из рук в руки и расскажем ещё больше
     link: "mailto:we@sobakapav.ru"
 budget: "250 000 ₽"
@@ -63,14 +71,20 @@ time: "3 месяца"
 
 review:
   text: |
-    Мы использовали результаты аудита для внутреннего анализа, уточнения отдельных моментов, а также погружения новых дизайнеров и знакомства с лучшими практиками (и как было и как лучше). По интерфейсу от пользователей только положительные отзывы у нас, в том числе благодаря вашим дополнениям.
-  person: Андрей Прохоров - внутр. инвестор
-  position: Кузнецов - рук. продукта, 
+    Мы использовали результаты аудита для внутреннего анализа, а также погружения новых дизайнеров и знакомства с лучшими практиками (и как было и как лучше). По интерфейсу от пользователей только положительные отзывы у нас, в том числе благодаря вашим дополнениям.
+  person: Андрей Кузнецов 
+  position: руководитель проекта
+  
+review2:
+  text: |
+    На сотрудничество смотрим исключительно положительно, что с точки зрения техники, взаимного желания и возможностей особых преград нет.
+  person: Андрей Прохоров 
+  position: внутренний инвестор
 
 metadata:
   canonical: https://sobakapav.ru/portfolio/simetra
-  title: Дизайн интерфейса • Система транспортного моделирования
-  description: "Протестировали интерфейс универсальной платформы для решения задач по транспортному моделирования, предложили и обосновали улучшения."
+  title: UX-аудит • Система транспортного моделирования
+  description: "Протестировали интерфейс универсальной платформы для транспортного моделирования, предложили и обосновали улучшения."
   robots:
     index: true
     follow: true
@@ -85,27 +99,276 @@ metadata:
 ---
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
+import ImageSlider from '~/components/common/ImageSlider.astro'
 
 <TOC>
 [Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
 </TOC>
 
-## <a name="anchor1" />Бизнес-задача
+## <a name="anchor1" />Вводные
 
-Создать на базе многочисленных наработок удобную универсальную платформу для решения задач по транспортному моделирования.
 
-## <a name="anchor2" />Дизайн-задача
+## <a name="anchor2" />Бизнес-задача
 
-Протестировать интерфейс для выявления слабых мест, предложить и обосновать улучшения и передать некоторые UX-компетенции заказчику.
+Сделать универсальную платформу для решения задач по транспортному моделированию удобней и привлекательней для пользователя.
 
-<a href="/images/portfolio/simetra/1.png" target="_blank">![Система транспортного моделирования | SobakaPav.ru](~/assets/images/portfolio/simetra/1.png)</a>
-_Фрагмент отчета_
+<a href="/images/portfolio/simetra/4.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/4.png)</a>
+_«Светофорные объекты»: один из модулей системы RITM³_
 
-## <a name="anchor3" />Результат
+## <a name="anchor3" />Дизайн-задачи
 
-Макеты переданы в разработку.
+1. Протестировать интерфейс и выявить проблемы и слабые места, как специфичные для отдельных модулей, так и сквозные, общие для всей системы.  
+2. Предложить и обосновать решения этих проблем. 
+3. Передать некоторые UX-компетенции заказчику.
 
-## <a name="anchor4" />
+<a href="/images/portfolio/simetra/11.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/11.png)</a>
+_Из отчета о UX-аудите геоинформационного модуля. Редактор карты_
+
+<a href="/images/portfolio/simetra/47.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/47.png)</a>
+_Из отчета о UX-аудите модуля «Ситуационный центр». Видеокамеры_
+
+## <a name="anchor4" />Результат
+
+<a href="/images/portfolio/simetra/10.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/10.png)</a>
+_Из отчета о UX-аудите геоинформационного модуля. Редактор карты_
+
+<a href="/images/portfolio/simetra/24.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/24.png)</a>
+_Из отчета о UX-аудите геоинформационного модуля. Справочник, вид по умолчанию_
+
+<a href="/images/portfolio/simetra/40.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/40.png)</a>
+_Из отчета о UX-аудите модуля «Ситуационный центр». Карта и виджеты_
+
+
+
+
+
+## <a name="anchor5" />Экстра-польза
+
+
+## <a name="anchor6" />Нюансы и особенности процесса
+
+
+<a href="/images/portfolio/simetra/14.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/14.png)</a>
+_Из отчета о UX-аудите геоинформационного модуля. Респондент делится референсом_
+
+## Показываем
+### <a name="anchor7" />Модуль «ГИС»
+Геоинформационная система сбора, хранения, анализа и графической визуализации данных (ГИС) – это основной модуль, который используется остальными модулями для визуализации и работы с пространственными и картографическими данными.
+
+#### Ключевые задачи пользователей
+1. Отредактировать геометрию модели (на карте)
+2. Отредактировать атрибуты (справочник)
+3. Подготовить визуализацию данных для отчета
+4. Настроить внешний вид
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/5.png',
+  '/images/portfolio/simetra/6.png',
+  '/images/portfolio/simetra/7.png',
+  '/images/portfolio/simetra/8.png',
+  '/images/portfolio/simetra/9.png',
+  '/images/portfolio/simetra/12.png',
+  '/images/portfolio/simetra/13.png',
+  '/images/portfolio/simetra/15.png',
+]}/>
+<em>Из отчета о UX-аудите геоинформационного модуля. Карта</em>
+<ImageSlider slides={[
+  '/images/portfolio/simetra/16.png',
+  '/images/portfolio/simetra/17.png',
+  '/images/portfolio/simetra/18.png',
+  '/images/portfolio/simetra/19.png',
+  '/images/portfolio/simetra/20.png',
+  '/images/portfolio/simetra/21.png',
+  '/images/portfolio/simetra/22.png',
+  '/images/portfolio/simetra/23.png',
+]}/>
+<em>Из отчета о UX-аудите геоинформационного модуля. Карта</em>
+
+#### Сквозные проблемы
+1. Система не сообщает о текущем состоянии. Например, в таблице и в настройках не отображаются  примененные параметры. ([Visibility of System Status. Usability Heuristic #1](https://www.nngroup.com/articles/visibility-system-status/))
+2. Система не сохраняет данные автоматически, не хранит глобальную историю и не дает отменить действие. ([Designing a user-friendly autosave functionality](https://uxdesign.cc/designing-a-user-friendly-autosave-functionality-439f2fe4222d))
+3. Модальность часто используется там, где она не нужна. ([Popups: 10 Problematic Trends and Alternatives](https://www.nngroup.com/articles/popups/))
+4. Система постоянно просит подтвердить сохранение ([Modal & Nonmodal Dialogs: When (& When Not) to Use Them](https://www.nngroup.com/articles/modal-nonmodal-dialog/))
+5. Не всегда уместно используются элементы интерфейса. Например, спойлеры и обрезанные по высоте модальные окна.
+6. Не хватает проверенных лучших практик для работы с таблицей ([Designing better data tables for enterprise UX](https://uxdesign.cc/data-table-for-enterprise-ux-cb48fb9fdf1e))
+7. Не хватает проекций для визуализации связи между слоем и объектом на карте.
+8. Не всегда отзывчивый интерфейс, часто не хватает мгновенного фидбэка: хинты, подсказки ([Usability Testing of Icons](https://www.nngroup.com/articles/icon-testing/))
+9. Система не учитывает цифровые привычки пользователя, сформированные другими продуктами. Например, не работает базовая горячая клавиша «отмена» ([Don’t Prioritize Efficiency Over Expectations](https://www.nngroup.com/articles/efficiency-vs-expectations/))
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/25.png',
+  '/images/portfolio/simetra/26.png',
+  '/images/portfolio/simetra/27.png',
+  '/images/portfolio/simetra/28.png',
+  '/images/portfolio/simetra/29.png',
+  '/images/portfolio/simetra/30.png',
+  '/images/portfolio/simetra/31.png',
+  '/images/portfolio/simetra/32.png',
+  '/images/portfolio/simetra/33.png',
+  '/images/portfolio/simetra/34.png',
+  '/images/portfolio/simetra/35.png',
+  '/images/portfolio/simetra/36.png',
+  '/images/portfolio/simetra/37.png',
+  '/images/portfolio/simetra/38.png',
+]}/>
+<em>Из отчета о UX-аудите геоинформационного модуля. Справочник</em>
+
+#### Общие идеи и предложения
+Часто сотрудники при проверке графа на актуальность используют ввод дополнительного атрибута, чтобы помечать те объекты, которые они уже проверили/отредактировали. Стоит дать возможность делать это штатными средствами системы.
+Во время редактирования объектов почти всегда используется разделение экрана (для сверки с документами/другой системой/яндекс картами. При этом интерфейс перекрывает большую часть основной рабочей области. Можно дать возможность сворачивать обвязку интерфейса модуля или предусмотреть специальный режим для такого использования.
+Принцип редактирования объектов в редакторе ОДД более удобный и современный. Поддерживаем переход на него в основном редакторе модуля ГИС.
+
+<a href="/images/portfolio/simetra/1.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/1.png)</a>
+_Редактор объектов дорожного движения модуля «ГИС»_
+
+### <a name="anchor8" />Модуль «Ситуационный центр»
+Модуль является основным для оценки эффективности работы интеллектуальной транспортной системы и транспортного комплекса. Он предполагает интеграцию с данными из всех остальных модулей без возможности управления существующими подсистемами и оборудованием.
+
+<a href="/images/portfolio/simetra/2.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/2.png)</a>
+_Один из экранов модуля «Ситуационный центр»_
+
+<a href="/images/portfolio/simetra/3.png" target="_blank">![UX-аудит системы транспортного моделирования • Собака Павлова](~/assets/images/portfolio/simetra/3.png)</a>
+_Один из экранов модуля «Ситуационный центр»_
+
+Ключевые задачи пользователей
+1. Проверить текущее состояние УДС
+2. Проверить статус проблемного объекта
+3. Подготовить данные для отчета
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/41.png',
+  '/images/portfolio/simetra/42.png',
+  '/images/portfolio/simetra/43.png',
+  '/images/portfolio/simetra/44.png',
+  '/images/portfolio/simetra/45.png',
+  '/images/portfolio/simetra/46.png',
+  '/images/portfolio/simetra/48.png',
+]}/>
+<em>Из отчета о UX-аудите модуля «Ситуационный центр». Карты и виджеты</em>
+
+Сквозные проблемы
+1. Не хватает проекций для визуализации связи между объектом на карте и детальной информацией.
+2. Несогласованность элементов (режим выделения объекта выглядит как негативный статус). [Maintain Consistency and Adhere to Standards (Usability Heuristic #4](https://www.nngroup.com/articles/consistency-and-standards/))
+3. Задача «Подготовить данные для отчета» не выполняется.
+4. При большом количестве разных слоев с объектами легенда не информативна. ([5 Principles of Visual Design in UX](https://www.nngroup.com/articles/principles-visual-design/?lm=designing-effective-infographics&pt=article))
+5. Виджеты не связаны с панелью слоев. При большом количестве виджетов сложно считать, какие объекты сейчас отображены на карте.
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/49.png',
+  '/images/portfolio/simetra/50.png',
+  '/images/portfolio/simetra/51.png',
+  '/images/portfolio/simetra/52.png',
+]}/>
+<em>Из отчета о UX-аудите модуля «Ситуационный центр». Видеокамеры</em>
+
+Общие идеи и предложения
+Для выделения объекта использовать нейтральный цвет, например белый или синий. Не перекрашивать иконку выделенного объекта, а использовать подложки или обводку.
+Для подготовки данных для отчета добавить возможность экспортировать данные с виджетов в файл, и возможность сохранить скриншот.
+
+Предложения для виджетов
+Разнести просмотр карты и дашборд по разным вкладкам.
+Дать возможность скрывать ненужные виджеты.
+Скрывать виджет, когда слой неактивен.
+Объединить виджеты с панелью слоев.
+При наведении на виджет подсвечивать на карте связанные с ним объекты / делать остальные объекты на карте менее акцентными. При нажатии на виджет сохранять такой вид для объектов, пока виджет выделен.
+
+Предложения для легенды
+Разделить палитры для обозначения статусов и обозначения обычных объектов. Например, красный и зеленый использовать только для обозначения статусов.
+Использовать разные иконки для статичных объектов (светофоров, камер) и движущихся (транспорта, дорожной техники). Например, движущиеся объекты показывать в форме стрелки, а не круга.
+Использовать иконки без круглой обводки, чтоб они больше различались по силуэту.
+
+### <a name="anchor9" />Модуль «Общественный транспорт»
+Задачи пользователей
+1. Добавить маршрут ОТ
+2️Изменить существующий маршрут ОТ
+3️Изменить расписание маршрута
+4️Добавить остановку
+5️Изменить существующую остановку
+6️Привязать к маршруту ТС
+7️Построить пользовательский маршрут
+8️Передать информацию о маршруте во внешние сервисы
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/55.png',
+  '/images/portfolio/simetra/56.png',
+  '/images/portfolio/simetra/57.png',
+]}/>
+<em>Из отчета о UX-аудите модуля «Общественный транспорт». Карта</em>
+
+Сквозные проблемы
+1. Система не сообщает о текущем состоянии ([Visibility of System Status](https://www.nngroup.com/articles/visibility-system-status/))
+- Не хватает состояний для наведения, выделения и выбора объекта.
+- Во время построения маршрута не понятно какие остановки «подцепились» в маршрут.
+2. Редактирование расписания не соответствует ожиданиям пользователей и привычному способу работы с расписанием ([Mental Models](https://www.nngroup.com/articles/mental-models/)). И в текущей реализации вызывает ряд вопросов:
+- почему нужно создавать в два шага?
+- почему при создании нельзя настроить время на остановках, а при редактировании нельзя изменить время отправки?
+- как рассчитываются интервалы, как их изменить?
+3. Проблемы редактора:
+- Не работает отмена действий ([Reset and Cancel Buttons](https://www.nngroup.com/articles/reset-and-cancel-buttons/))
+- Некоторые действия (отмена, удаление построенного маршрута) можно совершить только с клавиатуры, что подходит для опытных пользователей, но не очевидно для новичков. ([Accelerators Allow Experts to Increase Efficiency](https://www.nngroup.com/articles/ui-accelerators/))
+- Не хватает подсказок о том, что надо сделать чтобы сохранить маршрут.
+- Маленькое рабочее пространство.
+- Нельзя добавить новую остановку в ранее созданный маршрут.
+4. Проблема с текстами: термины не из мира пользователя, сложно сформулированы подсказки, неточная информация в уведомлениях. ([User-centric vs. Maker-centric Language: 3 Essential Guidelines](https://www.nngroup.com/articles/user-centric-language/))
+5. Отсутствуют подсказки для иконок. ([Icon Usability](https://www.nngroup.com/articles/icon-usability/))
+
+<ImageSlider slides={[  
+  '/images/portfolio/simetra/58.png',
+  '/images/portfolio/simetra/59.png',
+  '/images/portfolio/simetra/60.png',
+  '/images/portfolio/simetra/61.png',
+  '/images/portfolio/simetra/62.png',
+  '/images/portfolio/simetra/63.png',
+  '/images/portfolio/simetra/64.png',
+  '/images/portfolio/simetra/65.png',
+  '/images/portfolio/simetra/66.png',
+  '/images/portfolio/simetra/67.png',
+]}/>
+<em>Из отчета о UX-аудите модуля «Общественный транспорт». Редактор маршрутов</em>
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/68.png',
+  '/images/portfolio/simetra/69.png',
+  '/images/portfolio/simetra/70.png',
+  '/images/portfolio/simetra/71.png',
+  '/images/portfolio/simetra/72.png',
+  '/images/portfolio/simetra/73.png',
+  '/images/portfolio/simetra/74.png',
+]}/>
+<em>Отчет об аудите модуля «Общественный транспорт». Остановки</em>
+
+## <a name="anchor10" />Итог
+
+Компания доработала интерфейс системы, использовав результаты нашего UX-аудита. С тех пор цифровая платформа [RITM³] сильно изменилась (не удивительно - ее постоянно развивают и улучшают), а наш отчет о UX-аудите до сих пор используют в Simetre для обучения новых UX-дизайнеров.
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/75.png',
+  '/images/portfolio/simetra/76.png',
+  '/images/portfolio/simetra/77.png',
+  '/images/portfolio/simetra/78.png',
+  '/images/portfolio/simetra/79.png',
+  '/images/portfolio/simetra/80.png',
+  '/images/portfolio/simetra/81.png',
+  '/images/portfolio/simetra/82.png',
+  '/images/portfolio/simetra/83.png',
+  '/images/portfolio/simetra/84.png',
+  '/images/portfolio/simetra/85.png',
+  '/images/portfolio/simetra/86.png',
+  '/images/portfolio/simetra/87.png',
+  '/images/portfolio/simetra/88.png',
+]}/>
+<em>Из отчета о UX-аудите модуля «Общественный транспорт». Информация о маршруте</em>
+
+<ImageSlider slides={[
+  '/images/portfolio/simetra/89.png',
+  '/images/portfolio/simetra/90.png',
+  '/images/portfolio/simetra/91.png',
+  '/images/portfolio/simetra/92.png',
+  '/images/portfolio/simetra/93.png',
+]}/>
+<em>Из отчета об аудите модуля «Общественный транспорт». Пользовательский маршрут</em>
+
+## <a name="anchor11" />
 
  
 
