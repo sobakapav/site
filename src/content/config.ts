@@ -187,6 +187,11 @@ const portfolioCollection = defineCollection({
   schema: portfolioSchema(),
 });
 
+const portfolioRawCollection = defineCollection({
+  schema: portfolioSchema(),
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/content/portfolio' }),
+});
+
 const promoCollection = defineCollection({
   schema: portfolioSchema(),
 });
@@ -312,6 +317,7 @@ export const collections = {
   research: researchCollection,
   design2dev: design2devCollection,
   portfolio: portfolioCollection,
+  portfolioRaw: portfolioRawCollection,
   currentProjects: currentProjectsCollection,
   promo: promoCollection,
   video: videoCollection,
