@@ -1,5 +1,8 @@
 phone-mockup {
   .daisy-mockup-phone {
+    .daisy-camera {
+      z-index: 9;
+    }
     .daisy-display {
       .daisy-artboard.daisy-phone-1 {
         height: unset;
@@ -10,5 +13,16 @@ phone-mockup {
         }
       }
     }
+  }
+}
+
+u-slider {
+  phone-mockup.u-slide {
+    .daisy-mockup-phone {
+      margin: 0 4px;
+      .daisy-artboard.daisy-phone-1 {
+        width: unset;
+      }
+    }  
   }
 }
