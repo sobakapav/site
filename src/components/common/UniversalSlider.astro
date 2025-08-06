@@ -1,0 +1,133 @@
+---
+
+import { twMerge } from "tailwind-merge";
+import { $id } from '~/utils/utils.ts';
+import './UniversalSlider.less';
+
+const { 
+  styles = {
+    main: '',
+    container: '',
+    slide: '',
+  },
+  count = 1,
+} = Astro.props;
+
+const id = $id('u-slider');
+const slideWidth = 768 / count;
+const smallSlideWidth = 90 / count;
+---
+
+<u-slider class="u-main flex flex-col" id={id} data-count={count}>
+  <div class="flex flex-row u-slider-container relative w-[90vw] md:max-w-3xl">
+      <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-[5] ">
+        <a class="btn btn-circle image-slider-prev">❮</a>
+        <a class="btn btn-circle image-slider-next">❯</a>
+      </div>
+    <div class="u-slider relative w-[90vw] md:max-w-3xl">
+      <div class="u-slides w-max flex">
+        <slot />
+      </div>
+    </div>
+  </div>
+</u-slider>
+
+<script>
+
+function universalSliderNext(sliderId) {
+  const slider = document.querySelector('#'+sliderId + ' .u-slider');
+  var firstSlide;
+  var secondSlide;
+  var selectedSlide;
+  var nextSlide;
+
+  for (const slide of slider.querySelectorAll('.u-slide')) {
+    if (firstSlide && !secondSlide) secondSlide = slide;
+    if (!firstSlide) firstSlide = slide;
+    if (selectedSlide && !nextSlide) nextSlide = slide;
+    if (slide.classList.contains('selected')) selectedSlide = slide;
+  }
+  
+  selectedSlide.classList.remove('selected');
+  if (!selectedSlide.classList.contains('cloneStart')) {
+    nextSlide.classList.add('selected');
+    slider.scrollTo(nextSlide.offsetLeft, 0);
+  } else {
+    slider.style['scrollBehavior'] = 'auto';
+    slider.scrollTo(0, 0);
+    slider.style['scrollBehavior'] = 'smooth';
+    secondSlide.classList.add('selected');
+    slider.scrollTo(secondSlide.offsetLeft, 0);
+  }
+}
+
+function universalSliderPrev(sliderId) {
+  const slider = document.querySelector('#'+sliderId + ' .u-slider');
+  var selectedSlide;
+  var lastSlide;
+  var secondLastSlide;
+  var previousSlide;
+  var prevSlide;
+
+  for (const slide of slider.querySelectorAll('.u-slide')) {
+    if (slide.classList.contains('cloneStart')) {
+      lastSlide = slide;
+      secondLastSlide = prevSlide;
+    }
+    if (slide.classList.contains('selected')) selectedSlide = slide;
+    if (!selectedSlide) previousSlide = slide;
+    prevSlide = slide;
+  }
+  
+  selectedSlide.classList.remove('selected');
+  if (previousSlide) {
+    previousSlide.classList.add('selected');
+    slider.scrollTo(previousSlide.offsetLeft, 0);
+  } else {
+    slider.style['scrollBehavior'] = 'auto';
+    slider.scrollTo(lastSlide.offsetLeft, 0);
+    slider.style['scrollBehavior'] = 'smooth';
+    secondLastSlide.classList.add('selected');
+    slider.scrollTo(secondLastSlide.offsetLeft, 0);
+  }
+}
+
+function universalSliderInit(slider) {
+  const slideContainer = slider.querySelector('.u-slides');
+  const count = slider.dataset.count || 1;
+  
+  for (const child of slideContainer.childNodes) {
+    if (child.nodeType == 1) {
+      child.classList.add('u-slide');
+      child.classList.add(`u-slide${count}`);
+    }
+  }
+  
+  const firstSlide = slideContainer.querySelector('.u-slide');
+  firstSlide.classList.add('selected');
+  
+  var i = 0;
+  const allSlides = slideContainer.querySelectorAll('.u-slide').values();
+  while (i < count && !allSlides.done) {
+    const orig = allSlides.next().value;
+    const clone = orig.cloneNode(true);
+    clone.classList.remove('selected');
+    if (i == 0) {
+      clone.classList.add('cloneStart');
+    }
+    slideContainer.appendChild(clone);
+    i++;
+  }
+  
+  slider.querySelector('.image-slider-next').addEventListener('click', universalSliderNext.bind(this, slider.id));
+  slider.querySelector('.image-slider-prev').addEventListener('click', universalSliderPrev.bind(this, slider.id));
+}
+
+window.addEventListener("load", (event) => {
+  for (const slider of document.querySelectorAll('.u-main')) {
+    universalSliderInit(slider);
+  };
+});
+
+
+</script>
