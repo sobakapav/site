@@ -1,0 +1,35 @@
+u-slider {
+  .u-slider-container {
+    overflow-y: visible !important;
+  }
+
+  .u-slider {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  .u-slide {
+    width: 90vw;
+    
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+
+    &.u-slide2 {
+      width: 45vw;
+      
+      @media (width >= 48rem) {
+        max-width: 24rem;
+      }
+    }
+  
+    &.u-slide3 {
+      width: 30vw;
+      
+      @media (width >= 48rem) {
+        max-width: 16rem;
+      }
+    }
+  
+  }
+}
