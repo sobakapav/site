@@ -33,6 +33,7 @@ const metadata = {
 const videoEntries = await getCollection('video');
 
 const videos = videoEntries.map(entry => entry.data).sort((a, b) => b.publishDate - a.publishDate);
+console.log(JSON.stringify(videoEntries));
 
 ---
 
