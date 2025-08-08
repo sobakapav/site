@@ -56,10 +56,10 @@ import '~/components/main/Bento.less';
   </div>
   
   <div>
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] dark:text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
     <div class="flex flex-col lg:flex-row gap-6">
-      <h3 class="font-heading text-3xl md:text-[97px] lg:text-[52px] xl:text-[97px] leading-none no-underline">{SITE.phone}</h3>
-      <div class="flex flex-col gap-1 justify-center">
+      <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[90px] leading-none no-underline">{SITE.phone}</h3>
+      <div class="flex flex-col gap-1 justify-center text-white">
         <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
         <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
         <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
@@ -93,7 +93,9 @@ import '~/components/main/Bento.less';
     <LogoTabComponent />
   </div>
    
-  <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
+  <div class="w-full aspect-video">
+    <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/4qZcGiqJbxU&t" title="Дизайн интерфейса как продуктовый инструмент" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
    
   <div class="gap-4">
     <div class="flex justify-between mb-4">
@@ -115,24 +117,30 @@ import '~/components/main/Bento.less';
       <a href="https://www.eduhund.ru/" class="uppercase text-3xl md:text-[52px] font-heading ml-[-30px] z-[0]">Дизайн-задачник →</a>
     </div>
   </div>
+  
+  <div class="gap-4">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Шпаргалка дня</h2>
+    <a href="https://sobakapav.ru/cheatsheets/component-design">
+      <h3 class="text-4xl sm:text-[52px] sm:leading-none font-heading text-white mb-4">Как и зачем использовать дизайн в компонентах</h3>
+      <div class="text-[#929292]">Элементы интерфейса • Библиотека компонентов • Figma components</div>
+    </a>
+  </div>
 </div>
 
-<div class="bento-grid3 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-6 gap-6">
-  <div class="gap-4 text-white flex flex-col justify-center">
-    <h3 class="text-[52px] font-heading text-white leading-none"><a href="/vacancy">Вакансии →</a></h3>
-  </div>
+<div class="bento-grid4 grid max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 mt-6 gap-6">
+  <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
    
   <div class="gap-4">
     <div class="flex justify-between mb-4">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Публикации</h2>
-      <div class="flex flex-row gap-6 mt-[-24px]">
-        <a class="https://vc.ru/u/230065-sobaka-pavlova" href=""><div class=""><Image src="~/assets/images/services/vc.svg" height={64} alt="VC" /></div></a>
-        <a class="" href="https://t.me/sobakawow"><div class=""><Image src="~/assets/images/services/tg.svg" height={64} alt="Telegram" /></div></a> 
-        <a class="" href=""><div class=""><Image src="~/assets/images/services/youtube.svg" height={64} alt="Youtube" /></div></a>
+      <div class="flex flex-row gap-6 ">
+        <a class="" href="https://vc.ru/u/230065-sobaka-pavlova"><div class=""><Image src="~/assets/images/services/vc.svg" layout="constrained-height" height={36} alt="VC" /></div></a>
+        <a class="" href="https://t.me/sobakawow"><div class=""><Image src="~/assets/images/services/tg.svg" layout="constrained-height" height={36} alt="Telegram" /></div></a> 
+        <a class="" href="https://www.youtube.com/@sobakapav"><div class=""><Image src="~/assets/images/services/youtube.svg" layout="constrained-height" height={36} alt="Youtube" /></div></a>
       </div>
     </div>
     
-    <div class="flex justify-between flex-col md:flex-row gap-4">
+    <div class="flex justify-between flex-col gap-4">
        <a href="/publications/pervasive-colors" class="basis-0 grow-[7]">
          <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Единая палитра для разных приложений</h3>
          <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Для тех, кто ценит цветовую консистентность.</div>
@@ -147,29 +155,19 @@ import '~/components/main/Bento.less';
           21.03.2025
         </div>
       </a>
-      
       {/*<a href="/publications/electrocardiography" class="basis-0 grow-[7]">
         <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">60 вариантов плëнки для ЭКГ одним решением</h3>
         <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Рассказываем, как учесть интересы врачей, разработки и бизнеса в медицинском интерфейсе.</div>
         <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
           14.03.2025
         </div>
-      </a> 
-      
-      <a href="https://vc.ru/design/1636094-kak-uvelichit-vyruchku-internet-magazina-bez-razrabotki-novogo-saita" class="basis-0 grow-[8]">
-        <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Как увеличить выручку интернет-магазина без разработки нового сайта</h3>
-        <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Мы работаем с интернет-сайтами и используем эволюционный путь. Не разрушаем старое до основания, чтобы затем построить новое-красивое-дорогое, а улучшаем то, что есть.</div>
-        <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
-          05.11.2024
-        </div>
-      </a>
-      <a href="https://vc.ru/life/1187442-kak-ux-dizainer-remont-delal" class="basis-0 grow-[7]">
-        <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Как UX-дизайнер ремонт делал</h3>
-        <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">С возрастом людям свойственно ставить свой комфорт выше эстетических ожиданий, если на то и другое не хватает средств. Что касается работников UX-сферы, то это усугубляется профдеформацией.</div>
-        <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
-          13.06.2024
-        </div>
-      </a> */}
+      </a> */}  
     </div>
   </div>
+  
+  <div class="gap-4 flex flex-col justify-center">
+    <h3 class="text-[52px] font-heading leading-none text-[--aw-color-grey1]"><a href="/vacancy">Вакансии →</a></h3>
+  </div> 
+  
 </div>
+
