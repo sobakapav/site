@@ -41,7 +41,7 @@ const { post, url } = Astro.props as any;
             {
               post.publishDate && (
                 <time datetime={String(post.publishDate)} class="inline-block">
-                  {getFormattedDate(post.publishDate)}
+                  {getFormattedDate(new Date(post.publishDate))}
                 </time>
               )
             }

@@ -20,7 +20,7 @@ const { post, hideFields } = Astro.props;
 >
   <Fragment slot="supertitle">
     <time datetime={String(post.publishDate)} class="inline-block">
-      {getFormattedDate(post.publishDate)}
+      {getFormattedDate(new Date(post.publishDate))}
     </time>
     {
       post.readingTime && (
