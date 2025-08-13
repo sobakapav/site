@@ -9,7 +9,7 @@ import { APP_BLOG } from 'astrowind:config';
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
-const { post, hideFields } = Astro.props;
+const { post, hideFields = {} } = Astro.props;
 ---
 
 <CommonCard
