@@ -65,7 +65,7 @@ const person = people[post.director.person];
         <div class="basis-0 grow-[2] w-full">
           <h2 class="text-5xl group font-heading mb-10">Например</h2>
           <RelatedPages 
-            pages={post.cases.map((page) => ({collection: 'portfolio', excerpt: page.text, page: page.title.toLowerCase()}))} 
+            pages={post.cases.map((page) => ({collection: 'portfolio', excerpt: page.text, page: page.title?.toLowerCase()}))} 
             hideFields={{ tags: true, year: true }}
             styles={{main: 'gap-6 flex-nowrap', textBlock: ''}}
           />
