@@ -85,7 +85,7 @@ const postSchema = () => z.object({
    }).optional(),
 
    metadata: metadataDefinition(),
- })
+});
 
 const postCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/post' }),
@@ -98,6 +98,53 @@ const researchCollection = defineCollection({
 
 const design2devCollection = defineCollection({
   schema: postSchema(),
+});
+
+const cheatsheetSchema = () => z.object({
+  title: z.string(),
+  subtitle: z.string().optional(),
+  alias: z.array(z.string()),
+  section: z.string().optional(),
+  tags: z.array(z.object({
+    tag: z.string().optional(),
+  })),
+  focuses: z.array(z.object({
+    title: z.string().optional(),
+    text: z.string().optional(),
+  })),
+  advices: z.array(z.object({
+    title: z.string().optional(),
+    text: z.string().optional(),
+  })),
+  cases: z.array(z.object({
+    title: z.string().optional(),
+    text: z.string().optional(),
+  })),
+  goodExample: z.object({
+    text: z.string().optional(),
+    link: z.string().optional(),
+    linktext: z.string().optional(),
+  }),
+  badExample: z.object({
+    text: z.string().optional(),
+    link: z.string().optional(),
+    linktext: z.string().optional(),
+  }),
+  instruments: z.array(z.object({
+    title: z.string().optional(),
+    text: z.string().optional(),
+    img: z.string().optional(),
+    link: z.string().optional(),
+  })),
+  director: z.object({
+    text: z.string().optional(),
+    person: z.string().optional(),
+  }),
+});
+
+const cheatsheetCollection = defineCollection({
+  loader: glob({ pattern: ['*.json'], base: 'src/content/cheatsheets' }),
+  schema: cheatsheetSchema(),
 });
 
 const portfolioSchema = () => z.object({
@@ -321,5 +368,6 @@ export const collections = {
   currentProjects: currentProjectsCollection,
   promo: promoCollection,
   video: videoCollection,
+  cheatsheets: cheatsheetCollection,
 };
 

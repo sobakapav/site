@@ -3,7 +3,7 @@
 import RelatedPage from '~/components/portfolio/RelatedPage.astro';
 import { Markdown } from '@astropub/md';
 
-const { pages } = Astro.props;
+const { pages, hideFields = {}, styles = {} } = Astro.props;
 
 ---
 
@@ -19,7 +19,7 @@ const { pages } = Astro.props;
       
       { page.collection && page.page && (
         <div>
-          <RelatedPage collection={page.collection} page={page.page} />
+          <RelatedPage collection={page.collection} page={page.page} excerpt={page.excerpt} hideFields={hideFields} styles={styles} />
         </div>
       )}
       

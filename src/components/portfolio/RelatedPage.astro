@@ -8,12 +8,24 @@ import { getEntry } from 'astro:content';
 import { getPermalink } from '~/utils/permalinks';
 import { findPostsBySlugs } from '~/utils/blog';
 
-const { collection, page } = Astro.props;
+const { collection, page, excerpt, hideFields, styles } = Astro.props;
 
-const data = (collection == 'post') 
-  ? (await findPostsBySlugs([page]))[0]
-  : (await getEntry(collection, page)).data;
+var data;
+if (collection == 'post') {
+  data = JSON.parse(JSON.stringify((await findPostsBySlugs([page]))[0]));
+} else {
+  const entry = (await getEntry(collection, page));
+  if (entry) {
+    data = JSON.parse(JSON.stringify(entry.data)); 
+  } else {
+    console.log(`Cannot find entry ${page} for collection ${collection}`);
+    data = {};
+  }
+}
 
+if (excerpt) {
+  data.excerpt = excerpt;
+}
 data.href = `/${collection}/${page}`;
 
 ---
@@ -21,23 +33,23 @@ data.href = `/${collection}/${page}`;
 <Fragment>
 
   {collection == 'portfolio' && (
-    <PortfolioListItem post={data} />
+    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} />
   )}
   
   {collection == 'promo' && (
-    <PortfolioListItem post={data} />
+    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} />
   )}
 
   {collection == 'post' && (
-    <BlogListItem post={data} />
+    <BlogListItem post={data} hideFields={hideFields} styles={styles} />
   )}
 
   {collection == 'research' && (
-    <ResearchListItem post={data} />
+    <ResearchListItem post={data} hideFields={hideFields} />
   )}
 
   {collection == 'services' && (
-    <ServicesListItem post={data} />
+    <ServicesListItem post={data} hideFields={hideFields} />
   )}
 
 </Fragment>

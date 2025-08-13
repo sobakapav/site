@@ -1,0 +1,129 @@
+---
+import './SinglePost.less';
+import { Icon } from 'astro-icon/components';
+import { people } from '~/navigation';
+
+import Image from '~/components/common/Image.astro';
+import PostTags from '~/components/blog/Tags.astro';
+import SocialShare from '~/components/common/SocialShare.astro';
+import { Markdown } from '@astropub/md';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Features5 from '~/components/widgets/Features5.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import RelatedLinks from '~/components/portfolio/RelatedLinks.astro';
+import Review from '~/components/portfolio/Review.astro';
+import Number from '~/components/portfolio/Number.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getFormattedDate, minuteCase } from '~/utils/utils';
+
+const { post } = Astro.props;
+const person = people[post.director.person];
+
+---
+
+<section class="py-0 mx-auto grow-0 shrink-0">
+  <article>
+  
+    <Hund3
+      classes={{
+        main: 'pb-10 md:pb-10',
+        subtitle: 'mb-0',
+      }}
+    >
+      <Fragment slot="title">
+        {post.title}
+      </Fragment>
+  
+      <Fragment slot="subtitle">
+       {post.subtitle}   
+      </Fragment>
+    </Hund3>
+
+    <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+      <h2 class="text-5xl group font-heading mb-10">Три главных предмета в фокусе внимания</h2>
+      <Features4
+        columns={ 3 }
+        items={ post.focuses?.map((item) => ({title: item.title, description: item.text})) }
+        classes={}
+        defaultIcon="tabler:circle-check-filled"
+      />
+      
+      <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16 " >
+        <div class="basis-0 grow-[2] w-full gap-15 ">
+          <h2 class="text-5xl group font-heading mb-10">Например</h2>
+          <RelatedPages 
+            pages={post.cases.map((page) => ({collection: 'portfolio', excerpt: page.text, page: page.title.toLowerCase()}))} 
+            hideFields={{ tags: true, year: true }}
+            styles={{main: 'gap-6 flex-nowrap', textBlock: ''}}
+          />
+
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-col gap-4 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 grow basis-0 rounded">
+              <img width="28" height="38" src="/images/cheatsheets/good.svg">
+              <h3 class="text-3xl group font-heading">Хороший образец</h3>
+              <div class="flex flex-col blue-check-list gap-4">
+                <Markdown.Inline of={post.goodExample.text} />                
+              </div>
+            </div>
+            <div class="flex flex-col gap-4 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 grow basis-0 rounded">
+              <img width="36" height="38" src="/images/cheatsheets/bad.svg">
+              <h3 class="text-3xl group font-heading">Так делать не надо</h3>
+              <div class="flex flex-col blue-check-list gap-4">
+                <Markdown.Inline of={post.badExample.text} />                
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h2 class="text-5xl group font-heading mb-10">Инструменты</h2>
+            <Features5
+              columns={ 2 }
+              items={ post.instruments?.map((item) => ({title: item.title, description: item.text, image: item.img, link: item.link})) }
+            />          
+          </div>
+          
+          <div class="flex flex-col md:flex-row gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 rounded">
+             <img src="{post.person.img}">
+             <div>
+              <Markdown.Inline of={post.director.text} /> 
+              <Markdown.Inline of={people.signature} /> 
+             </div>
+          </div>
+          
+             
+        </div>
+        
+        <div class="basis-0 grow w-full flex flex-col gap-10 justify-between order-last md:order-none">
+          <div class="bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-xl">
+            <h2 class="advice group font-heading mb-10">5 <span>советов,</span><br> как делать<br> хорошо</h2>
+            <Features4
+              columns={ 1 }
+              items={ post.advices?.map((item) => ({title: item.title, description: item.text})) }
+              classes={{container: 'text-white', items: {counter: 'text-[--aw-color-pink]'}}}
+              defaultIcon="tabler:circle-check-filled"
+            />
+          </div>
+          <div class="flex flex-col gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 rounded">
+            <h3 class="text-3xl group font-heading">Хотите у нас научиться?</h3>
+            1000+ упражнений по дизайну интерфейсов.
+            <a href="https://eduhund.com">eduhund.com</a>
+          </div> 
+          <div class="flex flex-col gap-2 bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded">
+            <h3 class="text-3xl group font-heading">Ищете подрядчика или команду?</h3>
+            Давайте обсудим вашу задачу
+            <div class="bg-[#048e86] px-5 py-[10px] max-w-[167px] rounded">
+              <a href="https://sobakapav.ru/portfolio">Заказать проект</a>
+            </div>
+            <a href="">we@sobakapav.ru</a>
+            <a href="">7 (933) 484-26-80</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>     
+  </article>
+  
+</section>

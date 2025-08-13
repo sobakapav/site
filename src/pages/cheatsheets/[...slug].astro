@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import merge from 'lodash.merge';
+
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/cheatsheets/SinglePost.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+
+export async function getStaticPaths() {
+  const cheatsheets = await getCollection('cheatsheets');
+  const entries = [];
+  for (var entry of cheatsheets) {
+    if (entry.data?.alias) {
+      for (var alias of entry.data?.alias) {
+        entries.push({params: { slug: alias }, props: { entry }});
+      }
+    } else {
+      console.log(`Cannot find alias for entry: ${JSON.stringify(entry)}`);
+    }
+  }
+  
+  return entries;
+}
+
+const { entry } = Astro.props;
+
+const metadata = merge(
+  {
+    title: entry.data.metadata?.title,
+    description: entry.data.metadata?.description,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: 'article',
+      ...entry.data.metadata?.openGraph,
+    },
+  },
+  { ...(entry?.metadata ? { ...entry.metadata, canonical: entry.metadata?.canonical || url } : {}) }
+) as MetaData;
+
+---
+
+<Layout metadata={metadata}>
+  <Bread
+    title={entry.data.title}
+    parent="/cheatsheets"
+    parentTitle="Шпаргалки"
+  />
+    
+  <SinglePost post={{ ...entry.data }} />
+</Layout>
