@@ -54,12 +54,17 @@
 	],
 	"cases": [
 		{
-			"title": "",
-			"text": "Ни в каких. Ни разу бизнес не принес нам JTBD. Еще раз напомним, что это бизнесовая, а не интерфейсная методика.",
-			"img": "/images/cheatsheets/blank.png",
+			"title": "foodtrucks",
+			"text": "Реализовали в интерфейсе 60 JTBD",
 			"link": "",
 			"background": "#ECF9FF"
-		}
+		},
+    {
+      "title": "x5-paket",
+      "text": "реализовали в интерфейсе 34 JTBD",
+      "link": "",
+      "background": "#ECF9FF"
+    }
 	],
 	"goodExample": {
 		"text": "Чужой пример, зато наглядно иллюстрирует основную мысль этой шпаргалки",
