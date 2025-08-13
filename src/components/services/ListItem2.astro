@@ -7,7 +7,7 @@ import CommonCard from '~/components/common/CommonCard.astro';
 
 import { findImage } from '~/utils/images';
 
-const { post, hideFields } = Astro.props;
+const { post, hideFields = {} } = Astro.props;
 const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
 
 ---
