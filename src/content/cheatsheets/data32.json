@@ -54,11 +54,12 @@
 	],
 	"cases": [
 		{
-			"title": "Eduhund",
+			"title": "alfastrah-design",
 			"text": "Использовали дизайн-систему и UI-kit Consta (а ведь могли бы нарисовать с нуля!) и очень быстро получили работающий продукт."
 		},
 		{
-			"name": "<a href=\"https://sobakapav.ru/portfolio/control-mobile\">Контроль</a>, <a href=\"https://www.sobakapav.ru/microcases/Jeffit\">Jeffit</a>, <a href=\"https://www.sobakapav.ru/microcases/RemTech\">Ремтехкомлект</a>",
+      "title": "alfastrah-design",
+      "name": "<a href=\"https://sobakapav.ru/portfolio/control-mobile\">Контроль</a>, <a href=\"https://www.sobakapav.ru/microcases/Jeffit\">Jeffit</a>, <a href=\"https://www.sobakapav.ru/microcases/RemTech\">Ремтехкомлект</a>",
 			"text": "Долгое время нашим фаворитом был Ant.",
 			"img": "/images/cheatsheets/control_mobile.png",
 			"link": "",
