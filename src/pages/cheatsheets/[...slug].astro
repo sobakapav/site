@@ -45,6 +45,11 @@ const metadata = merge(
       follow: true,
     },
     openGraph: {
+      images: [{
+            url: '~/assets/images/cheatsheets.png',
+            width: 1200,
+            height: 630
+          }],
       type: 'article',
       ...entry.data.metadata?.openGraph,
     },
