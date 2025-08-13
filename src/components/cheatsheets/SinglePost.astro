@@ -18,18 +18,20 @@ import Number from '~/components/portfolio/Number.astro';
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
-const { post } = Astro.props;
+const { post, next } = Astro.props;
 const person = people[post.director.person];
 
 ---
 
-<section class="py-0 mx-auto grow-0 shrink-0">
+<section class="py-0 mx-auto grow-0 shrink-0 single-post">
   <article>
   
     <Hund3
       classes={{
         main: 'pb-10 md:pb-10',
         subtitle: 'mb-0',
+        container: 'max-w-7xl',
+        subtitleContainer: 'max-w-7xl',
       }}
     >
       <Fragment slot="title">
@@ -37,7 +39,16 @@ const person = people[post.director.person];
       </Fragment>
   
       <Fragment slot="subtitle">
-       {post.subtitle}   
+       <div class="flex flex-col md:flex-row">
+        <div class="max-w-3xl">{post.subtitle}</div>
+        <div class="basis-0 grow">
+          {post.tags.map(t => (
+            <div class="text-[#9F9F9F]">
+              #{t.tag}
+            </div>
+          ))}
+        </div>
+       </div>
       </Fragment>
     </Hund3>
 
@@ -50,8 +61,8 @@ const person = people[post.director.person];
         defaultIcon="tabler:circle-check-filled"
       />
       
-      <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16 " >
-        <div class="basis-0 grow-[2] w-full gap-15 ">
+      <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16" >
+        <div class="basis-0 grow-[2] w-full">
           <h2 class="text-5xl group font-heading mb-10">Например</h2>
           <RelatedPages 
             pages={post.cases.map((page) => ({collection: 'portfolio', excerpt: page.text, page: page.title.toLowerCase()}))} 
@@ -59,15 +70,15 @@ const person = people[post.director.person];
             styles={{main: 'gap-6 flex-nowrap', textBlock: ''}}
           />
 
-          <div class="flex flex-col md:flex-row gap-6">
-            <div class="flex flex-col gap-4 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 grow basis-0 rounded">
+          <div class="flex flex-col md:flex-row gap-6 my-16">
+            <div class="flex flex-col gap-4 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 grow basis-0 rounded-lg">
               <img width="28" height="38" src="/images/cheatsheets/good.svg">
               <h3 class="text-3xl group font-heading">Хороший образец</h3>
               <div class="flex flex-col blue-check-list gap-4">
                 <Markdown.Inline of={post.goodExample.text} />                
               </div>
             </div>
-            <div class="flex flex-col gap-4 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 grow basis-0 rounded">
+            <div class="flex flex-col gap-4 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 grow basis-0 rounded-lg">
               <img width="36" height="38" src="/images/cheatsheets/bad.svg">
               <h3 class="text-3xl group font-heading">Так делать не надо</h3>
               <div class="flex flex-col blue-check-list gap-4">
@@ -84,19 +95,26 @@ const person = people[post.director.person];
             />          
           </div>
           
-          <div class="flex flex-col md:flex-row gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 rounded">
-             <img src="{post.person.img}">
+          <div class="flex flex-col md:flex-row md:flex-nowrap gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 mb-16 rounded-lg">
+             <div class="basis-[104px] shrink-0 grow-0"><img width="104" height="104" class="rounded" src={person.img} /></div>
              <div>
-              <Markdown.Inline of={post.director.text} /> 
-              <Markdown.Inline of={people.signature} /> 
+              <div><Markdown.Inline of={post.director.text} /> </div>
+              <div class="text-sm text-[#9F9F9F] mt-2"><Markdown.Inline of={person.signature} /> </div>
              </div>
           </div>
           
-             
+          <div>
+            <h2 class="text-5xl group font-heading mb-10">Другие шпаргалки</h2>
+            <ul class="more">
+              {next.map(n => (
+                <li><a href={n.link}>{n.title}</a></li>
+              ))}
+            </ul>
+          </div>
         </div>
         
         <div class="basis-0 grow w-full flex flex-col gap-10 justify-between order-last md:order-none">
-          <div class="bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-xl">
+          <div class="bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-lg">
             <h2 class="advice group font-heading mb-10">5 <span>советов,</span><br> как делать<br> хорошо</h2>
             <Features4
               columns={ 1 }
@@ -105,12 +123,12 @@ const person = people[post.director.person];
               defaultIcon="tabler:circle-check-filled"
             />
           </div>
-          <div class="flex flex-col gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 rounded">
+          <div class="flex flex-col gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 rounded-lg">
             <h3 class="text-3xl group font-heading">Хотите у нас научиться?</h3>
             1000+ упражнений по дизайну интерфейсов.
-            <a href="https://eduhund.com">eduhund.com</a>
+            <a class="text-[--aw-color-accent]" href="https://eduhund.com">eduhund.com</a>
           </div> 
-          <div class="flex flex-col gap-2 bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded">
+          <div class="flex flex-col gap-2 bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-lg">
             <h3 class="text-3xl group font-heading">Ищете подрядчика или команду?</h3>
             Давайте обсудим вашу задачу
             <div class="bg-[#048e86] px-5 py-[10px] max-w-[167px] rounded">

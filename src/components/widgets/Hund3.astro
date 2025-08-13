@@ -31,7 +31,7 @@ const {
   <div class="relative max-w-7xl mx-auto">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class:list={[twMerge('pt-6 md:pt-8 pb-10 md:pb-12 px-4 sm:px-6', classes.main || '')]}>
-      <div class="text-left max-w-5xl">
+      <div class:list={[twMerge('text-left max-w-5xl', classes.container || '')]}>
         {
           tagline && (
             <p
@@ -48,7 +48,7 @@ const {
             />
           )
         }
-        <div class="max-w-3xl">
+        <div class:list={[twMerge('max-w-3xl', classes.subtitleContainer || '')]}>
           {subtitle && (
             <p class:list={[twMerge('text-xl text-muted mb-6 dark:text-slate-300', classes.subtitle || '')]} set:html={subtitle} />
           )}         

@@ -1,0 +1,99 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import PortfolioCollection from '~/components/portfolio/PortfolioCollection2.astro';
+import Headline from '~/components/blog/Headline.astro';
+import { getCollection } from 'astro:content';
+
+import Bread from '~/components/widgets/Bread.astro';
+
+import { cheatsheetSectionNames } from '~/navigation';
+
+const metadata = {
+  title: 'Сто шпаргалок по дизайну интерфейсов • Собака Павлова',
+  canonical: 'https://sobakapav.ru/cheatsheets',
+  description: "Зафиксировали самые насущные темы и выдали четкие инструкции, как действовать в том или ином случае.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/portfolio.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+const sectionsMap = {};
+const sections = [];
+for (var section in cheatsheetSectionNames) {
+  const sectionItems = [];
+  sectionsMap[section] = sectionItems;
+  sections.push({id: section, title: cheatsheetSectionNames[section].title, text: cheatsheetSectionNames[section].text, items: sectionItems});
+}
+
+const cheatsheets = await getCollection('cheatsheets');
+
+for (var cheatsheet of cheatsheets) {
+  if (sectionsMap[cheatsheet.data.section]) {
+    sectionsMap[cheatsheet.data.section].push(cheatsheet.data);
+  } else {
+    console.log(`Unknown section ${cheatsheet.data.section} in file ${cheatsheet.id}`);  
+  }
+}
+
+---
+
+<Layout metadata={metadata}>
+  <Bread title="Шпаргалки" />
+    
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Шпаргалки по дизайну интерфейсов
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <div class="mb-6">
+        {sections.map(section => (
+          <a class="text-3xl font-heading mb-10 hover:text-[--aw-color-accent]" href={`#${section.id}`}>{section.title}</a><span class="text-3xl text-[--aw-color-hund]"> • </span>
+        ))}      
+      </div>
+      <p class="text-xl mb-2 text-[--aw-color-text-muted]">Реальный проект по дизайну интерфейсов — это огромное количество вопросов, которые возникают на всех этапах. Какие-то в очень четких формулировках, какие-то витают в воздухе.</p>
+      <p class="text-xl text-[--aw-color-text-muted]">Мы взяли на себя смелость зафиксировать самые насущные темы и выдать достаточно четкие (но не поверхностные) инструкции, как действовать в том или ином случае. </p>
+      
+    </Fragment>
+  </Hund3>
+      
+  <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+    <ul class="columns-2">
+      {sections.map(section => (
+        <li class="break-inside-avoid-column mb-16">
+          <a id={section.id} />
+          <h2 class="text-5xl group font-heading mb-2">{section.title}</h2>
+          <p class="text-xl text-[--aw-color-text-muted] mb-2">{section.text}</p>
+          
+          <ul>
+            {section.items.map(item => (
+              <li class="mb-2">
+                <a class="underline underline-offset-2 hover:text-[--aw-color-accent]" href={`/cheatsheets/${item.alias[0]}`}>
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>
