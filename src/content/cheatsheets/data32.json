@@ -54,22 +54,19 @@
 	],
 	"cases": [
 		{
-			"title": "alfastrah-design",
-			"text": "Использовали дизайн-систему и UI-kit Consta (а ведь могли бы нарисовать с нуля!) и очень быстро получили работающий продукт."
+			"title": "remteh",
+			"text": "Использовали, развивали и дополняли UI-kit заказчика."
 		},
 		{
-      "title": "alfastrah-design",
-      "name": "<a href=\"https://sobakapav.ru/portfolio/control-mobile\">Контроль</a>, <a href=\"https://www.sobakapav.ru/microcases/Jeffit\">Jeffit</a>, <a href=\"https://www.sobakapav.ru/microcases/RemTech\">Ремтехкомлект</a>",
-			"text": "Долгое время нашим фаворитом был Ant.",
-			"img": "/images/cheatsheets/control_mobile.png",
-			"link": "",
+      "title": "jeffit",
+			"text": "Долгое время нашим фаворитом был Ant. ",
 			"background": "#E6F6FE"
 		}
 	],
 	"goodExample": {
-		"text": "Использовали, развивали и дополняли UI-kit заказчика.",
-		"link": "",
-		"linktext": "Сервисные инженеры, Петрович, Finex, Брайты"
+		"text": "Использовали дизайн-систему и UI-kit Consta (а ведь могли бы нарисовать с нуля!) и очень быстро получили работающий продукт.",
+		"link": "https://www.eduhund.ru/",
+		"linktext": "Eduhund"
 	},
 	"badExample": {
 		"text": "Когда вы решаете UX-задачу, а на сдачу создаете UI-kit."
