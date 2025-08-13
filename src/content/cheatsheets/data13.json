@@ -54,11 +54,11 @@
 	],
 	"cases": [
 		{
-			"title": "Gazprom",
+			"title": "gazprom",
 			"text": "Сохранили визуальный язык, но полностью поменяли концептуальное решение."
 		},
 		{
-			"title": "Dipaul",
+			"title": "dipol",
 			"text": "Первый проект, где мы сразу использовали новую (на момент работы) возможность Figma — переменные.",
 			"img": "/images/cheatsheets/dipol.svg",
 		    "background": "#ECFFFF"

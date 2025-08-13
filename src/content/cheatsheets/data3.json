@@ -54,14 +54,14 @@
 	],
 	"cases": [
 		{
-			"title": "Brighteye",
+			"title": "brighteye",
 			"text": "Один интерфейс и для огромного монитора диспетчера, и для 10-дюймового планшета кладовщика. Для тестирования заказчик закупил ровно те планшеты, которые будут использоваться при внедрении.",
 			"img": "/images/cheatsheets/brighteye.png",
 			"link": "https://sobakapav.ru/portfolio/brighteye",
 			"background": "#DDF8FF"
 		},
 		{
-			"title": "Easydocs",
+			"title": "easydocs",
 			"text": "Адаптировали мобильную версию под веб. Разрешение то же самое, но элементы другие.",
 			"img": "/images/cheatsheets/easydocs.png",
 			"link": "https://sobakapav.ru/portfolio/easydocs",
