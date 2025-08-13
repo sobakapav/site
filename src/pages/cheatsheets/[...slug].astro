@@ -25,6 +25,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 
+const nextEntries = [];
+const cheatsheets = await getCollection('cheatsheets');
+
+const idx = cheatsheets.findIndex(e => (e.id === entry.id));
+if (idx >= 0) {
+  for (var i = 0; i < 3; i++) {
+    const n = cheatsheets[(idx + i + 1) % cheatsheets.length];  
+    nextEntries.push({ title: n.data.title, link: `/cheatsheets/${n.data.alias[0]}` });
+  }
+}
+
 const metadata = merge(
   {
     title: entry.data.metadata?.title,
@@ -50,5 +61,5 @@ const metadata = merge(
     parentTitle="Шпаргалки"
   />
     
-  <SinglePost post={{ ...entry.data }} />
+  <SinglePost post={{ ...entry.data }} next={nextEntries}/>
 </Layout>
