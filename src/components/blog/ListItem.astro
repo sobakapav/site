@@ -9,7 +9,7 @@ import { APP_BLOG } from 'astrowind:config';
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
-const { post } = Astro.props;
+const { post, hideFields } = Astro.props;
 ---
 
 <CommonCard
@@ -43,7 +43,7 @@ const { post } = Astro.props;
   </Fragment>
 
   {
-    post.tags && (
+    !hideFields.tags && post.tags && (
       <Fragment slot="footer">
         <footer class="mt-5">
           <PostTags tags={post.tags} />

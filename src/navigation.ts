@@ -332,3 +332,34 @@ export const defaultTools = [
     image: '~/assets/images/services/google-doc.svg',
   },
 ];
+
+export const people = {
+  "NP": {
+    "signature": "Наталья Прокофьева, генеральный директор «Собаки Павловой»",
+    "img": "/images/cheatsheets/np.jpeg",
+    "tg": "https://t.me/procosha",
+    "linkedin": "",
+    "phone": ""
+  },
+  "OP": {
+    "signature": "Ольга Павлова, директор по развитию «Собаки Павловой»",
+    "img": "/images/cheatsheets/op.jpeg",
+    "tg": "",
+    "linkedin": "",
+    "phone": ""
+  },
+  "ER": {
+    "signature": "Евгений Романовский, руководитель проектного офиса «Собаки Павловой»",
+    "img": "/images/cheatsheets/er.jpeg",
+    "tg": "",
+    "linkedin": "",
+    "phone": ""
+  },
+  "RN": {
+    "signature": "Роман Небыль, директор по производству «Собаки Павловой»",
+    "img": "/images/cheatsheets/rn.jpeg",
+    "tg": "https://t.me/roman_nebel",
+    "linkedin": "",
+    "phone": ""
+  }
+};

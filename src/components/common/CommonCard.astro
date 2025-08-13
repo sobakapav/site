@@ -1,6 +1,8 @@
 ---
 import Image from '~/components/common/Image.astro';
 import { Markdown } from '@astropub/md';
+import merge from 'lodash.merge';
+import { twMerge } from 'tailwind-merge';
 
 const {
   image, 
@@ -15,16 +17,13 @@ const {
   noCard = false,
   awards,
   isNew,
-  classes = {
-    main: 'blog-list-item',
-    title: '',
-    text: ''
-  }
+  classes = {}
 } = Astro.props;
 
+const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock: 'mt-4 w-72', }, classes);
+  
 ---
-<a href={link}>
-<article class:list={['flex flex-wrap mb-6 relative', classes.main]}>
+<article class:list={[twMerge('flex flex-wrap mb-6 relative', myClasses.main)]}>
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>
@@ -77,7 +76,7 @@ const {
     </div>
   )}
   
-  <div class="mt-4 w-72">
+  <div class={myClasses.textBlock}>
     <header>
       {supertitle && (
         <div class="mb-1 hover:text-[--aw-color-accent]">
@@ -86,7 +85,7 @@ const {
       )}
        
       <span>     
-      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading z-[2]", classes.title]}>
+      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading z-[2]", myClasses.title]}>
         {link ? (
           <a href={link}>
             <Markdown.Inline of={title} />
@@ -106,7 +105,7 @@ const {
       link ? (
         <a href={link}>
           {text && (
-            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", classes.text]}>
+            <p class:list={["flex-grow dark:text-slate-400 format-subtitle-markdown", myClasses.text]}>
               <Markdown.Inline of={text} />
             </p>
           )}
@@ -125,4 +124,3 @@ const {
     )}
   </div>
 </article>
-</a>

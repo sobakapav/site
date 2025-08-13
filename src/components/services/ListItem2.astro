@@ -7,7 +7,7 @@ import CommonCard from '~/components/common/CommonCard.astro';
 
 import { findImage } from '~/utils/images';
 
-const { post } = Astro.props;
+const { post, hideFields } = Astro.props;
 const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
 
 ---
@@ -29,7 +29,7 @@ const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
     <p class="text-muted">{(post.excerpt)}</p>
   </Fragment>
   
-  {post.tags && (
+  { !hideFields.tags && post.tags && (
     <Fragment slot="footer">
       <footer class="mt-5">
         <PostTags tags={post.tags} />

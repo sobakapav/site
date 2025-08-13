@@ -1,5 +1,6 @@
 ---
 import { Markdown } from '@astropub/md';
+import { twMerge } from 'tailwind-merge';
 
 import CommonCard from '~/components/common/CommonCard.astro';
 import DoubleCard from '~/components/common/DoubleCard.astro';
@@ -7,10 +8,13 @@ import PortfolioTags from '~/components/portfolio/ProtfolioTags.astro';
 
 import { findImage } from '~/utils/images';
 
-const { post, mode="single" } = Astro.props; 
+const { post, mode = 'single', hideFields = {}, styles = {} } = Astro.props; 
 const image = (await findImage(post.thumbnail?.src)) as ImageMetadata | undefined;
 const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | undefined;
 const doubleMode = (mode == 'double');
+
+const myStyles = JSON.parse(JSON.stringify(styles));
+myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidden' : ''));
 
 ---
 <CommonCard 
@@ -21,13 +25,18 @@ const doubleMode = (mode == 'double');
   noCard={post.noCard}
   isNew={post.isNew}
   awards={post.awards}
-  classes={{main: 'blog-list-item' + (doubleMode ? ' md:hidden' : '')}}
+  classes={myStyles}
 >
   <Fragment slot="footer">
-    <PortfolioTags tags={post.tags} />
-    <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4 items-center mt-2">
-      {post.publishYear}
-    </span>
+    { (! hideFields.tags) && (
+      <PortfolioTags tags={post.tags} />
+    )}
+    
+    { (! hideFields.year) && (
+      <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4 items-center mt-2">
+        {post.publishYear}
+      </span>
+    )}
   </Fragment>
   
 </CommonCard>
@@ -42,10 +51,15 @@ const doubleMode = (mode == 'double');
     classes={{main: 'blog-list-item hidden md:block'}}
   >
     <Fragment slot="footer">
-      <span class:list={["text-xl sm:text-3xl leading-tight font-heading", post.thumbnail.isDark ? "text-[--aw-color-pink]" : "text-[--aw-color-hund]"]}>
-       {post.publishYear}
-      </span>
-      <PortfolioTags tags={post.tags} />
+      { (! hideFields.year) && (
+        <span class:list={["text-xl sm:text-3xl leading-tight font-heading", post.thumbnail.isDark ? "text-[--aw-color-pink]" : "text-[--aw-color-hund]"]}>
+         {post.publishYear}
+        </span>
+      )}
+      
+      { (! hideFields.tags) && (
+        <PortfolioTags tags={post.tags} />
+      )}
     </Fragment>
      
   </DoubleCard>

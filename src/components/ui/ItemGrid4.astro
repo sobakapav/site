@@ -19,6 +19,7 @@ const {
   title: titleClass = "",
   description: descriptionClass = "",
   icon: defaultIconClass = "text-primary",
+  counter = '',
 } = classes;
 ---
 
@@ -50,7 +51,7 @@ const {
           classes: itemClasses = {},
         }, idx) => (
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
-            <div class="flex justify-center text-[#9F9F9F] text-5xl leading-none mr-3 font-heading">
+            <div class:list={[twMerge('flex justify-center text-[#9F9F9F] text-5xl leading-none mr-3 font-heading', counter)]}>
               {(idx + 1)}
             </div>
             <div class="mt-0">

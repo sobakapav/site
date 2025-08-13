@@ -1,0 +1,52 @@
+---
+import { twMerge } from 'tailwind-merge';
+import { Markdown } from '@astropub/md';
+
+const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+
+const {
+  container: containerClass = '',
+  // container: containerClass = "sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+  panel: panelClass = '',
+  title: titleClass = '',
+  description: descriptionClass = '',
+} = classes;
+---
+
+{
+  items && (
+    <div
+      class={twMerge(
+        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+          columns === 4
+            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+            : columns === 3
+              ? 'lg:grid-cols-3 sm:grid-cols-2'
+              : columns === 2
+                ? 'sm:grid-cols-2 '
+                : ''
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(({ title, subtitle, description, image, link, classes: itemClasses = {} }) => (
+        <div class={twMerge('flex flex-row', panelClass, itemClasses?.panel)}>
+          {image && (
+            <img src={image} class="w-12 h-12 mr-4 mt-2" />
+          )}
+          <div class="flex flex-col">
+            {title && <h3 class={twMerge('text-xl', titleClass, itemClasses?.title)}><Markdown.Inline of={title} /></h3>}
+            {subtitle && <h4 class={twMerge('text-base text-[--aw-color-hund]', titleClass, itemClasses?.subtitle)}><Markdown.Inline of={subtitle} /></h4>}
+            {description && (
+              <div
+                class={twMerge(`${title ? 'mt-3' : ''} format-subtitle-markdown marked-list`, descriptionClass, itemClasses?.description)}
+              >
+                <Markdown.Inline of={description} />
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
