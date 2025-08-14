@@ -97,7 +97,7 @@ const person = people[post.director.person];
           </div>
           
           <div class="flex flex-col md:flex-row md:flex-nowrap gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 mb-16 rounded-lg">
-             <div class="basis-[104px] shrink-0 grow-0"><img width="104" height="104" class="rounded" src={person.img} /></div>
+             <div class="basis-[104px] shrink-0 grow-0"><img width="104" height="104" class="rounded-[52px]" src={person.img} /></div>
              <div>
               <div><Markdown.Inline of={post.director.text} /> </div>
               <div class="text-sm text-[#9F9F9F] mt-2"><Markdown.Inline of={person.signature} /> </div>
@@ -124,19 +124,19 @@ const person = people[post.director.person];
               defaultIcon="tabler:circle-check-filled"
             />
           </div>
-          <div class="flex flex-col gap-6 bg-[#E7EAEA] dark:bg-[--aw-color-bg-accent] p-8 rounded-lg">
+          <div class="bg-[url(/images/cheatsheets/eduhund-2.png)] bg-bottom bg-right bg-no-repeat bg-contain p-8 rounded-lg flex flex-col gap-4">
             <h3 class="text-3xl group font-heading">Хотите у нас научиться?</h3>
-            1000+ упражнений по дизайну интерфейсов.
+            <p>1000+ упражнений по дизайну интерфейсов.</p>
             <a class="text-[--aw-color-accent]" href="https://eduhund.com">eduhund.com</a>
           </div> 
           <div class="flex flex-col gap-2 bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-lg">
             <h3 class="text-3xl group font-heading">Ищете подрядчика или команду?</h3>
-            Давайте обсудим вашу задачу
+            А вот и мы:
             <div class="bg-[#048e86] px-5 py-[10px] max-w-[167px] rounded">
-              <a href="https://sobakapav.ru/portfolio">Заказать проект</a>
+              <a href="mailto:we@sobakapav.ru" >Заказать проект</a>
             </div>
-            <a href="">we@sobakapav.ru</a>
-            <a href="">7 (933) 484-26-80</a>
+            <a href="mailto:we@sobakapav.ru" class="underline underline-offset-2 hover:text-[--aw-color-accent]">we@sobakapav.ru</a>
+            <p>+7 (495) 191-92-81</p>
             </div>
           </div>
         </div>
