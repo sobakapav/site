@@ -1,90 +1,56 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-import Features2 from '~/components/widgets/Features2.astro';
-import Features from '~/components/widgets/Features.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Brands from '~/components/widgets/Brands.astro';
-
-import YoutubeVideo from '~/components/common/YoutubeVideo.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Bread from '~/components/widgets/Bread.astro';
 
 const metadata = {
-  title: 'Передача макетов в разработку',
+  title: 'Передача макетов в разработку • Собаки Павловой',
+  canonical: 'https://sobakapav.ru/design2dev',
+  description: "Девять ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/design2dev.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
 };
+
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="Startup Web Demo"
-    actions={[
-      {
-        variant: 'primary',
-        target: '_blank',
-        text: 'Get templates',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
-      },
-      { text: 'Learn more', href: '#features' },
-    ]}
+  <Bread title="Портфолио" />
+  
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
   >
     <Fragment slot="title">
-      Передача макетов <span class="text-accent dark:text-white highlight">в разработку</span> 
+      Передача макетов в разработку
     </Fragment>
 
     <Fragment slot="subtitle">
-        Разработка — следующий после дизайна этап реализации проекта. И чем качественнее была выполнена работа на этапе дизайна, тем быстрее и дешевле разработка. Если придерживаться определенных принципов работы на этапе проектирования, то вопрос качества решается сам собой в процессе.
-
-        Мы придерживаемся девяти ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.
+      Разработка — следующий после дизайна этап реализации проекта. И чем качественнее была выполнена работа на этапе дизайна, тем быстрее и дешевле разработка. Если придерживаться определенных принципов работы на этапе проектирования, то вопрос качества решается сам собой в процессе.
+      
+      Мы придерживаемся девяти ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.  
     </Fragment>
-
-    <!--<Fragment slot="image">
-      <YoutubeVideo videoId="gxBkghlglTg" title="Astro just Launched.... Could it be the ultimate web framework?" />
-    </Fragment>-->
-  </Hero>
+  </Hund3>
    
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Кому полезно?"
-    
-    items={[
-      {
-        title: 'Менеджерам',
-        description:
-          'Четкие объяснения с иллюстрациями «что такое хорошо, и что такое плохо» помогают контролировать дизайнеров и не позволяют всплывать лишним часам на проекте',
-        icon: 'tabler:number-1',
-      },
-      {
-        title: 'Дизайнерам',
-        description:
-          'Лежащий в основе этих практик наш собственный опыт хождения по граблям позволяет дизайнерам учиться на чужих ошибках',
-        icon: 'tabler:number-2',
-      },
-      {
-        title: 'Разработчикам',
-        description:
-          'Соблюдение этих принципов ведет к сокращению времени разработки и, как следствие, финансовых затрат',
-        icon: 'tabler:number-3',
-      },
-    ]}
-  >
-    
-  </Features2>
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
+  <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+  
+  <Features4
     title="9 практик по передаче макетов"
-    
-    columns={3}
+    columns={ 3 }
     items={[
       {
         title: 'Обсуждение с заказчиком требований к макету',
@@ -136,7 +102,40 @@ const metadata = {
         icon: 'tabler:plug-connected',
       },
     ]}
+    classes={}
+    defaultIcon="tabler:circle-check-filled"
   />
+  
+  <Features4
+    title="Кому полезно?"
+    columns={ 3 }
+    items={[
+      {
+        title: 'Менеджерам',
+        description:
+          'Четкие объяснения с иллюстрациями «что такое хорошо, и что такое плохо» помогают контролировать дизайнеров и не позволяют всплывать лишним часам на проекте',
+        icon: 'tabler:number-1',
+      },
+      {
+        title: 'Дизайнерам',
+        description:
+          'Лежащий в основе этих практик наш собственный опыт хождения по граблям позволяет дизайнерам учиться на чужих ошибках',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Разработчикам',
+        description:
+          'Соблюдение этих принципов ведет к сокращению времени разработки и, как следствие, финансовых затрат',
+        icon: 'tabler:number-3',
+      },
+    ]}
+    classes={}
+    defaultIcon="tabler:circle-check-filled"
+  />
+  
+  </section>
+
+  
 
   
 
