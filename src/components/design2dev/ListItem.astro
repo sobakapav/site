@@ -1,0 +1,33 @@
+---
+import { Markdown } from '@astropub/md';
+import { twMerge } from 'tailwind-merge';
+
+import CommonCard from '~/components/common/CommonCard.astro';
+
+import { findImage } from '~/utils/images';
+
+const { post, hideFields = {} } = Astro.props;
+const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
+
+---
+<CommonCard 
+  image={image} 
+  link={post.href} 
+  title={post.title}
+  classes={{main: 'justify-normal blog-list-item image-animate'}}
+>
+
+  <Fragment slot="textblock">
+    <p class="text-muted mb-2">{(post.description)}</p>
+
+  </Fragment>
+  
+  { !hideFields.tags && post.tags && (
+    <Fragment slot="footer">
+      <footer class="mt-5">
+        <PostTags tags={post.tags} />
+      </footer> 
+    </Fragment>
+  )}
+  
+</CommonCard>

@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import Bread from '~/components/widgets/Bread.astro';
+import Design2DevCollection from '~/components/design2dev/Design2DevCollection.astro';
 
 const metadata = {
   title: 'Передача макетов в разработку • Собаки Павловой',
@@ -48,63 +49,19 @@ const metadata = {
    
   <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
   
-  <Features4
-    title="9 практик по передаче макетов"
-    columns={ 3 }
-    items={[
-      {
-        title: 'Обсуждение с заказчиком требований к макету',
-        description:
-          'Лучше выяснить все заранее, чем потом экстренно все исправлять',
-        icon: 'tabler:artboard',
-        link: '/design2dev/discussion',
-      },
-      {
-        title: 'Визуализация пользовательского пути',
-        description: 'Чтобы ничего не упустить в процессе дизайна и разработки',
-        icon: 'tabler:picture-in-picture',
-      },
-      {
-        title: 'Cоблюдение последовательности в макетах',
-        description:
-          'Проще работать, когда все разложено по порядку',
-        icon: 'tabler:adjustments-horizontal',
-      },
-      {
-        title: 'Именование всех элементов интерфейса',
-        description: 'Success screen, а не Frame100500',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Понимание базовых принципов верстки',
-        description:
-          'Думай как верстальщик, действуй как верстальщик, стань верстальщиком',
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Соблюдение гигиенты рабочего пространства',
-        description: 'Чистота в макетах - залог душевного здоровья дизайнера и разработчика',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Прототипирование',
-        description: 'Самый надежный спосо избежать ошибок и недопонимания процесов при разработке',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Организация библиотеки компонентов',
-        description: 'Тишина и порядок должен быть в библиотеке',
-        icon: 'tabler:plug-connected',
-      },
-      {
-        title: 'Соблюдение консистентности',
-        description: 'Не дизайн-системой единой',
-        icon: 'tabler:plug-connected',
-      },
-    ]}
-    classes={}
-    defaultIcon="tabler:circle-check-filled"
-  />
+  <Design2DevCollection
+      list={[
+        'discussion',
+        'user-flow',
+        'consistency',
+        'naming',
+        'front-end',
+        'hygiene',
+        'interactivity',
+        'library',
+        'inconsistency',
+      ]}
+    />
   
   <Features4
     title="Кому полезно?"
@@ -135,7 +92,63 @@ const metadata = {
   
   </section>
 
-  
+  {/* <Features4
+      title="9 практик по передаче макетов"
+      columns={ 3 }
+      items={[
+        {
+          title: 'Обсуждение с заказчиком требований к макету',
+          description:
+            'Лучше выяснить все заранее, чем потом экстренно все исправлять',
+          icon: 'tabler:artboard',
+          link: '/design2dev/discussion',
+        },
+        {
+          title: 'Визуализация пользовательского пути',
+          description: 'Чтобы ничего не упустить в процессе дизайна и разработки',
+          icon: 'tabler:picture-in-picture',
+        },
+        {
+          title: 'Cоблюдение последовательности в макетах',
+          description:
+            'Проще работать, когда все разложено по порядку',
+          icon: 'tabler:adjustments-horizontal',
+        },
+        {
+          title: 'Именование всех элементов интерфейса',
+          description: 'Success screen, а не Frame100500',
+          icon: 'tabler:rocket',
+        },
+        {
+          title: 'Понимание базовых принципов верстки',
+          description:
+            'Думай как верстальщик, действуй как верстальщик, стань верстальщиком',
+          icon: 'tabler:arrows-right-left',
+        },
+        {
+          title: 'Соблюдение гигиенты рабочего пространства',
+          description: 'Чистота в макетах - залог душевного здоровья дизайнера и разработчика',
+          icon: 'tabler:plug-connected',
+        },
+        {
+          title: 'Прототипирование',
+          description: 'Самый надежный спосо избежать ошибок и недопонимания процесов при разработке',
+          icon: 'tabler:plug-connected',
+        },
+        {
+          title: 'Организация библиотеки компонентов',
+          description: 'Тишина и порядок должен быть в библиотеке',
+          icon: 'tabler:plug-connected',
+        },
+        {
+          title: 'Соблюдение консистентности',
+          description: 'Не дизайн-системой единой',
+          icon: 'tabler:plug-connected',
+        },
+      ]}
+      classes={}
+      defaultIcon="tabler:circle-check-filled"
+    />*/} 
 
   
 
