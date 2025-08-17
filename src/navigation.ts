@@ -83,7 +83,7 @@ export const headerData = {
         },
         {
           text: '100 шпаргалок по дизайну интерфейсов',
-          href: "https://sobakapav.ru/cheatsheets",
+          href: getPermalink('/cheatsheets'),
         },    
        ],
     },

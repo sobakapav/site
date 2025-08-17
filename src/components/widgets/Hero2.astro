@@ -27,7 +27,7 @@ const {
 } = Astro.props as any;
 ---
 
-<section class="relative not-prose">
+<section class="relative">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="py-0 lg:flex overflow-y-hidden lg:gap-8">
@@ -41,7 +41,7 @@ const {
         <div class="max-w-3xl mx-auto md:mx-0 lg:mx-auto lg:max-w-none">
           {
             subtitle && (
-              <div class="text-[20px] mb-6 dark:text-slate-300 format-subtitle-markdown" set:html={subtitle} />
+              <div class="text-[20px] mb-6 dark:text-slate-300 format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px]" set:html={subtitle} />
             )
           }
           {result && <div set:html={result} />}
