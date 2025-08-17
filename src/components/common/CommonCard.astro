@@ -7,6 +7,7 @@ import { twMerge } from 'tailwind-merge';
 const {
   image, 
   imageSafari,
+  imagePosition,
   alt, 
   link, 
   supertitle = await Astro.slots.render('supertitle'),
@@ -37,6 +38,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
                   layout={noCard ? "constrained-width" : "constrained-both"}
                   width={288}
                   alt={alt ?? title}
+                  objectPosition={imagePosition}
                   loading="lazy"
                   decoding="async"
                 />
@@ -46,6 +48,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
                   layout={noCard ? "constrained-width" : "constrained-both"}
                   width={288}
                   alt={alt ?? title}
+                  objectPosition={imagePosition}
                   loading="lazy"
                   decoding="async"
                 />
@@ -57,6 +60,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
                 layout={noCard ? "constrained-width" : "constrained-both"}
                 width={288}
                 alt={alt ?? title}
+                objectPosition={imagePosition}
                 loading="lazy"
                 decoding="async"
               />

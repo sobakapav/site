@@ -7,11 +7,12 @@ import CommonCard from '~/components/common/CommonCard.astro';
 import { findImage } from '~/utils/images';
 
 const { post, hideFields = {} } = Astro.props;
-const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
+const image = (await findImage(post.image)) as ImageMetadata | undefined;
 
 ---
 <CommonCard 
   image={image} 
+  imagePosition="top"
   link={post.href} 
   title={post.title}
   classes={{main: 'justify-normal blog-list-item image-animate'}}
