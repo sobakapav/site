@@ -7,6 +7,7 @@ import SocialShare from '~/components/common/SocialShare.astro';
 import { Markdown } from '@astropub/md';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import RelatedLinks from '~/components/blog/RelatedLinks.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
@@ -95,6 +96,9 @@ const { post, url } = Astro.props as any;
           <Markdown.Inline of={post.seeMore || ''} />
         </div>
         <RelatedLinks post={post} />
+        {post.relatedPages && (
+          <RelatedPages pages={post.relatedPages} />
+        )}
       </div>
     </div>
   </article>

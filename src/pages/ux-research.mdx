@@ -1,31 +1,47 @@
 ---
-title: 'Research'
 layout: '~/layouts/ResearchMarkdownLayout.astro'
+
+const metadata = {
+  title: 'Как проводят UX-исследования для разработки IT-продуктов • Собака Павлова',
+  canonical: 'https://sobakapav.ru/ux-research',
+  description: "Разбираем на 26 кейсах, как можно улучшить интерфейсы сложных систем, наблюдая и общаясь с людьми", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/ux-research.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
 ---
 import ResearchCollection from '~/components/research/ResearchCollection.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Text from '~/components/ui/Text.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Bread from '~/components/widgets/Bread.astro';
 
-<Hero
-  tagline=""
-  actions={[
-    {
-      variant: 'primary',
-      target: '_blank',
-      text: 'Get templates',
-      href: 'https://github.com/onwidget/astrowind',
-      icon: 'tabler:download',
-    },
-    { text: 'Learn more', href: '#features' },
-  ]}
->
-  <Fragment slot="title">
-    Как проводят <span class="text-accent dark:text-white highlight">UX-исследования</span> для разработки IT-продуктов
-  </Fragment>
+<Bread title="UX-исследования" />
+  
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Как проводят UX-исследования для разработки IT-продуктов
+    </Fragment>
 
-  <Fragment slot="subtitle">Разбираем на 26 кейсах, как можно улучшить интерфейсы сложных систем, наблюдая и общаясь с людьми</Fragment>
-
-</Hero>
+    <Fragment slot="subtitle">
+      Разбираем на 26 кейсах, как можно улучшить интерфейсы сложных систем, наблюдая и общаясь с людьми.
+    </Fragment>
+  </Hund3>
 
 <Text>
 **Опыт 15 западных компаний**. Проанализировали методологии UX-исследований IT-разработчиков из США, Австралии и Великобритании. Собрали описания процессов и сделали выводы.
