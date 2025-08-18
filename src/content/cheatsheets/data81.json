@@ -54,14 +54,14 @@
 	],
 	"cases": [
 		{
-			"title": "Yurportal",
+			"title": "just-info",
 			"text": "Сначала составили план проекта, поняли, кто нам нужен, и искали людей очень точечно и прицельно.",
 			"img": "/images/cheatsheets/Yurportal.svg",
 			"link": "https://sobakapav.ru/microcases/Yurportal",
 			"background": "F9FFEE"
 		},
 		{
-			"title": "Pangeo",
+			"title": "pangeo",
 			"text": "Название роли не важно. К этому проекту мы успешно подключили на UX-задачи дизайнера, которого изначально нанимали для другого.",
 			"img": "/images/cheatsheets/pangeo_radar.svg",
 			"link": "https://sobakapav.ru/portfolio/pangeo",
