@@ -90,12 +90,16 @@ const { post, url } = Astro.props as any;
         </div>
       </div>
       <div class="lg:max-w-[320px]">
-        <div
-          class="format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16"
-        >
-          <Markdown.Inline of={post.seeMore || ''} />
-        </div>
-        <RelatedLinks post={post} />
+        {post.seeMore && (
+          <div
+            class="format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto px-6 mb-16"
+          >
+            <Markdown.Inline of={post.seeMore || ''} />
+          </div>
+        )}
+        {post.relatedLinks && (
+          <RelatedLinks post={post} />
+        )}
         {post.relatedPages && (
           <RelatedPages pages={post.relatedPages} />
         )}

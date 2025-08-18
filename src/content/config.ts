@@ -83,6 +83,9 @@ const postSchema = () => z.object({
      title: z.string().optional(),
      links: z.array(z.string()).optional(),
    }).optional(),
+   
+   relatedPages: relatedLinks(),
+   relatedPages2: relatedLinks(),
 
    metadata: metadataDefinition(),
 });
