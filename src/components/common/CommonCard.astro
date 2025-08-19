@@ -89,7 +89,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
       )}
        
       <span>     
-      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading z-[2]", myClasses.title]}>
+      <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading underline underline-offset-2 z-[2]", myClasses.title]}>
         {link ? (
           <a href={link}>
             <Markdown.Inline of={title} />
