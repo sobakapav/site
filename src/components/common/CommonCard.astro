@@ -24,7 +24,7 @@ const {
 const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock: 'mt-4 w-72', }, classes);
   
 ---
-<article class:list={[twMerge('flex flex-wrap mb-6 relative', myClasses.main)]}>
+<article class={twMerge('flex flex-wrap mb-6 relative flex-col', myClasses.main)}>
   {
     image && (
       <a href={link ?? 'javascript:void(0)'}>

@@ -1,0 +1,54 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+
+import { APP_BLOG } from 'astrowind:config';
+
+import { getPermalink } from '~/utils/permalinks';
+import { findImage } from '~/utils/images';
+
+const { research } = Astro.props;
+
+const link = getPermalink(research.href);
+---
+
+<article class={`flex flex-wrap`}>
+  {
+    research.image && (
+      <a href={link ?? 'javascript:void(0)'}>
+        <div class="relative overflow-hidden rounded">
+          <div class="w-36">
+            {research.image && (
+              <Image
+                src={research.image}
+                class="rounded my-0"
+                width={144}
+                alt={research.title}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+          </div>
+        </div>
+      </a>
+    )
+  }
+  <div class="mt-2 w-36">
+    <header>
+      <h3 class="text-sm leading-tight mb-2 font-heading dark:text-slate-300">
+        {
+          link ? (
+            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
+              {research.title}
+            </a>
+          ) : (
+            research.title
+          )
+        }
+      </h2>
+    </header>
+
+    {research.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-sm">{research.excerpt}</p>}
+  </div>
+</article>
