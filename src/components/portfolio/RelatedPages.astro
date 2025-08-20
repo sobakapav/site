@@ -2,17 +2,18 @@
 
 import RelatedPage from '~/components/portfolio/RelatedPage.astro';
 import { Markdown } from '@astropub/md';
+import { twMerge } from 'tailwind-merge';
 
 const { pages, hideFields = {}, styles = {} } = Astro.props;
 
 ---
 
-<div class="">
+<div class={twMerge('flex flex-row flex-wrap gap-6', styles.container)}>
 
   {pages && pages.length && pages.map((page, idx) => (
     <Fragment>
       { page.text && (
-        <div class:list={["format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl xl:max-w-7xl mx-auto", (idx > 0) && "mt-20"]}>
+        <div class:list={["basis-full shrink-0 format-subtitle-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-2xl lg:max-w-7xl", (idx > 0) && "mt-20"]}>
           <Markdown.Inline of={page.text} />
         </div>
       )}

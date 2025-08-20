@@ -1,54 +1,34 @@
 ---
-import type { ImageMetadata } from 'astro';
-import { Icon } from 'astro-icon/components';
-import Image from '~/components/common/Image.astro';
+import { Markdown } from '@astropub/md';
+import { twMerge } from 'tailwind-merge';
 
-import { APP_BLOG } from 'astrowind:config';
+import CommonCard from '~/components/common/CommonCard.astro';
 
-import { getPermalink } from '~/utils/permalinks';
 import { findImage } from '~/utils/images';
 
-const { research } = Astro.props;
+const { post, hideFields = {} } = Astro.props;
+const image = (await findImage(post.image)) as ImageMetadata | undefined;
 
-const link = getPermalink(research.href);
 ---
+<CommonCard 
+  image={image} 
+  imagePosition="top"
+  link={post.href} 
+  title={post.title}
+  classes={{main: 'justify-normal blog-list-item image-animate'}}
+>
 
-<article class={`flex flex-wrap`}>
-  {
-    research.image && (
-      <a href={link ?? 'javascript:void(0)'}>
-        <div class="relative overflow-hidden rounded">
-          <div class="w-36">
-            {research.image && (
-              <Image
-                src={research.image}
-                class="rounded my-0"
-                width={144}
-                alt={research.title}
-                loading="lazy"
-                decoding="async"
-              />
-            )}
-          </div>
-        </div>
-      </a>
-    )
-  }
-  <div class="mt-2 w-36">
-    <header>
-      <h3 class="text-sm leading-tight mb-2 font-heading dark:text-slate-300">
-        {
-          link ? (
-            <a class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200" href={link}>
-              {research.title}
-            </a>
-          ) : (
-            research.title
-          )
-        }
-      </h2>
-    </header>
+  <Fragment slot="textblock">
+    <p class="text-muted mb-2">{(post.description)}</p>
 
-    {research.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-sm">{research.excerpt}</p>}
-  </div>
-</article>
+  </Fragment>
+  
+  { !hideFields.tags && post.tags && (
+    <Fragment slot="footer">
+      <footer class="mt-5">
+        <PostTags tags={post.tags} />
+      </footer> 
+    </Fragment>
+  )}
+  
+</CommonCard>

@@ -26,7 +26,7 @@ if (collection == 'post') {
 if (excerpt) {
   data.excerpt = excerpt;
 }
-data.href = `/${collection}/${page}`;
+data.href = ('research' == collection) ? `/ux-research/${page}` : `/${collection}/${page}`;
 
 ---
 
@@ -45,11 +45,11 @@ data.href = `/${collection}/${page}`;
   )}
 
   {collection == 'research' && (
-    <ResearchListItem post={data} hideFields={hideFields} />
+    <ResearchListItem post={data} hideFields={hideFields} styles={styles} />
   )}
 
   {collection == 'services' && (
-    <ServicesListItem post={data} hideFields={hideFields} />
+    <ServicesListItem post={data} hideFields={hideFields} styles={styles} />
   )}
 
 </Fragment>

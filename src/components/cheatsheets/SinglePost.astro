@@ -67,7 +67,7 @@ const person = people[post.director.person];
           <RelatedPages 
             pages={post.cases.map((page) => ({collection: 'portfolio', excerpt: page.text, page: page.title?.toLowerCase()}))} 
             hideFields={{ tags: true, year: true }}
-            styles={{main: 'gap-6 flex-nowrap', textBlock: ''}}
+            styles={{main: 'gap-6 flex-nowrap flex-row', textBlock: ''}}
           />
 
           <div class="flex flex-col md:flex-row gap-6 my-16">

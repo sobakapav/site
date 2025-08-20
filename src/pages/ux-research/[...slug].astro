@@ -4,6 +4,9 @@ import merge from 'lodash.merge';
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import RelatedLinks from '~/components/portfolio/RelatedLinks.astro';
 
 import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
 import { getCanonical, getPermalink } from '~/utils/permalinks';
@@ -40,7 +43,15 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
+  <Bread
+    title={entry.title}
+    parent="/ux-research"
+    parentTitle="UX-исследования"
+  />
   <SinglePost post={{ ...entry.data, image: image }} url={url}>
     <Content />
   </SinglePost>
+  <div class="max-w-7xl mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+    <RelatedPages pages={entry.data.relatedPages2} styles={{main: 'flex-col', container: 'flex flex-row flex-wrap justify-between gap-6'}}/>
+  </div>
 </Layout>

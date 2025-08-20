@@ -9,7 +9,7 @@ import PortfolioTags from '~/components/portfolio/ProtfolioTags.astro';
 import { findImage } from '~/utils/images';
 
 const { post, mode = 'single', hideFields = {}, styles = {} } = Astro.props; 
-const image = (await findImage(post.thumbnail?.src)) as ImageMetadata | undefined;
+const image = (await findImage(post.thumbnail?.src || post.image)) as ImageMetadata | undefined;
 const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | undefined;
 const doubleMode = (mode == 'double');
 
@@ -19,6 +19,7 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
 ---
 <CommonCard 
   image={image} 
+  imagePosition="top"
   link={post.external ? post.externalLink : post.href} 
   title={post.title}
   text={post.excerpt}
