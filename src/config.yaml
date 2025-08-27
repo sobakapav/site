@@ -4,7 +4,9 @@ site:
   base: '/'
   trailingSlash: false
   phone: "+7 (495) 191-92-81"
+  phone2: "+382 (67) 877-073"
   email: "we@sobakapav.ru"
+  email2: "we@neverhund.com"
   whatsup: "NZGZSOAXXM2IN1"
   telegram: 
     link: "https://t.me/sobakawow"
@@ -12,6 +14,18 @@ site:
   telegramContact: 
     link: "https://t.me/sobakapavpro"
     text: "@sobakapavpro"
+  telegramContact2:
+    link: "https://t.me/roman_nebel"
+    text: "@roman_nebel"
+  adress:
+    text: "Санкт-Петербург, ул. Дрезденская, д. 20, литера А, кв. 49"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1992.396553141078!2d30.3638084!3d60.0416555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469634a2637937b7%3A0xfb52aedb8e288132!2z0YPQuy4g0KDRg9C00L3QtdCy0LAsIDksINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5NDI5MQ!5e0!3m2!1sru!2s!4v1710265480480!5m2!1sru!2s"
+  adress2:
+    text: "Branka Deletićа BB, Podgorica, Montenegro, 81100"
+    map: "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d7976.004129804285!2d30.3323409!3d60.0150575!3m2!1i1024!2i768!4f13.1!2m1!1z0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsINGD0LsuINCU0YDQtdC30LTQtdC90YHQutCw0Y8sINC0LiAyMCwg0LvQuNGC0LXRgNCwINCQ!5e0!3m2!1sen!2s!4v1756334388020!5m2!1sen!2s"
+  vc: "https://vc.ru/u/230065-sobaka-pavlova"
+  behance: "https://www.behance.net/sobakapavlova"
+  youtube: "https://www.youtube.com/playlist?list=PLimfCvKK4fIqcTuyyCsFMwQxOFXxAah1H"
 
 
   googleSiteVerificationId: XyD5IQGv6NIVOLbs0oBXyhEFwYA-3DQZRe0ww_Unl3g
@@ -23,8 +37,8 @@ metadata:
     template: '%s'
   description: "Дизайн сложных интерфейсов"
   robots:
-    index: false
-    follow: false
+    index: true
+    follow: true
   openGraph:
     site_name: Собака Павлова
     images:

@@ -1,0 +1,244 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import { SITE } from 'astrowind:config';
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import SinglePost from '~/components/research/SinglePost.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Features5 from '~/components/widgets/Features5.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import Number from '~/components/portfolio/Number.astro';
+
+const metadata = {
+  title: 'Создаем интерфейсы • О компании «Собака Павлова»',
+  canonical: 'https://sobakapav.ru/about',
+  description: "Компания «Собака Павлова» с 2012 года создает дизайн интерфейсов для массовых IT-продуктов и сложных профессиональных систем. Отрасль значения не имеет: мы делаем и медицинские интерфейсы, и промышленные, и интерфейсы гуманитарных проектов. Тесно сотрудничаем с разработкой и основываем дизайн на исследовании пользователей.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/about.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+---
+
+<Layout metadata={metadata}>
+    
+  <section class="py-0 mx-auto grow-0 shrink-0 single-post">
+    <Bread title="О «Собаке Павловой»" />
+    <article>
+    
+      <Hund3
+        classes={{
+          main: 'pb-10 md:pb-10',
+          subtitle: 'mb-0',
+        }}
+      >
+        <Fragment slot="title">
+          О компании</br> «Собака Павлова»
+        </Fragment>
+    
+        <Fragment slot="subtitle">
+          
+        </Fragment>
+      </Hund3>
+  
+      <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+
+        <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16" >
+         
+          <div class="basis-0 grow-[2] w-full">
+             <div class="flex flex-row justify-between">
+                <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Кто мы</h2> 
+                <div class="flex flex-row gap-4">
+                  <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
+                    <a href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Реквизиты в PDF</a>
+                  </div>
+                  <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
+                     <a href="https://drive.google.com/file/d/1z1YXuiff2LW7tqQzluqlceo2BUq2NMIv/view?usp=share_link">Логотип PNG</a>
+                  </div>
+                </div>
+              </div>
+             
+             <div class="format-markdown">
+                <p>С 2012 года создаем дизайн интерфейсов для массовых IT-продуктов и сложных профессиональных систем. Отрасль значения не имеет: мы делаем и медицинские интерфейсы, и промышленные, и интерфейсы гуманитарных проектов.</p>
+                <p>Тесно сотрудничаем с разработкой и основываем дизайн на исследовании пользователей. Основная часть задач — производственная в тесной интеграции с IT-отделами заказчика. Форма работы — проектная или на сопровождении. Также консультируем и обучаем.</p>
+              </div>
+            <div class="flex flex-col sm:flex-row justify-between gap-6 mb-10">
+              <div class="basis-0 grow">
+                <Number 
+                  number="> 400 проектов" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">создаем, изучаем, улучшаем интерфейсы</p>
+              </div>
+              
+              <div class="basis-0 grow">
+                <Number 
+                  number="> 150 кейсов" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">на основе реальных проектов</p>
+              </div>
+              
+              <div class="basis-0 grow">
+                <Number 
+                  number="> 100 статей" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">о дизайне интерфейсов и не только</p>
+              </div>
+            </div>
+            
+            <div class="format-markdown"> 
+              <p>Среди наших заказчиков — крупные компании от «Альфа-Банка» до «Яндекса», средние предприятия, стартапы и частные лица. С 2012 года «Собака Павлова» сделала более 400 проектов и даже не думает останавливаться.</p>
+            </div>
+            
+            <div>
+              <div class="flex flex-col lg:flex-row gap-6 bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-lg mt-10">
+                <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+                <div class="flex flex-col gap-1 justify-center text-white">
+                  <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+                  <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+                  <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+                </div>
+              </div>
+            </div>
+            
+           
+          </div>
+
+          <div class="basis-0 grow w-full flex flex-col gap-10 order-last md:order-none">
+            <div class="flex flex-col justify-between">
+              <div class="flex flex-col bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] p-8 rounded-lg mt-[-32px]">
+                <div class="flex flex-row justify-between">
+                  <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Что мы делаем</h2>
+                  <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey6] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
+                    <a href="/services">Все услуги →</a>
+                  </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">
+                  <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+                    <li><a class="underline-offset-4 decoration-1" href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/redesign">Точечный редизайн</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/new-features">Добавление новой функциональности</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/prototype">Прототип под инвестиции</a></li>
+                  </ul>
+                  <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+                    <li><a class="underline-offset-4 decoration-1" href="/services/ui-redesign">UI-редизайн</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/research">Продуктовое исследование</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/ux-audit">UX-аудит</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/ux-outsource">UX-отдел на аутсорсе</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/consultation">Консультации</a></li>
+                    <li><a class="underline-offset-4 decoration-1" href="/services/content-design">Контент-дизайн</a></li>
+                  </ul>
+                </div>  
+                
+              </div>
+                
+              <div class="flex flex-row justify-between md:justify-end lg:justify-between mt-6 md:mt-8 md:gap-8 lg:gap-0">
+                <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
+                <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
+                <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
+                <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
+              </div>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-6 sm:px-6 mb-6">
+        <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16" >
+          <div class="basis-0 grow-[1] w-full">
+            <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Откуда мы</h2>
+            
+            <div class="format-markdown">
+              <p>«Собака Павлова» — компания из Санкт-Петербурга с филиалом в Подгорице (Черногория).</p>
+              <p>Нам не важно, где вы находитесь, мы работаем с клиентами по всему миру. Когда есть возможность — встречаемся лично.</p>
+            </div>      
+          </div>
+          <div class="basis-0 grow-[1] w-full">
+            <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Откуда клиенты</h2>
+            <div class="flex flex-col sm:flex-row justify-between gap-6 mb-10">
+              <div class="basis-0 grow">
+                <Number 
+                  number="55%" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">Москва</p>
+              </div>
+              
+              <div class="basis-0 grow">
+                <Number 
+                  number="25%" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">Петербург</p>
+              </div>
+              
+              <div class="basis-0 grow">
+                <Number 
+                  number="18%" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">регионы</p>
+              </div>
+              
+              <div class="basis-0 grow">
+                <Number 
+                  number="16%" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">EC</p>
+              </div>
+              
+              <div class="basis-0 grow">
+                <Number 
+                  number="18%" 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">UK</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>     
+      </div>     
+    </article>
+    
+  </section>
+
+</Layout>
+
+
