@@ -23,7 +23,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                class="py-4 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
               />
             </div>
           )
@@ -70,7 +70,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
   {
     button && (
       <div class="mt-10 grid">
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" class="btn-contactus">
           {button}
         </Button>
       </div>

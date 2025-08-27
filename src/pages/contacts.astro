@@ -1,0 +1,261 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Number from '~/components/portfolio/Number.astro';
+
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+import { getPermalink, getHomePermalink, getBlogPermalink, getAsset } from '~/utils/permalinks';
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+}
+
+interface Links {
+  title?: string;
+  links: Array<Link>;
+}
+
+export interface Props {
+  links: Array<Links>;
+  secondaryLinks: Array<Link>;
+  socialLinks: Array<Link>;
+  footNote?: string;
+  theme?: string;
+}
+
+const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+
+const sectionThreeTitle = "Контакты";
+const email = "we@sobakapav.ru";
+const phone = "7 (495) 191-92-81";
+const whatsup = "NZGZSOAXXM2IN1";
+const telegramLink = "https://t.me/sobakapavpro";
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <Bread
+    title="Контакты"
+  />
+    
+  <!-- Hund3 Widget ******************* -->
+
+  <Hund3>
+    <Fragment slot="title">
+      Контакты</br>«Собаки Павловой»
+    </Fragment>
+
+    <Fragment slot="subtitle">
+         
+    </Fragment>  
+
+  </Hund3>
+    
+  <div class="flex flex-col lg:flex-row justify-between max-w-7xl mx-auto px-4 sm:px-6 gap-6 mt-12">
+     <div class="col-span-3 lg:col-span-1 gap-x-12 flex lg:mt-[0px]">
+          <div class="flex flex-col">          
+           
+            <div class="flex flex-col h-full">
+              <p class="mb-12 font-heading text-5xl">
+                  {SITE.phone}
+              </p>
+              <p class="mb-12">
+                  <a class="underline underline-offset-8 decoration-2 text-[--aw-color-accent] text-5xl" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </p>
+              <p class="mb-12">
+                  <a href={SITE.telegramContact.link} class="flex items-center underline underline-offset-8 decoration-2 text-[--aw-color-accent] text-5xl"><Icon height="48px" width="48px" name="tabler:brand-telegram" class="mr-2 ml-[-2px] mt-2" />Telegram директора</a>
+              </p>
+              <p class="mb-12">
+                  <a href={`https://wa.me/message/${whatsup}`} class="flex items-center underline underline-offset-8 decoration-2 text-[--aw-color-accent] text-5xl"><Icon height="48px" width="48px" name="tabler:brand-whatsapp" class="mr-2 ml-[-2px] mt-2" />WhatsApp</a> 
+              </p>
+              <p class="mb-12">
+                  <a class="underline underline-offset-8 decoration-2 text-[--aw-color-accent] text-5xl" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Реквизиты в PDF</a>
+              </p>
+            </div>
+          </div>
+      </div>
+
+      <ContactUs
+        id="form"
+        title="Поговорим?"
+        inputs={[
+          {
+            type: 'text',
+            name: 'name',
+            placeholder: 'Как к вам обратиться?',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            placeholder: 'Как с вами связаться?',
+          },
+        ]}
+        textarea={{
+          placeholder: 'О чем вы хотите поговорить?',
+        }}
+        disclaimer={{
+          label:
+            'Мы должны спросить ваше согласие на обработаку персональных данных',
+        }}
+        button="Свяжитесь со мной"
+      />
+      
+  </div>
+  
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 sm:px-6 mb-6">
+    <h2 class="text-5xl group font-heading mb-10 mt-12 lg:mt-0">Мы здесь</h2>
+    <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16" >
+      <div class="basis-0 grow-[1] w-full">
+        <div class="format-markdown">
+        <h3 class="text-4xl group font-heading mb-6">Россия</h2>
+          <p>{SITE.adress.text}</p>
+          <p class="flex flex-wrap">{SITE.phone}, 
+             <a href={SITE.telegramContact.link} class="ml-1 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]"><Icon height="24px" width="24px" name="tabler:brand-telegram" class="mr-1" />Telegram директора</a>, <a href={`mailto:${SITE.email}`} class="ml-1 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]">{SITE.email}</a>
+          </p>
+        </div>
+        <iframe src={SITE.adress.map} width="100%" height="340" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>  
+      <div class="basis-0 grow-[1] w-full">
+        <div class="format-markdown">
+          <h3 class="text-4xl group font-heading  mb-6">Черногория</h2>
+          <p>{SITE.adress2.text}</p>
+          <p class="flex flex-wrap">{SITE.phone2}, 
+             <a href={SITE.telegramContact2.link} class="ml-1 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]"><Icon height="24px" width="24px" name="tabler:brand-telegram" class="mr-1 mt-1" />Telegram</a>, <a href={`mailto:${SITE.email2}`} class="ml-1 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]">{SITE.email2}</a>
+          </p>
+        </div>
+        <iframe src={SITE.adress2.map} width="100%" height="340" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+      </div>  
+    </div>
+  </div>
+      
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-6 sm:px-6 mb-6">
+    <h2 class="text-5xl group font-heading mb-10">Наши клиенты везде</h2>
+    <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16" >
+      <div class="basis-0 grow-[1] w-full">
+        
+        <div class="flex flex-col sm:flex-row justify-between gap-6">
+          <div class="basis-0 grow">
+            <Number 
+              number="55%" 
+              classes="mb-1.5 font-heading" 
+              textClasses="text-xl sm:text-4xl" 
+              numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+            />
+            <p class="mb-1 text-xl">Москва</p>
+          </div>
+          
+          <div class="basis-0 grow">
+            <Number 
+              number="25%" 
+              classes="mb-1.5 font-heading" 
+              textClasses="text-xl sm:text-4xl" 
+              numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+            />
+            <p class="mb-1 text-xl">Петербург</p>
+          </div>
+          
+          <div class="basis-0 grow">
+            <Number 
+              number="18%" 
+              classes="mb-1.5 font-heading" 
+              textClasses="text-xl sm:text-4xl" 
+              numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+            />
+            <p class="mb-1 text-xl">регионы</p>
+          </div>
+          
+          <div class="basis-0 grow">
+            <Number 
+              number="16%" 
+              classes="mb-1.5 font-heading" 
+              textClasses="text-xl sm:text-4xl" 
+              numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+            />
+            <p class="mb-1 text-xl">EC</p>
+          </div>
+          
+          <div class="basis-0 grow">
+            <Number 
+              number="18%" 
+              classes="mb-1.5 font-heading" 
+              textClasses="text-xl sm:text-4xl" 
+              numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+            />
+            <p class="mb-1 text-xl">UK</p>
+          </div>
+        </div>
+        <div class="grow basis-0 flex flex-wrap items-center justify-between pt-8 gap-4">
+          <div class="relative h-[34px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfa-arm">
+            <img src="/images/clients/alfa.svg" class="h-[34px]">
+            <img src="/images/clients/alfa4.svg" class="noir2 h-[34px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/sberbank">
+            <img src="/images/clients/sberbank.svg" class="h-[26px]">
+            <img src="/images/clients/sberbank4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+          </a></div> 
+          <div class="relative h-[26px] noir2-div"><a href="https://www.eduhund.ru/clients">
+            <img src="/images/clients/yandex.svg" class="h-[26px]">
+            <img src="/images/clients/yandex4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/tinkoff">
+            <img src="/images/clients/tinkoff.svg" class="h-[26px]">
+            <img src="/images/clients/tinkoff4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[35px] noir2-div"><a href="https://sobakapav.ru/portfolio/gazprom-neft">
+           <img src="/images/clients/gazprom.svg" class="h-[35px]">
+           <img src="/images/clients/gazprom4.svg" class="noir2 h-[35px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[24px] noir2-div"><a href="https://sobakapav.ru/portfolio/sportmaster">
+           <img src="/images/clients/sportmaster.svg" class="h-[24px]">
+           <img src="/images/clients/sportmaster4.svg" class="noir2 h-[24px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/avito">
+           <img src="/images/clients/avito.svg" class="h-[26px]">
+           <img src="/images/clients/avito4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfastrah-design">
+           <img src="/images/clients/alfa-strah.svg" class="h-[26px]">
+           <img src="/images/clients/alfa-strah4.svg" class="noir2 h-[26px] absolute top-0 left-0">
+          </a></div>
+          <div class="relative h-[26px]"><a href="https://sobakapav.ru/portfolio/edms">
+           <img src="/images/clients/baltika.svg" class="h-[26px]">
+           <img src="/images/clients/baltika4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+          </a></div>
+          <div class="relative h-[30px] noir2-div"><a href="https://sobakapav.ru/portfolio/t1">
+           <img src="/images/clients/t1.svg" class="h-[30px]">
+           <img src="/images/clients/t1-4.svg" class="noir2 h-[30px] absolute top-0 left-0 z-100">
+          </a></div> 
+          <div class="relative h-[30px] noir2-div"><a href="https://sobakapav.ru/portfolio/yota">
+           <img src="/images/clients/yota.svg" class="h-[30px]">
+           <img src="/images/clients/yota4.svg" class="noir2 h-[30px] absolute top-0 left-0 z-100">
+          </a></div>      
+        </div>
+        
+      </div>
+      <div class="basis-0 grow-[1] w-full">        
+        <div class="format-markdown">
+          <p>Нам не важно, где вы находитесь, мы работаем с клиентами по всему миру. С удовольствием встречаемся лично, когда есть возможность.</p>
+        </div>
+        <p class="flex flex-wrap text-2xl"><a href={SITE.telegram.link} class="ml-1 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]"><Icon height="30px" width="30px" name="tabler:brand-telegram" class="ml-[-4px] mt-1" />Канал Telegram</a>,
+        <a href={SITE.behance} class="ml-1 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]"><Icon height="30px" width="30px" name="tabler:brand-behance" class="ml-2 mt-1" />Behance</a>, 
+        <a href={SITE.vc} class="ml-2 inline-flex items-center underline underline-offset-2 text-[--aw-color-accent]">Блог на vc.ru</a>
+        </p>    
+      </div>
+    </div>
+  </div>   
+  
+
+
+</Layout>
