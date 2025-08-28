@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Design2DevCollection from '~/components/design2dev/Design2DevCollection.astro';
+
+const metadata = {
+  title: 'Передача макетов в разработку • Собака Павлова',
+  canonical: 'https://sobakapav.ru/books',
+  description: "Девять ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/books.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+---
+
+<Layout metadata={metadata}>
+
+  <Bread title="Книги" />
+  
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Книги «Собаки Павловой»
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса.</br>
+      Часто об этом рассказываем и часто отвечаем на вопросы. Из ответов на некоторые вопросы получились книги.  
+    </Fragment>
+  </Hund3>
+  
+  
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+    <div class="max-w-5xl pt-8 md:pt-12 mb-6">
+      <RelatedPages 
+        pages={[{collection: 'research', page: 'crimecase'}, {collection: 'research', page: 'disneycase'}, {collection: 'research', page: 'healthfoodcase'}]}
+        hideFields={{ tags: true }}
+        styles={{main: 'gap-6 flex-nowrap flex-row', container: 'flex flex-row flex-wrap justify-between gap-6', textBlock: ''}}
+      />
+    </div> 
+  
+  <Design2DevCollection
+      list={[
+        'discussion',
+        'user-flow',
+        'consistency',
+      ]}
+    />
+  
+  </div>
+
+  
+
+  
