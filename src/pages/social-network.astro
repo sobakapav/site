@@ -1,0 +1,63 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Design2DevCollection from '~/components/design2dev/Design2DevCollection.astro';
+
+const metadata = {
+  title: 'Соцсети • Собака Павлова',
+  canonical: 'https://sobakapav.ru/social-network',
+  description: "Девять ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/social-network.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+---
+
+<Layout metadata={metadata}>
+
+  <Bread title="Соцсети" />
+  
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      «Собака Павлова» в соцсетях
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      У нас тут постоянно происходит что-нибудь, без дела не сидим. То статью новую выложим, то кейс напишем, то на конференции выступим. 
+       
+      Раньше у нас была e-mail рассылка. Но мы подумали: зачем спамить, если вы можете просто подписаться на наши соцсети и сами выбрать то, что вам интересно.  
+    </Fragment>
+  </Hund3>
+  
+  
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+      <RelatedPages 
+        pages={[{collection: 'promo', page: 'telegram'}, {collection: 'promo', page: 'youtube'}, {collection: 'promo', page: 'behance'}, {collection: 'promo', page: 'vc'}]}
+        hideFields={{ tags: true }}
+        styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+  </div> 
+  
+</Layout>
+
+  
+
+  
