@@ -3,6 +3,7 @@ import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import { SITE } from 'astrowind:config';
 import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
+import ReviewItem from '~/components/portfolio/ReviewItem.astro';
 
 import Layout from '~/layouts/PageLayout.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
@@ -74,7 +75,7 @@ const metadata = {
              
              <div class="format-markdown">
                 <p>С 2012 года создаем дизайн интерфейсов для массовых IT-продуктов и сложных профессиональных систем. Отрасль значения не имеет: мы делаем и медицинские интерфейсы, и промышленные, и интерфейсы гуманитарных проектов.</p>
-                <p>Тесно сотрудничаем с разработкой и основываем дизайн на исследовании пользователей. Основная часть задач — производственная в тесной интеграции с IT-отделами заказчика. Форма работы — проектная или на сопровождении. Также консультируем и обучаем.</p>
+                <p>Тесно сотрудничаем с разработкой и основываем дизайн на исследовании пользователей. Основная часть задач — производственная в тесной интеграции с IT-отделами заказчика. Форма работы — проектная или на сопровождении. Также консультируем и <a href="https://www.eduhund.ru">обучаем</a>.</p>
               </div>
             <div class="flex flex-col sm:flex-row justify-between gap-6 mb-10">
               <div class="basis-0 grow">
@@ -94,7 +95,7 @@ const metadata = {
                   textClasses="text-xl sm:text-4xl" 
                   numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
                 />
-                <p class="mb-1 text-xl">на основе реальных проектов</p>
+                <p class="mb-1 text-xl"><a href="/portfolio">на основе реальных проектов</a></p>
               </div>
               
               <div class="basis-0 grow">
@@ -104,7 +105,7 @@ const metadata = {
                   textClasses="text-xl sm:text-4xl" 
                   numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
                 />
-                <p class="mb-1 text-xl">о дизайне интерфейсов и не только</p>
+                <p class="mb-1 text-xl"><a href="/publications">о дизайне интерфейсов и не только</a></p>
               </div>
             </div>
             
@@ -168,19 +169,19 @@ const metadata = {
         </div>
         
       </div>
-      <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-6 sm:px-6 mb-6">
+      <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-10 sm:px-6 mb-6">
         <div class="flex flex-col lg:flex-row flex-wrap w-full gap-16" >
           <div class="basis-0 grow-[1] w-full">
             <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Откуда мы</h2>
             
             <div class="format-markdown">
-              <p>«Собака Павлова» — компания из Санкт-Петербурга с филиалом в Подгорице (Черногория).</p>
+              <p>«Собака Павлова» — компания из <a href="/contacts">Санкт-Петербурга</a> с филиалом в <a href="/contacts">Подгорице (Черногория)</a>.</p>
               <p>Нам не важно, где вы находитесь, мы работаем с клиентами по всему миру. Когда есть возможность — встречаемся лично.</p>
             </div>      
           </div>
           <div class="basis-0 grow-[1] w-full">
             <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Откуда клиенты</h2>
-            <div class="flex flex-col sm:flex-row justify-between gap-6 mb-10">
+            <div class="flex flex-col sm:flex-row justify-between gap-6 mb-6">
               <div class="basis-0 grow">
                 <Number 
                   number="55%" 
@@ -231,10 +232,96 @@ const metadata = {
                 <p class="mb-1 text-xl">UK</p>
               </div>
             </div>
+            <div class="grow basis-0 flex flex-wrap items-center justify-between gap-4">
+              <div class="relative h-[34px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfa-arm">
+                <img src="/images/clients/alfa.svg" class="h-[34px]">
+                <img src="/images/clients/alfa4.svg" class="noir2 h-[34px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/sberbank">
+                <img src="/images/clients/sberbank.svg" class="h-[26px]">
+                <img src="/images/clients/sberbank4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+              </a></div> 
+              <div class="relative h-[26px] noir2-div"><a href="https://www.eduhund.ru/clients">
+                <img src="/images/clients/yandex.svg" class="h-[26px]">
+                <img src="/images/clients/yandex4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/tinkoff">
+                <img src="/images/clients/tinkoff.svg" class="h-[26px]">
+                <img src="/images/clients/tinkoff4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[35px] noir2-div"><a href="https://sobakapav.ru/portfolio/gazprom-neft">
+               <img src="/images/clients/gazprom.svg" class="h-[35px]">
+               <img src="/images/clients/gazprom4.svg" class="noir2 h-[35px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[24px] noir2-div"><a href="https://sobakapav.ru/portfolio/sportmaster">
+               <img src="/images/clients/sportmaster.svg" class="h-[24px]">
+               <img src="/images/clients/sportmaster4.svg" class="noir2 h-[24px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/avito">
+               <img src="/images/clients/avito.svg" class="h-[26px]">
+               <img src="/images/clients/avito4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[26px] noir2-div"><a href="https://sobakapav.ru/portfolio/alfastrah-design">
+               <img src="/images/clients/alfa-strah.svg" class="h-[26px]">
+               <img src="/images/clients/alfa-strah4.svg" class="noir2 h-[26px] absolute top-0 left-0">
+              </a></div>
+              <div class="relative h-[26px]"><a href="https://sobakapav.ru/portfolio/edms">
+               <img src="/images/clients/baltika.svg" class="h-[26px]">
+               <img src="/images/clients/baltika4.svg" class="noir2 h-[26px] absolute top-0 left-0 z-100">
+              </a></div>
+              <div class="relative h-[30px] noir2-div"><a href="https://sobakapav.ru/portfolio/t1">
+               <img src="/images/clients/t1.svg" class="h-[30px]">
+               <img src="/images/clients/t1-4.svg" class="noir2 h-[30px] absolute top-0 left-0 z-100">
+              </a></div> 
+              <div class="relative h-[30px] noir2-div"><a href="https://sobakapav.ru/portfolio/yota">
+               <img src="/images/clients/yota.svg" class="h-[30px]">
+               <img src="/images/clients/yota4.svg" class="noir2 h-[30px] absolute top-0 left-0 z-100">
+              </a></div>      
+            </div>
           </div>
           
         </div>     
       </div>     
+    
+    <div class="max-w-7xl mx-auto md:mx-auto px-4 sm:px-6 mt-8 md:mt-10">
+      <div class="bg-[--aw-color-grey2] text-[#ffffff] dark:bg-[--aw-color-grey9] mx-auto px-8 sm:px-12 pt-8 sm:pt-12 pb-2 sm:pb-2 mb-10 md:mb-8 text-base  rounded-lg">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Наше руководство</h2>
+        <div class="flex flex-col lg:flex-row flex-wrap gap-10">
+          <div class="grow basis-0 flex flex-col gap-y-6 content-start">
+            <ReviewItem
+              title="Ольга Павлова"
+              text="Совладелец, директор по развитию.\n\n 27 лет в IT. По образованию математик. В прошлом — работа в IT-монстрах. 100+ публикаций в СМИ, две книги, преподавание в университетах. Ravenclaw.\n\n [olga@sobakapav.ru](mailto:olga@sobakapav.ru)"
+              photo="~/assets/images/portfolio/op.jpeg"
+            >
+            </ReviewItem>
+          </div>
+          
+          <div class="grow basis-0 flex gap-y-6 content-start justify-between flex-col md:flex-row gap-6">
+            <div class="white-links flex flex-col gap-y-6 md:basis-0 md:grow">
+              <ReviewItem
+                title="Наталья Прокофьева"
+                text="Совладелец, генеральный директор.\n\n Профессиональный управленец и педагог. В прошлом — госуправление, бизнес, инженерные компании. Лыжный марафонец. Slytherin.\n\n [pro@sobakapav.ru](mailto:pro@sobakapav.ru)"
+                photo="~/assets/images/portfolio/np.png"
+              />
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 sm:px-6 mb-6">
+      <div class="max-w-7xl mx-auto pt-8 md:pt-8 mb-6">
+        <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Наша экспертиза</h2>
+        <div class="format-markdown">   
+          <p>Охотно делимся опытом в <a href="/portfolio">кейсах</a> и <a href="/publications">статьях</a>. Больше — в <a href="https://www.eduhund.ru">дизайн-задачнике</a>. А еще — выступаем на конференциях с докладами для бизнеса и IT-комьюнити. Зовите!</p> 
+        </div>
+        <RelatedPages 
+          pages={[{collection: 'promo', page: 'portfolio'}, {collection: 'promo', page: 'publications'}, {collection: 'promo', page: 'cheatsheets'}, {collection: 'promo', page: 'taskbook'}]}
+          hideFields={{ tags: true, year: true }}
+          styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+        />
+      </div>
+    </div>
     </article>
     
   </section>
