@@ -34,14 +34,25 @@ export interface Props {
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 
-const sectionThreeTitle = "Контакты";
-const email = "we@sobakapav.ru";
-const phone = "7 (495) 191-92-81";
 const whatsup = "NZGZSOAXXM2IN1";
-const telegramLink = "https://t.me/sobakapavpro";
 
 const metadata = {
-  title: 'Contact',
+  title: 'Контакты • Как связаться с «Собакой Павловой»',
+  canonical: 'https://sobakapav.ru/contacts',
+  description: "Пишите, и мы ответим", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/contacts.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
 };
 ---
 
