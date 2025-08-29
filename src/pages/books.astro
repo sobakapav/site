@@ -37,35 +37,27 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      Книги «Собаки Павловой»
+      Книги <br/>«Собаки Павловой»
     </Fragment>
 
     <Fragment slot="subtitle">
-      Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса.</br>
-      Часто об этом рассказываем и часто отвечаем на вопросы. Из ответов на некоторые вопросы получились книги.  
+      Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса.<br/><br/>
+      Часто об этом рассказываем и часто отвечаем на вопросы. Из ответов на некоторые вопросы получились книги.<br/><br/>
+      Чтобы получить книги, напишите нам на почту <a class="underline underline-offset-2 text-[--aw-color-accent]" href="mailto:we@sobakapav.ru">we@sobakapav.ru</a>. Это бесплатно. 
     </Fragment>
   </Hund3>
   
-  
-  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 sm:px-6 mb-6">
     <div class="max-w-5xl pt-8 md:pt-12 mb-6">
       <RelatedPages 
-        pages={[{collection: 'research', page: 'crimecase'}, {collection: 'research', page: 'disneycase'}, {collection: 'research', page: 'healthfoodcase'}]}
+        pages={[{collection: 'books', page: 'book1'}, {collection: 'books', page: 'book2'}, {collection: 'books', page: 'book3'}]}
         hideFields={{ tags: true }}
-        styles={{main: 'gap-6 flex-nowrap flex-row', container: 'flex flex-row flex-wrap justify-between gap-6', textBlock: ''}}
+            styles={{main: 'gap-6 flex-nowrap flex-row', textBlock: ''}}
       />
     </div> 
-  
-  <Design2DevCollection
-      list={[
-        'discussion',
-        'user-flow',
-        'consistency',
-      ]}
-    />
-  
-  </div>
 
   
+  </div>
+</Layout> 
 
   

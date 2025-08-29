@@ -1,0 +1,32 @@
+---
+import { Markdown } from '@astropub/md';
+
+import BookCard from '~/components/books/BookCard.astro';
+
+import { getPermalink } from '~/utils/permalinks';
+
+const { post, hideFields = {}, styles = {} } = Astro.props;
+---
+
+<BookCard
+  image={post.thumbnail || post.image}
+  link={getPermalink(post.permalink)}
+  title={post.title}
+  text={post.description || post.excerpt}
+  classes={styles}
+>
+  <Fragment slot="supertitle">
+    <div class="inline-block">
+      {post.publishDate}
+    </div>
+  </Fragment>
+  
+  <Fragment slot="footer">
+    <Markdown.Inline of={post.author} />
+  </Fragment>
+
+  <Fragment slot="textblock">
+    <Markdown.Inline of={post.excerpt} />
+  </Fragment>
+
+</CommonCard>
