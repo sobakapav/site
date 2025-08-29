@@ -4,6 +4,7 @@ import PortfolioListItem from '~/components/portfolio/ListItem.astro';
 import ResearchListItem from '~/components/portfolio/ListItem.astro';
 import ServicesListItem from '~/components/services/ListItem2.astro';
 import BlogListItem from '~/components/blog/ListItem.astro';
+import BookListItem from '~/components/books/ListItem.astro';
 import { getEntry } from 'astro:content';
 import { getPermalink } from '~/utils/permalinks';
 import { findPostsBySlugs } from '~/utils/blog';
@@ -52,4 +53,7 @@ data.href = ('research' == collection) ? `/ux-research/${page}` : `/${collection
     <ServicesListItem post={data} hideFields={hideFields} styles={styles} />
   )}
 
+  {collection == 'books' && (
+    <BookListItem post={data} hideFields={hideFields} styles={styles} />
+  )}
 </Fragment>

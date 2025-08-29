@@ -1,0 +1,80 @@
+---
+import Image from '~/components/common/Image.astro';
+import { Markdown } from '@astropub/md';
+import merge from 'lodash.merge';
+import { twMerge } from 'tailwind-merge';
+
+const {
+  image, 
+  imagePosition,
+  alt, 
+  link, 
+  supertitle = await Astro.slots.render('supertitle'),
+  title, 
+  text,
+  author,
+  textblock = await Astro.slots.render('textblock'),  
+  footer = await Astro.slots.render('footer'),
+  awards,
+  isNew,
+  classes = {}
+} = Astro.props;
+
+const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock: 'mt-4 w-72', }, classes);
+  
+---
+<article class={twMerge('flex flex-wrap mb-6 relative flex-col', myClasses.main)}>
+  <div>
+    <div class="relative overflow-hidden rounded image-animate">
+      <div class="w-72">
+        {image && (
+          <Image
+            src={image}
+            class="rounded"
+            layout={"constrained-width"}
+            width={288}
+            alt={alt ?? title}
+            objectPosition={imagePosition}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+      </div>
+      
+    </div>
+    {supertitle && (
+      <div class="mb-1 mt-4">
+        <span class="text-sm" set:html={supertitle} />
+      </div>
+    )}
+</div>
+  
+     
+  
+  <div class={myClasses.textBlock}>
+    <header>
+      <div class="flex flex-row justify-between">
+        <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4"><span set:html={footer} /></h2> 
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
+          <a href="mailto">Попросить книгу</a>
+        </div>
+      </div>    
+        <h2 class:list={["text-xl sm:text-3xl leading-tight my-2 dark:text-slate-300 font-heading z-[2]", myClasses.title]}>
+          <Markdown.Inline of={title} />
+        </h2>  
+      </span>
+      
+      {text && (
+        <h3 class:list={["text-xl font-bold mb-6", myClasses.text]}>
+          <Markdown.Inline of={text} />
+        </h3>
+      )}
+      
+    </header>
+
+    {textblock && (
+      <div class="format-subtitle-markdown" set:html={textblock} />
+    )}
+    
+  </div>
+</article>

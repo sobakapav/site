@@ -361,6 +361,22 @@ const videoSchema = () => z.object({
   schema: videoSchema(),
  });
 
+const bookSchema = () => z.object({
+   publishDate: z.string().optional(),
+   updateDate: z.date().optional(),
+
+   title: z.string(),
+   excerpt: z.string().optional(),
+   description: z.string().optional(),
+   image: z.string().optional(),
+   imageAlt: z.string().optional(),
+   author: z.string().optional(),
+});
+
+ const bookCollection = defineCollection({
+  schema: bookSchema(),
+ });
+
 export const collections = {
   post: postCollection,
   services: serviceCollection,
@@ -372,5 +388,6 @@ export const collections = {
   promo: promoCollection,
   video: videoCollection,
   cheatsheets: cheatsheetCollection,
+  books: bookCollection,
 };
 
