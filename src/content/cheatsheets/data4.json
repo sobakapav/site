@@ -64,7 +64,7 @@
 	],
 	"goodExample": {
 		"text": "Сначала спроектировали для iOS, потом адаптировали для Android.",
-		"link": "https://sobakapav.ru/portfolio/easydocs",
+		"link": "/portfolio/easydocs",
 		"linktext": "EasyDocs"
 	},
 	"badExample": {
