@@ -64,8 +64,8 @@
 	],
 	"goodExample": {
 		"text": "Пример суперкороткого, но емкого и достаточного для конкретного проекта описания профилей.",
-		"link": "https://drive.google.com/file/d/1D2UVITCRmgimqIPuP322OGT-Iqtkpc_Z/view?usp=share_link",
-		"linktext": "Портреты пользователей"
+		"link": "/portfolio/x5",
+		"linktext": "Кейс X5. Портреты пользователей"
 	},
 	"badExample": {
 		"text": "Списать три портрета с себя любимого, оформить на стикерах и забыть в переговорке."
