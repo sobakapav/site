@@ -3,12 +3,11 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import Bread from '~/components/widgets/Bread.astro';
-import Design2DevCollection from '~/components/design2dev/Design2DevCollection.astro';
 
 const metadata = {
   title: 'Соцсети • Собака Павлова',
   canonical: 'https://sobakapav.ru/social-network',
-  description: "Девять ключевых практик, которые упрощают разработчикам жизнь и экономят заказчикам деньги.", 
+  description: "Подписывайтесь на наши соцсети. Статьи, анонсы, вакансии, видео, — все в появляется в первую очередь там.", 
   robots: {
     index: true,
     follow: true,
@@ -48,7 +47,7 @@ const metadata = {
   </Hund3>
   
   
-  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 pt-8 md:pt-12 sm:px-6 mb-6">
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl px-6 mb-6">
       <RelatedPages 
         pages={[{collection: 'promo', page: 'telegram'}, {collection: 'promo', page: 'youtube'}, {collection: 'promo', page: 'behance'}, {collection: 'promo', page: 'vc'}]}
         hideFields={{ tags: true }}

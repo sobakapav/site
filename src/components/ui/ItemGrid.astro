@@ -52,9 +52,9 @@ const {
                 </h3>
               )}
               {description && (
-                <p class={twMerge(`${title ? 'mt-3' : ''}`, descriptionClass, itemClasses?.description)}>
+                <div class={twMerge(`${title ? 'mt-3' : ''} format-subtitle-markdown marked-list`, descriptionClass, itemClasses?.description)}>
                   <Markdown.Inline of={description} />
-                </p>
+                </div>
               )}
               {callToAction && (
                 <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>

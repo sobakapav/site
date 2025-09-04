@@ -1,0 +1,158 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import { SITE } from 'astrowind:config';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Вакансии • Собака Павлова',
+  canonical: 'https://sobakapav.ru/vacancy',
+  description: "Приходите к нам работать.", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/vacancy.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+---
+
+<Layout metadata={metadata}>
+
+  <Bread title="Вакансии" />
+  
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Вакансии<br\>«Собаки Павловой»
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Приходите к нам работать! Чаще всего мы нанимаем менеджеров и дизайнеров. А еще у нас бывают разовые и проектные задачи.
+    </Fragment>
+  </Hund3>
+
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 mb-10">
+     <RelatedPages 
+       pages={[{collection: 'promo', page: 'vacancy-ux'}, {collection: 'promo', page: 'vacancy-manager'}, {collection: 'promo', page: 'vacancy-ui'}]}
+       hideFields={{ tags: true }}
+       styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+     />
+   </div> 
+  
+  <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+  
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto">
+    <div class="format-markdown max-w-4xl pt-8 md:pt-8">
+      <h2 class="text-5xl group font-heading mb-6">Приходите к нам</h2>   
+      <p>Вот шесть хороших причин для этого:</p>
+    </div>
+  </div>
+  
+  <Features4
+    title=""
+    columns={ 3 }
+    items={[
+      {
+        title: 'Интересные проекты',
+        description:
+          'Мы занимаемся продуктовым дизайном и проектированием интерфейсов сложных IT-систем. Тематика проектов — управление всем, чем вообще можно управлять.',
+      },
+      {
+        title: 'Нормальные условия',
+        description:
+          '- Зарплата — по рынку с повышением с повышением по мере роста квалификации.\n- Комфортные условия работы, мягкий стиль управления.',
+      },
+      {
+        title: 'Официальное оформление',
+        description:
+          '- Все по закону. Выходные в выходные, отпуск во время отпуска.\n- Возможно временное оформление: договор услуг, подряда, ГПХ, ИП, самозанятые.',
+      },
+      {
+        title: 'Удаленная работа',
+        description:
+          'Нам не критично, в какой вы стране, в каком городе и каком часовом поясе. Если вы не опаздываете на стендап:)',
+      },
+      {
+        title: 'Возможности для развития',
+        description:
+          '- Хороший старт для продолжения карьеры.\n- Интересные задачи для крупных заказчиков.\n- Возможность обучаться, если осилите наш формат обучения.',
+      },
+      {
+        title: 'Карьерные перспективы',
+        description:
+          'Наши выпускники часто переходят на работу в топовые компании. Но повторимся, мы ценим хороших сотрудников и повышаем зарплату соответственно профессиональному росту.',
+      },
+    ]}
+    classes={}
+    defaultIcon="tabler:circle-check-filled"
+  />
+  
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto">
+    <div class="format-markdown max-w-4xl pt-8 md:pt-8">
+      <h2 class="text-5xl group font-heading mb-6">Найдем применение вашим навыкам</h2>   
+      <p class="mb-8">На отдельные проекты нам нужны узкие специалисты с определенными компетенциями или уникальным опытом, которым мы можем предложить хорошую своевременную оплату и возможность быстро пополнить портфолио крутым проектом.</p>
+    </div>
+  </div>
+  
+  <Features3
+    title=""
+    columns={ 4 }
+    items={[
+      {
+        title: 'Дизайн, UX, иллюстрации',
+        description:
+          '- Графический дизайнер\n- Моушен-дизайнер\n- Информационный дизайнер\n- Иллюстратор\n- Фотограф\n- Бильд-редактор',
+      },
+      {
+        title: 'Менеджмент',
+        description:
+          '- Менеджер по работе с госзаказчиками\n- Менеджер по работе с тендерами',
+      },
+      {
+        title: 'Технологии',
+        description:
+          '- Консультант по AI\n- Верстальщик',
+      },
+      {
+        title: 'Тексты',
+        description:
+          '- Технический писатель\n- Переводчик с русского на английский\n- Внутренний журналист\n- Райтер для контент-маркетинга\n- SEO-специалист',
+      },
+
+    ]}
+    classes={}
+    defaultIcon="tabler:circle-check-filled"
+  />
+  
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto">
+    <div class="format-markdown max-w-4xl pt-8 md:pt-8">
+      <h2 class="text-5xl group font-heading mb-6">Интересно? Пишите!</h2>   
+      <p>В сопроводительном письме среди прочего укажите, пожалуйста, ссылки на свои профили в соцсетях.</p>
+      <p class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund]">И портфолио, обязательно портфолио.</p>
+      <p>Пишите на почту <a href={`mailto:${SITE.email}`}>{SITE.email}</a> с темой письма «Отклик на вакансию ___».</p>
+      <p>Читают руководители. Не обещаем моментальную реакцию. Если мы не отвечаем больше трех дней, напишите, пожалуйста, повторно.</p>
+    </div>
+  </div>
+  
+  </section>
+
+  
+
+  
