@@ -129,9 +129,10 @@ import '~/assets/styles/colors.css';
     color: var(--aw-color-accent);
   }
   
-  .format-review-markdown a {
+  .format-review-markdown a,
+  .format-graduates-markdown a {
     text-decoration: underline;
-    color: #048e86;
+    color: var(--aw-color-accent);
   }
 
   .format-markdown p,
@@ -140,6 +141,12 @@ import '~/assets/styles/colors.css';
   .format-subtitle-markdown h4 {
     font-size: 18px;
     line-height: 28px;
+  }
+
+  .format-graduates-markdown p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
   }
   
   .format-markdown a:not([href]),

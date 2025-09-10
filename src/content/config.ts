@@ -158,6 +158,7 @@ const portfolioSchema = () => z.object({
   doubleSize: z.boolean().optional(),
   noCard: z.boolean().optional(),
 
+  name: z.string().optional(),
   title: z.string(),
   titleBrief: z.string().optional(),
   excerpt: z.string().optional(),
@@ -373,9 +374,27 @@ const bookSchema = () => z.object({
    author: z.string().optional(),
 });
 
- const bookCollection = defineCollection({
+const bookCollection = defineCollection({
   schema: bookSchema(),
- });
+});
+
+const personSchema = () => z.object({
+  year: z.number(),
+  name: z.string(),
+  excerpt: z.string(),
+  context: z.string(),
+  image: z.string(),
+  relatedPages: z.array(z.object({
+    text: z.string().optional(),
+    collection: z.string().optional(),
+    page: z.string().optional(),
+  })).optional(),
+  review: z.string().optional(),
+});
+
+const personCollection = defineCollection({
+  schema: personSchema(),
+});
 
 export const collections = {
   post: postCollection,
@@ -389,5 +408,6 @@ export const collections = {
   video: videoCollection,
   cheatsheets: cheatsheetCollection,
   books: bookCollection,
+  person: personCollection,
 };
 

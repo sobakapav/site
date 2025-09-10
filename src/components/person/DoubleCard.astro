@@ -1,0 +1,48 @@
+---
+
+import { findImage } from '~/utils/images';
+
+import Image from '~/components/common/Image.astro';
+import { Markdown } from '@astropub/md';
+
+import BestProjects from './BestProjects.astro';
+
+const { person } = Astro.props;
+const image = await findImage(person.image);
+
+---
+
+<li class="flex flex-row col-span-2 row-span-2 gap-4 bg-[--aw-color-grey2] text-white dark:bg-[--aw-color-grey9] py-8 px-6 rounded-lg">
+  <div class="flex flex-col gap-4">
+    <div class="w-[160px] h-[100px] grow-0 shrink-0 basis-[120px]">
+      <Image
+        src={image}
+        class="rounded"
+        layout={"constrained-both"}
+        width={100}
+        alt={`Собака Павлова • Выпускники • ${person.name}`}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <div class="grow-1 format-graduates-markdown">
+      <BestProjects person={person} />
+    </div>
+    
+  </div>
+  <div class="flex flex-col format-graduates-markdown">
+    <h3 class="text-xl sm:text-3xl leading-tight mb-4 font-heading">
+      {person.name}
+    </h3>
+    <div>
+      <Markdown.Inline of={person.excerpt} />
+    </div>
+    <div>
+      <Markdown.Inline of={person.context} />      
+    </div>
+    <div class="text-lg font-bold mt-6">
+      <Markdown.Inline of={person.review} />      
+    </div>
+    
+  </div>
+</li>
