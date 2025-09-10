@@ -1,0 +1,24 @@
+---
+
+import { getEntry } from 'astro:content';
+import SingleCard from './SingleCard.astro';
+import DoubleCard from './DoubleCard.astro';
+
+const { graduates } = Astro.props;
+
+const personsPromises = [];
+
+for (const person of graduates) {
+  personsPromises.push(getEntry('person', person));
+}
+const persons = (await Promise.all(personsPromises)).map(p => p.data);
+
+---
+
+<ul class="portfolio-collection flex md:grid md:grid-flow-row-dense md:grid-cols-portfolio-md md:max-w-[640px] lg:grid-cols-portfolio-lg lg:max-w-[960px] xl:grid-cols-portfolio xl:max-w-full flex-wrap justify-start list-none gap-6">
+  {persons.map(person => person.review ? (
+    <DoubleCard person={person} />
+  ) : (
+    <SingleCard person={person} />
+  ))}
+</ul>

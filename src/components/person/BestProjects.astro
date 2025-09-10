@@ -1,0 +1,33 @@
+---
+
+import { getEntry } from 'astro:content';
+import { Markdown } from '@astropub/md';
+
+const { person } = Astro.props;
+
+if (person.relatedPages) {
+  for (const p of person.relatedPages) {
+    p.collection && p.page && (p.loadedPage = await getEntry(p.collection, p.page));
+  }  
+} 
+
+---
+
+{person.relatedPages && (
+<div class="flex flex-col">
+  {person.relatedPages.map(rp => (
+    <Fragment>
+      {rp.text && (
+        <div class="font-bold">
+          <Markdown.Inline of={rp.text} />
+        </div>
+      )}
+      {rp.loadedPage && (
+        <a href={`/${rp.collection}/${rp.loadedPage.slug}/`}>
+          {rp.loadedPage.data.name}
+        </a>
+      )}
+    </Fragment>
+  ))}
+</div>
+)}
