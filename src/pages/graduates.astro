@@ -6,6 +6,9 @@ import Hund3 from '~/components/widgets/Hund3.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import PersonList from '~/components/person/PersonList.astro';
+import Number from '~/components/portfolio/Number.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
 
 const { page } = Astro.props as Props;
 
@@ -29,7 +32,6 @@ const metadata = {
 };
 
 ---
-
 <Layout metadata={metadata}>
   <Bread title="Прокачиваем специалистов" />
     
@@ -50,6 +52,66 @@ const metadata = {
   </Hund3>
       
   <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
-    <PersonList graduates={['ahnaf', 'alexandra-saveleva', 'anastasia-i']} />
+    <Features4
+        title=""
+        columns={ 3 }
+        items={[
+          {
+            title: 'Крупные проекты',
+            description: 'Работаем над серьезными дизайн-задачами больших компаний из разных отраслей.',
+          },
+          {
+            title: 'Методология',
+            description: 'Пользуемся собственной методологией, основанной на принципах дизайн-мышления.',
+          },
+          {
+            title: 'Менторство и опыт',
+            description: 'Передаем тринадцатилетнюю экспертизу каждому сотруднику и сопровождаем каждый проект.',
+          }
+        ]}
+        classes={}
+        defaultIcon="tabler:circle-check-filled"
+      />
+    <div class="flex flex-col sm:flex-row justify-between gap-6 mb-10">
+      <div class="basis-0 grow">
+        <Number 
+          number="30 дизайнеров" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+        />
+        <p class="mb-1 text-xl">под присмотром менторов на сложных проектах выросли в крепких middle.</p>
+      </div>
+      
+      <div class="basis-0 grow">
+        <Number 
+          number="12 менеджеров" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+        />
+        <p class="mb-1 text-xl">трансформировали свой управленческий опыт под требования IT. Теперь работают продактами.</p>
+      </div>
+      
+      <div class="basis-0 grow">
+        <Number 
+          number="8 узких специалистов" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+        />
+        <p class="mb-1 text-xl">среди которых были senior designers, product managers и UX-writers, стали T-shaped профессионалами</p>
+      </div>
+      <div class="basis-0 grow">
+        <Number 
+          number="5 социологов" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+        />
+        <p class="mb-1 text-xl">от науки и без IT-бэкграунда стали UX-аналитиками.</p>
+      </div>
+    </div>
+    <PersonList graduates={['euro', 'ahnaf', 'polina', 'anton-i', 'julia-gruzdeva', 'sophia-d', 'anna-semenova', 'xenia-v', 'olga-kuznetsova', 'ivan-rozhin', 'alexandra-saveleva','xenia-p', 'ekaterina-gordeeva', 'ilya-avramenko', 'olga-tabachishina', 'lubov-kaidas', 'antonina-hisametdinova', 'tatiana-kolupaeva', 'anton-romashko', 'vera-osolodkina', 'eugeny-gavrilov', 'andrey-tokach', 'andrey-egorov', 'vladislav-yakimov', 'mihail-podkopaev', 'alexey-zinovyev', 'ivan-popov', 'zahar', 'konstantin-osnos', 'galina-osipova', 'olga-samarina', 'ilya-bovkunov', 'andre-remati', 'ekaterina-yulina', 'arkadi-elizarov', 'ludmila-timonina', 'anastasia-i', 'zaur', 'ilya-belnik',]} />
   </section>
 </Layout>
