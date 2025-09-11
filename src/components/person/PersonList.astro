@@ -15,7 +15,7 @@ const persons = (await Promise.all(personsPromises)).map(p => p.data);
 
 ---
 
-<ul class="portfolio-collection flex md:grid md:grid-flow-row-dense md:grid-cols-portfolio-md md:max-w-[640px] lg:grid-cols-portfolio-lg lg:max-w-[960px] xl:grid-cols-portfolio xl:max-w-full flex-wrap justify-start list-none gap-6">
+<ul class="portfolio-collection flex md:grid md:grid-flow-row-dense md:grid-cols-portfolio-md md:max-w-[640px] lg:grid-cols-portfolio-lg lg:max-w-[960px] xl:grid-cols-portfolio xl:max-w-full flex-wrap justify-start list-none gap-6 mb-10">
   {persons.map(person => person.review ? (
     <DoubleCard person={person} />
   ) : (
