@@ -232,6 +232,9 @@ import '~/assets/styles/colors.css';
   .format-markdown div + em,
   .format-markdown div + p em,
   .format-markdown a + em,
+  .format-markdown a + p em,
+  .format-markdown blockquote + em,
+  .format-markdown blockquote + p em,
   .format-markdown .image-slider + em,
   .format-markdown .u-main + em {
     display: block;
@@ -241,6 +244,10 @@ import '~/assets/styles/colors.css';
     font-weight: 500;
     text-align: right;
     font-style: normal;
+
+    @media (min-width: 1024px) {
+      margin-left: 30%;
+    }
   }
 
   .format-markdown p:has(em),
@@ -291,21 +298,29 @@ import '~/assets/styles/colors.css';
     margin: 16px 0;
     border-radius: 8px;
     background-color: var(--aw-color-bg-accent2);
-
-    a {
-      text-decoration: underline;
-    }
+  }
+  .format-markdown blockquote a {
+    text-decoration: underline;
+  }
     
-    p {
-      margin-bottom: 0px;
-      
-      &:before,
-      &:after {
-        content: '';
-      }
-    }
+  .format-markdown blockquote p {
+    margin-bottom: 0px;
+  }    
+  .format-markdown blockquote p:before,
+  .format-markdown blockquote p:after {
+    content: '';
   }
   
+  .format-markdown blockquote ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+    
+  .format-markdown blockquote h4 {
+    margin-top: 8px;
+  }
+  
+
   .format-markdown p:has(+ .daisy-carousel),
   .format-markdown ul:has(+ .daisy-carousel),
   .format-markdown ol:has(+ .daisy-carousel) {
