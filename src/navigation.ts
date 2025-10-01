@@ -48,8 +48,8 @@ export const headerData = {
           href: getPermalink('/services/ux-outsource'),
         },
         {
-          text: 'Консультации',
-          href: getPermalink('/services/consultation'),
+          text: 'Работа в продуктовой команде',
+          href: getPermalink('/services/product-team'),
         },
         {
           text: 'Контент-дизайн',
@@ -67,7 +67,7 @@ export const headerData = {
         },
         {
           text: 'Книги',
-          href: "https://sobakapav.ru/books",
+          href: getPermalink('/books'),
         },
         {
           text: 'Видео',
@@ -93,23 +93,23 @@ export const headerData = {
       links: [
         {
           text: 'О компании',
-          href: "https://sobakapav.ru/about",
+          href: getPermalink('/about'),
         },
         {
           text: 'Вакансии',
-          href: "https://sobakapav.ru/vacancy",
+          href: getPermalink('/vacancy'),
         },
         {
           text: 'Выпускники',
-          href: "https://sobakapav.ru/graduates",
+          href: getPermalink('/graduates'),
         },
         {
           text: 'Соцсети',
-          href: "https://sobakapav.ru/social-network",
+          href: getPermalink('/social-network'),
         },
         {
           text: 'Контакты',
-          href: "https://sobakapav.ru/contacts",
+          href: getPermalink('/contacts'),
         },
        ],
     },  
