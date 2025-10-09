@@ -13,6 +13,7 @@ current-projects {
   
   .project-slide {
     visibility: hidden;
+    overflow: hidden;
     
     &.first {
       visibility: visible;
@@ -36,6 +37,12 @@ current-projects {
       opacity: 1;
       z-index: 2;
     }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {  
+  current-projects {
+  width: calc(100vw - 128px);
   }
 }
 
