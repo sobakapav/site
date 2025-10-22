@@ -2,7 +2,7 @@
 publishYear: 2021
 name: JetLearn
 title: Платформа для корпоративного обучения
-excerpt: UX-проектирование платформы для корпоративного обучения
+excerpt: Дизайн интерфейса платформы для корпоративного обучения
 isNew: true
 thumbnail:
   src: ~/assets/images/portfolio/cards/jetlearn.svg
@@ -21,8 +21,12 @@ tags:
   - mass
 
 context: |
-  [JetLearn](https://www.jetlearn.com/) — платформа для корпоративного обучения.
-
+  В жизни каждой компании, скопившей много внутренней экспертизы, наступает момент, когда она хочет этой экспертизой поделиться (вот [и у нас так было](https://www.eduhund.ru/)). 
+  
+  [JetLearn](https://www.jetlearn.com/) — внутренний обучающий ресурс, который компания решила масштабировать в полноценную обучающую платформу.
+  
+  А нам предстояло создать дизайн интерфейса для этой платформы, отразив нем полный user flow всех сценариев для каждого типа пользователей. Мы называем эту услугу [UX-дизайн под ключ](/services/ux-design).
+  
 relatedPages:
   - text: |
       ### Вам нужен интерфейс?
@@ -68,7 +72,7 @@ director: "слово директора"
 metadata:
   canonical: https://sobakapav.ru/portfolio/jetlearn
   title: Платформа для корпоративного обучения
-  description: "UX-проектирование платформы для корпоративного обучения"
+  description: "Дизайн интерфейса платформы для корпоративного обучения"
   robots:
     index: true
     follow: true
@@ -82,29 +86,81 @@ metadata:
 ---
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
+import ImageSlider from '~/components/common/ImageSlider.astro';
 
 <TOC>
-[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
+[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Процесс](#anchor4) • [Интерфейсные паттерны](#anchor5) • [Мудборд](#anchor6) • [Итог](#anchor7) • [Отзыв, цены, сроки](#anchor8)
 </TOC>
 
 ## <a name="anchor1" />Бизнес-задача
 
 Вывести внутренний образовательный продукт на внешний рынок для получения дополнительного дохода от эксплуатации своего актива.
 
+<a href="/images/portfolio/jetlearn/10.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/10.png)</a>
+<em>Студент. Мои курсы</em>
+
 ## <a name="anchor2" />Дизайн-задача
 
-Отрисовать макеты по очень четкой постановке.
+Отрисовать макеты интерфейса образовательной платформы с учетом основных сценариев трех типов пользователей:
+ - ученик;
+ - куратор;
+ - автор курса, он же администратор.
 
-## <a name="anchor3" />Процесс
+<a href="/images/portfolio/jetlearn/23.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/23.png)</a>
+<em>Статистика студента по курсу</em>
+ 
+>Use cases — пользовательские сценарии, сценарии взаимодействия, сценарии использования, пользовательские сценарии — последовательное описание поведения человека при взаимодействии с системой и системы, когда с ней взаимодействует человек. У нас есть [модуль дизайн-задачника «Сценарии взаимодействия»](https://www.eduhund.ru/program/usecases/?utm_source=sobakapav&utm_medium=site&utm_campaign=page) для тех, кто хочет научиться их использовать в дизайне интерфейсов.
+
+<a href="/images/portfolio/jetlearn/12.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/12.png)</a>
+<em>Автор. Список курсов</em>
+
+## <a name="anchor3" />Результат
+
+Отразили основные сценарии пользователей в информационной карте сайта. 
 
 <a href="/images/portfolio/jetlearn/1.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/1.png)</a>
-<em>Информационная карта</em>
+<em>Информационная карта. Студент, куратор</em>
 
-### <a name="anchor4" />Визуал
-Мудборд. 
-Референсы-антонимы
-Чтобы заказчику было проще описать пожелания к стилю, распределили референсы по восьми доскам. На каждой показали полярно разные примеры
-8 оппозиций:
+<a href="/images/portfolio/jetlearn/1-1.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/1-1.png)</a>
+<em>Информационная карта. Администратор</em>
+
+Нарисовали и передали заказчику макеты интерфейса, включающие все задачи каждого сценария для каждого типа пользователей.
+
+<ImageSlider slides={[
+  '/images/portfolio/jetlearn/27.png',
+  '/images/portfolio/jetlearn/26.png',
+  '/images/portfolio/jetlearn/15.png',
+  '/images/portfolio/jetlearn/14.png',
+  '/images/portfolio/jetlearn/16.png',
+  '/images/portfolio/jetlearn/17.png',
+]}/>
+<em>Создание курса: <a href="/images/portfolio/jetlearn/27.png" target="_blank">о курсе</a>, <a href="/images/portfolio/jetlearn/26.png" target="_blank">программа</a>, <a href="/images/portfolio/jetlearn/14.png" target="_blank">создание урока</a>, <a href="/images/portfolio/jetlearn/15.png" target="_blank">превью сертификата</a>, <a href="/images/portfolio/jetlearn/16.png" target="_blank">создание галереи</a>, <a href="/images/portfolio/jetlearn/17.png" target="_blank">добавление файла в хранилище</a></em>
+
+<ImageSlider slides={[
+  '/images/portfolio/jetlearn/19.png',
+  '/images/portfolio/jetlearn/20.png',
+  '/images/portfolio/jetlearn/21.png',
+  '/images/portfolio/jetlearn/22.png',
+]}/>
+<em><a href="/images/portfolio/jetlearn/19.png" target="_blank">Статистика по школе: список курсов</a>, <a href="/images/portfolio/jetlearn/20.png" target="_blank">Статистика: студенты</a>, <a href="/images/portfolio/jetlearn/21.png" target="_blank">Статистика: тултип при наведении на график</a>, <a href="/images/portfolio/jetlearn/22.png" target="_blank">Статистика студента</a></em>
+
+## <a name="anchor4" /> Нюансы и особенности процесса
+
+### <a name="anchor5" />Интерфейсные паттерны
+
+На примере пяти образовательных платформ показали заказчику возможные варианты интерфейсных паттернов для типовых элементов интерфейса (профиль, страница курса и т.п.). 
+
+<a href="/images/portfolio/jetlearn/30.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/30.png)</a>
+<em>Фрагмент доски со сравнением интерфейсных паттернов для пользователя-ученика</em>
+
+### <a name="anchor6" />Мудборд 
+
+Чтобы заказчику было проще описать пожелания к стилю, подобрали референсы-антонимы и распределили их по восьми доскам.
+
+<a href="/images/portfolio/jetlearn/30.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/30.png)</a>
+<em>Фрагмент мудборда</em>
+
+На каждой показали полярно разные примеры для восьми оппозиций:
 - Визуальный \ Текстовый
 - Деловой \ Непринужденный
 - Темный \ Светлый
@@ -114,62 +170,31 @@ import TOC from '~/components/widgets/TOC.astro';
 - Плоский \ С тенями
 - Скругленный \ Прямоугольный
 
-<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/2.png" alt="ППлатформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/3.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
+<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/2.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/3.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
 _Визуальный \ Текстовый_
 
-<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/4.png" alt="ППлатформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/5.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
+<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/4.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/5.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
 _Красочный \ Монохромный_
 
-<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/6.png" alt="ППлатформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/7.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
+<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/6.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/7.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
 _Темный \ Светлый, Скругленный \ Прямоугольный_
 
-<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/8.png" alt="ППлатформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/9.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
-_Первая и вторая интерации_
+Заказчик выбрал светлый, красочный, непринужденный стиль. В основном текстовый, оформительскими тенями и скругленными уголками. Для студентов — воздушный, с цветными заливками. Для адниминистраторов — скорее плотный, с точечными акцентами.
 
-## <a name="anchor4" />Результат
+<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/jetlearn/8.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/jetlearn/9.png" alt="Платформа для корпоративного обучения" class="min-w-72 grow shrink basis-0" /></div>
+_Первая и вторая итерации_
 
-Макеты переданы заказчику.
+### <a name="anchor7" />Итог
 
-<a href="/images/portfolio/jetlearn/10.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/10.png)</a>
-<em>Студент. Мои курсы</em>
+Макеты переданы в разработку, заказчик ослался доволен.
 
 <a href="/images/portfolio/jetlearn/11.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/11.png)</a>
-<em>Студент. Курс. Программа курса</em>
-
-<a href="/images/portfolio/jetlearn/12.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/12.png)</a>
-<em>Автор. Курсы. Список</em>
+<em>Студент. Программа курса</em>
 
 <a href="/images/portfolio/jetlearn/13.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/13.png)</a>
 <em>Создание курса. О курсе. Hover</em>
 
-<a href="/images/portfolio/jetlearn/14.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/14.png)</a>
-<em>Сертификат. Превью</em>
-
-<a href="/images/portfolio/jetlearn/15.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/15.png)</a>
-<em>Создание урока</em>
-
-<a href="/images/portfolio/jetlearn/16.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/16.png)</a>
-<em>Создание курса. Создать галерею</em>
-
-<a href="/images/portfolio/jetlearn/17.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/17.png)</a>
-<em>Создание курса. Вставить файл. Хранилище. Вид миниатюр</em>
-
 <a href="/images/portfolio/jetlearn/18.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/18.png)</a>
-<em>Создание курса. Вопросы по курсу</em>
+<em>Создание курса. Вопросы</em>
 
-<a href="/images/portfolio/jetlearn/19.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/19.png)</a>
-<em>Статистика по школе. Список курсов карточки</em>
-
-<a href="/images/portfolio/jetlearn/20.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/20.png)</a>
-<em>Статистика по школе. Студенты</em>
-
-<a href="/images/portfolio/jetlearn/21.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/21.png)</a>
-<em>Статистика по курсу. Тултип при наведении на график</em>
-
-<a href="/images/portfolio/jetlearn/22.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/22.png)</a>
-<em>Статистика студента</em>
-
-<a href="/images/portfolio/jetlearn/23.png" target="_blank">![Платформа для корпоративного обучения | SobakaPav.ru](~/assets/images/portfolio/jetlearn/23.png)</a>
-<em>Статистика студента по курсу</em>
-
-## <a name="anchor5" />
+## <a name="anchor8" />
