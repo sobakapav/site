@@ -8,6 +8,7 @@ import TabComponent from '~/components/main/TabComponent.astro';
 import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import HighlightedCases from "~/components/services/HighlightedCases.astro";
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -40,7 +41,7 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata}  hasSlider={true}>
   <Bread title="Аутстафф" />
 
   <!-- Hund3 Widget ******************* -->
@@ -130,28 +131,21 @@ const metadata = {
         </div>
       </div>
     </div>
-  
-  <div>
-    <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры UX-аутсорса</h2>
-    <RelatedPages 
-      pages={[{collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'compel'}, {collection: 'portfolio', page: 'anggell-2025'}]}
-      hideFields={{ year: true }}
-      styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
-    />
-  </div>
-    
-   <div>
-     <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры продуктовой работы</h2>
-     <RelatedPages 
-       pages={[{collection: 'portfolio', page: 'algohelp'}, {collection: 'portfolio', page: 'avicenna'}, {collection: 'portfolio', page: 'anggell'}, {collection: 'portfolio', page: 'fasting'}]}
-       hideFields={{ year: true }}
-       styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
-     />
-   </div> 
   </div>
   
- 
-  
-  
-  
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+   <HighlightedCases
+     classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
+     title={"Примеры UX-аутсорса"}
+     links={[{name: 'anggell-2025'}, {name: 'jeffit'}, {name: 'control-patent'}, {name: 'e-gorod-mobile'}, {name: 'alfastrah-design'}, {name: 'elma-bot'}, {name: 'gazprom-neft'}, {name: 'alfa-arm'} ]}
+     collection="portfolio"
+   />
+   <HighlightedCases
+      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
+      title={"Примеры работы в продуктовой коменде"}
+      links={[{name: 'avicenna'}, {name: 'stroynastroy'}, {name: 'omnitopic'}, {name: 'algohelp'}, {name: 'fasting'}, {name: 'cindicator'} ]}
+      collection="portfolio"
+   />
+ </div>
+
 </Layout>
