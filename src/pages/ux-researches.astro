@@ -1,0 +1,145 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Image from '~/components/common/Image.astro';
+import TabComponent from '~/components/main/TabComponent.astro';
+import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import HighlightedCases from "~/components/services/HighlightedCases.astro";
+
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+
+import '~/components/main/Bento.less';
+
+const metadata = {
+  canonical: 'https://sobakapav.ru/services',
+  title: `UX-исследования • Возьмем на себя все ваши дизайнерские задачи`,
+  description:
+    'Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [
+      {
+        url: '~/assets/images/services.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <Bread title="Аутстафф" />
+
+  <!-- Hund3 Widget ******************* -->
+
+  <Hund3>
+    <Fragment slot="title">Продуктовые исследования и&nbspаудиты</Fragment>
+    <Fragment slot="subtitle">
+      
+    </Fragment>
+  </Hund3>
+
+  <div class="grid grid-research max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
+    <div class="gap-4">
+      <p class="mb-4">Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты.</p>
+      <p>Замеряем метрики: SUM (Single Usability Metric), SEQ (Single Ease Question), CES (Customer Effort Score), CSAT (Customer Satisfaction Score), SUS (System Usability Scale), UMUX-lite (Usability Metric for User Experience lite) и др.</p>
+    </div>
+    
+    
+    
+    <div class="bg-[#212121]">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам: сразу человек и сразу по делу</h2>
+      <div class="flex flex-col gap-6">
+        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[72px] leading-none no-underline">{SITE.phone}</h3>
+        <div class="flex flex-row gap-1 justify-between text-white">
+          <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+          <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid-research2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+    <div>
+      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуга</h3>
+      <RelatedPages 
+        pages={[{collection: 'services', page: 'research'}]}
+        hideFields={{ tags: true, year: true }}
+        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+    </div>
+    
+    <div>
+      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Примеры продуктовых исследований</h3>
+      <RelatedPages 
+        pages={[{collection: 'portfolio', page: 'medmarket'}, {collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'avito'}, {collection: 'portfolio', page: 'joono-ai'}, {collection: 'portfolio', page: 'zapovednik'}, {collection: 'portfolio', page: 'qiwi'} ]}
+        hideFields={{ year: true }}
+        styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+      
+    </div>
+    
+    <div>
+      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуга</h3>
+      <RelatedPages 
+        pages={[{collection: 'services', page: 'ux-audit'}]}
+        hideFields={{ tags: true, year: true }}
+        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+    </div>
+    
+    <div>
+      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Примеры UX-аудитов</h3>
+      <RelatedPages 
+        pages={[{collection: 'portfolio', page: 'lab4u'}, {collection: 'portfolio', page: 'simetra'}, {collection: 'portfolio', page: 'etm'}, {collection: 'portfolio', page: 'onesoil'}, {collection: 'portfolio', page: 'goodwood'}, {collection: 'portfolio', page: 'documedd'}]}
+        hideFields={{ year: true }}
+        styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+      
+    </div>
+    
+  </div>
+  
+  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-8">
+     <div>
+        <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Отрасли</h2>        
+        <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+          </ul> 
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+          </ul> 
+        </div>
+     </div>
+     
+     <div>
+       <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Клиенты</h2>
+       <LogoTabComponent2 /> 
+     </div> 
+  
+  </div> 
+  
+</Layout>

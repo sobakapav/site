@@ -1,0 +1,157 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Image from '~/components/common/Image.astro';
+import TabComponent from '~/components/main/TabComponent.astro';
+import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import RelatedLinks from '~/components/services/RelatedLinks.astro';
+
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+
+import '~/components/main/Bento.less';
+
+const metadata = {
+  canonical: 'https://sobakapav.ru/services',
+  title: `UX-аутстафф • Возьмем на себя все ваши дизайнерские задачи`,
+  description:
+    'Внешний отдел UX-специалистов: от продуктовых исследований до интерфейсов в html/css.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [
+      {
+        url: '~/assets/images/services.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <Bread title="Аутстафф" />
+
+  <!-- Hund3 Widget ******************* -->
+
+  <Hund3>
+    <Fragment slot="title">UX-аутстафф</Fragment>
+    <Fragment slot="subtitle">
+      Возьмемся за любые интерфейсные задачи: UX-исследования, UI- и UX-дизайн, графический дизайн. Впишемся в вашу команду, ускорим и упростим работу над продуктом.
+    </Fragment>
+  </Hund3>
+
+  <div class="grid-outstaff grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
+    <div class="gap-4">
+      <h2 class="text-4xl font-bold">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css</h2>
+      
+    </div>
+    
+    <div>
+      <TabComponent button1="Дизайн" button2="Исследования">
+        <Fragment slot="tab1">
+          <h3 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Дизайн интерфейсов</h3>
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="/services/redesign">Точечный редизайн</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="/services/new-features">Добавление новой функциональности</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="/services/prototype">Прототип под инвестиции</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="/services/ui-redesign">UI-редизайн</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="/services/content-design">Контент-дизайн</a></li>
+          </ul>
+        </Fragment>
+          
+        <Fragment slot="tab2">
+          <h3 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-6">Исследования</h3>
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4 mt-4">
+            <li><a class="underline-offset-4 decoration-1" href="/services/research">Продуктовое исследование</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="/services/ux-audit">UX-аудит</a></li>
+          </ul>
+        </Fragment>
+      </TabComponent>
+    </div>
+    
+    <div>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
+      <div class="flex flex-col lg:flex-row gap-6">
+        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+        <div class="flex flex-col gap-1 justify-center text-white">
+          <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+          <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-8">
+    <div>
+      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Варианты сотрудничества</h3>
+      <RelatedPages 
+        pages={[{collection: 'services', page: 'ux-outsource'}, {collection: 'services', page: 'product-team'}]}
+        hideFields={{ tags: true, year: true }}
+        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+    </div>
+    
+    
+    <div class="flex flex-col justify-between">
+      <div class="flex flex-col">
+        <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Клиенты</h2>
+        <LogoTabComponent2 />
+              
+        <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Отрасли</h2>
+        
+        <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+          </ul> 
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  
+  <div>
+    <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры UX-аутсорса</h2>
+    <RelatedPages 
+      pages={[{collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'compel'}, {collection: 'portfolio', page: 'anggell-2025'}]}
+      hideFields={{ year: true }}
+      styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+    />
+  </div>
+    
+   <div>
+     <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры продуктовой работы</h2>
+     <RelatedPages 
+       pages={[{collection: 'portfolio', page: 'algohelp'}, {collection: 'portfolio', page: 'avicenna'}, {collection: 'portfolio', page: 'anggell'}, {collection: 'portfolio', page: 'fasting'}]}
+       hideFields={{ year: true }}
+       styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+     />
+   </div> 
+  </div>
+  
+ 
+  
+  
+  
+</Layout>
