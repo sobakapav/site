@@ -20,8 +20,8 @@ export interface Props extends Widget {
 
 const {
   title = await Astro.slots.render("title"),
-  linkText = "View all posts",
-  linkUrl = getBlogPermalink(),
+  linkText,
+  linkUrl,
   information = await Astro.slots.render("information"),
   links = [],
 
@@ -38,7 +38,9 @@ for (var item of links) {
     posts.push(item);
   } else if (item.name) {
     const data = JSON.parse(JSON.stringify((await getEntry(collection, item.name)).data));
-    data.excerpt = item.text;
+    if (item.text) {
+      data.excerpt = item.text;
+    }
     data.href = `/${collection}/${item.name}`;
     posts.push(data);
   }

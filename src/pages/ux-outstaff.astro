@@ -95,7 +95,7 @@ const metadata = {
     </div>
   </div>
   
-  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
+  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-8">
     <div>
       <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Варианты сотрудничества</h3>
       <RelatedPages 
@@ -130,18 +130,28 @@ const metadata = {
         </div>
       </div>
     </div>
+  
   <div>
+    <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры UX-аутсорса</h2>
+    <RelatedPages 
+      pages={[{collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'compel'}, {collection: 'portfolio', page: 'anggell-2025'}]}
+      hideFields={{ year: true }}
+      styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+    />
+  </div>
+    
+   <div>
+     <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры продуктовой работы</h2>
+     <RelatedPages 
+       pages={[{collection: 'portfolio', page: 'algohelp'}, {collection: 'portfolio', page: 'avicenna'}, {collection: 'portfolio', page: 'anggell'}, {collection: 'portfolio', page: 'fasting'}]}
+       hideFields={{ year: true }}
+       styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+     />
+   </div> 
+  </div>
   
  
   
-    <div>
-      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры UX-аутсорса</h3>
-      <RelatedPages 
-        pages={[{collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'compel'}, {collection: 'portfolio', page: 'anggell-2025'}]}
-        hideFields={{ tags: true, year: true }}
-        styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
-      />
-    </div>
-    <div>
+  
   
 </Layout>
