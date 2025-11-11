@@ -9,6 +9,7 @@ import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
 import HighlightedCases from "~/components/services/HighlightedCases.astro";
+import CurrentProjects from '~/components/main/CurrentProjects.astro';
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -20,9 +21,9 @@ import '~/components/main/Bento.less';
 
 const metadata = {
   canonical: 'https://sobakapav.ru/services',
-  title: `UX-исследования • Возьмем на себя все ваши дизайнерские задачи`,
+  title: `UX-дизайн • Дизайн и редизайн интерфейсов`,
   description:
-    'Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты.',
+    'Создаем интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.',
   robots: {
     index: true,
     follow: true,
@@ -41,31 +42,66 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} hasSlider={true}>
   <Bread title="Аутстафф" />
 
   <!-- Hund3 Widget ******************* -->
 
   <Hund3>
-    <Fragment slot="title">Продуктовые исследования и&nbspаудиты</Fragment>
+    <Fragment slot="title">Дизайн и редизайн интерфейсов</Fragment>
     <Fragment slot="subtitle">
-      
+      Создаем интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.
     </Fragment>
   </Hund3>
 
-  <div class="grid grid-research max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
+  <div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
     <div class="gap-4">
-      <p class="mb-4">Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты.</p>
-      <p>Замеряем метрики: SUM (Single Usability Metric), SEQ (Single Ease Question), CES (Customer Effort Score), CSAT (Customer Satisfaction Score), SUS (System Usability Scale), UMUX-lite (Usability Metric for User Experience lite) и др.</p>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Над чем мы работаем в ноябре 2025 года</h2>
+      <CurrentProjects projects={['project-20', 'project-19', 'project-18', 'project-17',  'project-16', 'project-15', 'project-14', 'project-13', 'project-4']} />
     </div>
     
+    <div class="flex flex-col justify-between">
+      <div class="flex flex-col">
+        <div class="flex flex-row justify-between">
+          <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Отрасли</h2>
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
+            <a href="/portfolio">Все кейсы →</a>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+          </ul> 
+          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+          </ul> 
+        </div>  
+        
+      </div>
+      
+      {/*<div class="h-[1px] border border-[#E8E8E8]"></div>*/}
+        
+      <div class="flex flex-row justify-between md:justify-end lg:justify-between mt-6 md:mt-8 md:gap-8 lg:gap-0">
+        <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
+        <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
+        <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
+        <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
+      </div>
+    </div>
     
-    
-    <div class="bg-[#212121]">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам: сразу человек и сразу по делу</h2>
-      <div class="flex flex-col gap-6">
-        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[72px] leading-none no-underline">{SITE.phone}</h3>
-        <div class="flex flex-row gap-1 justify-between text-white">
+    <div>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
+      <div class="flex flex-col lg:flex-row gap-6">
+        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+        <div class="flex flex-col gap-1 justify-center text-white">
           <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
           <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
           <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
@@ -76,28 +112,31 @@ const metadata = {
   
   <div class="grid-research2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
     <div>
+      <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Аутстафф</h3>
+      <p class="mb-4">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css.<p/>
+      <p class="mb-4">Возьмемся за любые интерфейсные задачи, впишемся в вашу команду, ускорим и упростим работу над продуктом.<p/>
+      <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mb-4">
+        <a href="/ux-outstaff">Подробнее →</a>
+      </div>
+    </div>
+    <div>
       <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуги</h3>
       <RelatedPages 
-        pages={[{collection: 'services', page: 'research'}, {collection: 'services', page: 'ux-audit'}]}
+        pages={[{collection: 'services', page: 'ux-design'}, {collection: 'services', page: 'redesign'}, {collection: 'services', page: 'ui-redesign'}, {collection: 'services', page: 'new-features'}, {collection: 'services', page: 'prototype'}, {collection: 'services', page: 'content-design'}]}
         hideFields={{ tags: true, year: true }}
         styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
       />
     </div>
-    
-    <div>
-      
-    </div>
-    </div>
+  </div>  
   
-  <div>
-    <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Примеры проектов</h2>
-    <HighlightedCases
-                classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
-                title={"Примеры проектов"}
-                links={[{name: 'joono-ai'}, {name: 'zapovednik'}, {name: 'qiwi'}, {name: 'medmarket'}, {name: 'gazprom-neft'}, {name: 'avito'}]}
-                collection="portfolio"
-              />
-  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+      <HighlightedCases
+        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
+        title={"Примеры проектов"}
+        links={[{name: 'electrocardiography'}, {name: 'simed'}, {name: 't1'}, {name: 'pushkin-digital'}, {name: 'prozhito'}, {name: 'seatmap'}, {name: 'hyperus'}, {name: 'tmh'}, {name: 'ot-vinta'}, {name: 'dipol'}, {name: 'elma-bot'}, {name: 'e-gorod-mobile'}, {name: 'alfastrah-design'}, {name: 'pangeo'}, {name: 'res'}, {name: 'tis'}, {name: 'brighteye'}, {name: 'neurobureau'} ]}
+        collection="portfolio"
+      />
+    </div>
    </div> 
   </div>
 

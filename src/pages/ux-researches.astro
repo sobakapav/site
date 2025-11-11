@@ -137,9 +137,57 @@ const metadata = {
      
      <div>
        <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Клиенты</h2>
-       <LogoTabComponent2 /> 
+       <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 ml-0 gap-y-14 mt-8 lg:mt-0">
+               <div class="flex items-start justify-start">
+                <a class="noir2-div relative" href="https://sobakapav.ru/portfolio/gazprom-neft">
+                  <img src="/images/clients/gazprom.svg" width="36" height="60">
+                  <img src="/images/clients/gazprom4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="36" height="60">
+                  <img src="/images/clients/gazprom2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="36" height="60">
+              </a></div>
+              <div class="flex items-start justify-start">
+                 <a class="noir2-div relative" href="/portfolio/avito">
+                   <img src="/images/clients/avito.svg" width="56" height="56">
+                   <img src="/images/clients/avito4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="56" height="56">
+                   <img src="/images/clients/avito2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="56" height="56">
+              </a></div>
+              
+              <div class="flex items-start justify-start">
+                 <a class="noir2-div relative" href="/portfolio/sportmaster">
+                   <img src="/images/clients/sportmaster.svg" width="76" height="46">
+                   <img src="/images/clients/sportmaster4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="76" height="46">
+                   <img src="/images/clients/sportmaster2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="76" height="46">
+              </a></div>
+              
+              <div class="flex items-center justify-start">
+                     <a class="noir2-div relative" href="/portfolio/qiwi">
+                        <img src="/images/clients/qiwi.svg" width="56" height="56">
+                        <img src="/images/clients/qiwi4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="56" height="56">
+                        <img src="/images/clients/qiwi2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="56" height="56">
+              </a></div>
+              
+              <div class="flex items-center justify-start">
+                   <a class="noir2-div relative" href="/portfolio">
+                      <img src="/images/clients/x5.svg" width="56" height="56">
+                      <img src="/images/clients/x54.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="56" height="56">
+                      <img src="/images/clients/x52.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="56" height="56">
+              </a></div>
+              
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]"><a href="/portfolio">+200 компаний<br/>за 13 лет работы</a></h2>
+              
+           </div> 
      </div> 
   
   </div> 
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+    <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Экспертиза</h3>
+      <RelatedPages 
+        pages={[{collection: 'promo', page: 'ux-research'}, {collection: 'post', page: 'before-interface-testing'}, {collection: 'post', page: 'professional-testing'}, {collection: 'post', page: 'ux-audit-by-principles'}, {collection: 'post', page: 'user-testing-online'}, {collection: 'post', page: 'context'}, {collection: 'post', page: 'interview-method-for-development'}, {collection: 'post', page: 'qualitative-methods-in-ux-studies'}]}
+        hideFields={{ tags: true, year: true }}
+        styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+            
+     </div> 
+    </div>
   
 </Layout>

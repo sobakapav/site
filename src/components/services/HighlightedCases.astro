@@ -37,7 +37,11 @@ for (var item of links) {
   if (item.isSpecial) {
     posts.push(item);
   } else if (item.name) {
-    const data = JSON.parse(JSON.stringify((await getEntry(collection, item.name)).data));
+    const entry = await getEntry(collection, item.name);
+    if (!entry) {
+      console.log(`Cannot find entry ${item.name} for collection ${collection}`);
+    }
+    const data = JSON.parse(JSON.stringify(entry.data));
     if (item.text) {
       data.excerpt = item.text;
     }
