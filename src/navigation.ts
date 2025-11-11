@@ -267,6 +267,7 @@ export const portfolioFilters = {
     'anggell': '',
     'compel': '',
     'control': '',
+    'elma': '',
     'ecity': '',
     'gazprom': '',
     'jeffit': '',
