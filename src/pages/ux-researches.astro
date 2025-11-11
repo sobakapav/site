@@ -20,7 +20,7 @@ import '~/components/main/Bento.less';
 
 const metadata = {
   canonical: 'https://sobakapav.ru/services',
-  title: `UX-исследования • Возьмем на себя все ваши дизайнерские задачи`,
+  title: `UX-исследования • Качественные, количественные, пользовательские тестирования, UX-аудиты`,
   description:
     'Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты.',
   robots: {
@@ -31,7 +31,7 @@ const metadata = {
     site_name: 'Собака Павлова',
     images: [
       {
-        url: '~/assets/images/services.png',
+        url: '~/assets/images/ux-research.png',
         width: 1200,
         height: 630,
       },
@@ -87,7 +87,7 @@ const metadata = {
     <div>
       <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Примеры продуктовых исследований</h3>
       <RelatedPages 
-        pages={[{collection: 'portfolio', page: 'medmarket'}, {collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'avito'}, {collection: 'portfolio', page: 'joono-ai'}, {collection: 'portfolio', page: 'zapovednik'}, {collection: 'portfolio', page: 'qiwi'} ]}
+        pages={[{collection: 'portfolio', page: 'medmarket'}, {collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'avito'}, {collection: 'portfolio', page: 'bercut'}, {collection: 'portfolio', page: 'qiwi'}, {collection: 'portfolio', page: 'sportmaster'} ]}
         hideFields={{ year: true }}
         styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
       />
@@ -106,7 +106,7 @@ const metadata = {
     <div>
       <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Примеры UX-аудитов</h3>
       <RelatedPages 
-        pages={[{collection: 'portfolio', page: 'lab4u'}, {collection: 'portfolio', page: 'simetra'}, {collection: 'portfolio', page: 'etm'}, {collection: 'portfolio', page: 'onesoil'}, {collection: 'portfolio', page: 'goodwood'}, {collection: 'portfolio', page: 'documedd'}]}
+        pages={[{collection: 'portfolio', page: 'lab4u'}, {collection: 'portfolio', page: 'zapovednik'}, {collection: 'portfolio', page: 'simetra'}, {collection: 'portfolio', page: 'etm'}, {collection: 'portfolio', page: 'onesoil'}, {collection: 'portfolio', page: 'documedd'}]}
         hideFields={{ year: true }}
         styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
       />
@@ -137,7 +137,7 @@ const metadata = {
      
      <div>
        <h2 class="text-[52px] leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Клиенты</h2>
-       <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 ml-0 gap-y-14 mt-8 lg:mt-0">
+       <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-3 ml-0 gap-y-8 mt-8 lg:mt-0">
                <div class="flex items-start justify-start">
                 <a class="noir2-div relative" href="https://sobakapav.ru/portfolio/gazprom-neft">
                   <img src="/images/clients/gazprom.svg" width="36" height="60">
@@ -150,6 +150,12 @@ const metadata = {
                    <img src="/images/clients/avito4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="56" height="56">
                    <img src="/images/clients/avito2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="56" height="56">
               </a></div>
+              <div class="flex items-center justify-start">
+                  <a class="noir2-div relative" href="/portfolio/pushkin-digital">
+                    <img src="/images/clients/itmo.svg" width="150" height="56">
+                    <img src="/images/clients/itmo4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="150" height="56">
+                    <img src="/images/clients/itmo2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="150" height="56">
+                  </a></div>
               
               <div class="flex items-start justify-start">
                  <a class="noir2-div relative" href="/portfolio/sportmaster">
@@ -157,13 +163,18 @@ const metadata = {
                    <img src="/images/clients/sportmaster4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="76" height="46">
                    <img src="/images/clients/sportmaster2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="76" height="46">
               </a></div>
-              
               <div class="flex items-center justify-start">
                      <a class="noir2-div relative" href="/portfolio/qiwi">
                         <img src="/images/clients/qiwi.svg" width="56" height="56">
                         <img src="/images/clients/qiwi4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="56" height="56">
                         <img src="/images/clients/qiwi2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="56" height="56">
               </a></div>
+              <div class="flex items-center justify-start">
+                    <a class="noir2-div relative" href="/portfolio/prozhito">
+                      <img src="/images/clients/prozhito.svg" width="160" height="70">
+                      <img src="/images/clients/prozhito4.svg" class="noir2 absolute top-0 left-0 z-100 dark:hidden" width="160" height="70">
+                      <img src="/images/clients/prozhito2.svg" class="noir2 absolute top-0 left-0 z-100 hidden dark:inline" width="160" height="70">
+                    </a></div>
               
               <div class="flex items-center justify-start">
                    <a class="noir2-div relative" href="/portfolio">
