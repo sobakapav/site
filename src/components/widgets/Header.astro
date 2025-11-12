@@ -60,12 +60,12 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   <div class="absolute inset-0"></div>
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full',
+      'relative text-default py-3 px-3 md:px-6 mx-auto w-full flex justify-between',
       {
-        'lg:flex lg:justify-between': position !== 'center',
+        '2xl:flex 2xl:justify-between': position !== 'center',
       },
       {
-        'lg:grid lg:grid-cols-header lg:items-center': position === 'center',
+        '2xl:grid 2xl:grid-cols-header 2xl:items-center': position === 'center',
       },
       {
         'max-w-7xl': !isFullWidth,
