@@ -9,6 +9,7 @@ import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
 import HighlightedCases from "~/components/services/HighlightedCases.astro";
+import Number from '~/components/portfolio/Number.astro';
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -49,13 +50,13 @@ const metadata = {
   <Hund3>
     <Fragment slot="title">UX-аутстафф</Fragment>
     <Fragment slot="subtitle">
-      Возьмемся за любые интерфейсные задачи: UX-исследования, UI- и UX-дизайн, графический дизайн. Впишемся в вашу команду, ускорим и упростим работу над продуктом.
+      Возьмемся за любые интерфейсные задачи: UI- и UX-дизайн, графический дизайн, продуктовые исследования. Впишемся в вашу команду, ускорим и упростим работу над продуктом.
     </Fragment>
   </Hund3>
 
   <div class="grid-outstaff grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
     <div class="gap-4">
-      <h2 class="text-4xl font-bold">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css</h2>
+      <h2 class="text-4xl font-bold mb-4">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css</h2>
       
     </div>
     
@@ -74,7 +75,7 @@ const metadata = {
         </Fragment>
           
         <Fragment slot="tab2">
-          <h3 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-6">Исследования</h3>
+          <h3 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Исследования</h3>
           <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4 mt-4">
             <li><a class="underline-offset-4 decoration-1" href="/services/research">Продуктовое исследование</a></li>
             <li><a class="underline-offset-4 decoration-1" href="/services/ux-audit">UX-аудит</a></li>
@@ -83,11 +84,52 @@ const metadata = {
       </TabComponent>
     </div>
     
-    <div>
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
-      <div class="flex flex-col lg:flex-row gap-6">
-        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
-        <div class="flex flex-col gap-1 justify-center text-white">
+    <div class="flex flex-col sm:flex-row justify-between gap-2 text-white">
+      <div class="basis-0 grow">
+        <Number 
+          number="> 13 лет" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-pink]" 
+        />
+        <p class="mb-1"><a href="/about">создаем, изучаем, улучшаем интерфейсы</a></p>
+      </div>
+      
+      <div class="basis-0 grow">
+        <Number 
+          number="> 400 проектов" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-pink]" 
+        />
+        <p class="mb-1"><a href="/portfolio">UX-дизайн, редизайн, продуктовые исследования</a></p>
+      </div>
+      
+      <div class="basis-0 grow">
+        <Number 
+          number="> 150 кейсов" 
+          classes="mb-1.5 font-heading" 
+          textClasses="text-xl sm:text-4xl" 
+          numberClasses="text-xl sm:text-4xl text-[--aw-color-pink]" 
+        />
+        <p class="mb-1"><a href="/portfolio">на основе реальных проектов</a></p>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="grid grid-research max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
+    <div class="gap-4">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Специалисты, которые вам нужны</h2>
+      <p class="mb-4">За 13 лет мы собрали базу высоквалифицированных специалистов. </p>
+      <p>Подберем дизайнеров, аналитиков, социологов, максимально знакомых с тематикой вашего проекта. Сложными и нестандартными задачами займутся эксперты с огромным опытом, на простые и рутинные поставим миддл-специалистов.</p>
+    </div>
+  
+    <div class="bg-[#212121]">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам: сразу человек и сразу по делу</h2>
+      <div class="flex flex-col gap-6">
+        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[72px] leading-none no-underline">{SITE.phone}</h3>
+        <div class="flex flex-row gap-1 justify-between text-white">
           <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
           <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
           <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
@@ -98,7 +140,7 @@ const metadata = {
   
   <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-8">
     <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Варианты сотрудничества</h3>
+      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-10">Варианты сотрудничества</h3>
       <RelatedPages 
         pages={[{collection: 'services', page: 'ux-outsource'}, {collection: 'services', page: 'product-team'}]}
         hideFields={{ tags: true, year: true }}
@@ -109,32 +151,32 @@ const metadata = {
     
     <div class="flex flex-col justify-between">
       <div class="flex flex-col">
-        <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Клиенты</h2>
-        <LogoTabComponent2 />
-              
-        <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Отрасли</h2>
-        
+      
+        <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Отрасли</h2>
+        <p class="mb-4">Мы подберем людей, уже знакомых с вашей отраслью. Медицина, финансы, e-commerce, тяжелая промышленность или академические образовательные проекты, — у нас в любом случае найдутся люди, уже работавшие над похожими интерфейсами.</p>
         <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
           <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
           </ul> 
           <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
           </ul> 
         </div>
+        
+        <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Клиенты</h2>
+        <LogoTabComponent2 />
       </div>
     </div>
   </div>
   
  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Примеры UX-аутсорса</h2>
+   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Примеры UX-аутсорса</h2>
    <RelatedPages 
      pages={[{collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'alfastrahhr'}, {collection: 'portfolio', page: 'alfa'}, {collection: 'portfolio', page: 'control-patent'}, {collection: 'portfolio', page: 'control-predpisanie'}, {collection: 'portfolio', page: 'data-solution'}, {collection: 'portfolio', page: 'control-forest'}, {collection: 'portfolio', page: 'control-mobile'}, {collection: 'portfolio', page: 'e-gorod-mobile'}, {collection: 'portfolio', page: 'novotelekom'}, {collection: 'portfolio', page: 'e-gorod-guide'}, {collection: 'portfolio', page: 'e-gorod'}, {collection: 'portfolio', page: 'anggell-2025'}, {collection: 'portfolio', page: 'anggell'}, {collection: 'portfolio', page: 'elma-bot'}, {collection: 'portfolio', page: 'elma'} ]}
      hideFields={{ tags: true, year: true }}
