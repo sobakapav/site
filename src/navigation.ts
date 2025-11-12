@@ -117,7 +117,19 @@ export const headerData = {
       text: 'Дизайн-задачник',
       href: "https://www.eduhund.ru",
     },
-      
+    
+    {
+      text: 'UX-аутстафф',
+      href: getPermalink('/ux-outstaff'),
+    },
+    {
+      text: 'Дизайн интерфейсов',
+      href: getPermalink('/ux-design'),
+    }, 
+    {
+      text: 'Продуктовые исследования',
+      href: getPermalink('/ux-researches'),
+    },    
   ],
 
 };

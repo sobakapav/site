@@ -65,7 +65,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         '2xl:flex 2xl:justify-between': position !== 'center',
       },
       {
-        '2xl:grid 2xl:grid-cols-header 2xl:items-center': position === 'center',
+        '2xl:grid 2xl:grid-cols-header 2xl:items-start': position === 'center',
       },
       {
         'max-w-7xl': !isFullWidth,
@@ -73,7 +73,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center xl:ml-[-48px]" href={getHomePermalink()}>
+      <a class="flex items-center xl:ml-[-48px] mt-2" href={getHomePermalink()}>
         <Logo collapseSlogan={collapseSlogan} />
       </a>
       <div class="flex lg:hidden">
@@ -85,14 +85,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-base tracking-[0.01rem] font-medium lg:justify-center lg:pt-0"
+        class="flex flex-col lg:flex-row lg:flex-wrap lg:self-center w-full lg:w-auto text-base tracking-[0.01rem] font-medium lg:justify-start lg:pt-0"
       >
         {
           links.map(({ text, href, links }) => (
             <li class={links?.length ? 'dropdown whitespace-nowrap' : 'whitespace-nowrap'}>
               {links?.length ? (
                 <>
-                  <button class="hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 flex items-center text-xl lg:text-base">
+                  <button class="hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 lg:py-2 flex items-center text-xl lg:text-base">
                     {text}{' '}
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline" />
                   </button>
@@ -115,7 +115,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ) : (
                 <a
                   class:list={[
-                    'hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 flex items-center text-xl lg:text-base',
+                    'hover:text-link dark:hover:text-white px-6 lg:px-4 py-3 lg:py-2 flex items-center text-xl lg:text-base',
                     { 'aw-link-active': href === currentPath },
                   ]}
                   href={href}
@@ -146,7 +146,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
-        'hidden lg:self-center lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3lg:p-0 lg:justify-self-end',
+        'hidden lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3lg:p-0 lg:justify-self-end',
       ]}
     >
       <div class="items-center flex justify-between w-full lg:w-auto">
