@@ -35,7 +35,7 @@ for (var idx in cases) {
     <div class="slider slider-ux slider-desktop relative w-full">
       <div class="slides">
         {caseItems.map((item, index) => (
-          <div class:list={['slide bg-no-repeat bg-right-bottom h-[604px] p-10', index == 0 ? 'current' : '']} style={"background-image: url(\'" + item.thumbnail.src3 + "\');"}>
+          <div class:list={['slide bg-no-repeat bg-right-bottom h-[604px] p-5 sm:p-10', index == 0 ? 'current' : '']} style={"background-image: url(\'" + item.thumbnail.src3 + "\');"}>
             <a class="flex flex-col gap-4 h-full" href={item.href}>
               <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]">Популярные кейсы</h2>
               <div>
