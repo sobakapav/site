@@ -142,6 +142,21 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.grid-3cards {
+  > div {    
+    padding: 20px; 
+  }
+  
+  > div:nth-child(odd) {
+    background-color: #212121;
+    color: #FFFFFF;
+  }
+  
+  > div:nth-child(even) {
+    background-color: var(--aw-color-grey9);
+  }  
+}
+
 .divider {
  border-color: #E8E8E8;
 } 
@@ -254,7 +269,12 @@
         padding: 40px; 
       }  
   }
-
+  
+  .grid-3cards {    
+    > div {    
+      padding: 40px; 
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -323,20 +343,13 @@
    }
   
   .grid-design {
-          grid-template-columns: 1fr 3fr;   
-          > div {    
-            
-          }
-      
-          > div:nth-child(1) {
-            
-          }
-          
-          > div:nth-child(2) {
-            
-          }
-      }
+    grid-template-columns: 1fr 3fr;   
+  }
+  
+ .grid-3cards {
+   grid-template-columns: 1fr 1fr 1fr;
  }
+}
 
 @media (min-width: 1024px) {    
     .bento-grid2 {
