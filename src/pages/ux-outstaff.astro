@@ -134,12 +134,13 @@ const metadata = {
   </div>
   
  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-   <HighlightedCases
-     classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
-     title={"Примеры UX-аутсорса"}
-     links={[{name: 'anggell-2025'}, {name: 'jeffit'}, {name: 'control-patent'}, {name: 'e-gorod-mobile'}, {name: 'alfastrah-design'}, {name: 'elma-bot'}, {name: 'gazprom-neft'}, {name: 'alfa-arm'} ]}
-     collection="portfolio"
+   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Примеры UX-аутсорса</h2>
+   <RelatedPages 
+     pages={[{collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'alfastrahhr'}, {collection: 'portfolio', page: 'alfa'}, {collection: 'portfolio', page: 'control-patent'}, {collection: 'portfolio', page: 'control-predpisanie'}, {collection: 'portfolio', page: 'data-solution'}, {collection: 'portfolio', page: 'control-forest'}, {collection: 'portfolio', page: 'control-mobile'}, {collection: 'portfolio', page: 'e-gorod-mobile'}, {collection: 'portfolio', page: 'novotelekom'}, {collection: 'portfolio', page: 'e-gorod-guide'}, {collection: 'portfolio', page: 'e-gorod'}, {collection: 'portfolio', page: 'anggell-2025'}, {collection: 'portfolio', page: 'anggell'}, {collection: 'portfolio', page: 'elma-bot'}, {collection: 'portfolio', page: 'elma'} ]}
+     hideFields={{ tags: true, year: true }}
+     styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
    />
+   
    <HighlightedCases
       classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
       title={"Примеры работы в продуктовой команде"}
