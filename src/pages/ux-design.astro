@@ -5,7 +5,7 @@ import Hund3 from '~/components/widgets/Hund3.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Image from '~/components/common/Image.astro';
 import TabComponent from '~/components/main/TabComponent.astro';
-import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
+import LogoTabComponent from '~/components/main/LogoTabComponent.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
 import HighlightedCases from "~/components/services/HighlightedCases.astro";
@@ -72,6 +72,7 @@ const metadata = {
         </div>
         
         <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">
+        <p class="">В какой бы отрасли вы ни специализировались, у нас найдутся UX-дизайнеры, уже работавшие над похожими интерфейсами.</p>
           <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
@@ -85,17 +86,17 @@ const metadata = {
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
           </ul> 
-        </div>  
-        
+        </div>   
       </div>
-      
-      {/*<div class="h-[1px] border border-[#E8E8E8]"></div>*/}
         
-      <div class="flex flex-row justify-between md:justify-end lg:justify-between mt-6 md:mt-8 md:gap-8 lg:gap-0">
-        <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
-        <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
-        <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
-        <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
+      <div class="">
+        <div class="flex flex-row justify-between">
+          <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Аутстафф</h2>
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
+            <a href="/ux-outstaff">Подробнее →</a>
+          </div>
+        </div>
+        <p class="mb-[-4px]">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css.<p/>
       </div>
     </div>
     
@@ -112,24 +113,28 @@ const metadata = {
     </div>
   </div>
   
-  <div class="grid-research2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-    <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Аутстафф</h3>
-      <p class="mb-4">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css.<p/>
-      <p class="mb-4">Возьмемся за любые интерфейсные задачи, впишемся в вашу команду, ускорим и упростим работу над продуктом.<p/>
-      <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mb-4">
-        <a href="/ux-outstaff">Подробнее →</a>
-      </div>
-    </div>
-    <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуги</h3>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуги</h3>
       <RelatedPages 
-        pages={[{collection: 'services', page: 'ux-design'}, {collection: 'services', page: 'redesign'}, {collection: 'services', page: 'ui-redesign'}, {collection: 'services', page: 'new-features'}, {collection: 'services', page: 'prototype'}, {collection: 'services', page: 'content-design'}]}
+        pages={[{collection: 'services', page: 'ux-design'}, {collection: 'services', page: 'redesign'}, {collection: 'services', page: 'ui-redesign'}, {collection: 'services', page: 'new-features'}]}
+        hideFields={{ tags: true, year: true }}
+        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
+      />
+  </div>
+  
+  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
+    <div>
+      <RelatedPages 
+        pages={[{collection: 'services', page: 'prototype'}, {collection: 'services', page: 'content-design'}]}
         hideFields={{ tags: true, year: true }}
         styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
       />
     </div>
-  </div>  
+
+    <div class="flex flex-col">
+      <LogoTabComponent />
+    </div>
+  </div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
       <HighlightedCases
@@ -143,7 +148,7 @@ const metadata = {
   </div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отзывы</h2>
+    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-[-40px]">Отзывы</h2>
     <UniversalSlider count={2} styles={{main: 'review-slider full-width'}}>
       <div class="review-card-odd">
       <a href="/portfolio/erna">
