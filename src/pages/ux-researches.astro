@@ -10,6 +10,7 @@ import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
 import HighlightedCases from "~/components/services/HighlightedCases.astro";
 import ReviewItem from '~/components/portfolio/ReviewItem.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -90,7 +91,7 @@ const metadata = {
   
   <div class="grid-research2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
     <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуга</h3>
+      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-6">Услуга</h3>
       <RelatedPages 
         pages={[{collection: 'services', page: 'research'}]}
         hideFields={{ tags: true, year: true }}
@@ -99,7 +100,7 @@ const metadata = {
     </div>
     
     <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Примеры продуктовых исследований</h3>
+      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-6">Примеры продуктовых исследований</h3>
       <RelatedPages 
         pages={[{collection: 'portfolio', page: 'medmarket'}, {collection: 'portfolio', page: 'gazprom-neft'}, {collection: 'portfolio', page: 'avito'}, {collection: 'portfolio', page: 'bercut'}, {collection: 'portfolio', page: 'qiwi'}, {collection: 'portfolio', page: 'sportmaster'} ]}
         hideFields={{ year: true }}
@@ -109,7 +110,7 @@ const metadata = {
     </div>
     
     <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуга</h3>
+      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-0">Услуга</h3>
       <RelatedPages 
         pages={[{collection: 'services', page: 'ux-audit'}]}
         hideFields={{ tags: true, year: true }}
@@ -118,7 +119,7 @@ const metadata = {
     </div>
     
     <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Примеры UX-аудитов</h3>
+      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-0">Примеры UX-аудитов</h3>
       <RelatedPages 
         pages={[{collection: 'portfolio', page: 'lab4u'}, {collection: 'portfolio', page: 'zapovednik'}, {collection: 'portfolio', page: 'simetra'}, {collection: 'portfolio', page: 'etm'}, {collection: 'portfolio', page: 'onesoil'}, {collection: 'portfolio', page: 'documedd'}]}
         hideFields={{ year: true }}
@@ -129,7 +130,60 @@ const metadata = {
     
   </div>
   
-  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отзывы о продуктовых исследованиях</h2>
+    <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
+      <div class="review-card-odd">
+      <a href="/portfolio/gazprom-neft">
+      <ReviewItem
+        title="Газпром-нефть"
+        text="Результаты исследования мы используем не только для разработки, но и для обучения сотрудников департамента. Полученная в результате исследования карта оказалось максимально полезной. Мы увидели процесс глазами сотрудника, узнали о новых проблемах, а главное — смогли совместно с подрядчиком разработать гипотезы, как поддержать пользователя на стороне ресурса."
+        person="Татьяна Постникова,"
+        position="менеджер проекта"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </a>
+      </div>
+      
+      <div class="review-card-even">
+      <a href="/portfolio/qiwi">
+      <ReviewItem
+        title="Qiwi"
+        text="Во-первых, мы используем СJM как красивое и понятное представление пути пользователя для внутренних презентаций. Во-вторых, приоритизировали проблемы, найденные в рамках экспертного аудита. В-третьих, в маркетинговой стратегии и стратегии развития делаем упор на преимущества перед другими системами, выявленные конкурентным анализом. Мы увидели, осознали, поняли, чем можем управлять, чем нет."
+        person="Надежда Юдина,"
+        position="менеджер проекта, исследователь"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </a>
+      </div>
+       
+      <div class="review-card-odd">
+      <a href="/portfolio/sportmaster">
+      <ReviewItem
+       title="Спортмастер"
+       text="Команда «Собаки» показала в работе профессиональный подход и экспертизу. Сотрудники компании тщательно вникают в проблематику решаемой задачи и задают правильные вопросы. Понравилась практичность полученных результатов. Будем сотрудничать дальше."
+       person="Олег Калмахелидзе,"
+       position="ведущий бизнес-аналитик по информационным системам департамента интернет-продаж компании «Спортмастер»"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </a>
+      </div>
+      <div class="review-card-even">
+      <a href="/portfolio/joono-ai">
+      
+      <ReviewItem
+       title="Joono"
+       text="Работалось нам комфортно. Мы почуствовали ваш профессионализм и еще раз убедились в недостатке собственной продуктовой экспертизы. Мы поняли что нам надо усилить продуктовый вижн. В итоге мы свой проект сейчас ставим на паузу и нашли продукт с фаундером, у которого есть продуктовый вижн — сейчас инвестируем средства в данный проект."
+       person="Дмитрий Иванцов,"
+       position="генеральный директор ЦПА Медиа"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </a>
+      </div>
+    </UniversalSlider>
+  </div>
+  
+  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
      <div>
         <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Отрасли</h2>        
         <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
@@ -205,14 +259,65 @@ const metadata = {
   </div> 
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Экспертиза</h3>
-      <RelatedPages 
-        pages={[{collection: 'promo', page: 'ux-research'}, {collection: 'post', page: 'before-interface-testing'}, {collection: 'post', page: 'professional-testing'}, {collection: 'post', page: 'ux-audit-by-principles'}, {collection: 'post', page: 'user-testing-online'}, {collection: 'post', page: 'context'}, {collection: 'post', page: 'interview-method-for-development'}, {collection: 'post', page: 'qualitative-methods-in-ux-studies'}]}
-        hideFields={{ tags: true, year: true }}
-        styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отзывы о UX-аудитах</h2>
+    <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
+      <div class="review-card-odd">
+      <a href="/portfolio/simetra">
+      <ReviewItem
+        title="RITM³"
+        text="Мы использовали результаты аудита для внутреннего анализа, а также погружения новых дизайнеров и знакомства с лучшими практиками (и как было и как лучше). По интерфейсу от пользователей только положительные отзывы у нас, в том числе благодаря вашим дополнениям."
+        person="Андрей Кузнецов,"
+        position="руководитель проекта"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
       />
-            
-     </div> 
-    </div>
+      </a>
+      </div>
+      <div class="review-card-even">
+      <a href="/portfolio/online-express">
+      <ReviewItem
+        title="Online Express"
+        text="Когда мы выбирали компанию, нас подкупило то, что вы предлагали двигаться гибко, по аджайлу, шагами улучшений. Мы хотим действовать именно так и отдать переделку элементов вам."
+        person="Дмитрий Понятовский,"
+        position="руководитель бизнес-процессов"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
+      />
+      </a>
+      </div> 
+      <div class="review-card-odd">
+      <a href="/portfolio/snob">
+      <ReviewItem
+       title="Сноб"
+       text="Нам очень нужен был свежий взгляд, чтобы понять, какие у нас проблемы и в какую сторону развиваться. И «Собака Павлова» стала отличным психологом, собеседником и аналитиком. Некоторыми советами мы воспользовались сразу, а некоторые собираемся внедрить в новой версии сайта. Спасибо!"
+       person="Лика Кремер,"
+       position="главный редактор"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
+      />
+      </a>
+      </div>
+      
+      <div class="review-card-even">
+      <a href="/portfolio/goodwood">
+      <ReviewItem
+        title="GoodWood"
+        text="Большое спасибо за работу, вдумчиво, профессионально, по делу, мы довольны."
+        person="Валентин Федотов,"
+        position="руководитель отдела digital-маркетинга"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
+      />
+      </a>
+      </div>
+    </UniversalSlider>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
+    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Экспертиза</h3>
+    <RelatedPages 
+      pages={[{collection: 'promo', page: 'ux-research'}, {collection: 'post', page: 'before-interface-testing'}, {collection: 'post', page: 'professional-testing'}, {collection: 'post', page: 'ux-audit-by-principles'}, {collection: 'post', page: 'user-testing-online'}, {collection: 'post', page: 'context'}, {collection: 'post', page: 'interview-method-for-development'}, {collection: 'post', page: 'qualitative-methods-in-ux-studies'}]}
+      hideFields={{ tags: true, year: true }}
+      styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
+    />
+          
+   </div> 
+  </div>
   
 </Layout>
