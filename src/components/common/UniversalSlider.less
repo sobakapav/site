@@ -1,11 +1,19 @@
 u-slider {
   .u-slider-container {
     overflow-y: visible !important;
+
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
   }
 
   .u-slider {
     overflow-x: hidden;
     scroll-behavior: smooth;
+
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
   }
   
   .u-slide {
@@ -31,5 +39,29 @@ u-slider {
       }
     }
   
+  }
+  &.full-width {
+    @media (width >= 48rem) {
+      .u-slider-container {
+        width: calc(100vw - 3rem);
+        max-width: 77rem;
+      }
+      .u-slider {
+        width: calc(100vw - 3rem);
+        max-width: 77rem;
+      }
+      .u-slide {
+        width: calc(100vw - 3rem);
+        max-width: 77rem;
+      }
+      .u-slide2 {
+        width: calc(50vw - 1.5rem);
+        max-width: 38.5rem;
+      }
+      .u-slide3 {
+        width: calc(33vw - 1rem);
+        max-width: 25rem;
+      }
+    }
   }
 }

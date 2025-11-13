@@ -7,6 +7,7 @@ import { Icon } from 'astro-icon/components';
 import { getBlogPermalink } from "~/utils/permalinks";
 import { findPostsByIds } from "~/utils/blog";
 import { getEntry } from 'astro:content';
+import { twMerge } from "tailwind-merge";
 import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
 import type { Widget } from "~/types";
 
@@ -67,7 +68,7 @@ for (var item of links) {
                 </a>
               )}
             <h2
-              class="text-5xl group font-heading mb-2"
+              class={twMerge('text-5xl group font-heading mb-2', classes?.heading)}
               set:html={title}
             />
             
