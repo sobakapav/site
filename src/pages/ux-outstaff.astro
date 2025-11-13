@@ -10,6 +10,8 @@ import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
 import HighlightedCases from "~/components/services/HighlightedCases.astro";
 import Number from '~/components/portfolio/Number.astro';
+import ReviewItem from '~/components/portfolio/ReviewItem.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -138,7 +140,7 @@ const metadata = {
     </div>
   </div>
   
-  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-8">
+  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
     <div>
       <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-10">Варианты сотрудничества</h3>
       <RelatedPages 
@@ -182,13 +184,129 @@ const metadata = {
      hideFields={{ tags: true, year: true }}
      styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
    />
-   
+ 
+   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отзывы от постоянных заказчиков</h2>
+   <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
+     <div class="review-card-odd">
+     <ReviewItem
+       title="АльфаСтрахование"
+       text="Понравилось работать с «Собакой Павловой». Проработали сложные витиеватые сценарии, сформировали базовый набор компонентов для дизайн-системы, навели порядок в Фигме. Периодически продолжаем обращаться за помощью в проработке сложных мест в юзер-флоу. Рекомендую."
+       person="Алексей Тушканов,"
+       position="руководитель направления исследований и дизайна"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-even">
+     <ReviewItem
+       title="ANGGELL"
+       text="Команда Собаки Павлова — одна из самых профессиональных команд для построения и улучшения цифровых сервисов (и не только). Особо ценю вас за то, что к вам можно обратиться на любой стадии проекта, и вы всегда найдете возможность помочь."
+       person="Роман Лебедев,"
+       position="Co-Founder / CEO"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-odd">
+     <ReviewItem
+       title="Электронный город"
+       text="Сотрудничаем уже лет 6-7, за это время были разные проекты, многие с высокой степенью неопределенности с нашей стороны. Но результат всегда на высоте. Основа всего — аналитика и понимание конечной аудитории. Это сильно отличает СП от большинства студий, которые идут от картинки."
+       person="Степан Антонов,"
+       position="директор по маркетингу"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-even">
+     <ReviewItem
+       title="Газпром-нефть"
+       text="О «Собаке» у нас сложилось отличное впечатление. Все работы были выполнены с опережением сроков, менеджер всегда был на связи и объяснял нам с коллегами каждый шаг в ходе исследования. Результат работ однозначно полезен."
+       person="Татьяна Постникова,"
+       position="менеджер проекта"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-odd">
+     <ReviewItem
+       title="Data Solution"
+       text="Сотрудничество было продуктивным и полезным. Мы как заказчики поняли, как лучше формулировать требования к задачам такого рода и как дальше строить диалог. (Спойлер: заказчику тоже нужно много готовиться и работать, чтобы результат был достойный)."
+       person="Екатерина Березина,"
+       position="руководитель проектного офиса Data Solution"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-even">
+     <ReviewItem
+       title="ELMA"
+       text="...В каждом из перечисленных кейсов реализации сложных внутренних бизнес-процессов помогает простота и интуитивная понятность интерфейса платформы. А возможность кастомизации и брендирования модулей делает систему нативной для конечного пользователя любой компании."
+       person="Алексей Будин,"
+       position="генеральный директор Elma"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+   </UniversalSlider>
+  
    <HighlightedCases
-      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
+      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mt-10 related-posts", heading: "text-3xl"}}
       title={"Примеры работы в продуктовой команде"}
       links={[{name: 'avicenna'}, {name: 'stroynastroy'}, {name: 'omnitopic'}, {name: 'algohelp'}, {name: 'fasting'}, {name: 'cindicator'} ]}
       collection="portfolio"
    />
+   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отзывы о продуктовой работе</h2>
+   <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
+     <div class="review-card-odd">
+     <ReviewItem
+       title="АльфаСтрахование"
+       text="Понравилось работать с «Собакой Павловой». Проработали сложные витиеватые сценарии, сформировали базовый набор компонентов для дизайн-системы, навели порядок в Фигме. Периодически продолжаем обращаться за помощью в проработке сложных мест в юзер-флоу. Рекомендую."
+       person="Алексей Тушканов,"
+       position="руководитель направления исследований и дизайна"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-even">
+     <ReviewItem
+       title="ANGGELL"
+       text="Команда Собаки Павлова — одна из самых профессиональных команд для построения и улучшения цифровых сервисов (и не только). Особо ценю вас за то, что к вам можно обратиться на любой стадии проекта, и вы всегда найдете возможность помочь."
+       person="Роман Лебедев,"
+       position="Co-Founder / CEO"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+     />
+     </div>
+     <div class="review-card-odd">
+     <ReviewItem
+       title="Электронный город"
+       text="Сотрудничаем уже лет 6-7, за это время были разные проекты, многие с высокой степенью неопределенности с нашей стороны. Но результат всегда на высоте. Основа всего — аналитика и понимание конечной аудитории. Это сильно отличает СП от большинства студий, которые идут от картинки."
+       person="Степан Антонов,"
+       position="директор по маркетингу"
+       styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </div>
+      <div class="review-card-even">
+      <ReviewItem
+        title="Газпром-нефть"
+        text="О «Собаке» у нас сложилось отличное впечатление. Все работы были выполнены с опережением сроков, менеджер всегда был на связи и объяснял нам с коллегами каждый шаг в ходе исследования. Результат работ однозначно полезен."
+        person="Татьяна Постникова,"
+        position="менеджер проекта"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </div>
+      <div class="review-card-odd">
+      <ReviewItem
+        title="Data Solution"
+        text="Сотрудничество было продуктивным и полезным. Мы как заказчики поняли, как лучше формулировать требования к задачам такого рода и как дальше строить диалог. (Спойлер: заказчику тоже нужно много готовиться и работать, чтобы результат был достойный)."
+        person="Екатерина Березина,"
+        position="руководитель проектного офиса Data Solution"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </div>
+      <div class="review-card-even">
+      <ReviewItem
+        title="Газпром-нефть"
+        text="О «Собаке» у нас сложилось отличное впечатление. Все работы были выполнены с опережением сроков, менеджер всегда был на связи и объяснял нам с коллегами каждый шаг в ходе исследования. Результат работ однозначно полезен."
+        person="Татьяна Постникова,"
+        position="менеджер проекта"
+        styles={{heading: 'sm:text-3xl xl:text-3xl mb-6'}}
+      />
+      </div>
+    </UniversalSlider>
+ 
  </div>
 
 </Layout>
