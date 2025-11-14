@@ -33,7 +33,7 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
       <PortfolioTags tags={post.tags} />
     )}
     
-    { (! hideFields.year) && (
+    { (! hideFields.year) && (post.publishYear > 2023) && (
       <span class="flex flex-row text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund] gap-4 items-center mt-2">
         {post.publishYear}
       </span>
@@ -52,7 +52,7 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
     classes={{main: 'blog-list-item hidden md:block'}}
   >
     <Fragment slot="footer">
-      { (! hideFields.year) && (
+      { (! hideFields.year) && (post.publishYear > 2023) && (
         <span class:list={["text-xl sm:text-3xl leading-tight font-heading", post.thumbnail.isDark ? "text-[--aw-color-pink]" : "text-[--aw-color-hund]"]}>
          {post.publishYear}
         </span>
