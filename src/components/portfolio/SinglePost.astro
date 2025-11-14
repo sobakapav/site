@@ -67,7 +67,7 @@ const { Content } = post;
         <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-0 mb-2">
           <p class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">
             {
-              post.publishYear
+              (post.publishYear > 2023) ? post.publishYear : ''
             }       
           </p>
           {post.logo?.src && (
