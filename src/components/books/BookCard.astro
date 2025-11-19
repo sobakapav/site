@@ -55,6 +55,13 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
     <header>
       <div class="flex flex-row justify-between">
         <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4"><span set:html={footer} /></h2> 
+        
+        {link && (
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
+            <a href="{link}"><Markdown.Inline of={linkText} /></a>
+          </div>
+        )}
+        
         <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
           <a href="mailto">Попросить книгу</a>
         </div>

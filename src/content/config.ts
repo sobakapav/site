@@ -372,6 +372,8 @@ const bookSchema = () => z.object({
    image: z.string().optional(),
    imageAlt: z.string().optional(),
    author: z.string().optional(),
+   link: z.string().optional(),
+   linkText: z.string().optional(),
 });
 
 const bookCollection = defineCollection({
