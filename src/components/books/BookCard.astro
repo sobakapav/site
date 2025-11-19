@@ -8,7 +8,8 @@ const {
   image, 
   imagePosition,
   alt, 
-  link, 
+  link,
+  linkText,
   supertitle = await Astro.slots.render('supertitle'),
   title, 
   text,
@@ -56,15 +57,16 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
       <div class="flex flex-row justify-between">
         <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4"><span set:html={footer} /></h2> 
         
-        {link && (
-          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
+        {link ? (
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[400px] max-h-11 mt-[-12px] mb-4">
             <a href="{link}"><Markdown.Inline of={linkText} /></a>
           </div>
+        ) : (
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
+            <a href="mailto">Попросить книгу</a>
+          </div>
         )}
-        
-        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[200px] max-h-11 mt-[-12px] mb-4">
-          <a href="mailto">Попросить книгу</a>
-        </div>
+      
       </div>    
         <h2 class:list={["text-xl sm:text-3xl leading-tight my-2 dark:text-slate-300 font-heading z-[2]", myClasses.title]}>
           <Markdown.Inline of={title} />

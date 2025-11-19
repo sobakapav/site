@@ -11,6 +11,7 @@ const { post, hideFields = {}, styles = {} } = Astro.props;
 <BookCard
   image={post.thumbnail || post.image}
   link={getPermalink(post.permalink)}
+  linkText={post.linkText}
   title={post.title}
   text={post.description || post.excerpt}
   classes={styles}
