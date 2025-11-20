@@ -11,10 +11,14 @@ const { list } = Astro.props;
 const items = [];
 for (var idx in list) {
   var item = await getEntry('portfolio', list[idx]);
-  if (!item) console.error(`Cannot find item with name ${list[idx]}`);
-  item.data.index = idx;
-  item.data.href = `/portfolio/${list[idx]}`;
-  items.push(item.data);
+  if (!item) console.error(`Cannot find portfolio item with name ${list[idx]}`);
+  const data = JSON.parse(JSON.stringify(item.data));
+  data.index = idx;
+  data.href = `/portfolio/${list[idx]}`;
+  if (data.publishYear) {
+    data.tags.push(data.publishYear.toString());
+  }
+  items.push(data);
 }
 
 ---

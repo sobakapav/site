@@ -286,6 +286,8 @@ export const portfolioFilters = {
     'constructor': '',
     'kids': '',
     'telecom': '',
+    '2025': '',
+    '2024': '',
   },
   
 };
