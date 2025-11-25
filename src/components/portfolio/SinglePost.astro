@@ -51,7 +51,7 @@ const { Content } = post;
             <h3 class="mb-1 text-base">Результат</h3>
             {post.result?.map((res) => (
             <div class="format-subtitle-markdown">
-              <a href={res.link} class="flex flex-row items-center gap-1 mb-2">
+              <a href={res.link || 'mailto:we@sobakapav.ru'} class="flex flex-row items-center gap-1 mb-2">
                 {res.src && (
                   <div class="grow-0 shrink-0 basis-[30px]"><Image src={res.src} alt="Figma logo" height={40} width={30}/></div>
                 )}
