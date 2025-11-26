@@ -65,7 +65,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         '2xl:flex 2xl:justify-between': position !== 'center',
       },
       {
-        '2xl:grid 2xl:grid-cols-header 2xl:items-start': position === 'center',
+        '2xl:grid 2xl:grid-cols-header': position === 'center',
       },
       {
         'max-w-7xl': !isFullWidth,
