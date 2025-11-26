@@ -6,6 +6,7 @@ import { SITE } from 'astrowind:config';
 import LogoTabComponent from '~/components/main/LogoTabComponent.astro';
 import CardSlider from '~/components/main/CardSlider.astro';
 import CurrentProjects from '~/components/main/CurrentProjects.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 import '~/components/main/Bento.less';
 
@@ -26,7 +27,10 @@ import '~/components/main/Bento.less';
       </div>
       
       <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">
-        <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
+        <h3 class="bg-[#212121] inline-block text-4xl sm:text-[52px] sm:leading-none text-white font-heading p-10"><a href={getPermalink('/ux-outstaff')} class="no-underline hover:underline underline-offset-2">UX-аутстафф</a></h3>
+        <h3 class="inline-block text-4xl sm:text-[52px] sm:leading-none font-heading p-10"><a href={getPermalink('/ux-design')} class="no-underline hover:underline underline-offset-2">Дизайн интерфейсов</a></h3>
+        <h3 class="bg-[--aw-color-grey9] inline-block text-4xl sm:text-[52px] sm:leading-none font-heading p-10"><a href={getPermalink('/ux-researches')} class="no-underline hover:underline underline-offset-2">Исследования</a></h3>     
+        {/*<ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
           <li><a class="underline-offset-4 decoration-1" href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
           <li><a class="underline-offset-4 decoration-1" href="/services/redesign">Точечный редизайн</a></li>
           <li><a class="underline-offset-4 decoration-1" href="/services/new-features">Добавление новой функциональности</a></li>
@@ -37,9 +41,9 @@ import '~/components/main/Bento.less';
           <li><a class="underline-offset-4 decoration-1" href="/services/research">Продуктовое исследование</a></li>
           <li><a class="underline-offset-4 decoration-1" href="/services/ux-audit">UX-аудит</a></li>
           <li><a class="underline-offset-4 decoration-1" href="/services/ux-outsource">UX-отдел на аутсорсе</a></li>
-          {/*<li><a class="underline-offset-4 decoration-1" href="/services/consultation">Консультации</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="/services/content-design">Контент-дизайн</a></li>*/}
-        </ul>
+          <li><a class="underline-offset-4 decoration-1" href="/services/consultation">Консультации</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/services/content-design">Контент-дизайн</a></li>
+        </ul>*/}
       </div>  
       
     </div>
@@ -130,6 +134,9 @@ import '~/components/main/Bento.less';
   <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
    
   <div class="gap-4">
+    <div class="gap-4 flex flex-col justify-center bg-[--aw-color-grey9] p-10 mb-10 mt-[-40px]">
+      <h3 class="text-4xl sm:text-[52px] font-heading leading-none text-[--aw-color-grey1]"><a href="/vacancy">Вакансии →</a></h3>
+    </div>
     <div class="flex justify-between mb-4">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Публикации</h2>
       <div class="flex flex-row gap-6 ">
@@ -140,9 +147,10 @@ import '~/components/main/Bento.less';
     </div>
     
     <div class="flex justify-between flex-col gap-4">
+        
        <a href="https://dmkpress.com/catalog/business/978-5-93700-435-2/" class="basis-0 grow-[7]">
          <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Я хочу сделать хороший дизайн продукта</h3>
-         <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">В декабре в издательстве «ДМК Пресс» выйдет новая книга Ольги Павловой. Для всех кто, задействован в дизайн-проектах, вне зависимости от роли в проекте и уровня навыков дизайнера.</div>
+         <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">В декабре в издательстве «ДМК Пресс» выйдет новая книга Ольги Павловой.</div>
          <div class="flex flex-row">
            <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-[-12px] mb-4">
              <a href="https://dmkpress.com/catalog/business/978-5-93700-435-2/">Оформить предзаказ</a>
@@ -151,17 +159,13 @@ import '~/components/main/Bento.less';
        </a> 
       <a href="/publications/electrocardiography" class="basis-0 grow-[7]">
         <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">60 вариантов плëнки для ЭКГ одним решением</h3>
-        <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Рассказываем, как учесть интересы врачей, разработки и бизнеса в медицинском интерфейсе.</div>
+        <div class="text-base mb-4 dark:text-[--aw-color-text-light-default]">Как учесть интересы врачей, разработки и бизнеса в медицинском интерфейсе.</div>
         <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
           14.03.2025
         </div>
       </a> 
     </div>
   </div>
-  
-  <div class="gap-4 flex flex-col justify-center">
-    <h3 class="text-[52px] font-heading leading-none text-[--aw-color-grey1]"><a href="/vacancy">Вакансии →</a></h3>
-  </div> 
   
 </div>
 
