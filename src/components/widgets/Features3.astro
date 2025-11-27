@@ -4,6 +4,7 @@ import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Image from '~/components/common/Image.astro';
 import type { Features as Props } from '~/types';
+import { twMerge } from 'tailwind-merge';
 
 const {
   title = await Astro.slots.render('title'),
@@ -21,6 +22,9 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const myItems = items.map(item => (typeof item === 'string') ? {title: '', description: item} : item);
+
 ---
 
 <WidgetWrapper
@@ -55,15 +59,15 @@ const {
   </div>
 
   <ItemGrid
-    items={items}
+    items={myItems}
     columns={columns}
     defaultIcon={defaultIcon}
     classes={{
-      container: 'features-block',
-      panel: 'max-w-full sm:max-w-md',
-      title: 'text-lg font-semibold',
-      description: 'mt-0.5',
-      icon: 'flex-shrink-0 mt-1 text-[#B5BFBF] w-6 h-6',
+      container: twMerge('features-block', classes.gridContainer),
+      panel: twMerge('max-w-full sm:max-w-md', classes.panel),
+      title: twMerge('text-lg font-semibold', classes.title),
+      description: twMerge('mt-0.5', classes.description),
+      icon: twMerge('flex-shrink-0 mt-1 text-[#B5BFBF] w-6 h-6', classes.icon),
       ...((classes?.items as {}) ?? {}),
     }}
   />
