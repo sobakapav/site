@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Image from '~/components/common/Image.astro';
@@ -38,7 +39,7 @@ const metadata = {
     site_name: 'Собака Павлова',
     images: [
       {
-        url: '~/assets/images/ux-researches.png',
+        url: '~/assets/images/ux-research.png',
         width: 1200,
         height: 630,
       },
@@ -48,7 +49,7 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} hasSlider={true}>
   <Bread title="Исследования" />
 
   <!-- Hund3 Widget ******************* -->
@@ -202,13 +203,16 @@ const metadata = {
           <li>AI-обработка материалов исследований</li>
           <li>Формулирование и проверка гипотез</li>
         </ul>
-        <div class="bg-[#212121] text-white p-5 md:p-10">
-          <h3 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-6">Шпаргалки</h3>
-          <ul class="flex flex-col text-base underline underline-offset-4 gap-4">
-            <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/ux-analytics-in-interface-design">Как использовать UX-аналитику в дизайне интерфейсов</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/interface-audit">Как провести аудит существующего интерфейса</a></li>
-          </ul>
+        <div>
+          <h3 class="text-xl font-heading tracking-widest text-[--aw-color-hund] mb-6">Инструменты</h3>
+          <div class="flex flex-row justify-between md:justify-end lg:justify-between md:gap-8 lg:gap-0">
+            <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
+            <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
+            <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
+            <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -216,37 +220,39 @@ const metadata = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-[-60px]">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Результат</h2>
     <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Что вы получите?</h3>
-    <div class="grid bento-grid6 gap-6">
+    <div class="grid bento-grid6 gap-4">
       <Features3
         columns={2}
         items={[{title: 'Исследование пользователей и контекста', description: '- Портреты пользователей\n- JTBD\n- User stories\n- Модели информационных ожиданий\n- AI-бот для работы с результатами (CJM Guru)'}, {title: 'Карты пути и сценарии', description: '- CJM (Customer Journey Map)\n- UJM (User Journey Map)\n- EJM (Employee Journey Map)\n- Сценарии взаимодействия'}, {title: 'Аналитика и сравнение', description: '- Сравнительная таблица конкурентного анализа\n- Результаты замера юзабилити метрик\n- Продуктовые матрицы'}, {title: 'Архитектура продукта', description: '- Информационно-архитектурная карта\n- Карта интерфейсных фокусов'},]}
-        classes={{description: 'text-base', title: 'text-xl'}}
+        classes={{description: 'text-base', title: 'text-xl mb-2'}}
         defaultIcon="tabler:circle-check-filled"
       />  
-      <div>
-        <h3 class="text-xl font-heading tracking-widest text-[--aw-color-hund] mb-6">Инструменты</h3>
-        <div class="flex flex-row justify-between md:justify-end lg:justify-between md:gap-8 lg:gap-0">
-          <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
-          <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
-          <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
-          <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
-        </div>
+      <div class="bg-[#212121] text-white p-5 md:p-10">
+        <h3 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-6">Шпаргалки</h3>
+        <ul class="flex flex-col text-base underline underline-offset-4 gap-4">
+          <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/ux-analytics-in-interface-design">Как использовать UX-аналитику в дизайне интерфейсов</a></li>
+          <li><a class="underline-offset-4 decoration-1" cheatsheets/respondents-for-ux-research">Как собрать респондентов для UX-исследования</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/interface-audit">Как провести аудит интерфейса</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/cjm-in-interface-design">Как использовать CJM в UX-дизайне</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/jtbd-in-interface-design">Как использовать JTBD в UX-дизайне</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/cheatsheets/custom-device-interface-testing">Как тестировать макеты не компьютерного интерфейса</a></li>
+        </ul>
       </div>
     </div>
   </div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
         <HighlightedCases
-          classes={{ container: "pt-0 lg:pt-0 md:pt-0 mx-auto px-4 sm:px-2 related-posts" }}
+          classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
           title={"Примеры проектов"}
-          links={[{name: 'broker'}, {name: 'gazprom-neft'}, {name: 'avito'}, {name: 'qiwi'}]}
+          links={[{name: 'gazprom-neft'}, {name: 'gazprom-services'}, {name: 'qiwi'}, {name: 'avito'}, {name: 'broker'}, {name: 'lab4u'}, {name: 'joono-ai'}, {name: 'medmarket'}, {name: 'zapovednik'}, {name: 'simetra'}, {name: 'etm'}, {name: 'onesoil'}, {name: 'goodwood'}, {name: 'sportmaster'}, {name: 'kapital'}, {name: 'electronika'}, {name: 'bercut'}, {name: 'documedd'}, {name: 'bibi'}, {name: 'solar-staff'} ]}
           collection="portfolio"
         />
- </div>
+  </div>
  
- <div class="grid bento-grid5 max-w-7xl mx-auto px-4 sm:px-6 mt-[-20px] gap-6">
+  <div class="grid bento-grid5 max-w-7xl mx-auto px-4 sm:px-6 mt-[-80px] gap-6 mb-6 md:mb-10">
    <div>
-     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Главный результат — знание о ваших клиентах,  с которым можно работать</h2>
+     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Главный результат — знание о ваших клиентах, с которым можно работать</h2>
      <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
        <div class="flex flex-col gap-1 justify-center text-white">
@@ -256,6 +262,6 @@ const metadata = {
        </div>
      </div>
    </div>
- </div>
+  </div>
   
 </Layout>
