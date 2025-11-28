@@ -9,7 +9,7 @@ export interface Props {
   posts: Array<Post>;
 }
 
-const { posts } = Astro.props;
+const { posts, hideFields = {} } = Astro.props;
 
 ---
 <div class="flex flex-wrap flex-row justify-normal gap-4" id="portfolio-regular-view">
@@ -23,7 +23,7 @@ const { posts } = Astro.props;
           link={post.link}
         />
       ) : (
-        <Item post={post} />
+        <Item post={post} hideFields={hideFields} />
       )}
     </li>
   ))}
@@ -44,7 +44,7 @@ const { posts } = Astro.props;
                 link={post.link}
               />
             ) : (
-              <Item post={post} />
+              <Item post={post} hideFields={hideFields} />
             )}
           </div>
         ))}

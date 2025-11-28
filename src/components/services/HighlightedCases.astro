@@ -30,7 +30,8 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render("bg"),
-  collection
+  collection,
+  hideFields = {}
 } = Astro.props;
 
 const posts = [];
@@ -78,7 +79,7 @@ for (var item of links) {
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={posts} classes="flex-row justify-normal gap-4" />
+      <Grid posts={posts} hideFields={hideFields} classes="flex-row justify-normal gap-4" />
       <div class="flex justify-end">
       <div class="bg-[--aw-color-grey8] color-[--aw-color-grey1] hover:text-[--aw-color-hund] px-5 py-[10px] max-w-[167px]">
         <a href="https://sobakapav.ru/portfolio">Все проекты →</a>
