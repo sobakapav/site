@@ -4,6 +4,7 @@ import Hund3 from '~/components/widgets/Hund3.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Design2DevCollection from '~/components/design2dev/Design2DevCollection.astro';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
   title: 'Дизайн проектов и дизайн интерфейсов • Книги «Собаки Павловой»',
@@ -43,16 +44,50 @@ const metadata = {
     <Fragment slot="subtitle">
       Мы создаем интерфейсы сложных IT-систем. А поэтому много знаем об IT-проектах, UX и дизайне, сайтах, текстах и цифровой составляющей бизнеса.<br/><br/>
       Часто об этом рассказываем и часто отвечаем на вопросы. Из ответов на некоторые вопросы получились книги.<br/><br/>
-      Чтобы получить книги, напишите нам на почту <a class="underline underline-offset-2 text-[--aw-color-accent]" href="mailto:we@sobakapav.ru">we@sobakapav.ru</a>. Это бесплатно. 
+      Чтобы получить бесплатные книги, напишите нам на почту <a class="underline underline-offset-2 text-[--aw-color-accent]" href="mailto:we@sobakapav.ru">we@sobakapav.ru</a>.
     </Fragment>
   </Hund3>
   
   <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto px-6 sm:px-6 mb-6">
     <div class="max-w-5xl pt-8 md:pt-12 mb-6">
+      <article class="flex mb-6 relative gap-6 flex-nowrap flex-row max-w-5xl pt-8 md:pt-12 mb-6">
+        <div>
+          <div class="relative overflow-hidden rounded image-animate">
+            <div class="w-72">
+              {/*<img src="~/assets/images/books/book.jpg" alt="Я хочу сделать хороший дизайн продукта" crossorigin="anonymous" referrerpolicy="no-referrer" width="288" height="411" style="object-fit: cover; object-position: center;" class="rounded" loading="lazy" decoding="async" title="Я хочу сделать хороший дизайн продукта"> */}
+              <Image
+                          src="~/assets/images/books/book.jpg"
+                          class="rounded"
+                          layout={"constrained-width"}
+                          width={288}
+                          alt="Я хочу сделать хороший дизайн продукта"
+                          loading="lazy"
+                          decoding="async"
+                        />
+              </div> </div> <div class="mb-1 mt-6"> <span class="text-sm"> <div class="inline-block"> 2025 год • 412 страниц • ДМК Пресс • ISBN: 978-5-93700-435-2 </div> </span> </div> </div>
+            <div class="">
+            <header>
+            <div class="flex flex-row justify-between"> <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4"><span> Ольга Павлова </span></h2>
+            <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[400px] max-h-11 mt-[-12px] mb-4"> <a href="https://dmkpress.com/catalog/business/978-5-93700-435-2/">Купить книгу</a> </div> </div>
+            
+            <h2 class="text-xl sm:text-3xl leading-tight my-2 dark:text-slate-300 font-heading z-[2]"> Я хочу сделать хороший дизайн продукта </h2>
+            <h3 class="text-xl font-bold mb-6"> Для профессионалов, задействованных в дизайн-проектах, вне зависимости от роли в проекте и уровня навыков дизайнера. </h3> </header>
+            <div class="format-subtitle-markdown"> 
+              <p>Рассказываем в формате справочника-путеводителя, как управленцу или аналитику подготовить, организовать и удачно реализовать проект по дизайну продукта.</p>
+            </div>
+            <div class="format-subtitle-markdown"> <p>«Блестящее сочетание очевидных (и потому попадающих в слепое пятно) и нетривиальных (спасибо разнообразию и богатству опыта автора) советов и рекомендаций в области продуктового дизайна как для людей, в нем искушенных, так и для новичков. Причем для новичков книга не просто справочник — это и великолепный самоучитель, эффективно заменяющий дорогие курсы. Вдобавок она написана легким и живым языком, и оттого читать ее — отдельное удовольствие, незаметно способствующее усвоению материала».</p>
+            </div>
+            <div class="flex flex-row justify-end">
+              <p class="text-base mt-[-16px] mb-6  md:max-w-[60%]">
+              Андрей Себрант, директор по стратегическому маркетингу Яндекса, канд. физ.-мат. наук, профессор Университета ИТМО, эксперт Клуба Forbes</p>
+            </div>
+          </div>
+        </div>
+      </article>
       <RelatedPages 
-        pages={[{collection: 'books', page: 'book'}, {collection: 'books', page: 'book1'}, {collection: 'books', page: 'book2'}, {collection: 'books', page: 'book3'}]}
+        pages={[{collection: 'books', page: 'book1'}, {collection: 'books', page: 'book2'}, {collection: 'books', page: 'book3'}]}
         hideFields={{ tags: true }}
-        styles={{main: 'gap-6 flex-nowrap flex-row', textBlock: ''}}
+        styles={{main: 'gap-6 flex-nowrap flex-row max-w-5xl ', textBlock: ''}}
       />
     </div> 
   </div>
