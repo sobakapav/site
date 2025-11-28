@@ -12,6 +12,18 @@ export const headerData = {
       href: '/services',
       links: [
         {
+          text: 'Дизайн',
+          href: getPermalink('/ux-design'),
+        },
+        {
+          text: 'Исследования',
+          href: getPermalink('/ux-researches'),
+        },
+        {
+          text: 'UX-аутстафф',
+          href: getPermalink('/ux-outstaff'),
+        },
+        /*{
           text: 'Все услуги',
           href: getPermalink('/services'),
         },
@@ -54,7 +66,7 @@ export const headerData = {
         {
           text: 'Контент-дизайн',
           href: getPermalink('/services/content-design'),
-        },
+        },*/
       ],
     },
     {
@@ -118,7 +130,7 @@ export const headerData = {
       href: "https://www.eduhund.ru",
     },
     
-    {
+    /*{
       text: 'UX-аутстафф',
       href: getPermalink('/ux-outstaff'),
     },
@@ -129,7 +141,7 @@ export const headerData = {
     {
       text: 'Продуктовые исследования',
       href: getPermalink('/ux-researches'),
-    },    
+    },*/    
   ],
 
 };
