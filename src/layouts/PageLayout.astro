@@ -19,6 +19,10 @@ const { metadata, hasSlider, darkTheme = false, collapseSlogan = false} = Astro.
 
 <Layout metadata={metadata} hasSlider={hasSlider}>
   
+  <slot name="announcement">
+    <Announcement isDark={darkTheme}/>
+  </slot>
+  
   <slot name="header">
     <Header {...headerData} isSticky showToggleTheme isDark={darkTheme} collapseSlogan={collapseSlogan} />
   </slot>
