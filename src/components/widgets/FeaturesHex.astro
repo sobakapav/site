@@ -1,4 +1,6 @@
 ---
+import { twMerge } from 'tailwind-merge';
+
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
@@ -35,7 +37,7 @@ var titledItems = [{title, description: subtitle, classes: {
     columns={ 3 }
     defaultIcon={defaultIcon}
     classes={{
-      container: 'features-block gap-6 gap-y-6 md:gap-y-6 features-hex',
+      container: twMerge('features-block gap-6 gap-y-6 md:gap-y-6 features-hex', (items.length == 4 || items.length == 5) ? 'tall-title-hex' : ''),
       panel: 'max-w-full flex',
       title: 'text-3xl font-heading leading-none',
       description: 'mt-1',
