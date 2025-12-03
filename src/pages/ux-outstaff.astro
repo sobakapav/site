@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
+import Hund4 from '~/components/widgets/Hund4.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Image from '~/components/common/Image.astro';
 import TabComponent from '~/components/main/TabComponent.astro';
@@ -164,36 +165,32 @@ const metadata = {
     </div>
   </div>
   
-  {/*<div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="flex flex flex-col lg:flex-row gap-10 lg:gap-20">
-      <div class="basis-0 grow bg-[--aw-color-grey9] py-5 pl-5 md:py-10 md:pl-10 flex flex-row">
-        <div>
-          
-        </div>
-        <div>
-          <Image src="~/assets/images/services/dev-team/thumb-half.png" alt="Специалисты" />
-        </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-8">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Услуги</h2>
+    <div class="flex flex flex-col lg:flex-row gap-10 lg:justify-between">
+      <div class="bg-[--aw-color-grey9] py-5 pl-5 md:pt-10 md:pb-4 md:pl-10">
+        <RelatedPages 
+          pages={[{collection: 'services', page: 'ux-outsource'}]}
+          hideFields={{ tags: true, year: true }}
+          styles={{main: 'gap-6 flex-row-reverse justify-end', container: 'flex flex-row', textBlockOverride: 'mt-0 w-1/2 md:w-2/3 lg:w-[332px]', image: 'h-[400px] w-[200px] overflow-x-hidden'}}
+          overrides={{imageSize: 400}}
+        />
       </div>
-        
-      <div class="basis-0 grow">
-          
-         
+       
+      <div class="py-5 pl-5 md:pt-10 md:pb-4 md:pl-10 ">
+        <RelatedPages 
+          pages={[{collection: 'services', page: 'product-team'}]}
+          hideFields={{ tags: true, year: true }}
+          styles={{main: 'gap-6 flex-row-reverse justify-end', container: 'flex flex-row gap-6', textBlockOverride: 'mt-0 w-1/2 md:w-2/3 lg:w-[332px]', image: 'h-[400px] w-[200px] overflow-x-hidden'}}
+          overrides={{imageSize: 400}}
+        />
       </div>
     </div>
-  </div>*/}
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <HighlightedCases
-      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mt-8 related-posts", heading: "text-4xl"}}
-      title={""}
-      links={[ {name: 'broker'}, {name: 'anggell-2025'}, {name: 'ot-vinta'}, {name: 'gazprom'}, {name: 'alfastrah-design'}, {name: 'elma-bot'},  {name: 'e-gorod-mobile'}, {name: 'control-forest'} ]}
-      collection="portfolio"
-    />  
   </div>
   
   <a id="2"></a>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col">
+  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-20">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Организация работы</h2>
     <div class="flex flex-row justify-between">
       <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Работаем так, как удобно вам</h3>
@@ -318,9 +315,6 @@ const metadata = {
           </div>
         </div>
    </div>
- 
-
-
    </article>
  </section>
 

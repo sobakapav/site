@@ -8,6 +8,7 @@ const {
   image, 
   imageSafari,
   imagePosition,
+  overrides,
   alt, 
   link, 
   supertitle = await Astro.slots.render('supertitle'),
@@ -29,14 +30,14 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
     image && (
       <a href={link ?? 'javascript:void(0)'}>
         <div class="relative overflow-hidden rounded image-animate">
-          <div class="w-72 h-72">
+          <div class={twMerge('w-72 h-72', myClasses.image)}>
             {image && (imageSafari ? (
               <Fragment>
                 <Image
                   src={image}
                   class="rounded no-safari"
                   layout={noCard ? "constrained-width" : "constrained-both"}
-                  width={288}
+                  width={overrides?.imageSize || 288}
                   alt={alt ?? title}
                   objectPosition={imagePosition}
                   loading="lazy"
@@ -46,7 +47,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
                   src={imageSafari}
                   class="rounded safari-only"
                   layout={noCard ? "constrained-width" : "constrained-both"}
-                  width={288}
+                  width={overrides?.imageSize || 288}
                   alt={alt ?? title}
                   objectPosition={imagePosition}
                   loading="lazy"
@@ -58,7 +59,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
                 src={image}
                 class="rounded"
                 layout={noCard ? "constrained-width" : "constrained-both"}
-                width={288}
+                width={overrides?.imageSize || 288}
                 alt={alt ?? title}
                 objectPosition={imagePosition}
                 loading="lazy"

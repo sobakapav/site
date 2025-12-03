@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
+import Hund4 from '~/components/widgets/Hund4.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Image from '~/components/common/Image.astro';
 import TabComponent from '~/components/main/TabComponent.astro';
@@ -52,11 +53,46 @@ const metadata = {
 <Layout metadata={metadata} hasSlider={true}>
   <Bread title="Исследования" />
 
-  <!-- Hund3 Widget ******************* -->
-
-  <Hund3>
+  <Hund4
+      image={{
+        src: '~/assets/images/services/researches.svg',
+        alt: 'Исследования • Собака Павлова',
+      }}
+      imageSafari={{
+        src: '~/assets/images/services/researches.png',
+        alt: 'Исследования • Собака Павлова',
+      }}
+      imageName="Исследования • Собака Павлова"
+  >
     <Fragment slot="title">Исследования.<br/>Качественные и количественные</Fragment>
-  </Hund3>
+  </Hund4>
+  
+  <section class="py-0 mx-auto grow-0 shrink-0">
+       <article>
+  
+    <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-20 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
+      <span>
+        <a href="#1" class="underline underline-offset-2">Наши клиенты</a>
+      </span><span> • </span>
+      
+      <span>
+        <a href="#2" class="underline underline-offset-2">Подход</a>
+      </span><span> • </span>
+      
+      <span>
+        <a href="#3" class="underline underline-offset-2">Услуги</a>
+      </span><span> • </span>
+      
+      <span>
+        <a href="#4" class="underline underline-offset-2">Результат</a>
+      </span><span> • </span>
+      
+      <span>
+        <a href="#5" class="underline underline-offset-2">Контакты</a>
+        
+    </div>
+            
+    <a id="1"></a>
 
   <div class="grid bento-grid5 max-w-7xl mx-auto px-4 sm:px-6 mb-6 lg:mb-20 pt-10 lg:mt-[-40px] gap-6">
     <div class="">
@@ -149,6 +185,8 @@ const metadata = {
     </div>  
   </div>
   
+  <a id="2"></a>
+  
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 lg:mb-20 mt-16">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Подход</h2>
     <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-4 lg:mb-10">Каждой ситуации в продукте<br/>— свои виды исследований</h3>
@@ -216,7 +254,34 @@ const metadata = {
     </div>
   </div>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-10 lg:mt-[-20px]">
+  <a id="3"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Услуги</h2>
+    <div class="flex flex flex-col lg:flex-row gap-10 lg:justify-between">
+      <div class="bg-[--aw-color-grey9] py-5 pl-5 md:pt-10 md:pb-4 md:pl-10">
+        <RelatedPages 
+          pages={[{collection: 'services', page: 'research'}]}
+          hideFields={{ tags: true, year: true }}
+          styles={{main: 'gap-6 flex-row-reverse justify-end', container: 'flex flex-row', textBlockOverride: 'mt-0 w-1/2 md:w-2/3 lg:w-[332px]', image: 'h-[400px] w-[200px] overflow-x-hidden'}}
+          overrides={{imageSize: 400}}
+        />
+      </div>
+       
+      <div class="py-5 pl-5 md:pt-10 md:pb-4 md:pl-10 ">
+        <RelatedPages 
+          pages={[{collection: 'services', page: 'ux-audit'}]}
+          hideFields={{ tags: true, year: true }}
+          styles={{main: 'gap-6 flex-row-reverse justify-end', container: 'flex flex-row gap-6', textBlockOverride: 'mt-0 w-1/2 md:w-2/3 lg:w-[332px]', image: 'h-[400px] w-[200px] overflow-x-hidden'}}
+          overrides={{imageSize: 400}}
+        />
+      </div>
+    </div>
+  </div>
+  
+  <a id="4"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 mt-10 lg:mt-20">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Результат</h2>
     <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Что вы получите?</h3>
     <div class="grid bento-grid6 gap-4">
@@ -249,21 +314,21 @@ const metadata = {
           hideFields={{year: true}}
         />
     
+    <a id="5"></a>
+    
     <div class="bg-[#212121] p-5 md:p-10">
-         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Главный результат — знание о ваших клиентах, с которым можно работать</h2>
-         <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
-           <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
-           <div class="flex flex-col gap-1 justify-center text-white">
-             <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-             <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
-             <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
-           </div>
+       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Главный результат — знание о ваших клиентах, с которым можно работать</h2>
+       <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
+         <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+         <div class="flex flex-col gap-1 justify-center text-white">
+           <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+           <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+           <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
          </div>
        </div>
+     </div>
   </div>
- 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:mt-[-40px] gap-6 mb-6 md:mb-10">
     
-  </div>
-  
+    </article>
+  </section> 
 </Layout>
