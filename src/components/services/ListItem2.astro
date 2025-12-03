@@ -2,12 +2,13 @@
 import type { ImageMetadata } from 'astro';
 import PostTags from '~/components/blog/Tags.astro';
 import { getPermalink } from '~/utils/permalinks';
+import { twMerge } from "tailwind-merge";
 
 import CommonCard from '~/components/common/CommonCard.astro';
 
 import { findImage } from '~/utils/images';
 
-const { post, hideFields = {} } = Astro.props;
+const { post, hideFields = {}, styles, overrides } = Astro.props;
 const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
 
 ---
@@ -16,7 +17,8 @@ const image = (await findImage(post.thumbnail)) as ImageMetadata | undefined;
   image={image} 
   link={post.href} 
   title={post.title}
-  classes={{main: 'justify-normal blog-list-item image-animate'}}
+  classes={{main: twMerge('justify-normal blog-list-item image-animate', styles?.main), title: styles?.title, textBlock: styles?.textBlockOverride, image: styles?.image}}
+  overrides={overrides}
 >
 
   <Fragment slot="textblock">

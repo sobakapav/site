@@ -4,7 +4,7 @@ import RelatedPage from '~/components/portfolio/RelatedPage.astro';
 import { Markdown } from '@astropub/md';
 import { twMerge } from 'tailwind-merge';
 
-const { pages, hideFields = {}, styles = {} } = Astro.props;
+const { pages, hideFields = {}, styles = {}, overrides } = Astro.props;
 
 ---
 
@@ -20,7 +20,7 @@ const { pages, hideFields = {}, styles = {} } = Astro.props;
       
       { page.collection && page.page && (
         <div>
-          <RelatedPage collection={page.collection} page={page.page} excerpt={page.excerpt} hideFields={hideFields} styles={styles} />
+          <RelatedPage collection={page.collection} page={page.page} excerpt={page.excerpt} hideFields={hideFields} styles={styles} overrides={overrides} />
         </div>
       )}
       

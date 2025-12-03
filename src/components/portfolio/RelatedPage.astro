@@ -9,7 +9,7 @@ import { getEntry } from 'astro:content';
 import { getPermalink } from '~/utils/permalinks';
 import { findPostsBySlugs } from '~/utils/blog';
 
-const { collection, page, excerpt, hideFields, styles } = Astro.props;
+const { collection, page, excerpt, hideFields, styles, overrides } = Astro.props;
 
 var data;
 if (collection == 'post') {
@@ -34,26 +34,26 @@ data.href = ('research' == collection) ? `/ux-research/${page}` : `/${collection
 <Fragment>
 
   {collection == 'portfolio' && (
-    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} />
+    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
   
   {collection == 'promo' && (
-    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} />
+    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
 
   {collection == 'post' && (
-    <BlogListItem post={data} hideFields={hideFields} styles={styles} />
+    <BlogListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
 
   {collection == 'research' && (
-    <ResearchListItem post={data} hideFields={hideFields} styles={styles} />
+    <ResearchListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
 
   {collection == 'services' && (
-    <ServicesListItem post={data} hideFields={hideFields} styles={styles} />
+    <ServicesListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
 
   {collection == 'books' && (
-    <BookListItem post={data} hideFields={hideFields} styles={styles} />
+    <BookListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
 </Fragment>
