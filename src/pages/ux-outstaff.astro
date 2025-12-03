@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Image from '~/components/common/Image.astro';
@@ -12,6 +13,8 @@ import HighlightedCases from "~/components/services/HighlightedCases.astro";
 import Number from '~/components/portfolio/Number.astro';
 import ReviewItem from '~/components/portfolio/ReviewItem.astro';
 import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import Features3 from '~/components/widgets/Features3.astro';
+import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -46,116 +49,212 @@ const metadata = {
 
 <Layout metadata={metadata}  hasSlider={true}>
   <Bread title="Аутстафф" />
-
-  <!-- Hund3 Widget ******************* -->
-
-  <Hund3>
-    <Fragment slot="title">UX-аутстафф</Fragment>
+  
+  <Hund2
+    image={{
+      src: '~/assets/images/services/dev-team/dev-team.svg',
+      alt: 'UX-аутстафф • Собака Павлова',
+    }}
+    imageSafari={{
+      src: '~/assets/images/services/dev-team/dev-team.png',
+      alt: 'UX-аутстафф • Собака Павлова',
+    }}
+    imageName="UX-аутстафф • Собака Павлова"
+  >
+    
+    <Fragment slot="title">
+      UX-аутстафф
+    </Fragment>
+    
     <Fragment slot="subtitle">
       Возьмемся за любые интерфейсные задачи: UI- и UX-дизайн, графический дизайн, продуктовые исследования. Впишемся в вашу команду, ускорим и упростим работу над продуктом.
     </Fragment>
-  </Hund3>
+    
+  </Hund2>
+  
+  <section class="py-0 mx-auto grow-0 shrink-0">
+     <article>
 
-  <div class="grid-outstaff grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
-    <div class="gap-4">
-      <h2 class="text-4xl font-bold mb-4">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css</h2>
-      
-    </div>
+  <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-20 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
+    <span>
+      <a href="#1" class="underline underline-offset-2">Квалификация специалистов</a>
+    </span><span> • </span>
     
-    <div>
-      <TabComponent button1="Дизайн" button2="Исследования">
-        <Fragment slot="tab1">
-          <h3 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Дизайн интерфейсов</h3>
-          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-            <li><a class="underline-offset-4 decoration-1" href="/services/ux-design">UX/UI-дизайн под ключ</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/services/redesign">Точечный редизайн</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/services/new-features">Добавление новой функциональности</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/services/prototype">Прототип под инвестиции</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/services/ui-redesign">UI-редизайн</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/services/content-design">Контент-дизайн</a></li>
-          </ul>
-        </Fragment>
+    <span>
+      <a href="#2" class="underline underline-offset-2">Организация работы</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#3" class="underline underline-offset-2">Бизнес-ценность</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#4" class="underline underline-offset-2">С нами работают годами</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#5" class="underline underline-offset-2">Контакты</a>
+      
+  </div>
           
-        <Fragment slot="tab2">
-          <h3 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-10">Исследования</h3>
-          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4 mt-4">
-            <li><a class="underline-offset-4 decoration-1" href="/services/research">Продуктовое исследование</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="/services/ux-audit">UX-аудит</a></li>
-          </ul>
-        </Fragment>
-      </TabComponent>
+  <a id="1"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Квалификация специалистов</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Специалисты, которые вам нужны</h3>
+    <div class="flex flex flex-col lg:flex-row gap-10 lg:gap-20">
+      <div class="basis-0 grow">
+        <Features3
+          columns={2}
+          items={[{title: 'Сразу к делу', description: 'Получайте результат с первого дня, без долгих предисловий'}, {title: 'Любой уровень', description: 'Выбирайте специалистов подходящего грейда, от junior до art director'}, {title: 'Экспертиза в отрасли', description: 'Работайте с людьми, уже разобравшимися в нюансах вашей отрасли'}, {title: 'Знание продукта', description: 'Работатайте с командой, хорошо знакомой с вашим продуктом'}, {title: 'Команда рядом', description: 'Подключайте по необходимости продуктовых менеджеров и UX-аналитиков из нашей команды'},  {title: 'Как удобно', description: 'Рассчитывайте на умение наших специалистов работать в любом формате: Agile — Scrum — Kanban — водопад —...'},]}
+          classes={{description: 'text-base', title: 'text-xl mb-2'}}
+          defaultIcon="tabler:circle-check-filled"
+        />  
+      </div>
+      <div class="basis-0 grow">
+        <Image src="~/assets/images/persons.png" alt="Специалисты" />
+        <div class="flex justify-end">
+        И многие другие
+        </div>
+        <h3 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 mb-2">Наши клиенты</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 ml-0 gap-y-4 gap-x-10">                       
+            
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio#alfastrah">
+                 <img src="/images/clients/alfastrah-long.svg" width="150" height="56">
+            </a></div>
+            <div class="flex items-center sm:justify-center">
+               <a class="noir2-div relative" href="/portfolio#gazprom-neft">
+                 <img src="/images/clients/gazprom-long.svg" width="150" height="56">
+            </a></div>
+            <div class="flex items-center sm:justify-end">
+               <a class="noir2-div relative" href="/portfolio#anggell">
+                 <img src="/images/clients/anggell.svg" width="150" height="56">
+            </a></div>
+            
+            <div class="flex items-center sm:justify-start">
+               <a class="noir2-div relative" href="/portfolio#ecity">
+                 <img src="/images/clients/ecity-long.svg" width="150" height="56">
+            </a></div>
+            <div class="flex items-center sm:justify-center">
+               <a class="noir2-div relative" href="/portfolio#control">
+                 <img src="/images/clients/ds-long.svg" width="150" height="56">
+            </a></div>
+            <div class="flex items-center sm:justify-end">
+               <a class="noir2-div relative" href="/portfolio#elma">
+                 <img src="/images/clients/elma.svg" width="150" height="56">
+            </a></div>
+            
+            <div class="flex items-center sm:justify-start">
+               <a class="noir2-div relative" href="/portfolio#alfabank">
+                 <img src="/images/clients/alfabank-long.svg" width="150" height="56">
+            </a></div>
+            
+            <div class="flex items-center sm:justify-center">
+               <a class="noir2-div relative" href="/portfolio/jeffit">
+                 <img src="/images/clients/jeffit-long.svg" width="150" height="56">
+            </a></div>
+            <div class="flex items-center sm:justify-end">
+               <a class="noir2-div relative" href="/portfolio#otvinta">
+                 <img src="/images/clients/otvinta-long.svg" width="150" height="56">
+            </a></div>
+            
+          </div> 
+      </div>
     </div>
-    
-    <div class="flex flex-col sm:flex-row justify-between gap-2 text-white">
-      <div class="basis-0 grow">
-        <Number 
-          number="> 13 лет" 
-          classes="mb-1.5 font-heading" 
-          textClasses="text-xl sm:text-4xl" 
-          numberClasses="text-xl sm:text-4xl text-[--aw-color-pink]" 
-        />
-        <p class="mb-1"><a href="/about">создаем, изучаем, улучшаем интерфейсы</a></p>
-      </div>
-      
-      <div class="basis-0 grow">
-        <Number 
-          number="> 400 проектов" 
-          classes="mb-1.5 font-heading" 
-          textClasses="text-xl sm:text-4xl" 
-          numberClasses="text-xl sm:text-4xl text-[--aw-color-pink]" 
-        />
-        <p class="mb-1"><a href="/portfolio">UX-дизайн, редизайн, продуктовые исследования</a></p>
-      </div>
-      
-      <div class="basis-0 grow">
-        <Number 
-          number="> 150 кейсов" 
-          classes="mb-1.5 font-heading" 
-          textClasses="text-xl sm:text-4xl" 
-          numberClasses="text-xl sm:text-4xl text-[--aw-color-pink]" 
-        />
-        <p class="mb-1"><a href="/portfolio">на основе реальных проектов</a></p>
-      </div>
-    </div>
-    
+  
+    <HighlightedCases
+      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mt-8 related-posts", heading: "text-4xl"}}
+      title={""}
+      links={[ {name: 'broker'}, {name: 'anggell-2025'}, {name: 'ot-vinta'}, {name: 'gazprom'}, {name: 'alfastrah-design'}, {name: 'elma-bot'},  {name: 'e-gorod-mobile'}, {name: 'control-forest'} ]}
+      collection="portfolio"
+    />  
   </div>
   
-  <div class="grid grid-research max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
-    <div class="gap-4">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Специалисты, которые вам нужны</h2>
-      <p class="mb-4">За 13 лет мы собрали базу высоквалифицированных специалистов. </p>
-      <p>Подберем дизайнеров, аналитиков, социологов, максимально знакомых с тематикой вашего проекта. Сложными и нестандартными задачами займутся эксперты с огромным опытом, на простые и рутинные поставим миддл-специалистов.</p>
-    </div>
+  <a id="2"></a>
   
-    <div class="bg-[#212121]">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам: сразу человек и сразу по делу</h2>
-      <div class="flex flex-col gap-6">
-        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[72px] leading-none no-underline">{SITE.phone}</h3>
-        <div class="flex flex-row gap-1 justify-between text-white">
-          <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
-          <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Организация работы</h2>
+    <div class="flex flex-row justify-between">
+      <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Работаем так, как удобно вам</h3>
+      <div class="mt-1 hidden lg:block">
+        <a href="https://www.atlassian.com/software/jira"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/jira.svg" height={69} layout="constrained-height" alt="Jira" /></div>Jira</a>
+      </div>
+    </div>
+    
+    <FeaturesHex
+      title="Без поиска,\n\nбез онбординга,\n\nбез головной боли"
+      items={[{title: 'Специалисты под ключевые задачи', description: 'Забудьте о проблеме поиска узких дизайн-специалистов под конкретную задачу'}, {title: 'Целая команда — одним движением', description: 'Вместо найма и организации работы отдельных дизайнеров и аналитиков работайте со слаженной командой'}, {title: 'Там, где не хватает рук', description: 'Точечно интегрируйте специалистов в свою команду дизайна или разработки'}, {title: 'Интеграция без интеграции', description: 'Интегрируемся в ваши инструменты ведения проектов'}, {title: 'От стратегии до пикселей', description: 'Ставьте задачи как вам удобно: можно на уровне продукта и бизнеса, а можно и на уровне детализации UI'}]}
+      classes = {{items: {description: 'text-xl mt-1'}}}
+    />
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex flex-col lg:flex-row gap-10 lg:gap-20">
+      <div class="basis-0 grow">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Шпаргалка дня</h2>
+        <a href="https://sobakapav.ru/cheatsheets/component-design">
+          <div class="text-xl text-[#CBCBCB] border-b border-[#CBCBCB] pb-4 mb-4">Профили пользователей • Дизайн интерфейсов • Проектирование</div>
+          <p class="text-xl mb-10">Как использовать профили пользователей в процессе дизайна интерфейса</p>
+        </a>
+        <div class="bg-[--aw-color-grey9] p-5 md:p-10 ">
+          <a href="/portfolio#ecity">
+          <ReviewItem
+
+           text="Сотрудничаем уже лет 10, за это время были разные проекты, многие с высокой степенью неопределенности с нашей стороны. Но результат всегда на высоте.\n\nОснова всего — аналитика и понимание конечной аудитории. Это сильно отличает СП от большинства студий, которые идут от картинки."
+           person="Степан Антонов,"
+           position="директор по маркетингу"
+           photo="~/assets/images/portfolio/e-gorod/person.png"
+           styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+           photoPosition="bottom"
+          />
+          </a>
+          <div class="flex items-center justify-start">
+            <a class="noir2-div relative" href="/portfolio#ecity">
+              <img src="/images/clients/ecity-long.svg" width="150" height="56">
+          </a></div>
+        </div> 
+      </div>
+      
+      <div class="basis-0 grow">
+        <div class="review-card-even">
+          <a href="/portfolio#control">
+          <ReviewItem
+
+           text="Компанию «Собака Павлова» мы знаем почти 7 лет. Первое знакомство было у них в офисе. Мы приехали, поработали несколько дней напрямую со всей командой, которая позже вела наш проект. Открыто, без лишних формальностей и строго по делу.\n\nС тех пор мы постоянно сотрудничаем. Презентации, витрины, UX, UI для веб и мобильных приложений... И прежде всего уверенность в результате при передаче высокоуровневой, бизнесовой задачи делают совместную работу максимально полезной для нас и наших заказчиков.\n\nПродолжаем работать!)"
+           person="Николай Грачев,"
+           position="Управляющий партнер Data Solution"
+           photo="~/assets/images/portfolio/control-patent/person.jpg"
+           styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+           photoPosition="bottom"
+           />
+          </a>
+          <div class="flex items-center justify-start">
+            <a class="noir2-div relative" href="/portfolio#control">
+              <img src="/images/clients/ds-long.svg" width="150" height="56">
+            </a></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </div>  
   
-  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
-    <div>
-      <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-10">Варианты сотрудничества</h3>
-      <RelatedPages 
-        pages={[{collection: 'services', page: 'ux-outsource'}, {collection: 'services', page: 'product-team'}]}
-        hideFields={{ tags: true, year: true }}
-        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
-      />
-    </div>
+  <a id="3"></a>
     
-    
-    <div class="flex flex-col justify-between">
-      <div class="flex flex-col">
-      
-        <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4">Отрасли</h2>
-        <p class="mb-4">Мы подберем людей, уже знакомых с вашей отраслью. Медицина, финансы, e-commerce, тяжелая промышленность или академические образовательные проекты, — у нас в любом случае найдутся люди, уже работавшие над похожими интерфейсами.</p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Бизнес-ценность</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Делимся опытом, а не просто рисуем</h3>
+    <div class="flex flex flex-col lg:flex-row gap-10 lg:gap-20">
+      <div class="basis-0 grow">
+      <Features3
+        columns={2}
+        items={[{title: 'Пользуйтесь нашей экпертизой', description: 'Используйте экспертизу, полученную нами на других проектах'}, {title: 'Пользуйтесь нашим опытом', description: 'Перенимайте опыт и экспертизу наших дизайнеров по ходу работы над вашими задачами'}, {title: 'Экономьте', description: 'Платите только за результат, не за рабочее время с перекурами'}]}
+        classes={{description: 'text-base', title: 'text-xl'}}
+        defaultIcon="tabler:circle-check-filled"
+      /> 
+      </div> 
+      <div class="bg-[#212121] text-white p-5 md:p-10 class="basis-0 grow"">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-6">Отрасли</h2>
         <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
           <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
@@ -164,151 +263,45 @@ const metadata = {
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
           </ul> 
           <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
             <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
           </ul> 
         </div>
-        
-        <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Клиенты</h2>
-        <LogoTabComponent2 />
       </div>
     </div>
   </div>
   
- <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Примеры UX-аутсорса</h2>
-   <RelatedPages 
-     pages={[{collection: 'portfolio', page: 'alfastrah-design'}, {collection: 'portfolio', page: 'alfastrahhr'}, {collection: 'portfolio', page: 'alfa'}, {collection: 'portfolio', page: 'control-patent'}, {collection: 'portfolio', page: 'control-predpisanie'}, {collection: 'portfolio', page: 'data-solution'}, {collection: 'portfolio', page: 'control-forest'}, {collection: 'portfolio', page: 'control-mobile'}, {collection: 'portfolio', page: 'e-gorod-mobile'}, {collection: 'portfolio', page: 'novotelekom'}, {collection: 'portfolio', page: 'e-gorod-guide'}, {collection: 'portfolio', page: 'e-gorod'}, {collection: 'portfolio', page: 'anggell-2025'}, {collection: 'portfolio', page: 'anggell'}, {collection: 'portfolio', page: 'elma-bot'}, {collection: 'portfolio', page: 'elma'} ]}
-     hideFields={{ tags: true, year: true }}
-     styles={{main: 'flex-col', container: 'flex flex-row flex-wrap gap-6'}}
-   />
- 
-   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6">Отзывы от постоянных заказчиков</h2>
-   <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
-     <div class="review-card-odd">
-     <a href="/portfolio#alfastrah">
-     <ReviewItem
-       title="АльфаСтрахование"
-       text="Понравилось работать с «Собакой Павловой». Проработали сложные витиеватые сценарии, сформировали базовый набор компонентов для дизайн-системы, навели порядок в Фигме. Периодически продолжаем обращаться за помощью в проработке сложных мест в юзер-флоу. Рекомендую."
-       person="Алексей Тушканов,"
-       position="руководитель направления исследований и дизайна"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-even">
-     <a href="/portfolio#anggell">
-     <ReviewItem
-       title="ANGGELL"
-       text="Команда Собаки Павлова — одна из самых профессиональных команд для построения и улучшения цифровых сервисов (и не только). Особо ценю вас за то, что к вам можно обратиться на любой стадии проекта, и вы всегда найдете возможность помочь."
-       person="Роман Лебедев,"
-       position="Co-Founder / CEO"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-odd">
-     <a href="/portfolio#ecity">
-     <ReviewItem
-       title="Электронный город"
-       text="Сотрудничаем уже лет 6-7, за это время были разные проекты, многие с высокой степенью неопределенности с нашей стороны. Но результат всегда на высоте. Основа всего — аналитика и понимание конечной аудитории. Это сильно отличает СП от большинства студий, которые идут от картинки."
-       person="Степан Антонов,"
-       position="директор по маркетингу"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-even">
-     <a href="/portfolio#gazprom">
-     <ReviewItem
-       title="Газпром-нефть"
-       text="О «Собаке» у нас сложилось отличное впечатление. Все работы были выполнены с опережением сроков, менеджер всегда был на связи и объяснял нам с коллегами каждый шаг в ходе исследования. Результат работ однозначно полезен."
-       person="Татьяна Постникова,"
-       position="менеджер проекта"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     
-     <div class="review-card-odd">
-     <a href="/portfolio#control">
-     <ReviewItem
-       title="Data Solution"
-       text="Компанию «Собака Павлова» мы знаем почти 7 лет. Первое знакомство было у них в офисе. Мы приехали, поработали несколько дней напрямую со всей командой, которая позже вела наш проект. Открыто, без лишних формальностей и строго по делу. С тех пор мы постоянно сотрудничаем. Презентации, витрины, UX, UI для веб и мобильных приложений... И прежде всего уверенность в результате при передаче высокоуровневой, бизнесовой задачи делают совместную работу максимально полезной для нас и наших заказчиков. Продолжаем работать!)"
-       person="Николай Грачев,"
-       position="Управляющий партнер Data Solution"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-even">
-     <a href="/portfolio#elma">
-     <ReviewItem
-       title="ELMA"
-       text="...В каждом из перечисленных кейсов реализации сложных внутренних бизнес-процессов помогает простота и интуитивная понятность интерфейса платформы. А возможность кастомизации и брендирования модулей делает систему нативной для конечного пользователя любой компании."
-       person="Алексей Будин,"
-       position="генеральный директор Elma"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-   </UniversalSlider>
+  <a id="4"></a>
   
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-12 mt-10 md:mt-20">
+   <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">С нами работают годами</h2>
+   <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-2">Проверено временем, подтверждено проектами</h3>  
    <HighlightedCases
-      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mt-10 related-posts", heading: "text-4xl"}}
-      title={"Примеры работы в продуктовой команде"}
-      links={[{name: 'avicenna'}, {name: 'stroynastroy'}, {name: 'omnitopic'}, {name: 'algohelp'}, {name: 'fasting'}, {name: 'cindicator'} ]}
-      collection="portfolio"
+      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts", heading: "text-4xl"}}
+
+      links={[{isSpecial: true, title: 'IT-решения для автоматизации контроля', text: 'C командой Data Solution мы сделали полтора десятка проектов за несколько лет.', img: '~/assets/images/portfolio/cards/control-mobile.svg', link: '/portfolio#control '}, {isSpecial: true, title: 'Корпоративные интерфейсы', text: 'У «АльфаСтрахования», конечно, есть и свой UX-отдел. Но его регулярно требуется усилить.', img: '~/assets/images/portfolio/cards/alfastrah-hr.svg', link: '/portfolio#alfastrah'}, {isSpecial: true, title: 'Внутренние продукты компании', text: 'Хоть нам и пришлось всякий раз выигрывать тендер, сделали серию проектов для «Газпрома» как UX-отдел на аутсорсе.', img: '~/assets/images/portfolio/cards/gazprom.svg', link: '/portfolio#gazprom'}, {isSpecial: true, title: 'Региональный интернет-провайдер', text: 'С командой «Электронного города» мы сотрудничаем более десяти лет.', img: '~/assets/images/portfolio/cards/ecity-pril.svg', link: '/portfolio#ecity '}]}
+      
    />
-   <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-[-40px]">Отзывы о продуктовой работе</h2>
-   <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
-     <div class="review-card-odd">
-     <a href="/portfolio/anggell-2025">
-     <ReviewItem
-       title="ANGGELL"
-       text="Рекомендую всем, кому нужен честный труд и честный результат. Неважно, кто заказчик – стартап или enterprise. Работы – дизайн интерфейсов, проработка пользовательского опыта, создание новых продуктов и любые другие работы, за которые Собака Павлова берется. Главное отличие от других – в проекте вы ведете себя как партнер, а не как подрядчик. Это настолько классно, насколько и редко."
-       person="Роман Лебедев,"
-       position="Co-Founder / CEO"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-even">
-     <a href="/portfolio/simple">
-     <ReviewItem
-       title="SIMPLE"
-       text="Несмотря на редкий для российского рынка уровень сложности задач, «Собака» не спасовала. Выбрали продуктивный формат взаимодействия. Команда проектирования на удивление глубоко вдумалась, погрузилась в наши потребности и сумела приземлить наш довольно пространный вижн на конкретные макеты и гипотезы, дав очень много полезных идей как на макро-, так и на микроуровне."
-       person="Александр Илинский,"
-       position="Основатель стартапа"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-odd">
-     <a href="/portfolio/domotech">
-     <ReviewItem
-       title="Домотехника"
-       text="Макеты очень помогли выбрать подрядчика, договариваться с подрядчиками. А также осознать, что им сейчас не потянуть весь обьем в разработке, и понять, какие части проекта можно безболезненно отрезать."
-       person="Вадим Бабаев,"
-       position="Исполнительный директор"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-     <div class="review-card-even">
-     <a href="/portfolio/algohelp">
-     <ReviewItem
-       title="ALGOHELP"
-       text="Ситуация на сегодняшний день сложнее, чем я ожидал. Алгоритмы требуют приличной переработки для телефонного интерфейса. Диагностический алгоритм прям сильно меняется, лечебные в меньшей степени, но тоже прилично. За этим будет согласование с профессорами и прочие проверки самой логики алгоритмов."
-       person="Максим Золотов,"
-       position="product owner"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-     />
-     </a>
-     </div>
-   </UniversalSlider>
- </div>
+   
+   <a id="5"></a>
+   
+   <div class="bg-[#212121] p-5 md:p-10">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Референсы по запросу</h2>
+        <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
+          <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+          <div class="flex flex-col gap-1 justify-center text-white">
+            <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+            <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
+          </div>
+        </div>
+   </div>
+ 
+
+
+   </article>
+ </section>
 
 </Layout>
