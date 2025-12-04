@@ -131,12 +131,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         <div class="flex flex-col text-base gap-3">
           <p>{SITE.phone}</p>
           <p><a class="underline-offset-2" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
-          <div class="flex flex-row gap-2.5">
-            <a href={SITE.telegramContact.link}><Icon height={20} width={20} name="tabler:brand-telegram" /></a>
-            <a href={`https://wa.me/message/${SITE.whatsup}`}
-              ><Icon height={20} width={20} name="tabler:brand-whatsapp" /></a
-            >
-          </div>
+          <p><a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+          <p><a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Реквизиты в PDF</a></p>
         </div>
         <div>
           <img src="/images/logos/qr-code.svg" class="w-[116px]" />
@@ -151,9 +147,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <span>
           <a href={SITE.telegramContact.link}><Icon height="20px" width="20px" name="tabler:brand-telegram" class="ml-2" /></a>
       </span>
-      <span>
-          <a href={`https://wa.me/message/${SITE.whatsup}`}><Icon height="20px" width="20px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
-      </span>
+      
       <div
         class:list={[
           { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
