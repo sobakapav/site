@@ -166,7 +166,7 @@ const metadata = {
   </div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-8">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Услуги</h2>
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Услуги</h2>
     <div class="flex flex flex-col lg:flex-row gap-10 lg:justify-between">
       <div class="bg-[--aw-color-grey9] py-5 pl-5 md:pt-10 md:pb-4 md:pl-10">
         <RelatedPages 
@@ -186,11 +186,20 @@ const metadata = {
         />
       </div>
     </div>
+  
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-2 mt-10 md:mt-20 ">Примеры</h2>  
+    <HighlightedCases
+        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto my-5 md:mb-8  related-posts" }}
+        title={""}
+        links={[{name: 'alfastrah-design'}, {name: 'gazprom'}, {name: 'alfa-arm'}, {name: 'elma-bot'}, {name: 'anggell-2025'}, {name: 'broker'}, {name: 'ot-vinta'}, {name: 'jeffit'}, {name: 'e-gorod-mobile'}, {name: 'control-patent'}, {name: 'control-forest'},  ]}
+        collection="portfolio"
+        hideFields={{year: true}}
+      />
   </div>
   
   <a id="2"></a>
   
-  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-20">
+  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Организация работы</h2>
     <div class="flex flex-row justify-between">
       <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Работаем так, как удобно вам</h3>
@@ -304,7 +313,7 @@ const metadata = {
    
    <a id="5"></a>
    
-   <div class="bg-[#212121] p-5 md:p-10">
+   <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Референсы по запросу</h2>
         <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
           <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>

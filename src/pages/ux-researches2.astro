@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Hund4 from '~/components/widgets/Hund4.astro';
@@ -52,56 +53,57 @@ const metadata = {
 
 <Layout metadata={metadata} hasSlider={true}>
   <Bread title="Исследования" />
-
-  <Hund4
-      image={{
-        src: '~/assets/images/services/researches.svg',
-        alt: 'Исследования • Собака Павлова',
-      }}
-      imageSafari={{
-        src: '~/assets/images/services/researches.png',
-        alt: 'Исследования • Собака Павлова',
-      }}
-      imageName="Исследования • Собака Павлова"
-  >
+  
+  <Hero2
+    image={{
+      src: '~/assets/images/services/researches-main.png',
+      alt: 'Исследования • Собака Павлова',
+    }}
+    >
+    
     <Fragment slot="title">Исследования.<br/>Качественные и количественные</Fragment>
+        
+    <Fragment slot="subtitle">Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты. Максимально полная картина поведения пользователей позволит вам сфокусировать и обосновать инвестиции.
+
+    </Fragment>
     
-    <Fragment slot="subtitle">Проводим качественные, количественные исследования, пользовательские тестирования, UX-аудиты. Максимально полная картина поведения пользователей позволит вам сфокусировать и обосновать инвестиции.</Fragment>
-    
-  </Hund4>
+    <Fragment slot="result">
+      <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 lg:mt-10 mb-10 lg:mb-0 mx-auto max-w-7xl text-[#9F9F9F]">
+        <span>
+          <a href="#1" class="underline underline-offset-2">Клиенты</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#2" class="underline underline-offset-2">Подход</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#3" class="underline underline-offset-2">Услуги</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#4" class="underline underline-offset-2">Результат</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#5" class="underline underline-offset-2">Отзывы</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#6" class="underline underline-offset-2">Контакты</a>
+          
+      </div>
+    </Fragment>
+  </Hero2>
   
   <section class="py-0 mx-auto grow-0 shrink-0">
        <article>
   
-    <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
-      <span>
-        <a href="#1" class="underline underline-offset-2">Наши клиенты</a>
-      </span><span> • </span>
-      
-      <span>
-        <a href="#2" class="underline underline-offset-2">Подход</a>
-      </span><span> • </span>
-      
-      <span>
-        <a href="#3" class="underline underline-offset-2">Услуги</a>
-      </span><span> • </span>
-      
-      <span>
-        <a href="#4" class="underline underline-offset-2">Результат</a>
-      </span><span> • </span>
-      
-      <span>
-        <a href="#5" class="underline underline-offset-2">Отзывы</a>
-      </span><span> • </span>
-      
-      <span>
-        <a href="#6" class="underline underline-offset-2">Контакты</a>
-        
-    </div>
+    
             
     <a id="1"></a>
 
-  <div class="grid bento-grid5 max-w-7xl mx-auto px-4 sm:px-6 mb-6 lg:mb-20 pt-10 lg:mt-[-40px] gap-6">
+  <div class="grid bento-grid5 max-w-7xl mx-auto px-4 sm:px-6 mb-6 lg:mb-20 gap-6">
     <div class="">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-6">Быстро. Профессионально. Практично</h2>
       <div class="flex flex-col gap-6">
