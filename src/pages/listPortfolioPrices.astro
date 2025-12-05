@@ -1,0 +1,54 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+import { getCollection } from 'astro:content';
+
+const metadata = {
+  title: 'Списки',
+};
+
+const compare = (p1, p2) => {
+  if (p1.data.publishYear != p2.data.publishYear) return p1.data.publishYear - p2.data.publishYear;
+  if (p1.slug < p2.slug) return -1;
+  if (p1.slug > p2.slug) return 1;
+  return 0;
+}
+
+const portfolio = (await getCollection('portfolio')).sort(compare);
+
+---
+
+<Layout metadata={metadata}>
+  <style>
+    table {
+      margin: 20px;
+    }
+    td {
+      border: 1px solid black;
+      padding: 4px 12px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 20px;
+    }
+  </style>
+  <h1>Портфолио: Бюджеты</h1>
+  <table>
+    <tr>
+      <th>Файл</th>
+      <th>Проект</th>
+      <th>Год</th>
+      <th>Бюджет</th>
+    </tr>
+    {portfolio.map(elem => (
+      <tr>
+        <td>{elem.slug}</td>
+        <td>{elem.data.name}</td>
+        <td>{elem.data.publishYear}</td>
+        <td>{elem.data.budget}</td>
+      </tr>
+    ))}
+  </table>
+  
+</Layout>
