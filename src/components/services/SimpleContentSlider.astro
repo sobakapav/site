@@ -45,7 +45,7 @@ window.addEventListener("load", (event) => {
 
 <simple-slider class:list={['flex flex-col max-w-7xl mx-auto px-4 sm:px-6 gap-6', mode, listOnLeft ? '' : 'my-10 md:my-12']}>
   { title && (
-    <h2 class="text-5xl group font-heading whitespace-nowrap mb-[-48]">${title}</h2>
+    <h2 class="text-5xl group font-heading whitespace-nowrap mb-[-48]">{title}</h2>
   )}
   <div class:list={['flex flex-col slider-container lg:gap-6', listOnLeft ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row']}>
       <div class:list={['slider slider-ux slider-desktop relative', listOnLeft ? '' : 'lg:pt-12']}>
@@ -57,16 +57,16 @@ window.addEventListener("load", (event) => {
           
       
           <div class="slide s1">
-            {block1}
+            <div set:html={block1} />
           </div>
           <div class="slide">
-            {block2}
+            <div set:html={block2} />
           </div>
           <div class="slide">
-            {block3}
+            <div set:html={block3} />
           </div>
           <div class="slide">
-            {block4}
+            <div set:html={block4} />
           </div>
         </div>
         
@@ -95,27 +95,27 @@ window.addEventListener("load", (event) => {
       <div class:list={[listOnLeft ? 'w-[338px]' : 'w-[440px] pt-12']}>
         
         <label for="ux1" class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer">
-          <h3 class="text-lg sm:text-3xl font-heading">{slides[0].title}</h3>
+          <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[0].title}</h3>
           <div class="details-slide-details">
-            {blockTitles[0]}
+            {blockTitles[0].text}
           </div>
         </label>
         <label for="ux2" class="details-slide details-slide-2 flex flex-col p-6 cursor-pointer">
-          <h3 class="text-lg sm:text-3xl font-heading">{slides[1].title}</h3>
+          <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[1].title}</h3>
           <div class="details-slide-details">
-            {blockTitles[1]}
+            {blockTitles[1].text}
           </div>
         </label>
         <label for="ux3" class="details-slide details-slide-3 flex flex-col p-6 cursor-pointer">
-          <h3 class="text-lg sm:text-3xl font-heading">{slides[2].title}</h3>
+          <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[2].title}</h3>
           <div class="details-slide-details">
-            {blockTitles[2]}
+            {blockTitles[2].text}
           </div>
         </label>
         <label for="ux4" class="details-slide details-slide-4 flex flex-col p-6 cursor-pointer">
-          <h3 class="text-lg sm:text-3xl font-heading">{slides[3].title}</h3>
+          <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[3].title}</h3>
           <div class="details-slide-details">
-            {blockTitles[3]}
+            {blockTitles[3].text}
           </div>
         </label>
         
