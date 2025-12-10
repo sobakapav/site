@@ -2,10 +2,12 @@
 
 import './SimpleSlider.less';
 
-const {slides} = Astro.props;
+const {slides, mode='basic', title='Особенности'} = Astro.props;
 if (slides.length != 4) {
   console.error('Должно быть 4 слайда');
 }
+
+const listOnLeft = (mode === 'mode-2');
 
 ---
 
@@ -32,10 +34,12 @@ window.addEventListener("load", (event) => {
 });
 </script>
 
-<simple-slider class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 my-10 md:my-12 gap-6">
-  <h2 class="text-5xl group font-heading whitespace-nowrap mb-[-48]">Особенности</h2>
-  <div class="flex flex-col lg:flex-row slider-container">
-      <div class="slider slider-ux slider-desktop relative lg:pt-12">
+<simple-slider class:list={['flex flex-col max-w-7xl mx-auto px-4 sm:px-6 gap-6', mode, listOnLeft ? '' : 'my-10 md:my-12']}>
+  { title && (
+    <h2 class="text-5xl group font-heading whitespace-nowrap mb-[-48]">${title}</h2>
+  )}
+  <div class:list={['flex flex-col slider-container lg:gap-6', listOnLeft ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row']}>
+      <div class:list={['slider slider-ux slider-desktop relative', listOnLeft ? '' : 'lg:pt-12']}>
         <div class="slides">
           <input type="radio" name="desktop" id="ux1" checked>
           <input type="radio" name="desktop" id="ux2">
@@ -79,7 +83,7 @@ window.addEventListener("load", (event) => {
         </div>
       </div>
       
-      <div class="w-[440px] lg:ml-6 pt-12">
+      <div class:list={[listOnLeft ? 'w-[338px]' : 'w-[440px] pt-12']}>
         
         <label for="ux1" class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer">
           <h3 class="text-lg sm:text-3xl font-heading">{slides[0].title}</h3>
