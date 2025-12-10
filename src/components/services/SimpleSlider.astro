@@ -16,7 +16,7 @@ if (slides.length != 4) {
 <SimpleContentSlider
   mode={mode}
   title={title}
-  blockTitles={[slides[0].title, slides[1].title, slides[2].title, slides[3].title]}
+  blockTitles={[{title: slides[0].title, text: slides[0].text}, {title: slides[1].title, text: slides[1].text}, {title: slides[2].title, text: slides[2].text}, {title: slides[3].title, text: slides[3].text}]}
 >
   <Fragment slot="block1">
     <img src={slides[0].img} alt={slides[0].alt} class:list={["img", "img-position-" + (slides[0].imgPosition || 'middle')]}>
