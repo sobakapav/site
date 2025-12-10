@@ -1,17 +1,22 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
+import Hund4 from '~/components/widgets/Hund4.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Image from '~/components/common/Image.astro';
 import TabComponent from '~/components/main/TabComponent.astro';
-import LogoTabComponent from '~/components/main/LogoTabComponent.astro';
+import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
 import HighlightedCases from "~/components/services/HighlightedCases.astro";
-import CurrentProjects from '~/components/main/CurrentProjects.astro';
+import Number from '~/components/portfolio/Number.astro';
 import ReviewItem from '~/components/portfolio/ReviewItem.astro';
 import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import Features3 from '~/components/widgets/Features3.astro';
+import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
+import SimpleSlider from '~/components/services/SimpleSlider.astro';
 
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
@@ -22,7 +27,7 @@ import { getEntry } from 'astro:content';
 import '~/components/main/Bento.less';
 
 const metadata = {
-  canonical: 'https://sobakapav.ru/services',
+  canonical: 'https://sobakapav.ru/ux-design',
   title: `UX-дизайн • Дизайн и редизайн интерфейсов`,
   description:
     'Создаем интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.',
@@ -34,7 +39,7 @@ const metadata = {
     site_name: 'Собака Павлова',
     images: [
       {
-        url: '~/assets/images/services.png',
+        url: '~/assets/images/services/turnkey/ux-design.png',
         width: 716,
         height: 600,
       },
@@ -44,253 +49,395 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata} hasSlider={true}>
-  <Bread title="Аутстафф" />
-
-  <!-- Hund3 Widget ******************* -->
-
-  <Hund3>
-    <Fragment slot="title">Дизайн и редизайн интерфейсов</Fragment>
-    <Fragment slot="subtitle">
-      Создаем интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.
+<Layout metadata={metadata}  hasSlider={true}>
+  <Bread title="UX-дизайн" />
+  
+  <Hund2
+    image={{
+      src: '~/assets/images/services/turnkey/ux-design.svg',
+      alt: 'UX-дизайн • Собака Павлова',
+    }}
+    imageSafari={{
+      src: '~/assets/images/services/turnkey/ux-design.png',
+      alt: 'UX-дизайн • Собака Павлова',
+    }}
+    imageName="UX-аутстафф • Собака Павлова"
+  >
+    
+    <Fragment slot="title">
+      Дизайн интерфейсов
     </Fragment>
-  </Hund3>
-
-  <div class="bento-grid grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 pt-10 mt-[-60px] gap-6">
-    <div class="gap-4">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Над чем мы работаем в ноябре 2025 года</h2>
-      <CurrentProjects projects={['project-20', 'project-19', 'project-18', 'project-17',  'project-16', 'project-15', 'project-14', 'project-13', 'project-4']} />
-    </div>
     
-    <div class="flex flex-col justify-between">
-      <div class="flex flex-col">
-        <div class="flex flex-row justify-between">
-          <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Отрасли</h2>
-          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
-            <a href="/portfolio">Все кейсы →</a>
-          </div>
-        </div>
-        
-        <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">
-        <p class="">В какой бы отрасли вы ни специализировались, у нас найдутся UX-дизайнеры, уже работавшие над похожими интерфейсами.</p>
-          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
-          </ul> 
-          <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
-            <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
-          </ul> 
-        </div>   
-      </div>
-        
-      <div class="">
-        <div class="flex flex-row justify-between">
-          <h2 class="text-xl font-heading tracking-widest leading-none dark:text-[--aw-color-pink] text-[--aw-color-hund] mb-4">Аутстафф</h2>
-          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-[-12px] mb-4">
-            <a href="/ux-outstaff">Подробнее →</a>
-          </div>
-        </div>
-        <p class="mb-[-4px]">Внешний отдел UX-специалистов: от&nbspпродуктовых исследований до&nbspинтерфейсов в&nbsphtml/css.<p/>
-      </div>
-    </div>
+    <Fragment slot="subtitle">
+      Сделаем ваш IT-продукт удобным и приятным в использовании.
+    </Fragment>
     
-    <div>
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-2">Отвечаем по всем каналам — сразу человек и сразу по делу</h2>
-      <div class="flex flex-col lg:flex-row gap-6">
-        <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
-        <div class="flex flex-col gap-1 justify-center text-white">
-          <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
-          <a href={`https://wa.me/message/${SITE.whatsup}`} class="flex items-center no-underline hover:underline underline-offset-4 text-base">WhatsApp <Icon height="25px" width="25px" name="tabler:brand-whatsapp" class="ml-2" /></a> 
-        </div>
-      </div>
-    </div>
-  </div>
+  </Hund2>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-4 mt-8">Услуги</h3>
-      <RelatedPages 
-        pages={[{collection: 'services', page: 'ux-design'}, {collection: 'services', page: 'redesign'}, {collection: 'services', page: 'ui-redesign'}, {collection: 'services', page: 'new-features'}]}
-        hideFields={{ tags: true, year: true }}
-        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
-      />
-  </div>
-  
-  <div class="grid-outstaff2 grid max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-6">
-    <div>
-      <RelatedPages 
-        pages={[{collection: 'services', page: 'prototype'}, {collection: 'services', page: 'content-design'}]}
-        hideFields={{ tags: true, year: true }}
-        styles={{main: 'flex-row', container: 'flex flex-row flex-wrap gap-6'}}
-      />
-    </div>
+  <section class="py-0 mx-auto grow-0 shrink-0">
+     <article>
 
-    <div class="flex flex-col">
-      <LogoTabComponent />
-    </div>
-  </div>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-      <HighlightedCases
-        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto px-4 sm:px-2 my-5 md:mb-8 related-posts" }}
-        title={"Примеры проектов"}
-        links={[{name: 'electrocardiography'}, {name: 'simed'}, {name: 't1'}, {name: 'pushkin-digital'}, {name: 'prozhito'}, {name: 'seatmap'}, {name: 'hyperus'}, {name: 'tmh'}, {name: 'ot-vinta'}, {name: 'dipol'}, {name: 'elma-bot'}, {name: 'e-gorod-mobile'}, {name: 'alfastrah-design'}, {name: 'pangeo'}, {name: 'res'}, {name: 'tis'}, {name: 'brighteye'}, {name: 'neurobureau'} ]}
-        collection="portfolio"
-        hideFields={{year: true}}
-      />
-    </div>
-   </div> 
-  </div>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6 gap-2">
-    <h2 class="text-4xl leading-none font-heading dark:text-[--aw-color-text-light-default] mb-6 mt-[-40px]">Отзывы</h2>
-    <UniversalSlider count={2} styles={{main: 'review-slider full-width'}}>
-      <div class="review-card-odd">
-      <a href="/portfolio/erna">
-      <ReviewItem
-        title="ЭРНА"
-        text="Мы сотрудничали с «Собакой Павловой» в рамках разработки дизайна нашего продукта «Кардиум». Для нас было важно создать удобный и интуитивно понятный инструмент для врачей, и именно эту задачу команда решила на высоком профессиональном уровне. Специалисты «Собакой Павловой» не только разработали современный пользовательский интерфейс, но и тщательно продумали сценарии использования, сделав систему практичной и эффективной в реальной работе. Особенно ценно их глубокое понимание специфики медицинских сервисов и внимание к деталям, которые напрямую влияют на качество работы врача и удобство пациента. Мы высоко ценим открытый диалог, гибкость в процессе и готовность искать лучшие решения. Сотрудничество с «Собакой Павловой» стало важным шагом для развития наших продуктов в сфере цифровой медицины. От всей команды «ЭРНА» выражаем искреннюю благодарность за профессионализм и качественный результат."
-        person="Владимир Александрович Падишин,"
-        position="коммерческий директор компании «ЭРНА»"
-        styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-      />
-      </a>
-      </div>
+  <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
+    <span>
+      <a href="#1" class="underline underline-offset-2">Качественно</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#2" class="underline underline-offset-2">Красиво</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#3" class="underline underline-offset-2">Технологично</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#4" class="underline underline-offset-2">Осмысленно</a>
+    </span><span> • </span>
+    
+    <span>
+      <a href="#5" class="underline underline-offset-2">В удобном вам формате</a>
       
-      <div class="review-card-even">
-      <a href="/portfolio/pushkin-digital">
-      <ReviewItem
-        title="Пушкин <Цифровой>"
-        text="До знакомства с командой «Собаки Павловой» мы долго ломали голову над тем, как выстроить работу. Ведь нам нужно было и собрать экраны для проекта, и всё продумать, и вовлечь в работу студентов и студенток, и сохранить гуманитарную составляющую. Как только появились коллеги из СП, мы перестали ломать голову, потому что они принесли с собой отличные рабочие практики. Появился общий план, задачи для создания интерфейсов, планёрки с обсуждением всех деталей, удобные документы. Мы работали с разными разработчиками, а в финале проекта весь дизайн довольно сильно изменился. И сейчас продолжаем дорабатывать интерфейс, но фраза «Это есть в макетах Собаки» — звучит до сих пор. Как бы ни менялся Пушкин <Цифровой> дальше, мы знаем, что цифровую базу этого проекта создали в КБ «Собака Павлова»."
-        person="Полина Колозариди,"
-        position="академический руководитель магистратуры, директор DH-центра, проводница цифровой инфраструктуры и исследований ИТМО"
-        styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-      />
-      </a>
+  </div>
+          
+  <a id="1"></a>
+  
+  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Качественно</h2>
+    
+    <FeaturesHex
+      title="Обновляем переделываем улучшаем"
+      items={[{title: 'Дизайн продуктов', description: 'Разбираемся в сути продукта, а не только в кнопках. Делаем дизайн, который помогает, а не мешает'}, {title: 'Редизайн приложений и сайтов', description: 'Аккуратно улучшаем, где можно, и радикально меняем, где нужно. Чтобы стало удобно, понятно и не стыдно'}, {title: 'UX/UI-дизайн', description: 'Сначала думаем, потом рисуем. UX и UI — в нужных пропрциях и на своём месте.'}, {title: 'Обновление старого дизайна', description: 'Бережно обновим то, что устарело. Без революций — только нужные улучшения.'}, {title: 'Переработка мобильных приложений', description: 'Перепроектируем, перерисуем, улучшим. Чтобы работало лучше, выглядело свежее и не теряло пользователей.'}]}
+      classes = {{items: {description: 'text-xl mt-1'}}}
+    />
+  </div>
+  
+  <a id="2"></a>
+    
+  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Красиво</h2>
+  </div>
+    
+  <SimpleSlider 
+    mode="mode-2"
+    title=""
+    slides={[{title: 'Создаём для вас фирменный стиль или уважаем существующий', img: '/images/services/landing/1.png', alt: 'UX-дизайн • Собака Павлова'},
+      {title: 'Работаем по дизайн-стандартам Google и Apple', img: '/images/services/landing/2.png', alt: 'UX-дизайн • Собака Павлова'},
+      {title: 'Учитываем современные тренды визуального дизайна', img: '/images/services/landing/3.png', alt: 'UX-дизайн • Собака Павлова'},
+      {title: 'Дизайн хорошо смотрится на всех устройствах, от смартфонов до телевизоров', img: '/images/services/landing/4.png', alt: 'UX-дизайн • Собака Павлова'}, ]}
+  />
+  
+  <a id="3"></a>
+      
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Технологично</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Не только макеты</h3>
+    <div class="flex flex flex-col lg:flex-row gap-10 lg:gap-20">
+      <div class="basis-0 grow">
+      <Features3
+        columns={2}
+        items={[{title: 'Дизайн, который заработает', description: 'Гарантируем технологическую реализуемость дизайна с учётом возможностей команды разработки'}, {title: 'Визуальное ТЗ', description: 'Создаём визуальное техническое задание для вашей разработки'}, {title: 'Не только рисуем, но и вёрстаем', description: 'При необходимости готовим вёрстку макетов'}, {title: 'Входим в ваш процесс', description: 'Интегрируемся в task manager вашей разработки (Jira и т. п.)'}]}
+        classes={{description: 'text-base', title: 'text-xl'}}
+        defaultIcon="tabler:circle-check-filled"
+      /> 
       </div> 
+      <div class="basis-0 grow">
+      <Features3
+        columns={1}
+        items={[{title: 'Не переписываем, адаптируем', description: 'Учитываем нюансы вашей существующей кодовой базы'} ]}
+        classes={{description: 'text-base', title: 'text-xl'}}
+        defaultIcon="tabler:circle-check-filled"
+      />  
       
-      <div class="review-card-odd">
-      <a href="/portfolio/prozhito">
-      <ReviewItem
-       title="Прожито"
-       text="Центр «Прожито» Европейского университета в Санкт-Петербурге обратился за помощью к «Собаке Павловой», потому что у компании есть устойчивая репутация разработчика цифровых решений для гуманитарных проектов, подтвержденная многочисленными рекомендациями со стороны наших коллег-гуманитариев.Мы были впечатлены организацией рабочего процесса, которую почти полностью взяли на себя коллеги из «Собаки». Мы очень быстро нашли с ними общий язык и установили удобный всем рабочий ритм. В процессе работы коллеги из «Собаки» помогли нам существенно скорректировать представление о задачах продукта. Предложенные ими решения кажутся нам универсальными и масштабируемыми на следующие этапы разработки цифрового архива «Прожито», поэтому мы рассчитываем на дальнейшее сотрудничество."
-       person="Михаил Мельниченко,"
-       position="директор Центра «Прожито»"
-       styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-      />
-      </a>
+      <div class="flex flex-row justify-between md:justify-end lg:justify-between mt-6 md:mt-8 md:gap-8 lg:gap-0">
+        <a href="https://www.figma.com"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/figma.svg" height={69} layout="constrained-height" alt="Figma" /></div></a>
+        <a href="https://react.dev/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/react.svg" height={69} layout="constrained-height" alt="React" /></div></a> 
+        <a href="https://ant.design/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/ant.svg" height={69} layout="constrained-height" alt="Ant" /></div></a>
+        <a href="https://www.typescriptlang.org/"><div class="h-[69px] lg:h-[48px] xl:h-[69px]"><Image src="~/assets/images/services/typescript.svg" height={69} layout="constrained-height" alt="TypeScript" /></div></a>
+      </div> 
+      </div>
+    </div>
+  </div>
+  
+  <a id="4"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Осмысленно</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">С пониманием нюансов вашей задачи</h3>
+    <div class="flex flex flex-col lg:flex-row gap-6">
+      <div class="basis-[338px] grow-0 shrink-0">
+        <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">     
+          <div class="bg-[--aw-color-grey9] p-6 sm:p-6">
+            <h3 class="text-3xl sm:leading-none font-heading mb-2">Рабочие решения</h3>
+            Предлагаем решения, оптимальные для вашей бизнес-задачи
+          </div>
+          <div class="p-6 sm:p-6">
+            <h3 class="text-3xl sm:leading-none font-heading mb-2">Готовые ходы</h3>
+            Используем наши внутренние наработки по отраслям и инструментам
+          </div>
+          <div class="bg-[#212121] text-white p-6 sm:p-6">
+            <h3 class="text-3xl sm:leading-none font-heading mb-2">Нужные роли</h3> 
+            Подбираем команду под вашу конкретику с учётом экспертизы сотрудников   
+          </div>
+          <div class="p-6 sm:p-6">
+            <h3 class="text-3xl sm:leading-none font-heading mb-2">Подвижная тактика</h3>
+            Адаптируемся под изменение требований и новые вводные
+          </div>
+        </div>  
       </div>
       
-      <div class="review-card-even">
-      <a href="/portfolio/seatmap">
-      <ReviewItem
-        title="Seatmap"
-        text="Мы сотрудничали над созданием инновационного UX для схем рассадки и процессов бронирования. Команда провела глубокое исследование и полностью переосмыслила пользовательский путь от выбора места до завершения покупки. Каждая деталь интерфейса была продумана с точки зрения удобства конечного пользователя. Проект потребовал комплексного подхода, и команда справилась с этой задачей на высшем уровне. Процесс был выстроен максимально профессионально и прозрачно. Команда демонстрировала глубокое понимание специфики нашей области и потребностей целевой аудитории. Результат превзошёл наши ожидания – мы получили действительно seamless решение, которое значительно улучшило пользовательский опыт. Новый интерфейс сделал процесс выбора и бронирования мест интуитивно понятным и приятным. Мы видим положительную динамику в метриках и получаем отличные отзывы от клиентов. Однозначно рекомендуем эту команду для сложных UX-проектов."
-        person="Андрей Юсин,"
-        position="генеральный директор Seatmap"
-        styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-      />
-      </a>
-      </div>
-      
-      <div class="review-card-odd">
-        <a href="/portfolio/hyperus">
-        <ReviewItem
-          title="Гиперус"
-          text="Мы поставили перед «Собакой Павлова» амбициозную задачу — превратить управление сложной IT-инфраструктурой предприятия из «полёта вслепую» в интуитивно понятный «космический корабль». И они совершили невозможное. Команда не просто проектировала интерфейс — они глубоко погрузились в специфику нашей отрасли, разобрали сотни пользовательских сценариев и создали UI/UX-решения, которые упростили работу с комплексными системами, минимизировали риск ошибок операторов и превратили рутинные процессы в логичные последовательности действий. Результат превзошёл ожидания: там, где раньше требовались часы обучения, теперь достаточно интуитивного понимания. Не просто удобный интерфейс — продуманная система управления enterprise-уровня. Благодарим команду за профессионализм, терпение к бесконечным правкам и умение переводить сложное на язык простых решений."
-          person="Павел Филатов,"
-          position="CPO, Гиперус"
-          styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-        />
-        </a>
-        </div>
-        <div class="review-card-even">
-        <a href="/portfolio/tmh">
-        <ReviewItem
-          title="ТМХ"
-          text="Мы обратились к «Собаке Павловой» с задачей улучшить интерфейс, разработанный и опробованный нами на множестве пилотных проектов в государственных и частных медицинских учреждениях. Объединив ваш опыт дизайна медицинских интерфейсов с нашим опытом создания и эксплуатации предыдущей версии системы и обратной связью от пользователей, мы разработали интерфейс, удобный и для работающих в личном кабинете врачей, и для передающих данные о своем здоровье пользователей. Уникальный продукт не только для отечественного, но и для международного рынка, — редко встречаются настолько детально продуманные интерфейсы, приносящие такую пользу всем стейкхолдерам. Мы очень рады нашему сотрудничеству."
-          person="Владимир Дмитриев,"
-          position="директор по развитию бизнеса компании «ТелеМедХаб» (ТМХ)"
-          styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-        />
-        </a>
-        </div> 
-        <div class="review-card-odd">
-        <a href="/portfolio/ot-vinta`">
-        <ReviewItem
-         title="От Винта!"
-         text="Хотим поблагодарить за проделанную работу. Обратились с тем, чтобы переработать сайт в лучшую сторону, найти все возможные проблемы элементов интерфейса, из-за которых клиент мог заблудиться на сайте и покинуть его. На протяжении месяцев совместной работы «Собака Павлова» только удивляла, каждое предложенное решение удовлетворяло на все 100%. Вся работа выполнялась в срок и без задержек. Команда профессионалов, работа с ними обязательно продолжится в новых проектах. Впечатления остались крайне положительные."
-         person="Илья Новиков,"
-         position="генеральный директор «От Винта!»"
-         styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-        />
-        </a>
-        </div>
-        
-        <div class="review-card-even">
-        <a href="/portfolio/elma-bot">
-        <ReviewItem
-          title="Elma"
-          text="Наше сотрудничество с командой «Собаки Павловой» началось в 2020 году. В тот момент перед нами стояла по-настоящему амбициозная задача перехода от узкой BPM-системы к масштабной Low-code платформе автоматизации внутренних и внешних бизнес-процессов любой сложности — ELMA365. У каждого клиента ELMA свой опыт построения уникальных бизнес-процессов. Чтобы не нарушать их логику и гибко подстраиваться под любые изменения, в дизайн ELMA365 заложен принцип модульности. Такой подход дает нашим клиентам универсальный и максимально точно кастомизируемый инструмент для построения ИТ-системы любого масштаба. Реализации сложных внутренних бизнес-процессов помогает простота и интуитивная понятность интерфейса платформы. А если получилось хорошо, то почему бы не продолжить? Сейчас ELMA работает с командой «Собаки Павловой» над дизайном интерфейса нового решения. О том, каким он будет, расскажем в следующих сериях."
-          person="Алексей Будин,"
-          position="генеральный директор Elma"
-          styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-        />
-        </a>
-        </div>
-        
-        <div class="review-card-odd">
-          <a href="/portfolio/pangeo">
+      <div class="grow shrink">
+        <div class="bg-[--aw-color-grey9] p-5 md:p-10 ">
+          <a href="/portfolio/seatmap">
           <ReviewItem
-            title="Пангео Радар"
-            text="Приятное удивление от того как быстро вы разобрались в смысле нашего продукта и предложили визуально привлекательное решение по полной переработке интерфейса. Организационные процессы также оставили приятное впечатление, наглядный роадмап, шаблоны в фигме, презентации наработок, всё просто и понятно. Вы проделали колоссальную и бесценную работу, которой мы в целом остались очень довольны. Я не думаю, что в нашем случае можно было сделать что-то большее."
-            person="Михаил Левин,"
-            position="руководитель проекта"
-            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
+            text="Мы сотрудничали над созданием инновационного UX для схем рассадки и процессов бронирования. Команда провела глубокое исследование и полностью переосмыслила пользовательский путь от выбора места до завершения покупки. Каждая деталь интерфейса была продумана с точки зрения удобства конечного пользователя. Проект потребовал комплексного подхода, и команда справилась с этой задачей на высшем уровне.\n\nПроцесс был выстроен максимально профессионально и прозрачно. Команда демонстрировала глубокое понимание специфики нашей области и потребностей целевой аудитории.\n\nРезультат превзошёл наши ожидания – мы получили действительно seamless решение, которое значительно улучшило пользовательский опыт. Новый интерфейс сделал процесс выбора и бронирования мест интуитивно понятным и приятным. Мы видим положительную динамику в метриках и получаем отличные отзывы от клиентов. Однозначно рекомендуем эту команду для сложных UX-проектов."
+            person="Андрей Юсин,"
+            position="генеральный директор Seatmap"
+            photo="~/assets/images/portfolio/seatmap/person.jpeg"
+            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+            photoPosition="bottom"
           />
           </a>
+          <div class="flex items-center justify-start">
+            <a class="noir2-div relative" href="/portfolio/seatmap">
+              <img src="/images/clients/seatmap.svg" height="60">
+            </a>
           </div>
+        </div> 
+      </div>
+    </div>
+  
+    <div class="flex flex flex-col lg:flex-row gap-6 mt-6">
+      <div class="grow shrink">
+        <UniversalSlider count={1} styles={{main: 'review-slider'}}>
+          <div class="review-card-odd">
+            <a href="/portfolio/erna">
+            <ReviewItem
+              text="Мы сотрудничали с «Собакой Павловой» в рамках разработки дизайна нашего продукта «Кардиум». Для нас было важно создать удобный и интуитивно понятный инструмент для врачей, и именно эту задачу команда решила на высоком профессиональном уровне. Специалисты «Собакой Павловой» не только разработали современный пользовательский интерфейс, но и тщательно продумали сценарии использования, сделав систему практичной и эффективной в реальной работе. Особенно ценно их глубокое понимание специфики медицинских сервисов и внимание к деталям, которые напрямую влияют на качество работы врача и удобство пациента. Мы высоко ценим открытый диалог, гибкость в процессе и готовность искать лучшие решения. Сотрудничество с «Собакой Павловой» стало важным шагом для развития наших продуктов в сфере цифровой медицины. От всей команды «ЭРНА» выражаем искреннюю благодарность за профессионализм и качественный результат."
+              person="Владимир Александрович Падишин,"
+              position="коммерческий директор компании «ЭРНА»"
+              photo="~/assets/images/portfolio/erna/person.png"
+              styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+              photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/seatmap">
+                <img src="/images/clients/erna.svg" height="60">
+              </a>
+            </div>
+          </div>
+            
+          <div class="review-card-even">
+            <a href="/portfolio/pushkin-digital">
+            <ReviewItem
+              text="До знакомства с командой «Собаки Павловой» мы долго ломали голову над тем, как выстроить работу. Ведь нам нужно было и собрать экраны для проекта, и всё продумать, и вовлечь в работу студентов и студенток, и сохранить гуманитарную составляющую. Как только появились коллеги из СП, мы перестали ломать голову, потому что они принесли с собой отличные рабочие практики. Появился общий план, задачи для создания интерфейсов, планёрки с обсуждением всех деталей, удобные документы. Мы работали с разными разработчиками, а в финале проекта весь дизайн довольно сильно изменился. И сейчас продолжаем дорабатывать интерфейс, но фраза «Это есть в макетах Собаки» — звучит до сих пор. Как бы ни менялся Пушкин <Цифровой> дальше, мы знаем, что цифровую базу этого проекта создали в КБ «Собака Павлова»."
+              person="Полина Колозариди,"
+              position="академический руководитель магистратуры, директор DH-центра, проводница цифровой инфраструктуры и исследований ИТМО"
+              photo="~/assets/images/portfolio/itmo/person.png"
+              styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+              photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/pushkin-digital">
+                <img src="/images/clients/itmo.svg" height="60">
+              </a>
+            </div>
+          </div> 
+            
+          <div class="review-card-odd">
+            <a href="/portfolio/prozhito">
+            <ReviewItem
+             text="Центр «Прожито» Европейского университета в Санкт-Петербурге обратился за помощью к «Собаке Павловой», потому что у компании есть устойчивая репутация разработчика цифровых решений для гуманитарных проектов, подтвержденная многочисленными рекомендациями со стороны наших коллег-гуманитариев.Мы были впечатлены организацией рабочего процесса, которую почти полностью взяли на себя коллеги из «Собаки». Мы очень быстро нашли с ними общий язык и установили удобный всем рабочий ритм. В процессе работы коллеги из «Собаки» помогли нам существенно скорректировать представление о задачах продукта. Предложенные ими решения кажутся нам универсальными и масштабируемыми на следующие этапы разработки цифрового архива «Прожито», поэтому мы рассчитываем на дальнейшее сотрудничество."
+             person="Михаил Мельниченко,"
+             position="директор Центра «Прожито»"
+             photo="~/assets/images/portfolio/prozhito/person.jpg"
+             styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+             photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/prozhito">
+                <img src="/images/clients/prozhito.svg" height="60">
+              </a>
+            </div>
+          </div>
+            
           <div class="review-card-even">
           <a href="/portfolio/res">
-          <ReviewItem
-            title="Калибратор тока и напряжения"
-            text="Конечно, мы внедрили результат. Такой результат — и не внедрить. Для меня это было важно не только как для бизнесмена, а именно как для технаря. В моей голове были фантазии и мечты, и мы вместе их приземлили. Вы были руками, которые меня услышали и сделали. И теперь я на это смотрю и говорю: «Я сделал!». Внедрили больше, чем 50% из того, что вы нам нарисовали. Для пользователя это выглядит как на 70% обновленный интерфейс. Все новые приборы, которые мы делаем и поставляем, а так же те, что были на складе, идут с вашим интерфейсом. Если вы помните, мы к вам пришли, потому что один крупный заказчик сказал, что с таким интерфейсом он прибор не купит. Но теперь мы с ними заключили контракт. Все остальные пользователи в восторге. Отзывы только положительные по интерфейсу. То, как мы с вами работали, позволило нам очень сильно вырасти как заказчику. У вас отличная культура ведения проекта."
-            person="Игорь Сюндюков,"
-            position="руководитель проекта «Калибратор»"
-            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
+            <ReviewItem
+              text="Конечно, мы внедрили результат. Такой результат — и не внедрить. Для меня это было важно не только как для бизнесмена, а именно как для технаря. В моей голове были фантазии и мечты, и мы вместе их приземлили. Вы были руками, которые меня услышали и сделали. И теперь я на это смотрю и говорю: «Я сделал!».\n\nВнедрили больше, чем 50% из того, что вы нам нарисовали. Для пользователя это выглядит как на 70% обновленный интерфейс. Все новые приборы, которые мы делаем и поставляем, а так же те, что были на складе, идут с вашим интерфейсом.\n\n\Если вы помните, мы к вам пришли, потому что один крупный заказчик сказал, что с таким интерфейсом он прибор не купит. Но теперь мы с ними заключили контракт. Все остальные пользователи в восторге. Отзывы только положительные по интерфейсу. То, как мы с вами работали, позволило нам очень сильно вырасти как заказчику. У вас отличная культура ведения проекта."
+              person="Игорь Сюндюков,"
+              position="руководитель проекта «Калибратор»"
+            photo="~/assets/images/portfolio/res/person.png"
+            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+            photoPosition="bottom"
           />
           </a>
-          </div> 
-          <div class="review-card-odd">
-          <a href="/portfolio/tis">
-          <ReviewItem
-           title="ТИС Самоконтроль"
-           text="Мы обратились в «Собаку Павлова» с идеей веб-приложения для медицинского персонала и мобильного приложения для пациента. У нас не было конкретизированных требований, только видение продукта, состоящее из описания бизнес-требований и бизнес-процессов. От дизайнеров «Собаки Павлова» поступали креативные предложения и решения, до которых мы сами никогда бы не додумались. И в процессе работы один  дилетантский экран, нарисованный нами, трансформировался в макеты полноценного продукта, в котором учтены все требуемые процессы. По итогу у нас есть всё для создания продукта, даже верстка. С «Собакой Павлова» приятно и выгодно работать. Обязательно обратимся к ним еще, если будет такая необходимость."
-           person="Владимир Падишин,"
-           position="Руководитель продукта «ТИС Самоконтроль»"
-           styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-          />
-          </a>
+          <div class="flex items-center justify-start">
+            <a class="noir2-div relative" href="/portfolio/res">
+              <img src="/images/clients/res.svg" height="60">
+            </a>
+          </div>
           </div>
           
           <div class="review-card-even">
-          <a href="/portfolio/alfa-arm">
-          <ReviewItem
-            title="Альфа-банк"
-            text="Крутая работа! Очень порадовало отсутствие излишней бюрократии. Несмотря на то что команда в другом городе, коммуникация была организована на высоте. Сразу видно, что ценят как свое время, так и заказчика. Задача была понята быстро, и ее результаты пошли в работу. Большое спасибо команде!"
-            person="Сергей Горячко,"
-            position="руководитель проектов"
-            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4'}}
-          />
-          </a>
+            <a href="/portfolio/tmh">
+            <ReviewItem
+              text="Мы обратились к «Собаке Павловой» с задачей улучшить интерфейс, разработанный и опробованный нами на множестве пилотных проектов в государственных и частных медицинских учреждениях. Объединив ваш опыт дизайна медицинских интерфейсов с нашим опытом создания и эксплуатации предыдущей версии системы и обратной связью от пользователей, мы разработали интерфейс, удобный и для работающих в личном кабинете врачей, и для передающих данные о своем здоровье пользователей. Уникальный продукт не только для отечественного, но и для международного рынка, — редко встречаются настолько детально продуманные интерфейсы, приносящие такую пользу всем стейкхолдерам. Мы очень рады нашему сотрудничеству."
+              person="Владимир Дмитриев,"
+              position="директор по развитию бизнеса компании «ТелеМедХаб» (ТМХ)"
+              photo="~/assets/images/portfolio/tmh/person.png"
+              styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+              photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/tmh">
+                <img src="/images/clients/tmh.svg" height="60">
+              </a>
+            </div>
+          </div> 
+          
+          <div class="review-card-odd">
+            <a href="/portfolio/ot-vinta">
+            <ReviewItem
+             text="Хотим поблагодарить за проделанную работу. Обратились с тем, чтобы переработать сайт в лучшую сторону, найти все возможные проблемы элементов интерфейса, из-за которых клиент мог заблудиться на сайте и покинуть его. На протяжении месяцев совместной работы «Собака Павлова» только удивляла, каждое предложенное решение удовлетворяло на все 100%. Вся работа выполнялась в срок и без задержек. Команда профессионалов, работа с ними обязательно продолжится в новых проектах. Впечатления остались крайне положительные."
+             person="Илья Новиков,"
+             position="генеральный директор «От Винта!»"
+             photo="~/assets/images/portfolio/ot-vinta/person.png"
+             styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+             photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/ot-vinta">
+                <img src="/images/clients/ot-vinta.svg" height="60">
+              </a>
+            </div>             
+           </div>
+            
+            <div class="review-card-even">
+            <a href="/portfolio/elma-bot">
+            <ReviewItem
+              text="Наше сотрудничество с командой «Собаки Павловой» началось в 2020 году. В тот момент перед нами стояла по-настоящему амбициозная задача перехода от узкой BPM-системы к масштабной Low-code платформе автоматизации внутренних и внешних бизнес-процессов любой сложности — ELMA365. У каждого клиента ELMA свой опыт построения уникальных бизнес-процессов. Чтобы не нарушать их логику и гибко подстраиваться под любые изменения, в дизайн ELMA365 заложен принцип модульности. Такой подход дает нашим клиентам универсальный и максимально точно кастомизируемый инструмент для построения ИТ-системы любого масштаба. Реализации сложных внутренних бизнес-процессов помогает простота и интуитивная понятность интерфейса платформы. А если получилось хорошо, то почему бы не продолжить? Сейчас ELMA работает с командой «Собаки Павловой» над дизайном интерфейса нового решения. О том, каким он будет, расскажем в следующих сериях."
+              person="Алексей Будин,"
+              position="генеральный директор Elma"
+              photo="~/assets/images/portfolio/elma/person.png"
+              styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+              photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/seatmap">
+                <img src="/images/clients/elma.svg" height="60">
+              </a>
+            </div>
           </div>
-    </UniversalSlider>
+          
+          <div class="review-card-even">
+            <a href="/portfolio/alfa-arm">
+            <ReviewItem
+              text="Крутая работа! Очень порадовало отсутствие излишней бюрократии. Несмотря на то что команда в другом городе, коммуникация была организована на высоте. Сразу видно, что ценят как свое время, так и заказчика. Задача была понята быстро, и ее результаты пошли в работу. Большое спасибо команде!"
+              person="Сергей Горячко,"
+              position="руководитель проектов"
+              photo="~/assets/images/portfolio/alfa-arm/person.png"
+              styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+              photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/alfa-arm">
+                <img src="/images/clients/alfabank-long.svg" height="60">
+              </a>
+            </div>
+          </div>
+        </UniversalSlider>
+      </div>
+      
+      <div class="basis-[338px] grow-0 shrink-0">
+          <div class="">
+                  <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4 lg:mb-1">Наши клиенты</h2>
+                  <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-2 ml-0 gap-y-10 gap-x-10 mb-10">                       
+                    <div class="flex items-center justify-start">
+                       <a class="noir2-div relative" href="/portfolio/gazprom-neft">
+                         <img src="/images/clients/gazprom-long.svg" width="150" height="56">
+                    </a></div>
+                         
+                    <div class="flex items-center justify-end">
+                       <a class="noir2-div relative" href="/portfolio/avito">
+                         <img src="/images/clients/avito-long.svg" width="200" height="56">
+                    </a></div>
+                    
+                    <div class="flex items-center justify-start">
+                       <a class="noir2-div relative" href="/portfolio/qiwi">
+                         <img src="/images/clients/qiwi-long.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-end">
+                       <a class="noir2-div relative" href="/portfolio/medmarket">
+                         <img src="/images/clients/medmarket.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-start">
+                       <a class="noir2-div relative" href="/portfolio/simetra">
+                         <img src="/images/clients/simetra.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-end">
+                       <a class="noir2-div relative" href="/portfolio/lab4u">
+                         <img src="/images/clients/lab4u.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-start">
+                       <a class="noir2-div relative" href="/portfolio/onesoil">
+                         <img src="/images/clients/onesoil.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-end">
+                       <a class="noir2-div relative" href="/portfolio/etm">
+                         <img src="/images/clients/etm.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-start">
+                       <a class="noir2-div relative" href="/portfolio/zapovednik">
+                         <img src="/images/clients/zapovednik.svg" width="200" height="56">
+                    </a></div>
+                    <div class="flex items-center justify-end">
+                       <a class="noir2-div relative" href="/portfolio/kapital">
+                         <img src="/images/clients/kapital.svg" width="200" height="56">
+                    </a></div>
+                  </div>  
+                </div>
+                <div class="flex justify-end">
+                  <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                    <a href="/ux-outstaff">Портфолио →</a>
+                  </div>
+                </div>     
+      </div>
+    </div>
+  </div>  
+
+  <a id="5"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 ">В удобном вам формате</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Наши услуги</h3>  
+    <HighlightedCases
+        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mb-5 md:mb-8  related-posts" }}
+        title={""}
+        links={[{name: 'ux-design'}, {name: 'redesign'}, {name: 'new-features'}, {name: 'prototype'}, {name: 'ui-redesign'}, {name: 'content-design'}, ]}
+        collection="services"
+        hideFields={{year: true}}
+      />
+   
+  <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш IT-продукт удобным, понятным и красивым</h2>
+    <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
+      <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+      <div class="flex flex-col gap-1 justify-center text-white">
+        <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+        <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Реквизиты в PDF</a>
+      </div>
+    </div>
   </div>
   
+</article>
+</section>
+
 </Layout>

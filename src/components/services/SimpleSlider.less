@@ -224,4 +224,67 @@ simple-slider {
       }
     }
   }
+  
+  &.mode-2 {
+    .navigation,
+    .slider-buttons {
+      display: none;
+    }
+    .slider {
+      width: 870px;
+    }
+    
+    .details-slide h3.font-heading {
+      font-family: var(--aw-font-sans, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+      font-size: 20px;
+    }
+
+    &:has(#ux1:checked) {
+      .details-slide-1 {
+        background-color: var(--aw-color-bg-page-dark);
+        color: var(--aw-color-grey9);
+        
+        h3.font-heading {
+          font-family: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+          font-size: 30px;
+        }
+      }
+    }
+    
+    &:has(#ux2:checked) {
+      .details-slide-2 {
+        background-color: var(--aw-color-bg-page-dark);
+        color: var(--aw-color-grey9);
+        
+        h3.font-heading {
+          font-family: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+          font-size: 30px;
+        }
+      }
+    }
+    
+    &:has(#ux3:checked) {
+      .details-slide-3 {
+        background-color: var(--aw-color-bg-page-dark);
+        color: var(--aw-color-grey9);
+        
+        h3.font-heading {
+          font-family: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+          font-size: 30px;
+        }
+      }
+    }
+    
+    &:has(#ux4:checked) {
+      .details-slide-4 {
+        background-color: var(--aw-color-bg-page-dark);
+        color: var(--aw-color-grey9);
+        
+        h3.font-heading {
+          font-family: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+          font-size: 30px;
+        }
+      }
+    }
+  }
 }
