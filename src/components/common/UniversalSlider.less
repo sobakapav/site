@@ -41,7 +41,6 @@ u-slider {
   
   }
   
-  
   &.full-width {
     @media (width >= 48rem) {
       .u-slider-container {
@@ -63,6 +62,26 @@ u-slider {
       .u-slide3 {
         width: calc(33vw - 1rem);
         max-width: 25rem;
+      }
+    }
+  }
+
+  &.slider-wide {
+    @media (width >= 870px) {
+      .u-slider-container {
+        max-width: 870px;
+      }
+      .u-slider {
+        max-width: 870px;
+      }
+      .u-slide {
+        max-width: 870px;
+      }
+      .u-slide2 {
+        max-width: 435px;
+      }
+      .u-slide3 {
+        max-width: 290px;
       }
     }
   }

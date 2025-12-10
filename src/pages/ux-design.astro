@@ -199,7 +199,7 @@ const metadata = {
           </a>
           <div class="flex items-center justify-start">
             <a class="noir2-div relative" href="/portfolio/seatmap">
-              <img src="/images/clients/seatmap.svg" height="60">
+              <img src="/images/clients/seatmap.svg" width="150" height="60">
             </a>
           </div>
         </div> 
@@ -208,11 +208,11 @@ const metadata = {
   
     <div class="flex flex flex-col lg:flex-row gap-6 mt-6">
       <div class="grow shrink">
-        <UniversalSlider count={1} styles={{main: 'review-slider'}}>
+        <UniversalSlider count={1} styles={{main: 'review-slider slider-wide'}}>
           <div class="review-card-odd">
-            <a href="/portfolio/erna">
+            <a href="/portfolio/electrocardiography">
             <ReviewItem
-              text="Мы сотрудничали с «Собакой Павловой» в рамках разработки дизайна нашего продукта «Кардиум». Для нас было важно создать удобный и интуитивно понятный инструмент для врачей, и именно эту задачу команда решила на высоком профессиональном уровне. Специалисты «Собакой Павловой» не только разработали современный пользовательский интерфейс, но и тщательно продумали сценарии использования, сделав систему практичной и эффективной в реальной работе. Особенно ценно их глубокое понимание специфики медицинских сервисов и внимание к деталям, которые напрямую влияют на качество работы врача и удобство пациента. Мы высоко ценим открытый диалог, гибкость в процессе и готовность искать лучшие решения. Сотрудничество с «Собакой Павловой» стало важным шагом для развития наших продуктов в сфере цифровой медицины. От всей команды «ЭРНА» выражаем искреннюю благодарность за профессионализм и качественный результат."
+              text="Мы сотрудничали с «Собакой Павловой» в рамках разработки дизайна нашего продукта «Кардиум». Для нас было важно создать удобный и интуитивно понятный инструмент для врачей, и именно эту задачу команда решила на высоком профессиональном уровне. \n\nСпециалисты «Собакой Павловой» не только разработали современный пользовательский интерфейс, но и тщательно продумали сценарии использования, сделав систему практичной и эффективной в реальной работе. Особенно ценно их глубокое понимание специфики медицинских сервисов и внимание к деталям, которые напрямую влияют на качество работы врача и удобство пациента. \n\nМы высоко ценим открытый диалог, гибкость в процессе и готовность искать лучшие решения. Сотрудничество с «Собакой Павловой» стало важным шагом для развития наших продуктов в сфере цифровой медицины.\n\nОт всей команды «ЭРНА» выражаем искреннюю благодарность за профессионализм и качественный результат."
               person="Владимир Александрович Падишин,"
               position="коммерческий директор компании «ЭРНА»"
               photo="~/assets/images/portfolio/erna/person.png"
@@ -221,13 +221,31 @@ const metadata = {
             />
             </a>
             <div class="flex items-center justify-start">
-              <a class="noir2-div relative" href="/portfolio/seatmap">
-                <img src="/images/clients/erna.svg" height="60">
+              <a class="noir2-div relative" href="/portfolio/electrocardiography">
+                <img src="/images/clients/erna-white.svg" width="80" height="40">
               </a>
             </div>
           </div>
-            
+           
           <div class="review-card-even">
+            <a href="/portfolio/prozhito">
+            <ReviewItem
+             text="Центр «Прожито» Европейского университета в Санкт-Петербурге обратился за помощью к «Собаке Павловой», потому что у компании есть устойчивая репутация разработчика цифровых решений для гуманитарных проектов, подтвержденная многочисленными рекомендациями со стороны наших коллег-гуманитариев.\n\nМы были впечатлены организацией рабочего процесса, которую почти полностью взяли на себя коллеги из «Собаки». Мы очень быстро нашли с ними общий язык и установили удобный всем рабочий ритм. В процессе работы коллеги из «Собаки» помогли нам существенно скорректировать представление о задачах продукта.\n\nПредложенные ими решения кажутся нам универсальными и масштабируемыми на следующие этапы разработки цифрового архива «Прожито», поэтому мы рассчитываем на дальнейшее сотрудничество."
+             person="Михаил Мельниченко,"
+             position="директор Центра «Прожито»"
+             photo="~/assets/images/portfolio/prozhito/person.jpg"
+             styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+             photoPosition="bottom"
+            />
+            </a>
+            <div class="flex items-center justify-start">
+              <a class="noir2-div relative" href="/portfolio/prozhito">
+                <img src="/images/clients/prozhito.svg" width="200" height="40">
+              </a>
+            </div>
+          </div> 
+           
+          <div class="review-card-odd">
             <a href="/portfolio/pushkin-digital">
             <ReviewItem
               text="До знакомства с командой «Собаки Павловой» мы долго ломали голову над тем, как выстроить работу. Ведь нам нужно было и собрать экраны для проекта, и всё продумать, и вовлечь в работу студентов и студенток, и сохранить гуманитарную составляющую. Как только появились коллеги из СП, мы перестали ломать голову, потому что они принесли с собой отличные рабочие практики. Появился общий план, задачи для создания интерфейсов, планёрки с обсуждением всех деталей, удобные документы. Мы работали с разными разработчиками, а в финале проекта весь дизайн довольно сильно изменился. И сейчас продолжаем дорабатывать интерфейс, но фраза «Это есть в макетах Собаки» — звучит до сих пор. Как бы ни менялся Пушкин <Цифровой> дальше, мы знаем, что цифровую базу этого проекта создали в КБ «Собака Павлова»."
@@ -240,28 +258,10 @@ const metadata = {
             </a>
             <div class="flex items-center justify-start">
               <a class="noir2-div relative" href="/portfolio/pushkin-digital">
-                <img src="/images/clients/itmo.svg" height="60">
+                <img src="/images/clients/pushkin-digital.svg" width="300" height="40">
               </a>
             </div>
           </div> 
-            
-          <div class="review-card-odd">
-            <a href="/portfolio/prozhito">
-            <ReviewItem
-             text="Центр «Прожито» Европейского университета в Санкт-Петербурге обратился за помощью к «Собаке Павловой», потому что у компании есть устойчивая репутация разработчика цифровых решений для гуманитарных проектов, подтвержденная многочисленными рекомендациями со стороны наших коллег-гуманитариев.Мы были впечатлены организацией рабочего процесса, которую почти полностью взяли на себя коллеги из «Собаки». Мы очень быстро нашли с ними общий язык и установили удобный всем рабочий ритм. В процессе работы коллеги из «Собаки» помогли нам существенно скорректировать представление о задачах продукта. Предложенные ими решения кажутся нам универсальными и масштабируемыми на следующие этапы разработки цифрового архива «Прожито», поэтому мы рассчитываем на дальнейшее сотрудничество."
-             person="Михаил Мельниченко,"
-             position="директор Центра «Прожито»"
-             photo="~/assets/images/portfolio/prozhito/person.jpg"
-             styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-             photoPosition="bottom"
-            />
-            </a>
-            <div class="flex items-center justify-start">
-              <a class="noir2-div relative" href="/portfolio/prozhito">
-                <img src="/images/clients/prozhito.svg" height="60">
-              </a>
-            </div>
-          </div>
             
           <div class="review-card-even">
           <a href="/portfolio/res">
@@ -276,12 +276,12 @@ const metadata = {
           </a>
           <div class="flex items-center justify-start">
             <a class="noir2-div relative" href="/portfolio/res">
-              <img src="/images/clients/res.svg" height="60">
+              <img src="/images/clients/res.svg" width="60" height="40">
             </a>
           </div>
           </div>
           
-          <div class="review-card-even">
+          <div class="review-card-odd">
             <a href="/portfolio/tmh">
             <ReviewItem
               text="Мы обратились к «Собаке Павловой» с задачей улучшить интерфейс, разработанный и опробованный нами на множестве пилотных проектов в государственных и частных медицинских учреждениях. Объединив ваш опыт дизайна медицинских интерфейсов с нашим опытом создания и эксплуатации предыдущей версии системы и обратной связью от пользователей, мы разработали интерфейс, удобный и для работающих в личном кабинете врачей, и для передающих данные о своем здоровье пользователей. Уникальный продукт не только для отечественного, но и для международного рынка, — редко встречаются настолько детально продуманные интерфейсы, приносящие такую пользу всем стейкхолдерам. Мы очень рады нашему сотрудничеству."
@@ -294,12 +294,12 @@ const metadata = {
             </a>
             <div class="flex items-center justify-start">
               <a class="noir2-div relative" href="/portfolio/tmh">
-                <img src="/images/clients/tmh.svg" height="60">
+                <img src="/images/clients/tmh.svg" width="60" height="40">
               </a>
             </div>
           </div> 
           
-          <div class="review-card-odd">
+          <div class="review-card-even">
             <a href="/portfolio/ot-vinta">
             <ReviewItem
              text="Хотим поблагодарить за проделанную работу. Обратились с тем, чтобы переработать сайт в лучшую сторону, найти все возможные проблемы элементов интерфейса, из-за которых клиент мог заблудиться на сайте и покинуть его. На протяжении месяцев совместной работы «Собака Павлова» только удивляла, каждое предложенное решение удовлетворяло на все 100%. Вся работа выполнялась в срок и без задержек. Команда профессионалов, работа с ними обязательно продолжится в новых проектах. Впечатления остались крайне положительные."
@@ -312,7 +312,7 @@ const metadata = {
             </a>
             <div class="flex items-center justify-start">
               <a class="noir2-div relative" href="/portfolio/ot-vinta">
-                <img src="/images/clients/ot-vinta.svg" height="60">
+                <img src="/images/clients/ot-vinta.svg" width="150" height="40">
               </a>
             </div>             
            </div>
@@ -323,14 +323,14 @@ const metadata = {
               text="Наше сотрудничество с командой «Собаки Павловой» началось в 2020 году. В тот момент перед нами стояла по-настоящему амбициозная задача перехода от узкой BPM-системы к масштабной Low-code платформе автоматизации внутренних и внешних бизнес-процессов любой сложности — ELMA365. У каждого клиента ELMA свой опыт построения уникальных бизнес-процессов. Чтобы не нарушать их логику и гибко подстраиваться под любые изменения, в дизайн ELMA365 заложен принцип модульности. Такой подход дает нашим клиентам универсальный и максимально точно кастомизируемый инструмент для построения ИТ-системы любого масштаба. Реализации сложных внутренних бизнес-процессов помогает простота и интуитивная понятность интерфейса платформы. А если получилось хорошо, то почему бы не продолжить? Сейчас ELMA работает с командой «Собаки Павловой» над дизайном интерфейса нового решения. О том, каким он будет, расскажем в следующих сериях."
               person="Алексей Будин,"
               position="генеральный директор Elma"
-              photo="~/assets/images/portfolio/elma/person.png"
+              photo="~/assets/images/portfolio/elma-bot/person.jpeg"
               styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
               photoPosition="bottom"
             />
             </a>
             <div class="flex items-center justify-start">
-              <a class="noir2-div relative" href="/portfolio/seatmap">
-                <img src="/images/clients/elma.svg" height="60">
+              <a class="noir2-div relative" href="/portfolio/elma-bot">
+                <img src="/images/clients/elma.svg" width="150" height="40">
               </a>
             </div>
           </div>
@@ -341,73 +341,130 @@ const metadata = {
               text="Крутая работа! Очень порадовало отсутствие излишней бюрократии. Несмотря на то что команда в другом городе, коммуникация была организована на высоте. Сразу видно, что ценят как свое время, так и заказчика. Задача была понята быстро, и ее результаты пошли в работу. Большое спасибо команде!"
               person="Сергей Горячко,"
               position="руководитель проектов"
-              photo="~/assets/images/portfolio/alfa-arm/person.png"
+              photo="~/assets/images/portfolio/alfa-arm/person.jpg"
               styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
               photoPosition="bottom"
             />
             </a>
             <div class="flex items-center justify-start">
               <a class="noir2-div relative" href="/portfolio/alfa-arm">
-                <img src="/images/clients/alfabank-long.svg" height="60">
+                <img src="/images/clients/alfabank-long.svg" width="150" height="40">
               </a>
             </div>
           </div>
         </UniversalSlider>
       </div>
       
-      <div class="basis-[338px] grow-0 shrink-0">
-          <div class="">
-                  <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4 lg:mb-1">Наши клиенты</h2>
-                  <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-2 ml-0 gap-y-10 gap-x-10 mb-10">                       
-                    <div class="flex items-center justify-start">
-                       <a class="noir2-div relative" href="/portfolio/gazprom-neft">
-                         <img src="/images/clients/gazprom-long.svg" width="150" height="56">
-                    </a></div>
-                         
-                    <div class="flex items-center justify-end">
-                       <a class="noir2-div relative" href="/portfolio/avito">
-                         <img src="/images/clients/avito-long.svg" width="200" height="56">
-                    </a></div>
-                    
-                    <div class="flex items-center justify-start">
-                       <a class="noir2-div relative" href="/portfolio/qiwi">
-                         <img src="/images/clients/qiwi-long.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-end">
-                       <a class="noir2-div relative" href="/portfolio/medmarket">
-                         <img src="/images/clients/medmarket.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-start">
-                       <a class="noir2-div relative" href="/portfolio/simetra">
-                         <img src="/images/clients/simetra.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-end">
-                       <a class="noir2-div relative" href="/portfolio/lab4u">
-                         <img src="/images/clients/lab4u.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-start">
-                       <a class="noir2-div relative" href="/portfolio/onesoil">
-                         <img src="/images/clients/onesoil.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-end">
-                       <a class="noir2-div relative" href="/portfolio/etm">
-                         <img src="/images/clients/etm.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-start">
-                       <a class="noir2-div relative" href="/portfolio/zapovednik">
-                         <img src="/images/clients/zapovednik.svg" width="200" height="56">
-                    </a></div>
-                    <div class="flex items-center justify-end">
-                       <a class="noir2-div relative" href="/portfolio/kapital">
-                         <img src="/images/clients/kapital.svg" width="200" height="56">
-                    </a></div>
-                  </div>  
-                </div>
-                <div class="flex justify-end">
-                  <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
-                    <a href="/ux-outstaff">Портфолио →</a>
-                  </div>
-                </div>     
+      <div class="basis-[338px] grow-0 shrink-0 bg-[--aw-color-grey9] p-5 md:p-10">
+        <div class="">
+          <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-2 ml-0 gap-y-10 gap-x-10">                       
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio#alfa">
+                 <img src="/images/clients/alfabank-long.svg" width="120" height="56">
+            </a></div>
+                 
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio#alfastrah">
+                 <img src="/images/clients/alfastrah-long.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio/seatmap">
+                 <img src="/images/clients/seatmap.svg" width="120" height="56">
+            </a></div>
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio/pushkin-digital">
+                 <img src="/images/clients/pushkin-digital2.svg" width="120" height="56">
+            </a></div>
+            
+            
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/prozhito">
+                 <img src="/images/clients/prozhito.svg" width="120" height="56">
+            </a></div>
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio#elma">
+                 <img src="/images/clients/elma.svg" width="120" height="56">
+            </a></div>
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/brighteye">
+                 <img src="/images/clients/brighteye.svg" width="120" height="56">
+            </a></div>
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio#ecity">
+                 <img src="/images/clients/ecity-long.svg" width="120" height="56">
+            </a></div>
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/dipol">
+                 <img src="/images/clients/dipol-black.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio/avicenna">
+                 <img src="/images/clients/costa.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio/okey">
+                 <img src="/images/clients/okey-long.svg" width="120" height="56">
+            </a></div>
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/petrovich">
+                 <img src="/images/clients/petrovich.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio/ot-vinta">
+                 <img src="/images/clients/otvinta-long.svg" width="120" height="56">
+             </a></div>
+             
+             <div class="flex items-center justify-end">
+              <a class="noir2-div relative" href="/portfolio/edms">
+                <img src="/images/clients/carlsberg.svg" width="120" height="56">
+           </a></div>
+                 
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/tis">
+                 <img src="/images/clients/tis.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/yit">
+                 <img src="/images/clients/yit-blu.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/t1">
+                 <img src="/images/clients/t1.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/electrocardiography">
+                 <img src="/images/clients/erna-long.svg" width="120" height="56">
+            </a></div>
+            
+            {/*<div class="flex items-center justify-start">
+               <a class="noir2-div relative" href="/portfolio#alfa">
+                 <img src="/images/clients/alfabank-long.svg" width="120" height="56">
+            </a></div>
+                 
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/tinkoff">
+                 <img src="/images/clients/tinkoff-long.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/gazprom">
+                 <img src="/images/clients/gazprom-long.svg" width="120" height="56">
+            </a></div>
+            
+            <div class="flex items-center justify-end">
+               <a class="noir2-div relative" href="/portfolio/tmh">
+                 <img src="/images/clients/tmh.svg" width="120" height="56">
+            </a></div>*/}
+          </div>  
+        </div>
+            
       </div>
     </div>
   </div>  
@@ -415,10 +472,10 @@ const metadata = {
   <a id="5"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 ">В удобном вам формате</h2>
-    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Наши услуги</h3>  
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">В удобном вам формате</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-0">Наши услуги</h3>  
     <HighlightedCases
-        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mb-5 md:mb-8  related-posts" }}
+        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts" }}
         title={""}
         links={[{name: 'ux-design'}, {name: 'redesign'}, {name: 'new-features'}, {name: 'prototype'}, {name: 'ui-redesign'}, {name: 'content-design'}, ]}
         collection="services"
