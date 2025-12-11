@@ -62,12 +62,7 @@ simple-slider {
      transform:scale(1.1);
   }
   
-  input[name="desktop"] {
-     position: absolute;
-     visibility: hidden;
-  }
-  
-  input[name="mob"] {
+  input.desktop {
      position: absolute;
      visibility: hidden;
   }
@@ -75,7 +70,6 @@ simple-slider {
   .slides {
      width: 400%;
      display: flex;
-     
   }
   
   .slide {
@@ -87,19 +81,19 @@ simple-slider {
      width: 100%;
   }
   
-  #ux1:checked ~ .s1 {
+  input.ux1:checked ~ .s1 {
      margin-left: 0;
   }
   
-  #ux2:checked ~ .s1 {
+  input.ux2:checked ~ .s1 {
      margin-left: -25%;
   }
   
-  #ux3:checked ~ .s1 {
+  input.ux3:checked ~ .s1 {
      margin-left: -50%;
   }
   
-  #ux4:checked ~ .s1 {
+  input.ux4:checked ~ .s1 {
      margin-left: -75%;
   }
   
@@ -185,7 +179,7 @@ simple-slider {
     transition: height 0.6s ease;
   }
   
-  &:has(#ux1:checked) {
+  &:has(input.ux1:checked) {
     .details-slide-1 {
       background-color: var(--aw-color-bg-accent2);
       
@@ -195,7 +189,7 @@ simple-slider {
     }
   }
   
-  &:has(#ux2:checked) {
+  &:has(input.ux2:checked) {
     .details-slide-2 {
       background-color: var(--aw-color-bg-accent2);
       
@@ -205,7 +199,7 @@ simple-slider {
     }
   }
   
-  &:has(#ux3:checked) {
+  &:has(input.ux3:checked) {
     .details-slide-3 {
       background-color: var(--aw-color-bg-accent2);
       
@@ -215,7 +209,7 @@ simple-slider {
     }
   }
   
-  &:has(#ux4:checked) {
+  &:has(input.ux4:checked) {
     .details-slide-4 {
       background-color: var(--aw-color-bg-accent2);
       
@@ -239,7 +233,7 @@ simple-slider {
       font-size: 20px;
     }
 
-    &:has(#ux1:checked) {
+    &:has(input.ux1:checked) {
       .details-slide-1 {
         background-color: var(--aw-color-bg-page-dark);
         color: var(--aw-color-grey9);
@@ -251,7 +245,7 @@ simple-slider {
       }
     }
     
-    &:has(#ux2:checked) {
+    &:has(input.ux2:checked) {
       .details-slide-2 {
         background-color: var(--aw-color-bg-page-dark);
         color: var(--aw-color-grey9);
@@ -263,7 +257,7 @@ simple-slider {
       }
     }
     
-    &:has(#ux3:checked) {
+    &:has(input.ux3:checked) {
       .details-slide-3 {
         background-color: var(--aw-color-bg-page-dark);
         color: var(--aw-color-grey9);
@@ -275,7 +269,7 @@ simple-slider {
       }
     }
     
-    &:has(#ux4:checked) {
+    &:has(input.ux4:checked) {
       .details-slide-4 {
         background-color: var(--aw-color-bg-page-dark);
         color: var(--aw-color-grey9);
