@@ -1,5 +1,7 @@
 ---
 
+import { $id } from '~/utils/utils.ts';
+
 import './SimpleContentSlider.less';
 
 const {
@@ -15,6 +17,8 @@ const {
 if (blockTitles.length != 4 || !block1 || !block2 || !block3 || !block4) {
   console.error('Должно быть 4 слайда');
 }
+
+const id = $id('simple-slider');
 
 const listOnLeft = (mode === 'mode-2');
 
@@ -50,10 +54,10 @@ window.addEventListener("load", (event) => {
   <div class:list={['flex flex-col slider-container lg:gap-6', listOnLeft ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row']}>
       <div class:list={['slider slider-ux slider-desktop relative', listOnLeft ? '' : 'lg:pt-12']}>
         <div class="slides">
-          <input type="radio" name="desktop" id="ux1" checked>
-          <input type="radio" name="desktop" id="ux2">
-          <input type="radio" name="desktop" id="ux3">
-          <input type="radio" name="desktop" id="ux4">
+          <input type="radio" name={id+'-desktop'} id={id+'-ux1'} class="desktop ux1" checked>
+          <input type="radio" name={id+'-desktop'} id={id+'-ux2'} class="desktop ux2">
+          <input type="radio" name={id+'-desktop'} id={id+'-ux3'} class="desktop ux3">
+          <input type="radio" name={id+'-desktop'} id={id+'-ux4'} class="desktop ux4">
           
       
           <div class="slide s1">
@@ -71,10 +75,10 @@ window.addEventListener("load", (event) => {
         </div>
         
         <div class="navigation">
-          <label for="ux1" class="bar"></label>
-          <label for="ux2" class="bar"></label>
-          <label for="ux3" class="bar"></label>
-          <label for="ux4" class="bar"></label>
+          <label for={id+'-ux1'} class="bar"></label>
+          <label for={id+'-ux2'} class="bar"></label>
+          <label for={id+'-ux3'} class="bar"></label>
+          <label for={id+'-ux4'} class="bar"></label>
           
         </div>
         
@@ -94,25 +98,25 @@ window.addEventListener("load", (event) => {
       
       <div class:list={[listOnLeft ? 'w-[338px]' : 'w-[440px] pt-12']}>
         
-        <label for="ux1" class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer">
+        <label for={id+'-ux1'} class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer">
           <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[0].title}</h3>
           <div class="details-slide-details">
             {blockTitles[0].text}
           </div>
         </label>
-        <label for="ux2" class="details-slide details-slide-2 flex flex-col p-6 cursor-pointer">
+        <label for={id+'-ux2'} class="details-slide details-slide-2 flex flex-col p-6 cursor-pointer">
           <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[1].title}</h3>
           <div class="details-slide-details">
             {blockTitles[1].text}
           </div>
         </label>
-        <label for="ux3" class="details-slide details-slide-3 flex flex-col p-6 cursor-pointer">
+        <label for={id+'-ux3'} class="details-slide details-slide-3 flex flex-col p-6 cursor-pointer">
           <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[2].title}</h3>
           <div class="details-slide-details">
             {blockTitles[2].text}
           </div>
         </label>
-        <label for="ux4" class="details-slide details-slide-4 flex flex-col p-6 cursor-pointer">
+        <label for={id+'-ux4'} class="details-slide details-slide-4 flex flex-col p-6 cursor-pointer">
           <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[3].title}</h3>
           <div class="details-slide-details">
             {blockTitles[3].text}
