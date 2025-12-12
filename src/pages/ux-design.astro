@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Hund4 from '~/components/widgets/Hund4.astro';
@@ -53,52 +54,45 @@ const metadata = {
 <Layout metadata={metadata}  hasSlider={true}>
   <Bread title="UX-дизайн" />
   
-  <Hund2
-    image={{
-      src: '~/assets/images/services/turnkey/ux-design.svg',
-      alt: 'UX-дизайн • Собака Павлова',
-    }}
-    imageSafari={{
-      src: '~/assets/images/services/turnkey/ux-design.png',
-      alt: 'UX-дизайн • Собака Павлова',
-    }}
-    imageName="UX-аутстафф • Собака Павлова"
-  >
-    
-    <Fragment slot="title">
-      Дизайн интерфейсов
-    </Fragment>
-    
-    <Fragment slot="subtitle">
-      Сделаем ваш IT-продукт удобным и приятным в использовании.</br></br>Создадим интерфейс с нуля или обновим существующий.</br></br>Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware.</br></br>Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.
-    </Fragment>
-    
-  </Hund2>
+  <Hero2
+      image={{
+        src: '~/assets/images/services/design-main.png',
+        alt: 'UX-дизайн • Собака Павлова',
+      }}
+      >
+      
+      <Fragment slot="title">Дизайн</br>интерфейсов</Fragment>
+          
+      <Fragment slot="subtitle">Создадим интерфейс с нуля или обновим существующий.</br></br>Сделаем ваш IT-продукт удобным и приятным в использовании. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.
+  
+      </Fragment>
+      
+      <Fragment slot="result">
+        <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 lg:mt-10 mb-10 lg:mb-0 mx-auto max-w-7xl text-[#9F9F9F]">
+          <span>
+              <a href="#1" class="underline underline-offset-2">Качественно</a>
+            </span><span> • </span>
+            
+            <span>
+              <a href="#2" class="underline underline-offset-2">Красиво</a>
+            </span><span> • </span>
+            
+            <span>
+              <a href="#3" class="underline underline-offset-2">Технологично</a>
+            </span><span> • </span>
+            
+            <span>
+              <a href="#4" class="underline underline-offset-2">Осмысленно</a>
+            </span><span> • </span>
+            
+            <span>
+              <a href="#5" class="underline underline-offset-2">В удобном вам формате</a>
+        </div>
+      </Fragment>
+    </Hero2>
   
   <section class="py-0 mx-auto grow-0 shrink-0">
      <article>
-
-  <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
-    <span>
-      <a href="#1" class="underline underline-offset-2">Качественно</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#2" class="underline underline-offset-2">Красиво</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#3" class="underline underline-offset-2">Технологично</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#4" class="underline underline-offset-2">Осмысленно</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#5" class="underline underline-offset-2">В удобном вам формате</a>
-      
-  </div>
           
   <a id="1"></a>
   
@@ -107,7 +101,7 @@ const metadata = {
     
     <FeaturesHex
       title="Создаем улучшаем обновляем"
-      items={[{title: 'Дизайн продуктов', description: 'Разбираемся в сути продукта, а не только в кнопках. Делаем дизайн, который помогает, а не мешает'}, {title: 'Редизайн приложений и сайтов', description: 'Аккуратно улучшаем, где можно, и радикально меняем, где нужно. Чтобы стало удобно, понятно и не стыдно'}, {title: 'UX/UI-дизайн', description: 'Сначала думаем, потом рисуем. UX и UI — в нужных пропрциях и на своём месте.'}, {title: 'Обновление старого дизайна', description: 'Бережно обновим то, что устарело. Без революций — только нужные улучшения.'}, {title: 'Переработка мобильных приложений', description: 'Перепроектируем, перерисуем, улучшим. Чтобы работало лучше, выглядело свежее и не теряло пользователей.'}]}
+      items={[{title: 'Дизайн продуктов', description: 'Разбираемся в сути продукта, а не только в кнопках. Делаем дизайн, который помогает, а не мешает'}, {title: 'UX/UI-дизайн', description: 'Сначала думаем, потом рисуем. UX и UI — в нужных пропрциях и на своём месте.'}, {title: 'Редизайн приложений и сайтов', description: 'Аккуратно улучшаем, где можно, и радикально меняем, где нужно. Чтобы стало удобно, понятно и не стыдно'},  {title: 'Обновление старого дизайна', description: 'Бережно обновим то, что устарело. Без революций — только нужные улучшения.'}, {title: 'Переработка мобильных приложений', description: 'Перепроектируем, перерисуем, улучшим. Чтобы работало лучше, выглядело свежее и не теряло пользователей.'}]}
       classes = {{items: {description: 'text-xl mt-1'}}}
     />
   </div>
@@ -115,7 +109,7 @@ const metadata = {
   <a id="2"></a>
     
   <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Красиво</h2>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Красиво</h2>
   </div>
     
   <SimpleSlider 
@@ -124,7 +118,7 @@ const metadata = {
     slides={[{title: 'Создаём для вас фирменный стиль или уважаем существующий', img: '/images/services/landing/1.png', alt: 'UX-дизайн • Собака Павлова'},
       {title: 'Работаем по дизайн-стандартам Google и Apple', img: '/images/services/landing/2.png', alt: 'UX-дизайн • Собака Павлова'},
       {title: 'Учитываем современные тренды визуального дизайна', img: '/images/services/landing/3.png', alt: 'UX-дизайн • Собака Павлова'},
-      {title: 'Дизайн хорошо смотрится на всех устройствах, от смартфонов до телевизоров', img: '/images/services/landing/4.png', alt: 'UX-дизайн • Собака Павлова'}, ]}
+      {title: 'Дизайн хорошо смотрится на всех устройствах, от смартфонов до TV', img: '/images/services/landing/4.png', alt: 'UX-дизайн • Собака Павлова'}, ]}
   />
   
   <a id="3"></a>
@@ -161,6 +155,10 @@ const metadata = {
   
   <a id="4"></a>
   
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Осмысленно</h2>
+  </div>
+  
   <SimpleContentSlider
     mode="mode-2"
     blockTitles={[{title: 'Предлагаем решения, оптимальные для вашей бизнес-задачи'}, {title: 'Используем наши внутренние наработки по отраслям и инструментам'}, {title: 'Подбираем команду под вашу конкретику с учётом экспертизы сотрудников'}, {title: 'Адаптируемся под изменение требований и новые вводные'}]}
@@ -169,7 +167,7 @@ const metadata = {
       <div class="bg-[--aw-color-grey9] p-5 md:p-10 ">
         <a href="/portfolio/seatmap">
         <ReviewItem
-          text="Мы сотрудничали над созданием инновационного UX для схем рассадки и процессов бронирования. Команда провела глубокое исследование и полностью переосмыслила пользовательский путь от выбора места до завершения покупки. Каждая деталь интерфейса была продумана с точки зрения удобства конечного пользователя. Проект потребовал комплексного подхода, и команда справилась с этой задачей на высшем уровне.\n\nПроцесс был выстроен максимально профессионально и прозрачно. Команда демонстрировала глубокое понимание специфики нашей области и потребностей целевой аудитории.\n\nРезультат превзошёл наши ожидания – мы получили действительно seamless решение, которое значительно улучшило пользовательский опыт. Новый интерфейс сделал процесс выбора и бронирования мест интуитивно понятным и приятным. Мы видим положительную динамику в метриках и получаем отличные отзывы от клиентов. Однозначно рекомендуем эту команду для сложных UX-проектов."
+          text="Мы сотрудничали над созданием инновационного UX для схем рассадки и процессов бронирования. Команда провела глубокое исследование и полностью переосмыслила пользовательский путь от выбора места до завершения покупки. Каждая деталь интерфейса была продумана с точки зрения удобства конечного пользователя. Проект потребовал комплексного подхода, и команда справилась с этой задачей на высшем уровне.\n\nПроцесс был выстроен максимально профессионально и прозрачно. Команда показала глубокое понимание специфики нашей области и потребностей целевой аудитории.\n\nРезультат превзошёл наши ожидания: мы получили действительно seamless решение, которое значительно улучшило пользовательский опыт. Новый интерфейс сделал процесс выбора и бронирования мест интуитивно понятным и приятным. Мы видим положительную динамику в метриках и получаем отличные отзывы от клиентов. Однозначно рекомендуем эту команду для сложных UX-проектов."
           person="Андрей Юсин,"
           position="генеральный директор Seatmap"
           photo="~/assets/images/portfolio/seatmap/person.jpeg"
@@ -208,7 +206,6 @@ const metadata = {
       <div class="bg-[--aw-color-grey9] p-5 md:p-10 ">
         <a href="/portfolio/hyperus">
         <ReviewItem
-          title="Гиперус"
           text="Мы поставили перед «Собакой Павлова» амбициозную задачу — превратить управление сложной IT-инфраструктурой предприятия из «полёта вслепую» в интуитивно понятный «космический корабль». И они совершили невозможное.\n\nКоманда не просто проектировала интерфейс — они глубоко погрузились в специфику нашей отрасли, разобрали сотни пользовательских сценариев и создали UI/UX-решения, которые упростили работу с комплексными системами, минимизировали риск ошибок операторов и превратили рутинные процессы в логичные последовательности действий.\n\nРезультат превзошёл ожидания: там, где раньше требовались часы обучения, теперь достаточно интуитивного понимания. Не просто удобный интерфейс — продуманная система управления enterprise-уровня. Благодарим команду за профессионализм, терпение к бесконечным правкам и умение переводить сложное на язык простых решений."
           person="Павел Филатов,"
           position="CPO, Гиперус"
@@ -219,7 +216,7 @@ const metadata = {
         </a>
         <div class="flex items-center justify-start">
           <a class="noir2-div relative" href="/portfolio/hyperus">
-            <img src="/images/clients/hyperus-black.svg" width="150" height="60">
+            <img src="/images/clients/hyperus.svg" width="150" height="60">
           </a>
         </div>
       </div> 
@@ -267,7 +264,7 @@ const metadata = {
             </div>
           </div>
             
-          <div class="review-card-even">
+          <div class="review-card-odd">
           <a href="/portfolio/res">
             <ReviewItem
               text="Конечно, мы внедрили результат. Такой результат — и не внедрить. Для меня это было важно не только как для бизнесмена, а именно как для технаря. В моей голове были фантазии и мечты, и мы вместе их приземлили. Вы были руками, которые меня услышали и сделали. И теперь я на это смотрю и говорю: «Я сделал!».\n\nВнедрили больше, чем 50% из того, что вы нам нарисовали. Для пользователя это выглядит как на 70% обновленный интерфейс. Все новые приборы, которые мы делаем и поставляем, а так же те, что были на складе, идут с вашим интерфейсом.\n\n\Если вы помните, мы к вам пришли, потому что один крупный заказчик сказал, что с таким интерфейсом он прибор не купит. Но теперь мы с ними заключили контракт.\n\n\Все остальные пользователи в восторге. Отзывы только положительные по интерфейсу. То, как мы с вами работали, позволило нам очень сильно вырасти как заказчику. У вас отличная культура ведения проекта."
@@ -286,7 +283,7 @@ const metadata = {
           </div>
           
           <div class="review-card-odd">
-            <a href="/portfolio/tmh">
+            <a href="/portfolio/odd">
             <ReviewItem
               text="Мы обратились к «Собаке Павловой» с задачей улучшить интерфейс, разработанный и опробованный нами на множестве пилотных проектов в государственных и частных медицинских учреждениях.\n\nОбъединив ваш опыт дизайна медицинских интерфейсов с нашим опытом создания и эксплуатации предыдущей версии системы и обратной связью от пользователей, мы разработали интерфейс, удобный и для работающих в личном кабинете врачей, и для передающих данные о своем здоровье пользователей.\n\nУникальный продукт не только для отечественного, но и для международного рынка, — редко встречаются настолько детально продуманные интерфейсы, приносящие такую пользу всем стейкхолдерам. Мы очень рады нашему сотрудничеству."
               person="Владимир Дмитриев,"
@@ -303,7 +300,7 @@ const metadata = {
             </div>
           </div> 
           
-          <div class="review-card-even">
+          <div class="review-card-odd">
             <a href="/portfolio/ot-vinta">
             <ReviewItem
              text="Хотим поблагодарить за проделанную работу. Обратились с тем, чтобы переработать сайт в лучшую сторону, найти все возможные проблемы элементов интерфейса, из-за которых клиент мог заблудиться на сайте и покинуть его.\n\nНа протяжении месяцев совместной работы «Собака Павлова» только удивляла, каждое предложенное решение удовлетворяло на все 100%. Вся работа выполнялась в срок и без задержек.\n\nКоманда профессионалов, работа с ними обязательно продолжится в новых проектах. Впечатления остались крайне положительные."
@@ -334,12 +331,12 @@ const metadata = {
             </a>
             <div class="flex items-center justify-start">
               <a class="noir2-div relative" href="/portfolio/elma-bot">
-                <img src="/images/clients/elma.svg" width="150" height="40">
+                <img src="/images/clients/elma-white.svg" width="150" height="40">
               </a>
             </div>
           </div>
           
-          <div class="review-card-even">
+          <div class="review-card-odd">
             <a href="/portfolio/alfa-arm">
             <ReviewItem
               text="Крутая работа! Очень порадовало отсутствие излишней бюрократии. Несмотря на то что команда в другом городе, коммуникация была организована на высоте. Сразу видно, что ценят как свое время, так и заказчика. Задача была понята быстро, и ее результаты пошли в работу. Большое спасибо команде!"
@@ -359,7 +356,7 @@ const metadata = {
         </UniversalSlider>
       </div>
       
-      <div class="basis-[338px] grow-0 shrink-0 bg-[--aw-color-grey9] p-5 md:p-10">
+      <div class="basis-[338px] grow-0 shrink-0 p-5 md:p-10">
         <div class="">
           <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-2 ml-0 gap-y-10 gap-x-10">                       
             <div class="flex items-center justify-start">
@@ -374,11 +371,13 @@ const metadata = {
             
             <div class="flex items-center justify-start">
                <a class="noir2-div relative" href="/portfolio/seatmap">
-                 <img src="/images/clients/seatmap.svg" width="120" height="56">
+                 <img src="/images/clients/seatmap.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/seatmap-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             <div class="flex items-center justify-start">
                <a class="noir2-div relative" href="/portfolio/pushkin-digital">
-                 <img src="/images/clients/pushkin-digital2.svg" width="120" height="56">
+                 <img src="/images/clients/pushkin-digital.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/pushkin-digital-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             
             
@@ -388,19 +387,23 @@ const metadata = {
             </a></div>
             <div class="flex items-center justify-start">
                <a class="noir2-div relative" href="/portfolio#elma">
-                 <img src="/images/clients/elma.svg" width="120" height="56">
+                 <img src="/images/clients/elma.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/elma-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             <div class="flex items-center justify-end">
                <a class="noir2-div relative" href="/portfolio/brighteye">
-                 <img src="/images/clients/brighteye.svg" width="120" height="56">
+                 <img src="/images/clients/brighteye.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/brighteye-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             <div class="flex items-center justify-start">
                <a class="noir2-div relative" href="/portfolio#ecity">
-                 <img src="/images/clients/ecity-long.svg" width="120" height="56">
+                 <img src="/images/clients/ecity-long.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/ecity-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             <div class="flex items-center justify-end">
                <a class="noir2-div relative" href="/portfolio/dipol">
-                 <img src="/images/clients/dipol-black.svg" width="120" height="56">
+                 <img src="/images/clients/dipol.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/dipol-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             
             <div class="flex items-center justify-start">
@@ -424,12 +427,14 @@ const metadata = {
              
              <div class="flex items-center justify-end">
               <a class="noir2-div relative" href="/portfolio/edms">
-                <img src="/images/clients/carlsberg.svg" width="120" height="56">
+                <img src="/images/clients/carlsberg.svg" width="120" height="56" class="inline dark:hidden">
+                <img src="/images/clients/carlsberg-white.svg" width="120" height="56" class="hidden dark:inline">
            </a></div>
                  
             <div class="flex items-center justify-end">
                <a class="noir2-div relative" href="/portfolio/tis">
-                 <img src="/images/clients/tis.svg" width="120" height="56">
+                 <img src="/images/clients/tis.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/tis-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             
             <div class="flex items-center justify-end">
@@ -439,12 +444,14 @@ const metadata = {
             
             <div class="flex items-center justify-end">
                <a class="noir2-div relative" href="/portfolio/t1">
-                 <img src="/images/clients/t1.svg" width="120" height="56">
+                 <img src="/images/clients/t1.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/t1-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             
             <div class="flex items-center justify-end">
                <a class="noir2-div relative" href="/portfolio/electrocardiography">
-                 <img src="/images/clients/erna-long.svg" width="120" height="56">
+                 <img src="/images/clients/erna-long.svg" width="120" height="56" class="inline dark:hidden">
+                 <img src="/images/clients/erna-white.svg" width="120" height="56" class="hidden dark:inline">
             </a></div>
             
             {/*<div class="flex items-center justify-start">
@@ -476,8 +483,8 @@ const metadata = {
   <a id="5"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">В удобном вам формате</h2>
-    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-0">Наши услуги</h3>  
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-4">В удобном вам формате</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-0">Варианты сотрудничества</h3>  
     <HighlightedCases
         classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts" }}
         title={""}
@@ -486,9 +493,9 @@ const metadata = {
         hideFields={{year: true}}
       />
    
-  <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8">
+  <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш IT-продукт удобным, понятным и красивым</h2>
-    <div class="flex flex-col lg:flex-row gap-6 mb-5 md:mb-10">
+    <div class="flex flex-col lg:flex-row gap-6">
       <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
       <div class="flex flex-col gap-1 justify-center text-white">
         <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
