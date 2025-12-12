@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Hund2 from '~/components/widgets/Hund2.astro';
 import Hund3 from '~/components/widgets/Hund3.astro';
 import Hund4 from '~/components/widgets/Hund4.astro';
@@ -51,52 +52,45 @@ const metadata = {
 <Layout metadata={metadata}  hasSlider={true}>
   <Bread title="Аутстафф" />
   
-  <Hund2
+  <Hero2
     image={{
-      src: '~/assets/images/services/dev-team/dev-team.svg',
+      src: '~/assets/images/services/outstaff-main2.png',
       alt: 'UX-аутстафф • Собака Павлова',
     }}
-    imageSafari={{
-      src: '~/assets/images/services/dev-team/dev-team.png',
-      alt: 'UX-аутстафф • Собака Павлова',
-    }}
-    imageName="UX-аутстафф • Собака Павлова"
-  >
+    >
     
-    <Fragment slot="title">
-      UX-аутстафф
+    <Fragment slot="title">UX-аутстафф</Fragment>
+        
+    <Fragment slot="subtitle">Возьмемся за любые интерфейсные задачи: UI- и UX-дизайн, графический дизайн, продуктовые исследования. Впишемся в вашу команду, ускорим и упростим работу над продуктом.
+
     </Fragment>
     
-    <Fragment slot="subtitle">
-      Возьмемся за любые интерфейсные задачи: UI- и UX-дизайн, графический дизайн, продуктовые исследования. Впишемся в вашу команду, ускорим и упростим работу над продуктом.
+    <Fragment slot="result">
+      <div class="flex flex-row flex-wrap text-xl gap-2.5 mt-10 lg:mt-10 mb-10 lg:mb-0 mx-auto max-w-7xl text-[#9F9F9F]">
+       <span>
+             <a href="#1" class="underline underline-offset-2">Квалификация специалистов</a>
+           </span><span> • </span>
+           
+           <span>
+             <a href="#2" class="underline underline-offset-2">Организация работы</a>
+           </span><span> • </span>
+           
+           <span>
+             <a href="#3" class="underline underline-offset-2">Бизнес-ценность</a>
+           </span><span> • </span>
+           
+           <span>
+             <a href="#4" class="underline underline-offset-2">С нами работают годами</a>
+           </span><span> • </span>
+           
+           <span>
+             <a href="#5" class="underline underline-offset-2">Контакты</a></span>
+      </div>
     </Fragment>
-    
-  </Hund2>
+  </Hero2>
   
   <section class="py-0 mx-auto grow-0 shrink-0">
-     <article>
-
-  <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-10 px-4 md:px-6 mx-auto max-w-7xl text-[#9F9F9F]">
-    <span>
-      <a href="#1" class="underline underline-offset-2">Квалификация специалистов</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#2" class="underline underline-offset-2">Организация работы</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#3" class="underline underline-offset-2">Бизнес-ценность</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#4" class="underline underline-offset-2">С нами работают годами</a>
-    </span><span> • </span>
-    
-    <span>
-      <a href="#5" class="underline underline-offset-2">Контакты</a>
-      
-  </div>
+  <article>
           
   <a id="1"></a>
   
