@@ -108,18 +108,37 @@ const metadata = {
   
   <a id="2"></a>
     
-  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Красиво</h2>
   </div>
-    
-  <SimpleSlider 
-    mode="mode-2"
-    title=""
-    slides={[{title: 'Создаём для вас фирменный стиль или уважаем существующий', img: '/images/services/landing/1.png', alt: 'UX-дизайн • Собака Павлова'},
-      {title: 'Работаем по дизайн-стандартам Google и Apple', img: '/images/services/landing/2.png', alt: 'UX-дизайн • Собака Павлова'},
-      {title: 'Учитываем современные тренды визуального дизайна', img: '/images/services/landing/3.png', alt: 'UX-дизайн • Собака Павлова'},
-      {title: 'Дизайн хорошо смотрится на всех устройствах, от смартфонов до TV', img: '/images/services/landing/4.png', alt: 'UX-дизайн • Собака Павлова'}, ]}
-  />
+  
+  <div class="hidden md:block">
+    <SimpleSlider 
+      mode="mode-2"
+      title=""
+      slides={[{title: 'Создаём для вас фирменный стиль или уважаем существующий', img: '/images/services/landing/1.png', alt: 'UX-дизайн • Собака Павлова'},
+        {title: 'Работаем по дизайн-стандартам Google и Apple', img: '/images/services/landing/2.png', alt: 'UX-дизайн • Собака Павлова'},
+        {title: 'Учитываем современные тренды визуального дизайна', img: '/images/services/landing/3.png', alt: 'UX-дизайн • Собака Павлова'},
+        {title: 'Дизайн хорошо смотрится на всех устройствах, от смартфонов до TV', img: '/images/services/landing/4.png', alt: 'UX-дизайн • Собака Павлова'}, ]}
+    />
+  </div>
+  
+  <div class="block md:hidden flex flex-col max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row lg:flex-col justify-start gap-4 sm:gap-6 lg:gap-4">     
+      <div class="bg-[#212121] text-white p-6 sm:p-6">
+        <h3 class="text-3xl sm:leading-none font-heading mb-2">Создаём для вас фирменный стиль или уважаем существующий</h3>
+      </div>
+      <div class="bg-[#212121] text-white p-6 sm:p-6">
+        <h3 class="text-3xl sm:leading-none font-heading mb-2">Работаем по дизайн-стандартам Google и Apple</h3>
+      </div>
+      <div class="bg-[#212121] text-white p-6 sm:p-6">
+        <h3 class="text-3xl sm:leading-none font-heading mb-2">Учитываем современные тренды визуального дизайна</h3>  
+      </div>
+      <div class="bg-[#212121] text-white p-6 sm:p-6">
+        <h3 class="text-3xl sm:leading-none font-heading mb-2">Дизайн хорошо смотрится на всех устройствах, от смартфонов до TV</h3>
+      </div>
+    </div>  
+  </div>
   
   <a id="3"></a>
       
