@@ -227,6 +227,30 @@ simple-slider {
     .slider {
       width: 870px;
     }
+
+    @media (max-width: 900px) {
+      .slider {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .slider {
+        display: block;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      
+      .slider {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+    }
     
     &:has(input.ux1:checked) {
       .details-slide-1 {
