@@ -96,9 +96,9 @@ window.addEventListener("load", (event) => {
         </div>
       </div>
       
-      <div class:list={[listOnLeft ? 'w-[338px]' : 'w-[440px] pt-12']}>
+      <div class:list={['w-full flex flex-col', listOnLeft ? 'lg:w-[338px]' : 'lg:w-[440px] pt-12']}>
         
-        <label for={id+'-ux1'} class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer">
+        <label for={id+'-ux1'} class="details-slide details-slide-1 flex flex-col p-6 cursor-pointer ">
           <h3 class="text-lg sm:text-3xl font-heading">{blockTitles[0].title}</h3>
           <div class="details-slide-details">
             {blockTitles[0].text}

@@ -161,7 +161,7 @@ const metadata = {
   
   <div class="hidden xl:block max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-8">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Варианты сотрудничества</h2>
-    <div class="flex flex flex-col lg:flex-row gap-10 lg:justify-between">
+    <div class="flex flex-col xl:flex-row gap-10 xl:justify-between">
       <div class="bg-[--aw-color-grey9] py-5 pl-5 md:pt-10 md:pb-4 md:pl-10">
         <RelatedPages 
           pages={[{collection: 'services', page: 'ux-outsource'}]}
@@ -182,16 +182,18 @@ const metadata = {
     </div>
   </div>
   
-  <div class="xl:hidden max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-8">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Варианты сотрудничества</h2>
-    <RelatedPages 
-      pages={[{collection: 'services', page: 'ux-outsource'}, {collection: 'services', page: 'product-team'}]}
-      hideFields={{ tags: true, year: true }}
-      styles={{main: 'flex-row', container: 'flex flex-col gap-6'}}
+  <div class="xl:hidden max-w-7xl mx-auto px-4 sm:px-6 mt-20 md:mt-8">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Варианты сотрудничества</h2>
+    <HighlightedCases
+      classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts" }}
+      title={""}
+      links={[{name: 'ux-outsource'}, {name: 'product-team'},]}
+      collection="services"
+      hideFields={{year: true}}
     />
   </div>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-0 md:mt-8">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 ">Примеры проектов</h2>  
     <HighlightedCases
         classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto mb-5 md:mb-8  related-posts" }}
