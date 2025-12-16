@@ -4,13 +4,14 @@ name: Контроль Предписания
 title: Мобильное приложение для работы с предписаниями
 excerpt: Создали дизайн интерфейса нового мобильного приложения для работы с предписаниями от контролирующих органов.
 context: |
-  **Подробный кейс пока в работе. Если хотите посмотреть на этот дизайн в деталях, пишите нам на [we@sobakapav.ru](mailto:we@sobakapav.ru)**
-  
   Компания [Data Solution](https://datasolution.team) — наш очень старый клиент. Их специализация — IT-решения для автоматизации контролирующих органов (государственных и не только).
   
-  Мы уже делали для Data Solution [приложение для работы с государственными реестрами](https://sobakapav.ru/portfolio/control-mobile), [редизайн сервиса для управления такими реестрами](https://sobakapav.ru/portfolio/control), [конструктор коммерческих презентаций](https://sobakapav.ru/portfolio/data-solution) и множество других проектов.
+  Мы уже делали для Data Solution [приложение для работы с государственными реестрами](/portfolio/control-mobile), [редизайн сервиса для управления такими реестрами](/portfolio/control), [интерфейс для лесников](/portfolio/control-forest), [конструктор коммерческих презентаций](/portfolio/data-solution) и множество других проектов.
   
-  Новое приложение поможет пользователям отчитываться о выполнении предписаний по устранению недостатков без визитов инспекций и инспекторов
+  Новое приложение поможет пользователям отчитываться о выполнении предписаний по устранению недостатков без визитов инспекций и инспекторов.
+  
+  Улучшили внешний вид элементов приложения, спроектировали и создали макеты новых пользовательских сценариев работы с нарушениями, упрощающих взаимодействие между сторонами процесса.
+
 
 thumbnail:
   src: ~/assets/images/portfolio/cards/control-predpisanie.svg
@@ -70,7 +71,6 @@ outcome:
       text: "и UX-аудит"
     - title: Дополнительно
       number: "1 иконка приложения"
-  text2: Итеративный подход позволил быстро вносить корректировки и не прорабатывать варианты, не подходящие заказчику по техническим причинам. А с дополнительным аудитом заказчик получил обратную связь для доработок уже обновленного интерфейса.
 result: 
   - src: ~/assets/images/portfolio/figma.svg
     text: Покажем из рук в руки и расскажем ещё больше
@@ -98,45 +98,115 @@ metadata:
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 import PhoneMockup from '~/components/widgets/PhoneMockup.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
 
 <TOC>
-[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
+[Вводные](#anchor1) • [Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Отзыв, цены, сроки](#anchor4)
 </TOC>
 
-## <a name="anchor1" />Бизнес-задача
+## <a name="anchor1" />Вводные
 
-Вывести на рынок новый продукт компании.
+Один из продуктов компании — сервис «Контроль», который помогает упростить и автоматизировать взаимодействие с государством, государственными реестрами, проверяющими органими и т.п.
 
-## <a name="anchor2" />Дизайн-задача
+Заказчик пришел к нам за модулем «Предписания» для этого сервиса. Модуль, как ясно из названия, предназначен для работы с предписаниями от контролирующих органов.
+ 
+> Предписание — требование от Инспектора к контролируемому лицу выполнить какие-то действия для устранения нарушений.
 
-Создать дизайн нового мобильного приложения для работы с предписаниями от контролирующих органов.
+## <a name="anchor2" />Бизнес-задача
 
-## <a name="anchor3" />Результат
+Добавить модуль «Предписания» в сервис «Контроль».
 
-Заказчик получил обновленный интерфейс раздела “Предписания”, юзерфлоу взаимодействия пользователя с этим разделом по всем основным сценариям: создание предписания, отправка отчетов, оценка. 
+<div class="flex gap-2 flex-wrap mb-2"> 
+	<PhoneMockup image="/images/portfolio/control-predpisanie/3.png" />
+	<PhoneMockup image="/images/portfolio/control-predpisanie/4.png" />
+</div>
+<em>У вас два невыполненных предписания</em>
+
+## <a name="anchor3" />Дизайн-задача
+
+Создать интерфейс для «Предписаний» и вписать новый модуль в приложение.
+
+1. Проанализировать существующий интерфейс, изучить требования к функционалу и задачам.
+2. Продумать архитектуру сервиса и его возможности.
+3. Разработать карточку предписания со следующими блоками:
+- общие данные по предписанию;
+- перечень нарушений.
+4. Показать основные сценарии работы со списком предписаний: создание и добавление материалов, отправка на проверку, оценка.
 
 >Use cases — пользовательские сценарии, сценарии взаимодействия, сценарии использования, пользовательские сценарии — последовательное описание поведения человека при взаимодействии с системой и системы, когда с ней взаимодействует человек. У нас есть [модуль дизайн-задачника «Сценарии взаимодействия»](https://www.eduhund.ru/program/usecases/?utm_source=sobakapav&utm_medium=site&utm_campaign=page) для тех, кто хочет научиться их использовать в дизайне интерфейсов.
 
-Это позволило заказчику сразу передать в разработку макеты и приступить к обновлению интерфейса.
+## <a name="anchor4" />Результат
+
+Заказчик получил макеты интерфейса раздела «Предписания», юзерфлоу взаимодействия пользователя с этим разделом по всем основным сценариям: создание и отправка отчетов, оценка. 
+
+Вот как это работает. Инспектор проверяет вашу организацию (aka «контролируемое лицо») на предмет чего-нибудь (несть числа таким проверкам). Находит какое-нибудь нарушение (например, огнетушителя нет на первом этаже). Выписывает предписание: к такому-то числу устранить.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
 	<PhoneMockup image="/images/portfolio/control-predpisanie/1.png" />
 	<PhoneMockup image="/images/portfolio/control-predpisanie/2.png" />
 </div>
+<em>Бывает и так, что нет у вас никаких предписаний. Но это редкость</em>
+
+В модуле «Предписания» вы видите список всех таких нарушений с дедлайнами и способами устаранения.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-	<PhoneMockup image="/images/portfolio/control-predpisanie/3.png" />
+	<PhoneMockup image="/images/portfolio/control-predpisanie/17.png" />
+	<PhoneMockup image="/images/portfolio/control-predpisanie/18.png" />
+</div>
+<em>Ваши нарушения</em>
+
+Вы делаете все, что нужно для исправления каждого из нарушений и доказываете это, посылая инспектору подтверждающие материалы: документы, фото или видео, иногда с геометками.
+
+<UniversalSlider count={3}>
+  <PhoneMockup image="/images/portfolio/control-predpisanie/9.png" />
+  <PhoneMockup image="/images/portfolio/control-predpisanie/10.png" />
+  <PhoneMockup image="/images/portfolio/control-predpisanie/11.png" />
+  <PhoneMockup image="/images/portfolio/control-predpisanie/12.png" />
+  <PhoneMockup image="/images/portfolio/control-predpisanie/13.png" />
+  <PhoneMockup image="/images/portfolio/control-predpisanie/14.png" />
+</UniversalSlider>
+<em>Сценарий «Создание ответа». <a href="/images/portfolio/control-predpisanie/9.png" target="_blank">1</a>, <a href="/images/portfolio/control-predpisanie/10.png" target="_blank">2</a>, <a href="/images/portfolio/control-predpisanie/11.png" target="_blank">3</a>, <a href="/images/portfolio/control-predpisanie/12.png" target="_blank">4</a>, <a href="/images/portfolio/control-predpisanie/13.png" target="_blank">5</a>, <a href="/images/portfolio/control-predpisanie/14.png" target="_blank">6</a>,</em>
+
+Инспектор все проверяет и либо принимает исправление (ура, квест пройден!), либо отправляет вас на новый круг, если что-то не так.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+	<PhoneMockup image="/images/portfolio/control-predpisanie/7.png" />
 	<PhoneMockup image="/images/portfolio/control-predpisanie/8.png" />
 </div>
+<em>Приложенные документы</em>
+
+## <a name="anchor5" />Особенности и нюансы процесса
+
+При проектировании интерфейса в ревью всегда принимали участие разработчики сервиса. Все решения мы обсуждали или прямо на звонке или в комментариях к макетам. Это позволяло в пределах одной итерации предлагать и согласовывать варианты, оптимальные как для бизнеса, так и для разработки. Мы быстро вносили корректировки и сразу отбрасывали варианты, не подходящие по техническим причинам.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
 	<PhoneMockup image="/images/portfolio/control-predpisanie/5.png" />
 	<PhoneMockup image="/images/portfolio/control-predpisanie/6.png" />
 </div>
+<em>Отправили предписание проверку</em>
+
+Уже после запуска раздела провели дополнительный экспертный аудит. Так заказчик получил обратную связь для доработок обновленного интерфейса.
 
 <div class="flex gap-2 flex-wrap mb-2"> 
-	<PhoneMockup image="/images/portfolio/control-predpisanie/0.png" />
-	<PhoneMockup image="/images/portfolio/control-predpisanie/7.png" />
+	<PhoneMockup image="/images/portfolio/control-predpisanie/15.png" />
+	<PhoneMockup image="/images/portfolio/control-predpisanie/16.png" />
 </div>
+<em>Инспектор не принимает исправление, посылаем новые доказательства</em>
 
-## <a name="anchor4" />
+Когда мы работали над интерфейсом, заказчик попросил обновить иконку приложения. Сделали иконку, адаптировали под различные платформы.
+
+<a href="/images/portfolio/control-predpisanie/0.png" target="_blank">![Мобильное приложение для работы с предписаниями • Собака Павлова](~/assets/images/portfolio/control-predpisanie/0.png)</a>
+<em>Иконка</em>
+
+## <a name="anchor6" /> Итог
+Расширенный и обновленный функционал мобильного приложения для госконтроля упрощает взаимодействие инспектора и контролируемого лица. Перечень нарушений, требования, статус и сроки исправления теперь наглядно представлены, а отчитаться об устранении нарушений и предоставить в госорганы подтверждающие материалы (текст, фото или видео) можно в несколько кликов. Подготовленные макеты и user flow сразу готовы к передаче в разработку и реализации.
+
+Это позволило заказчику сразу передать в разработку макеты и приступить к обновлению интерфейса.
+
+<div class="flex gap-2 flex-wrap mb-2"> 
+	<PhoneMockup image="/images/portfolio/control-predpisanie/19.png" />
+	<PhoneMockup image="/images/portfolio/control-predpisanie/20.png" />
+</div>
+<em>Пока предписание не отправлено, его можно редактировать. И вот все предписания выполнены.</em>
+
+## <a name="anchor7" />
