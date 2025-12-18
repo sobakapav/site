@@ -9,20 +9,27 @@ const {
     main: '',
     container: '',
     slide: '',
+    button: '',
   },
   count = 1,
+  buttonsPosition = 'middle'
 } = Astro.props;
 
 const id = $id('u-slider');
 const slideWidth = 768 / count;
 const smallSlideWidth = 90 / count;
+
+const buttonsPositionClass = (buttonsPosition === 'top') ? 'top-5' : 
+  (buttonsPosition === 'bottom') ? 'bottom-5' : 
+  'top-1/2 -translate-y-1/2';
+
 ---
 
 <u-slider class={twMerge('u-main flex flex-col', styles.main)} id={id} data-count={count}>
   <div class="flex flex-row u-slider-container relative w-[90vw]">
-      <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-[5] ">
-        <a class="btn btn-circle image-slider-prev">❮</a>
-        <a class="btn btn-circle image-slider-next">❯</a>
+      <div class={twMerge('absolute left-5 right-5 flex transform justify-between z-[5]', buttonsPositionClass)}>
+        <a class={twMerge('btn btn-circle image-slider-prev', styles.button)}>❮</a>
+        <a class={twMerge('btn btn-circle image-slider-next', styles.button)}>❯</a>
       </div>
     <div class="u-slider relative w-[90vw]">
       <div class="u-slides w-max flex">

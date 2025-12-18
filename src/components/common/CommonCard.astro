@@ -30,7 +30,7 @@ const myClasses = merge({ main: 'blog-list-item', title: '', text: '', textBlock
     image && (
       <a href={link ?? 'javascript:void(0)'}>
         <div class="relative overflow-hidden rounded image-animate">
-          <div class={twMerge('w-72 h-72', myClasses.image)}>
+          <div class={twMerge('w-72 h-72 overflow-hidden', myClasses.image)}>
             {image && (imageSafari ? (
               <Fragment>
                 <Image
