@@ -86,8 +86,8 @@ const metadata = merge(
 <Layout metadata={metadata} hasSlider={true}>
   <Bread
     title={post.title}
-    parent="/services"
-    parentTitle="Услуги"
+    parent={post.folder.link}
+    parentTitle={post.folder.name}
   />
     
     <section class="py-0 mx-auto grow-0 shrink-0">
