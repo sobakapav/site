@@ -254,6 +254,10 @@ const serviceCollection = defineCollection({
     hyphenateTitle: z.boolean().optional(),
     doubleSize: z.boolean().optional(),
     excerpt: z.string().optional(),
+    folder: z.object({
+      name: z.string(),
+      link: z.string(),
+    }).optional(),
     image: z.string(),
     image2: z.string().optional(),
     imageAlt: z.string().optional(),
