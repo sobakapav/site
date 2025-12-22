@@ -129,29 +129,35 @@ const metadata = {
           </a></div>
           <div class="flex items-center justify-start">
              <a class="noir2-div relative" href="/portfolio/sportmaster">
-               <img src="/images/clients/sportmaster-long.svg" width="200" height="56">
+               <img src="/images/clients/sportmaster-long.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/sportmaster-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>
                
           <div class="flex items-center justify-start">
              <a class="noir2-div relative" href="/portfolio">
-               <img src="/images/clients/x5-long.svg" width="200" height="56">
+               <img src="/images/clients/x5-long.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/x5-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>     
           <div class="flex items-center justify-end">
              <a class="noir2-div relative" href="/portfolio/avito">
-               <img src="/images/clients/avito-long.svg" width="200" height="56">
+               <img src="/images/clients/avito-long.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/avito-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>
           
           <div class="flex items-center justify-start">
              <a class="noir2-div relative" href="/portfolio/qiwi">
-               <img src="/images/clients/qiwi-long.svg" width="200" height="56">
+               <img src="/images/clients/qiwi-long.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/qiwi-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>
           <div class="flex items-center justify-end">
              <a class="noir2-div relative" href="/portfolio/medmarket">
-               <img src="/images/clients/medmarket.svg" width="200" height="56">
+               <img src="/images/clients/medmarket.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/medmarket-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>
           <div class="flex items-center justify-start">
              <a class="noir2-div relative" href="/portfolio/simetra">
-               <img src="/images/clients/simetra.svg" width="200" height="56">
+               <img src="/images/clients/simetra.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/simetra-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>
           <div class="flex items-center justify-end">
              <a class="noir2-div relative" href="/portfolio/lab4u">
@@ -163,7 +169,8 @@ const metadata = {
           </a></div>
           <div class="flex items-center justify-end">
              <a class="noir2-div relative" href="/portfolio/etm">
-               <img src="/images/clients/etm.svg" width="200" height="56">
+               <img src="/images/clients/etm.svg" width="200" height="56" class="inline dark:hidden">
+               <img src="/images/clients/etm-white.svg" width="200" height="56" class="hidden dark:inline">
           </a></div>
           <div class="flex items-center justify-start">
              <a class="noir2-div relative" href="/portfolio/zapovednik">
@@ -328,7 +335,7 @@ const metadata = {
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 gap-2">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Отзывы</h2>
-      <UniversalSlider count={3} styles={{main: 'review-slider full-width'}}>
+      <UniversalSlider count={2} styles={{main: 'review-slider full-width'}}>
         
         <div class="review-card-even">
           <a href="/portfolio/qiwi">
@@ -343,7 +350,8 @@ const metadata = {
           </a>
           <div class="flex items-center justify-start">
             <a class="noir2-div relative" href="/portfolio/qiwi">
-              <img src="/images/clients/qiwi-long.svg" width="150" height="56">
+              <img src="/images/clients/qiwi-long.svg" width="220" height="60" class="inline dark:hidden">
+              <img src="/images/clients/qiwi-white.svg" width="220" height="60" class="hidden dark:inline">
             </a>
           </div>
         </div>
@@ -361,7 +369,7 @@ const metadata = {
           </a>
           <div class="flex items-center justify-start">
             <a class="noir2-div relative" href="/portfolio/gazprom-neft">
-              <img src="/images/clients/gazprom-long.svg" width="150" height="56">
+              <img src="/images/clients/gazprom-long.svg" width="100" height="56">
             </a>
           </div>
         </div> 
@@ -379,10 +387,28 @@ const metadata = {
         </a>
         <div class="flex items-center justify-start">
           <a class="noir2-div relative" href="/portfolio/sportmaster">
-            <img src="/images/clients/sportmaster-long.svg" width="150" height="56">
+            <img src="/images/clients/sportmaster-long.svg" width="200" height="60" class="inline dark:hidden">
+            <img src="/images/clients/sportmaster-white.svg" width="200" height="60" class="hidden dark:inline">
           </a>
         </div>
         </div>
+        
+        <div class="review-card-odd">
+          <a href="/portfolio/avito">
+          <ReviewItem
+           text="Большое спасибо за работу в рамках нашего совместного проекта. Данные, которые мы получили, помогут внести значительное количество улучшений в работу системы и будут отправной точкой для постоянного улучшения наших процессов. С текущего спринта начинаем брать задачи в реализацию."
+           person="Алексей Митрофанов,"
+           position="руководитель группы развития CRM и группы аналитики"
+           styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+           photoPosition="bottom"
+          />
+          </a>
+          <div class="flex items-center justify-start">
+            <a class="noir2-div relative" href="/portfolio/avito">
+              <img src="/images/clients/avito-white.svg" width="200" height="60">
+            </a>
+          </div>
+          </div>
       </UniversalSlider>
     </div>
     
