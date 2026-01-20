@@ -341,6 +341,19 @@ const serviceCollection = defineCollection({
       link: z.string().optional(),
       image: z.string().optional(),
     })).optional(),
+    reviews: z.array(z.object({
+      link: z.string().optional(),
+      text: z.string().optional(),
+      person: z.string().optional(),
+      position: z.string().optional(),
+      photo: z.string().optional(),
+      logo: z.object({
+        link: z.string(),
+        link2: z.string().optional(),
+        width: z.number().optional(),
+        height: z.number().optional(),
+        }),
+    })).optional(),
 
     metadata: metadataDefinition(),
   }),

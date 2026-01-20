@@ -22,6 +22,9 @@ import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
 import SimpleSlider from '~/components/services/SimpleSlider.astro';
 import Bentoid from '~/components/services/Bentoid.astro';
 import FinalBlock from '~/components/services/FinalBlock.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import ReviewItem from '~/components/portfolio/ReviewItem.astro';
+
 
 import Hund2 from '~/components/widgets/Hund2.astro';
 
@@ -166,6 +169,30 @@ const metadata = merge(
         
         <RelatedLinks post={post} />
         
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
+          <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
+            {post.reviews && post.reviews.map(review => (
+              <div class="review-card-odd">
+                <a href={review.link}>
+                <ReviewItem
+                  text={review.text}
+                  person={review.person}
+                  position={review.position}
+                  photo={review.photo}
+                  styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+                  photoPosition="bottom"
+                />
+                </a>
+                <div class="flex items-center justify-start mb-10">
+                  <a class="noir2-div relative" href={review.link}>
+                    <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
+                  </a>
+                </div>
+              </div>
+            ))}
+          </UniversalSlider>
+        </div>
+        
         <a id="3"></a>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 flex flex-col gap-6">
@@ -250,7 +277,6 @@ const metadata = merge(
             />
           </div>
         )}
-        
         
         <a id="7"></a>
         
