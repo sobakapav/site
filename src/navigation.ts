@@ -282,7 +282,6 @@ export const portfolioFilters = {
     'research': 'UX-исследование',
     'ux-outsource': 'UX-отдел на аутсорсе',
     'product-team': 'Продуктовая команда',
-    'consultation': 'Консультация',
     'content-design': 'Контент-дизайн',
   },
   'hidden': {
