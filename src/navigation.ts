@@ -296,6 +296,7 @@ export const portfolioFilters = {
     'gazprom': '',
     'jeffit': '',
     'otvinta': '',
+    'smartdeal': '',
     'constructor': '',
     'cjm': '',
     'kids': '',
