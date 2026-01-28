@@ -343,6 +343,7 @@ const serviceCollection = defineCollection({
     })).optional(),
     reviews: z.array(z.object({
       link: z.string().optional(),
+      title: z.string().optional(),
       text: z.string().optional(),
       person: z.string().optional(),
       position: z.string().optional(),
