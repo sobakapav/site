@@ -170,6 +170,7 @@ const metadata = merge(
         <RelatedLinks post={post} />
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
+          <div class="text-sm text-[--aw-color-hund] tracking-wide font-semibold">ОТЗЫВЫ</div>
           <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
             {post.reviews && post.reviews.map(review => (
               <div class="review-card-odd">
