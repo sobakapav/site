@@ -151,8 +151,8 @@ const cheatsheetCollection = defineCollection({
 });
 
 const portfolioSchema = () => z.object({
-  publishDate: z.date().optional(),
   publishYear: z.number().optional(), 
+  publishDate: z.date().optional(),
   updateDate: z.date().optional(),
   draft: z.boolean().optional(),
   doubleSize: z.boolean().optional(),
