@@ -104,6 +104,9 @@ const design2devCollection = defineCollection({
 });
 
 const cheatsheetSchema = () => z.object({
+  publishDate: z.date().optional(),
+  updateDate: z.date().optional(),
+  
   title: z.string(),
   subtitle: z.string().optional(),
   alias: z.array(z.string()),
@@ -249,7 +252,9 @@ const promoCollection = defineCollection({
 
 const serviceCollection = defineCollection({
   schema: z.object({
-
+    publishDate: z.date().optional(),
+    updateDate: z.date().optional(),
+      
     title: z.string(),
     hyphenateTitle: z.boolean().optional(),
     doubleSize: z.boolean().optional(),
@@ -370,6 +375,7 @@ const currentProjectsCollection = defineCollection({
 
 const videoSchema = () => z.object({
    publishDate: z.date(),
+   updateDate: z.date().optional(),
    title: z.string(),
    description: z.string().optional(),
    excerpt: z.string().optional(),
