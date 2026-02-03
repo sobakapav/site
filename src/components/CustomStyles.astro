@@ -454,6 +454,36 @@ import '~/assets/styles/colors.css';
     .no-safari {
       display: none;
     }
+    
+    .daisy-diff {
+      row-gap: 1rem; 
+    }
+    
+    .daisy-diff .daisy-diff-item-1:after {
+      display: none;
+    }
+    
+    .daisy-diff .daisy-diff-item-1 {
+      grid-row-start: 2;
+    }
+    
+    .daisy-diff.diff-black .daisy-diff-item-1:after,
+    .daisy-diff.diff-black .daisy-diff-item-2 {
+      border: none;
+    }
+    
+    .daisy-diff .daisy-diff-item-1 > *,
+    .daisy-diff .daisy-diff-item-2 > * {
+      position: relative;
+      width: 100cqi;
+      height: auto;
+    }        
+    
+    .daisy-diff .daisy-diff-resizer {
+      max-width: unset;
+      width: 100cqi;
+      resize: unset;
+    }
   }
 
   .daisy-diff.diff-black .daisy-diff-item-1:after,
@@ -490,7 +520,14 @@ import '~/assets/styles/colors.css';
     .daisy-diff.diff-black .daisy-diff-item-1:after,
     .daisy-diff.diff-black .daisy-diff-item-2 {
       border: none;
-    }    
+    }
+    
+    .daisy-diff .daisy-diff-item-1 > *,
+    .daisy-diff .daisy-diff-item-2 > * {
+      position: relative;
+      width: 100cqi;
+      height: auto;
+    }        
     
     .daisy-diff .daisy-diff-resizer {
       max-width: unset;
