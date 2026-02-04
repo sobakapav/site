@@ -47,7 +47,7 @@ const metadata = merge(
 ) as MetaData;
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} publishDate={entry.data.publishDate} updateDate={entry.data.updateDate}>
   <Bread
     title={entry.data.title}
     parent="/portfolio"
