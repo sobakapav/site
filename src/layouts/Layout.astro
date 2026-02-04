@@ -16,7 +16,8 @@ export interface Props {
   metadata?: MetaDataType;
 }
 
-const { metadata = {}, hasSlider } = Astro.props as any;
+const { metadata = {}, hasSlider, updateDate, publishDate } = Astro.props as any;
+
 ---
 
 <!doctype html>
@@ -27,6 +28,15 @@ const { metadata = {}, hasSlider } = Astro.props as any;
     <CustomStyles />
     <ApplyColorMode />
     <Metadata {...metadata} />
+    
+    { updateDate && updateDate instanceof Date && !isNaN(updateDate) && (
+      <meta property="article:modified_time" content={updateDate.toISOString()} /> 
+    )}
+    
+    { publishDate && publishDate instanceof Date && !isNaN(publishDate) && (
+      <meta property="article:published_time" content={publishDate.toISOString()} /> 
+    )}
+    
     <SiteVerification />
     <Analytics />
 

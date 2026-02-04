@@ -14,10 +14,10 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const { metadata, hasSlider, darkTheme = false, collapseSlogan = false} = Astro.props;
+const { metadata, hasSlider, darkTheme = false, collapseSlogan = false, publishDate, updateDate } = Astro.props;
 ---
 
-<Layout metadata={metadata} hasSlider={hasSlider}>
+<Layout metadata={metadata} hasSlider={hasSlider} publishDate={publishDate} updateDate={updateDate}>
   
   <slot name="announcement">
     <Announcement isDark={darkTheme}/>
