@@ -111,7 +111,6 @@ https://sobakapav.ru/portfolio/amber
 https://sobakapav.ru/portfolio/algohelp
 https://sobakapav.ru/portfolio/anggell
 https://sobakapav.ru/portfolio/anggell-2025
-https://sobakapav.ru/portfolio/aquaphor
 https://sobakapav.ru/portfolio/atol
 https://sobakapav.ru/portfolio/avicenna
 https://sobakapav.ru/portfolio/autotransinfo
@@ -129,7 +128,6 @@ https://sobakapav.ru/portfolio/center-rechevyh-technologiy
 https://sobakapav.ru/portfolio/cindicator
 https://sobakapav.ru/portfolio/compel-password
 https://sobakapav.ru/portfolio/control-forest
-https://sobakapav.ru/portfolio/compel
 https://sobakapav.ru/portfolio/control-mobile
 https://sobakapav.ru/portfolio/control-patent
 https://sobakapav.ru/portfolio/control-predpisanie
@@ -148,17 +146,14 @@ https://sobakapav.ru/portfolio/easybuy
 https://sobakapav.ru/portfolio/e-gorod
 https://sobakapav.ru/portfolio/easydocs-2024
 https://sobakapav.ru/portfolio/easydocs
-https://sobakapav.ru/portfolio/ecom
 https://sobakapav.ru/portfolio/edms
 https://sobakapav.ru/portfolio/electrocardiography
 https://sobakapav.ru/portfolio/electronika
 https://sobakapav.ru/portfolio/elma-bot
 https://sobakapav.ru/portfolio/elma
 https://sobakapav.ru/portfolio/ethr
-https://sobakapav.ru/portfolio/erna
 https://sobakapav.ru/portfolio/etm
 https://sobakapav.ru/portfolio/f-kabinki
-https://sobakapav.ru/portfolio/faberlic-2
 https://sobakapav.ru/portfolio/faberlic
 https://sobakapav.ru/portfolio/fasting
 https://sobakapav.ru/portfolio/fastvps-ui
@@ -167,7 +162,6 @@ https://sobakapav.ru/portfolio/finexware
 https://sobakapav.ru/portfolio/fishlook
 https://sobakapav.ru/portfolio/flarm
 https://sobakapav.ru/portfolio/foodtrucks
-https://sobakapav.ru/portfolio/g-mini
 https://sobakapav.ru/portfolio/gazprom-services
 https://sobakapav.ru/portfolio/gazprom
 https://sobakapav.ru/portfolio/gazprom-neft
@@ -227,7 +221,6 @@ https://sobakapav.ru/portfolio/pgk
 https://sobakapav.ru/portfolio/pmr
 https://sobakapav.ru/portfolio/presentstar
 https://sobakapav.ru/portfolio/prozhito
-https://sobakapav.ru/portfolio/positive-tech
 https://sobakapav.ru/portfolio/qiwi
 https://sobakapav.ru/portfolio/pushkin-digital
 https://sobakapav.ru/portfolio/raisa
@@ -263,10 +256,8 @@ https://sobakapav.ru/portfolio/valer-ai
 https://sobakapav.ru/portfolio/veza
 https://sobakapav.ru/portfolio/video-santa
 https://sobakapav.ru/portfolio/viking-line
-https://sobakapav.ru/portfolio/x5-paket
 https://sobakapav.ru/portfolio/vuborgskiy-zamok
 https://sobakapav.ru/portfolio/yit
-https://sobakapav.ru/portfolio/x5
 https://sobakapav.ru/portfolio/yota
 https://sobakapav.ru/portfolio/zapovednik
 https://sobakapav.ru/portfolio/zateya
