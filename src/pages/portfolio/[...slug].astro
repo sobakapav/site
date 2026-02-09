@@ -43,7 +43,7 @@ const metadata = merge(
       ...entry.data.metadata?.openGraph,
     },
   },
-  { ...(entry?.metadata ? { ...entry.metadata, canonical: entry.metadata?.canonical || url } : {}) }
+  { ...(entry?.data?.metadata ? { ...entry.data.metadata, canonical: entry.data.metadata.canonical || url } : {}) }
 ) as MetaData;
 ---
 
