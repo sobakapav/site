@@ -85,14 +85,14 @@ const { Content } = post;
               <input type="checkbox" />
               <h4 class="daisy-collapse-title font-semibold text-2xl px-0 mt-0 mb-4">{post.faq.title}</h4>
               <div class="daisy-collapse-content px-0 py-0 format-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-li:my-2 prose-li:ml-4 ">
-                <Markdown.Inline of={post.faq.text} />
-                {/* {post.faq?.qna?.map(qna => (
+                { post.faq?.text && (<Markdown.Inline of={post.faq.text} />)}
+                { post.faq?.qna?.map(qna => (
                   <div class="daisy-collapse daisy-collapse-arrow">
                     <input type="checkbox" />
                     <div class="daisy-collapse-title font-semibold">{qna.question}</div>
-                    <div class="daisy-collapse-content text-sm">{qna.answer}</div>
+                    <div class="daisy-collapse-content px-0 py-0 format-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-li:my-2 prose-li:ml-4 "><Markdown.Inline of={qna.answer} /></div>
                   </div>
-                ))}*/} 
+                ))}
               </div>
             </div>
           
