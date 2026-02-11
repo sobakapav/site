@@ -18,6 +18,7 @@ const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   result = await Astro.slots.render('result'),
+  faq = await Astro.slots.render('faq'),
   tagline,
 
   content = await Astro.slots.render('content'),
@@ -45,6 +46,7 @@ const {
             )
           }
           {result && <div set:html={result} />}
+          {faq && <div set:html={faq} />}
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 lg:justify-start lg:m-0 lg:max-w-7xl">

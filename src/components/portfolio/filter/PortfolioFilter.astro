@@ -202,7 +202,10 @@ for (var group in portfolioFilters) {
         if (hash) {
           const hashElements = hash.split(':');
           for (var tag of hashElements) {
-            document.getElementById('fltr-'+tag)?.checked = true;
+            const tagFilter = document.getElementById('fltr-'+tag);
+            if (tagFilter) { 
+              tagFilter.checked = true;
+            }
           } 
         }
         

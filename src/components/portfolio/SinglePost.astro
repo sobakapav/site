@@ -42,7 +42,7 @@ const { Content } = post;
       </Fragment>
       
       <Fragment slot="result">          
-        <div class="flex flex-col sm:flex-row justify-between mt-8 mb-8 mx-auto md:mx-0 lg:mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between mt-8 mb-4 mx-auto md:mx-0 lg:mx-auto">
           
           <div class="basis-0 grow"><h3 class="mb-1 text-base">Цена</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.budget}</span></div>
           {post.time && (<div class="basis-0 grow"><h3 class="mb-1 text-base">Сроки</h3><span class="mb-1 text-xl sm:text-4xl font-heading">{post.time}</span></div>)}
@@ -78,8 +78,32 @@ const { Content } = post;
         </div>
       </Fragment>
       
+      <Fragment slot="faq">          
+        { post.faq?.hasFaq && (
+          <div class="format-portfolio mx-auto md:mx-0 px-[0px] lg:mx-auto max-w-3xl border-b-[#DBDBDB] border-b">
+            <div class="daisy-collapse daisy-collapse-arrow">
+              <input type="checkbox" />
+              <h4 class="daisy-collapse-title font-semibold text-2xl px-0 mt-0 mb-4">{post.faq.title}</h4>
+              <div class="daisy-collapse-content px-0 py-0 format-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-li:my-2 prose-li:ml-4 ">
+                <Markdown.Inline of={post.faq.text} />
+                {/* {post.faq?.qna?.map(qna => (
+                  <div class="daisy-collapse daisy-collapse-arrow">
+                    <input type="checkbox" />
+                    <div class="daisy-collapse-title font-semibold">{qna.question}</div>
+                    <div class="daisy-collapse-content text-sm">{qna.answer}</div>
+                  </div>
+                ))}*/} 
+              </div>
+            </div>
+          
+          
+          </div>
+        )}
+       
+      </Fragment>
+      
     </Hero2>
-
+ 
     <div class="flex flex-col md:flex-row md:flex-wrap justify-between max-w-7xl mx-auto md:mx-auto">
       <div class="grow-0 shrink-0 max-w-5xl">
         { post.awards && (
@@ -89,6 +113,7 @@ const { Content } = post;
             ))}  
           </div>
         )}
+             
         <div
           class="format-markdown format-portfolio mx-auto md:mx-0 lg:mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
         >

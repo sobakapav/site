@@ -234,6 +234,16 @@ const portfolioSchema = () => z.object({
     })).optional()
   }).optional(),
 
+  faq: z.object({
+    hasFaq: z.boolean().optional(),
+    title: z.string().optional(),
+    text: z.string().optional(),
+    qna: z.array(z.object({
+        question: z.string().optional(),
+        answer: z.string().optional(),
+    })).optional()
+  }).optional(),
+  
   metadata: metadataDefinition(),
 });
 
