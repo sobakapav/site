@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import { portfolioFilters } from '~/navigation';
+
+import { getCollection } from 'astro:content';
+
+const metadata = {
+  title: 'Списки',
+};
+
+const filteredOut = ['ecom', 'presentstar'];
+
+const services = portfolioFilters['Услуги'];
+const portfolio = await getCollection('portfolio');
+
+const portfolioItems = portfolio.filter(service => !filteredOut.includes(service.slug)).map(service => {
+  var serviceImage = service.data.image;
+  if (serviceImage) {
+    serviceImage = serviceImage.substring('~/assets/images/portfolio/'.length);
+  }
+  
+  return {
+    name: service.slug,
+    title: service.data.title,
+    client: service.data.logo.alt,
+    services: service.data.tags.filter(tag => services[tag]).map(tag => services[tag]),
+    image: serviceImage ? `https://sobakapav.ru/images/portfolio/${serviceImage}` : ''
+  }
+});
+
+---
+
+<Layout metadata={metadata}>
+  <p>
+    {JSON.stringify(portfolioItems)}
+  </p>
+       
+</Layout>
