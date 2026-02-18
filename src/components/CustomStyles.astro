@@ -574,5 +574,19 @@ import '~/assets/styles/colors.css';
   
   .review-slider .u-slides  > .review-card-even {
     background-color: var(--aw-color-grey9);
-  }  
+  }
+  
+  .flex.for-tablet {
+    display: none;  
+  }
+  
+  @media (pointer: coarse) {
+    .flex.for-tablet {
+      display: flex;
+    }
+    
+    .flex.for-notablet {
+      display: none;
+    }
+  }
 </style>

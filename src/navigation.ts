@@ -71,7 +71,6 @@ export const headerData = {
     },
     {
       text: 'Экспертиза',
-      href: '/expertise',
       links: [
         {
           text: 'Статьи',
