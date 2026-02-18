@@ -7,10 +7,6 @@ const filteredOut = ['consultation', 'dev-team'];
 
 const services = await getCollection('services');
 
-import Layout from '~/layouts/Layout.astro';
-
-import { getCollection } from 'astro:content';
-
 const servicesItems = services.filter(item => !filteredOut.includes(item.slug)).map(item => {
   var itemImage = item.data.thumbnail;
   if (itemImage) {
