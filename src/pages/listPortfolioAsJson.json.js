@@ -9,7 +9,7 @@ const services = portfolioFilters['Услуги'];
 const portfolio = await getCollection('portfolio');
 
 const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)).map(item => {
-  const itemImage = (item.data.thumbnail2 ? item.data.thumbnail2.src : item.data.thumbnail.src)?.substring('~/assets/images/portfolio/'.length);
+  const itemImage = (item.data.thumbnail.src2 ? item.data.thumbnail.src2 : item.data.thumbnail.src)?.substring('~/assets/images/portfolio/'.length);
   
   return {
     name: item.slug,
