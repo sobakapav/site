@@ -13,18 +13,19 @@ const filteredOut = ['aquaphor', 'broker', 'compel-password', 'documedd', 'easyb
 const services = portfolioFilters['Услуги'];
 const portfolio = await getCollection('portfolio');
 
-const portfolioItems = portfolio.filter(service => !filteredOut.includes(service.slug)).map(service => {
-  var serviceImage = service.data.image;
-  if (serviceImage) {
-    serviceImage = serviceImage.substring('~/assets/images/portfolio/'.length);
+const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)).map(item => {
+  var itemImage = item.data.thumbnail2 ? item.data.thumbnail2.src : item.data.thumbnail.src;
+  if (itemImage) {
+    itemImage = itemImage.substring('~/assets/images/portfolio/'.length);
   }
   
   return {
-    name: service.slug,
-    title: service.data.title,
-    client: service.data.logo.alt,
-    services: service.data.tags.filter(tag => services[tag]).map(tag => services[tag]),
-    image: serviceImage ? `https://sobakapav.ru/images/portfolio/${serviceImage}` : ''
+    name: item.slug,
+    year: item.data.publishYear,
+    title: item.data.title,
+    client: item.data.logo.alt,
+    services: item.data.tags.filter(tag => services[tag]),
+    image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : ''
   }
 });
 
