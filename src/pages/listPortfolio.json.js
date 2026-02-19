@@ -1,5 +1,6 @@
 import Layout from '~/layouts/Layout.astro';
 import { portfolioFilters } from '~/navigation';
+import { slugify } from 'transliteration';
 
 import { getCollection } from 'astro:content';
 
