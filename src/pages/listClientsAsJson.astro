@@ -1,0 +1,39 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import { portfolioFilters } from '~/navigation';
+
+import { getCollection } from 'astro:content';
+
+const metadata = {
+  title: 'Список кейсов',
+};
+
+const filteredOut = ['aquaphor', 'broker', 'compel-password', 'documedd', 'easybuy', 'ecom', 'erna', 'faberlic-2', 'g-mini', 'just-info', 'jusfa', 'loglab', 'online-express', 'positive-tech', 'presentstar', 'simplefly', 'space307', 'torba', 'valer-ai', 'x5', 'x5-paket'];
+
+const services = portfolioFilters['Услуги'];
+const portfolio = await getCollection('portfolio');
+
+const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)).map(item => {
+  var itemImage = item.data.thumbnail.src2 ? item.data.thumbnail.src2 : item.data.thumbnail.src;
+  if (itemImage) {
+    itemImage = itemImage.substring('~/assets/images/portfolio/'.length);
+  }
+  
+  return {
+    name: item.slug,
+    year: item.data.publishYear,
+    title: item.data.title,
+    client: item.data.logo.alt,
+    services: item.data.tags.filter(tag => services[tag]),
+    image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : ''
+  }
+});
+
+---
+
+<Layout metadata={metadata}>
+  <p>
+    {JSON.stringify(portfolioItems)}
+  </p>
+       
+</Layout>
