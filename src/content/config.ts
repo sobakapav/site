@@ -180,6 +180,7 @@ const portfolioSchema = () => z.object({
     src: z.string(),
     link: z.string().optional(),
     alt: z.string().optional(),
+    code: z.string().optional(),
   }).optional(),
       
   thumbnail: z.object({

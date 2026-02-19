@@ -35,6 +35,7 @@
     "daisyui": "^4.12.23",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
+    "transliteration": "^2.6.1",
     "unpic": "^3.22.0"
   },
   "devDependencies": {
