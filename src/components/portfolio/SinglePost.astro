@@ -93,13 +93,30 @@ const { Content } = post;
                     <div class="daisy-collapse-content px-0 py-0 format-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-li:my-2 prose-li:ml-4 "><Markdown.Inline of={qna.answer} /></div>
                   </div>
                 ))}
+              
+                <div class="flex flex-col">
+                  {post.outcome.text1 && (<h4 class="text-base">{post.outcome.text1}</h4>)}
+                  <div class="flex flex-col sm:flex-row justify-between gap-6">          
+                    {post.outcome.numbers?.map((out) => (     
+                    <div class="basis-0 grow">
+                      <p class="mb-2 text-xl">{out.title}</p>
+                      <Number 
+                        number={out.number} 
+                        classes="mb-1.5 font-heading" 
+                        textClasses="text-xl sm:text-4xl" 
+                        numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                      />
+                      <p class="mb-1 text-xl">{out.text}</p>
+                    </div>
+                    ))}
+                   
+                  </div>
+                  <p class="text-xl">{post.outcome.text2}</p>
+                </div>
               </div>
             </div>
-          
-          
           </div>
         )}
-       
       </Fragment>
       
     </Hero2>
