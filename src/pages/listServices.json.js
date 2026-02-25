@@ -14,9 +14,9 @@ const servicesItems = services.filter(item => !filteredOut.includes(item.slug)).
   }
   
   return {
-    name: item.slug,
+    id: item.slug,
     title: item.data.title,
-    services: item.data.folder.name,
+    serviceGroup: item.data.folder.name,
     image: itemImage ? `https://sobakapav.ru/images/services/${itemImage}` : ''
   }
 });

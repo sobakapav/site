@@ -29,11 +29,11 @@ for (const item of portfolioItems) {
       || slugify(item.data.logo.alt, {replace: {'.': '-'}});
     
     const record = {
-      code,
-      name: item.data.logo.alt,
+      id: code,
+      title: item.data.logo.alt,
       logo: logo ? `https://sobakapav.ru/images/portfolio/${logo}` : '',
       link: item.data.logo.link,
-      market: item.data.tags.filter(tag => markets.hasOwnProperty(tag))
+      markets: item.data.tags.filter(tag => markets.hasOwnProperty(tag))
     }
     
     clients[code || logo] = record;

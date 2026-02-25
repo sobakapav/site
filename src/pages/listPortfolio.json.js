@@ -24,12 +24,12 @@ const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)
     || slugify(item.data.logo.alt, {replace: {'.': '-'}});
       
   return {
-    name: item.slug,
+    id: item.slug,
     year: item.data.publishYear,
     title: item.data.title,
-    client: code || item.data.logo.alt,
+    clientId: code || item.data.logo.alt,
     services: item.data.tags.filter(tag => services.hasOwnProperty(tag)),
-    market: item.data.tags.filter(tag => markets.hasOwnProperty(tag)),
+    markets: item.data.tags.filter(tag => markets.hasOwnProperty(tag)),
     image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : '',
   }
 });
