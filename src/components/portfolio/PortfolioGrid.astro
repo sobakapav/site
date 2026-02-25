@@ -13,9 +13,9 @@ const { posts, classes } = Astro.props;
 <div class:list={[
   twMerge("flex flex-wrap", classes),
 ]}>
-  {posts.map((post) => (
+  {posts.map((entry) => (
     <li class="mb-6 w-[288px]">
-      <Item post={post} />
+      <Item post={entry.data} body={entry.body} />
     </li>
   ))}
 </div>

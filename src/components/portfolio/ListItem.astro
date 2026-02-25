@@ -1,17 +1,21 @@
 ---
 import { Markdown } from '@astropub/md';
 import { twMerge } from 'tailwind-merge';
+import getReadingTime from 'reading-time';
 
 import CommonCard from '~/components/common/CommonCard.astro';
 import DoubleCard from '~/components/common/DoubleCard.astro';
 import PortfolioTags from '~/components/portfolio/ProtfolioTags.astro';
 
 import { findImage } from '~/utils/images';
+import { minuteCase } from '~/utils/utils';
 
-const { post, mode = 'single', hideFields = {}, styles = {} } = Astro.props; 
+const { post, body, mode = 'single', hideFields = {}, styles = {} } = Astro.props; 
 const image = (await findImage(post.thumbnail?.src || post.image)) as ImageMetadata | undefined;
 const imageLarge = (await findImage(post.thumbnail?.src2)) as ImageMetadata | undefined;
 const doubleMode = (mode == 'double');
+
+const readingTime = body && Math.ceil(getReadingTime(body).minutes);
 
 const myStyles = JSON.parse(JSON.stringify(styles));
 myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidden' : ''));
@@ -39,6 +43,19 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
       </span>
     )}
   </Fragment>
+
+  <Fragment slot="supertitle">
+    { post.logo?.alt && (
+      <span>
+        {post.logo.alt}
+      </span>
+    )}
+    { readingTime && (
+        <>
+          &nbsp;· <span>{readingTime}</span> {minuteCase(readingTime)} на чтение
+        </>
+    )}
+  </Fragment>     
   
 </CommonCard>
 {doubleMode && (
@@ -61,7 +78,22 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
       { (! hideFields.tags) && (
         <PortfolioTags tags={post.tags} />
       )}
-    </Fragment>
-     
+    </Fragment>     
+
+    <Fragment slot="supertitle">
+      { post.logo?.alt && (
+        <span>
+          {post.logo.alt}
+        </span>
+      )}
+      {
+        readingTime && (
+          <>
+          
+            &nbsp;· <span>{readingTime}</span> {minuteCase(readingTime)} на чтение
+          </>
+        )
+      }
+    </Fragment>     
   </DoubleCard>
 )}

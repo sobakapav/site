@@ -34,9 +34,9 @@ const {
 
 const posts = [];
 for (var item of links) {
-  const data = (await getEntry(collection, item)).data;
-  data.href = `/${collection}/${item}`;
-  posts.push(data);
+  const entry = (await getEntry(collection, item));
+  entry.data.href = `/${collection}/${item}`;
+  posts.push(entry);
 }
 ---
 

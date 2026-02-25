@@ -20,13 +20,13 @@ const id = $id('portfolio-sliding-grid');
     <li class="mb-6 w-[288px]">
       {post.isSpecial ? (
         <SpecialCard
-          image={post.img}
-          title={post.title}
-          text={post.text}
-          link={post.link}
+          image={post.data.img}
+          title={post.data.title}
+          text={post.data.text}
+          link={post.data.link}
         />
       ) : (
-        <Item post={post} hideFields={hideFields} />
+        <Item post={post} body={body} hideFields={hideFields} />
       )}
     </li>
   ))}
@@ -41,13 +41,13 @@ const id = $id('portfolio-sliding-grid');
           <div class="swiper-slide">
             {post.isSpecial ? (
               <SpecialCard
-                image={post.img}
-                title={post.title}
-                text={post.text}
-                link={post.link}
+                image={post.data.img}
+                title={post.data.title}
+                text={post.data.text}
+                link={post.data.link}
               />
             ) : (
-              <Item post={post} hideFields={hideFields} />
+              <Item post={post.data} body={post.body} hideFields={hideFields} />
             )}
           </div>
         ))}

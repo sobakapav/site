@@ -12,12 +12,14 @@ import { findPostsBySlugs } from '~/utils/blog';
 const { collection, page, excerpt, hideFields, styles, overrides } = Astro.props;
 
 var data;
+var body;
 if (collection == 'post') {
   data = JSON.parse(JSON.stringify((await findPostsBySlugs([page]))[0]));
 } else {
   const entry = (await getEntry(collection, page));
   if (entry) {
-    data = JSON.parse(JSON.stringify(entry.data)); 
+    data = JSON.parse(JSON.stringify(entry.data));
+    body = entry.body;
   } else {
     console.log(`Cannot find entry ${page} for collection ${collection}`);
     data = {};
@@ -34,7 +36,7 @@ data.href = ('research' == collection) ? `/ux-research/${page}` : `/${collection
 <Fragment>
 
   {collection == 'portfolio' && (
-    <PortfolioListItem post={data} hideFields={hideFields} styles={styles} overrides={overrides} />
+    <PortfolioListItem post={data} body={body} hideFields={hideFields} styles={styles} overrides={overrides} />
   )}
   
   {collection == 'promo' && (
