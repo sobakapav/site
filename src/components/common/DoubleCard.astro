@@ -42,11 +42,15 @@ const {
           </div>
           <div class="mt-4 absolute left-8 bottom-5">
             <header class="w-[280px]">
-              {supertitle && (
-                <div class="mb-1 hover:text-[--aw-color-accent]">
+              {supertitle && ( isDark ? (
+                <div class="mb-1 text-white hover:text-white">
                   <span class="text-sm" set:html={supertitle} />
                 </div>
-              )}
+              ) : (
+                <div class="mb-1 text-[--aw-color-always-dark]">
+                  <span class="text-sm" set:html={supertitle} />
+                </div>
+              ))}
                    
               <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading", classes.title]}>
                 {isDark ? (
