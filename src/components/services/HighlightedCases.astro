@@ -37,17 +37,17 @@ const {
 const posts = [];
 for (var item of links) {
   if (item.isSpecial) {
-    posts.push(item);
+    posts.push({data: item});
   } else if (item.name) {
     const entry = await getEntry(collection, item.name);
     if (!entry) {
       console.log(`Cannot find entry ${item.name} for collection ${collection}`);
     }
-    const data = JSON.parse(JSON.stringify(entry.data));
+    const data = JSON.parse(JSON.stringify(entry));
     if (item.text) {
-      data.excerpt = item.text;
+      data.data.excerpt = item.text;
     }
-    data.href = `/${collection}/${item.name}`;
+    data.data.href = `/${collection}/${item.name}`;
     posts.push(data);
   }
 }

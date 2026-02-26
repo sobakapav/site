@@ -16,9 +16,9 @@ const id = $id('portfolio-sliding-grid');
 
 ---
 <div class="flex flex-wrap flex-row justify-normal lg:justify-between gap-4 portfolio-regular-view">
-  {posts.map((post) => (
+  {posts.filter(post => post?.data).map((post) => (
     <li class="mb-6 w-[288px]">
-      {post.isSpecial ? (
+      {post.data.isSpecial ? (
         <SpecialCard
           image={post.data.img}
           title={post.data.title}
@@ -26,7 +26,7 @@ const id = $id('portfolio-sliding-grid');
           link={post.data.link}
         />
       ) : (
-        <Item post={post} body={body} hideFields={hideFields} />
+        <Item post={post.data} body={post.body} hideFields={hideFields} />
       )}
     </li>
   ))}
@@ -37,9 +37,9 @@ const id = $id('portfolio-sliding-grid');
   
     <div class="relative swiper swiper-container max-w-2xl xl:max-w-7xl mx-auto">
       <div class="swiper-wrapper">
-        {posts.map((post) => (
+        {posts.filter(post => post?.data).map((post) => (
           <div class="swiper-slide">
-            {post.isSpecial ? (
+            {post.data.isSpecial ? (
               <SpecialCard
                 image={post.data.img}
                 title={post.data.title}
@@ -47,7 +47,7 @@ const id = $id('portfolio-sliding-grid');
                 link={post.data.link}
               />
             ) : (
-              <Item post={post.data} body={post.body} hideFields={hideFields} />
+              <Item post={post.data} body={post?.body} hideFields={hideFields} />
             )}
           </div>
         ))}

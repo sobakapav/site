@@ -36,11 +36,12 @@ const posts = [];
 for (var item of links) {
   var collectionItem = (await getEntry(collection, item)); 
   if (!collectionItem) {
-    console.log('Not found item: \"' + item + '\" for collection: \"' + collection + '\"')
+    console.log("" + Astro.request.url + " : Not found item: \"' + item + '\" for collection: \"' + collection + '\"')
+  } else {
+    const entry = JSON.parse(JSON.stringify(collectionItem));
+    entry.data && entry.data.href = `/${collection}/${item}`;
+    posts.push(entry);
   }
-  const entry = JSON.parse(JSON.stringify(collectionItem));
-  entry.data.href = `/${collection}/${item}`;
-  posts.push(entry);
 }
 ---
 
