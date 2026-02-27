@@ -45,9 +45,9 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
   </Fragment>
 
   <Fragment slot="supertitle">
-    { post.logo?.alt && (
+    { post.client?.alt && (
       <span>
-        {post.logo.alt}
+        {post.client.alt}
       </span>
     )}
     { readingTime && (
@@ -81,9 +81,9 @@ myStyles.main = twMerge(myStyles.main, 'blog-list-item', (doubleMode ? ' md:hidd
     </Fragment>     
 
     <Fragment slot="supertitle">
-      { post.logo?.alt && (
+      { post.client?.alt && (
         <span>
-          {post.logo.alt}
+          {post.client.alt}
         </span>
       )}
       {

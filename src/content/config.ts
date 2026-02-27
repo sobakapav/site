@@ -162,6 +162,7 @@ const portfolioSchema = () => z.object({
   noCard: z.boolean().optional(),
 
   name: z.string().optional(),
+  uuid: z.string().optional(),
   title: z.string(),
   titleBrief: z.string().optional(),
   excerpt: z.string().optional(),
@@ -176,8 +177,9 @@ const portfolioSchema = () => z.object({
   external: z.boolean().optional(),
   externalLink: z.string().optional(),
   
-  logo: z.object({
+  client: z.object({
     src: z.string(),
+    uuid: z.string().optional(),
     link: z.string().optional(),
     alt: z.string().optional(),
     code: z.string().optional(),
@@ -267,6 +269,7 @@ const serviceCollection = defineCollection({
     updateDate: z.date().optional(),
       
     title: z.string(),
+    uuid: z.string().optional(),
     hyphenateTitle: z.boolean().optional(),
     doubleSize: z.boolean().optional(),
     excerpt: z.string().optional(),

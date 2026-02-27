@@ -13,22 +13,27 @@ const clientCodes = Object.keys(portfolioFilters['hidden']).filter( x => (
   'kids' !== x
 ));
 
-const services = portfolioFilters['Услуги'];
+const serviceTags = portfolioFilters['Услуги'];
 const markets = portfolioFilters['Отрасли'];
 const portfolio = await getCollection('portfolio');
+const services = await getCollection('services');
+
+const serviceIds = {};
+
+for (var service of services) {
+  serviceIds[service.slug] = service.data.uuid;
+}
 
 const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)).map(item => {
   const itemImage = (item.data.thumbnail.src2 ? item.data.thumbnail.src2 : item.data.thumbnail.src)?.substring('~/assets/images/portfolio/'.length);
-  const code = item.data.logo.code
-    || item.data.tags?.find(x => clientCodes.includes(x))
-    || slugify(item.data.logo.alt, {replace: {'.': '-'}});
       
   return {
-    id: item.slug,
+    id: item.data.uuid,
+    key: item.slug,
     year: item.data.publishYear,
     title: item.data.title,
-    clientId: code || item.data.logo.alt,
-    services: item.data.tags.filter(tag => services.hasOwnProperty(tag)),
+    clientId: item.data.client.uuid,
+    services: item.data.tags.filter(tag => serviceTags.hasOwnProperty(tag)).map(tag => serviceIds[tag]),
     markets: item.data.tags.filter(tag => markets.hasOwnProperty(tag)),
     image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : '',
   }

@@ -70,9 +70,9 @@ const { Content } = post;
               (post.publishYear > 2023) ? post.publishYear : ''
             }       
           </p>
-          {post.logo?.src && (
-            <a href={post.logo.link} class="mb-3 mt-[6px]">
-              <Image height={30} layout="constrained-height" src={post.logo.src} alt={post.logo.alt}/>
+          {post.client?.src && (
+            <a href={post.client.link} class="mb-3 mt-[6px]">
+              <Image height={30} layout="constrained-height" src={post.client.src} alt={post.client.alt}/>
             </a>
           )}
         </div>

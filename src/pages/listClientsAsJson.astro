@@ -23,7 +23,7 @@ const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)
     name: item.slug,
     year: item.data.publishYear,
     title: item.data.title,
-    client: item.data.logo.alt,
+    client: item.data.client.alt,
     services: item.data.tags.filter(tag => services[tag]),
     image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : ''
   }

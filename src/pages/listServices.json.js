@@ -14,7 +14,8 @@ const servicesItems = services.filter(item => !filteredOut.includes(item.slug)).
   }
   
   return {
-    id: item.slug,
+    id: item.data.uuid,
+    key: item.slug,
     title: item.data.title,
     serviceGroup: item.data.folder.name,
     image: itemImage ? `https://sobakapav.ru/images/services/${itemImage}` : ''

@@ -39,7 +39,7 @@ for (var idx in cases) {
             <a class="flex flex-col gap-4 h-full" href={item.href}>
               <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink]">Популярные кейсы</h2>
               <div>
-                <Image src={item.logo.src} alt={item.logo.alt} height={61} layout="constrained-height" />
+                <Image src={item.client.src} alt={item.client.alt} height={61} layout="constrained-height" />
               </div>
               <h3 class="text-4xl sm:text-[52px] sm:leading-none font-heading text-white">{item.titleBrief || item.title}</h3>
               <div class="text-[#929292]">{item.tagNames}</div>

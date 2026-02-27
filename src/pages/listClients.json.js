@@ -22,17 +22,18 @@ const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)
 const clients = {};
 
 for (const item of portfolioItems) {
-  if (item.data.logo) {
-    const logo = item.data.logo?.src?.substring('~/assets/images/portfolio/'.length);
-    const code = item.data.logo.code
+  if (item.data.client) {
+    const logo = item.data.client.src?.substring('~/assets/images/portfolio/'.length);
+    const code = item.data.client.code
       || item.data.tags?.find(x => clientCodes.includes(x))
-      || slugify(item.data.logo.alt, {replace: {'.': '-'}});
+      || slugify(item.data.client.alt, {replace: {'.': '-'}});
     
     const record = {
-      id: code,
-      title: item.data.logo.alt,
+      id: item.data.client.uuid,
+      key: code,
+      title: item.data.client.alt,
       logo: logo ? `https://sobakapav.ru/images/portfolio/${logo}` : '',
-      link: item.data.logo.link,
+      link: item.data.client.link,
       markets: item.data.tags.filter(tag => markets.hasOwnProperty(tag))
     }
     
