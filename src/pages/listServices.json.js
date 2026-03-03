@@ -8,7 +8,7 @@ const filteredOut = ['consultation', 'dev-team'];
 const services = await getCollection('services');
 
 const folderIds = {};
-for (folder of folders) {
+for (const folder of folders) {
   folderIds['/'+folder.key] = folder.id;
 }
 
