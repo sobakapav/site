@@ -288,10 +288,10 @@ const serviceCollection = defineCollection({
       text: z.string().optional(),
       image: z.string().optional(),
       alt: z.string().optional(),
-    })),
+    })).optional(),
     relatedLinks: z.object({
       title: z.string(),
-    }),
+    }).optional(),
     works: z.array(z.object({
       name: z.string().optional(),
       isSpecial: z.boolean().optional(),
@@ -328,8 +328,8 @@ const serviceCollection = defineCollection({
       time: z.object({
         title: z.string(),
         text: z.string(),
-      })
-    }),
+      }),
+    }).optional(),
     roi: z.string().optional(),
     otherServices: z.array(z.object({
       title: z.string().optional(),
@@ -350,6 +350,7 @@ const serviceCollection = defineCollection({
       title: z.string(),
       items: z.array(z.object({
         title: z.string(),
+        cardColor: z.string().optional(),
         text: z.string().optional(),
         details: z.string().optional(),
       }))
@@ -375,6 +376,92 @@ const serviceCollection = defineCollection({
         }),
     })).optional(),
 
+    metadata: metadataDefinition(),
+  }),
+});
+
+const industriesCollection = defineCollection({
+  schema: z.object({
+    publishDate: z.date().optional(),
+    updateDate: z.date().optional(),
+    uuid: z.string().optional(),
+    key: z.string().optional(),
+      
+    title: z.string(),
+    subtitle: z.string().optional(),
+    excerpt: z.string().optional(),
+    image: z.string(),
+    imageAlt: z.string().optional(),
+    thumbnail: z.string().optional(),
+    
+    outcome: z.object({
+      title: z.string().optional(),
+      numbers: z.array(z.object({
+        title: z.string().optional(),
+        number: z.string().optional(),
+        text: z.string().optional(),
+      })).optional()
+    }).optional(),
+    when: z.object({
+      title: z.string(),
+      items: z.array(z.object({
+        title: z.string().optional(),
+        cardColor: z.string().optional(),
+        text: z.string().optional(),
+        details: z.string().optional(),
+      }))
+    }).optional(),
+    
+    extra: z.string().optional(),
+    comments: z.array(z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
+      img: z.string().optional(),
+      imgPosition: z.string().optional(),
+      alt: z.string().optional(),
+    })),
+    works: z.array(z.object({
+      name: z.string().optional(),
+      isSpecial: z.boolean().optional(),
+      title: z.string().optional(),
+      text: z.string().optional(),
+      img: z.string().optional(),
+      link: z.string().optional(),
+    })).optional(),
+    reviews: z.array(z.object({
+      link: z.string().optional(),
+      title: z.string().optional(),
+      text: z.string().optional(),
+      person: z.string().optional(),
+      position: z.string().optional(),
+      photo: z.string().optional(),
+      logo: z.object({
+        link: z.string(),
+        link2: z.string().optional(),
+        width: z.number().optional(),
+        height: z.number().optional(),
+        }),
+    })).optional(),
+       
+    notThisService: z.object({
+      title: z.string(),
+      items: z.array(z.object({
+        title: z.string(),
+        text: z.string().optional(),
+      }))
+    }).optional(),
+    mapBlock: z.object({
+      title: z.string(),
+      columns: z.number().optional(),
+      items: z.array(z.object({
+        title: z.string(),
+        time: z.string().optional(),
+        text: z.string().optional(),
+      }))
+    }).optional(),
+    relatedLinks: z.object({
+      title: z.string(),
+    }).optional(),
     metadata: metadataDefinition(),
   }),
 });
@@ -439,6 +526,7 @@ const personCollection = defineCollection({
 export const collections = {
   post: postCollection,
   services: serviceCollection,
+  industries: industriesCollection,
   research: researchCollection,
   design2dev: design2devCollection,
   portfolio: portfolioCollection,

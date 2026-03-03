@@ -4,6 +4,13 @@ import { slugify } from 'transliteration';
 
 import { getCollection } from 'astro:content';
 
+const markets = await getCollection('industries');
+
+const marketIds = {};
+for (const market of markets) {
+  marketIds[market.data.key] = market.data.uuid;
+}
+
 const filteredOut = ['aquaphor', 'broker', 'compel-password', 'documedd', 'easybuy', 'ecom', 'erna', 'faberlic-2', 'g-mini', 'just-info', 'justfa', 'loglab', 'online-express', 'positive-tech', 'presentstar', 'simplefly', 'space307', 'torba', 'valer-ai', 'x5', 'x5-paket'];
 
 const clientCodes = Object.keys(portfolioFilters['hidden']).filter( x => (
@@ -14,7 +21,7 @@ const clientCodes = Object.keys(portfolioFilters['hidden']).filter( x => (
 ));
 
 const serviceTags = portfolioFilters['Услуги'];
-const markets = portfolioFilters['Отрасли'];
+const marketTags = portfolioFilters['Отрасли'];
 const portfolio = await getCollection('portfolio');
 const services = await getCollection('services');
 
@@ -34,8 +41,9 @@ const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)
     title: item.data.title,
     clientId: item.data.client.uuid,
     services: item.data.tags.filter(tag => serviceTags.hasOwnProperty(tag)).map(tag => serviceIds[tag]),
-    markets: item.data.tags.filter(tag => markets.hasOwnProperty(tag)),
+    markets: item.data.tags.filter(tag => marketTags.hasOwnProperty(tag)).map(tag => marketIds[tag]),
     image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : '',
+    isPrivate: false,
   }
 });
 

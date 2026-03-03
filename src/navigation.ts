@@ -416,4 +416,10 @@ export const cheatsheetSectionNames = {
   'business': {title: 'Бизнес', text: 'Дизайн в целом — это инструмент бизнеса, независимо от того, работаете вы с внутренней или внешней командой.'},
   'customer': {title: 'Заказчик', text: 'Для заказчика нормально не разбираться в дизайне. Однако чем больше знаний и опыта, тем ниже риски проекта.'},
   'other': {title: 'Разное', text: 'Наглядный пример, что в любой структуре нет-нет, да и вылезет раздел «не знаем, куда это лучше приткнуть».'},
-}
+};
+
+export const folders = [
+  {key: 'ux-design', id: '019cb3fb-ea86-7e6d-b372-2ce1760aedf3', name: 'UX-дизайн', isPrivate: false},
+  {key: 'ux-outstaff', id: '019cb3fb-ea86-7b21-88f2-3c4839f9f0d6', name: 'UX-аутстафф', isPrivate: false},
+  {key: 'ux-researches', id: '019cb3fb-ea86-7d39-aabb-a8eebb378be3', name: 'UX-исследования', isPrivate: false}
+]

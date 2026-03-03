@@ -1,0 +1,33 @@
+---
+import { twMerge } from 'tailwind-merge';
+
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+
+import './ThreeColumnGrid.less';
+
+const { cards } = Astro.props; 
+
+console.log(`Cards: ${JSON.stringify(cards)}`);
+
+const items = cards.map(item => ({
+  title: item.title, 
+  description: item.text, 
+  details: item.details, 
+  classes: {panel: 'cell-' + (item.cardColor || 'default')}
+}));
+
+---
+
+<three-column>
+  <ItemGrid
+    columns={3}
+    items={items}
+    classes={{
+      container: 'features-block gap-6 gap-y-6 md:gap-y-6 features-hex',
+      item: 'p-10', 
+      panel: 'max-w-full flex',
+      title: 'text-3xl font-heading leading-none',
+      description: 'mt-1',
+    }}
+    />
+</three-column>

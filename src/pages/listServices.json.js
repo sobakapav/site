@@ -1,11 +1,16 @@
 import Layout from '~/layouts/Layout.astro';
-import { portfolioFilters } from '~/navigation';
+import { portfolioFilters, folders } from '~/navigation';
 
 import { getCollection } from 'astro:content';
 
 const filteredOut = ['consultation', 'dev-team'];
 
 const services = await getCollection('services');
+
+const folderIds = {};
+for (folder of folders) {
+  folderIds['/'+folder.key] = folder.id;
+}
 
 const servicesItems = services.filter(item => !filteredOut.includes(item.slug)).map(item => {
   var itemImage = item.data.thumbnail;
@@ -17,8 +22,9 @@ const servicesItems = services.filter(item => !filteredOut.includes(item.slug)).
     id: item.data.uuid,
     key: item.slug,
     title: item.data.title,
-    serviceGroup: item.data.folder.name,
-    image: itemImage ? `https://sobakapav.ru/images/services/${itemImage}` : ''
+    serviceGroupId: item.data.folder && folderIds[item.data.folder.link],
+    image: itemImage ? `https://sobakapav.ru/images/services/${itemImage}` : '',
+    isPrivate: false,
   }
 });
 

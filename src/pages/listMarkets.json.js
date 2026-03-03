@@ -1,11 +1,9 @@
 import { portfolioFilters } from '~/navigation';
-const markets = portfolioFilters['Отрасли'];
+import { getCollection } from 'astro:content';
 
-const result = [];
+const markets = await getCollection('industries');
 
-for (var key in markets) {
-  result.push({id: key, title: markets[key]});
-}
+const result = markets.map(market => ({id: market.data.uuid, key: market.data.key, title: market.data.title, isPublic: true}));
 
 export const GET = () => {
   return new Response(JSON.stringify(result), {
