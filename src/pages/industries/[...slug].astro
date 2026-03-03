@@ -1,0 +1,195 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import { getCollection } from 'astro:content';
+import merge from 'lodash.merge';
+import type { ImageMetadata } from 'astro';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
+import { findImage } from '~/utils/images';
+import type { MetaData } from '~/types';
+import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from 'astrowind:config';
+import { Icon } from 'astro-icon/components';
+import SinglePost from '~/components/blog/SinglePost.astro';
+
+import ThreeColumnGrid from '~/components/industry/ThreeColumnGrid.astro';
+
+import Bread from '~/components/widgets/Bread.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Number from '~/components/portfolio/Number.astro';
+import Image from '~/components/common/Image.astro';
+import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
+import SimpleSlider from '~/components/services/SimpleSlider.astro';
+import FinalBlock from '~/components/services/FinalBlock.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import ReviewItem from '~/components/portfolio/ReviewItem.astro';
+import HighlightedCases from "~/components/services/HighlightedCases.astro";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const industries = await getCollection('industries');
+  return industries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { entry } = Astro.props;
+const post = entry.data;
+const { Content } = await entry.render();
+
+const url = getCanonical(getPermalink(post.permalink, 'post'));
+const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
+
+const metadata = merge(
+  {
+    title: post.title,
+    description: post.description || post.excerpt,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: 'article',
+      ...post.metadata.openGraph,
+    },
+  },
+  { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
+) as MetaData;
+---
+
+<Layout metadata={metadata}  hasSlider={true}>
+  <Bread
+    title={post.title}
+    parent="/industries"
+    parentTitle="Отрасли"
+  />
+  
+  <Hero2
+    image={{
+      src: post.image,
+      alt: post.title,
+    }}
+    >
+    
+    <Fragment slot="title">{post.title}</Fragment>
+        
+    <Fragment slot="subtitle">{post.excerpt}</Fragment>
+    
+    <Fragment slot="result">
+      <div class="flex flex-row flex-wrap text-xl gap-2.5 mb-10 lg:mb-0 mx-auto max-w-7xl">
+        {post.outcome && (
+          <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto max-w-3xl border-t-[#DBDBDB] border-t">
+            <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
+            <div class="flex flex-col sm:flex-row justify-between gap-6">
+              
+              {post.outcome.numbers?.map((out) => (     
+              <div class="basis-0 grow">
+                <h3 class="mb-2 text-xl">{out.title}</h3>
+                <Number 
+                  number={out.number} 
+                  classes="mb-1.5 font-heading" 
+                  textClasses="text-xl sm:text-4xl" 
+                  numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+                />
+                <p class="mb-1 text-xl">{out.text}</p>
+              </div>
+              ))}
+             
+            </div>
+          </div>
+          )}
+      </div>
+    </Fragment>
+  </Hero2>
+  
+  <section class="py-0 mx-auto grow-0 shrink-0">
+     <article>
+          
+  <a id="1"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Когда</h2>    
+  </div>
+  
+  <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
+  
+    
+    <ThreeColumnGrid 
+      cards={post.when.items}
+    />
+    
+  </div>
+
+  <div class="">
+    <SimpleSlider 
+      mode="mode-2"
+      title=""
+      slides={[{title: 'Создаём для вас фирменный стиль или уважаем существующий', img: '/images/services/landing/1.png', alt: 'UX-дизайн • Собака Павлова'},
+        {title: 'Работаем по дизайн-стандартам Google и Apple', img: '/images/services/landing/2.png', alt: 'UX-дизайн • Собака Павлова'},
+        {title: 'Учитываем современные тренды визуального дизайна', img: '/images/services/landing/3.png', alt: 'UX-дизайн • Собака Павлова'},
+        {title: 'Дизайн хорошо смотрится на всех устройствах, от смартфонов до TV', img: '/images/services/landing/4.png', alt: 'UX-дизайн • Собака Павлова'}, ]}
+    />
+  </div>
+  
+  <RelatedLinks post={post} />  
+    
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
+    <div class="text-sm text-[--aw-color-hund] tracking-wide font-semibold">ОТЗЫВЫ</div>
+    <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
+      {post.reviews && post.reviews.map(review => (
+        <div class="review-card-odd">
+          <a href={review.link}>
+          <ReviewItem
+            title={review.title}
+            text={review.text}
+            person={review.person}
+            position={review.position}
+            photo={review.photo}
+            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+            photoPosition="bottom"
+          />
+          </a>
+          <div class="flex items-center justify-start mb-10">
+            <a class="noir2-div relative" href={review.link}>
+              <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
+            </a>
+          </div>
+        </div>
+      ))}
+    </UniversalSlider>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-4">В удобном вам формате</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-0">Варианты сотрудничества</h3>  
+    <HighlightedCases
+        classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts" }}
+        title={""}
+        links={[{name: 'electrocardiography'}, {name: 'medical-interfaces'}, {name: 'before-interface-testing'}, {name: 'professional-testing'}]}
+        collection="post"
+        hideFields={{year: true}}
+      />
+
+  <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш IT-продукт удобным, понятным и красивым</h2>
+    <div class="flex flex-col lg:flex-row gap-6">
+      <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
+      <div class="flex flex-col gap-1 justify-center text-white">
+        <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+        <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Реквизиты в PDF</a>
+      </div>
+    </div>
+  </div>
+
+</article>
+</section>
+
+</Layout>
