@@ -7,8 +7,6 @@ import './ThreeColumnGrid.less';
 
 const { cards } = Astro.props; 
 
-console.log(`Cards: ${JSON.stringify(cards)}`);
-
 const items = cards.map(item => ({
   title: item.title, 
   description: item.text, 

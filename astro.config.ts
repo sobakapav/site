@@ -32,7 +32,9 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.match(/.*\.json/),
+    }),
     mdx(),
     icon({
       include: {

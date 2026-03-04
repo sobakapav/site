@@ -21,7 +21,6 @@ const clientCodes = Object.keys(portfolioFilters['hidden']).filter( x => (
 ));
 
 const marketTags = portfolioFilters['Отрасли'];
-console.log(JSON.stringify(markets));
 
 const portfolio = await getCollection('portfolio');
 const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug));

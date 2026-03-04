@@ -5,6 +5,10 @@ import { getCollection } from 'astro:content';
 
 const metadata = {
   title: 'Списки',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const compare = (p1, p2) => {
