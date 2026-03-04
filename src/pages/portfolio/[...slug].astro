@@ -23,12 +23,9 @@ const { Content } = await entry.render();
 const url = getCanonical(getPermalink(entry.permalink, 'portfolio'));
 const image = (await findImage(entry.data.image)) as ImageMetadata | string | undefined;
 
-/* Uncomment if needed by routing system
 if (entry.data.external) {
-  Astro.response.status = 404;
-  Astro.response.statusText = "Not found";
+  return Astro.redirect(entry.data.externalLink);
 }
-*/
 
 const metadata = merge(
   {
