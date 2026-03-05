@@ -74,7 +74,7 @@ const metadata = merge(
   <Hero2
     image={{
       src: post.image,
-      alt: post.title,
+      alt: post.imageAlt,
     }}
     >
     
@@ -114,7 +114,11 @@ const metadata = merge(
           
   <a id="1"></a>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+  
+  
+  <a id="2"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-0 md:mt-0">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Когда</h2>    
   </div>
   
@@ -138,7 +142,10 @@ const metadata = merge(
     />
   </div>
   
-  <RelatedLinks post={post} />  
+  <RelatedLinks 
+      post={post} 
+      hideFields={{showAllButton: true}}
+    />  
     
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
     <div class="text-sm text-[--aw-color-hund] tracking-wide font-semibold">ОТЗЫВЫ</div>
@@ -174,7 +181,7 @@ const metadata = merge(
         title={""}
         links={[{name: 'electrocardiography'}, {name: 'medical-interfaces'}, {name: 'before-interface-testing'}, {name: 'professional-testing'}]}
         collection="post"
-        hideFields={{year: true}}
+        hideFields={{year: true, showAllButton: true}}
       />
 
   <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">

@@ -10,7 +10,7 @@ export interface Props {
   post: Post;
 }
 
-const { post } = Astro.props;
+const { post, hideFields } = Astro.props;
 
 ---
 
@@ -23,6 +23,7 @@ const { post } = Astro.props;
       linkUrl="https://sobakapav.ru/portfolio"
       links={post.works || []}
       collection="portfolio"
+      hideFields={hideFields}
     />
   ) : null
 }

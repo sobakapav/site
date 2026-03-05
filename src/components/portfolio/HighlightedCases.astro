@@ -30,6 +30,7 @@ const {
   classes = {},
   bg = await Astro.slots.render("bg"),
   collection
+  hideFields = {}
 } = Astro.props;
 
 const posts = [];
@@ -72,11 +73,13 @@ for (var item of links) {
       </div>
 
       <Grid posts={posts} classes="flex-row justify-normal gap-4" />
-      <div class="flex justify-end">
-      <div class="bg-[#E6E6E6] px-5 py-[10px] max-w-[167px]">
-        <a>Все проекты →</a>
-      </div>
-      </div>
+      { !hideFields.showAllButton && (
+        <div class="flex justify-end">
+          <div class="bg-[#E6E6E6] px-5 py-[10px] max-w-[167px]">
+            <a>Все проекты →</a>
+          </div>
+        </div>
+      )}
     </WidgetWrapper>
   ) : (
     <Fragment />
