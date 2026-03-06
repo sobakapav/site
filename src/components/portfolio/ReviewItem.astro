@@ -22,7 +22,7 @@ const { title, text, photo, person, position, styles={heading: ''}, photoPositio
           <Image src={photo} alt={person || title} width={60} height={60} class="rounded-lg mt-1 mr-2"/>
         )}
         <div class={twMerge('flex flex-col text-sm', styles.signature)}>
-          <div class="mt-2">{person}</div>  
+          <div class="mt-2">{person},</div>  
           <div>{position}</div>
         </div>
       </div> 
