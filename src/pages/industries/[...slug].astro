@@ -170,18 +170,24 @@ const metadata = merge(
 
   <a id="2"></a>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-6 md:mt-10">
+  
     
     
  
-  <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
-        <p class="mb-6">{post.firstParagraph.text}</p>
-        <Features3
-          columns={2}
-          items={post.firstParagraph.items}
-          classes={{description: 'text-base', title: 'text-xl mb-0'}}
-          defaultIcon="tabler:circle-check-filled"
-        />  
+  { post.firstParagraph && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-6 md:mt-10">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+      <p class="mb-6">{post.firstParagraph.text}</p>
+      <Features3
+        columns={2}
+        items={post.firstParagraph.items}
+        classes={{description: 'text-base', title: 'text-xl mb-0'}}
+        defaultIcon="tabler:circle-check-filled"
+      />
+    </div> 
+  )} 
+  
+  
   <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
     
   </div>
