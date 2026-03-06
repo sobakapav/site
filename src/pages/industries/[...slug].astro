@@ -149,15 +149,11 @@ const metadata = merge(
   <a id="1"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
-    <div class="basis-0 grow-[2]">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
-      <p class="mb-6">{post.firstParagraph.text}</p>
-      <Features3
-        columns={2}
-        items={post.firstParagraph.items}
-        classes={{description: 'text-base', title: 'text-xl mb-0'}}
-        defaultIcon="tabler:circle-check-filled"
-      />  
+    <div class="basis-0 grow-[3]">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Потребности клиентов</h2>
+      <ThreeColumnGrid 
+            cards={post.when.items}
+          /> 
     </div>
     <div class="basis-0 grow">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
@@ -170,17 +166,24 @@ const metadata = merge(
     </div>
   </div>
 
+
+
   <a id="2"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-6 md:mt-10">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Потребности</h2>
-    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Когда к нам приходят за дизайном</h3>
-  </div>
-  
+    
+    
+ 
+  <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+        <p class="mb-6">{post.firstParagraph.text}</p>
+        <Features3
+          columns={2}
+          items={post.firstParagraph.items}
+          classes={{description: 'text-base', title: 'text-xl mb-0'}}
+          defaultIcon="tabler:circle-check-filled"
+        />  
   <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
-    <ThreeColumnGrid 
-      cards={post.when.items}
-    /> 
+    
   </div>
 
   <div class="">

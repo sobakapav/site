@@ -213,6 +213,7 @@ const portfolioSchema = () => z.object({
   director: z.string().optional(),
   
   review: z.object({
+    uuid: z.string().optional(),
     text: z.string().optional(),
     photo: z.string().optional(),
     person: z.string().optional(),
@@ -220,6 +221,7 @@ const portfolioSchema = () => z.object({
   }).optional(),
   
   review2: z.object({
+    uuid: z.string().optional(),
     text: z.string().optional(),
     photo: z.string().optional(),
     person: z.string().optional(),
@@ -402,6 +404,19 @@ const industriesCollection = defineCollection({
         text: z.string().optional(),
       })).optional()
     }).optional(),
+    
+    firstParagraph: z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
+      items: z.array(z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+      })).optional()
+    }).optional(),
+    
+    extra: z.string().optional(),
+    clients: z.string().optional(),
+    
     when: z.object({
       title: z.string(),
       items: z.array(z.object({
@@ -412,7 +427,6 @@ const industriesCollection = defineCollection({
       }))
     }).optional(),
     
-    extra: z.string().optional(),
     comments: z.array(z.object({
       title: z.string().optional(),
       text: z.string().optional(),
@@ -429,6 +443,20 @@ const industriesCollection = defineCollection({
       link: z.string().optional(),
     })).optional(),
     reviews: z.array(z.object({
+      link: z.string().optional(),
+      title: z.string().optional(),
+      text: z.string().optional(),
+      person: z.string().optional(),
+      position: z.string().optional(),
+      photo: z.string().optional(),
+      logo: z.object({
+        link: z.string(),
+        link2: z.string().optional(),
+        width: z.number().optional(),
+        height: z.number().optional(),
+        }),
+    })).optional(),
+    reviews2: z.array(z.object({
       link: z.string().optional(),
       title: z.string().optional(),
       text: z.string().optional(),
