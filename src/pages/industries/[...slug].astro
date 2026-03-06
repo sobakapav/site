@@ -11,10 +11,10 @@ import type { MetaData } from '~/types';
 import Layout from '~/layouts/PageLayout.astro';
 import { SITE } from 'astrowind:config';
 import { Icon } from 'astro-icon/components';
-import SinglePost from '~/components/blog/SinglePost.astro';
+import { Markdown } from '@astropub/md';
 
 import ThreeColumnGrid from '~/components/industry/ThreeColumnGrid.astro';
-
+import SinglePost from '~/components/blog/SinglePost.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Number from '~/components/portfolio/Number.astro';
@@ -106,6 +106,40 @@ const metadata = merge(
           </div>
           )}
       </div>
+      <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mx-auto max-w-7xl text-[#9F9F9F]">
+        <span>
+          <a href="#1" class="underline underline-offset-2">Интерфейсы</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#1" class="underline underline-offset-2">Клиенты</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#2" class="underline underline-offset-2">Потребности</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#3" class="underline underline-offset-2">Примеры</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#4" class="underline underline-offset-2">Отзывы</a>
+        </span><span> • </span>
+                  
+        <span>
+          <a href="#5" class="underline underline-offset-2">Процесс</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#7" class="underline underline-offset-2">Контакты</a>
+        </span> • </span>
+        
+        <span>
+          <a href="#7" class="underline underline-offset-2">Контакты</a>
+        </span>
+          
+      </div>
     </Fragment>
   </Hero2>
   
@@ -114,21 +148,39 @@ const metadata = merge(
           
   <a id="1"></a>
   
-  
-  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
+    <div class="basis-0 grow-[2]">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+      <p class="mb-6">{post.firstParagraph.text}</p>
+      <Features3
+        columns={2}
+        items={post.firstParagraph.items}
+        classes={{description: 'text-base', title: 'text-xl mb-0'}}
+        defaultIcon="tabler:circle-check-filled"
+      />  
+    </div>
+    <div class="basis-0 grow">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+      <Markdown.Inline of={post.clients} />
+      <div class="flex justify-end">
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+          <a href="/ux-outstaff">Портфолио →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <a id="2"></a>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-0 md:mt-0">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Когда</h2>    
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-6 md:mt-10">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Потребности</h2>
+    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-10">Когда к нам приходят за дизайном</h3>
   </div>
   
   <div class=" flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
-  
-    
     <ThreeColumnGrid 
       cards={post.when.items}
-    />
-    
+    /> 
   </div>
 
   <div class="">
@@ -173,9 +225,10 @@ const metadata = merge(
     </UniversalSlider>
   </div>
 
+  
+
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-4">В удобном вам формате</h2>
-    <h3 class="font-heading text-4xl md:text-[52px] xl:text-[80px] leading-none no-underline mb-0">Варианты сотрудничества</h3>  
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-4">В удобном вам формате</h2> 
     <HighlightedCases
         classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts" }}
         title={""}
@@ -183,6 +236,8 @@ const metadata = merge(
         collection="post"
         hideFields={{year: true, showAllButton: true}}
       />
+
+  <a id="7"></a>
 
   <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш IT-продукт удобным, понятным и красивым</h2>

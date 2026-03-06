@@ -33,6 +33,13 @@ for (var service of services) {
 
 const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)).map(item => {
   const itemImage = (item.data.thumbnail.src2 ? item.data.thumbnail.src2 : item.data.thumbnail.src)?.substring('~/assets/images/portfolio/'.length);
+  const reviews = [];
+  if (item.data.review) {
+    reviews.push(item.data.review.uuid);
+  }
+  if (item.data.review2) {
+    reviews.push(item.data.review2.uuid);
+  }
       
   return {
     id: item.data.uuid,
@@ -42,6 +49,7 @@ const portfolioItems = portfolio.filter(item => !filteredOut.includes(item.slug)
     clientId: item.data.client.uuid,
     services: item.data.tags.filter(tag => serviceTags.hasOwnProperty(tag)).map(tag => serviceIds[tag]),
     markets: item.data.tags.filter(tag => marketTags.hasOwnProperty(tag)).map(tag => marketIds[tag]),
+    reviews: reviews,
     image: itemImage ? `https://sobakapav.ru/images/portfolio/${itemImage}` : '',
     isPrivate: false,
   }
