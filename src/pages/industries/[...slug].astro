@@ -133,27 +133,35 @@ const metadata = merge(
         </span><span> • </span>
         
         <span>
-          <a href="#2" class="underline underline-offset-2">Клиенты</a>
+          <a href="#2" class="underline underline-offset-2">Заказчики</a>
         </span><span> • </span>
         
         <span>
-          <a href="#3" class="underline underline-offset-2">Проекты</a>
+          <a href="#3" class="underline underline-offset-2">Услуги</a>
         </span><span> • </span>
         
         <span>
-          <a href="#4" class="underline underline-offset-2">Отзывы</a>
+          <a href="#4" class="underline underline-offset-2">Особенности</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#5" class="underline underline-offset-2">Проекты</a>
         </span><span> • </span>
                   
         <span>
-          <a href="#5" class="underline underline-offset-2">Процесс</a>
+          <a href="#6" class="underline underline-offset-2">Отзывы</a>
         </span><span> • </span>
         
         <span>
-          <a href="#7" class="underline underline-offset-2">Контакты</a>
+          <a href="#7" class="underline underline-offset-2">Процесс</a>
         </span> • </span>
         
         <span>
-          <a href="#7" class="underline underline-offset-2">Контакты</a>
+          <a href="#8" class="underline underline-offset-2">Экспертиза</a>
+        </span> • </span>
+        
+        <span>
+          <a href="#9" class="underline underline-offset-2">Контакты</a>
         </span>
           
       </div>
@@ -197,6 +205,7 @@ const metadata = merge(
     <div class="basis-0 grow-[3]">
       { post.firstParagraph && (
         <div class="">
+          <a id="4"></a>
           <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">{post.firstParagraph.title}</h2>
           <p class="mb-6">{post.firstParagraph.text}</p>
           <Features3
@@ -210,7 +219,7 @@ const metadata = merge(
     </div>
   </div>
   
-  <a id="4"></a>
+  <a id="5"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-[32px] mb-[-20px]">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Примеры проектов</h2>
@@ -221,7 +230,7 @@ const metadata = merge(
     hideFields={{showAllButton: true, title: true}}
   />  
  
-  <a id="5"></a>
+  <a id="6"></a>
   
   { post.reviews2 && (  
     <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-[-36px]">
@@ -340,7 +349,7 @@ const metadata = merge(
     </div>
   )} 
 
-  <a id="6"></a>
+  <a id="7"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Процесс</h2>
@@ -366,14 +375,13 @@ const metadata = merge(
   </div>
   )}
   
-  <a id="7"></a>
-  
+  <a id="8"></a>
   
   { post.articles && (
       <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-0">Экспертиза</h2> 
         <BlogHighlightedPosts
-          classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts" }}
+          classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-0" }}
           title={""}
           postIds={['electrocardiography', 'medical-interfaces', 'before-interface-testing', 'professional-testing']}
           collection="post"
@@ -382,17 +390,20 @@ const metadata = merge(
       </div>
   )}
   
-  <a id="8"></a>
+  <a id="9"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
     <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш IT-продукт удобным, понятным и красивым</h2>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш медицинский продукт удобным, понятным и красивым</h2>
       <div class="flex flex-col lg:flex-row gap-6">
         <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
         <div class="flex flex-col gap-1 justify-center text-white">
           <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
           <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
-          <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Реквизиты в PDF</a>
+        </div>
+        <div class="flex flex-col gap-1 justify-center text-white">
+          <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать реквизиты в PDF</a>
+          <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать презентацию в PDF</a>
         </div>
       </div>
     </div>
