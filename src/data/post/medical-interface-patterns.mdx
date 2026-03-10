@@ -1,7 +1,7 @@
 ---
 updateDate: 2026-03-10T00:00:00Z
 publishDate: 2026-03-06T00:00:00Z
-title: Паттерны медицинских интерфейсов
+title: Лучшие паттерны медицинских интерфейсов
 excerpt: | 
   Последние восемь лет мы регулярно делаем медицинские интерфейсы. Каждый год — минимум 2-3 проекта. И как бы ни отличались заказчики и задачи, мы снова и снова рисуем одни и те же экраны — страницы пациента, списки, анализы, документы. 
   
@@ -14,7 +14,7 @@ excerpt: |
 description: 22 лучших медицинских паттерна и как мы их используем повторно
 author: Дмитрий Макаров, дизайнер интерфейсов
 image: ~/assets/images/articles/medical-interface-patterns/main.jpg
-imageAlt: Паттерны медицинских интерфейсов • Медицинский интерфейс
+imageAlt: Лучшие паттерны медицинских интерфейсов • Медицинский интерфейс
 imageName: Мастер света свечи. «Доктор, изучающий анализы»       
 topic: ПРАКТИКА
 tags:
@@ -44,8 +44,8 @@ relatedLinks:
     - raisa
 
 metadata:
-  canonical: https://sobakapav.ru/publications/medical-interface-kit
-  title: Паттерны медицинских интерфейсов • Медицинский интерфейс
+  canonical: https://sobakapav.ru/publications/medical-interface-patterns
+  title: Лучшие паттерны медицинских интерфейсов • Медицинский интерфейс
   description: "22 лучших медицинских паттерна и как мы их используем повторно"
   robots:
     index: true
@@ -61,7 +61,7 @@ import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 
 <TOC>
-[Заказчик](#anchor1) • [Бизнес-задача](#anchor2) • [Каждый год 30 декабря...](#anchor3) • [Дизайн-задача](#anchor4) • [Дизайн-процесс](#anchor5) • [Результат](#anchor6) • [Цены и сроки](#anchor7)
+[22 лучших паттерна](#anchor1) • [Как мы собирали паттерны](#anchor2) • [Конструктор интерфейсов](#anchor3) • [Recycle this](#anchor4) • [Готовые решения ускоряют работу](#anchor5) • [Итог](#anchor6) 
 </TOC>
 
 ## <a name="anchor1" />22 лучших паттерна
@@ -69,23 +69,24 @@ import TOC from '~/components/widgets/TOC.astro';
 Мы создали в Фигме файл, в который сложили все лучшие паттерны медицинских информационных систем.
 
 ### <a name="anchor2" />Как мы собирали паттерны
+
 Сперва мы составили список всех медицинских интерфейсов. Получилось 22. Выбрали из них лучшие — те, у которых заберем паттерны. Стало восемь. 
 
 Составили таблицу с этими интерфейсами и отметили, какие разделы в них есть. Получили список разделов и функций, которые разрабатывали чаще всего.
 
-<a href="/images/articles/medical-interface-kit/1.png" target="_blank">![Лучшие решения для медицинских интерфейсов в одном конструкторе • Собака Павлова](~/assets/images/articles/medical-interface-kit/1.png)</a>
+<a href="/images/articles/medical-interface-patterns/1.png" target="_blank">![22 лучших медицинских паттерна • Собака Павлова](~/assets/images/articles/medical-interface-patterns/1.png)</a>
 
 Собрали по этой таблице все референсы из восьми проектов. Сложили в едином файле Фигме на отдельных страницах. 
 
 Например, для раздела «История посещений» мы выбрали 3 референса. 
 
-<a href="/images/articles/medical-interface-kit/2.png" target="_blank">![Лучшие решения для медицинских интерфейсов в одном конструкторе • Собака Павлова](~/assets/images/articles/medical-interface-kit/2.png)</a>
+<a href="/images/articles/medical-interface-patterns/2.png" target="_blank">![22 лучших медицинских паттерна • Собака Павлова](~/assets/images/articles/medical-interface-patterns/2.png)</a>
   
 Сперва нам показалось, что этого достаточно. Но вскоре мы пошли дальше — пересобрали самые нужные страницы и функции на компонентах дизайн-системы Ant Design. То есть, привели часть паттернов к единой дизайн-системе, чтобы ими можно было пользоваться в будущих проектах.
 
 Так выглядят 3 варианта «истории посещений» на Ant Design.
 
-<a href="/images/articles/medical-interface-kit/3.png" target="_blank">![Лучшие решения для медицинских интерфейсов в одном конструкторе • Собака Павлова](~/assets/images/articles/medical-interface-kit/3.png)</a>
+<a href="/images/articles/medical-interface-patterns/3.png" target="_blank">![22 лучших медицинских паттерна • Собака Павлова](~/assets/images/articles/medical-interface-patterns/3.png)</a>
 
 ### <a name="anchor3" />Конструктор интерфейсов
 
@@ -109,9 +110,9 @@ import TOC from '~/components/widgets/TOC.astro';
 
 Позже, в процессе кастомизации и разработки второстепенных страниц, мы используем тот самый файл в фигме, в котором собраны все разделы из выбранных восьми проектов. Всего этих разделов 45.
 
-<a href="/images/articles/medical-interface-kit/4.png" target="_blank">![Лучшие решения для медицинских интерфейсов в одном конструкторе • Собака Павлова](~/assets/images/articles/medical-interface-kit/4.png)</a>
+<a href="/images/articles/medical-interface-patterns/4.png" target="_blank">![22 лучших медицинских паттерна • Собака Павлова](~/assets/images/articles/medical-interface-patterns/4.png)</a>
 
-## <a name="anchor4" />Как мы переиспользуем паттерны
+## <a name="anchor4" />Recycle this
 
 Этот набор из 45 страниц оказался полезен не только дизайнерам, но и менеджерам. 
 
@@ -141,11 +142,11 @@ import TOC from '~/components/widgets/TOC.astro';
 
 Ему нужна запись к врачу — у нас есть. 
 
-<a href="/images/articles/medical-interface-kit/5.png" target="_blank">![Лучшие решения для медицинских интерфейсов в одном конструкторе • Собака Павлова](~/assets/images/articles/medical-interface-kit/5.png)</a>
+<a href="/images/articles/medical-interface-patterns/5.png" target="_blank">![22 лучших медицинских паттерна • Собака Павлова](~/assets/images/articles/medical-interface-patterns/5.png)</a>
 
 Обсуждаем детали, уносим в разработку и получаем оригинальный экран записи к врачу. 
 
-<a href="/images/articles/medical-interface-kit/6.png" target="_blank">![Лучшие решения для медицинских интерфейсов в одном конструкторе • Собака Павлова](~/assets/images/articles/medical-interface-kit/6.png)</a>
+<a href="/images/articles/medical-interface-patterns/6.png" target="_blank">![22 лучших медицинских паттерна • Собака Павлова](~/assets/images/articles/medical-interface-patterns/6.png)</a>
 
 Стоит ли говорить, что готовые решения ускоряют сам дизайн? Когда перед тобой есть готовый референс, подготовить макеты гораздо проще и быстрее. Дизайнеры больше не изобретают двадцать первую страницу пациента. Она у них наполовину готова. 
 
