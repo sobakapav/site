@@ -1,11 +1,11 @@
 three-column {
   .cell-default {
     color: var(--aw-color-text-default);
-    background-color: var(--aw-color-bg-page);
+    background-color: var(--aw-color-grey9);
   }
   .cell-red {
-    color: white;
-    background-color: var(--aw-color-hund);
+    color: var(--aw-color-text-default);
+    background-color: var(--aw-color-grey9);
   }
 
   @media (min-width: 1024px) {
@@ -15,6 +15,15 @@ three-column {
     
     .grid3x3-header {
       grid-template-columns: 30px 1fr 1fr 1fr;
+    }
+
+    .cell-default {
+      color: var(--aw-color-text-default);
+      background-color: var(--aw-color-bg-page);
+    }
+    .cell-red {
+      color: white;
+      background-color: var(--aw-color-hund);
     }
   }
 }

@@ -188,11 +188,11 @@ const metadata = merge(
   <a id="3"></a>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20">   
-    <div class="basis-0 grow">
+    <div class="basis-0 grow flex flex-col md:block">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Услуги</h2>
-      <h3 class="bg-[#212121] inline-block text-[30px] sm:leading-none text-white font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-design')} class="no-underline hover:underline underline-offset-8">Дизайн интерфейсов</a></h3>
-      <h3 class="inline-block text-[30px] sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-researches')} class="no-underline hover:underline underline-offset-8">Исследования</a></h3>
-      <h3 class="bg-[--aw-color-grey9] inline-block text-[30px] sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-outstaff')} class="no-underline hover:underline underline-offset-8">UX-аутстафф</a></h3>
+      <h3 class="bg-[#212121] inline-block text-2xl lg:text-[30px] sm:leading-none text-white font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-design')} class="no-underline hover:underline underline-offset-8">Дизайн интерфейсов</a></h3>
+      <h3 class="inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-researches')} class="no-underline hover:underline underline-offset-8">Исследования</a></h3>
+      <h3 class="bg-[--aw-color-grey9] inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-outstaff')} class="no-underline hover:underline underline-offset-8">UX-аутстафф</a></h3>
     </div>
     <div class="basis-0 grow-[3]">
       { post.firstParagraph && (
@@ -230,10 +230,10 @@ const metadata = merge(
     <SimpleContentSlider
       mode="mode-2"
       blockTitles={[{title: 'Понимаем специфику медицинских интерфейсов'}, {title: 'Используем наши внутренние отраслевые наработки и инструментам'}, {title: 'Подбираем команду под вашу конкретику с учётом экспертизы сотрудников'}, {title: 'Готовы к нестандартным форматам работы'}]}
-      classes={{slideContent: "h-full"}}
+      classes={{slideContent: "lg:h-full"}}
     >
       <Fragment slot="block1">
-        <div class="bg-[#212121] text-white p-5 md:p-10 h-full">
+        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
           <a href="/portfolio/electrocardiography">
           <ReviewItem
             text="Мы сотрудничали с «Собакой Павловой» в рамках разработки дизайна МИС «Кардиум». Нам было важно создать удобный и интуитивно понятный инструмент для врачей, и эту задачу команда решила на высоком профессиональном уровне.\n\nСпециалисты «Собаки» не только разработали современный пользовательский интерфейс, но и тщательно продумали сценарии использования, сделав систему практичной и эффективной в реальной работе. Особенно ценно глубокое понимание специфики медицинских сервисов и внимание к деталям, напрямую влияющим на качество работы врача и удобство пациента.\n\nМы высоко ценим открытый диалог, гибкость в процессе и готовность искать лучшие решения. Сотрудничество с «Собакой Павловой» стало важным шагом для развития наших продуктов в сфере цифровой медицины."
@@ -252,7 +252,7 @@ const metadata = merge(
         </div> 
       </Fragment>
       <Fragment slot="block2">
-        <div class="bg-[#212121] text-white p-5 md:p-10 h-full">
+        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
           <a href="/portfolio/tmh">
           <ReviewItem
             text="Мы обратились к «Собаке Павловой» с задачей улучшить интерфейс, опробованный нами на множестве пилотных проектов в государственных и частных клиниках.\n\nОбъединив ваш опыт дизайна медицинских интерфейсов с нашим опытом создания и эксплуатации предыдущей версии системы и обратной связью от пользователей, мы разработали интерфейс, удобный и для работающих в личном кабинете врачей, и для передающих данные о своем здоровье пользователей.\n\nУникальный продукт не только для отечественного, но и для международного рынка, — редко встречаются настолько детально продуманные интерфейсы, приносящие такую пользу всем стейкхолдерам. Мы очень рады нашему сотрудничеству."
@@ -271,7 +271,7 @@ const metadata = merge(
         </div> 
       </Fragment>
       <Fragment slot="block3">
-        <div class="bg-[#212121] text-white p-5 md:p-10 h-full">
+        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
           <a href="/portfolio/tis">
           <ReviewItem
            text="Мы обратились в «Собаку Павлову» с идеей веб-приложения для медицинского персонала и мобильного приложения для пациента. У нас не было конкретизированных требований, только видение продукта, состоящее из описания бизнес-требований и бизнес-процессов.\n\nДизайнеры «Собаки Павловой» предложили креативные решения, до которых мы сами никогда бы не додумались. И в процессе работы один экран, нарисованный нами, трансформировался в макеты полноценного продукта. В итоге у нас есть всё для создания продукта, даже верстка.\n\nС «Собакой Павловой» приятно и выгодно работать. Обязательно обратимся к ним еще, если будет такая необходимость."
@@ -292,7 +292,7 @@ const metadata = merge(
       </Fragment>
       
       <Fragment slot="block4">
-        <div class="bg-[#212121] text-white p-5 md:p-10 h-full">
+        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
           <a href="/portfolio/fasting">
           <ReviewItem
             text="Несмотря на редкий для российского рынка уровень сложности задач, «Собака» не спасовала. Выбрали продуктивный формат взаимодействия. Команда проектирования на удивление глубоко вдумалась, погрузилась в наши потребности и сумела приземлить наш довольно пространный вижн на конкретные макеты и гипотезы, дав очень много полезных идей как на макро-, так и на микроуровне."
