@@ -99,7 +99,7 @@ const metadata = merge(
     <Fragment slot="result">
       <div class="flex flex-row flex-wrap text-xl gap-2.5 mb-10 lg:mb-0 mx-auto max-w-7xl relative">
         { post.awards && (
-          <div class="flex flex-row gap-4 pl-6 absolute top-[-96px] right-[-24px]">
+          <div class="flex flex-row gap-4 pl-6 absolute top-[-96px] right-[-40px]">
             {post.awards.map(award => (
               <div class="w-32 h-32"><Markdown.Inline of={award} /></div>
             ))}  
@@ -381,7 +381,7 @@ const metadata = merge(
       <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-0">Экспертиза</h2> 
         <BlogHighlightedPosts
-          classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-0" }}
+          classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-0", gridCell: "mb-6 md:mb-0" }}
           title={""}
           postIds={['electrocardiography', 'medical-interfaces', 'before-interface-testing', 'professional-testing']}
           collection="post"
