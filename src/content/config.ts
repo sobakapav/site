@@ -395,6 +395,9 @@ const industriesCollection = defineCollection({
     image: z.string(),
     imageAlt: z.string().optional(),
     thumbnail: z.string().optional(),
+    awards: z.array(z.string()).optional(),
+    articles: z.boolean().optional(),
+    articles2: z.string().optional(),
     
     outcome: z.object({
       title: z.string().optional(),
@@ -416,6 +419,7 @@ const industriesCollection = defineCollection({
     
     extra: z.string().optional(),
     clients: z.string().optional(),
+    users: z.string().optional(),
     
     when: z.object({
       title: z.string(),
@@ -433,7 +437,7 @@ const industriesCollection = defineCollection({
       img: z.string().optional(),
       imgPosition: z.string().optional(),
       alt: z.string().optional(),
-    })),
+    })).optional(),
     works: z.array(z.object({
       name: z.string().optional(),
       isSpecial: z.boolean().optional(),
@@ -479,7 +483,7 @@ const industriesCollection = defineCollection({
       }))
     }).optional(),
     mapBlock: z.object({
-      title: z.string(),
+      title: z.string().optional(),
       columns: z.number().optional(),
       items: z.array(z.object({
         title: z.string(),

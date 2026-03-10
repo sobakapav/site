@@ -23,6 +23,7 @@ const {
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
   postIds = [],
+  hideFields = {},
 
   id,
   isDark = false,
@@ -55,7 +56,7 @@ const posts = APP_BLOG.isEnabled ? await findPostsByIds(postIds) : [];
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
       </div>
 
-      <Grid posts={posts} />
+      <Grid posts={posts} hideFields={hideFields}/>
     </WidgetWrapper>
   ) : (
     <Fragment />
