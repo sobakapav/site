@@ -418,6 +418,7 @@ const industriesCollection = defineCollection({
     extra: z.string().optional(),
     clients: z.string().optional(),
     users: z.string().optional(),
+    presentation: z.string().optional(),
     
     when: z.object({
       title: z.string(),

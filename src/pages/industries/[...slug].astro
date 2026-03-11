@@ -89,9 +89,15 @@ const metadata = merge(
          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
           <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
         </div>
+        { post.presentation ? (
         <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
-          <a href="">Скачать презентацию</a>
+          <a href="/images/Презентация медицинская.pdf">Скачать презентацию</a>
         </div>
+        ) : (
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
+            <a href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать реквизиты в PDF</a>
+          </div>
+        )}  
        
       </div>
     </Fragment>
@@ -434,7 +440,9 @@ const metadata = merge(
         </div>
         <div class="flex flex-col gap-1 justify-center text-white">
           <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать реквизиты в PDF</a>
-          <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать презентацию в PDF</a>
+          { post.presentation && (
+          <a class="no-underline hover:underline underline-offset-4 text-base" href="/images/Презентация медицинская.pdf">Скачать презентацию в PDF</a>
+          )}
         </div>
       </div>
     </div>
