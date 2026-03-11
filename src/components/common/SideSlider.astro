@@ -5,12 +5,14 @@ import './SideSlider.less';
 
 const button = await Astro.slots.render('button');
 const content = await Astro.slots.render('content');
-const { buttonClasses } = Astro.props;
+const extraContent = await Astro.slots.render('extraContent');
+const { containerClasses, buttonClasses } = Astro.props;
 
 ---
 <Fragment>
   { content ? (
-    <div class:list={['side-slider', buttonClasses]}>
+    <>
+    <div class:list={['side-slider', containerClasses]}>
       <div class:list={['side-slider-button cursor-pointer', buttonClasses]} set:html={button} />
       
       <div class="side-slider-background side-slider-close fixed top-0 left-0 bottom-0 right-0 hidden z-[3]">
@@ -20,9 +22,11 @@ const { buttonClasses } = Astro.props;
             <Icon name="tabler:x" class="w-6 h-6 text-[--aw-color-hund]" />
           </span> 
           <div class="p-6 format-markdown prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-img:rounded-md prose-img:shadow-lg prose-headings:scroll-mt-[80px] prose-li:my-0 max-w-full" set:html={content} />
+          { extraContent && (<div class="px-6 pb-6 max-w-full" set:html={extraContent} />)}
         </div>
       </div>
     </div>
+    </>
   ) : (
     <div class={buttonClasses}>
       <Fragment set:html={button} />

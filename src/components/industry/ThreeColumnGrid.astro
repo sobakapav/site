@@ -11,6 +11,7 @@ const items = cards.map(item => ({
   title: item.title, 
   description: item.text, 
   details: item.details, 
+  relatedPages: item.relatedPages,
   classes: {panel: 'cell-' + (item.cardColor || 'default')}
 }));
 
@@ -21,8 +22,9 @@ const items = cards.map(item => ({
     columns={3}
     items={items}
     classes={{
-      container: 'features-block gap-2 gap-y-2 md:gap-y-2 features-hex',
-      panel: 'max-w-full flex p-5',
+      container: 'gap-2 gap-y-2 md:gap-y-2 features-hex',
+      panel: 'max-w-full flex p-0',
+      button: 'max-w-full flex p-10',
       title: 'text-3xl font-heading leading-none',
       description: 'mt-4',
     }}

@@ -5,16 +5,19 @@ import Button from './Button.astro';
 import { Icon } from 'astro-icon/components';
 import { Markdown } from '@astropub/md';
 import SideSlider from '~/components/common/SideSlider.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
 
 const {
   container: containerClass = '',
   panel: panelClass = '',
+  button: buttonClass = '',
   title: titleClass = '',
   description: descriptionClass = '',
   icon: defaultIconClass = 'text-primary',
   action: actionClass = '',
+  image: imageClass = '',
 } = classes;
 ---
 
@@ -34,8 +37,8 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, details, icon, callToAction, classes: itemClasses = {} }) => (
-        <SideSlider buttonClasses={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
+      {items.map(({ title, description, details, relatedPages, icon, callToAction, classes: itemClasses = {} }) => (
+        <SideSlider containerClasses={twMerge('flex flex-row max-w-md', panelClass)} buttonClasses={twMerge('flex flex-row max-w-md', buttonClass || panelClass, itemClasses?.panel)}>
           <Fragment slot="button">
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
@@ -66,8 +69,14 @@ const {
           {details && (
             <Fragment slot="content">
               <Markdown.Inline of={details} />
+
             </Fragment>
           )}
+          {relatedPages && (
+            <Fragment slot="extraContent">
+              <RelatedPages pages={relatedPages} hideFields={{ tags: true, year: true }} styles={{main: 'gap-6 flex-nowrap flex-row', container: 'flex flex-row flex-wrap justify-between gap-6', textBlock: '', image: imageClass}}/>
+            </Fragment>
+          )}        
         </SideSlider>
       ))}
     </div>

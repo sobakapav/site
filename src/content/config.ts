@@ -396,8 +396,6 @@ const industriesCollection = defineCollection({
     imageAlt: z.string().optional(),
     thumbnail: z.string().optional(),
     awards: z.array(z.string()).optional(),
-    articles: z.boolean().optional(),
-    articles2: z.string().optional(),
     
     outcome: z.object({
       title: z.string().optional(),
@@ -428,6 +426,10 @@ const industriesCollection = defineCollection({
         cardColor: z.string().optional(),
         text: z.string().optional(),
         details: z.string().optional(),
+        relatedPages: z.array(z.object({
+          page: z.string(),
+          collection: z.string(),
+        })).optional(),
       }))
     }).optional(),
     
@@ -475,12 +477,24 @@ const industriesCollection = defineCollection({
         }),
     })).optional(),
        
+    services: z.object({
+      title: z.string().optional(),
+      items: z.array(z.object({
+        title: z.string().optional(),
+        text: z.string().optional(),
+      }))
+    }).optional(),
     notThisService: z.object({
-      title: z.string(),
+      title: z.string().optional(),
       items: z.array(z.object({
         title: z.string(),
         text: z.string().optional(),
       }))
+    }).optional(),
+    articles: z.boolean().optional(),
+    articles2: z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
     }).optional(),
     mapBlock: z.object({
       title: z.string().optional(),

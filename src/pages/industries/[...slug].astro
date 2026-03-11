@@ -129,7 +129,7 @@ const metadata = merge(
       
       <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-6 md:mb-20 mx-auto max-w-7xl text-[#9F9F9F]">
         <span>
-          <a href="#1" class="underline underline-offset-2">Когда мы нужны</a>
+          <a href="#1" class="underline underline-offset-2">{post.when.title}</a>
         </span><span> • </span>
         
         <span>
@@ -140,9 +140,11 @@ const metadata = merge(
           <a href="#3" class="underline underline-offset-2">Услуги</a>
         </span><span> • </span>
         
-        <span>
-          <a href="#4" class="underline underline-offset-2">Особенности</a>
-        </span><span> • </span>
+        { post.firstParagraph && (
+          <span>
+            <a href="#4" class="underline underline-offset-2">Особенности</a>
+          </span><span> • </span>
+        )}
         
         <span>
           <a href="#5" class="underline underline-offset-2">Проекты</a>
@@ -172,38 +174,39 @@ const metadata = merge(
   <section class="py-0 mx-auto grow-0 shrink-0">
      <article>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
     <div class="basis-0 grow-[3]">
      <a id="1"></a>
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.when.title}</h2>
       <ThreeColumnGrid 
-            cards={post.when.items}
-          /> 
+        cards={post.when.items}
+      /> 
     </div>
     <div class="basis-0 grow">
-      <a id="2"></a> 
+      <a id="2"></a>
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Заказчики</h2>
-      <Markdown.Inline of={post.clients} />
-      <div class="flex justify-end">
-        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
-          <a href="/portfolio#med">Портфолио →</a>
+        <div class="flex flex-col justify-between">
+        <Markdown.Inline of={post.clients} />
+        <div class="flex justify-end">
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+            <a href="/portfolio#med">Портфолио →</a>
+          </div>
         </div>
-      </div>
-        
+      </div>  
     </div>
   </div>
 
   <a id="3"></a>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20">   
-    <div class="basis-0 grow flex flex-col md:block">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Услуги</h2>
-      <h3 class="bg-[#212121] inline-block text-2xl lg:text-[30px] sm:leading-none text-white font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-design')} class="no-underline hover:underline underline-offset-8">Дизайн интерфейсов</a></h3>
-      <h3 class="inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-researches')} class="no-underline hover:underline underline-offset-8">Исследования</a></h3>
-      <h3 class="bg-[--aw-color-grey9] inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-outstaff')} class="no-underline hover:underline underline-offset-8">UX-аутстафф</a></h3>
-    </div>
-    <div class="basis-0 grow-[3]">
-      { post.firstParagraph && (
+  { post.firstParagraph && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20">   
+      <div class="basis-0 grow flex flex-col md:block">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Услуги</h2>
+        <h3 class="bg-[#212121] inline-block text-2xl lg:text-[30px] sm:leading-none text-white font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-design')} class="no-underline hover:underline underline-offset-8">Дизайн интерфейсов</a></h3>
+        <h3 class="inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-researches')} class="no-underline hover:underline underline-offset-8">Исследования</a></h3>
+        <h3 class="bg-[--aw-color-grey9] inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-outstaff')} class="no-underline hover:underline underline-offset-8">UX-аутстафф</a></h3>
+      </div>
+      <div class="basis-0 grow-[3]">
         <div class="">
           <a id="4"></a>
           <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">{post.firstParagraph.title}</h2>
@@ -215,9 +218,31 @@ const metadata = merge(
             defaultIcon="tabler:circle-check-filled"
           />
         </div> 
-      )} 
+      </div>
     </div>
-  </div>
+  )} 
+  
+  { post.services && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-20">   
+      <div class="basis-0 grow flex flex-col md:block bg-[#212121] text-white p-10 lg:w-[288px]">
+        <h3 class="text-3xl font-heading tracking-widest leading-none text-white lg:w-[288px] pb-4">{SITE.phone}</h3>
+        <div class="flex flex-col gap-1 justify-center text-white">
+          <a class="no-underline hover:underline underline-offset-4 text-base pb-4" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base  pb-4">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+          <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать реквизиты в PDF</a>
+        </div>
+      </div>
+      <div class="basis-0 grow-[3]">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] pb-4">Услуги</h2>
+        <Features4
+          columns={3}
+          items={ post.services.items.map((item) => ({title: item.title, description: item.text})) }
+          classes={}
+          defaultIcon="tabler:circle-check-filled"
+        />
+      </div>
+    </div>
+  )}
   
   <a id="5"></a>
   
@@ -321,9 +346,9 @@ const metadata = merge(
     </SimpleContentSlider>
   )} 
 
-  { post.review && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отзывы</h2>
+  { post.reviews && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-[-36px] flex flex-col gap-6">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-0">Отзывы</h2>
       <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
         {post.reviews && post.reviews.map(review => (
           <div class="review-card-odd">
@@ -390,11 +415,17 @@ const metadata = merge(
       </div>
   )}
   
+  { post.articles2 && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-10 md:mb-20">
+      <Markdown.Inline of={post.articles2.text} />
+    </div>
+  )}
+  
   <a id="9"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
     <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш медицинский продукт удобным, понятным и красивым</h2>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Сделаем ваш продукт удобным, понятным и красивым</h2>
       <div class="flex flex-col lg:flex-row gap-6">
         <h3 class="font-heading text-3xl text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
         <div class="flex flex-col gap-1 justify-center text-white">
