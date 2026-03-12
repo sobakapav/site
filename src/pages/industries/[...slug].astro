@@ -250,6 +250,19 @@ const metadata = merge(
     </div>
   )}
   
+  {post.comments && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-[32px] mb-[-20px]">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Платформы</h2>
+    </div>
+      
+    <SimpleSlider 
+      mode="mode-2"
+      title=""
+      slides={post.comments}
+    />
+  </div>
+  )}
+  
   <a id="5"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-[32px] mb-[-20px]">
@@ -356,7 +369,30 @@ const metadata = merge(
     <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-[-36px] flex flex-col gap-6">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-0">Отзывы</h2>
       <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
-        {post.reviews && post.reviews.map(review => (
+        {post.reviews && post.reviews.map(review => review.aggregate ? (
+          <div class="flex flex-col review-card-odd">
+            {review.aggregate.map(subreview => (
+              <div>
+                <a href={subreview.link}>
+                <ReviewItem
+                  title={subreview.title}
+                  text={subreview.text}
+                  person={subreview.person}
+                  position={subreview.position}
+                  photo={subreview.photo}
+                  styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+                  photoPosition="bottom"
+                />
+                </a>
+                <div class="flex items-center justify-start mb-10">
+                  <a class="noir2-div relative" href={subreview.link}>
+                    <img src={subreview.logo.link} width={subreview.logo.width || '80'}  height={subreview.logo.height || '40'} >
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
           <div class="review-card-odd">
             <a href={review.link}>
             <ReviewItem

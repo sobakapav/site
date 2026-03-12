@@ -382,6 +382,22 @@ const serviceCollection = defineCollection({
   }),
 });
 
+const industriesReview = z.object({
+  link: z.string().optional(),
+  title: z.string().optional(),
+  text: z.string().optional(),
+  person: z.string().optional(),
+  position: z.string().optional(),
+  photo: z.string().optional(),
+  logo: z.object({
+    link: z.string(),
+    link2: z.string().optional(),
+    width: z.number().optional(),
+    height: z.number().optional(),
+  }).optional(),
+  get aggregate() {return z.array(industriesReview).optional();},
+}); 
+
 const industriesCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
@@ -441,6 +457,13 @@ const industriesCollection = defineCollection({
       imgPosition: z.string().optional(),
       alt: z.string().optional(),
     })).optional(),
+    comments2: z.array(z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
+      img: z.string().optional(),
+      imgPosition: z.string().optional(),
+      alt: z.string().optional(),
+    })).optional(),
     works: z.array(z.object({
       name: z.string().optional(),
       isSpecial: z.boolean().optional(),
@@ -449,34 +472,8 @@ const industriesCollection = defineCollection({
       img: z.string().optional(),
       link: z.string().optional(),
     })).optional(),
-    reviews: z.array(z.object({
-      link: z.string().optional(),
-      title: z.string().optional(),
-      text: z.string().optional(),
-      person: z.string().optional(),
-      position: z.string().optional(),
-      photo: z.string().optional(),
-      logo: z.object({
-        link: z.string(),
-        link2: z.string().optional(),
-        width: z.number().optional(),
-        height: z.number().optional(),
-        }),
-    })).optional(),
-    reviews2: z.array(z.object({
-      link: z.string().optional(),
-      title: z.string().optional(),
-      text: z.string().optional(),
-      person: z.string().optional(),
-      position: z.string().optional(),
-      photo: z.string().optional(),
-      logo: z.object({
-        link: z.string(),
-        link2: z.string().optional(),
-        width: z.number().optional(),
-        height: z.number().optional(),
-        }),
-    })).optional(),
+    reviews: z.array(industriesReview).optional(),
+    reviews2: z.array(industriesReview).optional(),
        
     services: z.object({
       title: z.string().optional(),
@@ -494,6 +491,10 @@ const industriesCollection = defineCollection({
     }).optional(),
     articles: z.boolean().optional(),
     articles2: z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
+    }).optional(),
+    articles3: z.object({
       title: z.string().optional(),
       text: z.string().optional(),
     }).optional(),
