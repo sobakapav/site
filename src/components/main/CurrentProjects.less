@@ -5,7 +5,7 @@ current-projects {
   display: block;
 
   carousel-content {
-    width: 300%;
+    width: 100%;
     position: relative;
     transition: left 1s ease-in-out;
     display: flex;
@@ -14,9 +14,11 @@ current-projects {
   .project-slide {
     visibility: hidden;
     overflow: hidden;
+    width: 0px;
     
     &.first {
       visibility: visible;
+      width: 100%;
     }
     
     > h3 {

@@ -52,13 +52,14 @@ for (const project of projects) {
   function initCarousel(carousel) {
     const slides = carousel.querySelectorAll(".project-slide");
     var firstSlide;
+    const slideWidth = parseFloat(100.0/(slides.length + 1)).toFixed(2);
     for (var slide of slides) {
       firstSlide = firstSlide || slide;
-      slide.style.width = "" + (100.0/(slides.length + 1)) + "%";
+      slide.style.width = `${slideWidth}%`;
       slide.style.visibility = "visible";
     }
-    firstSlide.parentNode.appendChild(firstSlide.cloneNode(true)); 
-    firstSlide.parentNode.style.width = "" + (100*(slides.length + 1)) + "%";
+    firstSlide.parentNode.appendChild(firstSlide.cloneNode(true));
+    firstSlide.parentNode.style.width = `${100 * (slides.length + 1)}%`;
   }
   
   function tickCarouselSlide(carousel) {
