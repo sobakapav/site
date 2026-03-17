@@ -1,4 +1,9 @@
 three-column {
+  .side-slider-button:hover {
+    box-shadow: 0px 0px 5px 5px var(--aw-color-grey8);
+  }
+
+
   .cell-default {
     color: var(--aw-color-text-default);
     background-color: var(--aw-color-grey9);
@@ -10,6 +15,10 @@ three-column {
   .cell-red {
     color: var(--aw-color-text-default);
     background-color: var(--aw-color-grey9);
+    
+    &.side-slider-button:hover {
+      box-shadow: 0px 0px 5px 5px var(--aw-color-orange);
+    }
   }
   .cell-orange {
     color: var(--aw-color-text-default);
@@ -31,7 +40,6 @@ three-column {
     color: var(--aw-color-text-default);
     background-color: var(--aw-color-grey9);
   }
-
 
   @media (min-width: 1024px) {
     .grid3x3 {

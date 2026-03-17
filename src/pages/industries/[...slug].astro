@@ -13,7 +13,7 @@ import { SITE } from 'astrowind:config';
 import { Icon } from 'astro-icon/components';
 import { Markdown } from '@astropub/md';
 
-import ThreeColumnGrid from '~/components/industry/ThreeColumnGrid.astro';
+import IndustryColumnGrid from '~/components/industry/IndustryColumnGrid.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
@@ -85,8 +85,12 @@ const metadata = merge(
     <Fragment slot="subtitle">{post.excerpt}</Fragment>
     
     <Fragment slot="supertitle">
-      <div class="flex flex-row justify-between">
-         <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
+      
+    </Fragment>
+    
+    <Fragment slot="result">
+      <div class="flex flex-row gap-6">
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-hund] text-white px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
           <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
         </div>
         { post.presentation ? (
@@ -98,23 +102,12 @@ const metadata = merge(
             <a href="presentation: "/images/Собака Павлова_презентация.pdf"">Скачать презентацию</a>
           </div>
         )}  
-       
       </div>
-    </Fragment>
-    
-    <Fragment slot="result">
       <div class="flex flex-row flex-wrap text-xl gap-2.5 mb-10 lg:mb-0 mx-auto max-w-7xl relative">
-        { post.awards && (
-          <div class="flex flex-row gap-4 pl-6 absolute top-[-96px] right-[-40px]">
-            {post.awards.map(award => (
-              <div class="w-32 h-32"><Markdown.Inline of={award} /></div>
-            ))}  
-          </div>
-        )}
         {post.outcome && (
           <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto max-w-3xl border-t-[#DBDBDB] border-t">
             <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
-            <div class="flex flex-col sm:flex-row justify-between gap-6">
+            <div class="flex flex-col flex-wrap sm:flex-row justify-between gap-6">
               
               {post.outcome.numbers?.map((out) => (     
               <div class="basis-0 grow">
@@ -129,6 +122,13 @@ const metadata = merge(
               </div>
               ))}
             </div>
+          </div>
+        )}
+        { post.awards && (
+          <div class="flex flex-row gap-4 pl-6 absolute top-[-96px] right-[-40px]">
+            {post.awards.map(award => (
+              <div class="w-32 h-32"><Markdown.Inline of={award} /></div>
+            ))}  
           </div>
         )}
       </div>
@@ -181,52 +181,43 @@ const metadata = merge(
      <article>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
-    <div class="basis-0 grow-[3]">
+    <div class="">
      <a id="1"></a>
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.when.title}</h2>
-      <ThreeColumnGrid 
+      <IndustryColumnGrid 
         cards={post.when.items}
+        classes={{container: 'gap-2 gap-y-6 md:gap-y-6'}}
       /> 
-    </div>
-    <div class="basis-0 grow">
-      <a id="2"></a>
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Заказчики</h2>
-        <div class="flex flex-col justify-between">
-        <Markdown.Inline of={post.clients} />
-        <div class="flex justify-end">
-          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
-            <a href="/portfolio#med">Портфолио →</a>
-          </div>
-        </div>
-      </div>  
     </div>
   </div>
 
-  <a id="3"></a>
-
-  { post.firstParagraph && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20">   
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20"> 
+    { post.firstParagraph && (  
       <div class="basis-0 grow flex flex-col md:block">
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Услуги</h2>
-        <h3 class="bg-[#212121] inline-block text-2xl lg:text-[30px] sm:leading-none text-white font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-design')} class="no-underline hover:underline underline-offset-8">Дизайн интерфейсов</a></h3>
-        <h3 class="inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-researches')} class="no-underline hover:underline underline-offset-8">Исследования</a></h3>
-        <h3 class="bg-[--aw-color-grey9] inline-block text-2xl lg:text-[30px]  sm:leading-none font-heading p-10 lg:w-[288px]"><a href={getPermalink('/ux-outstaff')} class="no-underline hover:underline underline-offset-8">UX-аутстафф</a></h3>
-      </div>
-      <div class="basis-0 grow-[3]">
-        <div class="">
-          <a id="4"></a>
-          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">{post.firstParagraph.title}</h2>
-          <p class="mb-6">{post.firstParagraph.text}</p>
-          <Features3
+        <a id="2"></a>
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+        <p class="mb-6">{post.firstParagraph.text}</p>
+         <IndustryColumnGrid
             columns={2}
-            items={post.firstParagraph.items}
-            classes={{description: 'text-base', title: 'text-xl mb-0', panel: 'gap-2', gridContainer: 'gap-6 md:gap-y-4'}}
-            defaultIcon="tabler:circle-check-filled"
-          />
-        </div> 
+            cards={post.firstParagraph.items}
+            classes={{container: 'gap-2 gap-y-2 md:gap-y-2', cell: 'pt-5'}}
+          /> 
+        
       </div>
-    </div>
-  )} 
+    )} 
+      <div class="basis-0 grow">
+        <a id="3"></a>
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Заказчики</h2>
+          <div class="flex flex-col justify-between">
+          <Markdown.Inline of={post.clients} />
+          <div class="flex justify-end">
+            <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+              <a href="/portfolio#med">Портфолио →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
   
   { post.services && (
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-20">   
@@ -275,95 +266,6 @@ const metadata = merge(
   />  
  
   <a id="6"></a>
-  
-  { post.reviews2 && (  
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-[-36px]">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отзывы</h2>
-    </div>  
-    <SimpleContentSlider
-      mode="mode-2"
-      blockTitles={[{title: 'Понимаем специфику медицинских интерфейсов'}, {title: 'Используем наши внутренние отраслевые наработки и инструментам'}, {title: 'Подбираем команду под вашу конкретику с учётом экспертизы сотрудников'}, {title: 'Готовы к нестандартным форматам работы'}]}
-      classes={{slideContent: "lg:h-full"}}
-    >
-      <Fragment slot="block1">
-        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
-          <a href="/portfolio/electrocardiography">
-          <ReviewItem
-            text="Мы сотрудничали с «Собакой Павловой» в рамках разработки дизайна МИС «Кардиум». Нам было важно создать удобный и интуитивно понятный инструмент для врачей, и эту задачу команда решила на высоком профессиональном уровне.\n\nСпециалисты «Собаки» не только разработали современный пользовательский интерфейс, но и тщательно продумали сценарии использования, сделав систему практичной и эффективной в реальной работе. Особенно ценно глубокое понимание специфики медицинских сервисов и внимание к деталям, напрямую влияющим на качество работы врача и удобство пациента.\n\nМы высоко ценим открытый диалог, гибкость в процессе и готовность искать лучшие решения. Сотрудничество с «Собакой Павловой» стало важным шагом для развития наших продуктов в сфере цифровой медицины."
-            person="Владимир Падишин"
-            position="коммерческий директор компании «ЭРНА»"
-            photo="~/assets/images/portfolio/erna/person.png"
-            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-            photoPosition="bottom"
-          />
-          </a>
-          <div class="flex items-center justify-start">
-            <a class="noir2-div relative" href="/portfolio/electrocardiography">
-              <img src="/images/clients/erna-white.svg" width="80" height="60">
-            </a>
-          </div>
-        </div> 
-      </Fragment>
-      <Fragment slot="block2">
-        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
-          <a href="/portfolio/tmh">
-          <ReviewItem
-            text="Мы обратились к «Собаке Павловой» с задачей улучшить интерфейс, опробованный нами на множестве пилотных проектов в государственных и частных клиниках.\n\nОбъединив ваш опыт дизайна медицинских интерфейсов с нашим опытом создания и эксплуатации предыдущей версии системы и обратной связью от пользователей, мы разработали интерфейс, удобный и для работающих в личном кабинете врачей, и для передающих данные о своем здоровье пользователей.\n\nУникальный продукт не только для отечественного, но и для международного рынка, — редко встречаются настолько детально продуманные интерфейсы, приносящие такую пользу всем стейкхолдерам. Мы очень рады нашему сотрудничеству."
-            person="Владимир Дмитриев"
-            position="директор по развитию бизнеса компании «ТелеМедХаб» (ТМХ)"
-            photo="~/assets/images/portfolio/tmh/person.png"
-            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-            photoPosition="bottom"
-          />
-          </a>
-          <div class="flex items-center justify-start">
-            <a class="noir2-div relative" href="/portfolio/tmh">
-              <img src="/images/clients/tmh.svg" width="80" height="60">
-            </a>
-          </div>
-        </div> 
-      </Fragment>
-      <Fragment slot="block3">
-        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
-          <a href="/portfolio/tis">
-          <ReviewItem
-           text="Мы обратились в «Собаку Павлову» с идеей веб-приложения для медицинского персонала и мобильного приложения для пациента. У нас не было конкретизированных требований, только видение продукта, состоящее из описания бизнес-требований и бизнес-процессов.\n\nДизайнеры «Собаки Павловой» предложили креативные решения, до которых мы сами никогда бы не додумались. И в процессе работы один экран, нарисованный нами, трансформировался в макеты полноценного продукта. В итоге у нас есть всё для создания продукта, даже верстка.\n\nС «Собакой Павловой» приятно и выгодно работать. Обязательно обратимся к ним еще, если будет такая необходимость."
-           person="Владимир Падишин"
-           position="руководитель проекта"
-           photo="~/assets/images/portfolio/erna/person.png"
-           styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-           photoPosition="bottom"
-          />
-          </a>
-          <div class="flex items-center justify-start">
-            <a class="noir2-div relative" href="/portfolio/tis">
-              <img src="/images/clients/tis-white.svg" width="200" height="60">
-            </a>
-          </div>
-        </div>
-      </div> 
-      </Fragment>
-      
-      <Fragment slot="block4">
-        <div class="bg-[#212121] text-white p-5 md:p-10 lg:h-full">
-          <a href="/portfolio/fasting">
-          <ReviewItem
-            text="Несмотря на редкий для российского рынка уровень сложности задач, «Собака» не спасовала. Выбрали продуктивный формат взаимодействия. Команда проектирования на удивление глубоко вдумалась, погрузилась в наши потребности и сумела приземлить наш довольно пространный вижн на конкретные макеты и гипотезы, дав очень много полезных идей как на макро-, так и на микроуровне."
-            person="Александр Илинский"
-            position="основатель стартапа"
-            styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-            photoPosition="bottom"
-          />
-          </a>
-          <div class="flex items-center justify-start">
-            <a class="noir2-div relative" href="/portfolio/fasting">
-              <img src="/images/clients/simple2.svg" width="160" height="40">
-            </a>
-          </div>
-        </div> 
-      </Fragment>
-    </SimpleContentSlider>
-  )} 
 
   { post.reviews && (
     <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-[-36px] flex flex-col gap-6">
