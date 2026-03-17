@@ -56,6 +56,7 @@ for (const project of projects) {
     for (var slide of slides) {
       firstSlide = firstSlide || slide;
       slide.style.width = `${slideWidth}%`;
+      slide.style.display = 'block';
       slide.style.visibility = "visible";
     }
     firstSlide.parentNode.appendChild(firstSlide.cloneNode(true));
