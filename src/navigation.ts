@@ -298,6 +298,7 @@ export const portfolioFilters = {
     'otvinta': '',
     'smartdeal': '',
     'constructor': '',
+    'letters': '',
     'cjm': '',
     'kids': '',
     '2025': '',

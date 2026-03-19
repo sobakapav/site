@@ -54,8 +54,8 @@ const metadata = merge(
     title: post.title,
     description: post.description || post.excerpt,
     robots: {
-      index: true,
-      follow: true,
+      index: post.metadata.robots.index,
+      follow: post.metadata.robots.follow,
     },
     openGraph: {
       type: 'article',
@@ -272,7 +272,7 @@ const metadata = merge(
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-0">Отзывы</h2>
       <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
         {post.reviews && post.reviews.map(review => review.aggregate ? (
-          <div class="flex flex-col review-card-odd">
+          <div class="flex flex-col review-card-even">
             {review.aggregate.map(subreview => (
               <div>
                 <a href={subreview.link}>
@@ -295,7 +295,7 @@ const metadata = merge(
             ))}
           </div>
         ) : (
-          <div class="review-card-odd">
+          <div class="review-card-even">
             <a href={review.link}>
             <ReviewItem
               title={review.title}
@@ -319,12 +319,11 @@ const metadata = merge(
   )} 
 
   <a id="7"></a>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
-    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Процесс</h2>
-  </div>
     
   {post.mapBlock && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Процесс</h2>
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 flex flex-col gap-6">
       <Features4
         columns={post.mapBlock.columns}
@@ -336,6 +335,9 @@ const metadata = merge(
   )}
     
   {post.comments && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Детали</h2>
+    </div>
     <SimpleSlider 
       mode="mode-2"
       title=""
