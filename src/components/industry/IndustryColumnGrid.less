@@ -1,7 +1,9 @@
 three-column {
   .side-slider-button:hover {
-    box-shadow: 0px 0px 5px 5px var(--aw-color-grey8);
-  }
+    box-shadow: 
+      inset 0 3px 6px rgba(0,0,0,0.25),
+      inset 0 -2px 4px rgba(255,255,255,0.15);
+   }
 
 
   .cell-default {
@@ -15,10 +17,6 @@ three-column {
   .cell-red {
     color: var(--aw-color-text-default);
     background-color: var(--aw-color-grey9);
-    
-    &.side-slider-button:hover {
-      box-shadow: 0px 0px 5px 5px var(--aw-color-orange);
-    }
   }
   .cell-orange {
     color: var(--aw-color-text-default);
@@ -65,10 +63,21 @@ three-column {
     .cell-red {
       color: white;
       background-color: var(--aw-color-hund);
+      
+      &.side-slider-button:hover {
+        box-shadow:
+          inset 0 3px 6px #5e0011,
+          inset 0 -2px 4px #b33a4c;
+      }
     }
     .cell-orange {
       color: var(--aw-color-text-default);
       background-color: var(--aw-color-orange);
+      &.side-slider-button:hover {
+        box-shadow:
+          inset 0 3px 6px rgba(0,0,0,0.25),
+          inset 0 -2px 4px rgba(255,255,255,0.15);
+      }
     }
     .cell-green {
       color: white;
@@ -77,18 +86,38 @@ three-column {
     .cell-cyan {
       color: white;
       background-color: var(--aw-color-cyan);
+      &.side-slider-button:hover {
+        box-shadow:
+          inset 0 3px 6px #02635d,
+          inset 0 -2px 4px #27a9a2;
+      }
     }
     .cell-blue {
       color: white;
       background-color: var(--aw-color-accent);
+      &.side-slider-button:hover {
+        box-shadow:
+          inset 0 3px 6px #0f4447,
+          inset 0 -2px 4px #2c8b91;
+      }
     }
     .cell-lightblue {
       color: var(--aw-color-text-default);
       background-color: var(--aw-color-lightblue);
+      &.side-slider-button:hover {
+        box-shadow:
+          inset 0 3px 6px #02635d,
+          inset 0 -2px 4px #27a9a2;
+      }
     }
     .cell-violet {
       color: white;
       background-color: var(--aw-color-violet);
+      &.side-slider-button:hover {
+        box-shadow:
+          inset 0 3px 6px #8e4b45,
+          inset 0 -2px 4px #d98d86;
+      }
     }
   }
 }
