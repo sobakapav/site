@@ -81,12 +81,8 @@ const metadata = merge(
     >
     
     <Fragment slot="title">{post.title}</Fragment>
-        
     <Fragment slot="subtitle">{post.excerpt}</Fragment>
-    
-    <Fragment slot="supertitle">
-      
-    </Fragment>
+    <Fragment slot="supertitle"><div text-xl mb-20>{post.subtitle}</div></Fragment>
     
     <Fragment slot="result">
       <div class="flex flex-row gap-6">
@@ -138,19 +134,15 @@ const metadata = merge(
           <a href="#1" class="underline underline-offset-2">{post.when.title}</a>
         </span><span> • </span>
         
-        <span>
-          <a href="#2" class="underline underline-offset-2">Заказчики</a>
-        </span><span> • </span>
-        
-        <span>
-          <a href="#3" class="underline underline-offset-2">Услуги</a>
-        </span><span> • </span>
-        
         { post.firstParagraph && (
           <span>
-            <a href="#4" class="underline underline-offset-2">Особенности</a>
+            <a href="#2" class="underline underline-offset-2">Специфика</a>
           </span><span> • </span>
         )}
+        
+        <span>
+          <a href="#3" class="underline underline-offset-2">Заказчики</a>
+        </span><span> • </span>
         
         <span>
           <a href="#5" class="underline underline-offset-2">Проекты</a>
@@ -165,11 +157,15 @@ const metadata = merge(
         </span> • </span>
         
         <span>
-          <a href="#8" class="underline underline-offset-2">Экспертиза</a>
+          <a href="#8" class="underline underline-offset-2">Детали</a>
         </span> • </span>
         
         <span>
-          <a href="#9" class="underline underline-offset-2">Контакты</a>
+          <a href="#9" class="underline underline-offset-2">Экспертиза</a>
+        </span> • </span>
+        
+        <span>
+          <a href="#10" class="underline underline-offset-2">Контакты</a>
         </span>
           
       </div>
@@ -191,7 +187,7 @@ const metadata = merge(
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20"> 
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-6 md:mb-20"> 
     { post.firstParagraph && (  
       <div class="basis-0 grow flex flex-col md:block">
         <a id="2"></a>
