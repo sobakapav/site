@@ -440,11 +440,12 @@ const industriesCollection = defineCollection({
     presentation: z.string().optional(),
     
     when: z.object({
-      title: z.string(),
+      title: z.string().optional(),
       items: z.array(z.object({
         title: z.string().optional(),
         cardColor: z.string().optional(),
         text: z.string().optional(),
+        link: z.string().optional(),
         details: z.string().optional(),
         relatedPages: z.array(z.object({
           page: z.string(),
