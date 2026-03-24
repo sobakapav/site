@@ -82,54 +82,25 @@ const metadata = merge(
     
     <Fragment slot="title">{post.title}</Fragment>
     <Fragment slot="subtitle">{post.excerpt}</Fragment>
-    <Fragment slot="supertitle"></div></Fragment>
+    <Fragment slot="supertitle"><h2 class="text-xl mb-10 prose text-[--tw-prose-body]">{post.subtitle}</h2></Fragment>
     
     <Fragment slot="result">
       <div class="flex flex-row gap-6">
-        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-hund] text-white px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-hund] text-white px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
           <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
         </div>
         { post.presentation ? (
-        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
           <a href="/images/Презентация медицинская.pdf">Скачать презентацию</a>
         </div>
         ) : (
-          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 mb-8 text-default">
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
             <a href="presentation: "/images/Собака Павлова_презентация.pdf"">Скачать презентацию</a>
           </div>
         )}  
       </div>
-      <div class="flex flex-row flex-wrap text-xl gap-2.5 mb-10 lg:mb-0 mx-auto max-w-7xl relative">
-        {post.outcome && (
-          <div class="flex flex-col gap-4 mx-auto md:mx-0 lg:mx-auto max-w-3xl border-t-[#DBDBDB] border-t">
-            <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
-            <div class="flex flex-col flex-wrap sm:flex-row justify-between gap-6">
-              
-              {post.outcome.numbers?.map((out) => (     
-              <div class="basis-0 grow">
-                <h3 class="mb-2 text-xl">{out.title}</h3>
-                <Number 
-                  number={out.number} 
-                  classes="mb-1.5 font-heading" 
-                  textClasses="text-xl sm:text-3xl" 
-                  numberClasses="text-xl sm:text-3xl text-[--aw-color-hund]" 
-                />
-                <p class="mb-1 text-xl">{out.text}</p>
-              </div>
-              ))}
-            </div>
-          </div>
-        )}
-        { post.awards && (
-          <div class="flex flex-row gap-4 pl-6 absolute top-[-96px] right-[-40px]">
-            {post.awards.map(award => (
-              <div class="w-32 h-32"><Markdown.Inline of={award} /></div>
-            ))}  
-          </div>
-        )}
-      </div>
       
-      <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-6 md:mb-20 mx-auto max-w-7xl text-[#9F9F9F]">
+      <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-6 md:mb-20 md:mr-6 mx-auto max-w-7xl text-[#9F9F9F]">
         <span>
           <a href="#1" class="underline underline-offset-2">{post.when.title}</a>
         </span><span> • </span>
@@ -175,6 +146,35 @@ const metadata = merge(
   
   <section class="py-0 mx-auto grow-0 shrink-0">
      <article>
+     
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 flex-nowrap mb-6 md:mb-20">  
+    { post.awards && (
+      <div class="flex flex-row gap-4">
+        {post.awards.map(award => (
+          <div class="w-32 h-32"><Markdown.Inline of={award} /></div>
+        ))}  
+      </div>
+    )}
+    
+    {post.outcome && (
+      <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
+      <div class="flex flex-col flex-wrap sm:flex-row justify-start gap-6">     
+        {post.outcome.numbers?.map((out) => (     
+        <div class="basis-0 grow">
+          <Number 
+            number={out.number} 
+            classes="mb-1.5 font-heading" 
+            textClasses="text-xl sm:text-3xl" 
+            numberClasses="text-xl sm:text-3xl text-[--aw-color-hund]" 
+          />
+          <p class="text-xl">{out.text}</p>
+        </div>
+        ))}
+      </div>
+    </div>
+  )}
+    
+  </div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
     <div class="">
@@ -350,7 +350,7 @@ const metadata = merge(
         <BlogHighlightedPosts
           classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-0", gridCell: "mb-6 md:mb-0" }}
           title={""}
-          postIds={['electrocardiography', 'medical-interfaces', 'before-interface-testing', 'professional-testing']}
+          postIds={['medical-interface-patterns', 'medical-interface-kit', 'electrocardiography', 'medical-interfaces', 'before-interface-testing', 'professional-testing']}
           collection="post"
           hideFields={{year: true, tags: true}}
         />
