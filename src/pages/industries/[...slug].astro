@@ -14,6 +14,7 @@ import { Icon } from 'astro-icon/components';
 import { Markdown } from '@astropub/md';
 
 import IndustryColumnGrid from '~/components/industry/IndustryColumnGrid.astro';
+import TearOff from '~/components/industry/TearOff.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
@@ -148,17 +149,16 @@ const metadata = merge(
   <section class="py-0 mx-auto grow-0 shrink-0">
      <article>
      
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 flex-nowrap mb-6 md:mb-20">  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 flex-nowrap mb-10 md:mb-20">  
     { post.awards && (
       <div class="flex flex-row gap-4">
         {post.awards.map(award => (
-          <div class="w-32 h-32"><Markdown.Inline of={award} /></div>
+          <div class="max-h-32"><Markdown.Inline of={award} /></div>
         ))}  
       </div>
     )}
     
     {post.outcome && (
-      <h2 class="text-4xl xl:text-[52px] xl:leading-[52px] font-heading">{post.outcome.title}</h2>
       <div class="flex flex-col flex-wrap sm:flex-row justify-start gap-6">     
         {post.outcome.numbers?.map((out) => (     
         <div class="basis-0 grow">
@@ -189,59 +189,57 @@ const metadata = merge(
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col-reverse lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-6 md:mb-20"> 
-    { post.firstParagraph && (  
-      <div class="basis-0 grow flex flex-col md:block">
-        <a id="2"></a>
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
-        <p class="mb-6">{post.firstParagraph.text}</p>
-         <IndustryColumnGrid
-            columns={2}
-            cards={post.firstParagraph.items}
-            classes={{container: 'gap-2 gap-y-2 md:gap-y-2', cell: 'pt-5'}}
-          /> 
-        
-      </div>
-    )} 
-      <div class="basis-0 grow">
-        <a id="3"></a>
-          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Заказчики</h2>
-          <div class="flex flex-col justify-between">
-          <Markdown.Inline of={post.clients} />
-          <div class="flex justify-end">
-            <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
-              <a href="/portfolio#med">Портфолио →</a>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col-reverse lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-10 md:mt-20 mb-10 md:mb-20"> 
+    {post.firstParagraph ? (
+      post.firstParagraph && (  
+        <Fragment>
+          <div class="basis-0 grow flex flex-col md:block">
+            <a id="2"></a>
+            <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+            <p class="mb-6">{post.firstParagraph.text}</p>
+             <IndustryColumnGrid
+                columns={2}
+                cards={post.firstParagraph.items}
+                classes={{container: 'gap-2 gap-y-2 md:gap-y-2', cell: 'pt-5'}}
+              />  
+          </div>
+          <div class="basis-0 grow">
+            <a id="3"></a>
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+              <div class="flex flex-col justify-between">
+              <Markdown.Inline of={post.clients} />
+              <div class="flex justify-end">
+                <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                  <a href="/portfolio#med">Портфолио →</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Fragment>
+        )
+      ) : (
+        <Fragment>
+          <TearOff />
+
+          <div class="basis-0 grow-[3]">
+            <a id="3"></a>
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+              <div class="flex flex-col justify-between">
+              <Markdown.Inline of={post.clients} />
+              {/*<div class="flex justify-end">
+                <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                  <a href="/portfolio#med">Портфолио →</a>
+                </div>
+              </div>*/}
+            </div>
+          </div>
+        </Fragment>
+      )} 
     </div> 
-  
-  { post.services && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-20">   
-      <div class="basis-0 grow flex flex-col md:block bg-[#212121] text-white p-10 lg:w-[288px]">
-        <h3 class="text-3xl font-heading tracking-widest leading-none text-white lg:w-[288px] pb-4">{SITE.phone}</h3>
-        <div class="flex flex-col gap-1 justify-center text-white">
-          <a class="no-underline hover:underline underline-offset-4 text-base pb-4" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-          <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base  pb-4">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
-          <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать реквизиты в PDF</a>
-        </div>
-      </div>
-      <div class="basis-0 grow-[3]">
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] pb-4">Услуги</h2>
-        <Features4
-          columns={3}
-          items={ post.services.items.map((item) => ({title: item.title, description: item.text})) }
-          classes={}
-          defaultIcon="tabler:circle-check-filled"
-        />
-      </div>
-    </div>
-  )}
   
   <a id="5"></a>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-[32px] mb-[-20px]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:mt-[32px] md:mb-[-20px]">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Примеры проектов</h2>
   </div>
   
@@ -334,7 +332,7 @@ const metadata = merge(
   <a id="8"></a>
   
   { post.articles && (
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-[-20px]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-0">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">Экспертиза</h2> 
         {/*<RelatedPosts 
           post={post} 

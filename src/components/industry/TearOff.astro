@@ -1,0 +1,28 @@
+---
+import { SITE } from 'astrowind:config';
+import { Icon } from 'astro-icon/components';
+import './TearOff.less';
+
+---
+
+<div class="basis-0 grow flex flex-col md:block lg:w-[288px] tear-off text-[--aw-color-accent]">
+  <div class="tear-off-main">
+    <img src="/images/logos/tiny-blue.svg" height="18px" width="18px">
+    <h3 class="text-3xl font-heading tracking-widest leading-none mt-2 mb-2">Нужен интерфейс?</h3>
+    <p class="text-base mb-4">Звоните, пишите, мы сделаем</p>
+    <h3 class="text-3xl font-heading tracking-widest leading-none mb-4">{SITE.phone}</h3>
+    <div class="flex flex-col gap-1 justify-center">
+      <a class="no-underline hover:underline underline-offset-4 text-base pb-0" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base  pb-0">@sobakapavpro<Icon height="18px" width="18px" name="tabler:brand-telegram" class="ml-2" /></a>
+    </div>
+  </div>
+  <div class="flex flex-row tear-off-coupon-block">
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>.ru</a>
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    <a class="tear-off-coupon no-underline hover:underline underline-offset-4 text-base hover:cursor-grab hover:scale-y-105 ease-in" href={`mailto:${SITE.email}`}>av.ru</a>
+  </div>
+</div>
