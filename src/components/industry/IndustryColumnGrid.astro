@@ -10,10 +10,12 @@ import './IndustryColumnGrid.less';
 // cell - for single cell in grid
 // title - for title
 // description - for subtitle
+// mode - 'foldOnMobile' to fold cards on mobiles
 const { 
   cards, 
   columns = 3,
   classes,
+  mode,
 } = Astro.props; 
 
 const items = cards.map(item => ({
@@ -21,6 +23,7 @@ const items = cards.map(item => ({
   description: item.text, 
   details: item.details, 
   relatedPages: item.relatedPages,
+  link: item.link,
   classes: {panel: 'cell-' + (item.cardColor || 'default')}
 }));
 
@@ -30,6 +33,7 @@ const items = cards.map(item => ({
   <ItemGrid
     columns={columns}
     items={items}
+    mode={mode}
     classes={{
       container: twMerge('gap-2 gap-y-2 md:gap-y-2 features-hex', classes?.container),
       panel: 'max-w-full flex p-0',
