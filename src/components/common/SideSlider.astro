@@ -13,7 +13,7 @@ const { link, containerClasses, buttonClasses } = Astro.props;
   { content ? (
     <>
     <div class:list={['side-slider', containerClasses]}>
-      <a class:list={['side-slider-button cursor-pointer', buttonClasses]} set:html={button} />
+      <div class:list={['side-slider-button cursor-pointer', buttonClasses]} set:html={button} />
       
       <div class="side-slider-background side-slider-close fixed top-0 left-0 bottom-0 right-0 hidden z-[3]">
         <div class="absolute top-0 left-0 bottom-0 right-0 bg-gray-500 opacity-80 cursor-pointer">&nbsp;</div>
@@ -27,11 +27,15 @@ const { link, containerClasses, buttonClasses } = Astro.props;
       </div>
     </div>
     </>
-  ) : (
+  ) : ( link ? (
     <a href={link} class={buttonClasses}>
       <Fragment set:html={button} />
+    </a>
+  ) : (
+    <div class={buttonClasses}>
+      <Fragment set:html={button} />
     </div>
-  )}
+  ))}
 </Fragment>
 
 <script>
