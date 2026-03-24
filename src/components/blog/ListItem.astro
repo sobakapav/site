@@ -9,7 +9,7 @@ import { APP_BLOG } from 'astrowind:config';
 import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate, minuteCase } from '~/utils/utils';
 
-const { post, hideFields = {} } = Astro.props;
+const { post, hideFields = {}, styles = {} } = Astro.props;
 ---
 
 <CommonCard
@@ -17,6 +17,7 @@ const { post, hideFields = {} } = Astro.props;
   link={getPermalink(post.permalink)}
   title={post.title}
   text={post.description || post.excerpt}
+  classes={styles}
 >
   <Fragment slot="supertitle">
     <time datetime={String(post.publishDate)} class="inline-block">

@@ -20,6 +20,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Number from '~/components/portfolio/Number.astro';
 import Image from '~/components/common/Image.astro';
 import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import RelatedPosts from '~/components/industry/RelatedPosts.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Features4 from '~/components/widgets/Features4.astro';
 import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
@@ -28,7 +29,7 @@ import SimpleContentSlider from '~/components/services/SimpleContentSlider.astro
 import FinalBlock from '~/components/services/FinalBlock.astro';
 import UniversalSlider from '~/components/common/UniversalSlider.astro'
 import ReviewItem from '~/components/portfolio/ReviewItem.astro';
-import HighlightedCases from "~/components/services/HighlightedCases.astro";
+import RelatedPages from "~/components/portfolio/RelatedPages.astro";
 import BlogHighlightedPosts from "~/components/widgets/BlogHighlightedPosts.astro";
 
 export const prerender = true;
@@ -183,11 +184,12 @@ const metadata = merge(
       <IndustryColumnGrid 
         cards={post.when.items}
         classes={{container: 'gap-2 gap-y-2 md:gap-y-2'}}
+        mode="foldOnMobile"
       /> 
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-6 md:mb-20"> 
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col-reverse lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-6 md:mt-20 mb-6 md:mb-20"> 
     { post.firstParagraph && (  
       <div class="basis-0 grow flex flex-col md:block">
         <a id="2"></a>
@@ -237,19 +239,6 @@ const metadata = merge(
     </div>
   )}
   
-  {post.comments2 && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-[32px]">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Платформы</h2>
-  </div>
-  <div class="mb-20">    
-    <SimpleSlider 
-      mode="mode-2"
-      title=""
-      slides={post.comments2}
-    />
-  </div>
-  )}
-  
   <a id="5"></a>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-[32px] mb-[-20px]">
@@ -258,7 +247,7 @@ const metadata = merge(
   
   <RelatedLinks 
     post={post} 
-    hideFields={{showAllButton: true, title: true}}
+    hideFields={{showAllButton: true, title: true, tags: true}}
   />  
  
   <a id="6"></a>
@@ -345,20 +334,31 @@ const metadata = merge(
   <a id="8"></a>
   
   { post.articles && (
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
-        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-0">Экспертиза</h2> 
-        <BlogHighlightedPosts
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-[-20px]">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">Экспертиза</h2> 
+        {/*<RelatedPosts 
+          post={post} 
+          hideFields={{showAllButton: true, title: true, tags: true}}
+        />  */}
+        <RelatedPages
+          styles={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-[-40px]", gridCell: "mb-6 md:mb-0", image: 'hidden sm:block'}}
+          pages={post.articles.map(page => ({collection: 'post', page: page.name}))}
+          hideFields={{ tags: true, year: true }}
+        />
+        
+        {/*<BlogHighlightedPosts
           classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-0", gridCell: "mb-6 md:mb-0" }}
           title={""}
           postIds={['medical-interface-patterns', 'medical-interface-kit', 'electrocardiography', 'medical-interfaces', 'before-interface-testing', 'professional-testing']}
           collection="post"
           hideFields={{year: true, tags: true}}
         />
+        */}
       </div>
   )}
   
   { post.articles2 && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-10 md:mb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-10 mb-10 md:mb-20">
       <Markdown.Inline of={post.articles2.text} />
     </div>
   )}

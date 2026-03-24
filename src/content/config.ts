@@ -432,8 +432,7 @@ const industriesCollection = defineCollection({
         details: z.string().optional(),
       })).optional()
     }).optional(),
-    
-    
+       
     extra: z.string().optional(),
     clients: z.string().optional(),
     users: z.string().optional(),
@@ -493,7 +492,13 @@ const industriesCollection = defineCollection({
         text: z.string().optional(),
       }))
     }).optional(),
-    articles: z.boolean().optional(),
+    articles: z.array(z.object({
+      name: z.string().optional(),
+      title: z.string().optional(),
+      text: z.string().optional(),
+      img: z.string().optional(),
+      link: z.string().optional(),
+    })).optional(),
     articles2: z.object({
       title: z.string().optional(),
       text: z.string().optional(),

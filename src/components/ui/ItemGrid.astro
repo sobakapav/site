@@ -7,7 +7,7 @@ import { Markdown } from '@astropub/md';
 import SideSlider from '~/components/common/SideSlider.astro';
 import RelatedPages from '~/components/portfolio/RelatedPages.astro';
 
-const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+const { items = [], columns, defaultIcon = '', classes = {}, mode } = Astro.props;
 
 const {
   container: containerClass = '',
@@ -37,8 +37,8 @@ const {
         containerClass
       )}
     >
-      {items.map(({ title, description, details, relatedPages, icon, callToAction, classes: itemClasses = {} }) => (
-        <SideSlider containerClasses={twMerge('flex flex-row max-w-md', panelClass)} buttonClasses={twMerge('flex flex-row max-w-md', buttonClass || panelClass, itemClasses?.panel)}>
+      {items.map(({ title, description, link, details, relatedPages, icon, callToAction, classes: itemClasses = {} }) => (
+        <SideSlider link={link} containerClasses={twMerge('flex flex-row max-w-md', panelClass)} buttonClasses={twMerge('flex flex-row max-w-md', buttonClass || panelClass, itemClasses?.panel)}>
           <Fragment slot="button">
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
@@ -55,7 +55,7 @@ const {
                 </h3>
               )}
               {description && (
-                <div class={twMerge(`${title ? 'mt-3' : ''} format-subtitle-markdown marked-list`, descriptionClass, itemClasses?.description)}>
+                <div class={twMerge(`${title ? 'mt-3' : ''} format-subtitle-markdown marked-list`, (('foldOnMobile' === mode) && title && 'hidden sm:block'), descriptionClass, itemClasses?.description)}>
                   <Markdown.Inline of={description} />
                 </div>
               )}
@@ -68,6 +68,20 @@ const {
           </Fragment>
           {details && (
             <Fragment slot="content">
+              {('foldOnMobile' === mode) && (
+                <>
+                  {title && (
+                    <h3 class={twMerge('text-xl sm:hidden', titleClass, itemClasses?.title)}>
+                      <Markdown.Inline of={title} />
+                    </h3>
+                  )}
+                  {description && (
+                    <div class={twMerge(`${title ? 'mt-3' : ''} format-subtitle-markdown marked-list sm:hidden`, descriptionClass, itemClasses?.description)}>
+                      <Markdown.Inline of={description} />
+                    </div>
+                  )}
+                </>
+              )}
               <Markdown.Inline of={details} />
 
             </Fragment>
