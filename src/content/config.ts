@@ -408,6 +408,10 @@ const industriesCollection = defineCollection({
     title: z.string(),
     subtitle: z.string().optional(),
     excerpt: z.string().optional(),
+    finale: z.object({
+      title: z.string().optional(),
+      text: z.string().optional(),
+    }).optional(),
     image: z.string(),
     imageAlt: z.string().optional(),
     thumbnail: z.string().optional(),
