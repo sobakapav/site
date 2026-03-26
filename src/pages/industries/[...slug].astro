@@ -365,11 +365,12 @@ const metadata = merge(
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
     <div class="flex flex-col lg:flex-row gap-10 bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
-      <div class="basis-0 grow">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">{post.finale.title}</h2>
-        <p class="text-white"><Markdown.Inline of={post.finale.text} /></p>
-      </div>
-      
+      { post.finale && (
+        <div class="basis-0 grow">
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">{post.finale.title}</h2>
+          <p class="text-white"><Markdown.Inline of={post.finale.text} /></p>
+        </div>
+      )}  
       <div class="basis-0 grow flex flex-col gap-6">
         <h3 class="font-heading text-3xl leading-none text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline">{SITE.phone}</h3>
         <div class="flex flex-col sm:flex-row gap-10">
