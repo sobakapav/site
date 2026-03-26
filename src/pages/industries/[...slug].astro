@@ -247,75 +247,75 @@ const metadata = merge(
     post={post} 
     hideFields={{showAllButton: true, title: true, tags: true}}
   />  
- 
-  <a id="6"></a>
 
   { post.reviews && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-[-36px] flex flex-col gap-6">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-0">Отзывы</h2>
-      <UniversalSlider count={2} styles={{main: 'review-slider full-width', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
-        {post.reviews && post.reviews.map(review => review.aggregate ? (
-          <div class="flex flex-col review-card-even">
-            {review.aggregate.map(subreview => (
-              <div>
-                <a href={subreview.link}>
-                <ReviewItem
-                  title={subreview.title}
-                  text={subreview.text}
-                  person={subreview.person}
-                  position={subreview.position}
-                  photo={subreview.photo}
-                  styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-                  photoPosition="bottom"
-                />
-                </a>
-                <div class="flex items-center justify-start mb-10">
-                  <a class="noir2-div relative" href={subreview.link}>
-                    <img src={subreview.logo.link} width={subreview.logo.width || '80'}  height={subreview.logo.height || '40'} >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10 mt-10 md:mt-[-36px] flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap">
+      <div class="basis-0 grow">
+        <a id="6"></a>
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отзывы</h2>
+        <UniversalSlider count={1} styles={{main: 'review-slider', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
+          {post.reviews && post.reviews.map(review => review.aggregate ? (
+            <div class="flex flex-col review-card-even">
+              {review.aggregate.map(subreview => (
+                <div>
+                  <a href={subreview.link}>
+                  <ReviewItem
+                    title={subreview.title}
+                    text={subreview.text}
+                    person={subreview.person}
+                    position={subreview.position}
+                    photo={subreview.photo}
+                    styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+                    photoPosition="bottom"
+                  />
                   </a>
+                  <div class="flex items-center justify-start mb-10">
+                    <a class="noir2-div relative" href={subreview.link}>
+                      <img src={subreview.logo.link} width={subreview.logo.width || '80'}  height={subreview.logo.height || '40'} >
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div class="review-card-even">
-            <a href={review.link}>
-            <ReviewItem
-              title={review.title}
-              text={review.text}
-              person={review.person}
-              position={review.position}
-              photo={review.photo}
-              styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
-              photoPosition="bottom"
-            />
-            </a>
-            <div class="flex items-center justify-start mb-10">
-              <a class="noir2-div relative" href={review.link}>
-                <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
-              </a>
+              ))}
             </div>
+          ) : (
+            <div class="review-card-even">
+              <a href={review.link}>
+              <ReviewItem
+                title={review.title}
+                text={review.text}
+                person={review.person}
+                position={review.position}
+                photo={review.photo}
+                styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+                photoPosition="bottom"
+              />
+              </a>
+              <div class="flex items-center justify-start mb-10">
+                <a class="noir2-div relative" href={review.link}>
+                  <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
+                </a>
+              </div>
+            </div>
+          ))}
+        </UniversalSlider>
+      </div>
+    
+      <div class="basis-0 grow">
+        {post.mapBlock && (
+          <a id="7"></a>
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Процесс</h2>
+          <div class="flex flex-col gap-4">
+            <Features4
+              columns={post.mapBlock.columns}
+              items={ post.mapBlock?.items?.map((item) => ({title: item.title, subtitle: item.time, description: item.text})) }
+              classes={}
+              defaultIcon="tabler:circle-check-filled"
+            />
           </div>
-        ))}
-      </UniversalSlider>
+        )}
+      </div>
     </div>
   )} 
-
-  <a id="7"></a>
-    
-  {post.mapBlock && (
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
-      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Процесс</h2>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-8 md:mb-8 flex flex-col gap-6">
-      <Features4
-        columns={post.mapBlock.columns}
-        items={ post.mapBlock?.items?.map((item) => ({title: item.title, subtitle: item.time, description: item.text})) }
-        classes={}
-        defaultIcon="tabler:circle-check-filled"
-      />
-    </div>
-  )}
     
   {post.comments && (
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
