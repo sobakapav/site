@@ -1,0 +1,114 @@
+---
+updateDate: 2026-03-27T00:00:00Z
+publishDate: 2026-03-27
+
+publishYear: 2026
+name: Контроль Инспектор
+uuid: 019d2f32-31b8-74d5-bf57-40c57b440bbd
+title: Сервис для удаленного проведения проверок
+excerpt: Сделали десктопный веб для инспектора и два мобильных приложения.
+context: |
+  Компания [Data Solution](https://datasolution.team/) (наш очень старый клиент). Их специализация — IT-решения для автоматизации контролирующих органов. Мы [не в первый раз](https://sobakapav.ru/portfolio#ds) работаем с ними — у нас больше 15 совместных проектов, в том числе [интерфейс сервиса для управления госреестрами](https://sobakapav.ru/portfolio/control), [конструктор коммерческих презентаций](https://sobakapav.ru/portfolio/data-solution) и мобильные приложения [для подрядчиков бюджетных организаций](https://sobakapav.ru/portfolio/control-mobile), [для работы с предписаниями](https://sobakapav.ru/portfolio/control-predpisanie), [для лесничих](https://sobakapav.ru/portfolio/control-forest) и [для работы с трудовыми патентами](https://sobakapav.ru/portfolio/control-patent)
+image: ~/assets/images/portfolio/control-inspector/main.png
+imageAlt: Собака Павлова • Контроль • Сервис для удаленного проведения проверок
+thumbnail:
+  src: ~/assets/images/portfolio/cards/control-inspector.svg
+  alt: Собака Павлова • Контроль • Сервис для удаленного проведения проверок
+client:
+  uuid: 019c9c93-040b-7daa-8df0-7904064d928a
+  src: ~/assets/images/portfolio/control/logo.svg
+  alt: Data Solution
+  link: https://datasolution.team/
+tags:
+  - gos
+  - ux-design
+  - ux-outsource
+  - mass
+  - mob
+  - control
+
+relatedPages:
+  - text: |
+      ### Вам нужен интерфейс?
+      #### Заказать дизайн
+      Напишите нам на&nbsp;[we@sobakapav.ru](mailto:we@sobakapav.ru) 
+      #### Что мы можем сделать?
+      [UX-дизайн](/ux-design) и [продуктовые исследования](/ux-researches), независимо или [на аутсорсе](/ux-outstaff). 
+    collection: services
+    page: ux-design
+
+relatedPages2:
+  - text: |
+      ### Похожие проекты
+    collection: portfolio
+    page: smartdeal-ecp
+  - collection: portfolio
+    page: gormost
+  - collection: portfolio
+    page: trash
+  - collection: portfolio
+    page: smartdeal
+  - collection: portfolio
+    page: lantapro
+
+result:
+  - src: ~/assets/images/portfolio/figma.svg
+    text: Покажем из рук в руки и расскажем ещё больше
+    link: "mailto:we@sobakapav.ru"
+budget: ??? ₽
+time: ??? месяца
+
+director: "Слово директора"
+metadata:
+  canonical: https://sobakapav.ru/portfolio/control-inspector
+  title: Мобильный интерфейс • Сервис для удаленного проведения проверок
+  description: "Сделали десктопный веб для инспектора и два мобильных приложения."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Собака Павлова
+    images:
+      - url: '~/assets/images/portfolio/control-inspector/badge.png'
+        width: 1200
+        height: 630
+  
+---
+import Image from '~/components/common/Image.astro';
+import TOC from '~/components/widgets/TOC.astro';
+
+<TOC>
+[Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Результат](#anchor3) • [Интерфейсные решения](#anchor4) • [Оплата](#anchor5) • [Подтверждение](#anchor6) • [Авторизация](#anchor7) • [Напоминания](#anchor8) • [Платформа и язык](#anchor9) • [Отзыв, цены, сроки](#anchor10)
+</TOC>
+
+## <a name="anchor1" />Бизнес-задача
+
+
+## <a name="anchor2" />Дизайн-задача
+
+
+## <a name="anchor3" />Результат
+
+Сервис для удаленного проведения проверок контрольными органами подотчетных им компаний. 
+
+Дедали три продукта: десктопный веб для инспектора, мобильное приложение для инспектора, мобильное приложение для контролируемого лица.
+
+Аналитика была на стороне заказчика, мы работали по строгому ТЗ и привлекали команду заказчика только в случае непонятных нам отраслевых и юридических моментов.
+
+Важно было сохранить преемственность государственных дизайн-систем и сделать минимум кастомного для быстрой разработки.
+
+Важными для работы с сервисом было удобно организовать напоминание о предстоящих встречах (и для инспектора, и для КЛ), чтобы свести к минимуму опоздания и дискоммуникацию.
+
+Крутой кусок системы – видеозвонки (ВКС), во время которых происходят проверки. В процессе встречи инспектору важно следить за местоположением представителя контролируемого лица, видеть список объектов для контроля и взаимодействовать со списком вопросов из чек-листа проверки.
+
+Еще любопытный функционал – возможность передать КЛ на время чек-лист для самостоятельного заполнения (в случае, если на объекте нет связи и ВКС невозможна). Тогда процесс ответов на вопросы чек-листа становится доступен КЛ. В этом режиме предусмотрели кейс отложенной загрузки данных (пока на устройстве не появится связь, данные хранятся локально и пытатся отправиться на сервер).
+
+По итогу проекта часть предложенного функционала пришлось перенести в бэклог, а первую версию для показа в министерстве собирать из самых важных (по мнению министра) элементов и функциональности.
+
+
+### <a name="anchor10" />
+
+
+
+
+
