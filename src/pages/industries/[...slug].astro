@@ -93,11 +93,11 @@ const metadata = merge(
         </div>
         { post.presentation ? (
         <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
-          <a href="/images/Презентация медицинская.pdf">Скачать презентацию</a>
+          <a href="{post.presentation}">Скачать презентацию</a>
         </div>
         ) : (
           <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
-            <a href="presentation: "/images/Собака Павлова_презентация.pdf"">Скачать презентацию</a>
+            <a href="/images/Собака Павлова_презентация.pdf">Скачать презентацию</a>
           </div>
         )}  
       </div>
@@ -208,11 +208,11 @@ const metadata = merge(
               <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
               <div class="flex flex-col justify-between">
               <Markdown.Inline of={post.clients} />
-              <div class="flex justify-end">
+              {/*<div class="flex justify-end">
                 <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
                   <a href="/portfolio#med">Портфолио →</a>
                 </div>
-              </div>
+              </div>*/}
             </div>
           </div>
         </Fragment>
@@ -383,6 +383,15 @@ const metadata = merge(
             { post.presentation && (
             <a class="no-underline hover:underline underline-offset-4 text-base" href="/images/Презентация медицинская.pdf">Скачать презентацию в PDF</a>
             )}
+            { post.presentation ? (
+              <div class="no-underline hover:underline underline-offset-4 text-base">
+                <a href="{post.presentation}">Скачать презентацию</a>
+              </div>
+              ) : (
+              <div class="no-underline hover:underline underline-offset-4 text-base">
+                <a href="/images/Собака Павлова_презентация.pdf">Скачать презентацию</a>
+              </div>
+            )}  
           </div>
         </div>
       </div>
