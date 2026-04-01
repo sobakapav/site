@@ -1,0 +1,33 @@
+.text-screen-gadget {
+  &.tech {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid var(--aw-color-grey1);
+    background-color: var(--aw-color-grey8);
+    padding: 40px;
+    border-radius: 20px;
+  
+    .text-screen {
+      min-height: 160px;
+      border: 4px solid var(--aw-color-accent);
+      background-color: var(--aw-color-grey1);
+      padding: 20px;
+      border-radius: 8px;
+      color: var(--aw-color-green3);
+      font-family: monospace;
+      font-size: 20px;
+      text-shadow: 0 0 6px rgba(0, 255, 156, 0.6);
+    }
+  
+    .buttons-container {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+    }
+  
+    .tsg-button {
+      cursor: hand;
+      
+    }
+  
+  } 
+}

@@ -15,6 +15,7 @@ import { Markdown } from '@astropub/md';
 
 import IndustryColumnGrid from '~/components/industry/IndustryColumnGrid.astro';
 import TearOff from '~/components/industry/TearOff.astro';
+import TextScreenGadget from '~/components/industry/TextScreenGadget.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
@@ -191,51 +192,58 @@ const metadata = merge(
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col-reverse lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-10 md:mt-20 mb-10 md:mb-20"> 
     {post.firstParagraph ? (
-      post.firstParagraph && (  
-        <Fragment>
-          <div class="basis-0 grow flex flex-col md:block">
-            <a id="2"></a>
-            <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
-            <p class="mb-6">{post.firstParagraph.text}</p>
-             <IndustryColumnGrid
-                columns={2}
-                cards={post.firstParagraph.items}
-                classes={{container: 'gap-2 gap-y-2 md:gap-y-2', cell: 'pt-5'}}
-              />  
+      <Fragment>
+        <div class="basis-0 grow flex flex-col md:block">
+          <a id="2"></a>
+          { post.firstParagraph.visual ? (
+            <TextScreenGadget
+              items={post.firstParagraph.items}
+              visual={post.firstParagraph.visual}
+              />
+          ) : (
+            <>  
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+              <p class="mb-6">{post.firstParagraph.text}</p>
+               <IndustryColumnGrid
+                  columns={2}
+                  cards={post.firstParagraph.items}
+                  classes={{container: 'gap-2 gap-y-2 md:gap-y-2', cell: 'pt-5'}}
+                />  
+            </>
+          )}
+        </div>
+        <div class="basis-0 grow">
+          <a id="3"></a>
+            <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+            <div class="flex flex-col justify-between">
+            <Markdown.Inline of={post.clients} />
+            {/*<div class="flex justify-end">
+              <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                <a href="/portfolio#med">Портфолио →</a>
+              </div>
+            </div>*/}
           </div>
-          <div class="basis-0 grow">
-            <a id="3"></a>
-              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
-              <div class="flex flex-col justify-between">
-              <Markdown.Inline of={post.clients} />
-              {/*<div class="flex justify-end">
-                <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
-                  <a href="/portfolio#med">Портфолио →</a>
-                </div>
-              </div>*/}
-            </div>
-          </div>
-        </Fragment>
-        )
-      ) : (
-        <Fragment>
-          <TearOff />
+        </div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        <TearOff />
 
-          <div class="basis-0 grow-[3]">
-            <a id="3"></a>
-              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
-              <div class="flex flex-col justify-between">
-              <Markdown.Inline of={post.clients} />
-              {/*<div class="flex justify-end">
-                <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
-                  <a href="/portfolio#med">Портфолио →</a>
-                </div>
-              </div>*/}
-            </div>
+        <div class="basis-0 grow-[3]">
+          <a id="3"></a>
+            <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+            <div class="flex flex-col justify-between">
+            <Markdown.Inline of={post.clients} />
+            {/*<div class="flex justify-end">
+              <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                <a href="/portfolio#med">Портфолио →</a>
+              </div>
+            </div>*/}
           </div>
-        </Fragment>
-      )} 
-    </div> 
+        </div>
+      </Fragment>
+    )} 
+  </div> 
   
   <a id="5"></a>
   

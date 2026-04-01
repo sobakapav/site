@@ -1,0 +1,85 @@
+---
+
+import { twMerge } from "tailwind-merge";
+import { $id } from '~/utils/utils.ts';
+import { Markdown } from '@astropub/md';
+import './TextScreenGadget.less';
+
+const { items, title = "", visual = 'tech' } = Astro.props;
+
+const id = $id('tsg');
+
+---
+
+<div class:list={["text-screen-gadget", visual]} id={id}>
+  { title && (
+    <div class="title-frame">
+      <Markdown.Inline of={title} />    
+    </div>
+  )}
+  
+  <div class="text-screen" id={`${id}-screen`}>
+    {items[0]?.details}
+  </div>
+  
+  <ul class="buttons-container">
+    {items.map(item => (
+      <li class="tsg-button m-5" data-text={item.details}>{item.text}</li>
+    ))}
+  </ul>
+  
+  <script>
+    const TSG_TICKERS = {};
+    var TSG_RUNNER = '';
+    
+    function tsg_tick() {
+      var runners = 0;
+      for (const ticker in TSG_TICKERS) {
+        const component = document.getElementById(ticker);
+        const currentText = component.innerText;
+        const targetText = TSG_TICKERS[ticker];
+        const newText = targetText.substring(0, currentText.length + 2);
+        component.innerText = newText;
+        
+        if (newText.length == targetText.length) {
+          delete TSG_TICKERS[ticker];
+        } else {
+          runners++;
+        }
+      }
+      
+      if (runners == 0) {
+        window.clearInterval(TSG_RUNNER);
+        TSG_RUNNER = '';
+      }
+    }
+    
+    function tsg_click(target) {
+      var parent = target;
+      while (parent && !parent.classList.contains('text-screen-gadget')) {
+        parent = parent.parentElement;
+      }
+
+      const textField = parent?.querySelector('.text-screen');
+      
+      if (textField) {
+        TSG_TICKERS[textField.id] = target.dataset.text;
+        textField.innerText = '';
+        if (!TSG_RUNNER) {
+          TSG_RUNNER = window.setInterval(tsg_tick, 100);
+        }
+      }
+    }
+    
+    function tsg_init() {
+      for (const button of document.querySelectorAll('.text-screen-gadget .tsg-button')) {
+        button.addEventListener('click', (e) => tsg_click(e.target));
+      }
+    }
+
+    window.addEventListener("load", (event) => {
+      tsg_init();
+    });
+
+  </script>
+</div>

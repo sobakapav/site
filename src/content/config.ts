@@ -429,6 +429,7 @@ const industriesCollection = defineCollection({
     firstParagraph: z.object({
       title: z.string().optional(),
       text: z.string().optional(),
+      visual: z.string().optional(),
       items: z.array(z.object({
         title: z.string().optional(),
         cardColor: z.string().optional(),
