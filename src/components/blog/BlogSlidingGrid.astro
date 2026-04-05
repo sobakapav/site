@@ -1,12 +1,15 @@
 ---
 import GenericSlidingGrid from '~/components/common/GenericSlidingGrid.astro';
-import Item from '~/components/portfolio/ListItem.astro';
+import Item from '~/components/blog/ListItem.astro';
+import { findPostsByIds } from '~/utils/blog';
 
 const { posts, hideFields = {} } = Astro.props;
 
+const allPosts = await findPostsByIds(posts);
+
 ---
 <GenericSlidingGrid
-  items={posts}
+  items={allPosts}
   hideFields={hideFields}
   Item={Item}
-  isBlog={false} />
+  isBlog={true} />

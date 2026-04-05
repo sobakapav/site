@@ -17,6 +17,7 @@ import IndustryColumnGrid from '~/components/industry/IndustryColumnGrid.astro';
 import TearOff from '~/components/industry/TearOff.astro';
 import TextScreenGadget from '~/components/industry/TextScreenGadget.astro';
 import SinglePost from '~/components/blog/SinglePost.astro';
+import BlogSlidingGrid from '~/components/blog/BlogSlidingGrid.astro';
 import Bread from '~/components/widgets/Bread.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Number from '~/components/portfolio/Number.astro';
@@ -218,7 +219,7 @@ const metadata = merge(
             <div class="flex flex-col justify-between">
             <Markdown.Inline of={post.clients} />
             <div class="flex justify-end">
-              <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11 mt-10">
+              <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
                 <a href="/portfolio#med">Портфолио →</a>
               </div>
             </div>
@@ -340,26 +341,13 @@ const metadata = merge(
   <a id="8"></a>
   
   { post.articles && (
+      
       <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-0">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">Экспертиза</h2> 
-        {/*<RelatedPosts 
-          post={post} 
+        <BlogSlidingGrid
+          posts={post.articles}
           hideFields={{showAllButton: true, title: true, tags: true}}
-        />  */}
-        <RelatedPages
-          styles={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-[-40px]", gridCell: "mb-6 md:mb-0", image: 'hidden sm:block'}}
-          pages={post.articles.map(page => ({collection: 'post', page: page.name}))}
-          hideFields={{ tags: true, year: true }}
-        />
-        
-        {/*<BlogHighlightedPosts
-          classes={{ container: "pt-0 lg:pt-0 md:pt-0 max-w-2xl xl:max-w-7xl mx-auto related-posts mb-0", gridCell: "mb-6 md:mb-0" }}
-          title={""}
-          postIds={['medical-interface-patterns', 'medical-interface-kit', 'electrocardiography', 'medical-interfaces', 'before-interface-testing', 'professional-testing']}
-          collection="post"
-          hideFields={{year: true, tags: true}}
-        />
-        */}
+          />
       </div>
   )}
   

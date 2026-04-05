@@ -1,6 +1,8 @@
 /* Slider */
 
 simple-slider {
+  position: relative;
+
   .slider-mob {
     display: none;
   }
@@ -97,40 +99,6 @@ simple-slider {
      margin-left: -75%;
   }
   
-  
-  .slider-buttons {
-     position: absolute;
-     bottom: 10px;
-     left: 16px;
-     display: flex;
-     gap: 8px;
-     width: 100%;
-     z-index: 1;
-  }
-  
-  .slider-button {
-    border-radius: 24px;
-    border: none;
-    opacity: 80%;
-    width: 48px;
-    height: 48px;
-    background: unset;
-    color: #fff;
-    cursor: pointer;
-    opacity: .8;
-    transition: all 0.4s ease;
-  }
-    
-  .slider-button:hover {
-     opacity: 1;
-     transform:scale(1.1);
-  }
-  
-  .slider-button-right {
-    position: absolute;
-    right: 0px;
-  }
-  
   @media (max-width: 1200px) {
     .slider {
       width: 900px;
@@ -159,6 +127,12 @@ simple-slider {
       overflow: hidden;
       border-radius: 8px;
     }
+      
+    .slider-details {
+      .details-slide {
+        display: none;
+      }
+    }
   }
   
   @media (max-width: 360px) {
@@ -182,6 +156,7 @@ simple-slider {
   &:has(input.ux1:checked) {
     .details-slide-1 {
       background-color: var(--aw-color-bg-accent2);
+      display: block;
       
       .details-slide-details {
         display: block;
@@ -192,6 +167,7 @@ simple-slider {
   &:has(input.ux2:checked) {
     .details-slide-2 {
       background-color: var(--aw-color-bg-accent2);
+      display: block;
       
       .details-slide-details {
         display: block;
@@ -202,6 +178,7 @@ simple-slider {
   &:has(input.ux3:checked) {
     .details-slide-3 {
       background-color: var(--aw-color-bg-accent2);
+      display: block;
       
       .details-slide-details {
         display: block;
@@ -212,6 +189,7 @@ simple-slider {
   &:has(input.ux4:checked) {
     .details-slide-4 {
       background-color: var(--aw-color-bg-accent2);
+      display: block;
       
       .details-slide-details {
         display: block;
@@ -240,6 +218,10 @@ simple-slider {
         overflow: hidden;
         border-radius: 8px;
       }
+      
+      .slider-buttons {
+        display: flex;
+      }
     }
     
     @media (max-width: 360px) {
@@ -257,6 +239,10 @@ simple-slider {
         background-color: var(--aw-color-bg-page-dark);
         color: var(--aw-color-grey9);
         
+        h3.font-heading {
+          font-family: var(--aw-font-heading, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+          font-size: 30px;
+        }
       }
     }
     

@@ -497,13 +497,7 @@ const industriesCollection = defineCollection({
         text: z.string().optional(),
       }))
     }).optional(),
-    articles: z.array(z.object({
-      name: z.string().optional(),
-      title: z.string().optional(),
-      text: z.string().optional(),
-      img: z.string().optional(),
-      link: z.string().optional(),
-    })).optional(),
+    articles: z.array(z.string()).optional(),
     articles2: z.object({
       title: z.string().optional(),
       text: z.string().optional(),
