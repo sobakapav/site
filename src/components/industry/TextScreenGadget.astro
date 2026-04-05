@@ -5,21 +5,23 @@ import { $id } from '~/utils/utils.ts';
 import { Markdown } from '@astropub/md';
 import './TextScreenGadget.less';
 
-const { items, title = "", visual = 'tech' } = Astro.props;
+const { items, title = "", visual = 'tech', increment = 2 } = Astro.props;
 
 const id = $id('tsg');
 
 ---
 
 <div class:list={["text-screen-gadget", visual]} id={id}>
-  <img src="">
+  <img src="/images/industries/tech.svg" class="image">
+  <img src="/images/industries/tech2.svg" class="image2">
+  
   { title && (
     <div class="title-frame">
       <Markdown.Inline of={title} />    
     </div>
   )}
   
-  <div class="text-screen" id={`${id}-screen`}>
+  <div class="text-screen" id={`${id}-screen`} data-increment={increment}>
     {items[0]?.details}
   </div>
   
@@ -37,10 +39,11 @@ const id = $id('tsg');
       var runners = 0;
       for (const ticker in TSG_TICKERS) {
         const component = document.getElementById(ticker);
-        const currentText = component.innerText;
+        const currentText = component.dataset.text;
         const targetText = TSG_TICKERS[ticker];
-        const newText = targetText.substring(0, currentText.length + 2);
+        const newText = targetText.substring(0, currentText.length + parseInt(component.dataset.increment));
         component.innerText = newText;
+        component.dataset.text = newText;
         
         if (newText.length == targetText.length) {
           delete TSG_TICKERS[ticker];
@@ -65,7 +68,7 @@ const id = $id('tsg');
       
       if (textField) {
         TSG_TICKERS[textField.id] = target.dataset.text;
-        textField.innerText = '';
+        textField.dataset.text = '';
         if (!TSG_RUNNER) {
           TSG_RUNNER = window.setInterval(tsg_tick, 100);
         }

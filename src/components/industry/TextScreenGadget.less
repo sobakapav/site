@@ -1,22 +1,24 @@
 .text-screen-gadget {
   &.tech {
+    position: relative;
     display: flex;
     flex-direction: column;
-    border: 4px solid var(--aw-color-grey1);
+    border: 10px solid var(--aw-color-accent);
     background-color: var(--aw-color-grey8);
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 60px;
   
     .text-screen {
-      min-height: 160px;
-      border: 4px solid var(--aw-color-accent);
+      min-height: 180px;
+      border: 10px solid var(--aw-color-accent);
       background-color: var(--aw-color-grey1);
       padding: 20px;
-      border-radius: 8px;
+      border-radius: 20px;
       color: var(--aw-color-green3);
       font-family: monospace;
       font-size: 20px;
       text-shadow: 0 0 6px rgba(0, 255, 156, 0.6);
+      margin-bottom: 40px;
     }
   
     .buttons-container {
@@ -25,9 +27,34 @@
     }
   
     .tsg-button {
-      cursor: hand;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-family: monospace;
+      text-transform: uppercase;
       
+      &::before {
+        display: block;
+        content: ' ';
+        width: 35px;
+        height: 30px;
+        background: url("/images/industries/button.svg");
+        margin-right: 8px;
+      }
     }
+    
+    .image {
+      position: absolute;
+      top: 180px;
+      right: 20px;
+    }
+    
+    .image2 {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
   
   } 
 }
