@@ -174,13 +174,20 @@ import UniversalSlider from '~/components/common/UniversalSlider.astro'
 
 Далее перешли на этап концептуального проектирования. Проработали карточку заказа, навигацию и главный экран. На уровне концептов предложили заказчику сделать экран карточки заказа более емким, показывать на нем только основную важную информацию, которая требуется водителю в момент доставки груза. Остальное спрятали в табы. Такое решение поможет снизить когнитивную нагрузку и избавит пользователя от необходимости скроллить один бесконечный экран. 
 
-<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/antor/9.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/antor/10.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0" /></div>
-<em>Концепты. Весь список</em>
+<UniversalSlider count={3}>
+  <Image src="~/assets/images/portfolio/antor/9.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0"/>
+  <Image src="~/assets/images/portfolio/antor/10.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0" />
+  <Image src="~/assets/images/portfolio/antor/7.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/antor/8.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0" />
+</UniversalSlider>
+<div class="flex gap-2 flex-wrap"> </div>
 
 Согласовали концепты и перешли к детальному проектированию. Весь этап проектирования был разбит на 3 спринта. Чтобы избежать риска забыть какую то часть системы или не уложиться в объем проекта, сформировали [таблицу с задачами](https://docs.google.com/spreadsheets/d/1ieOYj_oP-tNT62vFSG51xdL2HQeL6HLGWHh3FVjtKe8/edit?gid=1242891013#gid=1242891013). Прописали какие экраны входят в какой спринт, сколько закладываем времени на каждый раздел и статус задачи.
 
-<div class="flex gap-2 flex-wrap"> <Image src="~/assets/images/portfolio/antor/8.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0"/> <Image src="~/assets/images/portfolio/antor/9.png" alt="Собака Павлова • Антор • Мобильное приложение для автоматизации логистики" class="min-w-72 grow shrink basis-0" /></div>
-<em>Концепты. Карточка заказа</em>
+<div class="flex gap-2 flex-wrap mb-2"> 
+  <PhoneMockup image="/images/portfolio/antor/2.png" />
+  <PhoneMockup image="/images/portfolio/antor/3.png" />
+</div>
+<em></em>
 
 Финальным этапом прописали системные правила и сетки. Это поможет разработке заказчика постепенно внедрять наше решение. 
 
