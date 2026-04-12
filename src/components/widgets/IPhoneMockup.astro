@@ -1,0 +1,15 @@
+---
+
+import './PhoneMockup.less';
+
+const { image } = Astro.props;
+
+---
+<phone-mockup>
+  <div class="daisy-mockup-phone">
+    <div class="daisy-camera"></div>
+    <div class="daisy-display">
+      <div class="daisy-artboard daisy-artboard-demo daisy-phone-1 justify-start"><img src={image} class="mt-0 mb-0" /></div>
+    </div>
+  </div>
+</phone-mockup>
