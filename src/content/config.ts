@@ -458,6 +458,36 @@ const industriesCollection = defineCollection({
       }))
     }).optional(),
     
+    what1: z.object({
+      title: z.string().optional(),
+      items: z.array(z.object({
+        title: z.string().optional(),
+        cardColor: z.string().optional(),
+        text: z.string().optional(),
+        link: z.string().optional(),
+        details: z.string().optional(),
+        relatedPages: z.array(z.object({
+          page: z.string(),
+          collection: z.string(),
+        })).optional(),
+      }))
+    }).optional(),
+    
+    what2: z.object({
+      title: z.string().optional(),
+      items: z.array(z.object({
+        title: z.string().optional(),
+        cardColor: z.string().optional(),
+        text: z.string().optional(),
+        link: z.string().optional(),
+        details: z.string().optional(),
+        relatedPages: z.array(z.object({
+          page: z.string(),
+          collection: z.string(),
+        })).optional(),
+      }))
+    }).optional(),
+    
     comments: z.array(z.object({
       title: z.string().optional(),
       text: z.string().optional(),

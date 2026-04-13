@@ -120,6 +120,10 @@ const metadata = merge(
         </span><span> • </span>
         
         <span>
+          <a href="#3" class="underline underline-offset-2">Заказчики</a>
+        </span><span> • </span>
+        
+        <span>
           <a href="#5" class="underline underline-offset-2">Проекты</a>
         </span><span> • </span>
                   
@@ -245,6 +249,30 @@ const metadata = merge(
       </Fragment>
     )} 
   </div> 
+  
+  {post.what1 && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-10 md:mb-20"> 
+      <a id="4"></a>
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap"> 
+        <div class="basis-0 grow">
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">{post.what1.title}</h2>
+          <ul>
+            { post.what1.items.map(item => (
+              <li>{item.text}</li>
+            ))} 
+          </ul>
+        </div>
+        <div class="basis-0 grow">
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">{post.what2.title}</h2>
+          <ul>
+            { post.what2.items.map(item => (
+              <li>{item.text}</li>
+            ))} 
+          </ul>
+        </div>
+      </div>
+    </div>
+  )} 
   
   <a id="5"></a>
   
