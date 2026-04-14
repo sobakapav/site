@@ -306,11 +306,13 @@ const metadata = merge(
                     photoPosition="bottom"
                   />
                   </a>
-                  <div class="flex items-center justify-start mb-10">
-                    <a class="noir2-div relative" href={subreview.link}>
-                      <img src={subreview.logo.link} width={subreview.logo.width || '80'}  height={subreview.logo.height || '40'} >
-                    </a>
-                  </div>
+                  {subreview.logo && (
+                    <div class="flex items-center justify-start mb-10">
+                      <a class="noir2-div relative" href={subreview.link}>
+                        <img src={subreview.logo.link} width={subreview.logo.width || '80'}  height={subreview.logo.height || '40'} >
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -327,11 +329,13 @@ const metadata = merge(
                 photoPosition="bottom"
               />
               </a>
-              <div class="flex items-center justify-start mb-10">
-                <a class="noir2-div relative" href={review.link}>
-                  <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
-                </a>
-              </div>
+              {review.logo && (
+                <div class="flex items-center justify-start mb-10">
+                  <a class="noir2-div relative" href={review.link}>
+                    <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </UniversalSlider>
