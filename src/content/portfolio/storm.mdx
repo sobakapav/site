@@ -86,6 +86,7 @@ metadata:
 import Image from '~/components/common/Image.astro';
 import TOC from '~/components/widgets/TOC.astro';
 import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import ImageSlider from '~/components/common/ImageSlider.astro';
 
 <TOC>
 [Бизнес-задача](#anchor1) • [Дизайн-задача](#anchor2) • [Аналитика](#anchor3) • [Дизайн](#anchor4) • [Экстра-польза](#anchor5) • [Отзыв, цены, сроки](#anchorRev)
@@ -155,9 +156,17 @@ _Формирование отчета_
 
 Дальше все очень стандартно – три итерации проектирования отдельных частей интерфейса (симулятор, формирование отчета и сам отчет). Потом общая  вычитка макетов и внесение мелких правок.
 
-<UniversalSlider count={1}>
-   <Image src="~/assets/images/portfolio/ыещкь/11.png" alt="Собака Павлова • Storm BPMN • Система для построения бизнес-процессов" />
-</UniversalSlider>
+<ImageSlider slides={[
+  '/images/portfolio/storm/11.png',
+  '/images/portfolio/storm/12.png',
+  '/images/portfolio/storm/13.png',
+  '/images/portfolio/storm/14.png',
+  '/images/portfolio/storm/15.png',
+  '/images/portfolio/storm/16.png',
+  '/images/portfolio/storm/17.png',
+  '/images/portfolio/storm/18.png',
+  '/images/portfolio/storm/19.png',
+]}/>
 <em>User-flow «Добавление ресурса»</em>
 
 ## <a name="anchor5" />Экстра-польза
