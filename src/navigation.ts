@@ -70,6 +70,23 @@ export const headerData = {
       ],
     },
     {
+      text: 'Отрасли',
+      links: [
+        {
+          text: 'Медицина',
+          href: getPermalink('/industries/healthcare'),
+        },
+        {
+          text: 'Промышленность',
+          href: getPermalink('/industries/heavy'),
+        },
+        {
+          text: 'E-коммерция',
+          href: getPermalink('/industries/ecommerce'),
+        },
+      ],
+     },  
+    {
       text: 'Экспертиза',
       links: [
         {
