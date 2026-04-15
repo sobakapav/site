@@ -84,6 +84,14 @@ export const headerData = {
           text: 'E-коммерция',
           href: getPermalink('/industries/ecommerce'),
         },
+        {
+          text: 'Финансы',
+          href: getPermalink('/industries/fintech'),
+        },
+        {
+          text: 'Образование',
+          href: getPermalink('/industries/education'),
+        },
       ],
      },  
     {
