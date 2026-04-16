@@ -1,0 +1,67 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const metadata = {
+  title: 'Списки',
+};
+
+const services = await getCollection('services');
+const post = await getCollection('post');
+const portfolio = await getCollection('portfolio');
+const research = await getCollection('research');
+const design2dev = await getCollection('design2dev');
+const cheatsheets = await getCollection('cheatsheets');
+
+---
+<Layout metadata={metadata}>
+
+https://sobakapav.ru<br/>
+https://sobakapav.ru/about<br/>
+https://sobakapav.ru/books<br/>
+https://sobakapav.ru/cheatsheets<br/>
+
+{cheatsheets.map(elem => (
+  <Fragment>https://sobakapav.ru/cheatsheets/{elem.data.alias[0]}<br/></Fragment>
+))}
+
+https://sobakapav.ru/contacts<br/>
+https://sobakapav.ru/design2dev<br/>
+
+{design2dev.map(elem => (
+  <Fragment>https://sobakapav.ru/design2dev/{elem.slug}<br/></Fragment>
+))}
+
+https://sobakapav.ru/graduates<br/>
+https://sobakapav.ru/portfolio<br/>
+
+{portfolio.map(elem => (
+  <Fragment>https://sobakapav.ru/portfolio/{elem.slug}<br/></Fragment>
+))}
+
+https://sobakapav.ru/publications<br/>
+
+{post.map(elem => (
+  <Fragment>https://sobakapav.ru/publications/{elem.id}<br/></Fragment>
+))}
+
+https://sobakapav.ru/services<br/>
+
+{services.map(elem => (
+  <Fragment>https://sobakapav.ru/services/{elem.slug}<br/></Fragment>
+))}
+
+https://sobakapav.ru/social-network<br/>
+https://sobakapav.ru/ux-research<br/>
+
+{research.map(elem => (
+  <Fragment>https://sobakapav.ru/ux-research/{elem.slug}<br/></Fragment>
+))} 
+
+https://sobakapav.ru/ux-design<br/>
+https://sobakapav.ru/ux-outstaff<br/>
+https://sobakapav.ru/ux-researches<br/>
+https://sobakapav.ru/vacancy<br/>
+https://sobakapav.ru/video<br/>
+
+</Layout>
