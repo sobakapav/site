@@ -92,6 +92,10 @@ export const headerData = {
           text: 'Образование',
           href: getPermalink('/industries/education'),
         },
+        {
+          text: 'Транспорт',
+          href: getPermalink('/industries/logistics'),
+        },
       ],
      },  
     {
