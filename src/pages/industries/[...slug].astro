@@ -119,9 +119,11 @@ const metadata = merge(
           <a href="#3" class="underline underline-offset-2">Заказчики</a>
         </span><span> • </span>
         
+        {post.what1 && (
         <span>
-          <a href="#3" class="underline underline-offset-2">Заказчики</a>
+          <a href="#4" class="underline underline-offset-2">{post.what1.title}</a>
         </span><span> • </span>
+        )}
         
         <span>
           <a href="#5" class="underline underline-offset-2">Проекты</a>
@@ -212,7 +214,7 @@ const metadata = merge(
                <IndustryColumnGrid
                   columns={2}
                   cards={post.firstParagraph.items}
-                  classes={{container: 'gap-2 gap-y-2 md:gap-y-2', cell: 'pt-5'}}
+                  classes={{container: 'gap-2 gap-y-2 md:gap-y-2'}}
                 />  
             </>
           )}
@@ -366,14 +368,14 @@ const metadata = merge(
       mode="mode-2"
       title=""
       slides={post.comments}
+      classes={{main: 'mb-10 md:mb-20'}}
     />
   </div>
   )}
   
   <a id="8"></a>
   
-  { post.articles && (
-      
+  { post.articles && ( 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-0">
         <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">Экспертиза</h2> 
         <BlogSlidingGrid

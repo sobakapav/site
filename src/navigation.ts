@@ -96,6 +96,10 @@ export const headerData = {
           text: 'Транспорт',
           href: getPermalink('/industries/logistics'),
         },
+        {
+          text: 'Госсектор',
+          href: getPermalink('/industries/govtech'),
+        },
       ],
      },  
     {

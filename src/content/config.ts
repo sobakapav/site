@@ -435,6 +435,7 @@ const industriesCollection = defineCollection({
         cardColor: z.string().optional(),
         text: z.string().optional(),
         details: z.string().optional(),
+        link: z.string().optional(),
       })).optional()
     }).optional(),
        
@@ -513,20 +514,6 @@ const industriesCollection = defineCollection({
     reviews: z.array(industriesReview).optional(),
     reviews2: z.array(industriesReview).optional(),
        
-    services: z.object({
-      title: z.string().optional(),
-      items: z.array(z.object({
-        title: z.string().optional(),
-        text: z.string().optional(),
-      }))
-    }).optional(),
-    notThisService: z.object({
-      title: z.string().optional(),
-      items: z.array(z.object({
-        title: z.string(),
-        text: z.string().optional(),
-      }))
-    }).optional(),
     articles: z.array(z.string()).optional(),
     articles2: z.object({
       title: z.string().optional(),
@@ -540,7 +527,7 @@ const industriesCollection = defineCollection({
       title: z.string().optional(),
       columns: z.number().optional(),
       items: z.array(z.object({
-        title: z.string(),
+        title: z.string().optional(),
         time: z.string().optional(),
         text: z.string().optional(),
       }))

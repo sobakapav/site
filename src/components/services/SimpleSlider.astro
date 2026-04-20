@@ -5,7 +5,8 @@ import SimpleContentSlider from '~/components/services/SimpleContentSlider.astro
 const {
   slides, 
   mode, 
-  title='Особенности'
+  title='Особенности',
+  classes = {},
 } = Astro.props;
 
 if (slides.length != 4) {
@@ -16,6 +17,7 @@ if (slides.length != 4) {
 <SimpleContentSlider
   mode={mode}
   title={title}
+  classes={classes}
   blockTitles={[{title: slides[0].title, text: slides[0].text}, {title: slides[1].title, text: slides[1].text}, {title: slides[2].title, text: slides[2].text}, {title: slides[3].title, text: slides[3].text}]}
 >
   <Fragment slot="block1">
