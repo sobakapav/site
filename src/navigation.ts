@@ -85,6 +85,10 @@ export const headerData = {
           href: getPermalink('/industries/ecommerce'),
         },
         {
+          text: 'B2B и сложные системы',
+          href: getPermalink('/industries/enterprise'),
+        },
+        {
           text: 'Финансы',
           href: getPermalink('/industries/fintech'),
         },
