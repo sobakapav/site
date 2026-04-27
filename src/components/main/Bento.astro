@@ -79,19 +79,18 @@ import '~/components/main/Bento.less';
     <div class="flex flex-col">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отрасли</h2>
       
-      <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-6 dark:text-[--aw-color-text-light-default]">
+      <div class="flex flex-col sm:flex-row justify-start mb-4 gap-4 sm:gap-4 dark:text-[--aw-color-text-light-default]">
         <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#med">Медицина</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#prom">Промышленность</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#fin">Финансы</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#it">IT-продукты для бизнеса</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ec">E-commerce</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/healthcare">Медицина</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/heavy">Промышленность и безопасность</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/enterprise">B2B и сложные системы</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/ecommerce">E-commerce</a></li>
         </ul> 
         <ul class="flex flex-col text-xl leading-[26px] underline underline-offset-4 gap-4">
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#ed">Образование</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#gos">Госсектор и безопасность</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#log">Транспорт и туризм</a></li>
-          <li><a class="underline-offset-4 decoration-1" href="https://sobakapav.ru/portfolio#complex">GUI устройств и приборов</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/fintech">Финансы</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/education">Образование и культура</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/logistics">Логистика и транспорт</a></li>
+          <li><a class="underline-offset-4 decoration-1" href="/indusries/govtech">Госсектор</a></li>
         </ul> 
       </div>
     </div>
@@ -122,7 +121,9 @@ import '~/components/main/Bento.less';
       <img src="/images/main/blob.svg" />
       <a href="https://www.eduhund.ru/" class="uppercase text-3xl md:text-[52px] font-heading ml-[-30px] z-[0]">Дизайн-задачник →</a>
     </div>
+    
   </div>
+  
   
   <div class="gap-4">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">Шпаргалка дня</h2>
@@ -137,9 +138,7 @@ import '~/components/main/Bento.less';
   <CardSlider cases={['tmh', 'qiwi', 'pangeo', 'res', 'tis', 'raisa', 'gazprom-neft']} delay={6}/>
    
   <div class="gap-4">
-    <div class="gap-4 flex flex-col justify-center bg-[--aw-color-grey9] p-10 mb-10 mt-[-40px]">
-      <h3 class="text-4xl sm:text-[52px] font-heading leading-none text-[--aw-color-grey1]"><a href="/vacancy">Вакансии →</a></h3>
-    </div>
+    
     <div class="flex justify-between mb-4">
       <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Новости</h2>
       <div class="flex flex-row gap-6 ">
@@ -150,22 +149,31 @@ import '~/components/main/Bento.less';
     </div>
     
     <div class="flex justify-between flex-col gap-4">
-         <div class="basis-0 grow-[7]">
+       <div class="basis-0 grow-[7]">
+          <a href="https://tagline.ru/awards/">
+             <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">2 место на RUWARD AWARD 2026!</h3></a>
+          <div class="text-base mb-2 dark:text-[--aw-color-text-light-default] mb-4">Выступили на главном отраслевом конкурсе рунета — <a href="https://ruward.ru/award/" class="underline underline-offset-4 decoration-1">RUWARD AWARD 2026</a>. Наш кейс <a href="/electrocadiography" class="underline underline-offset-4 decoration-1">Клиническая информационная система «Кардиум»</a> <a href="https://ruward.ru/award/2026/311735/" class="underline underline-offset-4 decoration-1">взял серебро в номинации «Медицина и фармацевтика»</a>.</div>
+         
+          <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-2">
+            27.04.2026
+          </div>
+       </div> 
+       <div class="basis-0 grow-[7]">
          <a href="https://tagline.ru/awards/">
             <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Tagline Awards: два золота и серебро</h3></a>
-         <div class="text-base mb-2 dark:text-[--aw-color-text-light-default]">Выступили на престижном отраслевом конкурсе — <a href="https://tagline.ru/awards/" class="underline underline-offset-4 decoration-1">Tagline Awards</a> — c кейсам <a href="https://tagline.ru/sobaka-pavlova2/cases/interfeysy-klinicheskoy-informacionnoy-sistemy--kardium--medicinskaya-diagnosticheskaya-platforma-dlya-kardiologov-erna---3/" class="underline underline-offset-4 decoration-1">Эрна</a> и <a href="https://tagline.ru/sobaka-pavlova2/cases/razrabotka-vizualjnogo-yazyka-dlya-shem-koncertnyh-i-sportivnyh-ploschadok-seatmap---3/" class="underline underline-offset-4 decoration-1">Seatmap</a> и забрали сразу три награды:</div>
+         <div class="text-base mb-2 dark:text-[--aw-color-text-light-default]">Приняли участие в престижном отраслевом конкурсе <a href="https://tagline.ru/awards/" class="underline underline-offset-4 decoration-1">Tagline Awards</a> c кейсами <a href="https://tagline.ru/sobaka-pavlova2/cases/interfeysy-klinicheskoy-informacionnoy-sistemy--kardium--medicinskaya-diagnosticheskaya-platforma-dlya-kardiologov-erna---3/" class="underline underline-offset-4 decoration-1">Эрна</a> и <a href="https://tagline.ru/sobaka-pavlova2/cases/razrabotka-vizualjnogo-yazyka-dlya-shem-koncertnyh-i-sportivnyh-ploschadok-seatmap---3/" class="underline underline-offset-4 decoration-1">Seatmap</a> и забрали сразу три награды:</div>
          <ul class="flex flex-col text-base leading-[26px] underline underline-offset-4 gap-2 mb-4">
              <li><a href="https://www.youtube.com/live/qjevd2I-NVM?si=HKvIAKki1qZXf5bm&t=15606" class="underline underline-offset-4 decoration-1">Золото — «Лучшее международное IT-решение»</a>.</li>
              <li><a href="https://www.youtube.com/live/qjevd2I-NVM?si=HKvIAKki1qZXf5bm&t=15606" class="underline underline-offset-4 decoration-1">Золото — «Лучшее IT-решение, разработка и интеграция»</a>.</li>
              <li><a href="https://www.youtube.com/live/qjevd2I-NVM?si=HvNUPhHpi_z7Mm_n&t=18605" class="underline underline-offset-4 decoration-1">Серебро — «Лучшая технология / Платформа»</a>.</li>
-                 </ul> 
-         <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">
+         </ul> 
+         <div class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-2">
            05.12.2025
          </div>
        </div> 
        <a href="https://dmkpress.com/catalog/business/978-5-93700-435-2/" class="basis-0 grow-[7]">
-         <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mt-4 mb-2">Я хочу сделать хороший дизайн продукта</h3>
-         <div class="text-base mb-0 dark:text-[--aw-color-text-light-default]">В декабре в издательстве «ДМК Пресс» вышла новая книга Ольги Павловой.</div>
+         <h3 class="text-xl leading-[26px] underline underline-offset-4 decoration-1 dark:text-[--aw-color-text-light-default] mb-2">Я хочу сделать хороший дизайн продукта</h3>
+         <div class="text-base mb-0 dark:text-[--aw-color-text-light-default] mb-2">В декабре в издательстве «ДМК Пресс» вышла новая книга Ольги Павловой.</div>
          <div class="flex flex-row">
            <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-[-12px] mb-0">
              <a href="https://dmkpress.com/catalog/business/978-5-93700-435-2/">Купить книгу</a>

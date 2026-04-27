@@ -77,27 +77,27 @@ export const headerData = {
           href: getPermalink('/industries/healthcare'),
         },
         {
-          text: 'Промышленность',
+          text: 'Промышленность и безопасность',
           href: getPermalink('/industries/heavy'),
-        },
-        {
-          text: 'E-коммерция',
-          href: getPermalink('/industries/ecommerce'),
         },
         {
           text: 'B2B и сложные системы',
           href: getPermalink('/industries/enterprise'),
         },
         {
+          text: 'E-коммерция',
+          href: getPermalink('/industries/ecommerce'),
+        },
+        {
           text: 'Финансы',
           href: getPermalink('/industries/fintech'),
         },
         {
-          text: 'Образование',
+          text: 'Образование и культура',
           href: getPermalink('/industries/education'),
         },
         {
-          text: 'Транспорт',
+          text: 'Логистика и транспорт',
           href: getPermalink('/industries/logistics'),
         },
         {
