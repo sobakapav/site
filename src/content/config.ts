@@ -265,6 +265,10 @@ const promoCollection = defineCollection({
   schema: portfolioSchema(),
 });
 
+const awardCollection = defineCollection({
+  schema: portfolioSchema(),
+});
+
 const serviceCollection = defineCollection({
   schema: z.object({
     publishDate: z.date().optional(),
