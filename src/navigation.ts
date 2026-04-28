@@ -144,6 +144,10 @@ export const headerData = {
           href: getPermalink('/about'),
         },
         {
+          text: 'Награды',
+          href: getPermalink('/awards'),
+        },
+        {
           text: 'Вакансии',
           href: getPermalink('/vacancy'),
         },

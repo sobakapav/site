@@ -1,0 +1,59 @@
+---
+import Image from '~/components/common/Image.astro';
+import { Markdown } from '@astropub/md';
+import merge from 'lodash.merge';
+import { twMerge } from 'tailwind-merge';
+
+const {
+  award,
+  classes = {}
+} = Astro.props;
+
+const myClasses = merge({ main: '', title: '', text: '', textBlock: 'mt-4 w-72', }, classes);
+  
+---
+<article class={twMerge('flex flex-wrap mb-6 relative flex-col', myClasses.main)}>
+  <a href={'javascript:void(0)'}>
+  {
+    award.thumbnail && (
+      <div class="relative overflow-hidden rounded image-animate">
+        <div class={twMerge('w-72 overflow-hidden', myClasses.image)}>
+          <Image
+            src={award.thumbnail.src}
+            class="rounded"
+            layout={"constrained-width"}
+            width={288}
+            alt={award.thumbnail.alt ?? award.title}
+            objectPosition="top"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    )
+  }
+
+  <div class={myClasses.textBlock}>
+    <header>
+      <span>     
+        <h2 class:list={["text-xl sm:text-3xl leading-tight mb-1 dark:text-slate-300 font-heading underline underline-offset-2 z-[2]", myClasses.title]}>
+          {award.externalLink ? (
+            <a href={award.externalLink}>
+              <Markdown.Inline of={award.title} />
+            </a>
+          ) : (
+            <Markdown.Inline of={award.title} />
+          )}
+          {award.isNew && (
+               <span class="text-xl sm:text-3xl leading-tight font-heading text-[--aw-color-hund]">New</span>
+          )}
+        </h2>
+      </span>
+    </header>
+
+    <span class="features-block">
+      <Markdown.Inline of={award.excerpt} />
+    </span>
+    </a>
+  </div>
+</article>

@@ -614,5 +614,6 @@ export const collections = {
   cheatsheets: cheatsheetCollection,
   books: bookCollection,
   person: personCollection,
+  awards: awardCollection,
 };
 
