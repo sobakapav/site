@@ -178,7 +178,7 @@ const portfolioSchema = () => z.object({
   externalLink: z.string().optional(),
   
   client: z.object({
-    src: z.string(),
+    src: z.string().optional(),
     uuid: z.string().optional(),
     link: z.string().optional(),
     alt: z.string().optional(),
