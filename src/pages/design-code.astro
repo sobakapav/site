@@ -1,0 +1,217 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hund2 from '~/components/widgets/Hund2.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Hund4 from '~/components/widgets/Hund4.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Image from '~/components/common/Image.astro';
+import IndustryColumnGrid from '~/components/industry/IndustryColumnGrid.astro';
+
+import TabComponent from '~/components/main/TabComponent.astro';
+import LogoTabComponent2 from '~/components/main/LogoTabComponent2.astro';
+import RelatedPages from '~/components/portfolio/RelatedPages.astro';
+import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import HighlightedCases from "~/components/services/HighlightedCases.astro";
+import Number from '~/components/portfolio/Number.astro';
+import ReviewItem from '~/components/portfolio/ReviewItem.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import Features3 from '~/components/widgets/Features3.astro';
+import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
+import SimpleSlider from '~/components/services/SimpleSlider.astro';
+import SimpleContentSlider from '~/components/services/SimpleContentSlider.astro';
+
+import { Icon } from 'astro-icon/components';
+import { SITE } from 'astrowind:config';
+
+import { getPermalink } from '~/utils/permalinks';
+import { getEntry } from 'astro:content';
+
+import '~/components/main/Bento.less';
+
+const metadata = {
+  canonical: 'https://sobakapav.ru/design-code',
+  title: `Собака Павлова • Дизайн сразу в коде`,
+  description:
+    'Создаем интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [
+      {
+        url: '~/assets/images/services/turnkey/ux-design.png',
+        width: 716,
+        height: 600,
+      },
+    ],
+    type: 'article',
+  },
+};
+---
+
+<Layout metadata={metadata}  hasSlider={true}>
+  <Bread title="Дизайн сразу в коде" />
+  
+  <Hero2
+      image={{ 
+        src: '~/assets/images/design-code.png',
+        alt: 'Собака Павлова • Дизайн сразу в коде',
+      }}
+      >
+    <Fragment slot="title">
+      Дизайн</br>сразу в коде
+    </Fragment>
+    <Fragment slot="subtitle">
+      Хотелось написать продажное, но потом — ааа, к чёртовой бабушке! Напишем как есть.</br>
+      Мы создаём закрытый… эээ… ну, скажем, клуб.</br>
+      И зовём в него тех IT-спецов, кто хочет AI-трансформироваться, не сходя с рабочего места.</br>
+    </Fragment>
+    <Fragment slot="result">
+      <div class="flex flex-row gap-6">
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+          <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
+        </div>
+        <div class="text-xl font-heading tracking-widest leading-none px-5 py-[10px] bg-[--aw-color-hund] text-white  flex flex-row align-center max-h-11 mt-4 text-default">
+          <a href="https://pay.eduhund.com/codedesign">Купить курс</a>
+        </div>
+      </div>
+    </Fragment>
+  </Hero2>
+  
+  <section class="py-0 mx-auto grow-0 shrink-0">
+     <article>
+  
+  <div class=" flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10">
+    <div class="basis-0 grow min-w-[260px]">
+      <Image src="~/assets/images/chameleon.png" alt="Собака Павлова • Дизайн сразу в коде" />
+    </div>
+    <div class="basis-[2] grow columns-2 gap-6">  
+      <p class="text-xl mb-4">Ваааааажно, повторим: не сходя с рабочего места.</p>
+      
+      <p class="text-xl mb-4">Нет планов заниматься «прокачкой» и прочими курсами для подготовки к работе.</p>
+      
+      <p class="text-xl mb-4">Есть планы внедрять AI в вашу уже существующую работу.
+      
+      <p class="text-xl mb-4">Да-да-да, у-вас-NDA, так что всё будете делать строго секретно :)</p>
+      
+      <p class="text-xl font-bold">Первая тема для проработки — «UI сразу в коде».</p>
+    </div> 
+  </div>
+    
+  <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-6 md:mb-4">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Вот что можем обещать</h2>
+    
+    <Features3
+      columns={4}
+      items={[{title: 'Объяснялки каждый день', description: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM, мы не настолько долбоклюи :)'},
+      {title: 'Задачи для знакомства со сложными темами', description: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живыми людьми написанный.'},
+      {title: 'Обсуждалки раз в неделю', description: 'Голосом-созвонами. С сотрудниками «Собаки». Может, даже с Павловой, если дело пойдёт бодро.'},
+      {title: 'Инструмент для AI-экспериментов', description: 'Настроить поможем. Ваш NDA не пострадает.'},
+      ]}
+      classes={{description: 'text-base', title: 'text-xl'}}
+      defaultIcon="tabler:circle-check-filled"
+    /> 
+  
+  </div>
+  
+  <div class="flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
+      
+      <div class="basis-[2] grow gap-6">  
+        <p class="text-xl mb-4">Может, ещё что-то придумаем.</p>
+        <p class="text-xl">Как тут кое-кто у нас любит повторять, «работу работать на свою голову — это мы запросто».</p>
+      </div>  
+      <div class="basis-0 grow min-w-[260px]">
+        <div class="basis-0 grow min-w-[260px]">
+          <Image src="~/assets/images/design-code2.png" alt="Собака Павлова • Дизайн сразу в коде" />
+        </div>
+      </div>
+    </div>
+    
+  <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">А вот что обещать не можем</h2>
+    <Features3
+      columns={4}
+      items={[{title: 'Мол, подойдёт всем', description: 'Скорее всего, нет. Удивите нас!'},
+      {title: 'Мол, всё готово и идеально вылизано', description: 'Если б оно так было, цена была бы как в задачнике. Но она не такова, ой не такова.'},
+      {title: 'Мол, берём всех', description: 'Тут грустненько. Больше 12 человек пока не потянем.'},
+      {title: 'Мол, в июне будет дороже', description: 'Не-а, в июне вообще может уже не быть.'},
+      ]}
+      classes={{description: 'text-base', title: 'text-xl'}}
+      defaultIcon="tabler:circle-check-filled"
+    />   
+  </div>
+  
+  <div class=" flex flex-col sm:flex-row gap-8 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
+    <div class="basis-0 grow min-w-[309px] mt-[-90px] ml-[-20px]">
+      <Image src="~/assets/images/design-code4.png" alt="Собака Павлова • Дизайн сразу в коде" />
+    </div>
+    <div class="basis-[2] grow columns-2 gap-6">  
+      <p class="text-xl mb-4">Что в итоге, если совсем коротко?</p>
+      
+      <p class="text-xl mb-4 font-bold">Умение поставлять UI-компоненты сразу в коде.</p>
+      
+      <p class="text-xl mb-4">Были вы оператором Figma — и выдавали картиночки. Мда.</p>
+      
+      <p class="text-xl mb-4">А станете вольным творцом на AI-хлебах — и выдавать будете код. О!</p>
+    </div> 
+  </div>
+  
+  <div class=" flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
+    
+    <div class="basis-[2] grow gap-6">  
+      <p class="text-xl mb-6">Как, что, куда, зачем? Поуговаривать вас, да? Это можно. Но сначала главное: деньги.</p>
+      
+      <div class="flex flex-col sm:flex-row justify-between gap-6">
+        <div class="basis-0 grow">
+          <h3 class="mb-2 text-xl">Цена удовольствия для людей:</h3>
+          <Number 
+            number="6 тысяч рублей" 
+            classes="mb-1.5 font-heading" 
+            textClasses="text-xl sm:text-4xl" 
+            numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+          />
+          <p class="text-xl">За май.</p>
+        </div>
+        <div class="basis-0 grow">
+          <h3 class="mb-2 text-xl">Для компаний по безналу:</h3>
+          <Number 
+            number="56 тысяч рублей" 
+            classes="mb-1.5 font-heading" 
+            textClasses="text-xl sm:text-4xl" 
+            numberClasses="text-xl sm:text-4xl text-[--aw-color-hund]" 
+          />
+          <p class="text-xl">Без скидок.</p>
+        </div>
+      </div>
+      <p class="text-xl mt-6">Если вас эта сумма не пугает — платите.</p>
+    </div> 
+    <div class="basis-0 grow min-w-[360px] mt-[-50px] flex flex-col ">
+      <Image src="~/assets/images/design-code3.png" alt="Собака Павлова • Дизайн сразу в коде" />
+    </div>
+  </div>
+
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
+    
+    <p class="text-xl mb-4 text-white">Да, вот так жёстко. Деньги вперёд. Не понравится — вернём.</p>
+    <div class="flex flex-row gap-6">
+      <div class="text-xl font-heading tracking-widest leading-none px-5 py-[10px] bg-[--aw-color-hund] text-white  flex flex-row align-center max-h-11 mt-4 text-default">
+              <a href="https://pay.eduhund.com/codedesign">Купить курс за 6000 рублей</a>
+            </div>
+      <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+        <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
+      </div>
+      
+    </div>
+    <p class="text-xl text-white mt-6">P.S. К вайбкодингу — никакого отношения.</p>
+  </div>
+  
+</article>
+</section>
+
+</Layout>
