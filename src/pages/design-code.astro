@@ -34,7 +34,7 @@ const metadata = {
   canonical: 'https://sobakapav.ru/design-code',
   title: `Собака Павлова • Дизайн сразу в коде`,
   description:
-    'Создаем интерфейсы сложных систем. Рабочие места, дашборды, мобильные приложения, системы мониторинга, личные кабинеты, интерфейсы для hardware. Под ключ или точечно, наброски или тщательная проработка, независимо или внутри вашей команды.',
+    'Для тех, кто хочет AI-трансформироваться, не сходя с рабочего места.',
   robots: {
     index: true,
     follow: true,
@@ -88,29 +88,27 @@ const metadata = {
   <div class="flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10">
     
     <div class="basis-[3] max-w-5xl grow columns-2 gap-10">  
-      <p class="text-xl mb-4">Ваааааажно, повторим: не сходя с рабочего места.</p>
+      <p class="text-xl mb-4">Ваааааажно, повторим: не сходя с рабочего места.</p>
       
-      <p class="text-xl mb-4">Нет планов заниматься «прокачкой» и прочими курсами для подготовки к работе.</p>
+      <p class="text-xl mb-4">Нет планов заниматься «прокачкой» и прочими курсами для подготовки к работе.</p>
       
       <p class="text-xl mb-4">Есть планы внедрять AI в вашу уже существующую работу.
       
       <p class="text-xl mb-4">Да-да-да, у-вас-NDA, так что всё будете делать строго секретно :)</p>
       
-      <p class="text-xl font-bold">Первая тема для проработки — «UI сразу в коде».</p>
+      <p class="text-xl font-bold">Первая тема для проработки — «UI сразу в коде».</p>
     </div> 
-    
-    
   </div>
     
   <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-6 md:mb-4">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Вот что можем обещать</h2>
-    <div class="">
+    <div class="max-w-5xl">
     <IndustryColumnGrid
       columns={2}
-      cards={[{title: 'Объяснялки каждый день', text: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM, мы не настолько долбоклюи :)', cardColor: 'blue'},
+      cards={[{title: 'Объяснялки каждый день', text: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM, мы не настолько долбоклюи :)', cardColor: 'blue'},
       {title: 'Обсуждалки раз в неделю', text: 'Голосом-созвонами. С сотрудниками «Собаки». Может, даже с Павловой, если дело пойдёт бодро.', cardColor: 'lightblue'},
-      {title: 'Задачи для знакомства со сложными темами', text: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живыми людьми написанный.', cardColor: 'lightblue'},
-      {title: 'Инструмент для AI-экспериментов', text: 'Настроить поможем. Ваш NDA не пострадает.', cardColor: 'blue'},
+      {title: 'Задачи для знакомства со сложными темами', text: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живыми людьми написанный.', cardColor: 'lightblue'},
+      {title: 'Инструмент для AI-экспериментов', text: 'Настроить поможем. Ваш NDA не пострадает.', cardColor: 'blue'},
       ]}
       classes={{description: 'text-xl', title: ''}}
       defaultIcon="tabler:circle-check-filled"
@@ -120,7 +118,7 @@ const metadata = {
   
   <div class="flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20">
       
-      <div class="basis-[2] grow gap-6">  
+      <div class="basis-[2] grow gap-6 max-w-5xl">  
         <p class="text-xl mb-4">Может, ещё что-то придумаем.</p>
         <p class="text-xl">Как тут кое-кто у нас любит повторять, «работу работать на свою голову — это мы запросто».</p>
       </div>  
@@ -135,7 +133,7 @@ const metadata = {
       columns={4}
       cards={[{title: 'Мол, подойдёт всем', text: 'Скорее всего, нет. Удивите нас!', cardColor: 'black'},
       {title: 'Мол, всё готово и идеально вылизано', text: 'Если б оно так было, цена была бы как в задачнике. Но она не такова, ой не такова.', cardColor: 'grey'},
-      {title: 'Мол, берём всех', text: 'Тут грустненько. Больше 12 человек пока не потянем.', cardColor: 'black'},
+      {title: 'Мол, берём всех', text: 'Тут грустненько. Больше 12 человек пока не потянем.', cardColor: 'black'},
       {title: 'Мол, в июне будет дороже', text: 'Не-а, в июне вообще может уже не быть.', cardColor: 'grey'},
       ]}
       classes={{description: 'text-base', title: 'text-xl'}}
@@ -150,16 +148,16 @@ const metadata = {
       
       <p class="text-xl mb-4 font-bold">Умение поставлять UI-компоненты сразу в коде.</p>
       
-      <p class="text-xl mb-4">Были вы оператором Figma — и выдавали картиночки. Мда.</p>
+      <p class="text-xl mb-4">Были вы оператором Figma — и выдавали картиночки. Мда.</p>
       
-      <p class="text-xl mb-4">А станете вольным творцом на AI-хлебах — и выдавать будете код. О!</p>
+      <p class="text-xl mb-4">А станете вольным творцом на AI-хлебах — и выдавать будете код. О!</p>
     </div> 
     
   </div>
   
   <div class=" flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
     
-    <div class="basis-[2] grow gap-6">  
+    <div class="basis-[2] grow gap-6 max-w-5xl">  
       <p class="text-xl mb-6">Как, что, куда, зачем? Поуговаривать вас, да? Это можно. Но сначала главное: деньги.</p>
       
       <div class="flex flex-col sm:flex-row justify-between gap-10">
