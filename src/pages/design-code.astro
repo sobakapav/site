@@ -104,15 +104,15 @@ const metadata = {
     
   <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-6 md:mb-4">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Вот что можем обещать</h2>
-    <div class="max-w-5xl">
-    <Features3
+    <div class="">
+    <IndustryColumnGrid
       columns={2}
-      items={[{title: 'Объяснялки каждый день', description: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM, мы не настолько долбоклюи :)'},
-      {title: 'Обсуждалки раз в неделю', description: 'Голосом-созвонами. С сотрудниками «Собаки». Может, даже с Павловой, если дело пойдёт бодро.'},
-      {title: 'Задачи для знакомства со сложными темами', description: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живыми людьми написанный.'},
-      {title: 'Инструмент для AI-экспериментов', description: 'Настроить поможем. Ваш NDA не пострадает.'},
+      cards={[{title: 'Объяснялки каждый день', text: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM, мы не настолько долбоклюи :)', cardColor: 'blue'},
+      {title: 'Обсуждалки раз в неделю', text: 'Голосом-созвонами. С сотрудниками «Собаки». Может, даже с Павловой, если дело пойдёт бодро.', cardColor: 'lightblue'},
+      {title: 'Задачи для знакомства со сложными темами', text: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живыми людьми написанный.', cardColor: 'lightblue'},
+      {title: 'Инструмент для AI-экспериментов', text: 'Настроить поможем. Ваш NDA не пострадает.', cardColor: 'blue'},
       ]}
-      classes={{description: 'text-base', title: 'text-xl'}}
+      classes={{description: 'text-xl', title: ''}}
       defaultIcon="tabler:circle-check-filled"
     /> 
     </div>
@@ -131,12 +131,12 @@ const metadata = {
     
   <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">А вот что обещать не можем</h2>
-    <Features3
+    <IndustryColumnGrid
       columns={4}
-      items={[{title: 'Мол, подойдёт всем', description: 'Скорее всего, нет. Удивите нас!'},
-      {title: 'Мол, всё готово и идеально вылизано', description: 'Если б оно так было, цена была бы как в задачнике. Но она не такова, ой не такова.'},
-      {title: 'Мол, берём всех', description: 'Тут грустненько. Больше 12 человек пока не потянем.'},
-      {title: 'Мол, в июне будет дороже', description: 'Не-а, в июне вообще может уже не быть.'},
+      cards={[{title: 'Мол, подойдёт всем', text: 'Скорее всего, нет. Удивите нас!', cardColor: 'black'},
+      {title: 'Мол, всё готово и идеально вылизано', text: 'Если б оно так было, цена была бы как в задачнике. Но она не такова, ой не такова.', cardColor: 'grey'},
+      {title: 'Мол, берём всех', text: 'Тут грустненько. Больше 12 человек пока не потянем.', cardColor: 'black'},
+      {title: 'Мол, в июне будет дороже', text: 'Не-а, в июне вообще может уже не быть.', cardColor: 'grey'},
       ]}
       classes={{description: 'text-base', title: 'text-xl'}}
       defaultIcon="tabler:circle-check-filled"
@@ -162,7 +162,7 @@ const metadata = {
     <div class="basis-[2] grow gap-6">  
       <p class="text-xl mb-6">Как, что, куда, зачем? Поуговаривать вас, да? Это можно. Но сначала главное: деньги.</p>
       
-      <div class="flex flex-col sm:flex-row justify-between gap-6">
+      <div class="flex flex-col sm:flex-row justify-between gap-10">
         <div class="basis-0 grow">
           <h3 class="mb-2 text-xl">Цена удовольствия для людей:</h3>
           <Number 
