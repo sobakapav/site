@@ -66,9 +66,9 @@ const metadata = {
       </br>Дизайн</br>сразу в коде
     </Fragment>
     <Fragment slot="subtitle">
-      Хотелось написать продажное, но потом — ааа, к чёртовой бабушке! Напишем как есть.</br>
-      Мы создаём закрытый… эээ… ну, скажем, клуб.</br>
-      И зовём в него тех IT-спецов, кто хочет AI-трансформироваться, не сходя с рабочего места.</br>
+      Хотелось написать продающее, но напишем как есть.</br>
+      Мы создаём закрытый клуб.</br>
+      И зовём в него IT-специалистов, которые хотят AI-трансформироваться, не сходя с рабочего места.</br>
     </Fragment>
     <Fragment slot="result">
       <div class="flex flex-row gap-6">
@@ -85,15 +85,15 @@ const metadata = {
   <div class="flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10 mt-10">
     
     <div class="flex flex-col md:flex-row max-w-5xl gap-10 content-start items-start"> 
-      <div> 
-      <p class="text-xl mb-4">Ваааааажно, повторим: не сходя с рабочего места.</p>
+      <div class="basis-0 grow"> 
+      <p class="text-xl mb-4">Важно, повторим: не сходя с рабочего места.</p>
       
       <p class="text-xl mb-4">Нет планов заниматься «прокачкой» и прочими курсами для подготовки к работе.</p>
       
       <p class="text-xl mb-4">Есть планы внедрять AI в вашу уже существующую работу.
       </div>
-      <div> 
-      <p class="text-xl mb-4">Да-да-да, у-вас-NDA, так что всё будете делать строго секретно :)</p>
+      <div class="basis-0 grow"> 
+      <p class="text-xl mb-4"> Да, мы знаем, что у вас NDA, и не собираемся его нарушать!</p>
       
       <p class="text-xl font-bold">Первая тема для проработки — «UI сразу в коде».</p>
       </div> 
@@ -105,8 +105,8 @@ const metadata = {
     <div class="max-w-5xl">
     <IndustryColumnGrid
       columns={2}
-      cards={[{title: 'Объяснялки каждый день', text: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM, мы не настолько долбоклюи :)', cardColor: 'blue'},
-      {title: 'Задачи для знакомства со сложными темами', text: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живыми людьми написанный.', cardColor: 'lightblue'},
+      cards={[{title: 'Объяснялки каждый день', text: 'Буквально каждый. Новый день — новая объяснялка. Нет, их пишет не LLM. Некоторые вещи пока просто нельзя поручать машинам.', cardColor: 'blue'},
+      {title: 'Задачи для знакомства со сложными темами', text: 'Сюрприз: если хотя бы двое назвали тему сложной — на следующий день под неё появляется набор задач. Живым человеком написанный.', cardColor: 'lightblue'},
       {title: 'Обсуждалки раз в неделю', text: 'Голосом-созвонами. С сотрудниками «Собаки». Может, даже с Павловой, если дело пойдёт бодро.', cardColor: 'lightblue'},
       {title: 'Инструмент для AI-экспериментов', text: 'Настроить поможем. Ваш NDA не пострадает.', cardColor: 'blue'},
       ]}
@@ -130,38 +130,39 @@ const metadata = {
   <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">А вот что обещать не можем</h2>
     <IndustryColumnGrid
-      columns={4}
-      cards={[{title: 'Мол, подойдёт всем', text: 'Скорее всего, нет. Удивите нас!', cardColor: 'black'},
-      {title: 'Мол, всё готово и идеально вылизано', text: 'Если б оно так было, цена была бы как в задачнике. Но она не такова, ой не такова.', cardColor: 'grey'},
-      {title: 'Мол, берём всех', text: 'Тут грустненько. Больше 12 человек пока не потянем.', cardColor: 'black'},
-      {title: 'Мол, в июне будет дороже', text: 'Не-а, в июне вообще может уже не быть.', cardColor: 'grey'},
+      columns={3}
+      cards={[
+      {title: 'Мол, всё готово и идеально вылизано', text: 'Если б оно так было, цена была бы как в задачнике.', cardColor: 'black'},
+      {title: 'Мол, берём всех', text: 'Тут грустненько. Больше 12 человек пока не потянем.', cardColor: 'grey'},
+      {title: 'Мол, в июне будет дороже', text: 'Не-а, в июне вообще может уже не быть.', cardColor: 'black'},
       ]}
-      classes={{description: 'text-base', title: 'text-xl'}}
+      classes={{description: 'text-xl', title: ''}}
       defaultIcon="tabler:circle-check-filled"
     />   
   </div>
   
-  <div class=" flex flex-col sm:flex-row gap-8 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
+  <div class="gap-8 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
+    <p class="text-xl mb-4">Что в итоге, если совсем коротко?</p>
+          
+    <p class="text-xl mb-4 font-bold">Умение поставлять UI-компоненты сразу в коде.</p>
+          
+    <p class="text-xl mb-4">Стать программистом за месяц — не предлагаем. Невозможно это.</p>
     
-    <div class="flex flex-col md:flex-row max-w-5xl gap-10 content-start items-start"> 
-     <div>  
-      <p class="text-xl mb-4">Что в итоге, если совсем коротко?</p>
-      
-      <p class="text-xl mb-4 font-bold">Умение поставлять UI-компоненты сразу в коде.</p>
-      
-      <p class="text-xl mb-4">Были вы оператором Figma — и выдавали картиночки. Мда.</p>
-     </div>  
-     <div> 
-      
-      <p class="text-xl mb-4">А станете вольным творцом на AI-хлебах — и выдавать будете код. О!</p>
-      
-      <p class="text-xl">Как, что, куда, зачем? Поуговаривать вас, да? Это можно. Но сначала главное: деньги.</p>
-     </div>  
-    </div> 
+    <p class="text-xl mb-6">Предлагаем вот что:</p>
+    
+    <div class="">
+    <IndustryColumnGrid
+          columns={3}
+          cards={[{title: 'Перестать бояться LLM', cardColor: 'red'}, {title: 'Перестать бояться, что LLM отнимет вашу работу', cardColor: 'red'}]}
+      classes={{description: 'text-xl', title: ''}}
+      defaultIcon="tabler:circle-check-filled"
+    /> 
+    </div>
     
   </div>
   
-  <div class=" flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12">
+  <div class=" flex flex-col gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-12">
+    <p class="text-xl mt-6">Детали скоро расскажем. Но сначала о главном: о деньгах.</p>
     <div class="flex flex-col sm:flex-row justify-between gap-10 max-w-5xl">
       <div class="">
         <h3 class="mb-2 text-xl">Цена удовольствия для людей:</h3>
@@ -190,7 +191,7 @@ const metadata = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
   <div class="bg-[#212121] p-5 md:p-10 mt-2 mb:mt-8 mb-5 md:mb-10">
     <p class="text-xl mb-4 text-white">Если вас эта сумма не пугает — платите.</p> 
-    <p class="text-xl mb-4 text-white">Да, вот так жёстко. Деньги вперёд. Не понравится — вернём.</p>
+    <p class="text-xl mb-4 text-white">Не понравится — вернём деньги.</p>
     <div class="flex flex-row gap-6">
       <div class="text-xl leading-none px-6 py-6 bg-[--aw-color-hund] text-white  flex flex-row align-center mt-4 text-default">
               <a href="https://pay.eduhund.com/codedesign">Купить за 6000 рублей</a>
