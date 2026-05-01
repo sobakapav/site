@@ -34,7 +34,7 @@ const metadata = {
   canonical: 'https://sobakapav.ru/design-code',
   title: `Собака Павлова • Дизайн сразу в коде`,
   description:
-    'Для тех, кто хочет AI-трансформироваться, не сходя с рабочего места.',
+    'Как перестать бояться и полюбить LLM',
   robots: {
     index: true,
     follow: true,
@@ -43,7 +43,7 @@ const metadata = {
     site_name: 'Собака Павлова',
     images: [
       {
-        url: '~/assets/images/services/turnkey/ux-design.png',
+        url: '~/assets/images/codedesign.png',
         width: 716,
         height: 600,
       },
@@ -61,18 +61,18 @@ const metadata = {
         src: '~/assets/images/design-code.png',
         alt: 'Собака Павлова • Дизайн сразу в коде',
       }}
+      imageName='Дизайнеры рассматривают новый инструмент'
       >
     <Fragment slot="title">
       </br>Дизайн</br>сразу в коде
     </Fragment>
     <Fragment slot="subtitle">
       Хотелось написать продающее, но напишем как есть.</br>
-      Мы создаём закрытый клуб.</br>
-      И зовём в него IT-специалистов, которые хотят AI-трансформироваться, не сходя с рабочего места.</br>
+      Мы создаём закрытый учебный клуб. И зовём в него тех IT-спецов, кто понимает, что надо браться за AI-технологии, но как-то всё руки не доходят.
     </Fragment>
     <Fragment slot="result">
       <div class="flex flex-row gap-6">
-        <div class="text-xl leading-none px-6 py-6 bg-[--aw-color-hund] text-white  flex flex-row align-center mt-4 text-default">
+        <div class="text-xl leading-none px-6 py-6 bg-[--aw-color-hund] text-white  flex flex-row align-center mt-2 text-default">
           <a href="https://pay.eduhund.com/codedesign">Сразу купить за 6000 рублей</a>
         </div>
       </div>
@@ -81,24 +81,52 @@ const metadata = {
   
   <section class="py-0 mx-auto grow-0 shrink-0">
      <article>
+     
   
-  <div class="flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10 mt-10">
+  
+  <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-0 mt-20">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Как понять, что это для вас?</h2>
+      <Features3
+        columns={3}
+        items={[
+        {description: 'Ваша работа связана с интерфейсами.'},
+        {description: 'Дизайнер ли вы, менеджер или аналитик — неважно, всех ждем.'},
+        {description: 'Программистам будет скучновато, а начинающим — сложновато.'},
+        ]}
+        classes={{description: 'text-xl', title: ''}}
+        defaultIcon="tabler:circle-check-filled"
+      />   
+    </div>
+  
+  <div class="flex flex-col sm:flex-row gap-10 max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
     
-    <div class="flex flex-col md:flex-row max-w-5xl gap-10 content-start items-start"> 
+    <div class="flex flex-col md:flex-row gap-10 md:gap-12 content-start items-start"> 
       <div class="basis-0 grow"> 
-      <p class="text-xl mb-4">Важно, повторим: не сходя с рабочего места.</p>
-      
-      <p class="text-xl mb-4">Нет планов заниматься «прокачкой» и прочими курсами для подготовки к работе.</p>
-      
-      <p class="text-xl mb-4">Есть планы внедрять AI в вашу уже существующую работу.
+        <Image src="~/assets/images/chameleon.png" alt="Собака Павлова • Дизайн сразу в коде" />
+         <p class="max-w-3xl mx-auto md:mx-0 lg:mx-auto mt-6 text-base md:text-sm text-muted dark:text-slate-400 text-justify">
+            Это хамелеон. Он маскот «Дизайна сразу в коде»
+         </p>
       </div>
-      <div class="basis-0 grow"> 
-      <p class="text-xl mb-4"> Да, мы знаем, что у вас NDA, и не собираемся его нарушать!</p>
+      <div class="basis-0 grow-[2]"> 
+        <p class="text-xl mb-4">Будем учиться, не сходя с рабочего места.</p>
+              
+        <p class="text-xl mb-4">Не планируем заниматься «прокачкой» и прочими курсами для подготовки к работе. Планируем внедрять AI в вашу уже существующую работу.
+        
+        <p class="text-xl mb-10">Первая тема для проработки — «UI сразу в коде».</p>
+        
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">UI сразу в коде</h2>
+        
+        <p class="text-xl mb-4">Что это будет?</p>
+        
+        <p class="text-xl mb-4">Будет много задач вида «Возьми Figma-компонент — реализуй его в коде».</p>
+        
+        <p class="text-xl mb-4">Плюс AI-инструмент для их решения. Плюс все, что нужно, чтоб решать их было не больно и не страшно.</p>
       
-      <p class="text-xl font-bold">Первая тема для проработки — «UI сразу в коде».</p>
       </div> 
     </div> 
   </div>
+  
+  
     
   <div class="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-10">
     <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Вот что можем обещать</h2>
