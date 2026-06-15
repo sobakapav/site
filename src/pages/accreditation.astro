@@ -1,0 +1,73 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import { getCollection } from 'astro:content';
+import { Markdown } from '@astropub/md';
+import { getFormattedDate } from '~/utils/utils';
+
+import Layout from '~/layouts/PageLayout.astro';
+import Hund3 from '~/components/widgets/Hund3.astro';
+import Bread from '~/components/widgets/Bread.astro';
+
+const { page } = Astro.props as Props;
+
+const metadata = {
+  title: 'Сведения об ИТ-деятельности',
+  canonical: 'https://sobakapav.ru/accreditation',
+  description: "Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. № 152-ФЗ «О персональных данных» ", 
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    site_name: 'Собака Павлова',
+    images: [{
+      url: '~/assets/images/accreditation.png',
+      width: 1200,
+      height: 630
+    }],
+    type: 'website',
+  },
+};
+
+const videoEntries = await getCollection('video');
+
+const videos = videoEntries.map(entry => entry.data).sort((a, b) => b.publishDate - a.publishDate);
+
+---
+
+<Layout metadata={metadata}>
+  <Bread title="Сведения об ИТ-деятельности" />
+    
+  <Hund3
+    classes={{
+      main: 'pb-10 md:pb-10',
+      subtitle: 'mb-0',
+    }}
+  >
+    <Fragment slot="title">
+      Информация размещена в соответствии с требованиями Положения о государственной аккредитации российских организаций, осуществляющих деятельность в области информационных технологий, утверждённого постановлением Правительства РФ от 30.09.2022 № 1729 (в редакции от 28.11.2025), и приказа Минцифры России от 02.06.2025 № 511.
+      
+      Все сведения, размещённые на этой странице, доступны круглосуточно без необходимости регистрации, авторизации или предоставления персональных данных.
+    </Fragment>
+
+    <Fragment slot="subtitle">
+       <div class="flex flex-col md:flex-row gap-6 md:gap-[62px] mb-6">
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-hund] text-white px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+            <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
+          </div>
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+            <a href="/images/Собака Павлова_презентация.pdf">Скачать презентацию</a>
+          </div> 
+        </div>
+     
+    </Fragment>
+  </Hund3>
+      
+  <section class="px-6 sm:px-6 pb-12 sm:pb-16 lg:pb-20 mx-auto max-w-7xl">
+  <a href="">Скачать документ</a>
+  
+  
+    
+  </section>
+</Layout>
