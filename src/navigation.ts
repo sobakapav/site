@@ -163,6 +163,10 @@ export const headerData = {
           text: 'Контакты',
           href: getPermalink('/contacts'),
         },
+        {
+          text: 'Информация об IT-деятельности',
+          href: getPermalink('/accreditation'),
+        },
        ],
     },  
     {

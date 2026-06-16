@@ -1,0 +1,7 @@
+---
+import { Markdown } from '@astropub/md';
+
+const contents = await Astro.slots.render('default');
+---
+
+<Markdown.Inline of={contents} />
