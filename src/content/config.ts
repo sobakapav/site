@@ -450,6 +450,7 @@ const industriesCollection = defineCollection({
     
     when: z.object({
       title: z.string().optional(),
+      columns: z.number().optional(),
       items: z.array(z.object({
         title: z.string().optional(),
         cardColor: z.string().optional(),
