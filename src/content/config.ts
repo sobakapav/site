@@ -605,6 +605,7 @@ export const collections = {
   post: postCollection,
   services: serviceCollection,
   industries: industriesCollection,
+  'interface-types': industriesCollection,
   research: researchCollection,
   design2dev: design2devCollection,
   portfolio: portfolioCollection,

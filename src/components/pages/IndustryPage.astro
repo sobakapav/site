@@ -1,0 +1,428 @@
+---
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import { getCollection } from 'astro:content';
+import merge from 'lodash.merge';
+import type { ImageMetadata } from 'astro';
+import { getCanonical, getPermalink } from '~/utils/permalinks';
+import { getStaticPathsBlogPost, blogPostRobots } from '~/utils/blog';
+import { findImage } from '~/utils/images';
+import type { MetaData } from '~/types';
+import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from 'astrowind:config';
+import { Icon } from 'astro-icon/components';
+import { Markdown } from '@astropub/md';
+
+import IndustryColumnGrid from '~/components/industry/IndustryColumnGrid.astro';
+import TearOff from '~/components/industry/TearOff.astro';
+import TextScreenGadget from '~/components/industry/TextScreenGadget.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+import BlogSlidingGrid from '~/components/blog/BlogSlidingGrid.astro';
+import Bread from '~/components/widgets/Bread.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Number from '~/components/portfolio/Number.astro';
+import Image from '~/components/common/Image.astro';
+import RelatedLinks from '~/components/services/RelatedLinks.astro';
+import RelatedPosts from '~/components/industry/RelatedPosts.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Features4 from '~/components/widgets/Features4.astro';
+import FeaturesHex from '~/components/widgets/FeaturesHex.astro';
+import SimpleSlider from '~/components/services/SimpleSlider.astro';
+import SimpleContentSlider from '~/components/services/SimpleContentSlider.astro';
+import FinalBlock from '~/components/services/FinalBlock.astro';
+import UniversalSlider from '~/components/common/UniversalSlider.astro'
+import ReviewItem from '~/components/portfolio/ReviewItem.astro';
+import RelatedPages from "~/components/portfolio/RelatedPages.astro";
+import BlogHighlightedPosts from "~/components/widgets/BlogHighlightedPosts.astro";
+
+export const prerender = true;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { entry, parent, parentTitle } = Astro.props;
+const post = entry.data;
+const { Content } = await entry.render();
+
+const url = getCanonical(getPermalink(post.permalink, 'post'));
+const image = (await findImage(post.image)) as ImageMetadata | string | undefined;
+
+const metadata = merge(
+  {
+    title: post.title,
+    description: post.description || post.excerpt,
+    robots: {
+      index: post.metadata.robots.index,
+      follow: post.metadata.robots.follow,
+    },
+    openGraph: {
+      type: 'article',
+      ...post.metadata.openGraph,
+    },
+  },
+  { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
+) as MetaData;
+---
+
+<Layout metadata={metadata}  hasSlider={true}>
+  <Bread
+    title={post.title}
+    {parent}
+    {parentTitle}
+  />
+  
+  <Hero2
+    image={{
+      src: post.image,
+      alt: post.imageAlt,
+    }}
+    >
+    
+    <Fragment slot="title">{post.title}</Fragment>
+    <Fragment slot="subtitle">{post.excerpt}</Fragment>
+    <Fragment slot="supertitle"><h2 class="text-xl mb-10 prose text-[--tw-prose-body]">{post.subtitle}</h2></Fragment>
+    
+    <Fragment slot="result">
+      <div class="flex flex-row gap-6">
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-hund] text-white px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+          <a href="mailto:we@sobakapav.ru">Связаться с нами</a>
+        </div>
+        { post.presentation ? (
+        <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+          <a href="/images/Презентация медицинская.pdf">Скачать презентацию</a>
+        </div>
+        ) : (
+          <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-h-11 mt-4 text-default">
+            <a href="/images/Собака Павлова_презентация.pdf">Скачать презентацию</a>
+          </div>
+        )}  
+      </div>
+      
+      <div class="flex flex-row flex-wrap text-base gap-2.5 mt-10 mb-6 md:mb-20 md:mr-6 mx-auto max-w-7xl text-[#9F9F9F]">
+        <span>
+          <a href="#1" class="underline underline-offset-2">{post.when.title}</a>
+        </span><span> • </span>
+        
+        { post.firstParagraph && (
+          <span>
+            <a href="#2" class="underline underline-offset-2">Специфика</a>
+          </span><span> • </span>
+        )}
+        
+        <span>
+          <a href="#3" class="underline underline-offset-2">Заказчики</a>
+        </span><span> • </span>
+        
+        {post.what1 && (
+        <span>
+          <a href="#4" class="underline underline-offset-2">{post.what1.title}</a>
+        </span><span> • </span>
+        )}
+        
+        <span>
+          <a href="#5" class="underline underline-offset-2">Проекты</a>
+        </span><span> • </span>
+                  
+        <span>
+          <a href="#6" class="underline underline-offset-2">Отзывы</a>
+        </span><span> • </span>
+        
+        <span>
+          <a href="#7" class="underline underline-offset-2">Процесс</a>
+        </span> • </span>
+        
+        <span>
+          <a href="#8" class="underline underline-offset-2">Детали</a>
+        </span> • </span>
+        
+        <span>
+          <a href="#9" class="underline underline-offset-2">Экспертиза</a>
+        </span> • </span>
+        
+        <span>
+          <a href="#10" class="underline underline-offset-2">Контакты</a>
+        </span>
+          
+      </div>
+      
+    </Fragment>
+  </Hero2>
+  
+  <section class="py-0 mx-auto grow-0 shrink-0">
+     <article>
+     
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 flex-nowrap mb-10 md:mb-20">  
+    { post.awards && (
+      <div class="flex flex-row gap-4">
+        {post.awards.map(award => (
+          <div class="max-h-32"><Markdown.Inline of={award} /></div>
+        ))}  
+      </div>
+    )}
+    
+    {post.outcome && (
+      <div class="flex flex-col flex-wrap sm:flex-row justify-start gap-6">     
+        {post.outcome.numbers?.map((out) => (     
+        <div class="basis-0 grow">
+          <Number 
+            number={out.number} 
+            classes="mb-1.5 font-heading" 
+            textClasses="text-xl sm:text-3xl" 
+            numberClasses="text-xl sm:text-3xl text-[--aw-color-hund]" 
+          />
+          <p class="text-xl">{out.text}</p>
+        </div>
+        ))}
+      </div>
+    </div>
+  )}
+    
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 lg:gap-20 flex-nowrap">   
+    <div class="">
+     <a id="1"></a>
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.when.title}</h2>
+      <IndustryColumnGrid
+        columns={post.when.columns}
+        cards={post.when.items}
+        classes={{container: 'gap-2 gap-y-2 md:gap-y-2'}}
+        mode="foldOnMobile"
+      /> 
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col-reverse lg:flex-row gap-10 lg:gap-10 flex-nowrap mt-10 md:mt-20 mb-10 md:mb-20"> 
+    {post.firstParagraph ? (
+      <Fragment>
+        <div class="basis-0 grow flex flex-col md:block">
+          <a id="2"></a>
+          { post.firstParagraph.visual ? (
+            <TextScreenGadget
+              items={post.firstParagraph.items}
+              visual={post.firstParagraph.visual}
+              />
+          ) : (
+            <>  
+              <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">{post.firstParagraph.title}</h2>
+              <p class="mb-6">{post.firstParagraph.text}</p>
+               <IndustryColumnGrid
+                  columns={2}
+                  cards={post.firstParagraph.items}
+                  classes={{container: 'gap-2 gap-y-2 md:gap-y-2'}}
+                />  
+            </>
+          )}
+        </div>
+        <div class="basis-0 grow">
+          <a id="3"></a>
+            <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+            <div class="flex flex-col justify-between">
+            <Markdown.Inline of={post.clients} />
+            {/*<div class="flex justify-end">
+              <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                <a href="/portfolio#med">Портфолио →</a>
+              </div>
+            </div>*/}
+          </div>
+        </div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        <TearOff />
+
+        <div class="basis-0 grow-[3]">
+          <a id="3"></a>
+            <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Наши клиенты</h2>
+            <div class="flex flex-col justify-between">
+            <Markdown.Inline of={post.clients} />
+            {/*<div class="flex justify-end">
+              <div class="text-xl font-heading tracking-widest leading-none bg-[--aw-color-grey9] px-5 py-[10px] flex flex-row align-center max-w-[167px] max-h-11">
+                <a href="/portfolio#med">Портфолио →</a>
+              </div>
+            </div>*/}
+          </div>
+        </div>
+      </Fragment>
+    )} 
+  </div> 
+  
+  {post.what1 && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-10 md:mb-20"> 
+      <a id="4"></a>
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap"> 
+        <div class="basis-0 grow">
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">{post.what1.title}</h2>
+          <ul class="text-base columns-2 list-disc list-inside">
+            { post.what1.items.map(item => (
+              <li>{item.text}</li>
+            ))} 
+          </ul>
+        </div>
+        <div class="basis-0 grow">
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">{post.what2.title}</h2>
+          <ul class="text-base columns-2 list-disc list-inside">
+            { post.what2.items.map(item => (
+              <li>{item.text}</li>
+            ))} 
+          </ul>
+        </div>
+      </div>
+    </div>
+  )} 
+  
+  <a id="5"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:mt-[32px] md:mb-[-20px]">
+    <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund]">Примеры проектов</h2>
+  </div>
+  
+  <RelatedLinks 
+    post={post} 
+    hideFields={{showAllButton: true, title: true, tags: true}}
+  />  
+
+  { post.reviews && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 mt-10 md:mt-[-36px] flex flex-col lg:flex-row gap-10 lg:gap-10 flex-nowrap">
+      <div class="basis-0 grow">
+        <a id="6"></a>
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Отзывы</h2>
+        <UniversalSlider count={1} styles={{main: 'review-slider', button: 'bg-white text-black hover:bg-transparent hover:text-white'}} buttonsPosition="bottom">
+          {post.reviews && post.reviews.map(review => review.aggregate ? (
+            <div class="flex flex-col review-card-even">
+              {review.aggregate.map(subreview => (
+                <div>
+                  <a href={subreview.link}>
+                  <ReviewItem
+                    title={subreview.title}
+                    text={subreview.text}
+                    person={subreview.person}
+                    position={subreview.position}
+                    photo={subreview.photo}
+                    styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+                    photoPosition="bottom"
+                  />
+                  </a>
+                  {subreview.logo && (
+                    <div class="flex items-center justify-start mb-10">
+                      <a class="noir2-div relative" href={subreview.link}>
+                        <img src={subreview.logo.link} width={subreview.logo.width || '80'}  height={subreview.logo.height || '40'} >
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="review-card-even">
+              <a href={review.link}>
+              <ReviewItem
+                title={review.title}
+                text={review.text}
+                person={review.person}
+                position={review.position}
+                photo={review.photo}
+                styles={{heading: 'sm:text-3xl xl:text-3xl mb-4', signature: 'font-semibold text-lg', main: 'text-lg mb-6'}}
+                photoPosition="bottom"
+              />
+              </a>
+              {review.logo && (
+                <div class="flex items-center justify-start mb-10">
+                  <a class="noir2-div relative" href={review.link}>
+                    <img src={review.logo.link} width={review.logo.width || '80'}  height={review.logo.height || '40'} >
+                  </a>
+                </div>
+              )}
+            </div>
+          ))}
+        </UniversalSlider>
+      </div>
+    
+      <div class="basis-0 grow">
+        {post.mapBlock && (
+          <a id="7"></a>
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-4">Процесс</h2>
+          <div class="flex flex-col gap-4">
+            <Features4
+              columns={post.mapBlock.columns}
+              items={ post.mapBlock?.items?.map((item) => ({title: item.title, subtitle: item.time, description: item.text})) }
+              classes={}
+              defaultIcon="tabler:circle-check-filled"
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  )} 
+    
+  {post.comments && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mb-6">Детали</h2>
+    </div>
+    <SimpleSlider 
+      mode="mode-2"
+      title=""
+      slides={post.comments}
+      classes={{main: 'mb-10 md:mb-20'}}
+    />
+  </div>
+  )}
+  
+  <a id="8"></a>
+  
+  { post.articles && ( 
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-20 mb-0">
+        <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-hund] mt-10 md:mt-20 mb-6">Экспертиза</h2> 
+        <BlogSlidingGrid
+          posts={post.articles}
+          hideFields={{showAllButton: true, title: true, tags: true}}
+          />
+      </div>
+  )}
+  
+  { post.articles2 && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-10 md:mt-10 mb-10 md:mb-20">
+      <Markdown.Inline of={post.articles2.text} />
+    </div>
+  )}
+  
+  <a id="9"></a>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 md:mb-20 flex flex-col gap-6">
+    <div class="flex flex-col lg:flex-row gap-10 bg-[#212121] p-5 md:p-10">
+      { post.finale && (
+        <div class="basis-0 grow">
+          <h2 class="text-xl font-heading tracking-widest leading-none text-[--aw-color-pink] mb-4">{post.finale.title}</h2>
+          <p class="text-white"><Markdown.Inline of={post.finale.text} /></p>
+        </div>
+      )}  
+      <div class="basis-0 grow flex flex-col gap-6">
+        <h3 class="font-heading text-3xl leading-none text-white md:text-[97px] lg:text-[52px] xl:text-[86px] leading-none no-underline mt-[-10px]">{SITE.phone}</h3>
+        <div class="flex flex-col sm:flex-row gap-10">
+          <div class="flex flex-col gap-1 justify-center text-white">
+            <a class="no-underline hover:underline underline-offset-4 text-base" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            <a href={SITE.telegramContact.link} class="flex items-center no-underline hover:underline underline-offset-4 text-base">@sobakapavpro<Icon height="27px" width="27px" name="tabler:brand-telegram" class="ml-2" /></a>
+          </div>
+          <div class="flex flex-col gap-1 justify-center text-white">
+            <a class="no-underline hover:underline underline-offset-4 text-base" href="https://drive.google.com/file/d/10KQmsKqpwTGowSKEy_9YpZ6BvsztXjUJ/view?usp=sharing">Скачать реквизиты в PDF</a>
+            { post.presentation && (
+            <a class="no-underline hover:underline underline-offset-4 text-base" href="/images/Презентация медицинская.pdf">Скачать презентацию в PDF</a>
+            )}
+            { post.presentation ? (
+              <div class="no-underline hover:underline underline-offset-4 text-base">
+                <a href="{post.presentation}">Скачать презентацию</a>
+              </div>
+              ) : (
+              <div class="no-underline hover:underline underline-offset-4 text-base">
+                <a href="/images/Собака Павлова_презентация.pdf">Скачать презентацию</a>
+              </div>
+            )}  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</article>
+</section>
+
+</Layout>

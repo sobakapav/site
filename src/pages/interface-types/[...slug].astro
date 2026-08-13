@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import IndustryPage from '~/components/pages/IndustryPage.astro';
 
 export async function getStaticPaths() {
-  const industries = await getCollection('industries');
+  const industries = await getCollection('interface-types');
   return industries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
@@ -14,4 +14,4 @@ const { entry } = Astro.props;
 
 ---
 
-<IndustryPage entry={entry} parent="/industries" parentTitle="Отрасли" />
+<IndustryPage entry={entry} parent="/interface-types" parentTitle="Типы интерфейсов" />
