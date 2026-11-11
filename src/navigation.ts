@@ -169,10 +169,6 @@ export const headerData = {
         },
        ],
     },  
-    {
-      text: 'Дизайн-задачник',
-      href: "https://www.eduhund.ru",
-    },
     
     /*{
       text: 'UX-аутстафф',
