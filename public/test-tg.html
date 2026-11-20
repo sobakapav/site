@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Какой вы меценат Третьяковской галереи</title>
+        <style>
+            body {
+                font-family: system-ui, sans-serif;
+                padding: 24px;
+                color: #1b1b1f;
+            }
+
+            #greeting {
+                margin-bottom: 8px;
+            }
+
+            #test-body {
+                width: 500px;
+                height: 500px;
+                display: grid;
+            }
+
+            .test-element {
+                grid-row: 1;
+                grid-column: 1;
+                opacity: 0;
+                z-index: 0;
+                transition: opacity 1s ease-in-out 0.5s;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+
+            .test-element.active {
+                opacity: 1;
+                z-index: 2;
+            } 
+
+            .question-option {
+                width: 488px;
+                display: flex;
+                align-items: center;
+                padding: 6px;
+                cursor: pointer;
+                border: 1px solid black;
+                border-radius: 12px;
+                transition: background-color 1s ease-out;
+            }
+
+            .question-option.test-start::before {
+                display: none;
+            }
+
+            .question-option:active {
+                background-color: grey;
+                transition: background-color 0s;
+            }
+ 
+            .question-option::before {
+                display: block;
+                width: 20px;
+                height: 20px;
+                font-size: 14px;
+                content: "\1F518";
+                margin-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="https://um.mos.ru/img/unsafe/rs:fit:1920:0:0/f:webp/q:75/aHR0cHM6Ly91bS5tb3MucnUvY29udGVudC9pYmxvY2svZGZiL9CT0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90LDRjyDQotGA0LXRgtGM0Y_QutC-0LLRgdC60LDRjyDQs9Cw0LvQtdGA0LXRjzE5NznQkC7QltC40LvRj9C60L7Qsi5qcGc" width="500px">
+        <h1 id="greeting">Какой вы меценат?</h1>
+        <div id="test-body">
+            <div class="test-element active">
+                <div class="question-option test-start">Начать тест</div>
+            </div>
+        </div>
+        <script>
+            const QUESTIONS = [
+                {
+                    question: 'Вы входите в зал Третьяковки, где раньше не бывали. На какой картине остановится взгляд?',
+                    options: [
+                        {option: 'На отражающем дух эпохи полотне с глубоким смыслом и историей.', result: 'A'},
+                        {option: 'На самой смелой и необычной работе, которую критики наверняка назовут спорной.', result: 'B'},
+                        {option: 'На небольшом этюде или наброске — рука мастера виднее всего в мелочах и деталях.', result: 'C'},
+                        {option: 'На чем-то редком и необычном: древней иконе, работе с новаторской техникой, уникальном образце народного искусства.', result: 'D'},
+                        {option: 'На картине, которая трогает душу, вызывает эмоции и заставляет сопереживать..', result: 'E'},
+                    ]
+                },
+                {
+                    question: 'Ваш друг — талантливый, но пока никому не известный художник. Представьте, что вы совсем не ограничены в средствах. Как вы поможете другу-художнику?',
+                    options: [
+                        {option: 'Куплю по честной цене его лучшие работы и помогу организовать серьёзную выставку.', result: 'A'},
+                        {option: 'Позову к себе на дачу, соберу там творческую тусовку... Вуаля, теперь он всем известный художник!', result: 'B'},
+                        {option: 'Буду регулярно покупать его рисунки и эскизы, чтоб не переводились деньги на холсты и краски.', result: 'C'},
+                        {option: 'Познакомлю с галеристами, искусствоведами, знатоками и ценителями искусства. Мы впишем его имя в историю искусства.', result: 'D'},
+                        {option: 'Оплачу ему учёбу или поездку за границу. Попрошу держать в тайне имя спонсора.', result: 'E'},
+                    ]
+                },
+                {
+                    question: 'Есть ли у вас карта «Друг Третьяковской галереи»?',
+                    options: [
+                        {option: 'Да, и я активно пользуюсь всеми её возможностями.', result: 'A', stat: 'Q'},
+                        {option: 'Да, оформил(а) её, чтобы чаще бывать на открытиях и закрытых событиях.', result: 'B', stat: 'R'},
+                        {option: 'Пока нет, но я слежу за жизнью музея. Быть может, еще оформлю.', result: 'C', stat: 'S'},
+                        {option: 'Нет. Каждый визит я планирую как отдельное маленькое исследование.', result: 'D', stat: 'T'},
+                        {option: 'Нет. Я хожу по разовым билетам. Моя любовь к музею выражается иначе.', result: 'E', stat: 'U'},
+                    ]
+                },
+                {
+                    question: 'Уже понятно, какой вы меценат! Только уточните, если не против, вы женщина или мужчина? Если не хотите уточнять, в ответе будет меценат случайного пола.',
+                    options: [
+                        {option: 'Я меценат-мужчина', result: 'Gender-M', stat: '1'},
+                        {option: 'Я меценат-женщина', result: 'Gender-F', stat: '2'},
+                        {option: 'Не хочу отвечать', result: 'Gender-U', stat: '3'},
+                    ]
+                },
+            ];
+
+            const OUTCOMES = [
+                {
+                    option: 'A',
+                    gender: 'Gender-M',
+                    title: 'Павел Третьяков. Стратег и собиратель',
+                    text: '<p><b>Ваш портрет.</b> Вы человек системы и долгой дистанции. Пока другие гонятся за трендами, вы строите фундамент, который переживёт эпохи. Вы умеете разглядеть главное и не боитесь брать ответственность за большие решения.</p><p><b>Ваш исторический двойник.</b> Московский купец Павел Третьяков собирал русское искусство почти 40 лет, руководствуясь строгим правилом: покупать только то, что войдёт в историю. Он поддерживал художников-передвижников вопреки критике и в 1892 году подарил Москве галерею, ставшую национальным достоянием.</p><p><b>Маршрут в залах.</b> Загляните к «Неизвестной» Ивана Крамского и «Боярыне Морозовой» Василия Сурикова — эти шедевры появились здесь благодаря твёрдому характеру вашего двойника.</p>',
+                },
+                {
+                    option: 'A',
+                    gender: 'Gender-F',
+                    title: 'Мария Тенишева',
+                    text: 'стратег и созидательница',
+                },
+                {
+                    option: 'B',
+                    gender: 'Gender-M',
+                    title: 'Савва Мамонтов',
+                    text: 'продюсер и вдохновитель',
+                },
+                {
+                    option: 'B',
+                    gender: 'Gender-F',
+                    title: 'Маргарита Морозова',
+                    text: 'муза и продюсер',
+                },
+                {
+                    option: 'C',
+                    gender: 'Gender-M',
+                    title: 'Иван Цветков',
+                    text: 'скромный перфекционист и знаток деталей',
+                },
+                {
+                    option: 'C',
+                    gender: 'Gender-F',
+                    title: 'Евфимия Носова',
+                    text: 'эстет и перфекционистка',
+                },
+                {
+                    option: 'D',
+                    gender: 'Gender-M',
+                    title: 'Илья Остроухов',
+                    text: 'энциклопедист и охотник за редкостями',
+                },
+                {
+                    option: 'D',
+                    gender: 'Gender-F',
+                    title: 'Наталья Шабельская',
+                    text: 'исследователь и хранительница редкостей',
+                },
+                {
+                    option: 'E',
+                    gender: 'Gender-M',
+                    title: 'Козьма Солдатёнков',
+                    text: 'тихий филантроп и просветитель',
+                },
+                {
+                    option: 'E',
+                    gender: 'Gender-F',
+                    title: 'Варвара Морозова',
+                    text: 'тихий филантроп и просветитель',
+                },
+            ];
+
+            const testBody = document.getElementById('test-body');
+            const testStatistics = {};
+            var testStat = "";
+
+            testBody.addEventListener("click", 
+                function(event) {
+                    if (event.target.classList.contains('question-option')) {
+                        const selectedOption = event.target;
+
+                        const outcomes = selectedOption.dataset.option?.split(',');
+                        console.log(JSON.stringify(outcomes));
+                        for (outcome of outcomes || []) {
+                            if (testStatistics[outcome]) {
+                                testStatistics[outcome] += 1;
+                            } else {
+                                testStatistics[outcome] = 1;
+                            }
+                        }
+
+                        if (selectedOption.dataset.stat) {
+                            testStat += selectedOption.dataset.stat;
+                        }
+
+                        const selectedQuestion = selectedOption.parentElement;
+
+                        if (selectedQuestion.nextElementSibling.classList.contains('questionnaire-result')) {
+                            console.log('Showing result');
+                            console.log(JSON.stringify(testStatistics));
+
+                            var topStatistics = [], topCount = 0;
+                            for (const key in testStatistics) {
+                                if (!key.startsWith('Gender-')) {
+                                    if (testStatistics[key] > topCount) {
+                                        topStatistics = [key];
+                                        topCount = testStatistics[key];
+                                    } else if (testStatistics[key] == topCount) {
+                                        topStatistics.push(key);
+                                    }
+                                }
+                            }
+
+                            const bestKeyIdx = Math.floor(Math.random() * topStatistics.length);
+                            const bestKey = topStatistics[bestKeyIdx];
+
+                            var gender;
+                            if (testStatistics['Gender-M'] > 0 || (testStatistics['Gender-U'] > 0 && Math.random() < 0.5)) {
+                                gender = 'Gender-M';
+                            } else {
+                                gender = 'Gender-F';
+                            }
+
+                            console.log('Best key: ' + bestKey + ' gender: ' + gender);
+
+                            console.log('Statistics: ' + testStat);
+
+                            const selectedOutcome = OUTCOMES.find((outcome) => (outcome.option == bestKey && outcome.gender == gender));
+
+                            const resultString = `<div class="result-header">${selectedOutcome.title}</div><div class="result-body">${selectedOutcome.text}</div><div class="result-link"><a href="https://google.com?q=${testStat}">Пройдите наш опросник</a></div>`;
+
+                            document.getElementById('questionnaire-result-body').innerHTML = resultString;
+                        }
+
+                        selectedQuestion.classList.remove('active');
+                        selectedQuestion.nextElementSibling.classList.add('active');
+                    }
+                }
+            );
+
+            for (const question of QUESTIONS) {
+                var questionBlock = '<div class="test-element">';
+                questionBlock += `<div class="question-header">${question.question}</div>`;
+                for (const option of question.options) {
+                    questionBlock += `<div class="question-option" data-option=${option.result} data-stat=${option.stat || ''}>${option.option}</div>`;
+                }
+                questionBlock += '</div>';
+
+                testBody.insertAdjacentHTML('beforeend', questionBlock);
+            }
+
+            testBody.insertAdjacentHTML('beforeend', '<div class="test-element questionnaire-result"><div id="questionnaire-result-body">Сейчас мы вам его сосчитаем.</div></div>');
+        </script>
+    </body>
+</html>
