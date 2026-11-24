@@ -65,10 +65,19 @@
                 content: "\1F518";
                 margin-right: 20px;
             }
+			
+			#img-container {
+				width: 500px;
+				height: 313px;
+				display: flex;
+				justify-content: center;
+			}
         </style>
     </head>
     <body>
-        <img src="https://um.mos.ru/img/unsafe/rs:fit:1920:0:0/f:webp/q:75/aHR0cHM6Ly91bS5tb3MucnUvY29udGVudC9pYmxvY2svZGZiL9CT0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90LDRjyDQotGA0LXRgtGM0Y_QutC-0LLRgdC60LDRjyDQs9Cw0LvQtdGA0LXRjzE5NznQkC7QltC40LvRj9C60L7Qsi5qcGc" width="500px">
+		<div id="img-container">
+			<img src="https://um.mos.ru/img/unsafe/rs:fit:1920:0:0/f:webp/q:75/aHR0cHM6Ly91bS5tb3MucnUvY29udGVudC9pYmxvY2svZGZiL9CT0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90LDRjyDQotGA0LXRgtGM0Y_QutC-0LLRgdC60LDRjyDQs9Cw0LvQtdGA0LXRjzE5NznQkC7QltC40LvRj9C60L7Qsi5qcGc" width="500px">
+		</div>
         <h1 id="greeting">Какой вы меценат?</h1>
         <div id="test-body">
             <div class="test-element active">
@@ -122,6 +131,7 @@
                     option: 'A',
                     gender: 'Gender-M',
                     title: 'Павел Третьяков',
+					portrait: '<img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Ilja_Jefimowitsch_Repin_-_Portrait_of_Pavel_Mikha%C3%AFlovitch_Tr%C3%A9tiakov.jpg/960px-Ilja_Jefimowitsch_Repin_-_Portrait_of_Pavel_Mikha%C3%AFlovitch_Tr%C3%A9tiakov.jpg" height="313">',
                     text: '<p><b>Ваш портрет.</b> Вы человек системы и долгой дистанции. Пока другие гонятся за трендами, вы строите фундамент, который переживёт эпохи. Вы умеете разглядеть главное и не боитесь брать ответственность за большие решения.</p><p><b>Ваш исторический двойник.</b> Московский купец Павел Третьяков собирал русское искусство почти 40 лет, руководствуясь строгим правилом: покупать только то, что войдёт в историю. Он поддерживал художников-передвижников вопреки критике и в 1892 году подарил Москве галерею, ставшую национальным достоянием.</p><p><b>Маршрут в залах.</b> Загляните к «Неизвестной» Ивана Крамского и «Боярыне Морозовой» Василия Сурикова — эти шедевры появились здесь благодаря твёрдому характеру вашего двойника.</p>',
                 },
                 {
@@ -180,73 +190,77 @@
                 },
             ];
 
-            const testBody = document.getElementById('test-body');
             const testStatistics = {};
             var testStat = "";
+			
+			function showNext(event) {
+				if (event.target.classList.contains('question-option')) {
+					const selectedOption = event.target;
 
-            testBody.addEventListener("click", 
-                function(event) {
-                    if (event.target.classList.contains('question-option')) {
-                        const selectedOption = event.target;
+					const outcomes = selectedOption.dataset.option?.split(',') || [];
 
-                        const outcomes = selectedOption.dataset.option?.split(',');
-                        console.log(JSON.stringify(outcomes));
-                        for (outcome of outcomes || []) {
-                            if (testStatistics[outcome]) {
-                                testStatistics[outcome] += 1;
-                            } else {
-                                testStatistics[outcome] = 1;
-                            }
-                        }
+					for (outcome of outcomes) {
+						if (testStatistics[outcome]) {
+							testStatistics[outcome] += 1;
+						} else {
+							testStatistics[outcome] = 1;
+						}
+					}
 
-                        if (selectedOption.dataset.stat) {
-                            testStat += selectedOption.dataset.stat;
-                        }
+					if (selectedOption.dataset.stat) {
+						testStat += selectedOption.dataset.stat;
+					}
 
-                        const selectedQuestion = selectedOption.parentElement;
+					const selectedQuestion = selectedOption.parentElement;
 
-                        if (selectedQuestion.nextElementSibling.classList.contains('questionnaire-result')) {
-                            console.log('Showing result');
-                            console.log(JSON.stringify(testStatistics));
+					if (selectedQuestion.nextElementSibling.classList.contains('questionnaire-result')) {
+						calculateOutcome();
+					}
 
-                            var topStatistics = [], topCount = 0;
-                            for (const key in testStatistics) {
-                                if (!key.startsWith('Gender-')) {
-                                    if (testStatistics[key] > topCount) {
-                                        topStatistics = [key];
-                                        topCount = testStatistics[key];
-                                    } else if (testStatistics[key] == topCount) {
-                                        topStatistics.push(key);
-                                    }
-                                }
-                            }
+					selectedQuestion.classList.remove('active');
+					selectedQuestion.nextElementSibling.classList.add('active');
+				}
+			}
 
-                            const bestKeyIdx = Math.floor(Math.random() * topStatistics.length);
-                            const bestKey = topStatistics[bestKeyIdx];
+			function calculateOutcome() {
+				var topStatistics = [], topCount = 0;
+				for (const key in testStatistics) {
+					if (!key.startsWith('Gender-')) {
+						if (testStatistics[key] > topCount) {
+							topStatistics = [key];
+							topCount = testStatistics[key];
+						} else if (testStatistics[key] == topCount) {
+							topStatistics.push(key);
+						}
+					}
+				}
 
-                            var gender;
-                            if (testStatistics['Gender-M'] > 0 || (testStatistics['Gender-U'] > 0 && Math.random() < 0.5)) {
-                                gender = 'Gender-M';
-                            } else {
-                                gender = 'Gender-F';
-                            }
+				const bestKeyIdx = Math.floor(Math.random() * topStatistics.length);
+				const bestKey = topStatistics[bestKeyIdx];
 
-                            console.log('Best key: ' + bestKey + ' gender: ' + gender);
+				var gender;
+				if (testStatistics['Gender-M'] > 0 || (testStatistics['Gender-U'] > 0 && Math.random() < 0.5)) {
+					gender = 'Gender-M';
+				} else {
+					gender = 'Gender-F';
+				}
+				
+				showOutcome(bestKey, gender);
+			}
+			
+			function showOutcome(key, gender) {
+				const selectedOutcome = OUTCOMES.find((outcome) => (outcome.option == key && outcome.gender == gender));
 
-                            console.log('Statistics: ' + testStat);
+				const resultString = `<div class="result-body">${selectedOutcome.text}</div><div class="result-link"><p><b>Помогите сделать Третьяковку лучше.</b> Как и ${selectedOutcome.title}, вы можете помочь музею — и нужны не миллионы, а примерно час вашего времени. Сейчас команда UX-исследователей изучает, как сделать наш интернет-магазин понятней и удобней.</p><p><b>Ваш опыт мецената очень важен.</b> Если хотите участвовать в исследовании, нажмите кнопку ниже. Вам придет письмо с адреса <a href="mailto:we@eduhund.com">we@eduhund.com</a> с условиями участия и подробностями про исследование.</p><a href="https://google.com?q=${testStat}">Хочу участвовать в исследовании!</a><p>Нажимая кнопку, вы соглашаетесь на передачу контактных данных команде «Собака Павлова» для связи по поводу исследования.</p><p><b>Код для вставки в соцсети:</b> [здесь будет код для соцсетей]</p></div>`; 
 
-                            const selectedOutcome = OUTCOMES.find((outcome) => (outcome.option == bestKey && outcome.gender == gender));
+				document.getElementById('greeting').innerHTML = selectedOutcome.title;
+				selectedOutcome.portrait && (document.getElementById('img-container').innerHTML = selectedOutcome.portrait);
+				document.getElementById('questionnaire-result-body').innerHTML = resultString;
+			}
+			
+            const testBody = document.getElementById('test-body');
 
-                            const resultString = `<div class="result-header">${selectedOutcome.title}</div><div class="result-body">${selectedOutcome.text}</div><div class="result-link"><p><b>Помогите сделать Третьяковку лучше.</b> Как и ${selectedOutcome.title}, вы можете помочь музею — и нужны не миллионы, а примерно час вашего времени. Сейчас команда UX-исследователей изучает, как сделать наш интернет-магазин понятней и удобней.</p><p><b>Ваш опыт мецената очень важен.</b>Если хотите участвовать в исследовании, нажмите кнопку ниже. Вам придет письмо с адреса <a href="mailto:we@eduhund.com">we@eduhund.com</a> с условиями участия и подробностями про исследование.</p><a href="https://google.com?q=${testStat}">Хочу участвовать в исследовании!</a><p>Нажимая кнопку, вы соглашаетесь на передачу контактных данных команде «Собака Павлова» для связи по поводу исследования.</p><p><b>Код для вставки в соцсети:</b> [здесь будет код для соцсетей]</p></div>`; 
-
-                            document.getElementById('questionnaire-result-body').innerHTML = resultString;
-                        }
-
-                        selectedQuestion.classList.remove('active');
-                        selectedQuestion.nextElementSibling.classList.add('active');
-                    }
-                }
-            );
+            testBody.addEventListener("click", showNext);
 
             for (const question of QUESTIONS) {
                 var questionBlock = '<div class="test-element">';
